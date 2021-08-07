@@ -173,12 +173,10 @@ let isMammal = !canSwim && !canFly;
 
 ## Øvelser
 
-
-
 1. Tegn en cirkel midt på skærmen. Hvis musen bevæger sig til højre for dens centrum bliver den til et rektangel. Hvis den bevæger sig til venstre for bliver den igen en cirkel.
 2. Forklar hvad følgende kode gør (hvad width og height?):
 
-    ```javascript
+```javascript
 function setup() { 
   createCanvas(600, 400);
 } 
@@ -202,7 +200,7 @@ function draw() {
 
 3. Hvad gør følgende kode:
 
-    ```javascript
+```javascript
 let x;
 let justHitRightWall;
 let xspeed = 3;
@@ -228,7 +226,7 @@ function draw() {
 4. Skriv et program der får en cirkel til at bevæge sig lodret op og ned til den indenfor et givent kanvas.
 5. Hvad gør følgende kode:
 
-    ```javascript
+```javascript
 function setup() { 
 createCanvas(120, 120); 
 strokeWeight(30); 
@@ -252,7 +250,7 @@ function draw() {
 
 6. Hvad gør følgende kode:
 
-    ```javascript
+```javascript
 function setup() 
 { 
  createCanvas(120, 120); 
@@ -287,7 +285,7 @@ line(90, 20, 90, 100);
     4. Lad (a,b) være retningsvektor for cirklen. Sæt f.eks. a = speed og b = 0. Dvs. når spillet starter, så bevæger cirklen sig x-aksens retning.
     5. Skriv en funktion, der tjekker for, om cirklen er på vej uden for skærmen. Brug evt. følgende:
 
-        ```javascript
+```javascript
 function borderCheck() {
  if (x + d / 2 >= windowWidth) {
    a = -speed;
@@ -379,9 +377,6 @@ function setup() {
   createCanvas(720, 400);
 }
 ```
-
-
- 
 
 
 ```javascript
