@@ -1,4 +1,4 @@
-# 1. Intro til P5 og Javascript
+# 2. Intro til P5 og Javascript
 
 Et program består af en række instruktioner, som en maskine (computer, telefon, bil, køleskab etc)  forstår. Programmering betegner den proces hvor man ud fra nogle formelle regler konstruerer programmet.
 
