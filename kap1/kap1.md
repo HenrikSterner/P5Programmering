@@ -1,4 +1,4 @@
-# Indledning
+# 1. Indledning
 
 Nærværende dokument beskriver et introduktionsforløb til programmering i P5 ved brug af javascript. P5 ligger op til en visuel og anvendelsesorienteret tilgang til undervisningen i programmering, der gør det sjovt og motiverende at udvikle applikationer.
 
