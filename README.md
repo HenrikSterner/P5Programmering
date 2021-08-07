@@ -14,6 +14,7 @@ Peter & Henrik
 - [Kapitel 1: Indledning](kap1/kap1.md)
 - [Kapitel 2: Intro til P5 og Javascript](kap2/kap2.md)
 - [Kapitel 3: Variabler, animationer og input](kap3/kap3.md)
+- [Kapitel 4: Betinget udførsel](kap4/kap4.md)
 
 
 
