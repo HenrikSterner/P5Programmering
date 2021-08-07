@@ -15,7 +15,7 @@ På figuren nedenfor ses til venstre et koordinatsystem,som vi kender det fra ma
 Vi konstruere punkter, linjer, rektangler, ellipser og cirkler på følgende måde: 
 
 
-```
+```javascript
 function setup(){
   	createCanvas(100, 100);
 }
@@ -36,7 +36,7 @@ I `setup `iniitialiseres programmet og `draw`  skrives den kode, som tegner figu
 Alternativt kan rektangler og ellipser konstrueres ud fra deres hjørner:
 
 
-```
+```javascript
 function setup(){
  createCanvas(100, 100);
  rectMode(CORNERS);
@@ -52,7 +52,7 @@ function draw(){
 Man kan ændre tykkelsen af streger på følgende måde:
 
 
-```
+```javascript
 strokeWeight(1); // Standard
 line(20, 20, 80, 20);
 strokeWeight(4); // Tykkere
@@ -65,7 +65,7 @@ line(20, 70, 80, 70);
 Man kan lave en form bestående af mange punkter der forbindes ved brug af linjer ved at bruge shape. Herunder tegnes en pil:
 
 
-```
+```javascript
 function setup() { 
  createCanvas(480, 120); 
 } 
@@ -100,7 +100,7 @@ Vi skal være præcise når vi vil farvelægge former. For sort til hvid og nuan
 Herunder ses hvordan man ændrer farven på baggrund og et rektangel:
 
 
-```
+```javascript
 background(255);  // hvid baggrund
 stroke(0);        // farve til sort
 fill(150);        // indre form grå
@@ -138,7 +138,7 @@ Ingen farver = sort
 Nuancen af rød, grøn og blå angives med tallene 0 til 255 for alle tre farver. Herunder et eksempel
 
 
-```
+```javascript
 function draw() {
   background(255);
   noStroke();
@@ -161,7 +161,7 @@ function draw() {
 Metoden draw opdateres normalt 30 gange i sekundet. Det kaldes også 30 FPS - Frames Per Second. Du sætter antallet af frames i setup ved brug af kommandoen
 
 
-```
+```javascript
 frameRate(x); //x er antallet af frames
 ```
 
@@ -172,7 +172,7 @@ frameRate(x); //x er antallet af frames
 Man kan generere tilfældige farver ved at bruge en den indbyggede tilfældighedsgenerator, som vi også kalder for random, der bl.a. kan generere tilfældige heltal på følgende måde:
 
 
-```
+```javascript
 random(50); // giver et tilfældigt tal mellem 0 og 50
 random(-50,50); //giver et tilfældigt tal mellem -50 og 50
 ```
@@ -181,7 +181,7 @@ random(-50,50); //giver et tilfældigt tal mellem -50 og 50
 Funktionen viser sig at være ekstremt nyttig i mange sammenhænge, men til at starte med kan den eksempelvis bruges til at tildele en geometrisk form en vilkårlig farv eller placering:
 
 
-```
+```javascript
 fill(random(250),random(250),random(250)); //en tilfældig RGB-farve
 ellipse(random(75),random(75),50,50); //en tilfældig position for en cirkel
 ```
@@ -193,7 +193,7 @@ ellipse(random(75),random(75),50,50); //en tilfældig position for en cirkel
 Man har mulighed for at skrive til konsolen, som man tilgår via Ctrl+Shift+J i de fleste browsere.
 
 
-```
+```javascript
 var i = 0;
 function setup() {
   createCanvas(400, 400);
