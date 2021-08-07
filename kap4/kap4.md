@@ -48,27 +48,15 @@ else{
 Vi kan udvide vores eksempel fra før, så vi giver den en anden farve hvis musen har en x-værdi, der er større end eller lig med 100:
 
 
-<table>
-  <tr>
-   <td><code>if (mouseX &lt; 100){</code>
-<p>
-<code> background(255,0,0); \
-  } </code>
-<p>
-<code>else{      \
- background(0,0,255); \
-} \
-</code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-   </td>
-  </tr>
-</table>
+```javascript
+if (mouseX < 100){
+ background(255,0,0);
+  } 
+else{     
+ background(0,0,255);
+}
 
-
-
+```
 ## If-else-if konstruktionen
 
 Endelig kan man også udvide og undersøge flere kriterier på engang:
