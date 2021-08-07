@@ -17,3 +17,31 @@ God fornøjelse!
 
 BEMÆRK: Dokumentet her er tentativt og under udarbejdelse!
 
+
+# Software
+Vi starter med blot at bruge P5JS.org via websitet. Herefter tager vi hul på brug af Visual Studio Code hvor vi skal have følgende plugins (tryk Ctrl+Shift+P):
+
+1) Live Server til at afvikle en lokal webserver
+2) P5 Project Creator
+3) P5js Snippets
+
+
+# Plan
+For at gøre det mere levende og nemmere at vende tilbage til noget man ikke har forstået, har vi valgt at bruge videoer som en væsentlig del af undervisningsmaterialet. 
+
+Vi ser nogle af videoerne i plenum og andre skal I selv se. I får tid til det i undervisningen. 
+
+Det forventes, at I medbringer øretelefoner til hver undervisningsgang og at I har set alle videoer før I går videre til næste modul!
+
+Videoerne hentes fra codingtrain på youtube: https://thecodingtrain.com/beginners/p5js/
+
+Man får en playliste ved at følge linket her: https://www.youtube.com/playlist?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA
+
+Bemærk nummereringen i playlisten svarer til numrene herunder.
+
+Udover videoer bruger vi også nogle lærebøger herunder:
+
+[B1]: Programmering af Jesper Buch (se systime: https://programmering.systime.dk/)
+[B2]: Nature of code af Daniel Shiffman (se https://natureofcode.com/)
+
+
