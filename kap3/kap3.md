@@ -10,7 +10,7 @@ Variabler bruges til at opbevare data. Dataens “form” eller type kaldes ogs�
 Eksempel herunder hvor kommentaren angiver datatypen.
 
 
-```
+```javascript
 let n = 80; // heltal/integer 
 let s = "Hej"; // tekst/string 
 let b = true; // boolsk/boolean
