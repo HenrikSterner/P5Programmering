@@ -44,29 +44,6 @@ Udover videoer bruger vi også nogle lærebøger herunder:
 - [B1]: Programmering af Jesper Buch (se systime: https://programmering.systime.dk/)
 - [B2]: Nature of code af Daniel Shiffman (se https://natureofcode.com/)
 
-<!-----
-NEW: Check the "Suppress top comment" option to remove this info from the output.
-
-Conversion time: 0.285 seconds.
-
-
-Using this Markdown file:
-
-1. Paste this output into your source file.
-2. See the notes and action items below regarding this conversion run.
-3. Check the rendered output (headings, lists, code blocks, tables) for proper
-   formatting and use a linkchecker before you publish this page.
-
-Conversion notes:
-
-* Docs to Markdown version 1.0β30
-* Sat Aug 07 2021 02:27:17 GMT-0700 (PDT)
-* Source doc: Unavngivet dokument
-* Tables are currently converted to HTML tables.
------>
-
-
-
 <table>
   <tr>
    <td><strong>Emne nr</strong>
