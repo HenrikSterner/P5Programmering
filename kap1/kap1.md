@@ -44,4 +44,141 @@ Udover videoer bruger vi også nogle lærebøger herunder:
 - [B1]: Programmering af Jesper Buch (se systime: https://programmering.systime.dk/)
 - [B2]: Nature of code af Daniel Shiffman (se https://natureofcode.com/)
 
+<!-----
+NEW: Check the "Suppress top comment" option to remove this info from the output.
+
+Conversion time: 0.285 seconds.
+
+
+Using this Markdown file:
+
+1. Paste this output into your source file.
+2. See the notes and action items below regarding this conversion run.
+3. Check the rendered output (headings, lists, code blocks, tables) for proper
+   formatting and use a linkchecker before you publish this page.
+
+Conversion notes:
+
+* Docs to Markdown version 1.0β30
+* Sat Aug 07 2021 02:27:17 GMT-0700 (PDT)
+* Source doc: Unavngivet dokument
+* Tables are currently converted to HTML tables.
+----->
+
+
+
+<table>
+  <tr>
+   <td><strong>Emne nr</strong>
+   </td>
+   <td><strong>Emne</strong>
+   </td>
+   <td><strong>Nøgleord</strong>
+   </td>
+   <td><strong>Undervisningsmateriale</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>1.
+   </td>
+   <td>Intro til P5 og Javascript
+   </td>
+   <td>Webeditor, tegne former, bruge farver, fejl og konsol, kommentarer
+   </td>
+   <td>Video: 1.1-1.6 (ca 20 min)
+<p>
+Øvelser
+<p>
+Læs kap 1 og 2 i B1
+<p>
+Projekt: Algoritmisk flag konstruktion
+   </td>
+  </tr>
+  <tr>
+   <td>2.
+   </td>
+   <td>Variabler, animationer og input
+   </td>
+   <td>Variabler og typer, erklæring af og operationer på disse, objekter, museinput, tilfældige tal
+   </td>
+   <td>Video: 2.1-2.6 (ca 1 time)
+<p>
+Øvelser
+<p>
+Læs kap 3 i B1
+<p>
+Projekt: Algoritmisk kunst
+   </td>
+  </tr>
+  <tr>
+   <td>3.
+   </td>
+   <td>Betinget udførsel
+   </td>
+   <td>If, else, else if, AND og or, boolske variable
+   </td>
+   <td>Video: 3.1-3.4 (ca 1 time)
+<p>
+Øvelser
+<p>
+Læs kap 3 i B1
+<p>
+Projekt: Trommer, klaver og guitar
+   </td>
+  </tr>
+  <tr>
+   <td>4.
+   </td>
+   <td>Løkker
+   </td>
+   <td>While og for løkker
+   </td>
+   <td>Video: 4.1-4.2 (ca 30 min)
+<p>
+Øvelser
+<p>
+Læs kap 3 i B1
+<p>
+Projekt: Minigolf
+   </td>
+  </tr>
+  <tr>
+   <td>5.
+   </td>
+   <td>Modularitet og genbrug: Funktioner
+   </td>
+   <td>Oprette og anvende funktioner, parametre og argumenter, return
+   </td>
+   <td>Video: 5.1-5.4 (ca 30 min)
+<p>
+Øvelser
+<p>
+Læs kap 3 i B1
+   </td>
+  </tr>
+  <tr>
+   <td>6.
+   </td>
+   <td>Objekt orienteret programmering i JS
+   </td>
+   <td>Klasser, konstruktører, tilføje flere filer
+   </td>
+   <td>Video: 6.1-6.4 (ca 35 min)
+<p>
+Øvelser
+<p>
+Læs kap 6 og 7 i B1
+   </td>
+  </tr>
+  <tr>
+   <td>7.
+   </td>
+   <td>Arrays og objekter
+   </td>
+   <td>Arrays, iterere over disse, opbevare objekter
+   </td>
+   <td>Video: 7.1-7.8 (ca 2 timer)
+   </td>
+  </tr>
+</table>
 
