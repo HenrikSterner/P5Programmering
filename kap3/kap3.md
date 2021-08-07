@@ -21,7 +21,7 @@ let f = 10.2; // kommatal/float
 Variabler har et såkaldt _scope. _Dvs. hvor de er tilgængelige. Erklæres en variable indenfor eksempelvis `setup`  er den kun tilgængelig derinde. Omvendt kan man lave en global variable ved at erklære den udenfor metodernes kroppe:
 
 
-```
+```javascript
 let n = 5; //global variable 
 function setup(){
  let x = 7; //lokal variable 
@@ -32,7 +32,7 @@ function setup(){
 Hvis du ønsker at ændre værdien undervejs kan det anbefales at bruge nøgleordet `var` i stedet for:
 
 
-```
+```javascript
 var a=1;
 var b=2;
 if(a===1){
@@ -51,7 +51,7 @@ Den vigtigste forskel på de to deklarationer er altså scopet. Variabler, der e
 Herunder nogle flere eksempler på **var:**
 
 
-```
+```javascript
 var carName = "Volvo";
 
 // koden kan bruge carName
@@ -65,7 +65,7 @@ function myFunction() {
 Havde vi erklæret carName inde i funktionen  kunne vi ikke bruge den udenfor. Det samme gør sig dog ikke gældende hvis man laver en blok, som eksemplet herunder viser:
 
 
-```
+```javascript
 {
   var x = 2;
   let y = 2;
@@ -77,7 +77,7 @@ Havde vi erklæret carName inde i funktionen  kunne vi ikke bruge den udenfor. D
 Pas på med redeklarationer med **var**, som eksemplet illustrerer:
 
 
-```
+```javascript
 var x = 10;
 // x er 10
 {
@@ -91,7 +91,7 @@ var x = 10;
 Til forskel fra følgende:
 
 
-```
+```javascript
 var x = 10;
 // x er 10
 {
@@ -169,7 +169,7 @@ Herunder en kort oversigt over de vigtigste operatorer.
 Her et eksempel på tildeling og addition
 
 
-```
+```javascript
 var x = 5;         // assign the value 5 to x
 var y = 2+x;       // assign the value 7 to y
 ```
@@ -178,7 +178,7 @@ var y = 2+x;       // assign the value 7 to y
 Dernæst multiplikation:
 
 
-```
+```javascript
 var x = 5;
 var y = 2;
 var z = x * y;
@@ -259,7 +259,7 @@ Man kan kombinere en lang række operationer:
 Særlig for tekst strenge betyder +, at man konkatinerer to tekststrenge. Dvs. kæder dem sammen:
 
 
-```
+```javascript
 var txt1 = "John";
 var txt2 = "Doe";
 var txt3 = txt1 + " " + txt2;
@@ -272,7 +272,7 @@ var txt3 = txt1 + " " + txt2;
 Vi kan hente musens koordinater ved bruge af variablerne mouseX og mouseY, som er af typen heltal. De er prædefineret og starter altid med at være 0, når programmet indlæses:
 
 
-```
+```javascript
 function draw() {
   background(255);
   frameRate(12);
@@ -287,7 +287,7 @@ Vi benytter funktionen frameRate til at sikre, at draw ikke udføres for ofte. D
 Herunder tegner vi en hvid cirkel hvor musen er:
 
 
-```
+```javascript
 function setup() {
   createCanvas(100, 100);
   noStroke();
@@ -302,7 +302,7 @@ function draw() {
 Her tegner vi en linje efter musen. Holder vi musen stille er det bare en cirkel:
 
 
-```
+```javascript
 function setup() {
   createCanvas(100, 100);
   strokeWeight(8);
@@ -317,7 +317,7 @@ function draw() {
 Herunder skifter vi farve på et rektangel når vi klikker på den:
 
 
-```
+```javascript
 function setup() {
   createCanvas(100, 100);
   noStroke();
@@ -341,7 +341,7 @@ Centralt er `if (mouseIsPressed == true) `som betyder, at vi undersøger om muse
 Vi kender forskel på højre og venstre museklik ved følgende:
 
 
-```
+```javascript
 function setup() {
   createCanvas(100, 100);
   noStroke();
@@ -371,7 +371,7 @@ function draw() {
 Herunder et eksempel på hvordan et rektangel farvelægges forskelligt når man registrerer om der trykkes pil op eller ned:
 
 
-```
+```javascript
 let fillVal = 126;
 function draw() {
   fill(fillVal);
@@ -400,7 +400,7 @@ Vi vender tilbage til if-konstruktionen, men bemærker at hver tast har sin egen
 5. Udvid programmet i 4. så de konstrueres der hvor musen er.
 6. Hvad gør følgende kode:
 
-    ```
+    ```javascript
 var x = 200;
 var y = 200;
 function setup() { 
@@ -430,7 +430,7 @@ function draw() {
 
 7. Forklar hvad følgende kode gør:
 
-    ```
+    ```javascript
 let x; 
 let y; 
 let xspeed; 
