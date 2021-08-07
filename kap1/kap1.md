@@ -41,7 +41,7 @@ Bemærk nummereringen i playlisten svarer til numrene herunder.
 
 Udover videoer bruger vi også nogle lærebøger herunder:
 
-[B1]: Programmering af Jesper Buch (se systime: https://programmering.systime.dk/)
-[B2]: Nature of code af Daniel Shiffman (se https://natureofcode.com/)
+- [B1]: Programmering af Jesper Buch (se systime: https://programmering.systime.dk/)
+- [B2]: Nature of code af Daniel Shiffman (se https://natureofcode.com/)
 
 
