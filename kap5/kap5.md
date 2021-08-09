@@ -218,9 +218,8 @@ function draw() {
 ## Projekt: Opsparing eller aktier?
 
 Kapitalfremskrivningsformlen (også kendt som renteformlen) er givet ved:
-```latex
+```
 K_n = K_0 * (1+r)^n
-
 ```
 
 Hvor $K_0$ er startkapitalen, $r$ er renten, $n$ antal terminer og $K_n$ er kapitalens størrelse efter $n$-terminer.
