@@ -7,20 +7,20 @@ Begge starter med en formulering af en betingelse, hvilket også kaldes løkkens
 
 <table>
   <tr>
-   <td><code>  while(betingelse_er_sand) //hoved \
-  { \
-    //instruktioner -  kroppen \
+   <td><code>  while(betingelse_er_sand) //hoved
+  { 
+    //instruktioner -  kroppen
     //…</code>
 <p>
-<code>    //… \
+<code>    //… 
   }</code>
    </td>
-   <td><code>for(start;slut;opdatering) //hoved \
+   <td><code>for(start;slut;opdatering) //hoved
 { \
-    //instruktioner -  kroppen \
+    //instruktioner -  kroppen
     //…</code>
 <p>
-<code>    //… \
+<code>    //…
 }</code>
    </td>
   </tr>
@@ -35,7 +35,7 @@ Vi vender tilbage herunder hvad de enkelte ting betyder.
 Et simpel eksempel på brug af  while-løkken er ved at printe tallene 100 til 1 ud i konsollen:
 
 
-```
+```javascript
 let num = 101;
 while (num > 0) {
   num = num - 1;
@@ -51,7 +51,7 @@ Havde vi ikke dekrementeret variablen i kroppen ville betingelsen aldrig blive f
 Herunder et eksempel hvor vi printer en masse forskellige farvede cirkler:
 
 
-```
+```javascript
 var y = 10
 var x = 5
 function setup() { 
@@ -81,7 +81,7 @@ Koden illustrerer, at vi kan have lige så mange instruktioner i kroppen, som vi
 Herunder printer vi tallene fra 1 til 100 vha en for-løkke:
 
 
-```
+```javascript
 for (let i = 1; i < 101; i++) {
   console.log(i);
 }
@@ -95,7 +95,7 @@ Start og slut og vejen hertil kan bestå af både simple men også mere kompleks
 Herunder tegner vi en lang række linjer og rektangler vha af nogle for-løkker:
 
 
-```
+```javascript
 let y;
 let num = 14;
 
@@ -139,7 +139,7 @@ function setup() {
 Vær i øvrigt opmærksom på forskellen ved brug af let og var i for-løkker. Herunder et eksempel til illustration med var:
 
 
-```
+```javascript
 var i = 5;
 for (var i = 0; i < 10; i++) {
   // nogle instruktioner
@@ -151,7 +151,7 @@ for (var i = 0; i < 10; i++) {
 Og her et med let:
 
 
-```
+```javascript
 let i = 5;
 for (let i = 0; i < 10; i++) {
   // nogle instruktioner
@@ -175,7 +175,7 @@ for (let i = 0; i < 10; i++) {
       
 
 
-```
+```javascript
 let angle =0;
 let x = 50;
 let y= 50; 
@@ -208,7 +208,7 @@ function draw() {
 10. Tegn en masse linjer der roterer om det samme centrum vha af løkker.
 11. Konstruer et koordinatsystem med midten af skærmen som centrum. Tegn graferne for en selvvalgt ret linje, en andengradsfunktion,  kvadratrodsfunktionen, den reciprokke funktion samt cos og sin. Herunder nogle eksempler på brugen af matematik i javascript:
 
-```
+```javascript
   Math.PI;            // returner 3.141592653589793
   Math.round(4.7);    // afrunder til nærmeste hele tal dvs. returner 5
   Math.round(4.4);    // afrunder til nærmeste hele tal dvs. returner 4
@@ -229,9 +229,9 @@ function draw() {
 ## Projekt: Opsparing eller aktier?
 
 Kapitalfremskrivningsformlen (også kendt som renteformlen) er givet ved:
-$$
+\[
 K_n = K_0 * (1+r)^n
-$$
+\]
 
 Hvor $K_0$ er startkapitalen, $r$ er renten, $n$ antal terminer og $K_n$ er kapitalens størrelse efter $n$-terminer.
 
