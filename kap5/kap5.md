@@ -44,7 +44,7 @@ while (num > 0) {
 ```
 
 
-Vi sætter en variable til 100. Dernæst undersøger vi om variablen er større end nul. Det er den, da vi jo lige har sat den til 100. Herved ryger vi ned i kroppen og dekrementerer variablen, printer den ud og undersøger igen om den er større end 0. Sådan bliver vi ved. På et tidspunkt er variablen 1, når vi rygger ned i kroppen og 0 når vi skal tjekke om betingelsen er sand. Derved er den ikke længere skarpt større end 0, så vi rygger ud af løkken.
+Vi sætter en variable til 101. Dernæst undersøger vi om variablen er større end nul. Det er den, da vi jo lige har sat den til 100. Herved ryger vi ned i kroppen og dekrementerer variablen, printer den ud og undersøger igen om den er større end 0. Sådan bliver vi ved. På et tidspunkt er variablen 1, når vi rygger ned i kroppen og 0 når vi skal tjekke om betingelsen er sand. Derved er den ikke længere skarpt større end 0, så vi rygger ud af løkken.
 
 Havde vi ikke dekrementeret variablen i kroppen ville betingelsen aldrig blive falsk og vi ville have en uendelig løkke. 
 
