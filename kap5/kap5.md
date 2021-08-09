@@ -4,28 +4,17 @@ Løkker er et kraftfuldt værktøj, der giver mulighed for at afvikle en sekvens
 
 Begge starter med en formulering af en betingelse, hvilket også kaldes løkkens hoved og dernæst kommer kroppen indkapslet af krølparenteser. Det er denne sekvens af instruktioner, der udføres sålænge betingelsen er sand. Herunder en kort illustration af deres opbygning:
 
+```javascript
+while(betingelse){ // hoved af while-løkken
+ // kroppen af while-løkken
+}
+```
 
-<table>
-  <tr>
-   <td><code>  while(betingelse_er_sand) //hoved
-  { 
-    //instruktioner -  kroppen
-    //…</code>
-<p>
-<code>    //… 
-  }</code>
-   </td>
-   <td><code>for(start;slut;opdatering) //hoved
-{ \
-    //instruktioner -  kroppen
-    //…</code>
-<p>
-<code>    //…
-}</code>
-   </td>
-  </tr>
-</table>
-
+```javascript
+for(start,slut,opdatering){ // hoved af for-løkken
+// kroppen af for-løkken.
+}
+```
 
 Vi vender tilbage herunder hvad de enkelte ting betyder. 
 
