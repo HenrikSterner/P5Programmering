@@ -219,7 +219,7 @@ function draw() {
 
 Kapitalfremskrivningsformlen (også kendt som renteformlen) er givet ved:
 
-<img src="https://render.githubusercontent.com/render/math?math=K_n = K_0 \cdot (1\+r)^n">
+K_n = K_0 * (1+r)^n.
 
 Hvor $K_0$ er startkapitalen, $r$ er renten, $n$ antal terminer og $K_n$ er kapitalens størrelse efter $n$-terminer.
 
