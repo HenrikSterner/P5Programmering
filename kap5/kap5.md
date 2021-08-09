@@ -218,7 +218,7 @@ function draw() {
 ## Projekt: Opsparing eller aktier?
 
 Kapitalfremskrivningsformlen (også kendt som renteformlen) er givet ved:
-```math
+```latex
 K_n = K_0 * (1+r)^n
 
 ```
