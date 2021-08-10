@@ -43,8 +43,8 @@ function setup(){
  ellipseMode(CORNERS);
 }
 function draw(){
- rect(30, 20, 40, 20); // rect(x, y, width, height)
- ellipse(30, 30, 40, 60); // ellipse(x, y, width, height)
+ rect(30, 20, 40, 20); // rect(x1, y1, x2, y2)
+ ellipse(30, 30, 40, 60); // ellipse(x1, y1, x2, y2)
 }
 ```
 
