@@ -50,7 +50,7 @@ function draw() {
 
   //moveHuman()   //uncomment to move left side manually
   
-  l_p.move();   //changes the y value using velocity
+  l_p.move(ball.x,ball.y, ball.vx, ball.vy, history,r_p.x,r_p.y);   //changes the y value using velocity
   r_p.move(ball.x,ball.y, ball.vx, ball.vy, history,l_p.x,l_p.y); //AI movement
   r_p.update(); //checks if paddle is outside border
   l_p.update(); //checks if paddle is outside border

@@ -27,9 +27,15 @@ class Peddle
   {
     this.vy = y;
   }
-  move()
+  // ballx, bally er boldens nuværende postition
+  // ballxspeed, ballyspeed boldens velocity 
+  // history er en liste af vektorer der pejer på de sidste 25 pkt bolden har været
+  // Paddlex og Paddley er positionen af den anden paddle
+ 
+  move(ballx,bally,ballxspeed, ballyspeed, history,Paddlex,Paddley)
   {
-   this.y +=this.vy; 
+    //The runner
+    this.y +=this.vy; 
   }
   show()
   {
