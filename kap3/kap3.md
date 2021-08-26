@@ -463,9 +463,9 @@ function draw() {
 I det følgende skal vi lave algoritmisk kunst, der er kunst som er kendetegnet ved at følge nogle regler som kan formaliseres i række instruktioner, som kan implementeres i et programmeringssprog. 
 
 
-    På følgende link kan I se en lang række eksempler:
+På følgende link kan I se en lang række eksempler:
     
-    [http://www.generative-gestaltung.de/2/](http://www.generative-gestaltung.de/2/) 
+[http://www.generative-gestaltung.de/2/](http://www.generative-gestaltung.de/2/) 
 
 
 1. Udvælg et eksempel og kig på koden bag. Prøv at forstå hvad koden gør og sæt kommentarer på.
