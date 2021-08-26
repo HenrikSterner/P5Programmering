@@ -400,7 +400,7 @@ Vi vender tilbage til if-konstruktionen, men bemærker at hver tast har sin egen
 5. Udvid programmet i 4. så de konstrueres der hvor musen er.
 6. Hvad gør følgende kode:
 
-    ```javascript
+```javascript
 var x = 200;
 var y = 200;
 function setup() { 
@@ -430,7 +430,7 @@ function draw() {
 
 7. Forklar hvad følgende kode gør:
 
-    ```javascript
+```javascript
 let x; 
 let y; 
 let xspeed; 
