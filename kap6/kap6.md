@@ -1,246 +1,232 @@
-# 6. Objekter
+# Funktioner
 
-Et vigtigt begreb i programmering og softwareudvikling er objekter, som vi vil introducerer i nærværende afsnit. De spiller en central rolle i det objekt-orienteret programmeringsparadigme, hvor man groft sagt inddeler verden i objekter. Objekter bruges med andre ord til at sikre, at man kan implementerer og håndterer den enorme og stadigt voksende kompleksitet i verdenen. Objekter bruges i den sammenhæng til at indkapsle data samt inddrage relationer og abstraktioner mellem data, så vi herved opnår en form for modulær kode.
-
-I det følgende handler det dog i første omgang blot om at få en fornemmelse for hvordan et objekt konstrueres og hvad de kan bruges til.
+Funktioner kan betragtes som små afsluttede programmer i programmet. Når først de mestres  er de et ekstremt kraftfuldt værktøj, som kan medvirke til at skabe overskuelighed og læsbarhed, en højere grad af genbrugelighed af sin kode, samt nemmere at rette og finde fejl og endelig at distribuere arbejdet ud, så flere mennesker kan arbejde på samme program.
 
 
-## Oprette objekter 
-
-I Javascript konstrueres et objekt vha af nøgleordet “class”. Vi vil tillade at bruge klasse i stedet for class, når vi omtaler dem. Når man opretter en klasse konstrueres en datastruktur, der rummer både data eller egenskaber om objektet men også metoder (eller funktioner), der ændrer på objektets tilstand. Et eksempel på et objekt kunne være en cirkel. Herunder et eksempel på hvordan. En skabelon eller en klasse for en cirkel kunne se således ud: 	
+## Konstruktion af en funktion
+Vi har allerede set flere eksempler på funktioner såsom setup og draw. Herunder en definition af funktionsbegrebet:
 
 
 ```javascript
-class Cirkel{
- constructor() {
-   this.color = color(255);
-   this.xpos = width/2;
-   this.ypos = height/2;
-   this.radius = 1;
-  }
-}
-```
-
-
-Her angiver farve, position og radius nogle egenskaber ved en cirkel. Der kan blive behov for at ændre på cirklens tilstand såsom at bevæge cirklen et andet sted end på skærmen og tegne cirklen. Det kan vi gøre ved at implementere en funktioner, der typisk kaldes metoder, når de flyttes ind i en klasse. Herunder kode igen nu med to metoder, move og draw:
-
-
-```javascript
-class Cirkel{
- constructor(x,y,r) {
-   this.color = color(255);
-   this.xpos = x;
-   this.ypos = y;
-   this.radius = r;
-  }
-  move(x,y){  //start på metoden move
-    this.xpos = x;
-    this.ypos = y;
-  }
-  draw() //start på metoden draw
+ function navn() //funktionshoved
   {
-    ellipse(this.xpos,this.ypos,this.radius);
+    //instruktioner -  funktionskrop
+    //...
+    //...
+  }
+```
+
+
+<code>navn<strong> </strong></code>skal erstattes med navnet for en funktion. Det er vigtigt med sigende funktionsnavne og være obs på, at der er forskel på små og store bogstaver. Det letter læsbarheden og forståelsen af programmets funktionalitet, hvis man har tildelt sine funktioner nogle navne der både er konsistente og fortæller noget om hvad funktionen gør.
+
+Herunder en funktion, der printer et navn ud:
+
+
+```javascript
+function sayHello() {
+  console.log('Hello Henrik');
+}
+sayHello(); // kalder funktionen
+```
+
+
+
+## Input fra mus, tekstfelter og knapper ved brug af funktioner
+
+Funktioner kan være særligt gode i forbindelse med at håndtere input fra forskellige enheder. Det skal vi se eksempler på herunder.
+
+Herunder en funktion, som håndtere input fra tastatur:
+
+
+```javascript
+let value = 0;
+function draw() {
+  fill(value);
+  rect(25, 25, 50, 50);
+}
+function keyPressed() {
+  if (keyCode === LEFT_ARROW) {
+    value = 255;
+  } else if (keyCode === RIGHT_ARROW) {
+    value = 0;
   }
 }
 ```
 
+Der er i øvrigt en lang række keycodes eksempelvis: BACKSPACE, DELETE, ENTER, RETURN, TAB, ESCAPE, SHIFT, CONTROL, OPTION, ALT, UP_ARROW, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW.
 
-Bemærk flere vigtige ting her: 1)Vi skriver ikke længere function foran, når vi implementere en metode til en klasse. 2) Metode move tager to parametre mens draw ikke tager nogle. I metoden move bliver x og y brugt til at sætte centrums koordinaterne for x og y, der betegnes med xpos og ypos. 3) I metoden draw udnytter vi, at klassen har indlejret en række egenskaber, såsom centrum for cirklen, der betegnes med xpos og ypos.
-
-Herunder viser vi nu hvordan man kan bruge klassen til at oprette og bevæge en cirkel rundt på skærmen. Dvs. vi antager at koden ovenfor er tilføjet over funktionen setup:
+Hvis du gerne vil kende forskel på små og store bogstaver så kan du bruge keyTyped():
 
 
 ```javascript
-let c;
+let value = 0;
+function draw() {
+  fill(value);
+  rect(25, 25, 50, 50);
+}
+function keyTyped() {
+  if (key === 'a') {
+    value = 255;
+  } else if (key === 'b') {
+    value = 0;
+  }
+}
+```
+
+En anden relevant funktion i forbindelse med tastaturtryk kunne være når man frigiver trykket på en tast. Her bruges funktionen keyRelased().
+
+Herunder et eksempel på hvordan man laver en funktion, der håndterer at der trykkes på en knap, som oprettes med den indbyggede funktion `createButton('Tekst på knappen')`:
+
+```javascript
+let button;
 function setup() {
-  createCanvas(400, 400);
-  c = new Cirkel(200,200,50); //vi opretter et nyt cirkel-objekt vha new
-  c.draw();
-  c.move(300,300);
-  c.draw();
+  createCanvas(100, 100);
+  background(0);
+  button = createButton('click me');
+  button.position(19, 19);
+  button.mousePressed(changeBackGround); //kald til funktionen
+}
+
+function changeBackGround() { 
+  let val = random(255);
+  background(val);
 }
 ```
 
 
-Bemærk her særligt konstruktionen af et nyt cirkel objekt. Vi bruger nøgleordet new. Vi giver den argumenterne 200, 200 og 50, som xpos, ypos og radius bliver sat til jf. Klasse-definitionen.
-
-Vi tegner herefter cirklen og flytter den til position (300,300). Afslutningsvis tegner vi den igen.
-
-Vi kunne let konstruere lige så mange cirkler som vi nu havde lyst til bare ved at bruge og vi skal i næste afsnit se hvordan vi kan opbevare mange af de samme objekter uden at skulle konstruere tilsvarende ligeså mange variabler. Men herunder følger et eksempel hvor vi har konstrueret to cirkler:
+I det følgende bruger vi funktioner til at håndtere tekst fra et tekstfelt og som efterfølgende printer “hello” samt navnet ud:
 
 
 ```javascript
-let c1;
-let c2;
+let input, button, greeting;
 function setup() {
-  createCanvas(400, 400);
-  c1 = new Cirkel(200,200,50);
-  c1.draw();
-  c1.move(300,300);
-  c1.draw();
-  c2 = new Cirkel(100,100,20);
-  c2.draw();
+  // create canvas
+  createCanvas(710, 400);
+
+  input = createInput();
+  input.position(20, 65);
+
+  button = createButton('submit');
+  button.position(input.x + input.width, 65);
+  button.mousePressed(greet);
+
+  greeting = createElement('h2', 'what is your name?');
+  greeting.position(20, 5);
+
+  textAlign(CENTER);
+  textSize(50);
+}
+
+function greet() {
+  const name = input.value();
+  greeting.html('hello ' + name + '!');
+  input.value('');
 }
 ```
+
+
+
+## Konstruktion af en funktion med parametre
+Vi nævnte i starten, at funktioner minder lidt om små programmer i programmet. De kan ligesom programmer og så tage et input. Bl.a. i form af en eller flere variable/lister (som :
+
+```javascript
+ function navn(x1, x2, x3, …,xn) //funktionshoved
+  {
+    //instruktioner -  funktionskrop
+    //...
+    //...
+  }
+```
+
+
+Her angiver x1, x2, x3, …, xn parametre eller input til funktionen. 
+
+Her kommer et indledende eksempel:
+
+
+```javascript
+let myName = 'Henrik';
+function sayHello(name) {
+  console.log('Hello ' + name + '!');
+}
+sayHello(myName); // kalder funktionen med argumentet 'Henrik'
+```
+
+
+Bemærk, at når man har en konkret værdi, der evt er gemt i en variable, kaldes parameteren for argument i kommentaren. Parameter og argument blandes ofte sammen, men man bør være opmærksom på, at en inputvariabel i en funktionsdefinition kaldes en parameter men ved udførselspunktet, når den får en faktisk værdi kaldes denne et argument (eller formel parameter).
+
+
+## Returnere i en funktion
+
+Indtil nu har vi enten printet i funktionen eller bare ændret på nogle værdier. Ofte ønsker man at få et output fra funktionen, som man kan gemme i anden variable eller lignende til senere brug. 
+
+Til det bruges return: 
+
+```javascript
+function beregnKvadrat(x) {
+  return x * x;
+}
+const resultat = beregnKvadrat(4); // returner 16
+console.log(resultat); // printer '16' til konsolen
+```
+
+Eller vores foregående eksempel med navn:
+
+```javascript
+function sayHello(name) {
+  console.log('Hello ' + name + '!');
+  return name;
+}
+let name = sayHello('Henrik'); // kalder funktionen med argumentet Henrik
+```
+
+
+Her gemmer vi resultatet fra funktionen ud i en variable. Bemærk det er med vilje, at vi har givet variablen samme navn (altså _name_). Det er for at indikere, at parametrenavne er kun tilgængelige i funktionen.
+
 
 ## Øvelser
-1. Hvilke egenskaber og metoder kunne være relevante for en bil, et dyr og et selvvalgt objekt som den tredje. Giv mindst 3 metoder og 3 egenskaber for hver af de tre objekter. Overvej egenskabernes datatyper og hvordan metoderne bør kodes. Metoderne må ikke være draw.
-2. Implementer en konstruktør med egenskaber og metoder for hver af de nævnte i 1.
-3. Implementer en draw metode, der kan tegne de tre objekter. Metoden skal gerne inddrage nogle af de 3 egenskaber for hver af de 3 objekter. Dvs. udfaldet af draw skal gerne påvirkes af ændringer i egenskaberne. Eksempelvis kan højden på en bil ændre tegningen af bilen.
-4. Vi laver i det følgende et simpelt spil kaldet “Afraid of raindrops”, hvor man i bunden har en vandret linje, som ens helt kan bevæge sig til venstre og højre på. Fra oven regner det med forskellige cirkler, der oprettes i toppen af skærmen og bevæger sig lodret ned. Cirklerne har forskellige størrelser og bevæger sig i forskellige hastigheder. Hvis ens cirkel kolliderer med ens helt, så er det gameover. Implementer en klasse for en cirkel, der håndterer forskellige størrelser, placeringer, hastigheder og kollision med ens helt. Implementer desuden, at man kan starte forfra og hold styr på antallet af cirkler, som man undgår. 
-5. Forklar hvad følgende kode gør vha. kommentarer:
 
-```javascript
-let b; 
+1. Lav først en funktion, der printer summen af tallene 2 og 3. Udvid funktionen, så den kan printe summen af to vilkårlige parametre a og b. Afprøv funktionen på både tal og strenge. Hvad bliver resultatet? 
+2. Lav en funktion der konstruerer en gul cirkel ud fra tre parametre, x, y og radius.
+3. Lav en funktion der givet to cirkler i form af centre og radier som parametre returnerer sand eller falsk afhængig af om de overlapper hinanden.
+4. Lav en funktion, der undersøger om man med venstre mus trykker på en cirkel, der er konstrueret
+5. Lav en funktion der konverterer mellem grader og radianer.
+6. Lav en funktion der som input tager tre sidelængder og efterfølgende konstruerer en trekant med de vinkler og angivelser af sidelængderne, som beregnes ved brug af de trigonometriske funktioner.
+7. Lav et simpelt hang-man spil, der tegner mere og mere af en hængende mand hvis man gætter forkert bogstav på et predefineret ord.
+8. Lav et program der har en funktion som tager et tal i et tekstfelt som input og så genererer de n første fibonacci tal  i konsollen. Udvid eventuelt med en funktion, der kan genererer den gyldne spiral (baseret på fibonacci tallene) også kendt som fibonacci spiralen. Sidstnævnte er ikke helt nem.
+9. Lav en funktion, der beregner BMI (Body Mass Index) og BMR (Basal Metabolic Rate), ud fra tal i nogle tekstfelter. Slå selv formlerne op. 
+10. Lav en funktion der kan løse 2.gradsligninger og visualiser parablen med skæringspunkter på x-aksen.
+11. Lav Sten-saks-papir med en tæller. Når tælleren rammer 0 skal der tegnes en sten saks og papir, der hver får knyttet to bogstaver (til hver af de to spillere). Tælleren er som hjælp implementeret herunder - men prøv at omsætte den til en simpel funktion, der tager en parameter - nemlig antallet af sekunder, der skal tælles ned:
 
-function setup() {
-  createCanvas(640, 360);
-  b = new Ball(); 
-}
-
-function draw() {
-  background(255);
-  b.update(); 
-  b.display();
-}
-class Ball {
-  constructor() {
-    this.position = new createVector(random(100), random(100));
-    this.velocity = new createVector(random(1,4), random(1,5));
-  }
-  
-  update() {
-    this.position.add(this.velocity);
-    
-    if ((this.position.x > width) || (this.position.x < 0)) {
-      this.velocity.x = this.velocity.x * -1;
-    }
-    if ((this.position.y > height) || (this.position.y < 0)) {
-      this.velocity.y = this.velocity.y * -1;
-    }
-  }
-  display() {
-    stroke(0);
-    fill(175);
-    ellipse(this.position.x, this.position.y, 48, 48);
-  }
-}
-```
-
-6. Udvid koden i 5. så der er fem forskellige cirkler med forskellige radier der bevæger sig rundt med forskellige hastigheder. Implementer en metode der giver point hvis der bliver trykket på cirklerne. De små og hurtigt bevægende cirkler skal give flere point.
-7. Konstruer en klasse der repræsenterer en fugl og lav metoder til at animere at den flyver og den bevæger sig vandret over skærmen. Det må gerne være en meget simpel fugl.
-8. Udvid med en simpel rektangulær riffel i bunden af skærmen, der skyder ellipseformede kugler af sted i den retning, der klikkes med musen.
-9. Konstruer en animation vha klasser, der visualiserer en række dominobrikker der vælter fra siden. Brug simple rektangler.
-10. Konstruer en klasse for en person. Klassen skal kunne tegne personen (bare en tændstiksmand). Lav metoder der kan bevæge arme og ben i stop motion stil ved at trykke på bestemte taster.
-11. Udvid 7)  så man kan gå fra venstre mod højre på skærmen. Lav flere personer der går efter hinanden.
-12. Lav en tændstiksmand, der kan danse nogle meget simple bevægelser vha selvvalgte taster. Brug klasser i implementeringen.
-
-## Projekt: Epidemi-simulation
-Konstruér et lærred med maksimal størrelse vha. de globale variabler windowWidth og windowHeight.
-
-Lav to globale variabler x og y. Sæt x=windowWidth/2 og y=windowHeight/2.
-
-Lav en global variabel r og sæt den til et lille tal. F.eks. 10.
-
-Tegn en cirkel i (x,y) med radius r. En cirkel repræsenterer et menneske i vores simulation.
-
-Vi skal nu have mennesket til at bevæge sig:
-
-   - Opret to globale variabler r1 og r2 og sæt dem til tal i ]0;1[.
-
-   - I funktionen draw opdateres cirklens centrum til x=x+r1 og y=y+r2.
-
-Kør programmet. Mennesket bevæger sig nu (desværre ud af lærred).
-
-For at få mennesket til at bevæge sig tilbage, skal vi først tjekke om personen er på vej uden for. I draw-funktion skal du implementere følgende:
-
-   - Hvis x-r&lt;0 er personen på vej ud til venstre for lærred. Sæt r1=- r1.
-
-   - Hvis x+r>maxWidth er personen på vej ud til højre for lærred. Sæt r1=-r1.
-
-   - Hvis y&lt;0 er personen  på vej ud over lærred. Sæt r2=-r2.
-
-   - Hvis y>maxHeight er personen på vej ud under lærred. Sæt r2=-r2.
-
-   
-
-Nu bevæger personen sig rundt på lærred så længe, at programmet kører. Svar på følgende spørgsmål:
+<table>
+  <tr>
+   <td>
+<code>let timer = 3 \
+function setup() {  \
+  createCanvas(400, 400); \
+}  \
+function draw() {  \
+  background(220); \
+  textAlign(CENTER, CENTER); \
+  textSize(100); \
+  text(timer, width/2, height/2); \
+  if (frameCount % 60 == 0 && timer > 0) {//frameCount er antal frames vist</code>
+<p>
+<code>    // timer dekrementeres automatisk i draw; \
+  } \
+  if (timer == 0) { \
+    text("GAME OVER", width/2, height*0.7); \
+  } \
+}</code>
+   </td>
+  </tr>
+  <tr>
+   <td>
+   </td>
+  </tr>
+</table>
 
 
 
-1. Hvorfor indgår radius r i beregningerne ovenfor?
-2. Hvad sker der, hvis vi eksempelvis sætter r1 eller r2 til et større tal?
-3. Hvorfor ændrer vi fortegn på retningsvektorens ene koordinat ved kollision med lærreds vægge? Vink: Forstå refleksionsloven: https://www.mathsisfun.com/physics/reflection.html
-
-For at få flere mennesker til at bevæge sig rundt, er det en god idé at benytte datatypen “array” samt lidt objekt-orienteret programmering (OOP). Da OOP er B-niveau er det helt i orden at kopiere koden nedenfor ind øverst i script.js.
-
-
-```javascript
-class Menneske {
-    constructor(x, y, radius, retning_x, retning_y) {
-   	 this.x = x;
-   	 this.y = y;
-   	 this.radius = radius;
-   	 this.retning_x = retning_x;
-   	 this.retning_y = retning_y;
-    }
-
-    draw() {
-   	 circle(this.x, this.y, this.radius);
-    }
-
-    collision(windowWidth, windowHeight) {
-   	 if (this.x + this.radius > windowWidth) {
-   		 this.retning_x = -this.retning_x;
-
-   	 }
-   	 if (this.x - this.radius <= 0) {
-   		 this.retning_x = -this.retning_x;
-
-   	 }
-   	 if (this.y + this.radius > windowHeight) {
-   		 this.retning_y = -this.retning_y;
-   	 }
-   	 if (this.y - this.radius <= 0) {
-   		 this.retning_y = -this.retning_y;
-   	 }
-   	 this.x = this.x + this.retning_x;
-   	 this.y = this.y + this.retning_y;
-    }
-
-}
-```
-
-Lav nu et globalt array, der er tomt. Kald det “mennesker”.
-
-```javascript
-let mennesker = [];
-```
-
-Opret en global variabel n og sæt den til f.eks. 500. Denne variabel betegner hvor mange mennesker, der indgår i vores simulation.
-
-I setup-funktionen tilføjer du en for-løkke. I for-løkken skal nye menneske-objekter oprettes og tilføjes til dit array. Det gøres med new-operatoren:
-
-
-```javascript
-mennesker.push(new Menneske(random(0, windowWidth), random(0, windowHeight), radius, random(-5, 5), random(-5, 5)));
-```
-
-Bemærk: push-funktionen er en metode på array-objektet, der tilføjer nye elementer til arrayet. 
-
-Random-funktionen sikrer bare, at menneskene indsættes forskellige steder på lærred og bevæger sig med forskellige hastigheder.
-
-Tilbage er bare at konstruere en for-løkke i din draw-funktion, der tegner alle menneskene i dit array.
-
-``` javascript
-for (let i = 0; i < n; i++) {
-   mennesker[i].draw();
-   mennesker[i].collision(windowWidth, windowHeight);
-}
-```
-
-Nu bevæger n mennesker sig rundt på lærred. Du kan nu implementere følgende funktionalitet selv:
-
-1. Lad hvert menneske have sin egen farve ved at tilføje en farve-attribut til din constructor i Menneske-klassen og initialisere den til en bestemt farve, når du opretter et menneske.
-2. Skrive kode i draw-funktionen, der afgør om et menneske kolliderer med et andet menneske. Vink: Benyt en ny for-løkke.
-3. Skriv kode, der inddeler mennesker i 3 kategorier: Smittet, usmittet og raske.
+## Projekt: Lommeregner
+Lav en lommeregner. Den behøver bare at kunne de helt basale regnearter samt kvadratrod, potens, fakultet, sin, cos, tan og potens, der alle skal implementeres som funktioner. 
