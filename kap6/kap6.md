@@ -1,4 +1,4 @@
-# Funktioner
+# 6. Funktioner
 
 Funktioner kan betragtes som små afsluttede programmer i programmet. Når først de mestres  er de et ekstremt kraftfuldt værktøj, som kan medvirke til at skabe overskuelighed og læsbarhed, en højere grad af genbrugelighed af sin kode, samt nemmere at rette og finde fejl og endelig at distribuere arbejdet ud, så flere mennesker kan arbejde på samme program.
 
