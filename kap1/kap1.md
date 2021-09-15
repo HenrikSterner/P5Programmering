@@ -46,7 +46,7 @@ Udover videoer bruger vi også nogle lærebøger herunder:
 
 <table>
   <tr>
-   <td><strong>Emne nr</strong>
+   <td><strong>Kapitel</strong>
    </td>
    <td><strong>Emne</strong>
    </td>
