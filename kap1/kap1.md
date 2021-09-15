@@ -122,9 +122,9 @@ Projekt: Minigolf
   <tr>
    <td>6.
    </td>
-   <td>Modularitet og genbrug: Funktioner
+   <td>Funktioner
    </td>
-   <td>Oprette og anvende funktioner, parametre og argumenter, return
+   <td>Modularitet og genbrug. Oprette og anvende funktioner, parametre og argumenter, return
    </td>
    <td>Video: 5.1-5.4 (ca 30 min)
 <p>
