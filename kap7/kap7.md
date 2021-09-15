@@ -1,4 +1,4 @@
-# 6. Objekter
+# 7. Objekter
 
 Et vigtigt begreb i programmering og softwareudvikling er objekter, som vi vil introducerer i nærværende afsnit. De spiller en central rolle i det objekt-orienteret programmeringsparadigme, hvor man groft sagt inddeler verden i objekter. Objekter bruges med andre ord til at sikre, at man kan implementerer og håndterer den enorme og stadigt voksende kompleksitet i verdenen. Objekter bruges i den sammenhæng til at indkapsle data samt inddrage relationer og abstraktioner mellem data, så vi herved opnår en form for modulær kode.
 
