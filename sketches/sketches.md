@@ -6,3 +6,5 @@
 - Snake movement with loop-over effect af *Andrei Enache*: <https://editor.p5js.org/andreienake/full/3jh1t9pWu>
 - Bevægelse af *Mathias Køhler Bay*: <https://editor.p5js.org/Buffalord/sketches/UR21r0khO>
 - Filter til Femtech 2021 af *Rana Hayssam Al-Kerdi*: <https://editor.p5js.org/ranaal507/full/F5MmhiR6l>
+- Scrolling Colors af *Andrei Enache*: <https://editor.p5js.org/andreienake/sketches/1nAR1hEER>
+- Skiftende farver af *Patrick Niclas Jakobsen*:  <https://editor.p5js.org/patr9619/full/vK5Ujmu3K>
