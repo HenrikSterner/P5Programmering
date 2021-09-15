@@ -56,7 +56,7 @@ Udover videoer bruger vi også nogle lærebøger herunder:
    </td>
   </tr>
   <tr>
-   <td>1.
+   <td>2.
    </td>
    <td>Intro til P5 og Javascript
    </td>
@@ -72,7 +72,7 @@ Projekt: Algoritmisk flag konstruktion
    </td>
   </tr>
   <tr>
-   <td>2.
+   <td>3.
    </td>
    <td>Variabler, animationer og input
    </td>
@@ -88,7 +88,7 @@ Projekt: Algoritmisk kunst
    </td>
   </tr>
   <tr>
-   <td>3.
+   <td>4.
    </td>
    <td>Betinget udførsel
    </td>
@@ -104,7 +104,7 @@ Projekt: Trommer, klaver og guitar
    </td>
   </tr>
   <tr>
-   <td>4.
+   <td>5.
    </td>
    <td>Løkker
    </td>
@@ -120,7 +120,7 @@ Projekt: Minigolf
    </td>
   </tr>
   <tr>
-   <td>5.
+   <td>6.
    </td>
    <td>Modularitet og genbrug: Funktioner
    </td>
@@ -134,7 +134,7 @@ Læs kap 3 i B1
    </td>
   </tr>
   <tr>
-   <td>6.
+   <td>7.
    </td>
    <td>Objekt orienteret programmering i JS
    </td>
@@ -148,7 +148,7 @@ Læs kap 6 og 7 i B1
    </td>
   </tr>
   <tr>
-   <td>7.
+   <td>8.
    </td>
    <td>Arrays og objekter
    </td>
