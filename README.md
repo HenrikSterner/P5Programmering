@@ -16,6 +16,7 @@ Peter & Henrik
 - [Kapitel 3: Variabler, animationer og input](kap3/kap3.md)
 - [Kapitel 4: Betinget udførsel](kap4/kap4.md)
 - [Kapitel 5: Løkker](kap5/kap5.md)
-
+- [Kapitel 6: Funktioner](kap6/kap6.md)
+- [Kapitel 7: Objekter](kap7/kap7.md)
 
 
