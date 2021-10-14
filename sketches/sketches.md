@@ -9,3 +9,4 @@
 - Scrolling Colors af *Andrei Enache*: <https://editor.p5js.org/andreienake/sketches/1nAR1hEER>
 - Skiftende farver af *Patrick Niclas Jakobsen*:  <https://editor.p5js.org/patr9619/full/vK5Ujmu3K>
 - Cat & Mouse af *Andrei Enache*: https://editor.p5js.org/andreienake/sketches/IL8QY4ZLl
+- Katten efter musen af *Oliver Østergaard Olsen*: https://editor.p5js.org/oliverolsen0707/sketches/-e-LxTjiu
