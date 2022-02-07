@@ -59,9 +59,14 @@ Det ændre dog ikke på, at vi får en rigtig pæn løsning der korresponderer n
 ## Det gyldne snit
 I det følgende vil vi skrive et rekursivt program, der tager et heltal input N og beregner en approksimation af det det gyldne snit (prøv gerne at google det gyldne snit, det forekommer mange steder i naturen). Det gyldne snit betegner et forhold eller et tal, som er lig med $1$ hvis $N=0$ (basistilfældet) og $1+1/f(N-1)$ hvis $N>0$.
 
-## Renters renteformlen formuleret rekursivt
-I det næste
+## Renteformlen formuleret rekursivt
+Renteformlen fortæller noget om hvorledes en startkapital forrentes overtid. Den typiske måde at formulere den på er således $$K=K_0 (1-r/100)^n,$$ hvor $K_0$ er startkapital, $n$ er antal terminer og $r$ er renten.
 
+Vi kan umiddelbart omformulerer denne til en rekursiv løsning således:
+* $K_0$ er lig startkapitalen dvs. basistilfældet
+* $K_{n+1} = K_n * (1+r/100)$ dvs. det rekursive kald ligger gemt her. 
+
+Vi kan formulere en løsning således
 
 ## Øvelser
 1. Skriv en rekursiv funktion, der beregner eksponenten af et tal
