@@ -18,6 +18,6 @@ Peter & Henrik
 - [Kapitel 5: Løkker](kap5/kap5.md)
 - [Kapitel 6: Funktioner](kap6/kap6.md)
 - [Kapitel 7: Objekter](kap7/kap7.md)
-- [Kapitel 8: Objekter](kap8/kap8.md)
+- [Kapitel 8: Rekursion](kap8/kap8.md)
 
 
