@@ -194,8 +194,18 @@ function branch(len){
 11. Skriv en rekursiv funktion, der finder det største tal i en liste
 12. Skriv en rekursiv funktion, der beregner Tribonacci rækkefølgen  (starter med 0,0,1)
 13. Udvid koden for fraktaltræer, så der dannes grønne blade for enden af grenene.
-14. Konstruer Sierpinskis trekant ved brug af rekursion 
 
-## Projekt: Fraktaler
+
+## Projekt: Selv-similære figurer
+I følgende projekt skal du implementere forskellige selv-similære figurer.
+
+### Konstruer en visuel repræsentation af Kochs snefnugskurve
+I Kochs snefnugskure der tredeles ethvert linjestykke i tre lige store dele. Den miderste del fjernes og erstattes af to sider i den ligesidede trekant. Processen gentages på hvert af de nye linjestykker. 
+
+
+### Konstruer en visuel repræsentation af Sierpinskis trekant
+
+
+
 
 
