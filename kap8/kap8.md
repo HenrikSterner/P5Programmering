@@ -197,15 +197,27 @@ function branch(len){
 
 
 ## Projekt: Selv-similære figurer
-I følgende projekt skal du implementere forskellige selv-similære figurer.
+I følgende projekt skal du implementere visuelle repræsentationer af forskellige selv-similære figurer. Dvs. figurer hvor et vilkårligt udsnit af figuren ligner helheden af den samlede figur.
+
+### Konstruer en visuel repræsentation af Cantors mængde
+Cantors mængde er opkaldt efter den tyske matematiker Georg Cantor.
+
+Det er en relativt simpel konstruktion, hvor man tager udgangspunkt i et linjestykke. Del stykket ind i tre mindre dele og fjern det miderste stykke. Fortsæt herefter på tilsvarende vis med de de resterende stykker. 
 
 ### Konstruer en visuel repræsentation af Kochs snefnugskurve
 I Kochs snefnugskure der tredeles ethvert linjestykke i tre lige store dele. Den miderste del fjernes og erstattes af to sider i den ligesidede trekant. Processen gentages på hvert af de nye linjestykker. 
 
+Kochs snefnugskurve er et eksempel på en fraktal
+
 
 ### Konstruer en visuel repræsentation af Sierpinskis trekant
 
+Herunder beskrives konstruktion i prosakode. Dvs. tekst der er mere eller mindre kodenær:
 
+1. Start med at konstruere en ligesidet trekant. Dvs. en trekant hvor alle sider er lige lange (og vinkler lige store).
 
+2. Inddel trekanten i fire kongruente og ligesidede trekanter ved at bestemme midtpunkter for de tre sider i den oprindelige trekant.
 
+3. Fjern den miderste trekant.
 
+4. Gentag trin 2 og 3 for de tre resterende trekanter.
