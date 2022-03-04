@@ -84,3 +84,48 @@ string1.toLowerCase() //returner 'er du der?'
 //string.toUpperCase() //returnerer en streng der kun består af store bogstaver
 string1.toUpperCase() //returnerer 'ER DU DER?'
 ```
+
+
+## Øvelser
+1. Lav en knap der genererer et 'sikkert' password. Ved sikkert forstås, at det skal være minimum 8 bogstaver langt samt indeholde både et stort og lille bogstav samt et tal. Udvid selv med et relevant kriterie.
+2. Lav et tekst input felt hvor det forventes, at man indtaster et sikkert password. Giv brugeren besked hvis det er tilfældet eller ej. Ved sikkert forstås definitionen fra 1. 
+3. Lav et tekst input felt hvor det forventes, at man indtaster et CPR-NR. Skriv noget kode, der tjekker hvorvidt det er tilfældet.
+4. Lav en bogstavsky ud fra et tekst inputfelt. Dvs. brugeren indtaster nogle ord/bogstaver og på baggrund heraf genereres en sky af bogstaverne. Jo flere gange et bogstav forekommer jo større bliver det vist. 
+5. Lav et tekstfelt og undersøg om input fra brugeren er et palindrom. Dvs. hvorvidt der ordet læses ens forfra og bagfra. Bemærk at det kan gøres ret kort ved at bruge rekursion.
+6. Lav et 'Hang-man' spil eller 'gæt et bogstav', hvor et ords bogstaver er markeret med stjerner og ved at gætte bogstaver via et inputfelt, erstattes stjerne med de faktiske bogstaver. For hver gang der gættes forkert tegnes dele af en hængt mand. Man er også velkommen til at lave sin egen illustration.
+
+7. Konstruer et array af sætninger gerne således at brugeren selv kan tilføje input til arrayet. På baggrund heraf skal konstrueres et Haiku-digt. Et Haiku-digt består af 17 stavelser fordelt på 5-7-5 i de tre linjer. 
+
+8. Lav to tekstfelter hvor brugeren kan indtaste tekst, der skal krypteres hhv tekst der skal dekrypteres. Implementer en selvvalgt kryptering. Det kan eksempelvis være at bytte om på rækkefølgen af bogstaver.
+
+9. Lav igen to tekstfelter. Overvej og implementer en selvvalgt metode, der rapporterer hvor sammenlignelige de to strenge er. Dvs. en form for plagiatkontrol. 
+
+10. Lav to tekstfelter. Den ene bruges som kilde til at søge i efter den anden. Rapporter alle de steder hvor den søgte tekststreng forekommer i kilden. Giv mulighed for at man kan erstatte den søgte streng med en anden streng.
+
+11. Lav et tekstfelt hvor brugeren kan skrive en sætning. Prøv at lav en simpel analyse af sætningens sentiment og rapporter hvorvidt sætningen er positivt eller negativt ladet. 
+
+## Projekt: Lix-tallet
+Lixtallet er et udtryk for en teksts læsbarhed. Formlen til at beregne LIX-tallet er givet ved 
+ 
+ $$LIX = \frac{O}{P}+ \frac{L*100}{O}, $$
+ hvor $O$ er antal ord i teksten,  $P$ er antal punktummer i teksten og $L$ antal lange ord (over 6 bogstaver lange).
+
+Formlen kan altså forstås som antal ord per mellem hvert punktum lagt sammen med procentdelen af de lange ord i teksten. Man har så følgende skala til at vurdere LIX-tallet med:
+
+$LIX\geq 55$: Meget svær, faglitteratur på akademisk niveau, lovtekster.
+
+$45\leq LIX \geq 55$: Svær, f.eks. saglige bøger, populærvidenskabelige værker, akademiske udgivelser.
+
+$35\leq LIX \geq 45$: Middel, f.eks. dagblade og tidsskrifter.
+
+$25\leq LIX \geq 35$: Let for øvede læsere, f.eks. ugebladslitteratur og skønlitteratur for voksne.
+
+$LIX < 25$: Let tekst for alle læsere, f.eks. børnelitteratur.
+
+Lav et program, der bestemmer Lix-tallet af en tekststreng. Programmet skal fortælle hvilket niveau teksten ligger på. Antag at du får teksten i en string-variable.
+
+Benyt din LIX-beregner på en selvvalgt tekst. Giv resultatet mening?
+
+## Projekt: Blindskrift Tester
+I dette projekt skal du udvikle et simpelt system til at teste hvor hurtig man er til at skrive blindskrift. Dvs. en tekst skal rulle henover skærmen mens man skriver og programmet skal registrere hvor mange ord man når at taste samt hvor mange fejl, der er, indenfor et givent tidsrum.
+Udvid systemet så man kan vælge forskellige typer tekst at indtaste ud fra tekstens lixtal.
