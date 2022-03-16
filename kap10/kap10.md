@@ -66,13 +66,6 @@ Herunder et eksempel på hvorledes Car klassen kan udvides
 ```javascript
 class Van extends Car {
   #speed
-  #model
-  constructor(speed,model) {
-    super()
-    this.#speed = speed;
-    this.#model = model;
-  }
-  
   setSpeed(amount)
   {
     if((this.#speed+amount) > 110) 
@@ -83,18 +76,23 @@ class Van extends Car {
       this.#speed += amount
     }
   }
-  getSpeed()
-  {
-    return this.#speed
-  }
 }
-
-
 function setup() {
   createCanvas(400, 400);
-  const v = new Van(10,"F")
-  v.setSpeed(120)
+  const v = new Van(10)
+  v.setSpeed(120) //not allowed when its a van
+  v.getSpeed() //writes 10
 }
 ```
+Klassen Van er et barn af forældren eller superklassen Car hvilkes ses ved, at den udvider (se nøgleordet extends) klassen.
+I konstruktøren kaldes super() for at initialisere barnet ud fra superklassen. 
+
+I metoden setSpeed har vi valgt at undersøge hvorvidt hastigheden bliver mere end 120, da vi i dette eksempel tillader os at forestille os, at det ikke er lovligt for en Van. Vi har med andre ord overskrevet metoden setSpeed i børneklassen, så den implementerer sin egen adfærd forskellig fra forældren. 
+
+Ydermere ser vi, at vi uden videre kan kalde eksisterende metoder fra superklassen jf. vores kald til getSpeed. 
 
 ## Polymorfi
+
+Vi kan sågar udvide metoderne i børneklassen så de tager flere argumenter. F.eks. kunne man forestille sig, at man udvide Van med en type/model og afhængig af hvilken type Van var kunne man tillade, at bestemte typer Vans kørte hurtigere end andre. Dette kaldes også for at overloade metoder.   
+
+Udover at kunne overskrive metoder kan vi også konstruere helt nye metoder eller variable. Det gøres fuldstændig på samme måde som hvis vi havde gjort det i superklassen.
