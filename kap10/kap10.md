@@ -125,7 +125,7 @@ I praksis er der to forskelige måder at opnå denne form for polymorfisme. Den 
 I det følgende vil vi illustere hvorledes disse to metoder fungerer.
 
 ### Overskrivning
-Vi kan forestille os, at vores Car klasse skal repræsentere både en varevogn og en last, og at vi vælger at samle de ting de har til fælles i Car, og de ting der adskiller dem i deres respektive børneklasser. Herunder noget eksempelkode:
+Vi kan forestille os, at vores Car klasse skal repræsentere både en varevogn og en last, og at vi vælger at samle de ting de har til fælles i Car, og de ting der adskiller dem i deres respektive børneklasser. Herunder et eksempel:
 ```javascript
 class Truck extends Car {
   setSpeed(amount)
@@ -158,7 +158,167 @@ function setup() {
   v.getSpeed() //writes 10
 }
 ```
+Vi bemærker her, at begge børneklasser overskriver den oprindelige setSpeed metode. 
 
 
 ### Overloading
-Vi kan sågar udvide metoderne i børneklassen så de tager flere argumenter. F.eks. kunne man forestille sig, at man udvide Van med en type/model og afhængig af hvilken type Van var kunne man tillade, at bestemte typer Vans kørte hurtigere end andre. Dette kaldes også for at overloade metoder.   
+Vi kan sågar udvide metoderne i børneklassen så de tager flere argumenter. F.eks. kunne man forestille sig, at man udvider Van med en type/model og afhængig af hvilken type Van var kunne man tillade, at bestemte typer Vans kørte hurtigere end andre. Dette kaldes også for at overloade metoder.  Javascript understøtter ikke overloading men kan implementeres på forskellige måder. Herunder et eksempel der illustrerer hvordan vi kan tjekke argumenterne til setSpeed: 
+
+```javascript
+setSpeed(p1, p2, p3)
+{
+  var s = p1;
+  if(typeof p2 !== "undefined") {s += p2;}
+  if(typeof p3 !== "undefined") {s += p3;}
+  return s;
+};
+
+setSpeed("one");        // result = one
+setSpeed("one",2);      // result = one2
+setSpeed("one",2,true); // result = one2true
+```
+
+## Øvelser
+1. I det følgende ses kode for en klasse Car. Omskriv koden så den bruger private variabler. Forklar desuden hvad metoderne gør.
+
+
+```javascript
+class Car {
+  constructor(PosX, PosY, Width, Length, Speed, Color, Brand) {
+    this.x = PosX;
+    this.y = PosY;
+    this.width = Width;
+    this.length = Length;
+    this.speed = Speed;
+    this.c = color(Color);
+    this.brand = Brand;
+    this.finished = false;
+  }
+
+  move() {
+    this.x += this.speed;
+  }
+
+  display() {
+    fill(this.c);
+    rect(this.x, this.y, this.width, this.length);
+  }
+
+  finish() {
+    if (this.x >= 1000 && !this.finished) {
+    this.finished = true;
+    console.log(this.brand + " hit the finish-line!");
+    }
+  }
+}
+```
+2. Afprøv din nye klasse ved at konstruere tre biler, en Tesla, en Mercedes og en BMW. Brug metoderne display til at lave et simpelt racerløb, hvor bilerne kører venstre mod højre side. Herunder noget kode der illustrerer ideen:
+
+```javascript
+let tesla;
+let volvo;
+let audi;
+
+function setup() {
+  createCanvas(1000, 400);
+  //new car(posX, posY, width, height, speed, color, name)
+  tesla = new Car(0, 20, 90, 50, 4, "blue", "Tesla");
+  volvo = new Car(0, 100, 50, 50, 2, "yellow", "Volvo");
+  audi = new Car(0, 200, 90, 80, 3, "green", "Audi");
+}
+
+function draw() {
+  background(220);
+  tesla.move();
+  tesla.display();
+  tesla.finish(); 
+}   
+```
+
+3. Udvid klassen med to attributter. En, der repræsenterer accellerationen, en anden der repræsenterer hvor mange km bilen kan køre på en tank. Udvid metoden move så den inddrager accellerationen og  trækker en fra hver gang bil har kørt 20 pixels. Når bilen rammer 0 skal bilen stoppe og man skal have besked i konsollen om, at bilen skal tanke benzin.  
+
+4. Vi forestiller os nu, at I vi udvider med to nye klasser, der nedarver fra Car.  Den ene skal håndtere elektriske biler (kaldet EVCar) og den anden skal håndtere ikke elektrisk biler (kaldet NonEVCar). Begge klasser har fælles egenskaber, som angivet I den oprindelige Car klasse. Men de har forskellige egenskaber som skal implementeres i de respektive klasser. Opret de to respektive klasser og implementer, at en elektrisk bil skal bruge tid på at lade op (vha en særlig attribut) og at den ikke elektriske version hurtigt kan tanke benzin.  Dvs. metoden move skal overskrives.
+
+5. En dyrehandler har brug for et visuelt aquarium til sin butik, hvor børn kan simulere et aquarium og lave sjov med forskellige fisk. Der skal udvikles et visuelt simuleret aquarium man som bruger kan interagere med. Herunder skeletkode, der simulerer et simpelt akvarium. 
+
+```javascript
+// The Fish class defines fish objects, that move around on the
+// screen and change direction when they bump into the walls.
+class Fish {
+  // Constructor function for a new fish.
+  // Requires x, y position where the fish is to be created.
+  constructor(x, y){
+    // Record the x and y position inside 'this'
+    this.x = x;
+    this.y = y;
+
+    // Pick a random starting velocity
+    this.xVel = random(-1, 1);
+    this.yVel = random(-1, 1);
+  }
+
+  // Function to display the fish on the canvas.
+  show(){
+    // push matrix to save previous state
+    push();
+
+    // Translate to the x, y position of the fish.
+    translate(this.x, this.y);
+
+    // Draw a triangle to represent the fish
+    triangle(20, 0, -10, -10, -10, 10);
+
+    pop();
+  }
+  
+  // Update the position of the fish depending on its velocity.
+  update(){
+    this.x += this.xVel;
+    this.y += this.yVel;
+
+    // Check whether the fish has gone off the left or right
+    if (this.x < 0 || this.x > width){
+      // If it has, reverse direction and move back
+      this.xVel = -this.xVel;
+      this.x += this.xVel;
+    }
+
+    // Check whether the fish has gone off the top or bottom
+    if (this.y < 0 || this.y > height){
+      // If it has, reverse direction and move back
+      this.yVel = -this.yVel;
+      this.y += this.yVel;
+    }
+  }  
+}
+```
+6. Udvid klassen, så den har farve, størrelse og hastighed med til at beskrive fisken.
+
+7. Brugeren af systemet skal kunne interagere med fiskene. Eksempler på interaktioner kunne være at give mad til fisk, fjerne fisk, farve fisk, sætte forskellige fisk i aquarium, trykke på fisk så de bliver bange og svømmer væk, indsætte planter og andre ting i akvariet, give fisk mulighed for at få finner og haler. Udvælg selv nogle interaktioner og prøv at implementere disse. Prøv dem af i praksis.
+
+8. Det skal være muligt at indsætte piratfisk, der æder de andre hvis de kolliderer. De skal være større og se farlige ud. Herunder ses skelet kode for et barn af Fish. Udvid denne klasse så piratfisk svømmer hurtigere, er større og hvis de kolliderer med en af de andre fisk, så spiser de dem. 
+```javascript
+class PiratFish extends Fish
+{
+    constructor(x, y){
+    super();  
+    // Record the x and y position inside 'this'
+    this.x = x;
+    this.y = y;
+
+    // Pick a random starting velocity
+    this.xVel = random(-10, 10);
+    this.yVel = random(-10, 10);
+  } 
+}
+```
+
+9. Du er systemudvikler og skal udvikle et nyt system til at simulere dyr i nationalparken Serengenti, der kan håndtere forskellige typer af dyr. Lav en forældre klasse, der hedder Animal. Den skal rumme attributter, som er fælles for alle dyr, såsom alder, køn, hvorvidt de er sultne, er rovdyr eller pattedyr. 
+    
+10.  Udvid nu med tre børneklasser af Animal, der repræsenterer hhv. dyr der lever i vandet, på landet og i luften. Giv dem passende navne og implementer en metode draw for hver af de tre børn, der tegner forskellige figurer som repræsenterer disse typer dyr.  
+
+11. Udvid så dyrene kan bevæge sig rundt på skærmen ved brug af en metode kaldet move, men at dyrene kun kan bevæge sige ind for et bestemt område i form af en firkant eller cirkel af skærmen angivet ved et x og y som peger på punktet i venstre hjørne samt en længde og bredde eller radius. Afprøv din kode. 
+
+12. Konstruer en scene, der konstruerer nationalparken Serengenti. Om man ser parken fra siden eller fra fugleperspektiv, bestemmer du. Parken skal dog inddeles i et vandområde, et område for dyr der kan flyve og for nogle består af illustrerer bestående. Indsæt respektive dyr i de forskellige områder, som bevæger sig rundt i området. Initialiser tilfældigt om dyrene er rovdyr eller pattedyr.
+
+13. Udvid nu klasserne, så hvis rovdyrene er sultne og kolliderer med pattedyr, så spises pattedyr. Hvis de ikke er sultne, så får pattedyrene lov at slippe. Afprøv koden i praksis.
