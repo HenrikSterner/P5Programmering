@@ -21,10 +21,13 @@ Peter & Henrik
 - [Kapitel 8: Rekursion](kap8/kap8.md)
 - [Kapitel 9: Strenge](kap9/kap9.md)
 - [Kapitel 10: Objektorienteret principper](kap10/kap10.md)
-- [Kapitel 11: Software arkitektur](kap10/kap10.md)
-- [Kapitel 12: Teste dit system](kap10/kap10.md)
-- [Kapitel 13: Dokumentation](kap10/kap10.md)
-- [Kapitel 14: Designmønstre](kap10/kap10.md)
-- [Kapitel 15: Versioneringskontrol med Github](kap10/kap10.md)
+- [Kapitel 11: Dokumentation](kap10/kap10.md)
+- [Kapitel 12: Testning](kap10/kap10.md)
+- [Kapitel 13: Systemarkitektur](kap10/kap10.md)
+- [Kapitel 14: Agil udvikling](kap10/kap10.md)
+- [Kapitel 15: Designmønstre](kap10/kap10.md)
+- [Kapitel 16: Versioneringskontrol med Github](kap10/kap10.md)
+- [Kapitel 17: Computationel tænkning](kap10/kap10.md)
+- [Kapitel 18: Algoritmer](kap10/kap10.md)
 
 
