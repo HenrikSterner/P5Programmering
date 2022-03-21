@@ -319,6 +319,12 @@ class PiratFish extends Fish
 
 11. Udvid så dyrene kan bevæge sig rundt på skærmen ved brug af en metode kaldet move, men at dyrene kun kan bevæge sige ind for et bestemt område i form af en firkant eller cirkel af skærmen angivet ved et x og y som peger på punktet i venstre hjørne samt en længde og bredde eller radius. Afprøv din kode. 
 
-12. Konstruer en scene, der konstruerer nationalparken Serengenti. Om man ser parken fra siden eller fra fugleperspektiv, bestemmer du. Parken skal dog inddeles i et vandområde, et område for dyr der kan flyve og for nogle består af illustrerer bestående. Indsæt respektive dyr i de forskellige områder, som bevæger sig rundt i området. Initialiser tilfældigt om dyrene er rovdyr eller pattedyr.
+12. Konstruer en scene, der konstruerer nationalparken Serengenti. Om man ser parken fra siden eller fra fugleperspektiv, bestemmer du. Parken skal dog inddeles i et vandområde, et område for dyr der kan flyve og for nogle består af illustrerer bestående. Indsæt respektive dyr i de forskellige områder, som bevæger sig rundt i området. Initialiser tilfældigt hvorvidt dyrene er rovdyr eller pattedyr.
 
 13. Udvid nu klasserne, så hvis rovdyrene er sultne og kolliderer med pattedyr, så spises pattedyr. Hvis de ikke er sultne, så får pattedyrene lov at slippe. Afprøv koden i praksis.
+
+## Projekter
+I det følgende projekt er det endelige produkt en automatisk konstruktion af en scene sat sammen af forskellige geometriske figurer. Scenen kan eksempelvis forestille huse med træer, mennesker, blomster, skyer eller lignende. Man kan forestille sig, at denne scene generator kan bruges i spil, kunst eller til at simulere forskellige fysiske fænomener. 
+En scene kunne eksempelvis bestå af et hus, der består af en trekant ovenpå en firkant, nogle skyer bestående af overlappende cirkler osv. 
+Til at starte med skal konstrueres en GeometricFigure, der rummer nogle grundlæggende egenskaber ved en geometrisk figur. Det kunne være farve, form, koordinater m.m. Som børn til GeometricFigure oprettes forskellige primitive geometriske figurer såsom cirkler, linjestykker, trekanter, firkanter, polygoner... 
+Endelig oprettes klasser til at repræsentere huse, mennesker, skyer m.m. Disse klasser skal benytte de nævnte geometriske figurer til at konstruere huse m.m.
