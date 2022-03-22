@@ -15,15 +15,39 @@ Præsentationslaget kommunikerer med datalaget igennem applikationslaget og aldr
 Tre-lags-arkitektur kan bruges med stort set alle tænke systemer. Eksempelvis et website, hvor man klikker på en knap, der så kalder noget kode i applikationslaget, som henter nogle data frem, der så sendes tilbage til brugergrænsefladen og vises på sitet.
 
 ## UML-diagrammer
-UML står for Unified Modelling Language og er 
-et diagramsprog til modellering af ens systemer. 
+UML står for Unified Modelling Language og er et diagramsprog til modellering af ens systemer. 
 Det giver en fælles forståelsesramme og sprog til at kommunikere funktionalitet og arkitektur ud på tværs af teknologi og sprog. 
 
-UML omfatter mange forskellige diagramtyper og man kunne skrive lange bøger om UMLs forskellige strukturer. I det følgende vil vi introducere nogle få af de mange mulige diagrammer nemlig klassediagrammet samt use-case-diagrammet. 
+UML omfatter mange forskellige diagramtyper og man kunne skrive lange bøger om UMLs forskellige strukturer. I det følgende vil vi introducere nogle få af de mange mulige diagrammer nemlig klassediagrammet samt use-case-diagrammet. Det skal understreges, at UML er ekstremt omfattende og man kunne fylde flere bøger alene om UML, men her berøres kun hvad der er essentielt i forhold modellering af klasser og deres overordnede relationer til hinanden.
 
 ### Klassediagrammer
+Et klassediagram kan betragtes som en visuel repræsentant for et objekt. Man tegner et rektangel med 3 under-inddelinger bestående af:
+Navn
+Attributter
+Operationer
+
+Modifikatorer som prefix for attributter og operationer indikerer synligheden af disse. F.eks. betegner et + betegner at klassen er metoderne eller attributterne er offentlige. Dvs. tilgængelig for andre klasser og - betegner at klassen er privat. Man kan også indikerer med en hashtag, at attributten er beskyttet/protected. Dvs. kun tilgængelig for venner og børn af den definerende klasse.
+
+Herunder et eksempel på et generisk klassediagram:
+
+Herunder et eksempel på et klassediagram:
+
+Klassediagrammer kan sammensættes og man kan med forskellige relationer illustrere hvorledes de er forbundet.
+Herunder en oversigt over de mulige relationer man kan sætte mellem klasser.
+
+### Tilstandsdiagrammer
+Tilstandsdiagrammer beskriver forskellige tilstande, som programmet kan være i og hvordan man bevæger sig fra en tilstand til en anden. Herunder et eksempel på et tilstandsdigram:
+
+Herunder nogle eksempler på mulige relationer i et tilstandsdiagram.
+
 
 ### Use-case-diagrammer
+Et use case-diagram illustrerer på et overordnet niveau forholdet mellem forskellige brugsscenarier, aktører/ og systemer. De fortæller ikke noget om rækkefølgen som funktioner/sekvenser udføres i.
+Use-case-diagram kan illustrere hvorledes bruger og system interagerer med hinanden, definere og organisere funktionelle krav i systemet samt angive konteksten og kravene til systemet
+
+Use cases er repræsenteret med en mærket oval form. Pindefigurer repræsenterer aktører i processen, og aktørens deltagelse i systemet modelleres med en linje mellem aktør og use case. For at skildre systemgrænsen skal du tegne en boks rundt om selve use casen.
+
+Herunder et eksempel på et use-case-diagram:
 
 
 ## 4+1-arkitektur 
