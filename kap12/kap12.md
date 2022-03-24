@@ -50,8 +50,6 @@ Use cases er repræsenteret med en mærket oval form. Pindefigurer repræsentere
 Herunder et eksempel på et use-case-diagram:
 
 
-## 4+1-arkitektur 
-
 ## C4-model
 En mere moderne og forenklet tilgang til  beskrivelse og visualisering af en  softwarearkitektur på er ved brug af den såkaldte C4-model, som har fokus på abstraktioner først. Man kan tænke på C4 lidt som at læse et kort over et land. Vi starter med placere landet på verdenskortet. Dernæst zoomer vi ind på landet og kigger på de enkelte regioner og byer. Vi kan zoome mere og mere ind til vi kommer til det område, som vi befinder os i. Vi navigerer med andre ord ofte et ukendt sted ved at orientere os ud fra bestemte steder og lidt på samme måde fungerer det når vi skal forholde os til komplekse softwaresystemer.
 
@@ -72,4 +70,3 @@ Det bemærkes, at diagrammerne består af:
 - En container der repræsenterer en system/program eller en database. Den skal køre for at det samlet system kører
 - Et component/komponent som er en samling af beslægtet og veldefineret funktionalitet, som kan kaldes igennem en veldefineret grænseflade. Det kunne eksempelvis være et sæt af beslægtede klasser.
 
-## SOLID princippet
