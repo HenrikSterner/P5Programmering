@@ -70,3 +70,14 @@ Det bemærkes, at diagrammerne består af:
 - En container der repræsenterer en system/program eller en database. Den skal køre for at det samlet system kører
 - Et component/komponent som er en samling af beslægtet og veldefineret funktionalitet, som kan kaldes igennem en veldefineret grænseflade. Det kunne eksempelvis være et sæt af beslægtede klasser.
 
+## Øvelser
+
+1. Lav et klassediagram for et DyrePatient til at håndtere dyr i et dyrehospital. Identificer mindst 3 attributter og 3 metoder, som kunne være relevante at inddrage i en sådan klasse. 
+2. Konstruer nu børneklasser som udvider den oprindelig klasse, der repræsenterer fordi dyrearter. Det kan eksempelvis være konkrete dyr men også dyr eller arter eller hvorvidt de kan flyve, svømme eller være på land. Kategoriseringen er op til dig. Identificer mindst 3 attributter og 3 metoder, som kunne være relevante at inddrage i disse klasser, som adskiller sig for de andre. 
+3. I det følgende ønske et design for en online bogbutik. Overvej relevante klasser herunder metoder og attributter samt deres relationer til hinanden. Visualiser disse ved brug af klassediagrammer. 
+4. Lav klassediagramer over et system, som skal håndtere elever, klasser, lærere, administration/IT og klasselokaler. Systemet skal håndtere karakterer, skema, timer m.m.
+5. Lav klassediagrammer over et computerspil (eksisterende eller fiktivt)
+6. Konstruer de tre øverste lag i C4-modellen over en online pizzabutik kaldet MustEat, der skal understøtte muligheden for at kunder kan bestille pizzaer fra en menu over nettet.
+7) Konstruer de tre øverste lag i C4-modellen for NetFix, som skal være en streamingkanal. 
+8) Konstruer alle fire lag i en C4-model herunder relevante klassediagrammer i kodelaget til en app, der skal facilitere, at man kan sende penge til hinanden og betale regninger
+9) Konstruer alle fire lag i en C4-model herunder relevante klassediagrammer i kodelaget til et nyt social medie.
