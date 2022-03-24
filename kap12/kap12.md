@@ -33,7 +33,7 @@ Herunder et eksempel på et generisk klassediagram:
 Herunder et eksempel på et klassediagram:
 
 Klassediagrammer kan sammensættes og man kan med forskellige relationer illustrere hvorledes de er forbundet.
-Herunder en oversigt over de mulige relationer man kan sætte mellem klasser.
+Herunder en oversigt over nogle af vigtigste mulige relationer man kan sætte mellem klasser. For en fuldstændig oversigt bedes man konfererere med referencemanualen til UML.
 
 ### Tilstandsdiagrammer
 Tilstandsdiagrammer beskriver forskellige tilstande, som programmet kan være i og hvordan man bevæger sig fra en tilstand til en anden. Herunder et eksempel på et tilstandsdigram:
@@ -53,5 +53,23 @@ Herunder et eksempel på et use-case-diagram:
 ## 4+1-arkitektur 
 
 ## C4-model
+En mere moderne og forenklet tilgang til  beskrivelse og visualisering af en  softwarearkitektur på er ved brug af den såkaldte C4-model, som har fokus på abstraktioner først. Man kan tænke på C4 lidt som at læse et kort over et land. Vi starter med placere landet på verdenskortet. Dernæst zoomer vi ind på landet og kigger på de enkelte regioner og byer. Vi kan zoome mere og mere ind til vi kommer til det område, som vi befinder os i. Vi navigerer med andre ord ofte et ukendt sted ved at orientere os ud fra bestemte steder og lidt på samme måde fungerer det når vi skal forholde os til komplekse softwaresystemer.
+
+C4-modellen bygger ovenpå 4+1-arkitekturen og UML. Den består, som navnet antyder, af fire lag:
+-Context: Diagram der giver et start sted for systemets sigte og hvordan det passer ind i verdenen omkring det.
+- Container: Her zoomer vi mere ind på de konkrete byggeblokke i systemet og hvordan de spiller sammen. 
+- Component: På dette niveau zoomes endnu længere ind på hver af de enkelte byggeblokke i containerniveauet og illustrerer meget detaljeret hvorledes hver af disse er bygget op. 
+- Code: Til sidst zoom helt ind og vi rammer det egentlig kodelag, som typisk er repræsenteret ved UML-diagrammer i form af klassediagrammer og lignende.  
+
+Modellen giver mulighed for at fortælle forskellige historier afhængig af målgruppen og deres tekniske indsigt. 
+
+Herunder eksempler på hver af de fire diagrammer for et konkret system. 
+
+
+Det bemærkes, at diagrammerne består af:
+
+- En person som repræsenterer en bruger af systemet 
+- En container der repræsenterer en system/program eller en database. Den skal køre for at det samlet system kører
+- Et component/komponent som er en samling af beslægtet og veldefineret funktionalitet, som kan kaldes igennem en veldefineret grænseflade. Det kunne eksempelvis være et sæt af beslægtede klasser.
 
 ## SOLID princippet
