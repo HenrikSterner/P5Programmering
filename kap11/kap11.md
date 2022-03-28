@@ -43,6 +43,8 @@ Pseudokode er formuleret i almindeligt engelsk, dansk eller et tredje sprog, og 
 - Lig tallene sammen
 - Vis resultatet
 
+Skulle disse tre linjer implementeres i praksis ville de fylde betydeligt mere. 
+
 Eller algoritmen for at lave te:
 - Tag 1 tepose og placer den i en kop
 - Hæld kogende vand ned i koppen
@@ -81,8 +83,7 @@ Write: Besked eller Variabel
 Write: ”Hello World”       //Besked
 Write: ”Værdien er”, x	 //Besked og variabler
 
-Herunder eksempler på pseudokode. Det er skrevet på engelsk, da nøgleord i programmeringssprog typisk er skrevet på engelsk. 
-
+Herunder eksempler på pseudokode. 
 
 ### Prosakode
 Prosakode er en mindre kodenær beskrivelse. Der stilles ingen krav til, at man bruger bestemte keywords eller lignende. Vigtigste er dog, at prosakoden faciliterer en forståelse af hvorledes man kan skabe en overordnet struktur for programmet. 
@@ -101,6 +102,14 @@ Alle flowcharts starter med et Terminal eller Proces element
 Beslutningselementer har 2 udgange – en til sandt/ja (TRUE) og en til falsk/nej (FALSE)
 
 Herunder eksempler på forskellige figurer der indgår i flowdiagrammer og efterfølgende eksempler på hvorledes de kan sættes sammen til et konkret stykke kode, der gør noget. 
+
+- Terminal: Indikerer start eller slutning på algoritmen.  Vi tegner en terminal og skriver ”START” inden i den for at indikerer starten af flowchartet. På samme måde skriver vi ”STOP” inde i den terminal der afslutter flowchartet
+- Data eller Input/Output (I/O). Viser at denne instruktion tager et input eller viser et output		
+- Proces. Indikerer en intern instruktion som f.eks. Initialisering, beregning eller lignende	
+- Beslutning. Bruges til at stille et spørgsmål der enten er sandt (TRUE) eller falsk (FALSE). F.eks. Er du online? Svaret er enten ja (TRUE) eller nej (FALSE)	
+- Forbindelse. Bruges til at forbinde flowcharts der fylder mere end én side. Man kan skrive: Til Forbindelse 3 på side 2.		
+- Flow kontrol. Viser retningen I flowet fra en kasse til en anden
+
 
 
 
@@ -131,4 +140,11 @@ Programmet lukker dialogen.
 
 ## Øvelser
 
-1. Skriv noget pseudokode for hvordan du vil logge på facebook?
+1. Skriv noget pseudokode for hvordan du vil logge på facebook? 
+2. Tegn et flowdiagram, der ligger tallene 30 og 40 sammen. 
+3. Lav pseudokode og flowdiagrammer for hver af følgende:
+- Find summen af 5 tal
+- Print ”Hej Verden” 10 gange
+- Program, der læser to tal, ganger (multiplicerer) dem og printer deres produkt
+- Program, der gør det følgende: Spørg brugeren om et tal. Hvis tallet er mellem 0 og 10, så skriv tallet i blåt. Hvis tallet er mellem 10 og 20, så skriv det i rødt. Hvis tallet er mellem 20 og 30, så skriv det i grønt. Hvis tallet er noget andet så skriv det er en forkert farve option.
+
