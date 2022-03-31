@@ -3,7 +3,7 @@ Softwarearkitektur definerer en grundlæggende organisering af et system og opf�
 Det er med andre ord en ekstremt vigtig del i udviklingen er mere komplekse systemer. 
 I det følgende gennemgår vi en række forskellige modeller til at konceptualisere og visualisere systemarkitektur. Det giver et bedre grundlag til at forstå hvorledes et system bør opbygges og belyser noget af den tavse viden og kompleksitet, som ligger gemt i systemer af en vis størrelse.
 
-## Master-slave eller klient-server arkitektur
+## Master-slave eller klient-server arkitektur - n-tier model
 
 ## Tre-lags-arkitektur
 Tre-lags-arkitektur er en ret simpel struktur, der inddeler et system i tre lag: 
