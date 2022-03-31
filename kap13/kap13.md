@@ -10,3 +10,12 @@ Det koster producenterne millioner eller milliarder af kroner ved ikke at have g
 Ved at indføre tidlig og kontinuerlig testning kan man også langt bedre justere ikke kun på ukorrekt eller fejlbehæftet adfærd og sikkerhedsproblemer, men også justere systemets overordnede arkitektur. Sidstnævnte kan blive svære jo længere vi når i processen. 
 
 ## Forskellige former for test
+Der findes en lang række forskellige former for afhængig af hvad formålet er. Herunder gennemgås nogle af de centrale former for test:
+
+- Accept testning: Virker det overordnede  system rent faktisk efter hensigten
+- Integration testning: Kan de enkelte komponenter i systemet og arkitekturen rent fakiske operere og kommunikere som ønsket
+- Enhedstestning: Virker de enkelt enheder såsom funktioner og klasser efter hensigten. 
+- Performance test: Hvordan performer systemet under forskellig brug 
+- Bagudkompatibilitets test: Fungerer opdateret systemer med tidligere versioner 
+- Stress test: Hvor meget kan systemet klare inden det stopper med at fungere. 
+- Brugergrænseflade test: Hvordan tager brugeren af systemet i mod systemet og er der en fornuftig interaktion mellem bruger og system
