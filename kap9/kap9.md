@@ -104,6 +104,9 @@ string1.toUpperCase() //returnerer 'ER DU DER?'
 
 11. Lav et tekstfelt hvor brugeren kan skrive en sætning. Prøv at lav en simpel analyse af sætningens sentiment og rapporter hvorvidt sætningen er positivt eller negativt ladet. 
 
+12. Zipfs lov for forkortelser er en empirisk lov/princip, der foreskriver, at jo oftere et ord bruges i en tekst, jo kortere er ordet. Og omvendt. Jo sjældnere et ord bruges, jo længere er det typisk. Lav et program, der analyserer og visualiserer de 10 mest forekomne ord og de 10 mindst forekomne ord. Visualiser antallet af ord
+
+
 ## Projekt: Lix-tallet
 Lixtallet er et udtryk for en teksts læsbarhed. Formlen til at beregne LIX-tallet er givet ved 
  
