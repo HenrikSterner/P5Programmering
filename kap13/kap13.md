@@ -47,12 +47,49 @@ Herved kan udviklerne i højere grad koncentere sig om at teste den mere komplek
 ## Automatiseret testning
 Til forskel for manuel testning, hvor et menneske står for at teste systemet, så gør man i automatiseret testning brug af programmer til at teste ens produkt. 
 Ulempen ved manuel testning er, at det ofte kræver mange ressourcer både i form af tid og mennesker, hvis hele workflowet i et system skal testes. Og det koster mange penge.  
-Her kommer automatiseret test til rådighed, fordi det kan udføres uden indblanding fra mennesker og man kan køre det når som helst. Selvom natten. Man kan gentage test lige så ofte, som man finder det nødvendigt.
+Her kommer automatiseret test til rådighed, fordi det kan udføres uden indblanding fra mennesker og man kan køre det når som helst. Selvom natten. Man kan genbruge og gentage test lige så ofte, som man finder det nødvendigt. På den måde faciliteres et mere præcist billede systemets tilstand i fht fejl og mangler. 
 Ydermere kan manuel testning være en ret kedelig proces i længden, og herved opstår muligheden for fejl i højere grad end hvis et system står for processen.  
 Eksempelvis kan man forestille sig et system, som skal understøtte flere sprog. Her vil det hurtigt være en lang, kedelig og næsten triviel process for et menneske at teste hvorvidt systemet opfører sig ens og fremstår korrekt i de forskellige sprog. 
 
-Typisk bruges automatiseret testning derfor når testning skal gentages ofte, og at det er kedeligt, svært og tidskrævende at gøre manuelt, men også når testningen involverer en kritisk del af systemet. 
+Typisk bruges automatiseret testning derfor når testning skal gentages ofte, og at det er kedeligt, svært og tidskrævende at gøre manuelt, men også når testningen involverer en kritisk del af systemet. Kritiske systemer kan være alt fra sundhedsplatforme, banksystemer til systemer, der håndterer hardware eller robotter. Et eksempel på hvor man i den grad kunne have gjort brug af automatiseret test var NASAs og firmaet Lockheed Martins satelit, som blev sendt afsted i 1998 for at gå i kredsløb omkring Mars. Den kostede flere milliarder at få sendt afsted  og over et år i rejsetid før satelitten etablerede kredsløbet omkring Mars. Få minutter efter bragede satelitten ind i Mars. Det viste sig efterfølgende, at fejlen lå i, at to af systemerne udviklet af hhv Nasa og Lockheed Martin brugte forskellige afsandsmetrikker.
 
 I det følgende skal vi se nogle eksempler på forskellige typser automatiseret testning. 
 
 ### Unit testning
+Unit test eller modultest er en særdeles anvendt metode til at teste og validere enkeltkomponenter i koden. Det kan være funktioner, klasser, etc.
+I det følgende skal vi se et eksempel på hvorledes man kan bruge Unit tests i P5. Til øvelsen kræves, at man har installeret Node JS, som er et software miljø, der kører på en server og faciliterer afvikling af webapplikationer. Man behøver ikke videre mere om det umiddelbart. Det skal bruges til at installere et test-systemt kaldet Jest. Dvs. starte med at hente og installere pakkesystemet npm via "https://nodejs.org/en/download/". Fra kommandoprompt installeres Jest med følgende kommando:
+npm install --save-dev jest
+Kommandoprompt kan tilgås i Windows fra windowstasten og så skriv de første bogstaver af kommandoprompt. 
+
+Vi er nu klar til at skrive vores første unit-test cases i Jest. 
+Konstruer en funktion kaldet multiply i et sketch.js P5-projekt, som du har lavet til formålet:
+
+```javascript
+function multiply(a, b) {
+  return a * b;
+}
+module.exports = product;
+```
+
+Opret nu en ny fil kaldet sketch.test.js, som skal rumme den aktuelle test:
+const sum = require('./sum');
+```javascript
+test('multiply 4 * 6 to equal 24', () => {
+  expect(multiply(4, 6)).toBe(24);
+});
+```
+Tilføj herefter følgende til en fil kaldet "package.json":
+```javascript
+{
+  "scripts": {
+    "test": "jest"
+  }
+}
+```
+Prøv nu fra kommandoprompt at skrive npm test fra samme bibliotek som filerne ligger. Du kan i kommandoprompt skifte mellem gå ud af et bibliotek med 
+```javascript
+cd .. // Bevæger sig ud af børnebibliotektet
+cd child_directory // Hopper ind i børne biblioteket
+C: //skifter til drev C
+```
+Det kan være en fordel at øve sig i brugen af et såkaldt CLI-miljø (Command-Line-Enviroment), fordi det til tider er mere effektivt at arbejde fra en kommandoprompt, når man tester og afvikler applikationer. 
