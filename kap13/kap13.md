@@ -86,6 +86,7 @@ Tilføj herefter følgende til en fil kaldet "package.json":
   }
 }
 ```
+
 Prøv nu fra kommandoprompt at skrive npm test fra samme bibliotek som filerne ligger. Du kan i kommandoprompt skifte mellem gå ud af et bibliotek med 
 ```javascript
 cd .. // Bevæger sig ud af børnebibliotektet
@@ -93,3 +94,35 @@ cd child_directory // Hopper ind i børne biblioteket
 C: //skifter til drev C
 ```
 Det kan være en fordel at øve sig i brugen af et såkaldt CLI-miljø (Command-Line-Enviroment), fordi det til tider er mere effektivt at arbejde fra en kommandoprompt, når man tester og afvikler applikationer. 
+
+I det følgende ser vi et eksempel på, hvorledes man kan validere hvorvidt to objekter er af samme type. Her bruges metoden toEqual:
+```javascript
+test('Objekt validering', () => {
+  const data = {en: 1};
+  data['to'] = 2;
+  expect(data).toEqual({en: 1, to: 2});
+});
+```
+
+Tilsvarende findes en lang række andre metoder til  eksplicit at teste og matche udtryk og værdier mod hinanden:
+
+
+- toBeNull: matcher kun null
+- toBeUndefined: matcher kun undefined
+- toBeDefined: det modsatte af toBeUndefined
+- toBeTruthy matcher alt som if- sætning benhandler som sand
+- toBeFalsy: matcher alt som if- sætning benhandler som falsk
+
+## Kontinuerlig testning
+I kontinuerlig testning bygger oven på den automatiseret testning, så testning ikke bare udføres automatisk men at det rent faktisk også bliver gjort regelmæssigt og struktureret. På den måde kan udviklingsprocessen accelleres betydeligt og kodekvaliteten på papiret forhøjes.  
+
+Det handler mao om at teste ofte, så meget som muligt og at automatisere processen. Man bevæger sig mao kontinuerligt fra udvikling til testning til produktion. Et gennemløb af disse faser kaldes en iteration. For nogle projekter kan et software projekt gennemløbe mange iterationer i løbet af bare en dag.
+I processen bruges speciel software, som sikrer, at den produceret software (også kaldet "build") via unit test tester hvorvidt ændringer lever op til testkrav. Hvis det ikke er tilfældet kan koden ikke sættes i produktion. Hvis det er tilfældet kan funktionaliteten testes igen. 
+
+Kontinuerlig testning er en testmetode, der typisk anvendes indenfor såkaldt agil udvikling, hvor man løbende itererer over krav og løsninger gennem samarbejde mellem mindre selv-organiserende tværfaglige og tværfunktionelle hold. Agil udvikling er en vigtig del af fokus for det næste kapitel. 
+
+
+## Øvelser
+1. Find flere eksempler fra den virkelige verden, hvor  systemer har haft betydelige fejl og hvilke konsekvenser det har haft for udviklerne og systemet samt brugerne heraf. Kunne fejlene mon være undgået ved at teste mere og bedre? 
+2. Overvej fordele og ulemper ved brug af manuel testning, automatisk testning og kontinuerlig testning med udgangspunkt i, at man enten arbejder i en mindre startup virksomhed kontra et større og mere veletableret softwarevirksomhed?
+3. 
