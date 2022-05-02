@@ -145,6 +145,9 @@ Enhver, der har programmeret længe nok har oplevet, at bruge enorme mængder af
 - Pas på globale variable, da de ofte kan ændres mange steder og dermed være svære at finde fejl
 - Sæt Compiler warnings til sand når du afvikler kompilerer din kode. Det kan give et godt indblik i mulige fejl. 
 - Print evt vigtige variabler ud undervejs i afviklingen. Det kan dog godt blive rodet på sigt. Brug gerne en global boolsk variable til at afgøre hvorvidt denne printning udføres i praksis
+- Husk at tage pauser
+- Prøv at forklare dit problem til en anden. Vedkommende behøver egentlig ikke at vide noget om kode eller dit problem. Ofte giver det et nyt perspektiv på tingene.  
+- Brug nettet til at finde hjælp. Typisk er du sjældent den første der har siddet med et givent problem, så brug fora m.m. til at få hjælp.
 
 
 ### Typer af fejl 
@@ -217,4 +220,5 @@ Fejlen skyldes, at vi initialisere xPos og yPos før kanvasset initialiseres. Ha
 3. I det følgende skal du skrive et program, som tager heltal som input svarende til længderne af siderne i en trekant. Programmet skal returnere hvorvidt, der er tale om en ligesidet trekant, en retvinklet trekant eller en vilkårlig trekant. 
 Overvej hvorledes du vil teste programmet for fejl. 
 Brug jest-biblioteket til at teste hvorvidt input og output er korrekt. 
-4. 
+4. Lav en BMI-beregner, der tager vægt, højde og navn, og hvor du bruger Jest til at sikre at du får en korrekt type af input på dine data. 
+5. Overvej hvordan du vil lave sort boks testning på din BMI beregner
