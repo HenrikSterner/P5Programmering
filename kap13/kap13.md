@@ -125,4 +125,6 @@ Kontinuerlig testning er en testmetode, der typisk anvendes indenfor såkaldt ag
 ## Øvelser
 1. Find flere eksempler fra den virkelige verden, hvor  systemer har haft betydelige fejl og hvilke konsekvenser det har haft for udviklerne og systemet samt brugerne heraf. Kunne fejlene mon være undgået ved at teste mere og bedre? 
 2. Overvej fordele og ulemper ved brug af manuel testning, automatisk testning og kontinuerlig testning med udgangspunkt i, at man enten arbejder i en mindre startup virksomhed kontra et større og mere veletableret softwarevirksomhed?
-3. 
+3. I det følgende skal du skrive et program, som tager heltal som input svarende til længderne af siderne i en trekant. Programmet skal returnere hvorvidt, der er tale om en ligesidet trekant, en retvinklet trekant eller en vilkårlig trekant. 
+Overvej hvorledes du vil teste programmet for fejl. 
+Brug jest-biblioteket til at teste hvorvidt input og output er korrekt. 
