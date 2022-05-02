@@ -122,9 +122,58 @@ I processen bruges speciel software, som sikrer, at den produceret software (ogs
 Kontinuerlig testning er en testmetode, der typisk anvendes indenfor såkaldt agil udvikling, hvor man løbende itererer over krav og løsninger gennem samarbejde mellem mindre selv-organiserende tværfaglige og tværfunktionelle hold. Agil udvikling er en vigtig del af fokus for det næste kapitel. 
 
 
+## Debug
+Debugging betegner den proces hvorved man finder fejl eller såkaldte bugs i sin kode. Debug er en væsentlig del af hvidbox testning, hvor programmører tester koden og leder efter fejl. 
+
+Det kan være en frustrerende og tidskrævende proces at finde fejl af flere grunde. Fejl kan eksempelvis forudsagde fejl, som er svære at relatere til kilden i problemet. En anden årsag er, at I nogle tilfælde manifisterer fejl sig kun en ud af hundrede gange, når eksempelvis en variabler, der tildeles tilfældige værdier, har præcis en værdi. 
+
+Enhver, der har programmeret længe nok har oplevet, at bruge enorme mængder af tid på at finde en fejl, så det er en vigtig men også mindre sjove dele af programmering. Man kan udvikle forskellige teknikker og udnytte ens udviklingsmiljø til reducere omfanget af debugging. 
+
+- Læs koden linje for linje. Dobbeltcheck at koden, som du skrev, rent faktisk var det du mente. Tjek for stavefejl, forskel på store og små bogstaver. 
+- Brug gerne dit IDE/udviklingsmiljø til at inspicere variable eller gennemgå koden linje for linje. I de fleste IDE'er kan du indsætte breakpoints i koden og herefter afvikle den linje for linje. Se mere om det i et af de næste kapitler. 
+- Brug evt papir og blyant til at håndtere og observere deres værdier. 
+- Tænk før du koder. Jo hurtigere at du starter med at kode jo længere tid tager det ofte. 
+- Skriv kommentarer/pseudokode eller lignende før du skriver koden. Ved at skrive kommentarer udkrystalliseres ofte ens tanker, så løsningen på problemet fremstår mere klar. 
+- Giv meningsfulde variable navne og konstruer funktioner, der står for at implementere noget af det gentagende opgaver.
+- Undgå for store funktioner og for store filer af kode. Opdel koden i flere filer
+- Tænk over hvordan du vil teste før du skriver koden
+- Tilføj kun en ny funktionalitet ad gangen
+- Hold tingene simpelt, så simpelt som muligt, men hellere ikke simplere
+- Test ofte og regelmæssigt
+- Hvis du er i tvivl om hvordan noget kode fungerer/problem løses så undgå at starte med at integrere denne kode/løsning i selve programmet. Skriv derfor hellere noget eksempelkode som er isoleret for resten af programmet og prøv det af indtil du forstår koden til bunds
+- Læs din kode efter du har skrevet den
+- Pas på globale variable, da de ofte kan ændres mange steder og dermed være svære at finde fejl
+- Sæt Compiler warnings til sand når du afvikler kompilerer din kode. Det kan give et godt indblik i mulige fejl. 
+
+
+### Typer af fejl 
+Det er en god ide, at være bevidst om at der findes forskellige typer af fejl. Herunder gennemgår vi kort nogle af de typiske fejl:
+
+- Syntaksfejl. Syntaks betegner de ord og symboler som indgår i et givent programmeringssprog. Hvis du kun bruger de ord og symboler, som sproget og dets regler tillader, så kan der ikke umiddelbart opstå syntaksfejl. Men hvis du bruger et ord, som computeren ikke genkender, så vil computeren give en syntaksfejl. Herunder et simpelt eksempel på syntaksfejl. Kan du finde fejlen?
+
+```javascript
+function setup() {
+  createCanvas(400, 600);
+}
+
+function draw {
+  background(200);
+} 
+``` 
+
+Selvom det ikke er meget kode, så ligger fejlen i, at der mangler parenteser  efter draw, da det er en funktion. 
+Heldigvis får du også nogenlunde klar besked i konsollen. Hvis du kigger, så står der noget i retning af følgende:
+
+Uncaught SyntaxError: Unexpected token '{' (sketch: line 5)
+
+Nogenlunde klar fordi en nybegynder kunne måske tro, at det handlede om at der var noget galt med krølparentesen. På den måde kan 
+
+
+
 ## Øvelser
 1. Find flere eksempler fra den virkelige verden, hvor  systemer har haft betydelige fejl og hvilke konsekvenser det har haft for udviklerne og systemet samt brugerne heraf. Kunne fejlene mon være undgået ved at teste mere og bedre? 
 2. Overvej fordele og ulemper ved brug af manuel testning, automatisk testning og kontinuerlig testning med udgangspunkt i, at man enten arbejder i en mindre startup virksomhed kontra et større og mere veletableret softwarevirksomhed?
 3. I det følgende skal du skrive et program, som tager heltal som input svarende til længderne af siderne i en trekant. Programmet skal returnere hvorvidt, der er tale om en ligesidet trekant, en retvinklet trekant eller en vilkårlig trekant. 
 Overvej hvorledes du vil teste programmet for fejl. 
 Brug jest-biblioteket til at teste hvorvidt input og output er korrekt. 
+4. 

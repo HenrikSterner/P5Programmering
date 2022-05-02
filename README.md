@@ -23,12 +23,12 @@ Peter & Henrik
 - [Kapitel 10: Objektorienteret principper](kap10/kap10.md)
 - [Kapitel 11: Softwarearkitektur](kap10/kap11.md)
 - [Kapitel 12: Dokumentation og kravspecikation](kap11/kap12.md)
-- [Kapitel 13: Testning](kap13/kap13.md)
+- [Kapitel 13: Testning og debugging](kap13/kap13.md)
 - [Kapitel 14: Agil udvikling](kap14/kap14.md)
 - [Kapitel 15: Designmønstre](kap10/kap10.md)
-- [Kapitel 16: Versioneringskontrol med Github](kap10/kap10.md)
-- [Kapitel 17: Computationel tænkning](kap10/kap10.md)
-- [Kapitel 18: Algoritmer](kap10/kap10.md)
-- [Kapitel 19: Unplugged](kap10/kap10.md)
-
+- [Kapitel 16: Avanceret datastrukturer](kap10/kap10.md)
+- [Kapitel 17: Udviklingsmiljø og versioneringskontrol](kap10/kap10.md)
+- [Kapitel 18: Computationel tænkning](kap10/kap10.md)
+- [Kapitel 19: Algoritmer](kap10/kap10.md)
+- [Kapitel 20: Unplugged](kap10/kap10.md)
 
