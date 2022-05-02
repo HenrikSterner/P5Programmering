@@ -144,6 +144,7 @@ Enhver, der har programmeret længe nok har oplevet, at bruge enorme mængder af
 - Læs din kode efter du har skrevet den
 - Pas på globale variable, da de ofte kan ændres mange steder og dermed være svære at finde fejl
 - Sæt Compiler warnings til sand når du afvikler kompilerer din kode. Det kan give et godt indblik i mulige fejl. 
+- Print evt vigtige variabler ud undervejs i afviklingen. Det kan dog godt blive rodet på sigt. Brug gerne en global boolsk variable til at afgøre hvorvidt denne printning udføres i praksis
 
 
 ### Typer af fejl 
@@ -166,9 +167,49 @@ Heldigvis får du også nogenlunde klar besked i konsollen. Hvis du kigger, så 
 
 Uncaught SyntaxError: Unexpected token '{' (sketch: line 5)
 
-Nogenlunde klar fordi en nybegynder kunne måske tro, at det handlede om at der var noget galt med krølparentesen. På den måde kan 
+Nogenlunde klar fordi en nybegynder kunne måske tro, at det handlede om at der var noget galt med krølparentesen. 
+
+Jo mere man øver sig, jo bedre bliver man til at spotte den her type fejl hurtigt. Og man hjælpes meget på vej af et godt udviklingsmiljø, som typisk opdager mange af disse fejl allerede inden man forsøger at køre sit program. 
+
+- Kørtetidsfejl. Selv hvis din kode er korrekt skrevet og overholder alle regler, så kan der stadig opstå masser af fejl. 
+Køretidsfejl opstår typisk, når computeren ikke forstår hvad din kode prøver at gøre. Herunder et eksempel:
 
 
+```javascript
+let xPos;
+let yPos;
+
+function setup() {
+  xPos = width ;
+  yPos = height ;
+  createCanvas(400, 600);
+  text("Hej " + name)
+}
+```  
+
+Her er problemet, at name ikke er defineret nogle steder. Der meldes om følgende fejl:
+Uncaught ReferenceError: name is not defined (sketch: line 3). 
+
+Her er det nok at erklære en variable name med en værdi. Ikke alle køretidsfejl er så nemme at rette. 
+
+- Logiske fejl. Ved denne type fejl afvikles programmet, men det giver ikke det ønskede input. Der er mao. tale om en fejl i logikken i koden, hvor man måske gør en antagelse om at noget kode virker på en bestemt måde, men ikke gør i praksis. Det er en meget almindelig fejl og enhver programmør på alle niveauer kommer til at lave den type fejl nærmest dagligt. Det kan være tidskrævende fejl at finde. I sidste ende er det op til programmøren, at ens kode fortæller computeren præcis hvad man ønsker den skal gøre.
+
+Her er et eksempel på kode, hvor vi ønsker at skrive Hej midt på kanvas. Kan du se fejlen?
+```javascript
+let xPos;
+let yPos;
+
+function setup() {
+  xPos = width/2 ;
+  yPos = height/2 ;
+  createCanvas(300, 300);  
+}
+
+function draw() {
+  text("Hej", xPos,yPos)
+}
+```
+Fejlen skyldes, at vi initialisere xPos og yPos før kanvasset initialiseres. Havde vi i stedet initialiseret xPos og yPos efter createCanvas, så står det rigtigt. 
 
 ## Øvelser
 1. Find flere eksempler fra den virkelige verden, hvor  systemer har haft betydelige fejl og hvilke konsekvenser det har haft for udviklerne og systemet samt brugerne heraf. Kunne fejlene mon være undgået ved at teste mere og bedre? 
