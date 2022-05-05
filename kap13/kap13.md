@@ -1,4 +1,4 @@
-# 13. Testning
+# 13. Testning, debug og fejlhåndtering
 Et helt central i al softwareudvikling og programmering er at teste, at ens system eller program rent faktisk fungerer efter hensigten. Ikke desto mindre har det historisk set været nedprioriteret og ofte betragtet som en adskilt del eller en eftertanke af udviklingsprocessen. 
 
 ## Testning er vigtigt tidligt i udviklingsfasen 
@@ -197,7 +197,7 @@ Her er det nok at erklære en variable name med en værdi. Ikke alle køretidsfe
 
 - Logiske fejl. Ved denne type fejl afvikles programmet, men det giver ikke det ønskede input. Der er mao. tale om en fejl i logikken i koden, hvor man måske gør en antagelse om at noget kode virker på en bestemt måde, men ikke gør i praksis. Det er en meget almindelig fejl og enhver programmør på alle niveauer kommer til at lave den type fejl nærmest dagligt. Det kan være tidskrævende fejl at finde. I sidste ende er det op til programmøren, at ens kode fortæller computeren præcis hvad man ønsker den skal gøre.
 
-Her er et eksempel på kode, hvor vi ønsker at skrive Hej midt på kanvas. Kan du se fejlen?
+Her er et eksempel på kode, hvor vi ønsker at skrive "Hej" midt på kanvas. Kan du se fejlen?
 ```javascript
 let xPos;
 let yPos;
@@ -214,6 +214,70 @@ function draw() {
 ```
 Fejlen skyldes, at vi initialisere xPos og yPos før kanvasset initialiseres. Havde vi i stedet initialiseret xPos og yPos efter createCanvas, så står det rigtigt. 
 
+## Fejlhåndtering 
+Når en funktion ikke afvikles normalt eller efter hensigten, kan det være relevant at overveje at hoppe til et sted i koden, hvor vi ved hvordan problemet skal håndteres.
+Fejlhåndtering handler om at man i sin kode implementerer en mekanisme som aktiveres hvis vi løber ind i problemer. Dette kaldes også i fagsprog for at rejse eller kaste en exception eller undtagelse. 
+En undtagelse håndteres i javascript ved brug af nøgleordene try, catch og finally:
+
+```javascript
+try {
+  //Kode, der forsøges udført. 
+  //I koden kan inddrages throw 
+}
+catch(err) {
+  // Kode, der håndterer fejl kaldet err
+}
+finally {
+  //Blok af kode som udføres uanset resultatet  try / catch 
+}
+```
+Ved brug af throw under try-strukturen kan man kaste en undtagelse, som gribes i catch. I finally kan vi afvikle kode som vi udfører uafhængig af om der gribes en fejl. Det lyder måske mere kompliceret end det faktisk er i praksis, så herunder et eksempel: 
+
+```javascript
+function myFunction(x) {
+  try {
+    if(x == "") throw "tom streng";
+    if(isNaN(x)) throw "ikke et tal";
+    x = Number(x);
+    if(x > 12) throw "for stort";
+    if(x < 3) throw "for lille";
+  }
+  catch(err) {
+    console.log("Fejl: " + err + ".");
+  }
+  finally {
+    console.log("Slut.");
+  }
+}
+```
+Funktionen herover tjekker et input x for hvilken type og hvor stor værdi det rummer. Her repræsenterer err den tekststreng som kastes under try. 
+Det kan anbefales at eksperimentere med koden  i praksis for at få en bedre forståelse af håndtering af undtagelser. 
+
+Herunder et andet eksempel, der håndterer forskellige typer af undtagelser, som er indbygget i javascript. I koden antages det, at myFunction kaster tre forskellige typer af undtagelser TypeError, RangeError, EvalError, som vi kort gennemgår efter eksemplet.  
+```javascript
+try {
+  myFunction(); // antag den kaste tre typer af undtagelser
+} catch (e) {
+  if (err instanceof TypeError) {
+    // Kode der skal håndtere type fejl
+  } else if (err instanceof RangeError) {
+    // Kode der skal håndtere fejl med intervaller
+  } else if (err instanceof SyntaxError) {
+    // Kode der skal håndtere fejl i syntaksen
+  } else {
+    // Kode, der håndterer fejl som ikke er knyttet til de tre fejltyper
+  }
+}
+```
+
+Herunder gennemgår vi nogle af de mest almindelige typer fejl, som kan kastes:
+
+- RangeError: Opstår når en numerisk værdi er udenfor et specificeret interval
+- ReferenceError: Opstår når en variable ikke er deklareret. Typisk pga. stavefejl eller glemt at tage højde for store og små bogstaver
+- Syntax Error: Når reglerne for Javascript sprogets struktur er brudt .
+- TypeError: Opstår når der forventes en type men i praksis er det en anden. 
+
+
 ## Øvelser
 1. Find flere eksempler fra den virkelige verden, hvor  systemer har haft betydelige fejl og hvilke konsekvenser det har haft for udviklerne og systemet samt brugerne heraf. Kunne fejlene mon være undgået ved at teste mere og bedre? 
 2. Overvej fordele og ulemper ved brug af manuel testning, automatisk testning og kontinuerlig testning med udgangspunkt i, at man enten arbejder i en mindre startup virksomhed kontra et større og mere veletableret softwarevirksomhed?
@@ -222,3 +286,66 @@ Overvej hvorledes du vil teste programmet for fejl.
 Brug jest-biblioteket til at teste hvorvidt input og output er korrekt. 
 4. Lav en BMI-beregner, der tager vægt, højde og navn, og hvor du bruger Jest til at sikre at du får en korrekt type af input på dine data. 
 5. Overvej hvordan du vil lave sort boks testning på din BMI beregner
+6. Prøv at finde fejlene i følgende kode? Hvilken type fejl er der tale om?
+```javascript
+function setup() {
+  createCanvas(300 300);
+  noFill();
+  stroke(255);
+  strokeWeight(8);
+}
+
+function draw( {
+  background(32);
+  // top, bund
+  /  venstre, højre
+  circle(150, 0, 300);
+  circle(150, 300, 300);
+  Circle(0, 150, 300);
+  circle(300, 150 300);
+}
+```
+
+
+7. Prøv at finde fejlene i følgende kode? Hvilken type fejl er der tale om?
+
+```javascript
+let circleY;
+let circleX;
+let circleZ;
+let r
+function setup() {
+  createCanvas(800, 300);
+  circleX = 60;
+}
+
+function draw() {
+	background(180);
+	ellipse(12, circleY, r, 60);
+	ellipse(circleX, circleZ, 60, 60);
+	ellipse(20, circleY, 60, 60);
+	ellipse(40, circleY, 60, 60);
+	circle(circleY, circleX, r);
+  
+}
+```
+
+8. Prøv at finde fejlene i følgende kode? Vi ønsker at printe tallene fra 1 til 20. Hvilken type fejl er der tale om?
+```javascript
+
+function setup() {
+  let n = 20
+  let i = 0
+  while(i>20)
+  {
+    if(i=10) console.log("Vi er halvvejs")
+    console.log(i)
+  }
+}
+
+```
+
+
+9.  Skriv en funktion $f$, der tager tre argumenter $a,b$ og $c$ ved brug af exceptions håndterer mulige fejl i fht input: $$f(a,b,c)= \sqrt{\frac{a+b}{b-1} - c}$$
+
+10. Skriv en funktion myFunction, der som minimum kaster TypeError, RangeError, SyntaxError. Afprøv den efterfølgende sammen med koden i eksemplet. 
