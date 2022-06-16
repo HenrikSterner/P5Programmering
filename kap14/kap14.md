@@ -22,11 +22,14 @@ En klar ulempe ved modellen er, at den mangler grundlæggende fleksibilitet. Hvi
 
 
 ## Den iterative udviklingsmetode
-Iterativ udviklingsmetode har vundet indpas i den seneste årrække. Metoden er modsat vandfandsmodellen af en cyklisk natur, hvor man på baggrund af en ide, starter med at samle og analysere på data relateret til systemet man ønskere at udvikle. Herefter konstruerer typisk nogle få enkle krav til systemet, der planlægges implementeret.  Efterfølgende tilpasses og justeres disse krav i takt med at systemet tager form. Den bagvedliggende tanke er, at man ikke nødvendigvis på forhånd kender det optimale system og krav til et system, da disse i høj grad kan ændres undervejs. Men i takt med udviklingen af systemet bliver man som udvikler stadig klogere på disse krav og den iterative model giver altså mulighed for at tilpasse disse krav dynamisk. Herefter itererer man over eller gentager følgende trin indtil man når sine ønskede mål med systemet/produktet: 
-* Design: 
-* Implementation og test:
-* Evaluering:  
-har fokus på, at man udvider systemet i mindre skridt
+Iterativ udviklingsmetode har vundet indpas i den seneste årrække. Metoden er modsat vandfandsmodellen af en cyklisk natur, hvor man på baggrund af en ide, starter med at samle og analysere på data relateret til systemet man ønskere at udvikle. Herefter konstruerer typisk nogle få enkle krav til systemet, der planlægges implementeret.  Efterfølgende tilpasses og justeres disse krav i takt med at systemet tager form. Den bagvedliggende tanke er, at man ikke nødvendigvis på forhånd kender det optimale system og krav til et system, da disse i høj grad kan ændres undervejs. Men i takt med udviklingen af systemet bliver man som udvikler stadig klogere på disse krav. Den iterative model giver altså mulighed for at tilpasse disse krav til en dynamisk verden og kontekst. 
+
+I metoden itererer man efterfølgende over eller gentager følgende faser indtil man når sine ønskede mål med systemet/produktet, hvorefter systemet kan frigives til brugeren: 
+* Design: I denne fase forberedes systemet til at opfylde de fornødne krav for designet, der kan være et nyt eller en udvidelse af en tidligere version.
+* Implementation og test: I denne fase er man optaget af implementere eller programmere de nødvendige krav. Undervejs testes systemet regelmæssigt og systematisk. 
+* Evaluering: I denne fase evalueres systemet i fht de aktuelle krav. Man overvejer og reflekterer over den nuværende løsning og man diskuterer muligheden for nye mulige krav i den næste iteration/opdatering. 
+   
+I en verden hvor teknologien og kravene ændres stort set hele tiden kan modellen være rigtig god
 
 ## Agil udvikling og SCRUM
 Agil betegner noget der let, hurtigt og smidigt. Med andre ord tilpasningsparat. 
