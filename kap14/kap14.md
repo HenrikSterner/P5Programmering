@@ -20,6 +20,15 @@ Selvom den måske ikke bruges umiddelbart så meget i dag, er den stadig særdel
 Vandfaldsmodellen kan være god  at bruge når mål og krav med systemet står meget klar, og teknologi-stakken er veldefineret og velkendt. Mao. hvor man ikke forventer større, radikale ændringer undervejs i processen. Det kunne eksempelvis være i større organisationer, såsom i udviklingen af offentlige it-systemer. 
 En klar ulempe ved modellen er, at den mangler grundlæggende fleksibilitet. Hvis du f.eks.  udvikler et mindre system eller en prototype, der skal formes eller tilpasses markant undervejs - måske udfra feedback fra brugere/testere - så er vandfaldsmodellen formentlig ikke hensigtsmæssig at bruge. 
 
+## Inkrementel udvikling
+Inkrementel udvikling også kaldet skridtvis forbedring betoner, at systemer udvikles løbende i skridt eller iterationer, hvor hver iteration består af følgende faser:  
+* En kravanalyse fase hvor krav og specifikationer til systemet indsamles og klassificeres 
+* En design fase hvor systemets funktioner designet 
+* En kode fase hvor designet implementeres ved brug af programmering 
+* En test fase hvor den nye funktionalitet testes. 
+
+Hver ny iteration tilfører ny funktionalitet til systemet og systemet sættes i produktion, når den første iteration er fuldført. 
+I første iteration udvikles typisk den grundlæggende funktionalitet af produktet, så kernen af produktet er på plads. Supplerende funktionalitet tilføjes typisk i de efterfølgende iterationer. 
 
 ## Den iterative udviklingsmetode
 Iterativ udviklingsmetode har vundet indpas i den seneste årrække. Metoden er modsat vandfandsmodellen af en cyklisk natur, hvor man på baggrund af en ide, starter med at samle og analysere på data relateret til systemet man ønskere at udvikle. Herefter konstruerer typisk nogle få enkle krav til systemet, der planlægges implementeret.  Efterfølgende tilpasses og justeres disse krav i takt med at systemet tager form. Den bagvedliggende tanke er, at man ikke nødvendigvis på forhånd kender det optimale system og krav til et system, da disse i høj grad kan ændres undervejs. Men i takt med udviklingen af systemet bliver man som udvikler stadig klogere på disse krav. Den iterative model giver altså mulighed for at tilpasse disse krav til en dynamisk verden og kontekst. 
@@ -29,7 +38,15 @@ I metoden itererer man efterfølgende over eller gentager følgende faser indtil
 * Implementation og test: I denne fase er man optaget af implementere eller programmere de nødvendige krav. Undervejs testes systemet regelmæssigt og systematisk. 
 * Evaluering: I denne fase evalueres systemet i fht de aktuelle krav. Man overvejer og reflekterer over den nuværende løsning og man diskuterer muligheden for nye mulige krav i den næste iteration/opdatering. 
    
-I en verden hvor teknologien og kravene ændres stort set hele tiden kan modellen være rigtig god
+I en verden hvor teknologien og kravene ændres stort set hele tiden kan modellen være rigtig god at bruge fremfor eksempelvis vandfaldsmodellen. 
+Når kravene og nødvendighederne til systemet ikke nødvendigvis er veldefineret men kan forstås og klassificeres, så kan modellen være god at bruge til over tid at udvikle en fornuftig løsning. 
+
+Hvis der er behov for at udvikle eller opdatere eksisterende systemer til eksempelvis at integrere den seneste teknologi, kan metoden også bruges, fordi man kan udvikle inkrementelt og opdatere systemet løbende modsat eksempelvis vandfaldsmodellen, hvor man i højere grad tvinges til at starte forfra.
+
+Men den iterative udviklingsmetode kan i højere grad end vandfaldsmodellen give mulighed for at identificere høj-risiko problemer eller udfordringer, som kan have stor betydning for den endelige løsning, og i stedet justere for dette undervejs ved, så man i højere grad arbejder med lav-risiko beslutninger der i mindre grad påvirker det samlede system. I vandfaldsmodellen ender man i højere grad tvunget til at tage høj-risiko beslutninger i starten og slutningen af processen. 
+
+Metoden kalder på en mere agil tilgang til softwareudvikling, som vi vender tilbage til i næste afsnit. 
+
 
 ## Agil udvikling og SCRUM
 Agil betegner noget der let, hurtigt og smidigt. Med andre ord tilpasningsparat. 
