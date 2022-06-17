@@ -28,8 +28,12 @@ Inkrementel udvikling også kaldet skridtvis forbedring betoner, at systemer udv
 * En test fase hvor den nye funktionalitet testes. 
 
 Hver ny iteration tilfører ny funktionalitet til systemet og systemet sættes i produktion, når den første iteration er fuldført. 
+
 I første iteration udvikles typisk den grundlæggende funktionalitet af produktet, så kernen af produktet er på plads. Supplerende funktionalitet tilføjes typisk i de efterfølgende iterationer. 
 
+Man kunne eksempelvis forestille sig, at man ønske at udvikle et transportmiddel. Til at starte med udvikles måske et skateboard i første iteration. Man bliver bevidst om, at det måske er for upraktisk og der er brug for mere fart, så man viderudvikler til en cykel og i den efterfølgende iteration til en bil. 
+
+Inkrementel udvikling kan være god at bruge, når kravene til ens system er veldefineret og klare. 
 ## Den iterative udviklingsmetode
 Iterativ udviklingsmetode har vundet indpas i den seneste årrække. Metoden er modsat vandfandsmodellen af en cyklisk natur, hvor man på baggrund af en ide, starter med at samle og analysere på data relateret til systemet man ønskere at udvikle. Herefter konstruerer typisk nogle få enkle krav til systemet, der planlægges implementeret.  Efterfølgende tilpasses og justeres disse krav i takt med at systemet tager form. Den bagvedliggende tanke er, at man ikke nødvendigvis på forhånd kender det optimale system og krav til et system, da disse i høj grad kan ændres undervejs. Men i takt med udviklingen af systemet bliver man som udvikler stadig klogere på disse krav. Den iterative model giver altså mulighed for at tilpasse disse krav til en dynamisk verden og kontekst. 
 
