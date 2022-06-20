@@ -50,15 +50,22 @@ Når kravene og nødvendighederne til systemet ikke nødvendigvis er veldefinere
 
 Hvis der er behov for at udvikle eller opdatere eksisterende systemer til eksempelvis at integrere den seneste teknologi, kan metoden også bruges, fordi man kan udvikle inkrementelt og opdatere systemet løbende modsat eksempelvis vandfaldsmodellen, hvor man i højere grad tvinges til at starte forfra.
 
-Men den iterative udviklingsmetode kan i højere grad end vandfaldsmodellen give mulighed for at identificere høj-risiko problemer eller udfordringer, som kan have stor betydning for den endelige løsning, og i stedet justere for dette undervejs ved, så man i højere grad arbejder med lav-risiko beslutninger der i mindre grad påvirker det samlede system. I vandfaldsmodellen ender man i højere grad tvunget til at tage høj-risiko beslutninger i starten og slutningen af processen. 
+Men den iterative udviklingsmetode kan i højere grad end vandfaldsmodellen give mulighed for at identificere høj-risiko problemer eller udfordringer, som kan have stor betydning for den endelige løsning, ved at tilbyde mulighed for justering for disse udfordringer undervejs. Herved opnår man i højere grad at skulle forholde sig til lav-risiko beslutninger, der i mindre grad påvirker det samlede system. I vandfaldsmodellen ender man i højere grad tvunget til at tage høj-risiko beslutninger i starten og slutningen af processen. 
 
-Metoden kalder på en mere agil tilgang til softwareudvikling, som vi vender tilbage til i næste afsnit. 
+
 
 
 ## Agil udvikling og SCRUM
-Agil betegner noget der let, hurtigt og smidigt. Med andre ord tilpasningsparat. 
-Modsat vandfaldsmodellen handler agil udvikling om at være tilpasningsparat i en dynamisk verden, hvor tingene hurtigt kan ændre sig om det er feedback fra brugere, ændringer i konteksten, kravmodifikationer eller lignende. 
+Agil, betegner noget der let, hurtigt og smidigt. Med andre ord tilpasningsparat. Agil udvikling og agile metoder er en tilgang til projektstyring, der kombinerer både iterativ og inkremental udvikling med henblik på at skabe en tilpasningsparat udviklingsproces. I sidste ende handler det om at øge tilfredsheden hos kunden og slutbrugeren ved hurtigt at kunne frigive et produkt. 
 
-I agil udvikling arbejder implementeres denne tilpasningsparathed sig ved at have en iterativ tilgang til udviklingen. Ved iterativ skal her forstås, at man gentager nogle af eller alle faserne i udviklingsprocessen. Det betyder eksempelvis, at man i iterativ udvikling bevæger sig igennem faserne planlægning, udvikling, testning og tilpasning mange gange måske et uendeligt antal gange. På den måde opstår der en såkaldt inkrementel udvikling eller skridtvis forbedring af ens system.  
+Modsat vandfaldsmodellen handler agil udvikling om at være tilpasningsparat i en dynamisk verden, hvor tingene hurtigt kan ændre sig om det er feedback fra brugere, ændringer i konteksten, kravmodifikationer eller lignende. Den agile udvikling har modsat vandfaldsmodellen overlappende faser og systemet udvikles af små selvorganiserende og samarbejdende teams, som i kontinuerte cykluser også kaldet sprints udvider systemer. Det sker i tæt samarbejde med kunden, der er involveret i processen fra start til slut.
+
+
+
+### SCRUM
+
+### Agil vs iterativ udvikling
+Iterativ udvikling i høj grad er fokuseret på softwarens struktur og hvorledes man kan anvende sine ressourcer bedst muligt til at udvikle og udvide systemet med mindre komponenter, så det på sigt giver systemet ny værdi for brugeren, men ikke nødvendigvis i den nuværende iteration. 
+Agil udvikling adskiller sig fra iterativ udvikling i den forstand, at ved hver ny iteration bør der skabes ny værdi for brugeren ellers har iterationen fejlet. 
 
 ### Kanban
