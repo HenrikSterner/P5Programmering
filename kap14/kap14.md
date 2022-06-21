@@ -40,7 +40,7 @@ Den bagvedliggende tanke er, at man ikke nødvendigvis på forhånd kender det o
 
 Hvor inkrementel udvikling i høj grad handler om at få en system ud så hurtigt som muligt og så i de efterfølgende iterationer udvide systemet, har den iterative proces i højere grad fokus på at inddrage feedback fra brugere og testfasen. På den måde skulle projektet gerne blive bedre i takt med, at man itererer over løsningen. 
 
-I metoden itererer man efterfølgende over eller gentager følgende faser indtil man når sine ønskede mål med systemet/produktet, hvorefter systemet kan frigives til brugeren: 
+I metoden itererer man efterfølgende over eller gentager følgende faser indtil man når sine ønskede mål med systemet/produktet, hvorefter systemet kan frigives til brugeren. Det er en projektmanager/leder, der koordinerer og er ansvarlig for hver iteration:
 * Design: I denne fase forberedes systemet til at opfylde de fornødne krav for designet, der kan være et nyt eller en udvidelse af en tidligere version.
 * Implementation og test: I denne fase er man optaget af implementere eller programmere de nødvendige krav. Undervejs testes systemet regelmæssigt og systematisk. 
 * Evaluering: I denne fase evalueres systemet i fht de aktuelle krav. Man overvejer og reflekterer over den nuværende løsning og man diskuterer muligheden for nye mulige krav i den næste iteration/opdatering. 
@@ -58,14 +58,74 @@ Men den iterative udviklingsmetode kan i højere grad end vandfaldsmodellen give
 ## Agil udvikling og SCRUM
 Agil, betegner noget der let, hurtigt og smidigt. Med andre ord tilpasningsparat. Agil udvikling og agile metoder er en tilgang til projektstyring, der kombinerer både iterativ og inkremental udvikling med henblik på at skabe en tilpasningsparat udviklingsproces. I sidste ende handler det om at øge tilfredsheden hos kunden og slutbrugeren ved hurtigt at kunne frigive et produkt. 
 
-Modsat vandfaldsmodellen handler agil udvikling om at være tilpasningsparat i en dynamisk verden, hvor tingene hurtigt kan ændre sig om det er feedback fra brugere, ændringer i konteksten, kravmodifikationer eller lignende. Den agile udvikling har modsat vandfaldsmodellen overlappende faser og systemet udvikles af små selvorganiserende og samarbejdende teams, som i kontinuerte cykluser også kaldet sprints udvider systemer. Det sker i tæt samarbejde med kunden, der er involveret i processen fra start til slut.
+Modsat vandfaldsmodellen handler agil udvikling om at være tilpasningsparat i en dynamisk verden, hvor alting hurtigt kan ændre sig om det er feedback fra brugere, ændringer i konteksten, kravmodifikationer eller lignende. 
+Den agile udvikling har modsat vandfaldsmodellen overlappende faser og systemet udvikles af små selvorganiserende og samarbejdende teams, som i kontinuerte cykluser også kaldet sprints udvider systemer. Det sker i tæt samarbejde med kunden, der er involveret i processen fra start til slut.
+
+Den agile udviklingsmetode er beskrevet i et manifest, der består af fire vigtige værdier og tolv principper, der fungerer som en guide for den agile tilgang. 
+De fire vigtige værdier, som den agile metode tager udgangspunkt i, kan kort sagt opsummeres således:
+
+1. Hellere samarbejde og mennesker end processer og værktøjer
+2. Hellere et velfungerende system end omfattende dokumentation
+3. Hellere dialog og samarbejde med kunden end forhandling af kontrakt
+4. Hellere muliggøre håndtering af forandringer end ensidigt fokus på fastholdelse af en plan. 
+
+Disse værdier skal i et vist omfang ses som prioriteringer. 
+Dvs. i den agile udviklingsmetodologi sættes stadig stor pris på punkterne der står til sidst. Men man værdsætter bare de andre værdier til venstre endnu højere. 
+   
+Med udgangspunkt i værdisættet har man i manifestet formuleret følgende principper:
+
+1. Kundens tilfredshed er af højeste prioritet. Det sker gennem tidlige og løbende afleveringer af værdifuld systemet.
+2. Ændringer i krav imødekommes også sent i udviklingen af systemet. De agile ændringer sikrer, at ændringerne er til kundens fordel i sidste ende. 
+3. Løbende evaluering og test af systemet. Jo oftere, jo bedre. 
+4. Udviklere og repræsentanter for forretningsdelen skal samarbejde dagligt. 
+5. Opbyg projekter omkring motiverede folk. Giv dem de rette omgivelser og relevant støtte. Stol på dem. 
+6. Den mest effektive form for kommunikation er ansigt til ansigt.
+7. Fremdrift måles på hvor velfungerende systemet er. 
+8. Agil udvikling fremmer bæredygtig udvikling. Udviklere og brugere bør altid kunne holde et bestemt tempo i udviklingen. 
+9. Agil udvikling fremmes ved godt design og ekspertise
+10. Hold det enkelt (KISS - Keep It Simple and Straight) og tænk i løsninger der er så simple som mulige og kun kan det de skal. 
+11. Selvorganiserede teams der langt hen ad vejen leder sig selv. Det er karakteristisk at når alle i gruppen tager ansvar og respekterer hinanden, så følger ofte gode resultater. 
+12. Reflekterende praksis hvor der løbende kigges tilbage på hvad der er gået godt og hvad der er gået mindre godt. Hvorledes kan kunden inddrages undervejs i processen. 
 
 
+I figuren er det illustreret hvorledes agil udvikling fungerer. 
+![Agil udvikling](images/agileprojekt.jpg)
 
-### SCRUM
+Som det også er illustreret i figuren, så inddeles produktet i mindre inkrementale komponenter. Heraf den inkrementelle udviklingstilgang. 
+
+I næste afsnit kigger vi på en konkret implementering af de agile tankegang, som kaldes for SCRUM.
 
 ### Agil vs iterativ udvikling
 Iterativ udvikling i høj grad er fokuseret på softwarens struktur og hvorledes man kan anvende sine ressourcer bedst muligt til at udvikle og udvide systemet med mindre komponenter, så det på sigt giver systemet ny værdi for brugeren, men ikke nødvendigvis i den nuværende iteration. 
 Agil udvikling adskiller sig fra iterativ udvikling i den forstand, at ved hver ny iteration bør der skabes ny værdi for brugeren ellers har iterationen fejlet. 
 
-### Kanban
+### Agil udvikling i praksis: SCRUM
+Et eksempel på meget anvendt og anerkendt agil udviklingsmetode er SCRUM, som er taget fra rugby og betyder noget i retning af "skærmydsler". 
+
+Man starter typisk en SCRUM proces i forberedelses fasen med at formulere følgende:
+* Produkt vision. Her beskrives de overordnede mål for udviklingen af systemet.
+* Produkt roadmap. Her beskrives ved brug af milepæle en overordnet plan for hvornår de vigtigste nøglefunktioer eller features er klar til levering. 
+* Release plan. Her inddeles road map i punkt 2 i indtil flere releases, hvor første release betegner et såkaldt "minimum viable project" eller minimum levedygtigt produkt. Dvs. de funktioner/features, som er essentielle for produktet. 
+
+I SCRUM arbejdes med tre forskellige roller:
+* Product owner, som er ansvarlig for at planlægge leveringer til kunden og at der er styr på kravene til produktet. Den pågældende er mao den egentlige ansvarlige for produktet. 
+* Scrum master, som sikrer at de enkelte iterationer - de såkaldte sprints -  gennemføres og at det kommunikeres ud og synliggøres for Product owner. 
+* Scrum teamet, som er en mindre grupper af mennesker der står for at udføre de enkelte sprints. 
+
+Grundlaget for ethvert SCRUM projekt består af følgende såkaldte artefakter eller materialer:
+
+* Produkt Backlog er en samling af alle krav til systemet og projektet, som administreres af Product owner. De enkelte krav prioriteres og jo højere prioritering, jo mere præcis skal kravene være beskrevet. 
+* Sprint Backlog indikerer hvilke dele af Product Backlog altså hvilke krav, som implementeres i den kommende sprint. 
+* Burndown Chart er et visuelt diagram af fremdriften i en iteration. Hvor iterationer (typisk målt i dage) er ud af x-aksen men systemets backlog er opad y-aksen. Den kan også måles i tid eller antal opgaver. Se figuren for et eksempel på et sådan plot. 
+
+Et sprint forløber i fire ceremonier hvor hele teamet mødes og det er SCRUM masterens opgave at facilitere og koordinere møderne.. 
+* Planlægning af sprint hvor det enkelt sprint koordineres i fht de enkelte medlemmer i teamet 
+* Dagligt Stand Up hvor hvert medlem af teamet fortæller om hvad de har lavet, hvad de skal i dag og hvorvidt de har nogle problemer eller ting som kan blokere for at opnå dagens program
+* Sprint review hvor sprintets leveringer gennemgås og godkendes
+
+Efterfølgende foretages også en retrospektiv proces som har fokus på hvorledes samarbejdet forløber og hvad der kan gøres bedre til næste sprint. 
+
+
+
+
+### Agil udvikling i praksis: Kanban
