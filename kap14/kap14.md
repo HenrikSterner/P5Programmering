@@ -129,3 +129,17 @@ Efterfølgende foretages også en retrospektiv proces som har fokus på hvorlede
 
 
 ### Agil udvikling i praksis: Kanban
+Kanban betyder tegnetavle og stammer fra Japan. Det er udviklet med henblik på just in time produktion, hvor der ligges vægt på at være klar over hvad, hvornår og hvor meget der produceres. 
+Alt fra supermarkeder til bilfirmaet Toyota, har blandt gjort brug af Kanban til bl.a. at optimere og forbedre sin produktionscyklus. Målet er at skabe et flow mellem efterspørgslen og produktionen, således, at man undgår at have for meget på lager, men omvendt stadig kan garantere at et produkt kunden ønsker, stadig er tilgængelig.
+Teknikken var så succesfuld, at mange af de samme principper blev adopteret i softwareudviklingen. Det skyldes ikke mindst, at softwareudviklere kan begynde at gøre brug af principperne, så snart de forstår dem, modsat eksempelvis Toytas fabrikker, fordi det stillede højere krav til de fysiske processer og materialer. 
+
+Softwareudviklere kræver blot en tavle og nogle kort, som i øvrigt også kan være virtuelt. Ofte foretrækkes faktisk virtuelle tavler, da det er nemmere at synkronisere og samarbejde på tværs af virksomheden, som fysisk kan være placeret forskellige steder i verdenen. 
+
+Al arbejde i et Kanban team omhandler den såkalde Kanban tavle. Den bruges som et værktøj til at visualisere og optimere arbejdet mellem de enkelte udviklere og hold. 
+En kanban tavle har typisk tre kolonner, som rummer en eller flere aktiviteter/opgaver også kaldet Kanban kort. Kanban kort rummer grundlæggende og kritisk information om de enkelte opgaver. Det kan være den ansvarlige person, hvornår opgaverne er løst, et billede af løsningen osv. 
+En typisk tavle vil have følgende tre kolonner af kanban kort:
+- To do: Liste af kanban kort, der skal løses. Typisk prioriteret i lav, middel og høj.
+- In Progress: Liste af kanban kort, der er i gang med at blive løst med angivelse i procent hvor tæt vi er på målet
+- Done: Liste med færdiggjorte kanban kort og en angivelse af hvornår.
+
+Kolonnerne kan ændres afhængig af den konkrete kontekst og man kan sågar udvide med flere kolonner, hvis det giver mening for teamet.
