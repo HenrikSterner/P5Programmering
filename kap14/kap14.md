@@ -20,8 +20,13 @@ Selvom den måske ikke bruges umiddelbart så meget i dag, er den stadig særdel
 Vandfaldsmodellen kan være god  at bruge når mål og krav med systemet står meget klar, og teknologi-stakken er veldefineret og velkendt. Mao. hvor man ikke forventer større, radikale ændringer undervejs i processen. Det kunne eksempelvis være i større organisationer, såsom i udviklingen af offentlige it-systemer. 
 En klar ulempe ved modellen er, at den mangler grundlæggende fleksibilitet. Hvis du f.eks.  udvikler et mindre system eller en prototype, der skal formes eller tilpasses markant undervejs - måske udfra feedback fra brugere/testere - så er vandfaldsmodellen formentlig ikke hensigtsmæssig at bruge. 
 
-## Inkrementel udvikling
-Inkrementel udvikling også kaldet skridtvis forbedring betoner, at systemer udvikles løbende i skridt eller iterationer, hvor hver iteration består af følgende faser:  
+## Skridtvis forfining
+I skridtvis forfining udvikles systemet i en række iterationer eller skridt, hvor man i hvert skridt transformerer abstrakte programbeskrivelser til konkrete forfininger af et program, så der ikke ændres på programmets grundlæggende funktionalitet og adfærd. Del-og-hersk princippet, som handler om at dele problemer, der er svære at løse, ind i mindre delproblemer, som måske lettere kan løses. Ved at løse delproblemerne kan man måske løse det mere generelle problem. 
+Skridtvis forfiningen har nogle klare fordele. Ved at inddele problemet i mindre dele får man en god forståelse af det overordnede problem og delproblemerne kan typisk løses af forskellige (hold af) programmører og gør det nemt at administrere. Endelig er det også muligt i høj grad at træffe design beslutninger undervejs i udviklingen, hvilket gør det noget hurtigere at ændre i stedet for efter programmeringen, som det eksempelvis er tilfældet med vandfaldsmodellen. 
+Skridtvis forfinings grundlæggende antagelse er, at man på forhånd kender alle krav til programmet for at kunne foretage de nødvendige forbedringer, hvilket gør metoden mindre effektiv, når man udvikler systemer hvor krav og funktionaliteten af systemet ændres undervejs.
+
+## Skridtvis forbedring
+Skridtvis forbedring også kaldet inkrementel udvikling betoner, at systemer udvikles løbende i skridt eller iterationer, hvor hver iteration består af følgende faser:  
 * En kravanalyse fase hvor krav og specifikationer til systemet indsamles og klassificeres 
 * En design fase hvor systemets funktioner designet 
 * En kode fase hvor designet implementeres ved brug af programmering 
@@ -29,11 +34,23 @@ Inkrementel udvikling også kaldet skridtvis forbedring betoner, at systemer udv
 
 Hver ny iteration tilfører ny funktionalitet til systemet og systemet sættes i produktion, når den første iteration er fuldført. 
 
+Til forskel fra skridtvis forfining, så er skridtvis forbedring i højere grad en eksplorativ proces, hvor man bevæger sig imellem at udvikle, omstrukturere og forfine kode
+
 I første iteration udvikles typisk den grundlæggende funktionalitet af produktet, så kernen af produktet er på plads. Supplerende funktionalitet tilføjes typisk i de efterfølgende iterationer. 
 
 Man kunne eksempelvis forestille sig, at man ønske at udvikle et transportmiddel. Til at starte med udvikles måske et skateboard i første iteration. Man bliver bevidst om, at det måske er for upraktisk og der er brug for mere fart, så man viderudvikler til en cykel og i den efterfølgende iteration til en bil. 
 
 Inkrementel udvikling kan være god at bruge, når kravene til ens system er veldefineret og klare. 
+
+En konkret procedure for implementering af skridtvis forbedring ved brug af objekter kan være den såkaldte STREAM metode, som forløber i følgende skridt. 
+1. Skeletklasser konstrueres. Skeletklasser også kaldet stubs er reelt klasser der kun består af metoder. STREAM forudsætter altså, at man på forhånd har et kendskab til hvorledes systemet skal sammensættes af de enkelte klasser. Hvis metoderne returnerer en værdi består metoden af et simpelt kald ved brug af return og den respektive værdi. Hvis ikke det er tanken, at metoden skal returnere noget, så er metoden bare tom. 
+2. Test skeletklasserne. Det sker i praksis ved at man implementere en række unit tests, som typisk vil fejle til at starte med men forhåbentlig på sigt vil sikre, at klasserne opfører sig som de skal.
+3. Repræsentationer genovervejs. Her overvejes det om klasserne igennem deres tilknyttede attributter kan repræsenteres på en anden måde. Mindst to mulige repræsentationer bør inddrages hvor svære de er at implementere i praksis.
+4. Evaluering af repræsentationer. De forskellige repræsentationer fra punkt 3 evalueres ud fra hvor svære de er at implementere. 
+5. Attributter inddrages og implementeres i fht til den valgte repræsentation. Mulighed for at kommentere i koden på attributtens mulige værdier og betydning. Klassens konstruktør implementeres så attributterne initialiseres.
+6. Metode implementering. Så længe der er ufærdige metoder, vælges en ny metode, som implementeres, og så længe en metode er ufærdig bør den forbedres og efterfølgende testes. Ved forbedres forstå, at man udvider, forfiner eller omstrukturer. 
+
+
 ## Den iterative udviklingsmetode
 Iterativ udviklingsmetode har vundet indpas i den seneste årrække. Metoden er modsat vandfandsmodellen af en cyklisk natur, hvor man på baggrund af en ide, starter med at samle og analysere på data relateret til systemet man ønskere at udvikle. Herefter konstruerer typisk nogle få enkle krav til systemet, der planlægges implementeret.  Efterfølgende tilpasses og justeres disse krav i takt med at systemet tager form og man får feedback fra bruger eller anden ny information. 
 Den bagvedliggende tanke er, at man ikke nødvendigvis på forhånd kender det optimale system og krav til et system, da disse i høj grad kan ændres undervejs. Man bliver mao i stedet i takt med udviklingen af systemet stadig klogere på den bedste løsning og de respektive krav. Den iterative model giver altså mulighed for at tilpasse disse krav til en dynamisk verden og kontekst. 
@@ -138,8 +155,24 @@ Softwareudviklere kræver blot en tavle og nogle kort, som i øvrigt også kan v
 Al arbejde i et Kanban team omhandler den såkalde Kanban tavle. Den bruges som et værktøj til at visualisere og optimere arbejdet mellem de enkelte udviklere og hold. 
 En kanban tavle har typisk tre kolonner, som rummer en eller flere aktiviteter/opgaver også kaldet Kanban kort. Kanban kort rummer grundlæggende og kritisk information om de enkelte opgaver. Det kan være den ansvarlige person, hvornår opgaverne er løst, et billede af løsningen osv. 
 En typisk tavle vil have følgende tre kolonner af kanban kort:
-- To do: Liste af kanban kort, der skal løses. Typisk prioriteret i lav, middel og høj.
+- To do: Liste af kanban kort, der skal løses. Typisk prioriteret i lav, middel og høj. 
 - In Progress: Liste af kanban kort, der er i gang med at blive løst med angivelse i procent hvor tæt vi er på målet
 - Done: Liste med færdiggjorte kanban kort og en angivelse af hvornår.
 
+Typisk opdateres tavlen af en produktejer.
+
 Kolonnerne kan ændres afhængig af den konkrete kontekst og man kan sågar udvide med flere kolonner, hvis det giver mening for teamet.
+Eksempelvis kan tilføjes en code review kolonne, der skal håndtere at kode tjekkes grundigt igennem for fejl og mangler. 
+
+Der er en række fordele ved Kanban-metoden. Bl.a. et øget fokus på hvad der rent faktisk er aktivt i udviklingsfasen/processen. Ydermere får man som kunde mere værdi for pengene, fordi det helt naturligt vil være de vigtigste ting for kunden, som er aktive og i fokus på tavlen, og man har som både kunde og udvikler et bedre overblik over hvor langt vi er i processen.
+Flaskehalsproblemer reduceres og de der er nemmere at identificere og dermed løses hurtigere. 
+En væsentlig pointe med kanban metoden er, at multitaskning ikke nødvendigvis altid er en god ting. I softwareudvikling har det tilbøjelighed til at øge udviklingstiden, fordi teamet af udviklere bruger tid på at kontekstskifte. 
+For at undgå dette indføres en såkaldt WIP grænsværdi for hver af kolonnerne på tavlen. WIP betegner Work-In-Progress grænse. Dvs. et maksimalt antal opgaver, som et team arbejder på i daværende øjeblik. 
+Det kunne eksempelvis måske være en god ide at have en lav WIP for kolonnen code review, fordi man som udikler derved fordres til at rette og teste fremfor at udvikle ny kode, hvilket de fleste udviklere typisk foretrækker.
+
+## Øvelser
+1. Overvej styrker og svagheder ved vandfaldsmodellen. Hvornår er det er en fordel at bruge vandfaldsmodellen fremfor eksempelvis iterativ udvikling?
+2. Sammenlign skridtvis forfining, inkrementel udvikling og iterativ udvikling. Hvilke ligheder er der og hvordan adskiller de sig?
+3. Undersøg tre forskellige større IT-projekter, der har fejlet eller været forsinket i udviklinge. Hvad synes årsagen at være? Kan den relateres til udviklingsmetoden?
+4. I det følgende skal du beskrive i ord og figurer hvorledes man ved brug af skridtvis forfining kan udvikle et simpelt kryds og bolle spil mod en kunstig intelligent spiller. Det er ikke et krav at skrive egentlig kode blot at man beskriver de enkelte trin i processen. De enkelte trin skal dog være så tæt på rigtig kode, at man let kan implementere spillet i praksis.
+5. I det følgende skal konstrueres et system til at holde styr på klokken ved brug af STREAM
