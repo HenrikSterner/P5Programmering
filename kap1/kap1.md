@@ -49,19 +49,18 @@ For at blive en god programmør og få succes med programmering, så vil vi fore
 Ønsker du altså på sigt at blive en ekspert indenfor programmering, så se i øjenene, at ægte ekspertise kan tage et helt liv eller som digteren, Samuel Johnson formulerede det: "Ekspertise i enhvet fag kan kun opnås ved et livs arbejde; det kan og skal ikke købes til en lavere pris."
 
 ## Valg af sprog
-Når man skal lære at programmere er et af de første store spørgsmål, hvilket sprog man bør tage fat på. Der findes ikke noget entydigt godt sprog at starte på. Nogle sprog er dog stadig nemmere at lære end andre. Der findes i dag flere hundrede forskellige sprog og valget af sprog afhænger i høj grad hvad man ønsker at lave eller bruge det til. Selvom alle sprog er unikke er de og så meget ens, og forstår man først de grundlæggende principper i et sprog, så har man typisk nemmere ved at overføre det til et andet.
+Når man skal lære at programmere er et af de første store spørgsmål, hvilket sprog man bør tage fat på. Der findes ikke noget entydigt godt sprog at starte på. Nogle sprog er dog stadig nemmere at lære end andre. Der findes i dag flere hundrede forskellige sprog og valget af sprog afhænger i høj grad hvad man ønsker at lave eller bruge det til. Selvom alle sprog er unikke er mange af dem og så meget ens, og forstår man først de grundlæggende principper i et sprog, så har man typisk nemmere ved at overføre det til et andet.
 
-Nærværende kompendie bruger Javascript og biblioteket P5.JS, som på mange måder minder om Processing i Java. Det er der en række grunde til, som vi kort vil komme ind på herunder.
+Man kan inddele sprog i lavniveau og højniveau sprog, som indikerer hvor tæt vi er på den egentlig maskinkode. Jo lavere niveau, jo tættere er vi på noget kode som maskinen forstår. Jo højere niveau, jo længere væk er vi fra den meget maskinnære syntaks.
+
+
+Nærværende kompendie bruger højniveausproget Javascript og biblioteket P5.JS, som på mange måder minder om Processing i Java. Det er der en række grunde til, som vi kort vil komme ind på herunder.
 
 - Javascript er med et fint ord dynamisk fortolket. Det kan betragtes som en form for syntaktisk sukker, der gør det nemmere at komme i gang. Når man eksempelvis vis skal erklære en såkaldt variable (en navngiven plad i computerens hukommelse), så behøver man ikke bruge så meget krudt på at fortælle hvilken type data, der gemmes. I andre sprog, såsom Java, der er statisk typet, skal man erklære typerne på forhånd. Vi kan tænke på Javascript, som den gamle, søde mormor, der tillader os at gøre ret meget, mens Java er der noget mere strikse og disciplineret militærsergent, som kræver hård disciplin.
 - Javascript er nemt at afvikle i din browser og kan afvikles på stort set alle platforme. Det kan bruges til at udvikle alle mulige slags applikationer.
 - Ved brug af biblioteket P5.JS får vi mulighed for skrive kode, der i højere grad lader sig visualisere. Det kan hjælpe på forståelsen for mange, og man kan tidligere i læringsprocessen lave nogle mere interessante og spændende programmer med input fra tastatur, mus, fingre osv. fremfor at kunne skrive "Hej verden" på som det ofte er traditionen, at man starter med i de fleste sprog.
 - Der findes et enormt community til både Javascript og P5, så det er nemt at få hjælp og man kan nærmeste lave hvad som helst ved brug af forskellige opensource værktøjer.
 - Når man føler sig klar er der mulighed for at arbejde videre i P5 miljøet ved brug af eksempelvis Python eller Java til Processesing.
-
-
-## Javascript applikationer
-
 
 
 ## Gode råd til at blive en bedre programmør
@@ -81,6 +80,37 @@ Prøv altså at reducere problemet til et mere simpelt problem og løs det førs
 - Hold pauser i ny og næ. Din underbevidshed arbejder stadig for dig
 - Test regelmæssigt - for ikke at sige hele tiden
 - Brug et versioneringssystem ala Github, der giver mulighed for at synkronisere kode på tværs af computere let. Det giver dig mulighed for at arbejde hvor som helst når som helst.
+- Først får vi programmet til at virke, så gør vi det korrekt og til sidst effektivt.
+
+## Javascripts afvikling i en browser
+Det kan være en fordel, at man ved lidt om opbygningen hvorledes kode i javascript afvikles i browseren inden man går i gang med at skrive kode selv.
+En browser eller webbrowser ala Google Chrome, Firefox etc. har det grundlæggende formål at fremvise HTML hhv. CSS, der står for HyperText Markup Language hhv. Cascading Styling Sheet, der er to sprog til at opbygge hhv. style hjemmesider.
+Browserens opgave er altså at rendere eller fremstille koder udfra disse sprog, så det man ser er hjemmesiden og ikke de egentlige HTML koder eller CSS koder. Faktisk kan Javascript være direkte involveret i HTML, så det kan være en god ide at vide en smule om HTML.
+Udover renderingsmotoren har langt de fleste browsere også en såkaldt Javascript fortolker, som kan afvikle Javascript programmer. Renderingsmotoren kan kalde Javascript fortolkeren, når det er nødvendigt. 
+Dvs. overordnet foregår afviklingen af Javascript kode i følgende trin:
+
+1. Kode skrevet i javascript indlæses 
+2. Fortolkeren kaldes og sættes i gang med at fortolke og oversætte linje for linje af koden
+3. Kompileren (som står for at oversætte koden til kode der kan forstås af maskinen) modtager koden og begynder at optimere og kompilere koden 
+4. Kompileren optimerer inkrementelt på koden
+
+Kompileren er en såkaldt Just-In-Time kompiler, der dynamisk oversætter i mens programmet kører (også kaldet "run time"). Der findes andre typer kompilere, som oversætter og optimerer al koden til maskinkode inden programmet kører. 
+
+
+## Øvelser
+1. Overvej nogle eksempler fra din hverdag hvor du i et eller andet omfang interagerer med programmer. Hvorledes påvirker disse programmer mon din eller andres adfærd?
+2. Hvorfor er det vigtigt, at vi får en bred og divers gruppe af udviklere til at kode fremtidens løsninger?
+3. Giv tre eksempler på hvor programmering kan bruges til at automatisere kedelige opgaver.
+4. Giv tre eksempler på hvor programmering kan bruges til at gøre noget skidt eller hvor en programmør kan have ondsigtede intentioner?
+5. Hvad er forskellen på lavniveau og højniveau sprog? Hvorfor er det en god ide at starte i et højniveau sprog?
+6. Prøv at kigge på følgende to sider, http://tiobeindex.com og https://githut.info/, som rummer statististikker over de mest anvendte sprog netop nu. Hvorfor ligger Javascript mon nr 7 på den ene og nr 1 på anden?
+7. Prøv at google historien bag udviklingen af sprogene C++, C#, og PHP. Kan du finde en sammenhæng?
+8. Som nævnt tidligere så handler programmering i høj grad om at hjælpe mennesker. Forestil dig nu, at du skal skrive et program, der kan hjælpe en person lider af locked-in-syndromet (dvs. vedkommende kan reelt kun  bevæge øjnebrynene), med at skrive en bog. Det lyder måske umuligt, men var ikke desto mindre tilfældet for Jean-Dominique Bauby, da han skrev den fremragende bog, Dykkerklokken og sommerfuglen. Forestil dig, at programmet kan opfange når der blinkes og hvor mange gange det sker. Dvs. vi kan bruge blink til at indikere hvilket bogstav nr i alfabetet. Ved brug af såkaldt lineær søgning kunne 1 blink svarer til et a, 2 til b, 3 til et c osv. Det vil være ret ineffektivt. Hvorledes kunne vi gøre det smartere (altså med færre blink)? Mon en med locked-in-syndromet overhovedet ville være interesseret i at bruge et sådan program?
+9. Der kan være mange vej til Rom. På samme måde kan et program have mange forskellige løsninger. Det skal denne øvelse illustrere. Øvelsen kan være god at lave med en anden. Tegn et kvadrat bestående af 8*8 mindre kvadrater vha noget kridt på asfalt. Brug evt noget papir, hvis du er alene. Sæt den ene person i et af kvadraterne og en bold eller noget et andet sted. Nu skal du som programmør skrive noget kode, der får den anden over til bolden. Du må kun bruge instruktionerne F samt V/H for hhv. Fremad og til Venstre/Højre betyder at du roterer 90 grader men bliver i samme felt. Programmet må først køres, når du har skrevet det færdig. Hvis du ikke når i mål, så prøv at debugge eller finde fejlen. Bemærk, der er undelige mange korrekte løsninger til programmet og uendelig mange forkerte. 
+10. Udvid nu ideen fra 10. så du skal have en robot eller lignende til at hente dig en kop vand eller lignende. Du må gerne selv finde på nogle nye instruktioner. En god instruktion at tilføje kunne være "Gentag følgende sålænge at ", der gentager instruktioner et vist antal gange. Prøv dit program af i praksis.
+11. Ofte har man brug for at sortere tal i stigende rækkefølge.  Det sker faktisk rigtig mange gange i løbet af en dag, når man googler, ser transaktioner på sin netbank, sorterer sit musikbibliotek osv. Tag nogle kort fra et kortspil eller en gruppe af mennesker med forskellige højder, der hver repræsenterer et unikt tal. Prøv at overveje et program og et entydigt sæt af instruktioner, der gør det muligt at sortere kortene eller menneskene i stigende rækkefølge. Prøv dit program af i praksis. Hvad gik godt og hvad gik mindre godt?
+
+
 
 
 # Software
@@ -91,7 +121,7 @@ Vi starter med blot at bruge P5JS.org via websitet. Herefter tager vi hul på br
 3) P5js Snippets
 
 
-# Plan
+## Plan
 Herunder følger en plan for de enkelte emner, dernæst en nærmere beskrivelse af de enkelte emner. Hvert emne inkluderer en række øvelser, som skal laves inden man går videre til næste emne. Det er forventningen, at vi er igennem de første 7 emner inden efterårsferien og har lavet et eller flere lidt større projekter. 
 For at gøre det mere levende og nemmere at vende tilbage til noget man ikke har forstået, har vi valgt at bruge videoer som en væsentlig del af undervisningsmaterialet. 
 
