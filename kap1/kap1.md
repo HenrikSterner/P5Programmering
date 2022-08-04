@@ -97,6 +97,14 @@ Dvs. overordnet foregår afviklingen af Javascript kode i følgende trin:
 Kompileren er en såkaldt Just-In-Time kompiler, der dynamisk oversætter i mens programmet kører (også kaldet "run time"). Der findes andre typer kompilere, som oversætter og optimerer al koden til maskinkode inden programmet kører. 
 
 
+
+# Udviklingsmiljø
+Vi starter med blot at bruge P5JS.org via websitet. Herefter tager vi hul på brug af Visual Studio Code, som det såkaldte udviklingsmiljø, hvor vi skal have følgende plugins (tryk Ctrl+Shift+P):
+
+1) Live Server til at afvikle en lokal webserver
+2) P5 Project Creator: Til nemt at konstruere P5 projekter.
+3) P5js Snippets: Til nemt at indsætte ofte brugte kodestumper ind automatisk
+
 ## Øvelser
 1. Overvej nogle eksempler fra din hverdag hvor du i et eller andet omfang interagerer med programmer. Hvorledes påvirker disse programmer mon din eller andres adfærd?
 2. Hvorfor er det vigtigt, at vi får en bred og divers gruppe af udviklere til at kode fremtidens løsninger?
@@ -110,15 +118,6 @@ Kompileren er en såkaldt Just-In-Time kompiler, der dynamisk oversætter i mens
 10. Udvid nu ideen fra 10. så du skal have en robot eller lignende til at hente dig en kop vand eller lignende. Du må gerne selv finde på nogle nye instruktioner. En god instruktion at tilføje kunne være "Gentag følgende sålænge at ", der gentager instruktioner et vist antal gange. Prøv dit program af i praksis.
 11. Ofte har man brug for at sortere tal i stigende rækkefølge.  Det sker faktisk rigtig mange gange i løbet af en dag, når man googler, ser transaktioner på sin netbank, sorterer sit musikbibliotek osv. Tag nogle kort fra et kortspil eller en gruppe af mennesker med forskellige højder, der hver repræsenterer et unikt tal. Prøv at overveje et program og et entydigt sæt af instruktioner, der gør det muligt at sortere kortene eller menneskene i stigende rækkefølge. Prøv dit program af i praksis. Hvad gik godt og hvad gik mindre godt?
 
-
-
-
-# Software
-Vi starter med blot at bruge P5JS.org via websitet. Herefter tager vi hul på brug af Visual Studio Code hvor vi skal have følgende plugins (tryk Ctrl+Shift+P):
-
-1) Live Server til at afvikle en lokal webserver
-2) P5 Project Creator
-3) P5js Snippets
 
 
 ## Plan
