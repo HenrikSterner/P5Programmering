@@ -48,10 +48,16 @@ For at blive en god programmør og få succes med programmering, så vil vi fore
 
 Ønsker du altså på sigt at blive en ekspert indenfor programmering, så se i øjenene, at ægte ekspertise kan tage et helt liv eller som digteren, Samuel Johnson formulerede det: "Ekspertise i enhvet fag kan kun opnås ved et livs arbejde; det kan og skal ikke købes til en lavere pris."
 
-
-
 ## Valg af sprog
+Når man skal lære at programmere er et af de første store spørgsmål, hvilket sprog man bør tage fat på. Der findes ikke noget entydigt godt sprog at starte på. Nogle sprog er dog stadig nemmere at lære end andre. Der findes i dag flere hundrede forskellige sprog og valget af sprog afhænger i høj grad hvad man ønsker at lave eller bruge det til. Selvom alle sprog er unikke er de og så meget ens, og forstår man først de grundlæggende principper i et sprog, så har man typisk nemmere ved at overføre det til et andet.
 
+Nærværende kompendie bruger Javascript og biblioteket P5.JS, som på mange måder minder om Processing i Java. Det er der en række grunde til, som vi kort vil komme ind på herunder.
+
+- Javascript er med et fint ord dynamisk fortolket. Det kan betragtes som en form for syntaktisk sukker, der gør det nemmere at komme i gang. Når man eksempelvis vis skal erklære en såkaldt variable (en navngiven plad i computerens hukommelse), så behøver man ikke bruge så meget krudt på at fortælle hvilken type data, der gemmes. I andre sprog, såsom Java, der er statisk typet, skal man erklære typerne på forhånd. Vi kan tænke på Javascript, som den gamle, søde mormor, der tillader os at gøre ret meget, mens Java er der noget mere strikse og disciplineret militærsergent, som kræver hård disciplin.
+- Javascript er nemt at afvikle i din browser og kan afvikles på stort set alle platforme. Det kan bruges til at udvikle alle mulige slags applikationer.
+- Ved brug af biblioteket P5.JS får vi mulighed for skrive kode, der i højere grad lader sig visualisere. Det kan hjælpe på forståelsen for mange, og man kan tidligere i læringsprocessen lave nogle mere interessante og spændende programmer med input fra tastatur, mus, fingre osv. fremfor at kunne skrive "Hej verden" på som det ofte er traditionen, at man starter med i de fleste sprog.
+- Der findes et enormt community til både Javascript og P5, så det er nemt at få hjælp og man kan nærmeste lave hvad som helst ved brug af forskellige opensource værktøjer.
+- Når man føler sig klar er der mulighed for at arbejde videre i P5 miljøet ved brug af eksempelvis Python eller Java til Processesing.
 
 
 ## Javascript applikationer
@@ -60,18 +66,21 @@ For at blive en god programmør og få succes med programmering, så vil vi fore
 
 ## Gode råd til at blive en bedre programmør
 
-Programmering handler i bund og grund om problemløsning og at formulere denne løsning i kode, så computeren kan forstå det. Det er på mange måder en sjov, lærerig og tilfredsstillende proces, som dog først rigtig bliver levende når man selv sætter sig foran keyboardet. Programmering er tidskrævende og man vil begå fejl undervejs, men i takt med at man bliver dygtigere vil fejlene blive færre og produktiviteten større. 
+Programmering handler i bund og grund om problemløsning og at formulere denne løsning i kode, så computeren kan forstå det. Det er på mange måder en sjov, lærerig og tilfredsstillende proces, som dog først rigtig bliver levende når man selv sætter sig foran keyboardet. Programmering er tidskrævende og man vil begå fejl undervejs, men i takt med at man bliver dygtigere vil fejlene blive færre og produktiviteten større.
+Herunder nogle gode råd til når du sidder fast i udviklingsprocessen: 
 
-Har du et problem, som du ikke umiddelbart kan finde en løsning på, så start med at google problemet/fejlen. Der findes med garanti andre derude, som har haft samme problem som dig, så hvis du ikke kan finde svaret så overvej hvordan du google spørgsmålet. Hvis det ikke lykkedes, så prøv at spørg din kammerat og til sidst prøv din underviser. 
-Brug desuden del og hersk princippet. Har du et problem som du ikke kan løse, så prøv at dele det ind i mindre problemer, som du måske så bedre kan løse.
-Prøv også at reducere problemet til et mere simpelt problem og løs det først.
-
-
-God fornøjelse!
-
-
-
-BEMÆRK: Dokumentet her er tentativt og under udarbejdelse!
+- Har du et problem, som du ikke umiddelbart kan finde en løsning på, så start med at google problemet/fejlen. Der findes med garanti andre derude, som har haft samme problem som dig, så hvis du ikke kan finde svaret så overvej hvordan du google spørgsmålet. 
+- Hvis ikke Google kan hjælpe, så prøv at spørg en anden programmør.
+- Hvis der ikke er en anden programmør til rådighed, så prøv at fortæl en anden, der gider at lytte. Det hjælpe ofte at sætte ord på sine problemer.
+- Brug gerne del og hersk princippet. Har du et problem som du ikke kan løse, så prøv at dele det ind i mindre problemer, som du måske så bedre kan løse.
+Prøv altså at reducere problemet til et mere simpelt problem og løs det først.
+- Hold tingene så simple som mulige men hellere ikke simplere (KEEP - Keep It Simple Stupid)
+- Indse at Programmering = Kode + Problemløsning. Det er altså ikke nok at have styr på koden. Du skal også have en forståelse af hvordan problemer mere generelt kan løses og du skal have styr på den underliggende teori bag det givne problem. I kapitlet om computationel tænkning kigger vi på klassiske problemløsningsteknikker og hvordan man systematisk kan arbejde med at løse problemer.
+- Lær at bruge et udviklingsmiljø og de mange muligheder det tilbyder. Brug miljøets mulighed for at debugge og finde fejl let
+- Læs sproget dokumentation eller vær klar over hvor du kan slå tingene op
+- Hold pauser i ny og næ. Din underbevidshed arbejder stadig for dig
+- Test regelmæssigt - for ikke at sige hele tiden
+- Brug et versioneringssystem ala Github, der giver mulighed for at synkronisere kode på tværs af computere let. Det giver dig mulighed for at arbejde hvor som helst når som helst.
 
 
 # Software
@@ -216,3 +225,7 @@ Læs kap 6 og 7 i B1
   </tr>
 </table>
 
+God fornøjelse!
+
+
+BEMÆRK: Dokumentet her er tentativt og under udarbejdelse!
