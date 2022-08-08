@@ -98,12 +98,20 @@ Kompileren er en såkaldt Just-In-Time kompiler, der dynamisk oversætter i mens
 
 
 
-# Udviklingsmiljø
+## Udviklingsmiljø
 Vi starter med blot at bruge P5JS.org via websitet. Herefter tager vi hul på brug af Visual Studio Code, som det såkaldte udviklingsmiljø, hvor vi skal have følgende plugins (tryk Ctrl+Shift+P):
 
 1) Live Server til at afvikle en lokal webserver
 2) P5 Project Creator: Til nemt at konstruere P5 projekter.
 3) P5js Snippets: Til nemt at indsætte ofte brugte kodestumper ind automatisk
+
+Vi giver en grundig indføring i installationen af både Visual Studio Code samt de nødvendige plugins i kapitel 17.
+
+## Læsevejledning
+Generelt anbefales det at følge de første ni kapitler i den rækkefølge. Her introduceres de grundlæggende strukturer, som er essentielle for at kunne kode. Man kan undervejs dykke ned i kapitlerne 11-16, som langt hen ad vejen kan læses uafhængigt af hinanden. 
+Det kan være en god ide relativt tidligt i sin læringsproces at få en forståelse for dokumentation og testning samt de grundlæggende problemløsningsteknikker og den måde vi tænker og arbejder computationelt.
+
+Ved hvert kapitel er der en række øvelser og større projekter. Det anbefales at lave så mange øvelser som muligt og gerne de projekter, som man finder interessante. Projekterne, er generelt noget større og åbne opgaver.
 
 ## Øvelser
 1. Overvej nogle eksempler fra din hverdag hvor du i et eller andet omfang interagerer med programmer. Hvorledes påvirker disse programmer mon din eller andres adfærd?
