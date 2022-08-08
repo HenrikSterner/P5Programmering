@@ -142,9 +142,6 @@ Et sprint forløber i fire ceremonier hvor hele teamet mødes og det er SCRUM ma
 
 Efterfølgende foretages også en retrospektiv proces som har fokus på hvorledes samarbejdet forløber og hvad der kan gøres bedre til næste sprint. 
 
-
-
-
 ### Agil udvikling i praksis: Kanban
 Kanban betyder tegnetavle og stammer fra Japan. Det er udviklet med henblik på just in time produktion, hvor der ligges vægt på at være klar over hvad, hvornår og hvor meget der produceres. 
 Alt fra supermarkeder til bilfirmaet Toyota, har blandt gjort brug af Kanban til bl.a. at optimere og forbedre sin produktionscyklus. Målet er at skabe et flow mellem efterspørgslen og produktionen, således, at man undgår at have for meget på lager, men omvendt stadig kan garantere at et produkt kunden ønsker, stadig er tilgængelig.
@@ -173,6 +170,6 @@ Det kunne eksempelvis måske være en god ide at have en lav WIP for kolonnen co
 ## Øvelser
 1. Overvej styrker og svagheder ved vandfaldsmodellen. Hvornår er det er en fordel at bruge vandfaldsmodellen fremfor eksempelvis iterativ udvikling?
 2. Sammenlign skridtvis forfining, inkrementel udvikling og iterativ udvikling. Hvilke ligheder er der og hvordan adskiller de sig?
-3. Undersøg tre forskellige større IT-projekter, der har fejlet eller været forsinket i udviklinge. Hvad synes årsagen at være? Kan den relateres til udviklingsmetoden?
+3. Undersøg tre forskellige større IT-projekter, der har fejlet eller været forsinket i udviklingem. Hvad synes årsagen at være? Kan den relateres til udviklingsmetoden?
 4. I det følgende skal du beskrive i ord og figurer hvorledes man ved brug af skridtvis forfining kan udvikle et simpelt kryds og bolle spil mod en kunstig intelligent spiller. Det er ikke et krav at skrive egentlig kode blot at man beskriver de enkelte trin i processen. De enkelte trin skal dog være så tæt på rigtig kode, at man let kan implementere spillet i praksis.
 5. I det følgende skal konstrueres et system til at holde styr på klokken ved brug af STREAM

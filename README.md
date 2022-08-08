@@ -31,4 +31,3 @@ Peter & Henrik
 - [Kapitel 18: Computationel tænkning](kap10/kap10.md)
 - [Kapitel 19: Algoritmer](kap10/kap10.md)
 - [Kapitel 20: Unplugged](kap10/kap10.md)
-
