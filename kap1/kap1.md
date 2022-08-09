@@ -18,6 +18,7 @@ Prøv i det følgende at overveje nogle af nedenstående spørgsmål? Ville der 
 - Bør vi kunne stemme digitalt ved næste valg? Hvad kan udfordringerne være?
 - Hvordan identificerer vi fake news?
 
+![Trekantsmodel](../kap1/images/trekantsmodel.png)
 
 Målet med denne bog er ikke nødvendigvis, at gøre alle til professionelle programmører, men håbet er at give læseren en sjov og måske lidt anderledes introduktion til programmering og kode, som tidens helt centrale metodefag. 
 Ved at give læseren en grundlæggende, digital skaberkompentece, muliggøres det, at skabe værdi for den enkelte, som den pågældende kan drage nytte af indenfor sit domæne, vidensfelt eller interesseområde. Hvis vi kan så et frø, der på sigt kan rykke nogle til at blive professionelle udviklere, så går vi selvfølgelig ikke i vejen for det.
@@ -73,7 +74,7 @@ Herunder nogle gode råd til når du sidder fast i udviklingsprocessen:
 - Hvis der ikke er en anden programmør til rådighed, så prøv at fortæl en anden, der gider at lytte. Det hjælpe ofte at sætte ord på sine problemer.
 - Brug gerne del og hersk princippet. Har du et problem som du ikke kan løse, så prøv at dele det ind i mindre problemer, som du måske så bedre kan løse.
 Prøv altså at reducere problemet til et mere simpelt problem og løs det først.
-- Hold tingene så simple som mulige men hellere ikke simplere (KEEP - Keep It Simple Stupid)
+- Hold tingene så simple som mulige men hellere ikke simplere (KISS - Keep It Simple and Straight)
 - Indse at Programmering = Kode + Problemløsning. Det er altså ikke nok at have styr på koden. Du skal også have en forståelse af hvordan problemer mere generelt kan løses og du skal have styr på den underliggende teori bag det givne problem. I kapitlet om computationel tænkning kigger vi på klassiske problemløsningsteknikker og hvordan man systematisk kan arbejde med at løse problemer.
 - Lær at bruge et udviklingsmiljø og de mange muligheder det tilbyder. Brug miljøets mulighed for at debugge og finde fejl let
 - Læs sproget dokumentation eller vær klar over hvor du kan slå tingene op
@@ -103,7 +104,7 @@ Vi starter med blot at bruge P5JS.org via websitet. Herefter tager vi hul på br
 
 1) Live Server til at afvikle en lokal webserver
 2) P5 Project Creator: Til nemt at konstruere P5 projekter.
-3) P5js Snippets: Til nemt at indsætte ofte brugte kodestumper ind automatisk
+3) p5js Snippets: Til nemt at indsætte ofte brugte kodestumper ind automatisk
 
 Vi giver en grundig indføring i installationen af både Visual Studio Code samt de nødvendige plugins i kapitel 17.
 
@@ -119,7 +120,7 @@ Ved hvert kapitel er der en række øvelser og større projekter. Det anbefales 
 3. Giv tre eksempler på hvor programmering kan bruges til at automatisere kedelige opgaver.
 4. Giv tre eksempler på hvor programmering kan bruges til at gøre noget skidt eller hvor en programmør kan have ondsigtede intentioner?
 5. Hvad er forskellen på lavniveau og højniveau sprog? Hvorfor er det en god ide at starte i et højniveau sprog?
-6. Prøv at kigge på følgende to sider, http://tiobeindex.com og https://githut.info/, som rummer statististikker over de mest anvendte sprog netop nu. Hvorfor ligger Javascript mon nr 7 på den ene og nr 1 på anden?
+6. Prøv at kigge på følgende to sider,  [tiobe](http://tiobe.com/tiobe-index/) og [github](https://githut.info/), som rummer statististikker over de mest anvendte sprog netop nu. Hvorfor ligger Javascript mon nr 7 på den ene og nr 1 på anden?
 7. Prøv at google historien bag udviklingen af sprogene C++, C#, og PHP. Kan du finde en sammenhæng?
 8. Som nævnt tidligere så handler programmering i høj grad om at hjælpe mennesker. Forestil dig nu, at du skal skrive et program, der kan hjælpe en person lider af locked-in-syndromet (dvs. vedkommende kan reelt kun  bevæge øjnebrynene), med at skrive en bog. Det lyder måske umuligt, men var ikke desto mindre tilfældet for Jean-Dominique Bauby, da han skrev den fremragende bog, Dykkerklokken og sommerfuglen. Forestil dig, at programmet kan opfange når der blinkes og hvor mange gange det sker. Dvs. vi kan bruge blink til at indikere hvilket bogstav nr i alfabetet. Ved brug af såkaldt lineær søgning kunne 1 blink svarer til et a, 2 til b, 3 til et c osv. Det vil være ret ineffektivt. Hvorledes kunne vi gøre det smartere (altså med færre blink)? Mon en med locked-in-syndromet overhovedet ville være interesseret i at bruge et sådan program?
 9. Der kan være mange vej til Rom. På samme måde kan et program have mange forskellige løsninger. Det skal denne øvelse illustrere. Øvelsen kan være god at lave med en anden. Tegn et kvadrat bestående af 8*8 mindre kvadrater vha noget kridt på asfalt. Brug evt noget papir, hvis du er alene. Sæt den ene person i et af kvadraterne og en bold eller noget et andet sted. Nu skal du som programmør skrive noget kode, der får den anden over til bolden. Du må kun bruge instruktionerne F samt V/H for hhv. Fremad og til Venstre/Højre betyder at du roterer 90 grader men bliver i samme felt. Programmet må først køres, når du har skrevet det færdig. Hvis du ikke når i mål, så prøv at debugge eller finde fejlen. Bemærk, der er undelige mange korrekte løsninger til programmet og uendelig mange forkerte. 
