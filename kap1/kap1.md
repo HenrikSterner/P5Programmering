@@ -1,14 +1,14 @@
 # 1. Indledning
-Programmering eller kodning dækker over den process hvor man skriver  i et givent programmeringssprog noget kode, som resulterer i et program eller system. Programmet kan typisk afvikles på en eller flere platforme såsom en computer, en mobiltelefon, en robot, en sensor i køleskabet eller noget helt femte. 
+Programmering eller kodning dækker over den process hvor man i et givent programmeringssprog skriver noget kode, som resulterer i et program (eller system). Programmet kan typisk afvikles på en eller flere platforme såsom en computer, en mobiltelefon, en selvkørende bil, en sensor i køleskabet eller noget helt femte. 
 
-Der kan være mange formål med at udvikle programmer. Typisk handler programmering om at automatisere kedelige eller beregningstunge opgaver eller gøre det nemmere for folk at kommunikere, søge information eller træffe bedre og mere kvalificerede beslutninger. Grundlæggende har målet med programmering ret ofte handlet om at løse problemer eller gøre ting nemmere for os mennesker. Programmerne er til for os og ikke omvendt.
+Der kan være mange formål med at udvikle programmer. Typisk handler programmering om at automatisere kedelige eller beregningstunge opgaver eller gøre det nemmere for folk at kommunikere, søge information eller træffe bedre og mere kvalificerede beslutninger. 
 
 Eksempler på programmer findes overalt i vores moderne samfund og digitaliseringen af samfundet bliver stadig mere allestedsnærværende. 
 Vi interagerer dagligt mange gange med programmer i den ene eller anden form fra handel, sundhed, finans, transport, medier, kunst og kultur. 
 Alle domæner af vores samfund er efterhånden gennemsyret af og afhængig af digitale programmer og systemer. Ligesom vi påvirker programmerne, så påvirker programmer også vores adfærd og måde at leve og agere på. 
-Derfor, hvis vi skal tackle morgendagens store udfordringer kræver det en bred og divers gruppe af udviklere i udformningen af de kommende systemer på tværs af køn, alder, religiøsitet osv.
+Derfor, hvis vi skal tackle morgendagens store udfordringer kræver det en bred og divers gruppe af udviklere  på tværs af køn, alder, religiøsitet osv.
 
-Prøv i det følgende at overveje nogle af nedenstående spørgsmål? Ville der mon være forskel på de svar, du kom frem til, hvis du eksempelvis var en 72-årig pensionist eller en teenager?
+Prøv i det følgende at overveje nogle af nedenstående spørgsmål?  
 
 - Når du googler hvem eller hvad er det, der afgør hvad der vises først? 
 - Hvordan konstruerer Netflix anbefalinger til næste film? 
@@ -18,9 +18,10 @@ Prøv i det følgende at overveje nogle af nedenstående spørgsmål? Ville der 
 - Bør vi kunne stemme digitalt ved næste valg? Hvad kan udfordringerne være?
 - Hvordan identificerer vi fake news?
 
-![Trekantsmodel](../kap1/images/trekantsmodel.png)
 
-Målet med denne bog er ikke nødvendigvis, at gøre alle til professionelle programmører, men håbet er at give læseren en sjov og måske lidt anderledes introduktion til programmering og kode, som tidens helt centrale metodefag. 
+
+Målet med denne bog er ikke nødvendigvis, at gøre alle til professionelle programmører, men håbet er at give læseren en sjov og måske lidt anderledes introduktion til programmering og kode, som tidens helt centrale metodefag, der kan efterhånden bruges som værktøj i stort set alle fag. 
+
 Ved at give læseren en grundlæggende, digital skaberkompentece, muliggøres det, at skabe værdi for den enkelte, som den pågældende kan drage nytte af indenfor sit domæne, vidensfelt eller interesseområde. Hvis vi kan så et frø, der på sigt kan rykke nogle til at blive professionelle udviklere, så går vi selvfølgelig ikke i vejen for det.
 
 Det handler i sidste ende om, at være med til at oplyse og skabe demokratiske medborgere, der har en principiel eller grundlæggende forståelse for hvad kode er og hvordan systemer er opbygget, men som også kan forholde sig kritisk og reflekterende i fht udviklingen af ny teknologi. 
@@ -31,8 +32,16 @@ Denne bog har som nævnt ikke til hensigt, at gøre dig til en professionel prog
 
 Vær på vagt overfor folk, der påstår, at man kan lære et nyt sprog i løbet af få timer, dage eller et kursus på nogle uger. Kigger man på den gængse litteratur indenfor programmering finder man utallige eksempler på bøger med titler ala "lær dig sprog X i løbet af 24 timer", hvor X kan erstattes med passende sprog såsom Javascript, Python, Java, C++ osv. Ændres timer til dage så er der endnu flere.
 
-På 24 timer kan man måske nå at sætte ind i noget af den grundlæggende syntaks og sprogets opbygning, men næppe tid til at skrive særligt mange signifikante, ikke trivielle programmer, tid til at fejlrette eller lære af mere erfarne programmører eller tid til at forstå den dybere forskel på korrekte og effektive programmer vs. korrekte, men ineffektive løsninger eller tid til at forstå sprogets standardbibliotek eller til at leve og arbejde i et udviklingsmiljø med alle de muligheder det giver for debugning og fejlretning. Et sprog der ikke påvirker din måde at tænke og løse problemer på, er ikke værd at kende. 
-Det korte af det lange er, at du efter 24 timer allerhøjest vil have nået en særdeles overfladisk og ikke særlig dyb viden. Som den engelske poet, Alexander Pope, skrev det, så kan lidt viden være en farlig ting. Særligt hvis det får en til at tro eller overvurdere egne evner, fordi nogle måske kan have tilbøjelighed til ikke at øve sig nok eller få godt nok styr på det fundamentale. Kun når det fundamentale er godt på plads, begynder de mere avanceret og videregående emner at give mening.
+På 24 timer kan man måske nå at sætte sig ind i noget af den grundlæggende syntaks og sprogets opbygning, men næppe tid til at skrive særligt mange signifikante, ikke trivielle programmer, tid til at fejlrette eller lære af mere erfarne programmører eller tid til at forstå den dybere forskel på korrekte og effektive programmer vs. korrekte, men ineffektive løsninger eller tid til at forstå sprogets standardbibliotek eller til at leve og arbejde i et udviklingsmiljø med alle de muligheder det giver for debugning og fejlretning. 
+
+Det korte af det lange er, at du efter 24 timer allerhøjest vil have nået en særdeles overfladisk og ikke særlig dyb viden. Som den engelske poet, Alexander Pope, skrev det, så kan lidt viden være en farlig ting. Særligt hvis det får en til at tro eller overvurdere egne evner, fordi nogle måske kan have tilbøjelighed til ikke at øve sig nok eller få godt nok styr på det fundamentale. 
+Det er en velkendt psykologis bias eftervist eksperimentelt af de to psykologer Dunning og Kruger (se figuren nedenfor), at mindre kompetente individer indenfor en lang række domæner, har en tilbøjelighed til at overvurdere egne evner. Effekten er vigtig at kende til på alle stadier af ens udvikling som programmør, fordi vi ellers risikerer at undervurdere kompleksiteten af ​​et system eller det skaber et ego, der gør at vi tror, at vi ved mere end vi gør, og det hindrer os i at søge hjælp til koden, når vi måske har brug for det. 
+
+![Dunning-Kruger effekten](../kap1/images/dunningkruger.png)
+
+
+
+Vi skal med andre ord øve os i det fundamentale, fordi kun når det fundamentale er godt nok på plads, begynder de mere avanceret og videregående emner at give mening.
 
 Rigtig megen forskning peger på, at det ofte tager 10.000 timer eller 10 år at udvikle ekspertise indenfor et felt om det er komponering af musik, sport eller fag. 
 Programmering er ingen undtagelse. Langt hen ad vejen kan vi tænke på programmering, som et håndværk. Man kan måske nok lære ret hurtigt at forstå hvordan værktøjerne virker, men rent faktisk at kunne bruge dem til at lave noget ikke-trivielt af værdi, kræver, at man træner og øver sig i meget, meget lang tid. For nogle kortere end andre, men det tog stadig Mozart, der blev opdaget som et musikalsk geni, som 4 årig, næsten 13 år mere før han begyndte at skrive verdensklasse musik. 
@@ -119,151 +128,18 @@ Ved hvert kapitel er der en række øvelser og større projekter. Det anbefales 
 2. Hvorfor er det vigtigt, at vi får en bred og divers gruppe af udviklere til at kode fremtidens løsninger?
 3. Giv tre eksempler på hvor programmering kan bruges til at automatisere kedelige opgaver.
 4. Giv tre eksempler på hvor programmering kan bruges til at gøre noget skidt eller hvor en programmør kan have ondsigtede intentioner?
-5. Hvad er forskellen på lavniveau og højniveau sprog? Hvorfor er det en god ide at starte i et højniveau sprog?
-6. Prøv at kigge på følgende to sider,  [tiobe](http://tiobe.com/tiobe-index/) og [github](https://githut.info/), som rummer statististikker over de mest anvendte sprog netop nu. Hvorfor ligger Javascript mon nr 7 på den ene og nr 1 på anden?
-7. Prøv at google historien bag udviklingen af sprogene C++, C#, og PHP. Kan du finde en sammenhæng?
-8. Som nævnt tidligere så handler programmering i høj grad om at hjælpe mennesker. Forestil dig nu, at du skal skrive et program, der kan hjælpe en person lider af locked-in-syndromet (dvs. vedkommende kan reelt kun  bevæge øjnebrynene), med at skrive en bog. Det lyder måske umuligt, men var ikke desto mindre tilfældet for Jean-Dominique Bauby, da han skrev den fremragende bog, Dykkerklokken og sommerfuglen. Forestil dig, at programmet kan opfange når der blinkes og hvor mange gange det sker. Dvs. vi kan bruge blink til at indikere hvilket bogstav nr i alfabetet. Ved brug af såkaldt lineær søgning kunne 1 blink svarer til et a, 2 til b, 3 til et c osv. Det vil være ret ineffektivt. Hvorledes kunne vi gøre det smartere (altså med færre blink)? Mon en med locked-in-syndromet overhovedet ville være interesseret i at bruge et sådan program?
-9. Der kan være mange vej til Rom. På samme måde kan et program have mange forskellige løsninger. Det skal denne øvelse illustrere. Øvelsen kan være god at lave med en anden. Tegn et kvadrat bestående af 8*8 mindre kvadrater vha noget kridt på asfalt. Brug evt noget papir, hvis du er alene. Sæt den ene person i et af kvadraterne og en bold eller noget et andet sted. Nu skal du som programmør skrive noget kode, der får den anden over til bolden. Du må kun bruge instruktionerne F samt V/H for hhv. Fremad og til Venstre/Højre betyder at du roterer 90 grader men bliver i samme felt. Programmet må først køres, når du har skrevet det færdig. Hvis du ikke når i mål, så prøv at debugge eller finde fejlen. Bemærk, der er undelige mange korrekte løsninger til programmet og uendelig mange forkerte. 
-10. Udvid nu ideen fra 10. så du skal have en robot eller lignende til at hente dig en kop vand eller lignende. Du må gerne selv finde på nogle nye instruktioner. En god instruktion at tilføje kunne være "Gentag følgende sålænge at ", der gentager instruktioner et vist antal gange. Prøv dit program af i praksis.
-11. Ofte har man brug for at sortere tal i stigende rækkefølge.  Det sker faktisk rigtig mange gange i løbet af en dag, når man googler, ser transaktioner på sin netbank, sorterer sit musikbibliotek osv. Tag nogle kort fra et kortspil eller en gruppe af mennesker med forskellige højder, der hver repræsenterer et unikt tal. Prøv at overveje et program og et entydigt sæt af instruktioner, der gør det muligt at sortere kortene eller menneskene i stigende rækkefølge. Prøv dit program af i praksis. Hvad gik godt og hvad gik mindre godt?
+5. Brug trekantsmodellen illustreret nedenfor til at kvalificere og belyse nogle af spørgsmålene formuleret i indledningen. 
+Modellen har tre hjørner: Menneske, maskine og miljø. Med maskine skal forstås noget, som i en eller anden form er automatiseret ved brug af noget kode (software eller hardware) og miljø betegner de ydre forhold som omgiver os. Det kan eksempelvis være samfundet. 
+
+![Trekantsmodel](../kap1/images/trekantsmodel.png)
+
+6. Hvad er forskellen på lavniveau og højniveau sprog? Hvorfor er det en god ide at starte i et højniveau sprog?
+7. Prøv at kigge på følgende to sider,  [tiobe index](http://tiobe.com/tiobe-index/) og [github](https://githut.info/), som rummer statististikker over de mest anvendte sprog netop nu. Hvorfor ligger Javascript mon nr 7 på den ene og nr 1 på anden?
+8. Prøv at google historien bag udviklingen af sprogene C++, C#, og PHP. Kan du finde en sammenhæng?
+9. Som nævnt tidligere så handler programmering i høj grad om at hjælpe mennesker. Forestil dig nu, at du skal skrive et program, der kan hjælpe en person lider af locked-in-syndromet (dvs. vedkommende kan reelt kun  bevæge øjnebrynene), med at skrive en bog. Det lyder måske umuligt, men var ikke desto mindre tilfældet for Jean-Dominique Bauby, da han skrev den fremragende bog, Dykkerklokken og sommerfuglen. Forestil dig, at programmet kan opfange når der blinkes og hvor mange gange det sker. Dvs. vi kan bruge blink til at indikere hvilket bogstav nr i alfabetet. Ved brug af såkaldt lineær søgning kunne 1 blink svarer til et a, 2 til b, 3 til et c osv. Det vil være ret ineffektivt. Hvorledes kunne vi gøre det smartere (altså med færre blink)? Mon en med locked-in-syndromet overhovedet ville være interesseret i at bruge et sådan program?
+10. Der kan være mange vej til Rom. På samme måde kan et program have mange forskellige løsninger. Det skal denne øvelse illustrere. Øvelsen kan være god at lave med en anden. Tegn et kvadrat bestående af 8*8 mindre kvadrater vha noget kridt på asfalt. Brug evt noget papir, hvis du er alene. Sæt den ene person i et af kvadraterne og en bold eller noget et andet sted. Nu skal du som programmør skrive noget kode, der får den anden over til bolden. Du må kun bruge instruktionerne F samt V/H for hhv. Fremad og til Venstre/Højre betyder at du roterer 90 grader men bliver i samme felt. Programmet må først køres, når du har skrevet det færdig. Hvis du ikke når i mål, så prøv at debugge eller finde fejlen. Bemærk, der er undelige mange korrekte løsninger til programmet og uendelig mange forkerte. 
+11. Udvid nu ideen fra 10. så du skal have en robot eller lignende til at hente dig en kop vand eller lignende. Du må gerne selv finde på nogle nye instruktioner. En god instruktion at tilføje kunne være "Gentag følgende sålænge at ", der gentager instruktioner et vist antal gange. Prøv dit program af i praksis.
+12. Ofte har man brug for at sortere tal i stigende rækkefølge.  Det sker faktisk rigtig mange gange i løbet af en dag, når man googler, ser transaktioner på sin netbank, sorterer sit musikbibliotek osv. Tag nogle kort fra et kortspil eller en gruppe af mennesker med forskellige højder, der hver repræsenterer et unikt tal. Prøv at overveje et program og et entydigt sæt af instruktioner, der gør det muligt at sortere kortene eller menneskene i stigende rækkefølge. Prøv dit program af i praksis. Hvad gik godt og hvad gik mindre godt?
 
 
 
-## Plan
-Herunder følger en plan for de enkelte emner, dernæst en nærmere beskrivelse af de enkelte emner. Hvert emne inkluderer en række øvelser, som skal laves inden man går videre til næste emne. Det er forventningen, at vi er igennem de første 7 emner inden efterårsferien og har lavet et eller flere lidt større projekter. 
-For at gøre det mere levende og nemmere at vende tilbage til noget man ikke har forstået, har vi valgt at bruge videoer som en væsentlig del af undervisningsmaterialet. 
-
-Vi ser nogle af videoerne i plenum og andre skal I selv se. I får tid til det i undervisningen. 
-
-Det forventes, at I medbringer øretelefoner til hver undervisningsgang og at I har set alle videoer før I går videre til næste modul!
-
-Videoerne hentes fra codingtrain på youtube: https://thecodingtrain.com/beginners/p5js/
-
-Man får en playliste ved at følge linket her: https://www.youtube.com/playlist?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA
-
-Bemærk nummereringen i playlisten svarer til numrene herunder.
-
-Udover videoer bruger vi også nogle lærebøger herunder:
-
-- [B1]: Programmering af Jesper Buch (se systime: https://programmering.systime.dk/)
-- [B2]: Nature of code af Daniel Shiffman (se https://natureofcode.com/)
-
-<table>
-  <tr>
-   <td><strong>Kapitel</strong>
-   </td>
-   <td><strong>Emne</strong>
-   </td>
-   <td><strong>Nøgleord</strong>
-   </td>
-   <td><strong>Undervisningsmateriale</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>2.
-   </td>
-   <td>Intro til P5 og Javascript
-   </td>
-   <td>Webeditor, tegne former, bruge farver, fejl og konsol, kommentarer
-   </td>
-   <td>Video: 1.1-1.6 (ca 20 min)
-<p>
-Øvelser
-<p>
-Læs kap 1 og 2 i B1
-<p>
-Projekt: Algoritmisk flag konstruktion
-   </td>
-  </tr>
-  <tr>
-   <td>3.
-   </td>
-   <td>Variabler, animationer og input
-   </td>
-   <td>Variabler og typer, erklæring af og operationer på disse, objekter, museinput, tilfældige tal
-   </td>
-   <td>Video: 2.1-2.6 (ca 1 time)
-<p>
-Øvelser
-<p>
-Læs kap 3 i B1
-<p>
-Projekt: Algoritmisk kunst
-   </td>
-  </tr>
-  <tr>
-   <td>4.
-   </td>
-   <td>Betinget udførsel
-   </td>
-   <td>If, else, else if, AND og or, boolske variable
-   </td>
-   <td>Video: 3.1-3.4 (ca 1 time)
-<p>
-Øvelser
-<p>
-Læs kap 3 i B1
-<p>
-Projekt: Trommer, klaver og guitar
-   </td>
-  </tr>
-  <tr>
-   <td>5.
-   </td>
-   <td>Løkker
-   </td>
-   <td>While og for løkker
-   </td>
-   <td>Video: 4.1-4.2 (ca 30 min)
-<p>
-Øvelser
-<p>
-Læs kap 3 i B1
-<p>
-Projekt: Minigolf
-   </td>
-  </tr>
-  <tr>
-   <td>6.
-   </td>
-   <td>Funktioner
-   </td>
-   <td>Modularitet og genbrug. Oprette og anvende funktioner, parametre og argumenter, return
-   </td>
-   <td>Video: 5.1-5.4 (ca 30 min)
-<p>
-Øvelser
-<p>
-Læs kap 3 i B1
-   </td>
-  </tr>
-  <tr>
-   <td>7.
-   </td>
-   <td>Objekt orienteret programmering i JS
-   </td>
-   <td>Klasser, konstruktører, tilføje flere filer
-   </td>
-   <td>Video: 6.1-6.4 (ca 35 min)
-<p>
-Øvelser
-<p>
-Læs kap 6 og 7 i B1
-   </td>
-  </tr>
-  <tr>
-   <td>8.
-   </td>
-   <td>Arrays og objekter
-   </td>
-   <td>Arrays, iterere over disse, opbevare objekter
-   </td>
-   <td>Video: 7.1-7.8 (ca 2 timer)
-   </td>
-  </tr>
-</table>
-
-God fornøjelse!
-
-
-BEMÆRK: Dokumentet her er tentativt og under udarbejdelse!
