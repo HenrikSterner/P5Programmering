@@ -129,7 +129,7 @@ Ved hvert kapitel er der en række øvelser og større projekter. Det anbefales 
 3. Giv tre eksempler på hvor programmering kan bruges til at automatisere kedelige opgaver.
 4. Giv tre eksempler på hvor programmering kan bruges til at gøre noget skidt eller hvor en programmør kan have ondsigtede intentioner?
 5. Brug trekantsmodellen illustreret nedenfor til at kvalificere og belyse nogle af spørgsmålene formuleret i indledningen. 
-Modellen har tre hjørner: Menneske, maskine og miljø. Med maskine skal forstås noget, som i en eller anden form er automatiseret ved brug af noget kode (software eller hardware) og miljø betegner de ydre forhold som omgiver os. Det kan eksempelvis være samfundet. 
+Modellen har tre hjørner: Menneske, maskine og miljø. Med maskine skal forstås noget, som i en eller anden form (software eller hardware) er automatiseret ved brug af noget kode og miljø betegner de ydre forhold som omgiver os. Det kan eksempelvis være samfundet og kulturelle forhold og normer. 
 
 ![Trekantsmodel](../kap1/images/trekantsmodel.png)
 
