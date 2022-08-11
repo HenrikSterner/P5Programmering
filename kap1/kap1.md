@@ -100,8 +100,8 @@ Udover renderingsmotoren har langt de fleste browsere også en såkaldt Javascri
 Dvs. overordnet foregår afviklingen af Javascript kode i følgende trin:
 
 1. Kode skrevet i javascript indlæses 
-2. Fortolkeren kaldes og sættes i gang med at fortolke og oversætte linje for linje af koden
-3. Kompileren (som står for at oversætte koden til kode der kan forstås af maskinen) modtager koden og begynder at optimere og kompilere koden 
+2. Fortolkeren kaldes og sættes i gang med at fortolke og oversætte koden linje for linje
+3. Kompileren (som står for at oversætte koden til den binære kode, der er læsbar og kan forstås af maskinen) modtager koden og begynder at optimere og kompilere koden 
 4. Kompileren optimerer inkrementelt på koden
 
 Kompileren er en såkaldt Just-In-Time kompiler, der dynamisk oversætter i mens programmet kører (også kaldet "run time"). Der findes andre typer kompilere, som oversætter og optimerer al koden til maskinkode inden programmet kører. 
@@ -109,13 +109,15 @@ Kompileren er en såkaldt Just-In-Time kompiler, der dynamisk oversætter i mens
 
 
 ## Udviklingsmiljø
-Vi starter med blot at bruge P5JS.org via websitet. Herefter tager vi hul på brug af Visual Studio Code, som det såkaldte udviklingsmiljø, hvor vi skal have følgende plugins (tryk Ctrl+Shift+P):
+Vi starter med blot at bruge editoren eller tekstfeltet, der er tilgængelig på P5JS. Den er simpel og let at komme i gang. Vigtigst er i første omgang at få skrevet noget kode og det er samtidig nemt at både dele og hente andres programmer, så man kan lade sig inspirere. 
+
+Herefter tager vi hul på brug af Visual Studio Code, som det såkaldte udviklingsmiljø, hvor vi skal have følgende plugins (tryk Ctrl+Shift+P):
 
 1) Live Server til at afvikle en lokal webserver
 2) P5 Project Creator: Til nemt at konstruere P5 projekter.
 3) p5js Snippets: Til nemt at indsætte ofte brugte kodestumper ind automatisk
 
-Vi giver en grundig indføring i installationen af både Visual Studio Code samt de nødvendige plugins i kapitel 17.
+Vi giver en grundig indføring i installationen og brugen af både online editoren samt Visual Studio Code og de nødvendige plugins i kapitel 17.
 
 ## Læsevejledning
 Generelt anbefales det at følge de første ni kapitler i den rækkefølge. Her introduceres de grundlæggende strukturer, som er essentielle for at kunne kode. Man kan undervejs dykke ned i kapitlerne 11-16, som langt hen ad vejen kan læses uafhængigt af hinanden. 
