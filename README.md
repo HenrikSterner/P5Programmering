@@ -29,6 +29,6 @@ Peter & Henrik
 - [Kapitel 14: Udviklingsprocesser](kap14/kap14.md)
 - [Kapitel 15: Designmønstre](kap10/kap10.md)
 - [Kapitel 16: Avanceret datastrukturer](kap10/kap10.md)
-- [Kapitel 17: Udviklingsmiljø og versioneringskontrol](kap10/kap10.md)
-- [Kapitel 18: Computationel tænkning](kap10/kap10.md)
+- [Kapitel 17: Computationel tænkning](kap10/kap10.md)
+- [Kapitel 18: Udviklingsmiljø og versioneringskontrol](kap18/kap18.md)
 
