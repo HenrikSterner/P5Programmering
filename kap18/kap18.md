@@ -11,10 +11,11 @@ I det følgende vil vi gennemgå i detaljer hvorledes man
 Versioneringssystemer spiller en central rolle i moderne udvikling, da det giver mulighed for at arbejde sammen på projekter og i det hele taget holde styr på udviklingen af ens kode. Det gør det nemt at gå tilbage til en tidligere version af ens kode.
 
 ## Brug af editoren på p5js.org
-For at starte op med at kode skal du ind på p5js.org og trykke på "Editor":
+For at starte op med at kode skal du ind på p5js.org og trykke på "Editor":<br>
+
 ![P5JS.org Editor](../kap18/images/p5editorstart.png)
 
-Det vil kun være muligt at gemme, hvis du opreter en konto og logger ind. Det kan gøres ret nemt med gmail/github konto eller man kan oprette en konto på en anden mail. Alle filer bliver gemt i skyen. Du kan selvfølgelig hente dine programmer ned, hvis du er interesseret i det. 
+Det vil kun være muligt at gemme, hvis du opretter en konto og/eller logger ind. Det kan gøres ret nemt med en gmail/github konto eller man kan oprette en konto på en anden mail. Alle filer bliver gemt i skyen. Du kan selvfølgelig hente dine programmer ned, hvis du er interesseret i det. 
 
 Herefter kommer du ind i en menu, der ser således ud:
 
@@ -26,12 +27,14 @@ Du kan lave nye filer under, dele projekter og se andres projekter oppe i menuen
 ![Ny sketch/program](../kap18/images/sketches.png)
 
 Kollektioner er en mulighed for at samle filer og dele dem med andre: 
+
 ![Kollektioner](../kap18/images/collections.png)
 
 ![Dele kollektioner](../kap18/images/sharecollection.png)
 
 
 Når du ønsker at sprede din kode udover flere filer, så kan det også ret let lade sig gøre ved at gå op i hovedmenuen og trykke på "Sketch" efterfulgt af menupunktet "Add file". Her giver du filen et navn. Husk at hvis det skal være javascript kode skal den have efternavnet js til sidst. I det følgende har vi lavet en ny fil som vi har kaldt for sketch2.js. Tryk på vinklen ude til venstre for at danne dig et overblik over din kode: 
+
 ![Tilføj fil](../kap18/images/p5newfile.png)
 
 For at du kan bruge filen er det nødvendigt at inkludere den i din html kode. Vær her særligt opmærksom på rækkefølgen af de filer du inkluderer. Hvis en fil y er afhængig af en anden fil x, så bør x inkluderes før y. 
