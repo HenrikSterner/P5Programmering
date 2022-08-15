@@ -69,4 +69,9 @@ Det afslutter vores korte gennemgang af de vigtigste funktioner i online editore
 
 Disse linjer sørger for at inkludere p5-biblioteket. Det er alt hvad der skal til. Med mindre at du skal afspille lyd kan du faktisk også slette inklusionen af det sidste script.
 
-## Visual studio code
+## Visual Studio Code
+Visual Studio Code er udviklet af Microsoft og et af de mest populære udviklingsmiljøer netop nu. 
+
+Den er gratis, bygget på open source, og kan afvikles på stort set alle tænkelige systemer og platforme. Den har et hav af af pakker og et stort samfund af udviklere bag sig, og den lader sig i høj grad tilpasse til udviklerens behov og krav.
+
+Til sammenligning med den fulde pakke, Visual Studio, så er Code en letvægtseditor i den forstand, at den fylder markant mindre og den afvikles langt hurtigere på de fleste systemer. 
