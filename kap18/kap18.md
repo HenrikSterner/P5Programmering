@@ -147,6 +147,43 @@ Figuren nedenfor illustrerer de to forskellige versioneringssystemer:
 
 ![Versioneringssystemer](../kap18/images/versioneringssystemer.png)
 
+Git, som Github er en frontend til, er et decentraliseret (distributivt) versionskontrolsystem. Git er open source, har fokus på hastighed og benyttes i mange store og små software-projekter. 
+
+Et eksempel på et større system som bruger git til at vedligeholde er Linux: 
+* Android-systemet til mobiltelefoner er bygget på Linux. 
+* Koden i linux-kernen vedligeholdes vha. git. Sidste år var der 4000 udviklere og 440 forskellige virksomheder, der bidrog med kode til linux-kernen.
+* Hver dag sker nogenlunde følgende med linux-koden:
+** 10800 kodelinier tilføjes
+** 5300 kodelinier fjerne
+** 1875 kodelinier kode ændres
+** Konklusion: 8 ændringer per sekund i gennemsnit!
+
+En af de centrale udviklere bag git er i øvrigt Linus Thorvalds, som er grundlæggeren af Linux. 
+
+## Git kommandoer
+Vi har tænkt os at bruge Githubs brugergrænseflade til at interagere med Git, så selvom vi ikke kommer til at kalde git-kommandoer direkte, er det en god ide at have en fornemmelse for nogle af de grundlæggende processer i git, så man bedre forstår hvad der sker, når man trykker på de forskellige knapper i Github.  
+
+Herunder nogle helt centrale begreber:
+*Init: Ved oprettelse af et nyt og tomt repository
+*Clone: Når et repository hentes for første gang
+*Commit: Når man tilføjer (commit) permanente ændringer til
+kodebasen
+*Push/pull: Når man skubber (push)/henter (pull) commits til/fra et
+andet repository
+*Branch: En branch er en udgave af kodebasen. Som udgangspunkt
+arbejdes på en branch ved navn master.
+*Merge: Når en udvikler committer ændringer, som ændrer i en anden
+udviklers ændringer, så skal den anden bruger sammenflette (merge)
+disse i sin kode før vedkommende kan committe.
+
+En fil kan være i en af 3 tilstande:
+* Committed: Filen og alle ændringer i denne er gemt i dit lokale
+repository
+* Modified: Filen indeholder ændringer som ikke er gemt i dit lokale
+repository
+* Staged: Filen indeholder ændringer, som ikke er gemt i dit lokale
+repository, men som vil blive tilføjet ved næste commit.
+
 
 
 
