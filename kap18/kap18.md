@@ -108,7 +108,7 @@ Til at afvikle applikationer i P5 har vi brug nogle få plugins.
 * P5 Project Creator: Giver mulighed for nemt at starte et nyt projekt
 * p5js Snippets: En række generiske kodestumper som automatisere en del af arbejdet med at skrive koden. 
 
-Et andet godt plugin at kende er Live Share, som giver mulighed for at arbejde flere sammen på samme tid i samme dokument. 
+Et andet godt plugin som kan være godt at kende er Live Share, som giver mulighed for at arbejde flere sammen på samme tid i samme dokument. 
 
 ### Starte dit første projekt 
 Når disse tre plugins er installeret, så bør VS code genstartes. Herefter burde du være klar til at gå i gang. 
@@ -126,4 +126,27 @@ Når du så vil starte dit projekt, går du ind i html filen og trykker på knap
 ![Start af webserveren](../kap18/images/webservervscode.png)
 
 Du behøver kun at starte din webserver engang. Når du gemmer ændringer i din kode i VS code genstartes din P5 applikation automatisk.
+
+
+## Versioneringskontrol med Github og git
+Github, som egentlig bare er en grænseflade til det såkaldte git, er et versionkontrolsystem. Man kan populært sagt tænke på det som en tidsmaskine over ændringer i kodebasen. 
+Fordelene ved versionskontrol er bl.a.:
+
+* Mange udviklere kan arbejde på samme kodebase
+* Kodebasen ændringshistorik gemmes
+* Ældre versioner af kodebasen kan rekonstrueres
+
+Et helt central begreb indenfor versioneringssystemer er "repository". 
+Et repository kan populært sagt betragtes som en form for server, hvor man samler alle projektets filer samt hver fils revisionshistorie. På Github kan man faktisk ydermere håndtere og diskutere projektets indhold og arbejde i projektets repository. 
+
+Man kan skelne mellem to slags versioneringssystemer: 
+* Centraliseret versioneringssystemer er der kun en server eller såkaldt repository.
+* Decentraliseret versioneringssystemer er der flere servere/repositories. 
+
+Figuren nedenfor illustrerer de to forskellige versioneringssystemer:
+
+![Versioneringssystemer](../kap18/images/versioneringssystemer.png)
+
+
+
 
