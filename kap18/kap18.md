@@ -74,4 +74,56 @@ Visual Studio Code er udviklet af Microsoft og et af de mest populære udvikling
 
 Den er gratis, bygget på open source, og kan afvikles på stort set alle tænkelige systemer og platforme. Den har et hav af af pakker og et stort samfund af udviklere bag sig, og den lader sig i høj grad tilpasse til udviklerens behov og krav.
 
-Til sammenligning med den fulde pakke, Visual Studio, så er Code en letvægtseditor i den forstand, at den fylder markant mindre og den afvikles langt hurtigere på de fleste systemer. 
+Til sammenligning med den fulde pakke, Visual Studio, så er Code en letvægtseditor i den forstand, at den fylder markant mindre og den afvikles langt hurtigere på de fleste systemer.
+
+Download den nyeste stabile version af [Visual Studio Code](
+https://code.visualstudio.com/) og kør den ekskverbare installationsfil. 
+
+### Overblik over menuen 
+Herunder ses hovedmenuen når man starter VS code. Bemærk først og fremmest, at systemet nok ser lidt anderledes ud hos læseren. Det skyldes bl.a. at ikke alle menupunkter er installeret ved en nyinstalleret version af miljøet. 
+
+![Opstart i VS Code](../kap18/images/vscodehovedmenu.png)
+
+I venstre side ses nogle af de centrale menupunkter og dem vil vi kort dvæle ved:
+
+![Genveje i hovedmenuen i VS Code](../kap18/images/vscodehovedmenu.png)
+
+Filosofien bag VS code er i høj grad, at man bør bruge tastaturet så meget som muligt fremfor at bruge musen. Det betyder, at der er en lang række genveje som er gode at kende. Illustrationen ovenfor viser nogle af de centrale genveje, som er gode at øve sig i at bruge. Man er selvfølgelig altid velkommen til at bruge musen, hvis man har glemt en genvej. 
+
+For rigtig at komme i gang med miljøet bør man starte med at udvælge en mappe på ens computer, hvor man har tænkt sig at lægge sine projekter som undermapper. Dvs.: 
+
+1. Opret en folder på din computer
+2. Start VS Code
+3. Gå ind under menuen File og vælg "Add Folder to Workspace
+4. Vælg mappen som du har oprettet
+
+Når du nu bruger stifinderen (Ctrl/Command+Shift+E), så vil du få en menu frem i venstre side, der viser dine mapper i dit workspace. 
+
+![Explorer/stifinder i VS Code](../kap18/images/explorervscode.png)
+
+### Installation af P5 
+Til at afvikle applikationer i P5 har vi brug nogle få plugins. 
+
+* Live Server: Giver mulighed for at afvikle en lokal webserver, som vores programmer kan køre på
+* P5 Project Creator: Giver mulighed for nemt at starte et nyt projekt
+* p5js Snippets: En række generiske kodestumper som automatisere en del af arbejdet med at skrive koden. 
+
+Et andet godt plugin at kende er Live Share, som giver mulighed for at arbejde flere sammen på samme tid i samme dokument. 
+
+### Starte dit første projekt 
+Når disse tre plugins er installeret, så bør VS code genstartes. Herefter burde du være klar til at gå i gang. 
+
+1. Find i menuen under View-> Command Palette eller brug genvejen Ctrl/Command+Shift+P. 
+2. Nu skulle du gerne have en prompt, hvor du skriver "create p5.js project". Typisk så foreslår VS code den ønskede, når du har skrevet nogle få tegn, så du bare kan vælge den med piltasterne 
+3. Herefter bliver du bedt om at lave en folder til dit projekt. Der vælger du en folder i dit workspace. Navngiv projektet så det har et sigende navn for det du vil lave. 
+
+Når processen er færdig skulle du meget gerne i dit workspace have en filstruktur:
+
+![P5 projekt i VScode](../kap18/images/createp5vscode.png)
+
+Når du så vil starte dit projekt, går du ind i html filen og trykker på knappen som vist i figuren:  
+
+![Start af webserveren](../kap18/images/webservervscode.png)
+
+Du behøver kun at starte din webserver engang. Når du gemmer ændringer i din kode i VS code genstartes din P5 applikation automatisk.
+
