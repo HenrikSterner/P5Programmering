@@ -176,7 +176,7 @@ arbejdes på en branch ved navn master.
 udviklers ændringer, så skal den anden bruger sammenflette (merge)
 disse i sin kode før vedkommende kan committe.
 
-En fil kan være i en af 3 tilstande:
+Vi bemærker samtidig, at en fil kan være i en af følgende tre tilstande:
 * Committed: Filen og alle ændringer i denne er gemt i dit lokale
 repository
 * Modified: Filen indeholder ændringer som ikke er gemt i dit lokale
@@ -184,6 +184,79 @@ repository
 * Staged: Filen indeholder ændringer, som ikke er gemt i dit lokale
 repository, men som vil blive tilføjet ved næste commit.
 
+I det følgende vil vi prøve at gennemgå, hvorledes man først bruger git-kommandoerne.
+
+Start med at åbne VS Code og gå ind i terminalen. Du kan starte en ny terminal fra menuen Terminal->New Terminal eller genvejen Ctrl/Command+Shift+æ: 
+
+![Terminal i VS code](../kap18/images/terminalvs.png)
+
+Man bemærker at der står en sti til venstre, som gerne skulle pege på ens workspace. Når man er i terminalen, er der tre gode kommandoer at kende:
+
+- "cd navn_på_bibliotek": Man skifter placering, så man står i underbiblioteket med det skrevne navn. Ved at skrive "cd .." går man et skridt tilbage til forældremappen i biblioteksstrukturen
+- "mkdir navn_på_bibliotek_der_skal_oprettes": Man opretter biblioteket i den nuværende folder med det ønskede navn. 
+- "dir": Giver en liste over alle biblioteker i den nuværende mappe 
+
+Nu er vi klar til at oprette et repository. 
+
+Skridt 1: Opret et tomt bibliotek: mkdir test_en_hest og skift til biblioteket med cd test_en_hest
+Initialiser et tomt repository i dit nyoprettede bibliotek med følgende to kommandoer
+```git
+git
+git init
+```
+
+Skridt 2: Opret en tekst-fil tekst.txt og tilføj noget tekst til filen. Kør kommandoen nedenfor for at få et status billede af dit repository:
+```git
+git status
+```
+
+Skridt 3: Tilføj nu din fil til git, så den observerer hvorvidt der sker ændringer i fht til dit repository. Det gøres med kommandoen "add". Kør status igen:
+```git
+git add test.txt
+git status
+```
+
+Skridt 4: Nu er vi klar til at publicere vores ændringer i fil vores til lokale repository:
+```git
+Commit dine ændringer til dit lokale repository:
+git commit -m ’Mit første commit’
+git status
+```
+Ved at bruge "-m ..." kan vi tilføje en kommentar vores commit. Det kan være rart for andre udviklere at får en kort beskrivelse af ændringerne. 
+
+Skridt 5: 
+Nu vil vi ændre indholdet i tekst-filen igen og tjekke status.
+Kør kommandoen:
+```git
+git diff tekst.txt
+```
+Herefter underrettes git om ændringerne igen med 
+```git
+git add tekst.txt
+```
+Og vi afrunder med at opdatere vores repository 
+```git
+git commit -m ’Min 2. commit’
+```
+
+Skridt 6: Få et overblik over dine commits med kommandoen:
+```git
+git log -10
+```
+10 markerer de seneste 10 commits. 
+
+Ovenstående var en ganske kort introduktion over nogle af de vigtigste git-kommandoer. Man bør vide, at der er meget mere til git end det ovenfor beskrevne, og der er skrevet store tykke bøger om brugen af git i større og mere komplekse systemer. 
 
 
+## Github i praksis
+Github er som nævnt en mere brugervenlig tilgang til git. Reelt er Github en form for brugergrænseflade til git. I det følgende vil vi gennemgå nogle af de vigtigste produktioner. 
 
+Herunder ses et billede af Githubs brugergrænseflade:
+![Github brugergrænseflade](../kap18/images/githuboverblik.png)
+I venstre side har vi listen over repositories og i højre side vises hvorvidt Github har regitreret ændring om der skal handles på det. 
+
+### Oprette et nyt repository i Github
+For at oprette et nyt repository, så tryk Ctrl/Command+N og vælg "New Repository". Herefter kommer du til følgende menu: 
+![Github Opret ](../kap18/images/githubcreaterepo.png)
+
+Her udfyldes navnet på dit repository, en kort beskrivelse, stien til den lokale version på din computer, hvorvidt du repo skal initialiseres med readme (introduktionstekst til brugeren), filer git skal ignorere og licens for dit projekt.  
