@@ -260,3 +260,12 @@ For at oprette et nyt repository, så tryk Ctrl/Command+N og vælg "New Reposito
 ![Github Opret ](../kap18/images/githubcreaterepo.png)
 
 Her udfyldes navnet på dit repository, en kort beskrivelse, stien til den lokale version på din computer, hvorvidt du repo skal initialiseres med readme (introduktionstekst til brugeren), filer git skal ignorere og licens for dit projekt.  
+
+Når du trykker på "Create Repository" oprette et lokalt repository, som du kan publicere på Github. 
+![Publicer repository ](../kap18/images/publishgit.png)
+
+Hvis du ellers har oprettet en konto og er logget ind bør du få følgende dialogboks eller noget der minder om den:
+![Publicer repository ](../kap18/images/publishgit.png)
+
+Du kan vælge mellem den gratis udgave (Github.com) eller Github Enterprise, som koster penge. På den gratis udgave kan du stadig godt holde koden privat, men kun med op til tre andre udviklere. I den kommercielle udgave er der ikke den begrænsning.
+Hvis du er en del af en organisation kan du tilføje det. 
