@@ -269,3 +269,11 @@ Hvis du ellers har oprettet en konto og er logget ind bør du få følgende dial
 
 Du kan vælge mellem den gratis udgave (Github.com) eller Github Enterprise, som koster penge. På den gratis udgave kan du stadig godt holde koden privat, men kun med op til tre andre udviklere. I den kommercielle udgave er der ikke den begrænsning.
 Hvis du er en del af en organisation kan du tilføje det. 
+
+Prøv for en god ordens skyld at tjekke, at du kan se det repository på github.com under din profil. Er den privat skal du selvfølgelig være logget ind. 
+
+
+
+### Tilføje/ændre en fil i repository
+Github og git holder nu øje med biblioteket om der sker ændringer.
+Når du eksempelvis opretter en fil i biblioteket (det kunne passende gøres i VS code), så gør Github dig opmærksom på, at en ny fil er oprettet.
