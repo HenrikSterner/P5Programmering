@@ -277,3 +277,5 @@ Prøv for en god ordens skyld at tjekke, at du kan se det repository på github.
 ### Tilføje/ændre en fil i repository
 Github og git holder nu øje med biblioteket om der sker ændringer.
 Når du eksempelvis opretter en fil i biblioteket (det kunne passende gøres i VS code), så gør Github dig opmærksom på, at en ny fil er oprettet.
+
+![Commit ændringer til repository ](../kap18/images/commitgithub.png)
