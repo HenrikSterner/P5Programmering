@@ -304,3 +304,20 @@ En typisk situation der opstår ret ofte er når du ikke længere har den nyeste
 Når du bruger "Fetch Origin" knappen op i højre hjørne af menuen så henter du en status på om der er nogle nye opdateringer eller forslag til opdateringer på dit lokale repository. Disse opdateringer kaldes også for "Pull requests".  Brugergrænsefladen i Github gør efter en "fetch" automatisk opmærksom på, at du kan hente disse pull requests ved at trykke på "Pull origin": 
 
 ![Pull request efter en fetch ](../kap18/images/pullgithub.png) 
+
+
+## Øvelser
+Herunder en række øvelser der hver især involverer brugen af editoren på P5-siden, VS code og Github
+
+1. Prøv at lav et nyt projekt på P5JS.org, hvor du laver en mappe til kilde kode kaldet "src". Prøv nu at oprette en javascript fil, kaldet konstanter.js, i mappen, som du vil bruge til at opbevare variable, der er konstante. Lad sketch.js blive hvor den er altså i roden. 
+Husk at opdatere din index.html, så den inkluderer "konstanter.js".   
+I "konstanter.js" erklæres en variable:
+
+```javascript 
+const PI = 3.141592653589793;
+const XCENTER = 100
+const YCENTER = 100
+const RADIUS = 75
+```
+Prøv nu at bruge disse værdier i sketch.js til at tegne en cirkel samt printe arealet af cirklen i konsollen. 
+   
