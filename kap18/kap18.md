@@ -276,6 +276,18 @@ Prøv for en god ordens skyld at tjekke, at du kan se det repository på github.
 
 ### Tilføje/ændre en fil i repository
 Github og git holder nu øje med biblioteket om der sker ændringer.
-Når du eksempelvis opretter en fil i biblioteket (det kunne passende gøres i VS code), så gør Github dig opmærksom på, at en ny fil er oprettet.
+Når du eksempelvis opretter en fil i biblioteket (det kunne passende gøres i VS code), så gør Github dig opmærksom på, at en ny fil er oprettet eller ændret.
+Herunder et eksempel, hvor vi ønsker at opdatere vores repository med ændringer og billedet. Generelt er det en god ide at starte med at hente den nyeste version fra Github ved at trykke på knappen "Fetch origin" i højre hjørne.
 
 ![Commit ændringer til repository ](../kap18/images/commitgithub.png)
+
+Bemærk det grønne felt med plus-tegnet ud for filen. Det betyder, at der er tale om en ny fil. Den gule cirkel med plet i marker, at git har registreret ændringer i en eksiterende fil. 
+Som nævnt tidligere er det altid en god ide kort at opsummere ændringerne inden du trykker på den blå knap i venstre side "Commit to main". 
+
+Når du trykker på knappen melder Github tilbage med anbefalinger til hvad du så bør gøre. Typisk ønsker du bare at trykke på "Push origin", hvilket betyder at dine ændringer bliver tilføjet til dit repository på github. 
+
+
+![Push til dit repository ](../kap18/images/commitgithub.png).
+
+### Tjek i historikken
+Det kan være godt at holde lidt øje med udviklingen på ens projekt eller et projekt man er er den af. Det kan man gøre ved at trykke på knappen "History":
