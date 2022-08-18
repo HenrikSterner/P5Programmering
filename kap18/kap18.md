@@ -291,3 +291,8 @@ Når du trykker på knappen melder Github tilbage med anbefalinger til hvad du s
 
 ### Tjek i historikken
 Det kan være godt at holde lidt øje med udviklingen på ens projekt eller et projekt man er er den af. Det kan man gøre ved at trykke på knappen "History":
+
+![Historien ](../kap18/images/historygithub.png) 
+
+Her kan man bl.a. se hvem der har ændret på hvad og hvornår. 
+
