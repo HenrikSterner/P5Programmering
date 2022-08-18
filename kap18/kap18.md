@@ -296,3 +296,8 @@ Det kan være godt at holde lidt øje med udviklingen på ens projekt eller et p
 
 Her kan man bl.a. se hvem der har ændret på hvad og hvornår. 
 
+### Opdatere lokalt repository med nyeste version
+En typisk situation der opstår ret ofte er når du ikke længere har den nyeste version af en fil i de lokale i repository sammenlignet det repository, der ligger på Github. 
+Når du bruger "Fetch Origin" knappen op i højre hjørne af menuen så henter du en status på om der er nogle nye opdateringer eller forslag til opdateringer på dit lokale repository. Disse opdateringer kaldes også for "Pull requests".  Brugergrænsefladen i Github gør efter en "fetch" automatisk opmærksom på, at du kan hente disse pull requests ved at trykke på "Pull origin": 
+
+![Pull request efter en fetch ](../kap18/images/pullgithub.png) 
