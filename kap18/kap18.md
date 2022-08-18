@@ -249,7 +249,10 @@ Ovenstående var en ganske kort introduktion over nogle af de vigtigste git-komm
 
 
 ## Github i praksis
-Github er som nævnt en mere brugervenlig tilgang til git. Reelt er Github en form for brugergrænseflade til git. I det følgende vil vi gennemgå nogle af de vigtigste produktioner. 
+Github er som nævnt en mere brugervenlig tilgang til git. Reelt er Github en form for brugergrænseflade til git. I det følgende vil vi gennemgå nogle af de vigtigste handlinger som man kan foretage. Figuren nedenfor illustrer hvorledes de enkelte git-kommandoer illustreret i forrige afsnit fungerer i fht Github:
+
+![Github og git - et overblik](../kap18/images/gitcommandillustrated.png)
+
 
 Herunder ses et billede af Githubs brugergrænseflade:
 ![Github brugergrænseflade](../kap18/images/githuboverblik.png)
