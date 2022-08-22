@@ -309,10 +309,9 @@ Når du bruger "Fetch Origin" knappen op i højre hjørne af menuen så henter d
 ## Øvelser
 Herunder en række øvelser der hver især involverer brugen af editoren på P5-siden, VS code og Github
 
-1. Prøv at lav et nyt projekt på P5JS.org, hvor du laver en mappe til kilde kode kaldet "src". Prøv nu at oprette en javascript fil, kaldet konstanter.js, i mappen, som du vil bruge til at opbevare variable, der er konstante. Lad sketch.js blive hvor den er altså i roden. 
+a) Lav et nyt projekt på P5JS.org, hvor du laver en mappe til kilde kode kaldet "src". Kræver du er logget ind. Prøv nu at oprette en javascript fil, kaldet konstanter.js, i mappen, som du vil bruge til at opbevare variable, der er konstante. Lad sketch.js blive hvor den er altså i roden. 
 Husk at opdatere din index.html, så den inkluderer "konstanter.js".   
 I "konstanter.js" erklæres en variable:
-
 ```javascript 
 const PI = 3.141592653589793;
 const XCENTER = 100
@@ -320,4 +319,4 @@ const YCENTER = 100
 const RADIUS = 75
 ```
 Prøv nu at bruge disse værdier i sketch.js til at tegne en cirkel samt printe arealet af cirklen i konsollen. 
-   
+. Installer VS code og de nødvendige plugins. Find et workspace og lav nu et lille program, der konstruerer tre forskellige geometriske former. Koden skal være fordelt på tre forskellige filer.
