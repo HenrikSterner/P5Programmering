@@ -152,6 +152,7 @@ Git, som Github er en frontend til, er et decentraliseret (distributivt) version
 Et eksempel på et større system som bruger git til at vedligeholde er Linux: 
 * Android-systemet til mobiltelefoner er bygget på Linux. 
 * Koden i linux-kernen vedligeholdes vha. git. Sidste år var der 4000 udviklere og 440 forskellige virksomheder, der bidrog med kode til linux-kernen.
+
 Hver dag sker nogenlunde følgende med linux-koden:
 * 10800 kodelinier tilføjes
 * 5300 kodelinier fjerne
