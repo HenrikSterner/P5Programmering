@@ -152,11 +152,11 @@ Git, som Github er en frontend til, er et decentraliseret (distributivt) version
 Et eksempel på et større system som bruger git til at vedligeholde er Linux: 
 * Android-systemet til mobiltelefoner er bygget på Linux. 
 * Koden i linux-kernen vedligeholdes vha. git. Sidste år var der 4000 udviklere og 440 forskellige virksomheder, der bidrog med kode til linux-kernen.
-* Hver dag sker nogenlunde følgende med linux-koden:
-** 10800 kodelinier tilføjes
-** 5300 kodelinier fjerne
-** 1875 kodelinier kode ændres
-** Konklusion: 8 ændringer per sekund i gennemsnit!
+Hver dag sker nogenlunde følgende med linux-koden:
+* 10800 kodelinier tilføjes
+* 5300 kodelinier fjerne
+* 1875 kodelinier kode ændres
+Konklusion: 8 ændringer per sekund i gennemsnit!
 
 En af de centrale udviklere bag git er i øvrigt Linus Thorvalds, som er grundlæggeren af Linux. 
 
@@ -164,6 +164,7 @@ En af de centrale udviklere bag git er i øvrigt Linus Thorvalds, som er grundl�
 Vi har tænkt os at bruge Githubs brugergrænseflade til at interagere med Git, så selvom vi ikke kommer til at kalde git-kommandoer direkte, er det en god ide at have en fornemmelse for nogle af de grundlæggende processer i git, så man bedre forstår hvad der sker, når man trykker på de forskellige knapper i Github.  
 
 Herunder nogle helt centrale begreber:
+
 *Init: Ved oprettelse af et nyt og tomt repository
 *Clone: Når et repository hentes for første gang
 *Commit: Når man tilføjer (commit) permanente ændringer til
