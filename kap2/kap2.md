@@ -11,46 +11,45 @@ På figuren nedenfor ses til venstre et koordinatsystem,som vi kender det fra ma
 
 ![alt_text](billeder/kap2-koordinatsystem.png "Til højre ses koordinatsystemet i P5")
 
-
-Vi konstruere punkter, linjer, rektangler, ellipser og cirkler på følgende måde: 
-
+Vi konstruere punkter, linjer, rektangler, ellipser og cirkler nedenfor:
 
 ```javascript
 function setup(){
   	createCanvas(100, 100);
 }
 function draw(){
- point(40, 50); // point(x, y)
- line(10, 20, 50, 20); // line(x1, y1, x2, y2)
- rect(10, 20, 40, 30); // rect(x, y, width, height)
+ // point(x, y) hvor x og y refererer til placeringen af punktet: 
+ point(40, 50); 
+ // line(x1, y1, x2, y2) hvor (x1,y1) og (x2,y2) refererer til placering af endepunkter
+ line(10, 20, 50, 20); // line(x1, y1, x2, y2) hvor tallene 
+ // rect(x, y, width, height) hvor (x,y) er punktet i øverste, vesntre hjørne og width og height
+ // er bredde hhv højde
+ rect(10, 20, 40, 30); 
+ // ellipse(x, y, width, height) , hvor (x,y) er centrum af ellipsen 
+ // width hhv. height er længden af stor- hhv lille-aksen
  ellipse(30, 30, 40, 60); // ellipse(x, y, width, height)
  ellipse(30, 30, 40, 40); // ellipse(x, y, width, height)
 }
 ```
-
-
 Sidstnævnte bliver til en cirkel. Hvorfor mon?
 
-I `setup `iniitialiseres programmet og `draw`  skrives den kode, som tegner figurerne. De to skråstreger indikerer at der er tale om kommentarer, som ikke fortolkes af computeren. Den opfatter det som kommentarer. Krølparenteser markerer start og slut på de to såkaldte metoder, `setup` og `draw`. 
+I `setup ` initialiseres programmet (instruktionerne herinde afvikles en gang og som det første i programmet) og i `draw`  skrives den kode, som tegner figurerne. Bemærk at koden i draw afvikles som standard 30 gange i sekundet.  
+De to skråstreger indikerer at der er tale om kommentarer, som ikke fortolkes af computeren. Den opfatter det som kommentarer. Krølparenteser markerer start og slut på de to såkaldte metoder, `setup` og `draw`. 
 
-Alternativt kan rektangler og ellipser konstrueres ud fra deres hjørner:
-
+Alternativt kan rektangler eksempelvis konstrueres ud fra deres hjørner:
 
 ```javascript
 function setup(){
  createCanvas(100, 100);
- rectMode(CORNERS);
- ellipseMode(CORNERS);
+ rectMode(CENTER);
 }
 function draw(){
- rect(30, 20, 40, 20); // rect(x1, y1, x2, y2)
- ellipse(30, 30, 40, 60); // ellipse(x1, y1, x2, y2)
+// rect(x, y, width, height) hvor (x,y) er centrum
+ // width og højde er bredde hhv højde
+ rect(30, 20, 40, 20); 
 }
 ```
-
-
 Man kan ændre tykkelsen af streger på følgende måde:
-
 
 ```javascript
 strokeWeight(1); // Standard
@@ -60,10 +59,7 @@ line(20, 40, 80, 40);
 strokeWeight(10); // Fed
 line(20, 70, 80, 70);
 ```
-
-
 Man kan lave en form bestående af mange punkter der forbindes ved brug af linjer ved at bruge shape. Herunder tegnes en pil:
-
 
 ```javascript
 function setup() { 
@@ -83,12 +79,22 @@ function draw() {
 }
 ```
 
-
-
 ## Kommentarer
 
 Man kan skrive kommentarer i sin kode ved at skrive to skråstreger // eller /* og så vil alt være kommentarer indtil man igen skriver */. Herunder et par eksempler.
 
+```javascript
+function setup() { 
+ // Her et eksempel på en enkelt linjes kommentar i setup
+
+} 
+function draw() { 
+ /* Her er et eksempel på en kommentar 
+    over flere linjer.
+    Vi kan skrive lige så mange linjer som man har lyst til
+  */
+}
+```
 
 ## Farver
 
@@ -219,8 +225,6 @@ Vi vælger at bruge Visual Studio Code, som er open source og gratis. Den kan he
 
 Visual Studio Code (VSC) er en slags Word for programmører og vi skriver fremover al vores kode heri. I VSC skal du installere tre plugins:
 
-
-
 * Live Server
 * P5 JS snippets
 * p5.vscode
@@ -234,6 +238,8 @@ Når du har installeret disse kan du nøjes med at trykke Ctrl + Shift + p og sk
 <span style="text-decoration:underline;">Script.src</span>: Her er funktionerne setup og draw. Det er her du skal skrive din kode indtil videre.
 
 <span style="text-decoration:underline;">Style.css</span>: Her kan du skrive style sheets der ændrer på hjemmesidens udseende. Undlad at kigge på den nu.
+
+I kapitel 18 gennemgår vi i langt flere detajler brugen af Visual Studio Code.
 
 
 ## Øvelser 
