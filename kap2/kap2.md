@@ -4,6 +4,8 @@ Et program består af en række instruktioner, som en maskine (computer, telefon
 
 Vi kan tænke på det at programmere som at lave en tegning, hvor den endelige tegning udgør programmet. I det følgende skal vi arbejde med at konstruere simple geometriske former som kan blive til en form for automatiseret tegninger. Dvs. programmer.
 
+Det bemærkes, at til at starte med er det dog nok bare at trykke "Editor" på p5js.org, men hvis man eksempelvis ønsker at gemme sine programmer, så er det nødvendigt at logge ind/oprette en konto. Det er grundigt forklaret i kapitel 18 hvor man bl.a. får en udførlig vejledning i brug af editoren (hvor koden skrives) på p5js.org i kapitel 18. 
+
 
 ## Koordinatsystemer og geometriske former i P5.JS
 
@@ -85,7 +87,7 @@ function draw() {
 
 ## Kommentarer
 
-Man kan som nævnt skrive kommentarer i sin kode ved at skrive to skråstreger //. Alternativt brug /* og så vil alt være kommentarer indtil man igen skriver */. Herunder et par eksempler.
+Man kan som nævnt skrive kommentarer i sin kode ved at skrive to skråstreger "//". Alternativt brug "/*" og så vil alt være kommentarer indtil man igen skriver */. Herunder et par eksempler.
 
 ```javascript
 function setup() { 
@@ -222,9 +224,11 @@ function draw() {
 Her opretter vi en heltalsvariable (en såkaldt tællevariable), som vi inkrementerer  i metoderne i `draw `og printer i både `draw ` og `setup`. Førstnævnte kaldes 30 gange i sekundet, mens setup kun kører en gang. Bemærk vi kan sagtens skrive kode uden for de to metoder og vi kan sågar lave vores egne metoder. Men det vender vi tilbage til senere.
 
 
-## Afvikling på egen computer
+## Afvikling på p5js.org eller egen computer
+Indtil nu har vi afviklet applikationer på vores p5’s hjemmeside via editoren og dette kan man sagtens forsætte med i de næste par kapitler, hvis man synes det er sjovere at kode.  
 
-Indtil nu har vi afviklet applikationer på vores p5’s hjemmeside. Vi skal nu til at installere et udviklingsmiljø eller editor på vores egen computer, så vi kan kode uden at være på p5’s hjemmeside. Det er praktisk af mange grunde men bl.a. vi i et udviklingsmiljø får lettere ved at skrive større mængder kode fordelt på flere filer og vi samtidig får en række værktøjer til at skrive kode hurtigere og med færre fejl. 
+Men på et tidspunkt vil det måske være rart med en lidt mere avanceret editor eller et decideret udviklingsmiljø.  
+Det er praktisk af mange grunde. Bl.a.  får vi lettere ved at skrive større mængder kode fordelt på flere filer og vi får en række værktøjer til at skrive kode hurtigere og med færre fejl. 
 
 Vi vælger at bruge Visual Studio Code, som er open source og gratis. Den kan hentes på [https://code.visualstudio.com/](https://code.visualstudio.com/) til stort set alle platforme (herunder Windows, Mac og linux).
 
@@ -244,26 +248,28 @@ Når du har installeret disse kan du nøjes med at trykke Ctrl + Shift + p og sk
 
 <span style="text-decoration:underline;">Style.css</span>: Her kan du skrive style sheets der ændrer på hjemmesidens udseende. Undlad at kigge på den nu.
 
-I kapitel 18 gennemgår vi i langt flere detajler brugen af Visual Studio Code.
+I kapitel 18 gennemgår vi i langt flere detajler installationen og  brugen af Visual Studio Code.
 
 
 ## Øvelser 
-
-
 
 1. Tegn de forskellige geometriske former i forskellige farver 
 2. Gør baggrunden mørkeblå. Tegn to linjer der krydser diagonalt i en hvid farve. 
 3. Tegn OL-logoet i farver
 4. Tegn et hus. Farvelæg det.
 5. Tegn et dyr eller et rumvæsen. Farvelæg det.
-6. Konstruér en stjerne. To gode funktioner at kende er translate(x,y), som bliver omdrejningspunktet og rotate(vinkel i radianer) roterer de efterfølgende objekter i radianer med uret.
+6. Konstruér en stjerne. To gode funktioner at kende er 
+"translate(x,y)", som definerer omdrejningspunktet og "rotate(vinkel i radianer)", der roterer de efterfølgende objekter i radianer med uret. Til orientering kan man konvertere mellem radianer og grader ved følgende formler:
+$$radianer= \frac{grader}{180}*\pi $$
+$$grader= \frac{radianer}{pi}*180 $$
 7. Konstruér en blomst ved brug af cirkler og ellipser.
 8. Konstruer din egen figur ved hjælp af beginShape og endShape.
-9. Du er ved at starte din egen virksomhed og har brug for at kunne autogenerere dit firmas logo. Skriv et program der konstruerer dit logo.
-10. Installér Visual Studio Code og følgende plugins:
+9.  Du er ved at starte din egen virksomhed og har brug for at kunne autogenerere dit firmas logo. Skriv et program der konstruerer dit logo.
+10. Bestem selv om du vil vente med denne øvelse. Installér Visual Studio Code og følgende plugins:
     1. Live Server til at afvikle en lokal webserver
     2. P5 Project Creator
     3. P5js Snippets
+Se en udførlig vejledning i kapitel 18.
 
 
 ## Projekt: Algoritmisk flag konstruktion
@@ -271,3 +277,23 @@ I kapitel 18 gennemgår vi i langt flere detajler brugen af Visual Studio Code.
 Du har startet en virksomhed op som producerer flag automatisk og digitalt i P5. Flere lande har allerede efterspurgt om deres flag kan blive konstrueret i P5 og en beskrivelse (dvs. en algoritme), der skridt for skridt fortæller hvordan flaget konstrueres vha computeren. Det drejer sig om følgende lande:
 
 ![alt_text](billeder/kap2-lande.png "")
+
+Du skal altså gøre følgende
+
+a. Skriv med ord på helt almindelig dansk hvorledes du vil konstruere et flag. Denne form for kode kaldes pseudokode. 
+b. Skriv koden der rent faktisk visualisere flaget.
+c. Udfør a. og b. for et selvvalgt flag. 
+
+Pseudokode for eksempelvis det japanske flag kunne lyde i retning af følgende:
+
+* Konstruer et kanvas med hvid bagrund
+* Tegn en rød cirkel i midten af kanvas
+* Fyld cirklen med en rød farve
+
+
+Hvis du kender andre, som er ved at lære p5 kan det være en fordel at prøve at give din beskrivelse i a. til vedkommende, og se om vedkommende kan visualisere dit flag. 
+
+Ofte er den bedste måde at kommunikere kode til andre på ikke nødvendigvis ved at tage udgangspunkt i selve koden men i stedet i i stedet at kommunikere i prosakode eller pseudokode.
+Ydermere er det også en god måde at dokukumentere sin kode på, hvis andre skal læse den eller hvis man selv vender tilbage til koden en dag. Man vil blive overrasket over hvor hurtigt man kan glemme de tanker og ideer man havde, da man udviklede et program. 
+
+Det er genrelt en vigtigt egenskab for alle programmører at være bevidst om hvorledes man bedst kommunikere sit program ud og at programmer kan repræsenteres ikke kun som den egentlig kode men også almindelig tekst, figurer eller noget helt tredje. 
