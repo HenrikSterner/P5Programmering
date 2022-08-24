@@ -15,6 +15,8 @@ Vi konstruere punkter, linjer, rektangler, ellipser og cirkler nedenfor:
 
 ```javascript
 function setup(){
+    // størrelsen af vores tegneflade også kaldet kanvas 
+    // (100,100) markerer brede og og længde
   	createCanvas(100, 100);
 }
 function draw(){
@@ -33,7 +35,9 @@ function draw(){
 ```
 Sidstnævnte bliver til en cirkel. Hvorfor mon?
 
-I `setup ` initialiseres programmet (instruktionerne herinde afvikles en gang og som det første i programmet) og i `draw`  skrives den kode, som tegner figurerne. Bemærk at koden i draw afvikles som standard 30 gange i sekundet.  
+I `setup ` initialiseres programmet (instruktionerne herinde afvikles en gang og som det allerførste i programmet). I det her tilfælde konstruerer vi blot tegnefladen, som vi fremover også kalder for et kanvas. Det er her vores illustrationer og objekter fremkommer.  
+
+I `draw`  skrives den kode, som tegner figurerne på kanvas. Bemærk at koden i draw afvikles som standard 30 gange i sekundet.  
 De to skråstreger indikerer at der er tale om kommentarer, som ikke fortolkes af computeren. Den opfatter det som kommentarer. Krølparenteser markerer start og slut på de to såkaldte metoder, `setup` og `draw`. 
 
 Alternativt kan rektangler eksempelvis konstrueres ud fra deres hjørner:
@@ -81,7 +85,7 @@ function draw() {
 
 ## Kommentarer
 
-Man kan skrive kommentarer i sin kode ved at skrive to skråstreger // eller /* og så vil alt være kommentarer indtil man igen skriver */. Herunder et par eksempler.
+Man kan som nævnt skrive kommentarer i sin kode ved at skrive to skråstreger //. Alternativt brug /* og så vil alt være kommentarer indtil man igen skriver */. Herunder et par eksempler.
 
 ```javascript
 function setup() { 
@@ -164,13 +168,14 @@ function draw() {
 ```
 
 
-Metoden draw opdateres normalt 30 gange i sekundet. Det kaldes også 30 FPS - Frames Per Second. Du sætter antallet af frames i setup ved brug af kommandoen
+Metoden draw opdateres som nævnt 30 gange i sekundet.  Det kaldes også 30 FPS - Frames Per Second. Det betyder, at linjerne mellem krølparenteserne i draw afvikles 30 gange i sekundet. Du sætter antallet af frames i setup ved brug af kommandoen
 
 
 ```javascript
 frameRate(x); //x er antallet af frames
 ```
 
+Overvej altid om du bør eller ikke bør have en background kommando med, da den sørger for at rense kanvas, så noget nyt kan tegnes. Hvis du ikke har objekter, der bevæger sig dynamisk kan det overvejes om det er nødvendigt at rense kanvas. 
 
 
 ## Tilfældige tal ved brug af random
