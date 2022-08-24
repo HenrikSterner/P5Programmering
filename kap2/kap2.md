@@ -293,7 +293,7 @@ Pseudokode for eksempelvis det japanske flag kunne lyde i retning af følgende:
 
 Hvis du kender andre, som er ved at lære p5 kan det være en fordel at prøve at give din beskrivelse i a. til vedkommende, og se om vedkommende kan visualisere dit flag. 
 
-Ofte er den bedste måde at kommunikere kode til andre på ikke nødvendigvis ved at tage udgangspunkt i selve koden men i stedet i i stedet at kommunikere i prosakode eller pseudokode.
-Ydermere er det også en god måde at dokukumentere sin kode på, hvis andre skal læse den eller hvis man selv vender tilbage til koden en dag. Man vil blive overrasket over hvor hurtigt man kan glemme de tanker og ideer man havde, da man udviklede et program. 
+Ofte er den bedste måde at kommunikere kode til andre på ikke nødvendigvis ved at tage udgangspunkt i selve koden men i stedet at kommunikere i pseudokode eller lignende.
+Ydermere er det også en god måde at dokukumentere sin kode på, hvis andre skal læse den eller hvis man selv vender tilbage til koden en dag. Man vil blive overrasket over hvor hurtigt man kan glemmer tankegangen og ideer man havde, da man udviklede et program. 
 
-Det er genrelt en vigtigt egenskab for alle programmører at være bevidst om hvorledes man bedst kommunikere sit program ud og at programmer kan repræsenteres ikke kun som den egentlig kode men også almindelig tekst, figurer eller noget helt tredje. 
+Det er generelt en vigtigt egenskab for alle programmører at være bevidst om hvorledes man bedst kommunikere sit program ud og at programmer kan repræsenteres ikke kun som den egentlig kode men også almindelig tekst, figurer eller noget helt tredje. 
