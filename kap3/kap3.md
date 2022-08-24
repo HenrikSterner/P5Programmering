@@ -18,7 +18,7 @@ let f = 10.2; // kommatal/float
 ```
 
 
-Variabler har et såkaldt _scope. _Dvs. hvor de er tilgængelige. Erklæres en variable indenfor eksempelvis `setup`  er den kun tilgængelig derinde. Omvendt kan man lave en global variable ved at erklære den udenfor metodernes kroppe:
+Variabler har et såkaldt scope eller sigte. Dvs. hvor de er tilgængelige i koden. Erklæres en variable indenfor eksempelvis `setup`  er den kun tilgængelig derinde. Omvendt kan man lave en global variable ved at erklære den udenfor metodernes kroppe:
 
 
 ```javascript
@@ -101,6 +101,7 @@ var x = 10;
 // x er 10
 ```
 
+Det er ofte en god ide at undgå for mange globale variable. Prøv hellere at indlejre dem i setup eller draw ved brug af "let"-konstruktionen.
 
 
 ## Operationer på variable
