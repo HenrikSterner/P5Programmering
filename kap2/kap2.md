@@ -280,9 +280,9 @@ Du har startet en virksomhed op som producerer flag automatisk og digitalt i P5.
 
 Du skal altså gøre følgende
 
-a. Skriv med ord på helt almindelig dansk hvorledes du vil konstruere et flag. Denne form for kode kaldes pseudokode. 
-b. Skriv koden der rent faktisk visualisere flaget.
-c. Udfør a. og b. for et selvvalgt flag. 
+*a. Skriv med ord på helt almindelig dansk hvorledes du vil konstruere et flag. Denne form for kode kaldes pseudokode. 
+*b. Skriv koden der rent faktisk visualisere flaget.
+*c. Udfør a. og b. for et selvvalgt flag. 
 
 Pseudokode for eksempelvis det japanske flag kunne lyde i retning af følgende:
 
