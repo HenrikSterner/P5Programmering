@@ -186,7 +186,7 @@ class Menneske {
     }
 
     draw() {
-   	 circle(this.x, this.y, this.radius);
+   	 circle(this.x, this.y, this.radius*2);
     }
 
     collision(windowWidth, windowHeight) {

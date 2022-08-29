@@ -42,8 +42,8 @@ Her kommer et eksempel mere, der beskriver rekursivt hvordan du kommer hjem:
       if(hjemme)
         return
       else
-        kop.tagEnTår()
-        drikKaffe(kop)
+        tagEtSkridt()
+        gåHjem()
   }
 ```
 
@@ -58,8 +58,8 @@ Herunder et først simpelt eksempel på en rekursiv funktion, der udregner fakul
 ```javascript
 function factorial(n)
 {
-    if(n==1) return 1 //basis tilfældet
-    else return factorial(n-1) // rekursivt kald
+    if(n<=1) return 1 //basis tilfældet
+    else return n*factorial(n-1) // rekursivt kald
 }
 factorial(3); // returnerer 6=1*2*3
 ```
