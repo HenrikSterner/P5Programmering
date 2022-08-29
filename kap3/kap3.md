@@ -32,20 +32,82 @@ Der findes overordnet syv forskellige typer i javascript:
 
 ![alt_text](images/data-types-in-python.png "Overblik over de forskellige datatyper i Javascript")
 
-Generelt kan vi sige om de primitive datatyper, at de er datatyper, som kun opbevarer en enkelt værdi. De er desuden ikke muterbare hvilket i praksis betyder, at vi kan ikke ændre variablernes værdi.
+Javascript er et såkaldt dynamisk typet sprog. Dvs. at du ikke på forhånd behøver at erklære hvilken type variablen skal have, hvilket typisk gøre det nemmere at lære og bruge.
+Omvendt risikerer man at lave nogle fejl, som kan være svære at finde.
 
-Javascript er et såkaldt dynamisk typet sprog. Dvs. at du ikke på forhånd behøver at erklære hvilken type variablen skal have. 
 Eksempel herunder hvor kommentaren angiver datatypen.
 
 ```javascript
-let n = 80; // heltal/integer 
-let s = "Hej"; // tekst/string 
-let b = true; // boolsk/boolean
-let f = 10.2; // kommatal/float
+let n = 80; // Number - heltal/integer 
+let s = "Hej"; // String - tekst 
+let b = true; // Boolean - boolsk
+let f = 10.2; // Number - kommatal/float
+```
+Er du i tvivl om en variables type kan du bruge kommandoen "typeof()":
+```javascript
+console.log(typeof(n)) // Number - heltal/integer 
 ```
 
+## Primitive typer og muterbarhed
+Generelt kan vi sige om de primitive datatyper, at de er datatyper, som kun opbevarer en enkelt værdi. De er desuden "ikke muterbare". I praksis betyder, at vi kan ikke ændre variablernes værdi.
 
+Lad os se et eksempel på det ved at betragte en streng variable:
+```javascript
+let navn = "Hemrik"
+```
+Der er tydeligvis en stavefejl i navnet. Vi kan heldigvis tilgå de enkelte elementer i navn ved at skrive "[x]" hvor x kan antage værdier fra 0 til 5, da første bogstaver står på plads 0 og der er 6 bogstaver i strengen. Dvs.  hente de enkelte bogstaver ud af navnet således:
+```javascript
+let navn = "Hemrik"
+console.log(navn[0]) //printer "H"
+console.log(navn[1]) //printer "e"
+console.log(navn[2]) //printer "m"
+console.log(navn[3]) //printer "r"
+console.log(navn[4]) //printer "i"
+console.log(navn[5]) //printer "k"
+```
+Umiddelbart kunne vi måske prøve bare at tildele værdien på:
 
+```javascript
+let navn = "Hemrik"
+navn[2]="n"
+console.log(navn) //printer stadig "Hemrik"
+```
+Hvis du prøver koden af vil du opdage, at der stadig printes "Hemrik", hvilket altså skyldes at navn ikke lader sig ændre eller med et fint udtryk "er immuterbar". 
+
+Kan vi så overhovedet tildele navn en ny værdi? Svaret er ja, men det kan kun lade sig gøre ved at bruge tildelingsoperatoren "=" og ikke ved at ændre. Herunder retter vi stavefejlen i navn:
+
+```javascript
+let navn = "Hemrik"
+navn="Henrik"
+console.log(navn) //printer nu korrekt "Henrik"
+```
+Bemærk altså at vi ikke muterer navn men i stedet tildeler den en ny værdi. 
+
+Det leder frem til en vigtig pointe, som vi kort vil illustrere med følgende simple eksempel:
+
+```javascript
+  let navn = "Hemrik";
+  let navn2 = navn;
+  console.log(navn2)
+  navn = "Henrik" + " Sterner";
+  console.log(navn2)
+```
+Hvad skrives mon ud i konsollen i de to tilfælde? I det første er det nok ikke så overraskende "Henrik" men det er det faktisk også i det andet tilfælde!
+
+Når vi tildeler variablen "navn" en ny værdi, så ændrer vi variablen, så den nu peger på strengværdien "Henrik Sterner", hvorfor værdien af "navn2" ikke er påvirket. 
+
+Man hører ofte metaforeren om variabler, som container i form af en navngiven kasse eller spand med en konkret værdi. Det er et godt billede, når vi arbejder med statisk typede sprog, hvor vi erklærer typerne på forhånd, som det eksempelis er gjort herunder i java:
+```java
+int x = 6; //erklærer en heltalsvariable der rummer 6
+```
+Men i dynamiske sprog som Javascript, er det bedre at tænke på variabler, som nogle størrelser der peger på en anden spand/kasse, som rummer værdien 6. Det har derfor heller ingen betydning i dynamiske sprog om vi eksempelvis lader x pege på et tal eller en streng, så som følgende:
+
+```javascript
+let x = 6
+x = "Hej med dig"
+```
+
+## Variablers scope
 Variabler har et såkaldt scope eller sigte. Dvs. hvor de er tilgængelige i koden. Erklæres en variable indenfor eksempelvis `setup`  er den kun tilgængelig derinde. Omvendt kan man lave en global variable ved at erklære den udenfor metodernes kroppe:
 
 ```javascript
@@ -77,7 +139,7 @@ let a= 2
 let a= 3
 ``` 
 Sætter vi den sidste erklæring i krølparenteser får den et lokalt sigte eller scope:
- ```javascript 
+```javascript 
 let a = 2
 {
   let a = 3
@@ -94,7 +156,6 @@ var a= 3
 ``` 
 Man kan dog overveje om det er en god ide. 
 
-
 Den vigtigste forskel på de to deklarationer er altså scopet eller sigtet. Variabler, der er erklæret af `var` nøgleordet har et globalt scope knyttet til den umiddelbare krop, som kan være i en funktionskrop eller hvis det ikke er tilfældet, som i ovenstående tilfælde, så er den global , mens `let` variabler har et scope i forhold til den lukkende blok, som de er omgrænset af.
 
 Herunder nogle flere eksempler på **var:**
@@ -108,8 +169,6 @@ function setup() {
   // kode her kan bruge carName
 }
 ```
-
-
 Havde vi erklæret carName inde i funktionen i setup, kunne vi ikke bruge den udenfor. Det samme gør sig dog ikke gældende hvis man laver en blok, som eksemplet herunder viser:
 
 
@@ -132,8 +191,6 @@ var x = 10;
 }
 // x er 2
 ```
-
-
 Til forskel fra følgende:
 
 
