@@ -5,7 +5,8 @@ Undervejs ser vi også eksempler på hvorledes man kan lave ikke bare statiske t
 
 ## Variabler og datatyper
 
-Variabler bruges til at opbevare data.  Dataens “form” eller type kaldes også datatypen. Man erklærer dem ved at bruge nøgleordet **let **, **var** eller **const** i kombination med tildelingsoperatoren. Helt overordnet vil en erklæring se således ud:
+Variabler bruges til at opbevare data.  Dataens “form” eller type kaldes også datatypen. Når man erklærer eller konstruerer en variable, så reserverer vi en plads i computerens hukommelse, hvor variablens værdi opbevares. 
+Man erklærer variabler ved at bruge nøgleordet **let **, **var** eller **const** i kombination med tildelingsoperatoren.  Helt overordnet vil en erklæring se således ud:
 
 <p align="center">
 <b>let</b> <i>variablenavn</i> <b>=</b> <i>værdi</i><br>
@@ -31,7 +32,7 @@ Der findes overordnet syv forskellige typer i javascript:
 
 ![alt_text](images/data-types-in-python.png "Overblik over de forskellige datatyper i Javascript")
 
-Generelt kan vi sige om de primitive datatyper, at de er datatyper, som kun opbevarer en enkelt værdi. 
+Generelt kan vi sige om de primitive datatyper, at de er datatyper, som kun opbevarer en enkelt værdi. De er desuden ikke muterbare hvilket i praksis betyder, at vi kan ikke ændre variablernes værdi.
 
 Javascript er et såkaldt dynamisk typet sprog. Dvs. at du ikke på forhånd behøver at erklære hvilken type variablen skal have. 
 Eksempel herunder hvor kommentaren angiver datatypen.
@@ -44,8 +45,8 @@ let f = 10.2; // kommatal/float
 ```
 
 
-Variabler har et såkaldt scope eller sigte. Dvs. hvor de er tilgængelige i koden. Erklæres en variable indenfor eksempelvis `setup`  er den kun tilgængelig derinde. Omvendt kan man lave en global variable ved at erklære den udenfor metodernes kroppe:
 
+Variabler har et såkaldt scope eller sigte. Dvs. hvor de er tilgængelige i koden. Erklæres en variable indenfor eksempelvis `setup`  er den kun tilgængelig derinde. Omvendt kan man lave en global variable ved at erklære den udenfor metodernes kroppe:
 
 ```javascript
 let n = 5; //global variable 
@@ -54,9 +55,7 @@ function setup(){
 }
 ```
 
-
 Hvis du ønsker at ændre værdien undervejs kan det anbefales at bruge nøgleordet `var` i stedet for:
-
 
 ```javascript
 var a=1;
@@ -71,24 +70,47 @@ console.log(a); //11
 console.log(b); //2
 ```
 
+Bruger vi "let" kan vi ikke redeklarere en eksisterende variable, hvis det sker indenfor de samme krølparenteser. 
+Skriver vi eksempelvis følgende får vi en fejl:
+```javascript
+let a= 2
+let a= 3
+``` 
+Sætter vi den sidste erklæring i krølparenteser får den et lokalt sigte eller scope:
+ ```javascript 
+let a = 2
+{
+  let a = 3
+  console.log(a)
+}
+console.log(a)
+```
+Når vi printer her så vil resultatet være 3 og 2, da den sidste print vil refererer til den oprindelige værdi af a som var 2.
 
-Den vigtigste forskel på de to deklarationer er altså scopet. Variabler, der er erklæret af `var` nøgleordet har et globalt scope knyttet til den umiddelbare krop, som kan være i en funktionskrop eller hvis det ikke er tilfældet, som i ovenstående tilfælde, så er den global , mens `let` variabler har et scope i forhold til den lukkende blok, som de er omgrænset af.
+Bruger vi "var" kan det godt lade sig gøre at erklære en variable igen:
+```javascript
+var a= 2
+var a= 3
+``` 
+Man kan dog overveje om det er en god ide. 
+
+
+Den vigtigste forskel på de to deklarationer er altså scopet eller sigtet. Variabler, der er erklæret af `var` nøgleordet har et globalt scope knyttet til den umiddelbare krop, som kan være i en funktionskrop eller hvis det ikke er tilfældet, som i ovenstående tilfælde, så er den global , mens `let` variabler har et scope i forhold til den lukkende blok, som de er omgrænset af.
 
 Herunder nogle flere eksempler på **var:**
-
 
 ```javascript
 var carName = "Volvo";
 
 // koden kan bruge carName
 
-function myFunction() {
+function setup() {
   // kode her kan bruge carName
 }
 ```
 
 
-Havde vi erklæret carName inde i funktionen  kunne vi ikke bruge den udenfor. Det samme gør sig dog ikke gældende hvis man laver en blok, som eksemplet herunder viser:
+Havde vi erklæret carName inde i funktionen i setup, kunne vi ikke bruge den udenfor. Det samme gør sig dog ikke gældende hvis man laver en blok, som eksemplet herunder viser:
 
 
 ```javascript
@@ -99,9 +121,7 @@ Havde vi erklæret carName inde i funktionen  kunne vi ikke bruge den udenfor. D
 // x kan bruges her men y kan ikke bruges her
 ```
 
-
-Pas på med redeklarationer med **var**, som eksemplet illustrerer:
-
+Som vi nævnte før skal man passe på med at redeklarere variabler med "var", da det ofte forvirrer mere end det gavner. Pas eksempelvis på med redeklarationer med **var**, som eksemplet illustrerer:
 
 ```javascript
 var x = 10;
