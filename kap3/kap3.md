@@ -70,7 +70,7 @@ console.log(a); //11
 console.log(b); //2
 ```
 
-Bruger vi "let" kan vi ikke redeklarere en eksisterende variable, hvis det sker indenfor de samme krølparenteser. 
+Bruger vi "let" kan vi <b>ikke</b> redeklarere en eksisterende variable, hvis det sker indenfor de samme krølparenteser. 
 Skriver vi eksempelvis følgende får vi en fejl:
 ```javascript
 let a= 2
