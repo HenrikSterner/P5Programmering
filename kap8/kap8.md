@@ -42,8 +42,8 @@ Her kommer et eksempel mere, der beskriver rekursivt hvordan du kommer hjem:
       if(hjemme)
         return
       else
-        kop.tagEnTår()
-        drikKaffe(kop)
+        tagEtSkridt()
+        gåHjem()
   }
 ```
 
