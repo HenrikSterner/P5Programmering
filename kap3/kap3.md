@@ -5,8 +5,17 @@ Undervejs ser vi også eksempler på hvorledes man kan lave ikke bare statiske t
 
 ## Variabler og datatyper
 
-Variabler bruges til at opbevare data.  Dataens “form” eller type kaldes også datatypen. Man erklærer dem ved at bruge nøgleordet **let **, **var** eller **const**. 
-Herunder nogle eksempler:
+Variabler bruges til at opbevare data.  Dataens “form” eller type kaldes også datatypen. Man erklærer dem ved at bruge nøgleordet **let **, **var** eller **const** i kombination med tildelingsoperatoren. Helt overordnet vil en erklæring se således ud:
+
+<p align="center">
+<b>let</b> <i>variablenavn</i> <b>=</b> <i>værdi</i><br>
+<b>var</b> <i>variablenavn</i> <b>=</b> <i>værdi</i><br>
+<b>const</b> <i>variablenavn</i> <b>=</b> <i>værdi</i>
+</p>
+Bemærk variablenavn skal erstattes med et navn, som du vælger. Det bør gerne være sigende for den værdi variablen skal indeholde. Værdien angives på højre side skal angives i stedet for værdi.
+Vi skal senere studere forskellen på brugen af let, var og const i detaljer. En væsentlig forskel er, at const ikke kan ændres i værdi eller erklæres på ny. Den er som nøgleordet antyder konstant. "let" blev introduceret i 2015 og er typisk den måde variabler erklæres på i moderne javascript. Ældre applikationer bruger dog stadig var og det kan nogle få gange være relevant at bruge. Men generelt er rådet at bruge let så meget som muligt, da det typisk reducerer risikoen for fejl. Vi skal vende tilbage til forskellen på og hvorfor "let" er at foretrække.
+
+Herunder nogle eksempler på erklæringer af forskellige variabler og initialiseringer af :
 
 ```javascript
 let n = 1; // variablen n peger nu på tallet 1 
@@ -16,17 +25,16 @@ let s = "Hej"; // variablen s peger nu på teksten "Hej"
 var t = "med dig"; // variablen t peger nu på teksten "Hej"
 const r = "Halløj"; // variablen r peger nu på teksten "Halløj" og kan ikke ændres/erklæres på ny
 ```
-Disse eksempler illustrerer brugen af de tre nøgleord til at erklære og dermed konstruere nogle forskellige variable. En væsentlig forskel er at const ikke kan ændres i værdi eller erklæres på ny.
+Disse eksempler illustrerer brugen af de tre nøgleord til at erklære og dermed konstruere nogle forskellige variable med forskellige værdier. Når vi nu bruger variablenavnene i en kontekst udgør de en pladsholder for den konkrete værdi, som vi har     
 
 Der findes overordnet syv forskellige typer i javascript:
 
 ![alt_text](images/data-types-in-python.png "Overblik over de forskellige datatyper i Javascript")
 
-Generelt kan vi sige om de primitive datatyper er datatyper, som kun opbevarer en enkelt værdi
+Generelt kan vi sige om de primitive datatyper, at de er datatyper, som kun opbevarer en enkelt værdi. 
 
 Javascript er et såkaldt dynamisk typet sprog. Dvs. at du ikke på forhånd behøver at erklære hvilken type variablen skal have. 
 Eksempel herunder hvor kommentaren angiver datatypen.
-
 
 ```javascript
 let n = 80; // heltal/integer 
