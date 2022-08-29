@@ -32,6 +32,8 @@ Der findes overordnet syv forskellige typer i javascript:
 
 ![alt_text](images/data-types-in-python.png "Overblik over de forskellige datatyper i Javascript")
 
+I følgende kapitel vil vi primært fokusere på de primitive typer kaldet "Number", "String" og "Boolean". Vi vender senere tilbage til de andre typer.
+
 Javascript er et såkaldt dynamisk typet sprog. Dvs. at du ikke på forhånd behøver at erklære hvilken type variablen skal have, hvilket typisk gøre det nemmere at lære og bruge.
 Omvendt risikerer man at lave nogle fejl, som kan være svære at finde.
 
