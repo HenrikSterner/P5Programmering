@@ -198,33 +198,26 @@ Her gemmer vi resultatet fra funktionen ud i en variable. Bemærk det er med vil
 10. Lav en funktion der kan løse 2.gradsligninger og visualiser parablen med skæringspunkter på x-aksen.
 11. Lav Sten-saks-papir med en tæller. Når tælleren rammer 0 skal der tegnes en sten saks og papir, der hver får knyttet to bogstaver (til hver af de to spillere). Tælleren er som hjælp implementeret herunder - men prøv at omsætte den til en simpel funktion, der tager en parameter - nemlig antallet af sekunder, der skal tælles ned:
 
-<table>
-  <tr>
-   <td>
-<code>let timer = 3 \
-function setup() {  \
-  createCanvas(400, 400); \
-}  \
-function draw() {  \
-  background(220); \
-  textAlign(CENTER, CENTER); \
-  textSize(100); \
-  text(timer, width/2, height/2); \
-  if (frameCount % 60 == 0 && timer > 0) {//frameCount er antal frames vist</code>
-<p>
-<code>    // timer dekrementeres automatisk i draw; \
-  } \
-  if (timer == 0) { \
-    text("GAME OVER", width/2, height*0.7); \
-  } \
-}</code>
-   </td>
-  </tr>
-  <tr>
-   <td>
-   </td>
-  </tr>
-</table>
+```javascript
+let timer = 3;
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+  textAlign(CENTER, CENTER);
+  textSize(100);
+  text(timer, width/2, height/2);
+  if (frameCount % 60 == 0 && timer > 0) {
+   //frameCount er antal frames vist
+   // timer dekrementeres automatisk i draw;
+  }
+  if (timer == 0) {
+    text("GAME OVER", width/2, height*0.7);
+  }
+}
+
 
 
 
