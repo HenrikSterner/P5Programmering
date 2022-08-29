@@ -217,9 +217,7 @@ function draw() {
     text("GAME OVER", width/2, height*0.7);
   }
 }
-
-
-
+```
 
 ## Projekt: Lommeregner
 Lav en lommeregner. Den behøver bare at kunne de helt basale regnearter samt kvadratrod, potens, fakultet, sin, cos, tan og potens, der alle skal implementeres som funktioner. 
