@@ -56,7 +56,7 @@ For at blive en god programmør og få succes med programmering, så vil vi fore
 - Giv ikke op. Men bliv ved med at øve dig.
 - Vær vidende om, at alle dygtige programmører har på et eller andet tidspunkt været der hvor du er nu. Du er ikke alene.
 
-Ønsker du altså på sigt at blive en ekspert indenfor programmering, så se i øjenene, at ægte ekspertise kan tage et helt liv eller som digteren, Samuel Johnson formulerede det: "Ekspertise i enhvet fag kan kun opnås ved et livs arbejde; det kan og skal ikke købes til en lavere pris."
+Ønsker du  på sigt at blive en ekspert indenfor programmering, så se i øjenene, at ægte ekspertise kan tage et helt liv eller som digteren, Samuel Johnson formulerede det: "Ekspertise i enhvert fag kan kun opnås ved et livs arbejde; det kan og skal ikke købes til en lavere pris."
 
 ## Valg af sprog
 Når man skal lære at programmere er et af de første store spørgsmål, hvilket sprog man bør tage fat på. Der findes ikke noget entydigt godt sprog at starte på. Nogle sprog er dog stadig nemmere at lære end andre. Der findes i dag flere hundrede forskellige sprog og valget af sprog afhænger i høj grad hvad man ønsker at lave eller bruge det til. Selvom alle sprog er unikke er mange af dem og så meget ens, og forstår man først de grundlæggende principper i et sprog, så har man typisk nemmere ved at overføre det til et andet.

@@ -1,12 +1,30 @@
 # 3. Variabler, animationer og input
-
-I dette modul kigger vi nærmere på variable og input fra mus og taster på tastaturet.
+Variabler udgør de centrale byggesten i ethvert program. Variabler kan tænkes på som navngivne pladser i computerens hukommelse, og de bruges til at opbevare data af forskellige typer. Det skal vi kigge nærmere på nedenfor, hvor vi også vil se på hvorledes man håndterer input fra brugeren i form af taster på tastaturet eller input fra musen. 
+Undervejs ser vi også eksempler på hvorledes man kan lave ikke bare statiske tegninger men også animationer. 
 
 
 ## Variabler og datatyper
 
-Variabler bruges til at opbevare data. Dataens “form” eller type kaldes også datatypen. Man erklærer dem ved at bruge nøgleordet **let **eller **var**. 
+Variabler bruges til at opbevare data.  Dataens “form” eller type kaldes også datatypen. Man erklærer dem ved at bruge nøgleordet **let **, **var** eller **const**. 
+Herunder nogle eksempler:
 
+```javascript
+let n = 1; // variablen n peger nu på tallet 1 
+var m = 2; // variablen n peger nu på tallet 2 
+const p = 3 // variablen p peger nu på tallet 3 og kan ikke ændres/erklæres på ny
+let s = "Hej"; // variablen s peger nu på teksten "Hej"
+var t = "med dig"; // variablen t peger nu på teksten "Hej"
+const r = "Halløj"; // variablen r peger nu på teksten "Halløj" og kan ikke ændres/erklæres på ny
+```
+Disse eksempler illustrerer brugen af de tre nøgleord til at erklære og dermed konstruere nogle forskellige variable. En væsentlig forskel er at const ikke kan ændres i værdi eller erklæres på ny.
+
+Der findes overordnet syv forskellige typer i javascript:
+
+![alt_text](images/data-types-in-python.png "Overblik over de forskellige datatyper i Javascript")
+
+Generelt kan vi sige om de primitive datatyper er datatyper, som kun opbevarer en enkelt værdi
+
+Javascript er et såkaldt dynamisk typet sprog. Dvs. at du ikke på forhånd behøver at erklære hvilken type variablen skal have. 
 Eksempel herunder hvor kommentaren angiver datatypen.
 
 
