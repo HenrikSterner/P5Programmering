@@ -577,8 +577,8 @@ function draw() {
 ```
 12. Prøv at udvide 7 så cirklen ikke kan bevæge sig ud af skærmen og bagefter, at man kan klikke et sted på skærmen med musen og så følger cirklen det punkt. 
 13. Lav to cirkler og sæt dem i fart i en given retning. Undersøg om de kolliderer med hinanden.
-14. Konstruer en vandret linje der bevæger sig op og ned af skærmen. 
-15. Konstruer en lodret linje, der bevæger sig til højre og venstre.
+14. Konstruer en vandret linje der bevæger sig op og ned af skærmen. Når den når toppen af skærmen bevæger den sig nedad. Og omvendt. 
+15. Konstruer en lodret linje, der bevæger sig til højre og venstre. Når den når højre side bevæger den sig tilbage mod venstre side. Og omvendt.
 
 
 ## Projekt: Algoritmisk kunst
