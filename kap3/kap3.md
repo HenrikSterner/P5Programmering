@@ -302,8 +302,8 @@ Her et eksempel på tildeling og addition
 
 
 ```javascript
-var x = 5;         // assign the value 5 to x
-var y = 2+x;       // assign the value 7 to y
+let x = 5;         // tildeler x værdien 5
+let y = 2+x;       // tildeler y værdien af x adderet med 2
 ```
 
 
@@ -311,9 +311,9 @@ Dernæst multiplikation:
 
 
 ```javascript
-var x = 5;
-var y = 2;
-var z = x * y;
+let x = 5;
+let y = 2;
+let z = x * y;
 ```
 
 
@@ -392,12 +392,10 @@ Særlig for tekst strenge betyder +, at man konkatinerer to tekststrenge. Dvs. k
 
 
 ```javascript
-var txt1 = "John";
-var txt2 = "Doe";
-var txt3 = txt1 + " " + txt2;
+let txt1 = "John";
+let txt2 = "Doe";
+let txt3 = txt1 + " " + txt2;
 ```
-
-
 
 ## Input fra mus
 
@@ -418,7 +416,6 @@ Vi benytter funktionen frameRate til at sikre, at draw ikke udføres for ofte. D
 
 Herunder tegner vi en hvid cirkel hvor musen er:
 
-
 ```javascript
 function setup() {
   createCanvas(100, 100);
@@ -429,10 +426,7 @@ function draw() {
   ellipse(mouseX, mouseY, 33, 33);
 }
 ```
-
-
 Her tegner vi en linje efter musen. Holder vi musen stille er det bare en cirkel:
-
 
 ```javascript
 function setup() {
@@ -444,10 +438,7 @@ function draw() {
   line(mouseX, mouseY, pmouseX, pmouseY);
 }
 ```
-
-
 Herunder skifter vi farve på et rektangel når vi klikker på den:
-
 
 ```javascript
 function setup() {
@@ -466,9 +457,7 @@ function draw() {
   rect(25, 25, 50, 50);
 }
 ```
-
-
-Centralt er `if (mouseIsPressed == true) `som betyder, at vi undersøger om musen er trykket ellers gør vi noget andet. Vi vender tilbage til den såkaldte betinget udførsel (if-else) i næste modul.
+Centralt er `if (mouseIsPressed == true) `, som betyder, at vi undersøger om musen er trykket ellers gør vi noget andet. Vi vender tilbage til den såkaldte betinget udførsel (if-else) i næste modul.
 
 Vi kender forskel på højre og venstre museklik ved følgende:
 
@@ -483,19 +472,19 @@ function draw() {
   background(204);
   if (mouseIsPressed == true) {
     if (mouseButton == LEFT) {
-      fill(0);   // Black
+      fill(0);   // sort
     }
     else if (mouseButton == RIGHT) {
-      fill(255); // White
+      fill(255); // hvid
     }
   }
   else {
-    fill(126);   // Gray
+    fill(126);   // grå
   }
   rect(40, 20, 40, 60);
 }
 ```
-
+Som nævnt vender vi lige straks tilbage til 'if' og 'else if', men forhåbentlig giver det god mening, at vi tjekker først om musen er trykket og hvis det er tilfældet, undersøger vi om det er højre eller venstre. Prøv meget gerne koden af selv. 
 
 
 ## Input fra keyboard
@@ -516,21 +505,25 @@ function draw() {
   return false;
 }
 ```
-
-
-Vi vender tilbage til if-konstruktionen, men bemærker at hver tast har sin egen keycode, som man kan finde på følgende side: [http://keycode.info/](http://keycode.info/).
-
+Hver tast har sin egen keycode, som man kan finde på følgende side: [http://keycode.info/](http://keycode.info/).
 
 ## Øvelser
 
-
-
-1. Lav et program der tegner en cirkel alle de steder du bevæger musen hen
-2. Lav et program, der tegner en cirkel når du klikker med venstre mus og et rektangel med højre mus.
-3. Lav et simpelt tegneprogram der tegner en streg efter musens bevægelse
-4. Lav et program, der tegner en firkant hvis du trykker f, en cirkel hvis du trykker c eller en ellipse hvis du trykker e. 
-5. Udvid programmet i 4. så de konstrueres der hvor musen er.
-6. Hvad gør følgende kode:
+1. Som nævnt kan du hente finde musens position ved brug af variablerne `mouseX` og `mouseY`. Skriv noget kode, der printer musens position ud i konsollen. Du skal inddrage følgende to streng variabler i den tekst du udskriver:
+```javascript
+let musPosX = "Din mus x-koordinat er givet ved "
+let musPosY = "Din mus y-koordinat er givet ved "
+```
+2. Udover musens position i den nuværende frame kan du også få musens position i den foregående frame ved brug af `pmouseX` og `pmouseY`. Udvid dit program så du også udskriver `x` og `y` fra den foregående frame. 
+3. Beregn nu hastigheden i x-retningen og i y-retningen ved at udskrive forskellen mellem `x`-værdierne og tilsvarende med `y`-værdierne. 
+4. Beregn et udtryk for farten af din mus ved at bruge formlen: 
+   $$\sqrt{(mouseX-pmouseX)^2 + (mouseX-pmouseX)^2}.$$   
+5. Lav et program der tegner en cirkel alle de steder du bevæger musen hen
+6. Lav et program, der tegner en cirkel når du klikker med venstre mus og et rektangel med højre mus.
+7. Lav et simpelt tegneprogram der tegner en streg efter musens bevægelse
+8. Lav et program, der tegner en firkant hvis du trykker f, en cirkel hvis du trykker c eller en ellipse hvis du trykker e. 
+9.  Udvid programmet i 4. så de konstrueres der hvor musen er.
+10. Hvad gør følgende kode:
 
 ```javascript
 var x = 200;
@@ -559,8 +552,7 @@ function draw() {
 }
 ```
 
-
-7. Forklar hvad følgende kode gør:
+11. Forklar hvad følgende kode gør:
 
 ```javascript
 let x; 
@@ -583,11 +575,10 @@ function draw() {
   y+=yspeed; 
 }
 ```
-
-
-8. Prøv at udvide 7 så cirklen ikke kan bevæge sig ud af skærmen og bagefter, at man kan klikke et sted på skærmen med musen og så følger cirklen det punkt. 
-9. Lav to cirkler og sæt dem i fart i en given retning. Undersøg om de kolliderer med hinanden.
-10. Konstruer en vandret linje der bevæger sig op og ned af skærmen. Konstruer herefter en tilsvarende lodret linje, der bevæger sig til højre og venstre.
+12. Prøv at udvide 7 så cirklen ikke kan bevæge sig ud af skærmen og bagefter, at man kan klikke et sted på skærmen med musen og så følger cirklen det punkt. 
+13. Lav to cirkler og sæt dem i fart i en given retning. Undersøg om de kolliderer med hinanden.
+14. Konstruer en vandret linje der bevæger sig op og ned af skærmen. 
+15. Konstruer en lodret linje, der bevæger sig til højre og venstre.
 
 
 ## Projekt: Algoritmisk kunst
