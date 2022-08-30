@@ -582,16 +582,13 @@ function draw() {
 
 
 ## Projekt: Algoritmisk kunst
-
-I det følgende skal vi lave algoritmisk kunst, der er kunst som er kendetegnet ved at følge nogle regler som kan formaliseres i række instruktioner, som kan implementeres i et programmeringssprog. 
-
+I det følgende skal vi udvikle noget algoritmisk kunst, der er kendetegnet ved at følge regler som kan formaliseres i instruktioner der kan implementeres i et programmeringssprog. 
 
 På følgende link kan I se en lang række eksempler:
     
 [http://www.generative-gestaltung.de/2/](http://www.generative-gestaltung.de/2/) 
 
-
 1. Udvælg et eksempel og kig på koden bag. Prøv at forstå hvad koden gør og sæt kommentarer på.
-2. Lav nu jeres egen algoritmiske kunst ved først at formulere jeres kunst i almindelig prosa, listeform, pseudokode eller lignende. Prøv at implementere den i P5. Husk at kommentere koden. 
-3. Overvej om I synes, at algoritmisk kunst er rigtig kunst. 
-4. Forbered en kort præsentation af punkterne i plenum. 
+2. Lav din egen algoritmiske kunst ved først at formulere kunsten i almindelig prosa, listeform, pseudokode eller lignende. 
+3. Prøv at implementere den i P5. Husk at kommentere koden. 
+4. Overvej om algoritmisk kunst er rigtig kunst. 
