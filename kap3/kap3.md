@@ -14,7 +14,7 @@ Man erklærer variabler ved at bruge nøgleordet **let **, **var** eller **const
 <b>const</b> <i>variablenavn</i> <b>=</b> <i>værdi</i>
 </p>
 Bemærk variablenavn skal erstattes med et navn, som du vælger. Det bør gerne være sigende for den værdi variablen skal indeholde. Værdien angives på højre side skal angives i stedet for værdi.
-Vi skal senere studere forskellen på brugen af let, var og const i detaljer. En væsentlig forskel er, at const ikke kan ændres i værdi eller erklæres på ny. Den er som nøgleordet antyder konstant. "let" blev introduceret i 2015 og er typisk den måde variabler erklæres på i moderne javascript. Ældre applikationer bruger dog stadig var og det kan nogle få gange være relevant at bruge. Men generelt er rådet at bruge let så meget som muligt, da det typisk reducerer risikoen for fejl. Vi skal vende tilbage til forskellen på og hvorfor "let" er at foretrække.
+Vi skal senere studere forskellen på brugen af let, var og const i detaljer. En væsentlig forskel er, at const ikke kan ændres i værdi eller erklæres på ny. Den er som nøgleordet antyder konstant. "let" blev introduceret i 2015 og er typisk den måde variabler erklæres på i moderne javascript. Ældre applikationer bruger dog stadig var og det kan nogle få gange være relevant at bruge. Men generelt er rådet at bruge let så meget som muligt, da det typisk reducerer risikoen for fejl. Vi vil derfor primært fokusere på at bruge let  forskellen på og hvorfor "let" er at foretrække.
 
 Herunder nogle eksempler på erklæringer af forskellige variabler og initialiseringer af :
 
@@ -32,9 +32,14 @@ Der findes overordnet syv forskellige typer i javascript:
 
 ![alt_text](images/data-types-in-python.png "Overblik over de forskellige datatyper i Javascript")
 
-I følgende kapitel vil vi primært fokusere på de primitive typer kaldet "Number", "String" og "Boolean". Vi vender senere tilbage til de andre typer.
+I følgende kapitel vil vi primært fokusere på de primitive typer kaldet 
+* "Number": Der består af heltal (integers på engelsk) og kommatal (floats på engelsk).  
+* "String": Der består af strenge af tekst eller karakterer.  
+* "Boolean": Der består af de boolske værdier true og false.  
+  
+Vi vender senere tilbage til de andre typer.
 
-Javascript er et såkaldt dynamisk typet sprog. Dvs. at du ikke på forhånd behøver at erklære hvilken type variablen skal have, hvilket typisk gøre det nemmere at lære og bruge.
+Javascript er et såkaldt dynamisk typet sprog. Dvs. at du ikke på forhånd behøver at erklære hvilken type variablen skal have, hvilket typisk gøre det nemmere at  bruge sproget.
 Omvendt risikerer man at lave nogle fejl, som kan være svære at finde.
 
 Eksempel herunder hvor kommentaren angiver datatypen.
@@ -51,13 +56,15 @@ console.log(typeof(n)) // Number - heltal/integer
 ```
 
 ## Primitive typer og muterbarhed
+
 Generelt kan vi sige om de primitive datatyper, at de er datatyper, som kun opbevarer en enkelt værdi. De er desuden "ikke muterbare". I praksis betyder, at vi kan ikke ændre variablernes værdi.
 
 Lad os se et eksempel på det ved at betragte en streng variable:
 ```javascript
 let navn = "Hemrik"
 ```
-Der er tydeligvis en stavefejl i navnet. Vi kan heldigvis tilgå de enkelte elementer i navn ved at skrive "[x]" hvor x kan antage værdier fra 0 til 5, da første bogstaver står på plads 0 og der er 6 bogstaver i strengen. Dvs.  hente de enkelte bogstaver ud af navnet således:
+
+Der er tydeligvis en stavefejl i navnet. Vi kan heldigvis tilgå de enkelte elementer i navn ved at skrive "[x]" hvor x kan antage værdier fra 0 til og med 5, da første bogstaver står på plads 0 og der i alt er 6 bogstaver i strengen. Dvs.  hente de enkelte bogstaver ud af navnet således:
 ```javascript
 let navn = "Hemrik"
 console.log(navn[0]) //printer "H"
@@ -76,7 +83,7 @@ console.log(navn) //printer stadig "Hemrik"
 ```
 Hvis du prøver koden af vil du opdage, at der stadig printes "Hemrik", hvilket altså skyldes at navn ikke lader sig ændre eller med et fint udtryk "er immuterbar". 
 
-Kan vi så overhovedet tildele navn en ny værdi? Svaret er ja, men det kan kun lade sig gøre ved at bruge tildelingsoperatoren "=" og ikke ved at ændre. Herunder retter vi stavefejlen i navn:
+Kan vi så overhovedet tildele navn en ny værdi? Svaret er ja, men det kan kun lade sig gøre ved at bruge tildelingsoperatoren "=" og ikke ved at ændre den eksisterende værdi. Herunder retter vi stavefejlen i navn:
 
 ```javascript
 let navn = "Hemrik"
@@ -98,11 +105,11 @@ Hvad skrives mon ud i konsollen i de to tilfælde? I det første er det nok ikke
 
 Når vi tildeler variablen "navn" en ny værdi, så ændrer vi variablen, så den nu peger på strengværdien "Henrik Sterner", hvorfor værdien af "navn2" ikke er påvirket. 
 
-Man hører ofte metaforeren om variabler, som container i form af en navngiven kasse eller spand med en konkret værdi. Det er et godt billede, når vi arbejder med statisk typede sprog, hvor vi erklærer typerne på forhånd, som det eksempelis er gjort herunder i java:
+Man hører ofte metaforeren om variabler, som en slags container i form af en navngiven kasse eller spand med en konkret værdi. Det er et godt billede, når vi arbejder med statisk typede sprog, hvor vi erklærer typerne på forhånd, som det eksempelis er gjort herunder i java:
 ```java
 int x = 6; //erklærer en heltalsvariable der rummer 6
 ```
-Men i dynamiske sprog som Javascript, er det bedre at tænke på variabler, som nogle størrelser der peger på en anden spand/kasse, som rummer værdien 6. Det har derfor heller ingen betydning i dynamiske sprog om vi eksempelvis lader x pege på et tal eller en streng, så som følgende:
+Men i dynamiske sprog som Javascript, er det bedre at tænke på variabler, som nogle størrelser der peger på en anden spand/kasse, som rummer værdien 6. Det har derfor heller ingen betydning i dynamiske sprog om vi eksempelvis lader x pege på et tal eller en streng, som det eksempelvis er tilfældet i følgende:
 
 ```javascript
 let x = 6
@@ -119,7 +126,7 @@ function setup(){
 }
 ```
 
-Hvis du ønsker at ændre værdien undervejs kan det anbefales at bruge nøgleordet `var` i stedet for:
+Hvis du ønsker at ændre værdien undervejs kan man overveje at bruge nøgleordet `var` i stedet for:
 
 ```javascript
 var a=1;
@@ -158,15 +165,16 @@ var a= 3
 ``` 
 Man kan dog overveje om det er en god ide. 
 
-Den vigtigste forskel på de to deklarationer er altså scopet eller sigtet. Variabler, der er erklæret af `var` nøgleordet har et globalt scope knyttet til den umiddelbare krop, som kan være i en funktionskrop eller hvis det ikke er tilfældet, som i ovenstående tilfælde, så er den global , mens `let` variabler har et scope i forhold til den lukkende blok, som de er omgrænset af.
+De vigtigste forskelle mellem let og var:
+* 1. `let` kan ikke bruges til at redeklarere en variable i samme krølparenteser. Det kan godt lade sig gøre med `var`
+* 2. Variabler deklareret med `let`  er kun tilgængelige indenfor den lukkede blok, som de er omgrænset af. Variabler, der er erklæret med `var` har et globalt scope og kan bruge overalt i en funktion 
+* 3. En variable deklareret med `let` skal deklareres før dens brug. Det er ikke nødvendigt med `var`
 
-Herunder nogle flere eksempler på **var:**
+Herunder nogle flere eksempler på brugen af `let` og `var`:
 
 ```javascript
 var carName = "Volvo";
-
 // koden kan bruge carName
-
 function setup() {
   // kode her kan bruge carName
 }
@@ -181,6 +189,24 @@ Havde vi erklæret carName inde i funktionen i setup, kunne vi ikke bruge den ud
 }
 // x kan bruges her men y kan ikke bruges her
 ```
+Til at illustrere punkt 2 kommer her et eksempel: 
+
+```javascript
+function setup() {
+    let a = 'hej';
+
+    // variable b kan ikke bruges her
+    {
+        // variable b kan bruges
+        let b = 'verden';
+        console.log(a + ' ' + b);
+    }
+
+     // variable b kan ikke bruges
+    console.log(a + ' ' + b); // giver en fejl
+}
+// variable a kan ikke bruges her
+
 
 Som vi nævnte før skal man passe på med at redeklarere variabler med "var", da det ofte forvirrer mere end det gavner. Pas eksempelvis på med redeklarationer med **var**, som eksemplet illustrerer:
 
