@@ -1,12 +1,12 @@
 # 4. Betinget udførsel
+Indtil nu har vi primært arbejdet med programmer som en lineær sekvens af instruktioner, der afvikles fra top til bund. 
+Men ofte vil man gerne have mulighed for at afvikle nogle bestemte instruktioner hvis en given betingelse er opfyldt. Det kunne eksempelvis være når man skal undersøge om brugeren har trykket på en bestemt tast eller har trykket højre eller venstre mus. 
 
-Indtil nu har vi primært arbejdet med programmer som en lineær sekvens af instruktioner. Men ofte vil man gerne have mulighed for at afvikle nogle bestemte instruktioner eksempelvis når man skal undersøge om brugeren har trykket på en bestemt tast eller har trykket højre eller venstre mus. I det følgende skal vi med andre ord se på hvorledes man kan evaluere hvorvidt en instruktion rent faktisk skal udføres eller om den skal springes over. Det kaldes betinget udførsel.
+I det følgende skal vi med andre ord se på hvorledes man kan evaluere hvorvidt en instruktion rent faktisk skal udføres eller om den skal springes over. Det kaldes også for "betinget udførsel".
 
 
 ## If-konstruktionen
-
 Den helt simple if-konstruktion ser således ud:
-
 
 ```javascript
 if (betingelse){
@@ -14,11 +14,9 @@ if (betingelse){
 } 
 ```
 
-
 Hvis betingelsen er sand så afvikles instruktionerne mellem krølparenteserne og ellers springes de instruktioner over. 
 
-Eksempel kunne være at undersøge om musen ligger over i den venstre side af kanvas og i så fald ændre baggrundsfarven:
-
+Et eksempel kunne være at undersøge om musen ligger over i den venstre side af kanvas og i så fald ændre baggrundsfarven:
 
 ```javascript
   if (mouseX < 100){
@@ -26,12 +24,9 @@ Eksempel kunne være at undersøge om musen ligger over i den venstre side af ka
   }
 ```
 
-
-Betingelsen skal ved afviklingen gerne kunne evalueres af kompileren til enten sand eller falsk. Et sådan udtryk kaldes også et boolsk udtryk og kan i princippet rummes i en boolsk variable. Disse udtrykke kan bestå af mange delbetingelser, som vi kigger nærmere på sidst i modulet. 
-
+Betingelsen skal ved afviklingen gerne kunne evalueres  til enten at være sand eller falsk. Et sådan udtryk kaldes også et boolsk udtryk og kan i princippet rummes i en boolsk variable. Disse udtrykke kan bestå af mange delbetingelser, som vi kigger nærmere på senere. 
 
 ## If-else konstruktionen
-
 Man kan udvide if-konstruktion så vi gør noget andet hvis betingelsen er falsk. Det ser grundlæggende således ud:
 
 
@@ -44,9 +39,7 @@ else{
 }
 ```
 
-
 Vi kan udvide vores eksempel fra før, så vi giver den en anden farve hvis musen har en x-værdi, der er større end eller lig med 100:
-
 
 ```javascript
 if (mouseX < 100){
@@ -55,10 +48,9 @@ if (mouseX < 100){
 else{     
  background(0,0,255);
 }
-
 ```
-## If-else-if konstruktionen
 
+## If-else-if konstruktionen
 Endelig kan man også udvide og undersøge flere kriterier på engang:
 
 
@@ -77,45 +69,49 @@ else{
  //sekvens af instruktioner afvikles hvis ingen af betingelserne er sande
 }
 ```
-
-
 Man kan udvide med lige så mange betingelser, som man har lyst til.
 
 Herunder ses et eksempel med tre del-betingelser:
-
-
 ```javascript
 if (mouseX < 100){
  background(255,0,0);
 } 
-else if (mouseX >= 100 && mouseX < 300){
+else if (mouseX < 300){
  background(0,255,0);
 } 
 else if (mouseX >= 300){
  background(0,0,255);
 }
 ```
-
-
+Hvis musens `x`-værdi er mindre end 100 får baggrunden en farve, en anden hvis den er mindre end 300 og en tredje hvis den er større end 300. 
 
 ## Boolske operatorer
-
 Som vi nævnte tidligere er betingelser egentlig bare boolske udtryk, som kan opbevares i de boolske variable, der enten er sande eller falske (true/false).
 
-Boolske operatorer giver os mulighed for at operere på boolske variable og dermed muligheden for at lave mere komplekse boolske udtryk. 
+Boolske operatorer giver os mulighed for at operere på boolske variable/udtryk og dermed muligheden for at lave mere komplekse boolske udtryk. 
 
-Herunder et eksempel på brug af AND/og-operatoren, der er repræsenteret ved to ampersander && og tager en boolsk variable på hver sin side. Hvis de begge er sande bliver det samlede udtryk også sandt.
-
+Herunder en generel definition på brug af den boolske og-operator, der i javascript  er repræsenteret ved to ampersander `&&` og tager et boolsk udtryk (eller evt. en boolsk variable) på hver sin side. Hvis de begge er sande bliver det samlede udtryk også sandt.
 
 ```
-boolsk_variable_1 && boolsk_variable_2
+boolsk_udtryk_1 && boolsk_udtryk_2
 ```
 
+Udtrykket ovenfor kan også skrives med ampersander:
+```
+boolsk_udtryk_1 && boolsk_udtryk_2
+```
 
-For at et boolsk udtryk med AND skal blive sandt skal begge variable være sande ellers vil det samlede udtryk blive falsk.
+For at et boolsk udtryk med AND skal evalures til sandt skal begge udtryk/variable være sande ellers vil det samlede udtryk blive falsk.
 
-Herunder et eksempel:
+Herunder et eksempel på brugen af `AND`:
+```javascript
+if (mouseX > 100 && mouseX < 300){
+ background(255,0,0);
+} 
+```
+I det her tilfælde skal musens `x`-værdi altså både være større end 100 og mindre end 300 for at baggrundsfarven skiftes. 
 
+Herunder et eksempel hvor vi AND benytter to boolske variable til at erklære en ny variable:
 
 ```javascript
 let canSwim = true;
@@ -123,58 +119,69 @@ let canFly = true;
 let isDuck = canSwim && canFly;
 ```
 
+Modsat forholder det sig med OR/eller-operatoren, der er repræsenteret ved to lodrette streger `||` og som tager et boolsk udtryk eller en boolsk variable på hver sin side:
 
-Modsat forholder det sig med OR/eller-operatoren, der er repræsenteret ved to lodrette streger og som tager en boolsk variable på hver sin side. Hvis de begge er falske bliver det samlede udtryk falsk:
 
+```javascript
+boolsk_udtryk_1 || boolsk_udtryk_2
+```
 
 ```javascript
 boolsk_variable_1 || boolsk_variable_2
 ```
 
-
-Her skal blot en af variablerne være sande for at det samlede udtryk bliver sandt. 
+Her skal blot en af variablerne være sande for at det samlede udtryk bliver sandt. Hvis begge udtryk eller begge variable er falske vil det samlede udtryk også evaluere til falsk. 
 
 Herunder et eksempel:
+```javascript
+if (mouseX < 100 || mouseX > 300){
+ background(255,0,0);
+} 
+```
 
+Kun hvis musens `x`-værdi er mindre end 100 eller større end 300 vil baggrundsfarven ændres. 
 
+Herunder et eksempel mere:
 ```javascript
 let isTodaySaturday = true;
 let isTodaySunday = false;
-let isTodayWeekend = isTodaySaturday || isTodaySunday;
+let isTodayWeekend = isTodaySaturday OR isTodaySunday;
 ```
 
-
-Endelig er der NOT/negerings-operatoren, der er repræsenteret ved udråbstegn !. Den tager en boolsk variable og hvis den er sand, så vil NOT gøre den til falsk, og omvendt.
+Endelig er der negerings-operatoren, der er repræsenteret ved udråbstegn `!`. Den tager boolsk udtryk eller en boolsk variable og hvis den er sand, så vil NOT gøre den til falsk, og omvendt.
 
 
 ```javascript
+!boolsk_udtryk   
 !boolsk_variable  
 ```
 
-
 Herunder et eksempel:
+```javascript
+if !(mouseX > 100 && mouseX < 300){
+ background(255,0,0);
+} 
+```
+Kun hvis musens `x`-værdi ikke ligger i intervallet 100 til 300 (begge eksklusiv), vil baggrunden blive ændret.
 
-
+Her et eksempel med negering brug på variabler: 
 ```javascript
 let sinks = !canSwim;
 let falls = !canFly;
 let isTodayWeekday = !isTodayWeekend;
 ```
 
-
 Man kan kombinere disse operatorer til mere komplekse udtryk. Eksempelvis:
-
 
 ```javascript
 let isMammal = !canSwim && !canFly;
 ```
 
 
-
 ## Øvelser
 
-1. Tegn en cirkel midt på skærmen. Hvis musen bevæger sig til højre for dens centrum bliver den til et rektangel. Hvis den bevæger sig til venstre for bliver den igen en cirkel.
-2. Forklar hvad følgende kode gør (hvad width og height?):
+1. Tegn en cirkel midt på skærmen. Hvis musen bevæger sig til højre for cirklens centrum bliver den til et rektangel. Hvis den bevæger sig til venstre for bliver den igen en cirkel.
+2. Forklar hvad følgende kode gør (hvad betyder width og height?):
 
 ```javascript
 function setup() { 
@@ -196,7 +203,6 @@ function draw() {
   }
 }
 ```
-
 
 3. Hvad gør følgende kode:
 
@@ -223,8 +229,8 @@ function draw() {
 ```
 
 
-4. Skriv et program der får en cirkel til at bevæge sig lodret op og ned til den indenfor et givent kanvas.
-5. Hvad gør følgende kode:
+5. Skriv et program der får en cirkel til at bevæge sig lodret op og ned  indenfor et givent kanvas.
+6. Hvad gør følgende kode:
 
 ```javascript
 function setup() { 
@@ -248,7 +254,7 @@ function draw() {
 ```
 
 
-6. Hvad gør følgende kode:
+7. Hvad gør følgende kode:
 
 ```javascript
 function setup() 
@@ -258,7 +264,7 @@ function setup()
 function draw() 
 { 
  background(204); 
- if (keyIsPressed) {  //hvad er denne variable for en størrelse?
+ if (keyIsPressed) {  //hvad er denne variable mon for en type?
   if ((key == 'h') || (key == 'H')) { line(30, 60, 90, 60); } 
   if ((key == 'n') || (key == 'N')) { line(30, 20, 90, 100); } 
  } 
@@ -268,15 +274,47 @@ line(90, 20, 90, 100);
 ```
 
 
-7. Lav et program, så når du trykker på A tegnes A og V når der trykkes på V.
-8. Lav et program der indsætter en cirkelformet mus et tilfældigt sted på skærmen og som kan bevæges op og ned, til højre og venstre vha piltasterne. Udvid programmet så det tilsvarende også rummer en firkantet mus, der kan bevæge sig op og ned, til højre og venstre men ved brug af w,a,s og f. 
-9. Udvid opgave 8 ved at indsætte nogle oste i form af prikker vilkårlige steder, som hvis de to mus kolliderer med forsvinder. Hold øje ved brug af variable hvem der har flest oste.
-10. Lav en cookie-klikker. Dvs. konstruer en cirkel et vilkårligt sted på skærmen. Når der klikkes på den forsvinder den og en ny oprettes et andet sted. 
+8. Lav et program, som tegner et `A` på kanvas når du trykker på A. Og når du trykker på V tegnes et `V`.
+9. Forklar og forstå hvad følgende kode gør (hvad betyder mon `keyIsDown`):
+
+```javascript
+let x = 100;
+let y = 100;
+
+function setup() {
+  createCanvas(512, 512);
+  fill(255, 0, 0);
+}
+
+function draw() {
+  if (keyIsDown(LEFT_ARROW)) {
+    x -= 5;
+  }
+
+  if (keyIsDown(RIGHT_ARROW)) {
+    x += 5;
+  }
+
+  if (keyIsDown(UP_ARROW)) {
+    y -= 5;
+  }
+
+  if (keyIsDown(DOWN_ARROW)) {
+    y += 5;
+  }
+
+  clear();
+  ellipse(x, y, 50, 50);
+}
+```
+
+
+10.  Lav et program der indsætter en cirkelformet mus et tilfældigt sted på skærmen og som kan bevæges op og ned, til højre og venstre vha piltasterne. Udvid programmet så det tilsvarende også rummer en firkantet mus, der kan bevæge sig op og ned, til højre og venstre men ved brug af tasterne `w`,`a`, `s` og `f`. 
+11.  Udvid opgave 9 ved at indsætte nogle oste i form af prikker vilkårlige steder, som hvis de to mus kolliderer med forsvinder. Hold øje ved brug af to heltalsvariable hvem der har samlet flest oste. For hver ost der spises inkrementeres den respektive variable med 1. 
+12. Lav en cookie-klikker. Dvs. konstruer en cirkel et vilkårligt sted på skærmen. Når der klikkes på den forsvinder den og en ny oprettes et andet sted. 
 
 
 ## Projekt: Katten efter musen
-
-
 
 1. Få en cirkel til at bevæge sig i vandret eller lodret retning på lærred.
     1. Start med at oprette følgende globale variabler: x, y, a, b, d og speed.
@@ -309,9 +347,6 @@ function borderCheck() {
 
 2. Nu bevæger cirklen sig rundt inden for skærmen. Nu skal vi have cirklen til at bevæge sig i den retning, som  piltasten, der trykkes på, viser. Vi skal mao. benytte funktionen keyPressed:
 
-	
-
-
 ```javascript
 function keyPressed() {
  if (keyCode === DOWN_ARROW) {
@@ -334,21 +369,13 @@ function keyPressed() {
 
 ```
 
-
-
 3. I stedet for cirkel kan man indsætte et billede af en mus eller af sig selv :-). Det gøres vha. preload-funktionen.
-
-	
-
 
 ```javascript
 function preload() {
  img = loadImage('mus.png');
 }
-
 ```
-
-
 
 4. Tilføj nogle “katte” der bevæger sig tilfældigt rundt på skærmen. Vink: Samme princip som med musen.
 5. Hvis to cirkler skærer hinanden, har katten fanget musen. Skriv en funktion, der undersøger dette. 
