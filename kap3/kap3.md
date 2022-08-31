@@ -518,12 +518,44 @@ let musPosY = "Din mus y-koordinat er givet ved "
 3. Beregn nu hastigheden i x-retningen og i y-retningen ved at udskrive forskellen mellem `x`-værdierne og tilsvarende med `y`-værdierne. 
 4. Beregn et udtryk for farten af din mus ved at bruge formlen: 
    $$\sqrt{(mouseX-pmouseX)^2 + (mouseX-pmouseX)^2}.$$   
-5. Lav et program der tegner en cirkel alle de steder du bevæger musen hen
-6. Lav et program, der tegner en cirkel når du klikker med venstre mus og et rektangel med højre mus.
-7. Lav et simpelt tegneprogram der tegner en streg efter musens bevægelse
-8. Lav et program, der tegner en firkant hvis du trykker f, en cirkel hvis du trykker c eller en ellipse hvis du trykker e. 
-9.  Udvid programmet i 4. så de konstrueres der hvor musen er.
-10. Hvad gør følgende kode:
+5. Definerer to variable x og y og sæt den lig med hhv. 5 og 3. Brug nu javascript til at beregne summen, differencen, multiplikationen og divisionen af de to samt find resten ved divisionen. 
+6. Hvad bliver x og y i slutningen af hver instruktion? Kommenter koden og forklar hvad variablen resultat er efter hver operation. Brug evt console.log til at finde svaret.
+```javascript
+let x = 5
+let y = 7
+let resultat
+resultat=--x;
+console.log(resultat)
+resultat=x++;
+console.log(resultat)
+resultat=y*(x++);
+console.log(resultat)
+resultat=x**((y--)-4)
+console.log(resultat)
+resultat+=(resultat%(x**2))
+console.log(resultat)
+```
+7. Lav et program der tegner en cirkel alle de steder du bevæger musen hen.
+8. Lav et program, der tegner en cirkel når du klikker med venstre mus og et rektangel med højre mus.
+9. I det følgende nogle boolske udtryk. Overvej hvad der printes i konsollen:
+```javascript
+// =
+console.log(2 == 2); 
+console.log(2 == '2'); 
+// !=
+console.log(3 != 2); 
+console.log('hello' != 'Hello'); 
+//===
+console.log(2 === 2); 
+console.log(2 === '2'); 
+// !==
+console.log(2 !== '2'); 
+console.log(2 !== 2);
+``` 
+10. Lav et simpelt tegneprogram der tegner en streg efter musens bevægelse
+11. Lav et program, der tegner en firkant hvis du trykker f, en cirkel hvis du trykker c eller en ellipse hvis du trykker e. 
+12. Lav et program, der tegner en firkant hvor musen er.
+13. Hvad gør følgende kode:
 
 ```javascript
 var x = 200;
@@ -552,7 +584,7 @@ function draw() {
 }
 ```
 
-11. Forklar hvad følgende kode gør:
+14. Forklar hvad følgende kode gør:
 
 ```javascript
 let x; 
@@ -575,10 +607,10 @@ function draw() {
   y+=yspeed; 
 }
 ```
-12. Prøv at udvide 7 så cirklen ikke kan bevæge sig ud af skærmen og bagefter, at man kan klikke et sted på skærmen med musen og så følger cirklen det punkt. 
-13. Lav to cirkler og sæt dem i fart i en given retning. Undersøg om de kolliderer med hinanden.
-14. Konstruer en vandret linje der bevæger sig op og ned af skærmen. Når den når toppen af skærmen bevæger den sig nedad. Og omvendt. 
-15. Konstruer en lodret linje, der bevæger sig til højre og venstre. Når den når højre side bevæger den sig tilbage mod venstre side. Og omvendt.
+15. Prøv at udvide 7 så cirklen ikke kan bevæge sig ud af skærmen og bagefter, at man kan klikke et sted på skærmen med musen og så følger cirklen det punkt. 
+16. Lav to cirkler og sæt dem i fart i en given retning. Undersøg om de kolliderer med hinanden.
+17. Konstruer en vandret linje der bevæger sig op og ned af skærmen. Når den når toppen af skærmen bevæger den sig nedad. Og omvendt. 
+18. Konstruer en lodret linje, der bevæger sig til højre og venstre. Når den når højre side bevæger den sig tilbage mod venstre side. Og omvendt.
 
 
 ## Projekt: Algoritmisk kunst
