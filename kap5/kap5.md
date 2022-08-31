@@ -1,6 +1,5 @@
 # 5. Løkker
-
-Løkker er et kraftfuldt værktøj, der giver mulighed for at afvikle en sekvens af instruktioner et vilkårligt antal gange uden at skulle gentage koden. Løkker er ligesom if-udtryk betinget af noget. De to løkker vi kigger på er while og for. 
+Løkker er en særdeles vigtigt struktur i de fleste programmeringssprog, dan den giver mulighed for at afvikle en sekvens af instruktioner et vilkårligt antal gange uden at skulle gentage koden. Løkker er typisk ligesom if-udtryk betinget af noget for at de sættes i gang, men det behøver ikke at være tilfældet. De to løkker vi kigger på kaldes `while` og `for` og findes i øvrigt i ret mange af de mest anvendte programmeringssprog, så kender man den i det ene sprog er det nemmere at forstå den i det andet. 
 
 Begge starter med en formulering af en betingelse, hvilket også kaldes løkkens hoved og dernæst kommer kroppen indkapslet af krølparenteser. Det er denne sekvens af instruktioner, der udføres sålænge betingelsen er sand. Herunder en kort illustration af deres opbygning:
 
@@ -30,15 +29,15 @@ while (num > 0) {
   num = num - 1;
   console.log(num);
 }
+console.log("Ude af løkken")
 ```
 
 
-Vi sætter en variable til 101. Dernæst undersøger vi om variablen er større end nul. Det er den, da vi jo lige har sat den til 100. Herved ryger vi ned i kroppen og dekrementerer variablen, printer den ud og undersøger igen om den er større end 0. Sådan bliver vi ved. På et tidspunkt er variablen 1, når vi rygger ned i kroppen og 0 når vi skal tjekke om betingelsen er sand. Derved er den ikke længere skarpt større end 0, så vi rygger ud af løkken.
+Vi sætter en variable til 101. Dernæst undersøger vi om variablen er større end nul. Det er den, da vi jo lige har sat den til 100. Herved ryger vi ned i kroppen defineret af krølparenteserne og dekrementerer variablen, printer den ud. Igen undersøger vi om den er større end 0. Sådan bliver vi ved. På et tidspunkt er variablen 1, når vi rygger ned i kroppen og 0 når vi skal tjekke om betingelsen er sand. Herved er betingelsen ikke længere sand, da der står `num` skal være skarpt større end 0, så vi rygger ud af løkken.
 
 Havde vi ikke dekrementeret variablen i kroppen ville betingelsen aldrig blive falsk og vi ville have en uendelig løkke. 
 
 Herunder et eksempel hvor vi printer en masse forskellige farvede cirkler:
-
 
 ```javascript
 var y = 10
@@ -61,12 +60,10 @@ function draw() {
 }
 ```
 
-
 Koden illustrerer, at vi kan have lige så mange instruktioner i kroppen, som vi ønsker. Vi kan sågar have betinget udførsel eller løkker inde i løkker. Løkker kan med andre ord blive ret kompliceret. Når en løkke konstrueres så prøv at undgå unødig kompleksitet.
 
 
 ## for-løkken
-
 Herunder printer vi tallene fra 1 til 100 vha en for-løkke:
 
 
@@ -77,7 +74,7 @@ for (let i = 1; i < 101; i++) {
 ```
 
 
-Vi kan læse for-løkken således i ovenstående eksempel: Fra i lig med 1 til i mindre end 101 skal i printes og for hver gennemgang af løkken (en såkaldt iteration) skal vi inkrementerer i med 1. Dermed bliver i heller ikke ved med at være mindre end 100.
+Vi kan læse for-løkken således i ovenstående eksempel: Fra i lig med 1 til i mindre end 101 skal i printes og for hver gennemgang af løkken (en såkaldt iteration) skal vi inkrementere i med 1. Dermed bliver i heller ikke ved med at være mindre end 100.
 
 Start og slut og vejen hertil kan bestå af både simple men også mere komplekse udtryk. Typisk bruges for-løkken, når vi skal itererere over et bestemt og velkendt interval. 
 
@@ -123,8 +120,6 @@ function setup() {
   }
 }
 ```
-
-
 Vær i øvrigt opmærksom på forskellen ved brug af let og var i for-løkker. Herunder et eksempel til illustration med var:
 
 
@@ -135,10 +130,7 @@ for (var i = 0; i < 10; i++) {
 }
 // i er 10
 ```
-
-
 Og her et med let:
-
 
 ```javascript
 let i = 5;
@@ -147,19 +139,112 @@ for (let i = 0; i < 10; i++) {
 }
 // i er 5
 ```
+## Kom ud af en løkke før tid ved brug af `break`
+Der kan være tilfælde hvor vi gerne vil ud af en løkke før tid. Her kan vi bruge kommandoen `break` i løkkekroppen. Herunder et eksempel:
 
+```javascript 
+function setup(){
+  textsize(20)
+  for (let i = 0; i < 100; i++) {
+    if (i==50 ) { 
+      break; 
+    }
+    text(i,random(width),random(heigth))
+  }
+}
+```
+I koden bruger vi break, når variablen i bliver 50. 
 
+Vi kan bruge `break` både når vi bruger `for`- og `while`-løkken. Her et tilsvarende eksempel med `while`: 
+
+```javascript
+function setup(){
+  textsize(20)
+  let i=100
+  while(i>0) {
+    if (i==50 ) { 
+      break; 
+    }
+    text(i,random(width),random(heigth))
+    i=i-1
+  }
+}
+```
+
+Vi kunne også være i et tilfælde, at vi har en løkke inde i løkke. Bruges `break` i den inderste løkke ryger vi kun ud af den inderste løkke. 
+Herunder et eksempel der tegner en række cirkler på skærmen:
+```javascript
+let ypos = 100;
+let yskridt = 20;
+let xpos = 100;
+let xskridt = 20;
+function setup() {
+  createCanvas(500, 500);
+  noLoop(); //
+}
+
+function draw() {
+  background(250);
+  fill(150,50,50);
+  noStroke();
+  for (let j = 0; j < 5; j++) {
+    for (let i = 0; i < 9; i++) {
+      ellipse(xpos+(xskridt*i), ypos+(yskridt*j), 20, 20);
+      if(i==5) break
+    }
+  }
+}
+```
+
+## Springe en iteration over med `continue`
+I visse tilfælde kan det være relvant også at springe en iteration af løkken over. Det kan man gøre med nøgleordet `continue`. 
+
+Herunder eksempel med `for`-løkken:
+
+```javascript
+function setup(){
+  textsize(20)
+  for (let i = 0; i < 10; i++) {
+    if (i==5 ) { 
+      continue; 
+    }
+    else{ 
+      text(i,random(width),random(heigth))
+    }
+  }
+}
+```
+
+og tilsvarende for `while`-løkken:
+
+```javascript
+function setup(){
+  textsize(20)
+  let i=0
+  while(i<10){
+    if(i==5){
+      continue
+    }
+    else{ 
+      text(i,random(width),random(heigth))
+    }
+  }
+}
+```
+Begge eksempler tegner tallene 0 til og med 9 dog eksklusiv tallet 5. 
 
 ## Øvelser
 
-1. Tegn en cirkel i centrum og dernæst en lidt større. Gør det 30 gange ved brug af både for og while. Det er ikke forventet at du laver en animation. Overvej forskellen på løkker og draw.
-2. Tegn 10 ens cirkler forskellige steder på skærmen både ved brug af while og for.
-3. Tegn 10 forskellige rektangler forskellige steder på skærmen både ved brug af while og for. Farvelæg dem med hver sin farve.
-4. Tegn 10 vandrette linjer, der løber henover skærmen. Tegn 10 lodrette linjer, der løber henover skærmen i dobbelt så hurtigt som den vandrette linje.
-5. Tegn 10 tilfældige punkter på dit canvas i  10 forskellige farver. 
-6. Opret et kanvas 800 bredt og 800 langt. Lav et skakbræt.
-7. Konstruer en vandret linje i midten og tegn vha løkker 10 rektangler der ligger på den linje. Prøv at varierer længden af disse.
-8. Herunder ses et eksempel på en løkke inde i en løkke. Hvad gør koden?
+1. Brug en `for`-løkke til at tegne de lige tal mellem 0 og 100 tilfældige steder på skærmen med farven rød.
+2. Brug en `while`-løkke til at tegne de ulige tal mellem 0 og 100 tilfældige steder på skærmen med farven blå. 
+3. Tegn en cirkel i centrum og dernæst en lidt større. Gør det 30 gange ved brug af både for og while. Det er ikke forventet at du laver en animation. Overvej forskellen på løkker og draw.
+4. Tegn 10 ens cirkler forskellige steder på skærmen både ved brug af while og for.
+5. Tegn 10 forskellige rektangler forskellige steder på skærmen både ved brug af while og for. Farvelæg dem med hver sin farve.
+6. Tegn 10 vandrette linjer, der løber henover skærmen. Tegn 10 lodrette linjer, der løber henover skærmen i dobbelt så hurtigt som den vandrette linje.
+7. Tegn 10 tilfældige punkter på dit canvas i  10 forskellige farver. 
+8. Opret et kanvas 800 bredt og 800 langt. Lav et skakbræt.
+9. Konstruer en vandret linje i midten og tegn vha løkker 10 rektangler der ligger på den linje. Prøv at varierer længden af disse.
+10. Herunder ses et eksempel på en løkke inde i en løkke. Hvad gør koden?
 
       
 

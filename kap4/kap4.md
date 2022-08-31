@@ -386,8 +386,6 @@ function preload() {
 
 I det følgende projekt skal du prøve at lave simple digitale prototyper på et trommesæt, et klaver og en guitar eller evt et andet selvvalgt instrument. Tanken er at du for alle tre instrumenter skal tegne dem først og evt farvelægge dem. Projeket forudsætter at du kan afspille lyd og dermed køre din egen webserver (se sidste øvelse i modul 1). Følgende instrumenter kunne man lave:
 
-
-
 * Trommesæt. Konstruer først en række ikke-overlappende cirkler. Indsæt relevante lyde når man trykker med musen på cirklerne
 * Piano. Tegn først et klaver/keyboard set for oven med sorte og hvide rektangler. Det behøver selvfølgelig ikke være et fuldt klaver blot en delmængde af. Sæt forskellige lyde på, når man trykker med musen på bestemte rektangler.
 * Guitar. Tegn seks vandrette linjer midt på canvas. Lad nogle små figurer bevæge sig henover skærmen og sæt nogle lodrette punkter. Når firkanten ligger indenfor disse punkter og man taster korrekt afspilles en selvvalgt lyd.
@@ -404,7 +402,6 @@ function setup() {
   createCanvas(720, 400);
 }
 ```
-
 
 ```javascript
 function draw() {
@@ -436,6 +433,3 @@ function mousePressed() {
   }
 }
 ```
-
-
-
