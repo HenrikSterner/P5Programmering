@@ -537,20 +537,21 @@ console.log(resultat)
 ```
 7. Lav et program der tegner en cirkel alle de steder du bevæger musen hen.
 8. Lav et program, der tegner en cirkel når du klikker med venstre mus og et rektangel med højre mus.
-9. I det følgende nogle boolske udtryk. Overvej hvad der printes i konsollen:
+9. I det følgende nogle boolske udtryk. Overvej typerne af variablerne og udtrykkene herunder. Hvad mon der printes i konsollen?:
 ```javascript
-// =
-console.log(2 == 2); 
-console.log(2 == '2'); 
-// !=
-console.log(3 != 2); 
-console.log('hello' != 'Hello'); 
-//===
-console.log(2 === 2); 
-console.log(2 === '2'); 
-// !==
-console.log(2 !== '2'); 
-console.log(2 !== 2);
+x=12
+y=12.5
+s="Hej"
+t="12.5"
+b=true
+console.log(typeof(x))
+console.log(typeof(y))
+console.log(typeof(s))
+console.log(typeof(t))
+console.log(typeof(b))
+console.log(typeof(x+y))
+console.log(typeof(s+t))
+console.log(typeof(x+t))
 ``` 
 10. Lav et simpelt tegneprogram der tegner en streg efter musens bevægelse
 11. Lav et program, der tegner en firkant hvis du trykker f, en cirkel hvis du trykker c eller en ellipse hvis du trykker e. 

@@ -180,8 +180,33 @@ let isMammal = !canSwim && !canFly;
 
 ## Øvelser
 
-1. Tegn en cirkel midt på skærmen. Hvis musen bevæger sig til højre for cirklens centrum bliver den til et rektangel. Hvis den bevæger sig til venstre for bliver den igen en cirkel.
-2. Forklar hvad følgende kode gør (hvad betyder width og height?):
+1. Overvej i det følgende hvad der printes i konsollen:
+```javascript
+// =
+console.log(2 == 2); 
+console.log(2 == '2'); 
+// !=
+console.log(3 != 2); 
+console.log('hello' != 'Hello'); 
+//===
+console.log(2 === 2); 
+console.log(2 === '2'); 
+// !==
+console.log(2 !== '2'); 
+console.log(2 !== 2);
+```
+2. Tegn en cirkel midt på skærmen. Hvis musen bevæger sig til højre for cirklens centrum bliver den til et rektangel. Hvis den bevæger sig til venstre for bliver den igen en cirkel.
+3. Overvej og følgende udtryk er sande eller falske og tjek efter med det der printes i konsollen:
+```javascript
+console.log(2 == 2 && 2 == '2'); 
+console.log(2 == 2 && 2 == '2' && 2 === '2'); 
+console.log(2 == 2 && 2 == '2' || 2!=2); 
+console.log('hello' != 'Hello' && 'hello' !== 'Hello'); 
+console.log('hello' != 'Hello' || 'hello' !== 'hello' && 'hello' !== 'heLLo'); 
+console.log(2 === 2 || 2!=3 ); 
+console.log(2 === 2 || 2!='2' && (true || false));
+```
+4. Forklar hvad følgende kode gør (hvad betyder width og height?):
 
 ```javascript
 function setup() { 
