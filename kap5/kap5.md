@@ -1,7 +1,10 @@
-# 5. Løkker
-Løkker er en særdeles vigtigt struktur i de fleste programmeringssprog, dan den giver mulighed for at afvikle en sekvens af instruktioner et vilkårligt antal gange uden at skulle gentage koden. Løkker er typisk ligesom if-udtryk betinget af noget for at de sættes i gang, men det behøver ikke at være tilfældet. De to løkker vi kigger på kaldes `while` og `for` og findes i øvrigt i ret mange af de mest anvendte programmeringssprog, så kender man den i det ene sprog er det nemmere at forstå den i det andet. 
+# 5. Løkker og lister
+Løkker er en særdeles vigtig konstruktion i de fleste programmeringssprog, dan den giver mulighed for at afvikle en sekvens af instruktioner et vilkårligt antal gange uden at skulle gentage koden. Løkker er typisk ligesom if-udtryk betinget af noget for at de sættes i gang, men det behøver ikke at være tilfældet. De to løkker vi kigger på kaldes `while` og `for` og findes i øvrigt i ret mange af de mest anvendte programmeringssprog, så kender man den i det ene sprog er det nemmere at forstå den i det andet. 
 
-Begge starter med en formulering af en betingelse, hvilket også kaldes løkkens hoved og dernæst kommer kroppen indkapslet af krølparenteser. Det er denne sekvens af instruktioner, der udføres sålænge betingelsen er sand. Herunder en kort illustration af deres opbygning:
+Efter at have introduceret løkker, så kigger vi på en datastruktur kaldet "lister" eller arrays, der populært sagt er en type variable, der giver mulighed for at rumme mere end en værdi, som det ellers har været tilfældet indtilvidere. De introduceres sammen med løkke, da løkkerne giver mulighed for på en nem måde at besøge, undersøge og operere på hvert enkelt element i en liste. 
+
+## Løkker
+Både `for`og `while` starter med en formulering af en betingelse, hvilket også kaldes løkkens hoved og dernæst kommer kroppen indkapslet af krølparenteser. Det er denne sekvens af instruktioner, der udføres sålænge betingelsen er sand. Herunder en kort illustration af deres opbygning:
 
 ```javascript
 while(betingelse){ // hoved af while-løkken
@@ -18,7 +21,7 @@ for(start,slut,opdatering){ // hoved af for-løkken
 Vi vender tilbage herunder hvad de enkelte ting betyder. 
 
 
-## while-løkken
+### while-løkken
 
 Et simpel eksempel på brug af  while-løkken er ved at printe tallene 100 til 1 ud i konsollen:
 
@@ -63,7 +66,7 @@ function draw() {
 Koden illustrerer, at vi kan have lige så mange instruktioner i kroppen, som vi ønsker. Vi kan sågar have betinget udførsel eller løkker inde i løkker. Løkker kan med andre ord blive ret kompliceret. Når en løkke konstrueres så prøv at undgå unødig kompleksitet.
 
 
-## for-løkken
+### for-løkken
 Herunder printer vi tallene fra 1 til 100 vha en for-løkke:
 
 
@@ -139,7 +142,7 @@ for (let i = 0; i < 10; i++) {
 }
 // i er 5
 ```
-## Kom ud af en løkke før tid ved brug af `break`
+### Kom ud af en løkke før tid ved brug af `break`
 Der kan være tilfælde hvor vi gerne vil ud af en løkke før tid. Her kan vi bruge kommandoen `break` i løkkekroppen. Herunder et eksempel:
 
 ```javascript 
@@ -196,7 +199,7 @@ function draw() {
 }
 ```
 
-## Springe en iteration over med `continue`
+### Springe en iteration over med `continue`
 I visse tilfælde kan det være relvant også at springe en iteration af løkken over. Det kan man gøre med nøgleordet `continue`. 
 
 Herunder eksempel med `for`-løkken:
@@ -233,21 +236,48 @@ function setup(){
 ```
 Begge eksempler tegner tallene 0 til og med 9 dog eksklusiv tallet 5. 
 
+## Lister
+
 ## Øvelser
 
-1. Brug en `for`-løkke til at tegne de lige tal mellem 0 og 100 tilfældige steder på skærmen med farven rød.
-2. Brug en `while`-løkke til at tegne de ulige tal mellem 0 og 100 tilfældige steder på skærmen med farven blå. 
-3. Tegn en cirkel i centrum og dernæst en lidt større. Gør det 30 gange ved brug af både for og while. Det er ikke forventet at du laver en animation. Overvej forskellen på løkker og draw.
-4. Tegn 10 ens cirkler forskellige steder på skærmen både ved brug af while og for.
-5. Tegn 10 forskellige rektangler forskellige steder på skærmen både ved brug af while og for. Farvelæg dem med hver sin farve.
-6. Tegn 10 vandrette linjer, der løber henover skærmen. Tegn 10 lodrette linjer, der løber henover skærmen i dobbelt så hurtigt som den vandrette linje.
-7. Tegn 10 tilfældige punkter på dit canvas i  10 forskellige farver. 
-8. Opret et kanvas 800 bredt og 800 langt. Lav et skakbræt.
-9. Konstruer en vandret linje i midten og tegn vha løkker 10 rektangler der ligger på den linje. Prøv at varierer længden af disse.
-10. Herunder ses et eksempel på en løkke inde i en løkke. Hvad gør koden?
-
-      
-
+1. Forklar hvad følgende kode gør:
+```javascript
+function setup() {
+  createCanvas(400, 400);
+  while(i<100)
+    {
+      let x=random(400)
+      let y=random(400)
+      let r = random(100)
+      circle(x,y,r)
+      text(i,x,y)
+      i=i+1
+    }
+}
+```
+2. Omskriv koden i opgave 1, så den benytter en `for`-løkke. Udvid herefter en af de to løkker, så cirkler tegnes i venstre halvdel hvis i er lige, og hvis i er ulige tegnes cirkler i højre halvdel. 
+3. Brug en `for`-løkke til at tegne de lige tal mellem 0 og 100 tilfældige steder på skærmen med farven rød.
+4. Brug en `while`-løkke til at tegne de ulige tal mellem 0 og 100 tilfældige steder på skærmen med farven blå. 
+5. Tegn en cirkel i centrum og dernæst en lidt større. Gør det 30 gange ved brug af både for og while. Det er ikke forventet at du laver en animation. Overvej forskellen på løkker og draw. Vi opfordrer at du overvejer at skrive koden i setup eller skriver `noLoop()` i setup, hvis du vil skrive koden i draw. 
+6. Tegn 10 forskellige ellipser forskellige steder på skærmen både ved brug af while og for.
+7. Overvej hvad følgende kode gør:
+```javascript
+function setup() {
+  createCanvas(400, 400);
+  let wordcloud =["Javascript","Python","C++","C","C#","Julia","Java","Go","R","Basic"]
+  for(let i = 0;i<wordcloud.length;i++)
+    {
+      text(wordcloud[i],random(400),random(400))
+      i=i+1
+    }
+}
+```
+8. Tegn 10 forskellige rektangler forskellige steder på skærmen både ved brug af while og for. Farvelæg dem med hver sin farve.
+9.  Tegn 10 vandrette linjer, der løber henover skærmen. Tegn 10 lodrette linjer, der løber henover skærmen i dobbelt så hurtigt som den vandrette linje.
+10. Tegn 10 tilfældige punkter på dit canvas i  10 forskellige farver. 
+11. Opret et kanvas 800 bredt og 800 langt. Lav et skakbræt.
+12. Konstruer en vandret linje i midten og tegn vha løkker 10 rektangler der ligger på den linje. Prøv at varierer længden af disse.
+13. Herunder ses et eksempel på en løkke inde i en løkke. Hvad gør koden?
 
 ```javascript
 let angle =0;
@@ -278,9 +308,9 @@ function draw() {
 ```
 
 
-9. Lav en løkke, der summer de første 100 tal og printer dem i konsollen.
-10. Tegn en masse linjer der roterer om det samme centrum vha af løkker.
-11. Konstruer et koordinatsystem med midten af skærmen som centrum. Tegn graferne for en selvvalgt ret linje, en andengradsfunktion,  kvadratrodsfunktionen, den reciprokke funktion samt cos og sin. Herunder nogle eksempler på brugen af matematik i javascript:
+13. Lav en løkke, der summer de første 100 tal og printer dem i konsollen.
+14. Tegn en masse linjer der roterer om det samme centrum vha af løkker.
+15. Konstruer et koordinatsystem med midten af skærmen som centrum. Tegn graferne for en selvvalgt ret linje, en andengradsfunktion,  kvadratrodsfunktionen, den reciprokke funktion samt cos og sin. Herunder nogle eksempler på brugen af matematik i javascript:
 
 ```javascript
   Math.PI;            // returner 3.141592653589793
@@ -297,7 +327,7 @@ function draw() {
 ```
 
 
-12. Tegn en tændstiksmand et sted til venstre på skærmen og en figur til højre for. Når du trykker på tasten K (for kast) sendes en cirkelformet genstand afsted ved en kasteparabel. Tegn banekurven og undersøg om genstanden rammer figuren til højre.
+16. Tegn en tændstiksmand et sted til venstre på skærmen og en figur til højre for. Når du trykker på tasten K (for kast) sendes en cirkelformet genstand afsted ved en kasteparabel. Tegn banekurven og undersøg om genstanden rammer figuren til højre.
 
 
 ## Projekt: Opsparing eller aktier?
