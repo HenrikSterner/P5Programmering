@@ -237,7 +237,45 @@ function setup(){
 Begge eksempler tegner tallene 0 til og med 9 dog eksklusiv tallet 5. 
 
 ## Lister
+Ofte er det rart at kunne opbevare mere end en værdi i en variable. Tænk eksempelvis på en liste af navne, et sæt af tal eller noget helt tredje. I den sammenhæng er lister også kaldet arrays en særdeles god konstruktion at kende. 
+Man erklærer en liste på samme måde som en variable, men man indfører firkantede parenteser for at markere, at der er tale om en liste:
 
+```javascript
+let liste = [element 0,element 1,element 2, ...]
+```
+
+Her er to ting der er særdeles vigtige at bemærke:
+
+* Hvert element i listen er adskildt af et komma. Bemærk at elementer kan både være tal, strenge, boolske værdier og meget andet. Det kan sågar være en blanding af disse. 
+* Hvert element i en liste har en adresse i form af et heltal. Adresserne kaldes også index. Det første element i en liste har adresse/index 0, det andet har adresse/index 1, det tredje har adresse/index 2 osv. Disse index bruges til at tilgå de enkelte elementer i listen. 
+
+Herunder først nogle eksempler på erklæring af nogle forskellige lister med forskellige typer af data:
+```javascript
+talListe = [4,7,2,9,5]
+tekstListe= ["Marianne", "Anders", "Steen", "Peter"]
+boolskListe = [true, false, true, true, true,false]
+blandetListe = ["hej", 5, true, 6.7]
+```
+
+Dernæst prøver vi nu at tilgå nogle elementer i de fire lister:
+
+```javascript
+console.log(talListe[0]) //printer 4
+console.log(talListe[1]) //printer "Anders"
+console.log(talListe[2]) //printer true
+console.log(talListe[3]) //printer 6.7
+```
+
+Som læseren måske allerede tænker, så kan det gøres smartere, hvis vi nu eksempelvis ønsker at printe alle navne i tekstlisten. Vores løkke-konstruktioner bliver brugbare her:
+
+```javascript
+for(let i = 0;i<tekstListe.length;i++)
+{
+  console.log(tekstListe[i])
+}
+```
+
+I tilfældet her betyder tekstListe.length antallet af elementer i listen.
 ## Øvelser
 
 1. Forklar hvad følgende kode gør:
