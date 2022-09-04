@@ -1,4 +1,4 @@
-# 5. Løkker og lister
+# 5. Løkker og arrays
 Løkker er en særdeles vigtig konstruktion i de fleste programmeringssprog, dan den giver mulighed for at afvikle en sekvens af instruktioner et vilkårligt antal gange uden at skulle gentage koden. Løkker er typisk ligesom if-udtryk betinget af noget for at de sættes i gang, men det behøver ikke at være tilfældet. De to løkker vi kigger på kaldes `while` og `for` og findes i øvrigt i ret mange af de mest anvendte programmeringssprog, så kender man den i det ene sprog er det nemmere at forstå den i det andet. 
 
 Efter at have introduceret løkker, så kigger vi på en datastruktur kaldet "lister" eller arrays, der populært sagt er en type variable, der giver mulighed for at rumme mere end en værdi, som det ellers har været tilfældet indtilvidere. De introduceres sammen med løkke, da løkkerne giver mulighed for på en nem måde at besøge, undersøge og operere på hvert enkelt element i en liste. 
@@ -236,9 +236,9 @@ function setup(){
 ```
 Begge eksempler tegner tallene 0 til og med 9 dog eksklusiv tallet 5. 
 
-## Lister
-Ofte er det rart at kunne opbevare mere end en værdi i en variable. Tænk eksempelvis på en liste af navne, et sæt af tal eller noget helt tredje. I den sammenhæng er lister også kaldet arrays en særdeles god konstruktion at kende. 
-Man erklærer en liste på samme måde som en variable, men man indfører firkantede parenteser for at markere, at der er tale om en liste:
+## Arrays
+Ofte er det rart at kunne opbevare mere end en værdi i en variable. Tænk eksempelvis på en liste af navne, et sæt af tal eller noget helt tredje. I den sammenhæng er arrays også kaldet lister en særdeles god konstruktion at kende. 
+Man erklærer en array/liste på samme måde som en variable, men man indfører firkantede parenteser for at markere, at der er tale om et array/liste. Herunder en generel definition:
 
 ```javascript
 let liste = [element 0,element 1,element 2, ...]
@@ -249,12 +249,13 @@ Her er to ting der er særdeles vigtige at bemærke:
 * Hvert element i listen er adskildt af et komma. Bemærk at elementer kan både være tal, strenge, boolske værdier og meget andet. Det kan sågar være en blanding af disse. 
 * Hvert element i en liste har en adresse i form af et heltal. Adresserne kaldes også index. Det første element i en liste har adresse/index 0, det andet har adresse/index 1, det tredje har adresse/index 2 osv. Disse index bruges til at tilgå de enkelte elementer i listen. 
 
+
 Herunder først nogle eksempler på erklæring af nogle forskellige lister med forskellige typer af data:
 ```javascript
-talListe = [4,7,2,9,5]
-tekstListe= ["Marianne", "Anders", "Steen", "Peter"]
-boolskListe = [true, false, true, true, true,false]
-blandetListe = ["hej", 5, true, 6.7]
+let talListe = [4,7,2,9,5]
+let tekstListe= ["Marianne", "Anders", "Steen", "Peter"]
+let boolskListe = [true, false, true, true, true,false]
+let blandetListe = ["hej", 5, true, 6.7]
 ```
 
 Dernæst prøver vi nu at tilgå nogle elementer i de fire lister:
@@ -275,7 +276,88 @@ for(let i = 0;i<tekstListe.length;i++)
 }
 ```
 
-I tilfældet her betyder tekstListe.length antallet af elementer i listen.
+I tilfældet her betyder tekstListe.length antallet af elementer i listen. Bemærk vores løkker løber til skarpt mindre end længden af listen, da listers første element har index 0. 
+
+Herunder et eksempel hvor vi benytter `while`-løkke i kombination med `for`-løkken.
+
+```javascript
+let i = 0
+let min = talListe[0]
+while(i<talListe.length)
+{
+  if(talListe[i]<min)
+  {
+    min = talliste[i]
+  }
+}
+console.log(min) // hvad mon der printes?
+```
+
+### Operationer på arrays
+Der findes en lang række forskellige operationer man kan udføre på lister. Herunder vil vi kort berøre nogle af de vigtigste.
+
+Vi kan tilføje ny elementer til et array ved at bruge metoden `push`:
+
+```javascript
+array.push(element 1, element 2,...)
+```
+Vi behøver ikke give push mere end et element, men vi kan give den lige så mange vi har lyst til. Elementer tilføjes altid bagerst når vi bruger `push`. Bemærk at metoden ændre på den oprindelig liste. 
+```javascript
+//tilføjer 3 til sidst i listen, så den ser således ud [4,7,2,9,5,3]
+talListe.push(3) 
+//tilføjer "Michael" og "Suzanne" til sidst i listen, så den ser således ud ["Marianne", "Anders", "Steen", "Peter", "Michael", "Suzanne"]
+tekstListe.push("Michael", "Suzanne") 
+```
+
+
+Tilsvarende findes `pop` der altid fjerner det bagerste element i listen:
+
+```javascript
+array.pop()
+```
+Metoden fjerner altid elementer bagerst i listen. Bemærk at metoden ændre på den oprindelig liste. 
+
+```javascript
+tekstListe.pop()  // "Suzanne" er fjernet
+tekstListe.pop() // "Michael" er fjernet
+talListe.pop()  // tallet 3 er fjernet
+```
+Hvis vi ønsker at fjerne det første element i arrayet kan vi bruge `shift`:
+```javascript
+tekstListe.shift() // består herefter af ["Anders", "Steen", "Peter"]
+talListe.shift() // består herefter af [2,9,5]
+```
+
+Tilsvarende kan vi tilføje elementer forrest i listen ved brug af `unshift`:
+
+```javascript
+array.unshift(element 1, element 2,...)
+```
+Vi behøver ikke give push mere end et element, men vi kan give den lige så mange elementer, som vi har lyst til. Elementer tilføjes altid forrest når vi bruger `unshift`. Bemærk at metoden ændre på den oprindelig liste. 
+
+
+```javascript
+tekstListe.unshift("Martin","Paul") // består herefter af ["Martin", "Paul", "Anders", "Steen", "Peter"]
+talListe.unshift(4) // består herefter af [4,2,9,5]
+```
+
+Vi har også mulighed for at udvælge en delmængde af elementerne i arrayet ved at bruge `slice`:
+
+```javascript
+array.slice(start, slut) 
+```
+Her angiver `start` og `slut` index på hvor elementer skal udvælges. Som standard er `start`sat til 0, så den kan reelt helt undlades. 
+Operationen returnerer et ny array bestående af de udvalgte elementer, men ændrer ikke den oprindelige liste. 
+
+Heruder et par eksempler på vores 
+```javascript
+let nyListe
+nyListe = tekstListe.slice(0, 2) //nyListe bliver til ["Martin","Paul"]
+nyListe = tekstListe.slice(3)  //nyListe bliver ["Martin","Paul", "Anders"]
+```
+Da operationen ikke ændrer på den oprindelige liste er det vigtigt at gemme en reference til den nye liste i en variable.
+
+
 ## Øvelser
 
 1. Forklar hvad følgende kode gør:
@@ -346,9 +428,25 @@ function draw() {
 ```
 
 
-13. Lav en løkke, der summer de første 100 tal og printer dem i konsollen.
-14. Tegn en masse linjer der roterer om det samme centrum vha af løkker.
-15. Konstruer et koordinatsystem med midten af skærmen som centrum. Tegn graferne for en selvvalgt ret linje, en andengradsfunktion,  kvadratrodsfunktionen, den reciprokke funktion samt cos og sin. Herunder nogle eksempler på brugen af matematik i javascript:
+13. Hvad gør følgende kode? Prøv den gerne af i praksis og juster på de enkelte dele i løkken:
+```javascript
+function setup() {
+  createCanvas(720, 400);
+  background(200);
+  translate(100, 100);
+  noStroke();
+  for (let i = 0; i < 10; i ++) {
+    ellipse(0, 30, 20, 80);
+    rotate(PI/4);
+  }
+}
+```
+14. Lav en løkke, der summer de første 100 tal og printer dem i konsollen.
+15. Lav en liste med 10 selvvalgte navne. Lav en ordsky på kanvas af navnene. Jo flere karakterer et navn består af, jo større skrift skal teksten være. 
+16. Lav en løkke, der tilføje de lige tal i en liste og de ulige tal i en anden liste. Skriv de lige tal tilfældige steder i højre side af kanvas og de ulige tal, tilfældige steder, i venstre side af kanvas.
+17. Betragt listen [7,4,5,6,9,1,2,8,3,10]. Skriv et program, der finder det største element i en liste, printer det i konsollen og fjerner det fra listen. Gentag denne procedure (gerne med en løkke inde i en løkke) indtil listen er tom.  Brug evt. en eller flere af operationerne `push`,`unshift`,`pop`,`shift`,`slice`. Hvad har du opnået
+18. Tegn en masse linjer der roterer om det samme centrum vha af løkker.
+19. Konstruer et koordinatsystem med midten af skærmen som centrum. Tegn graferne for en selvvalgt ret linje, en andengradsfunktion,  kvadratrodsfunktionen, den reciprokke funktion samt cos og sin. Herunder nogle eksempler på brugen af matematik i javascript:
 
 ```javascript
   Math.PI;            // returner 3.141592653589793
@@ -364,8 +462,7 @@ function draw() {
   //man kan også bruge radians(grader), som konverterer grader til radianer
 ```
 
-
-16. Tegn en tændstiksmand et sted til venstre på skærmen og en figur til højre for. Når du trykker på tasten K (for kast) sendes en cirkelformet genstand afsted ved en kasteparabel. Tegn banekurven og undersøg om genstanden rammer figuren til højre.
+20. Tegn en tændstiksmand et sted til venstre på skærmen og en figur til højre for. Når du trykker på tasten K (for kast) sendes en cirkelformet genstand afsted ved en kasteparabel. Tegn banekurven og undersøg om genstanden rammer figuren til højre.
 
 
 ## Projekt: Opsparing eller aktier?
