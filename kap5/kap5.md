@@ -480,10 +480,6 @@ Forestil dig nu, at du har et beløb på 50.000 kr. Du kan nu vælge at sætte d
 Bemærk i øvrigt, at 0.5% er meget højt sat :-).
 
 
-## Projekt: Minigolf
-
-Konstruer en simpel minigolfbane med en firkantet ramme med mulige forhindringer i form af rette linjer. Placer en golfbold et sted og send den afsted med konstant fart. Beregn og tegn banekurven, der gerne skulle bestå af rette linjer eftersom indgangsvinkel er lig med udgangsvinkel. 
-
 
 ## Projekt: Talrækker 
 
@@ -516,5 +512,9 @@ $$
 $$
 
     
+
+## Projekt: Minigolf
+
+Konstruer en simpel minigolfbane med en firkantet ramme. Evt. med mulige forhindringer i form af rette linjer. Placer en golfbold et sted og send den afsted med konstant fart. Beregn og tegn banekurven, der gerne skulle bestå af rette linjer eftersom indgangsvinkel er lig med udgangsvinkel. 
 
 
