@@ -357,6 +357,30 @@ nyListe = tekstListe.slice(3)  //nyListe bliver ["Martin","Paul", "Anders"]
 ```
 Da operationen ikke ændrer på den oprindelige liste er det vigtigt at gemme en reference til den nye liste i en variable.
 
+### Flerdimensionelle arrays
+Ligesom arrays kan opbevare tal, strenge,  boolske værdier og mange flere, så kan de faktisk også opbevare andre arrays, der igen kan bestå af nye arrays, som igen kan bestå af nye arrays osv. Dybden i antallet arrays kaldes også dimensionen af et array. Typisk er det for overskueligheden og læsbarhedens skyld en god ide ikke at have for mange dimensioner på sin arrays. I det følgende vil vi primært arbejde med to-dimensionelle arrays. Herunder et eksempel på et to-dimensionelt array:
+
+```javascript
+function setup() {
+  createCanvas(400, 400);
+  //2-dim array med 3 tal i det inderste array svarende til
+  //centrum (x,y) og radius r
+  //Eks første array beskriver en cirkel med centrum i (50,50) og radius lig 30
+  let cirkler = [[50,50,30],[100,120,80],[250,120,100]]
+  
+  // til gå anden cirkels koordinater og radius
+  let x1 = cirkler[1][0]
+  let y1 = cirkler[1][1]
+  let r1 = cirkler[1][2]
+  // Tegne cirkler med en for-løkke
+  for(let i = 0;i<3;i++)
+  {
+        circle(cirkler[i][0],cirkler[i][1],cirkler[i][2])
+  }
+}
+```
+Bemærk måden vi refererer til flerdimensionelle arrays er igen ved brug af firkantede parenteser.  Første firkantede parenteser refererer til index i arrayet, der opbevarer en samling af arrays som beskriver nogle cirkler, mens de næste firkantede parenteser refererer til de konkrete cirkler. 
+
 
 ## Øvelser
 
