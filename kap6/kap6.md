@@ -75,9 +75,43 @@ function sayHello(name) {
 }
 sayHello(myName); // kalder funktionen med argumentet 'Henrik'
 ```
-
 Bemærk, at når man har en konkret værdi, der evt er gemt i en variable, kaldes parameteren for argument i kommentaren. Parameter og argument blandes ofte sammen, men man bør være opmærksom på, at en inputvariabel i en funktionsdefinition kaldes en parameter men ved udførselspunktet, når den får en faktisk værdi kaldes denne et argument (eller formel parameter).
 
+Herunder en ny variant af vores fibonacci-funktion, som giver mulighed for at variere hvor mange tal vi ønsker at få printet ud:
+
+```javascript
+function fib(N){
+    numbers = []
+    let a = 0
+    let b = 1
+    while numbers.length < N:
+        a = b
+        b = a + b
+        numbers.push(a)
+    console.log("Fibonacci tal" , numbers)
+}
+//kald til fib
+fib(10)
+fib(20)
+fib(30)
+```
+
+Fremfor at definere a og b inde i funktion kan vi give funktionen nogle standard værdier, som kan ændres ved et evt kald til funktionen. Herunder en variant af fibonnaci-funktionen:
+
+```javascript
+function fib(N,a=0,b=1){
+    numbers = []
+    while numbers.length < N:
+        a = b
+        b = a + b
+        numbers.push(a)
+    console.log("Fibonacci tal" , numbers)
+}
+//kald til fib
+fib(10) // printer de 10 første fibonnaci tal med start værdierne 0 og 1
+fib(20,1,3) // printer de 20 første fibonnaci tal med start værdierne 1 og 3
+fib(30,0,7) // printer de 30 første fibonnaci tal med start værdierne 0 og 7
+```
 
 ## Input fra mus, tekstfelter og knapper ved brug af funktioner
 
@@ -172,15 +206,11 @@ function greet() {
 }
 ```
 
-
-
-
-
 ## Returnere i en funktion
 
 Indtil nu har vi enten printet i funktionen eller bare ændret på nogle værdier. Ofte ønsker man at få et output fra funktionen, som man kan gemme i anden variable eller lignende til senere brug. 
 
-Til det bruges return: 
+Til det bruges nøgleordet `return`: 
 
 ```javascript
 function beregnKvadrat(x) {
@@ -201,8 +231,22 @@ let name = sayHello('Henrik'); // kalder funktionen med argumentet Henrik
 ```
 
 
-Her gemmer vi resultatet fra funktionen ud i en variable. Bemærk det er med vilje, at vi har givet variablen samme navn (altså _name_). Det er for at indikere, at parametrenavne er kun tilgængelige i funktionen.
+Her gemmer vi resultatet fra funktionen ud i en variable. Bemærk det er med vilje, at vi har givet variablen samme navn (altså `name`). Det er for at indikere, at parametrenavne  kun er lokalt tilgængelige i funktionen.
 
+Vi kan også udvide vores fibonacci-funktion, så den i stedet returnerer en liste af fibonacci tal:
+
+```javascript
+function fib(N,a=0,b=1){
+    numbers = []
+    while numbers.length < N:
+        a = b
+        b = a + b
+        numbers.push(a)
+    return numbers
+}
+//kald til fib
+L= fib(10) // opsamler de 10 første tal i listen L
+```
 
 ## Øvelser
 
