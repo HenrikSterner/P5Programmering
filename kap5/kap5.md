@@ -379,8 +379,7 @@ function setup() {
   }
 }
 ```
-Bemærk måden vi refererer til flerdimensionelle arrays er igen ved brug af firkantede parenteser.  Første firkantede parenteser refererer til index i arrayet, der opbevarer en samling af arrays som beskriver nogle cirkler, mens de næste firkantede parenteser refererer til de konkrete cirkler. 
-
+Bemærk måden vi refererer til flerdimensionelle arrays er igen ved brug af firkantede parenteser.  Første firkantede parenteser refererer til index i det ydre array, der opbevarer en samling af indre arrays som beskriver nogle cirkler, mens de næste firkantede parenteser refererer til de konkrete cirkler. 
 
 ## Øvelser
 
@@ -487,7 +486,49 @@ function setup() {
 ```
 
 20. Tegn en tændstiksmand et sted til venstre på skærmen og en figur til højre for. Når du trykker på tasten K (for kast) sendes en cirkelformet genstand afsted ved en kasteparabel. Tegn banekurven og undersøg om genstanden rammer figuren til højre.
+21. Betragt følgende kode. Hvad gør koden og hvad kunne være et godt navn for funktionen, som kaldes "FunktionUdenOrdentligtNavn". Prøv at håndkøre funktionen med arrayet [4, 3, 5, 2, 1]:
 
+```javascript
+function FunktionUdenOrdentligtNavn(tal) {
+  let i = tal.length ‐ 1;
+  let antalSammenligninger = 0;
+  while (i >= 1) {
+    for (var j = 0; j < i; j++) {
+      x = tal[j];
+      y = tal[j + 1];
+      antalSammenligninger += 1;
+      if (x > y) {
+        tal[j] = y
+        tal[j + 1] = x
+      }
+    }
+    i ‐= 1;
+  }
+  console.log("Færdig. Der blev foretaget", antalSammenligninger, "sammenligninger
+");
+  return tal;
+}
+console.log(FunktionUdenOrdentligtNavn([4, 3, 5, 2, 1]));
+```
+Hvor mange sammenligninger ville der mon blive foretaget, hvis arrayet bestod af $n$-elementer. 
+22. Betragt følgende kode og beskriv hvad der sker:
+```javascript
+function setup() {
+  createCanvas(400, 400);
+  let cirkler = []
+  let antalcirkler = 20   
+  for(let i = 0;i<20;i++)
+  {
+    let x1 = random(400)
+    let y1 = random(400)
+    let r1 = random(100)
+    cirkel = [x1,y1,r1]
+    cirkler.push(cirkel)
+    circle(x1,y1,r1)
+  }
+}
+```
+Skriv noget kode der identificerer om der er nogle af cirklerne som overlapper. 
 
 ## Projekt: Opsparing eller aktier?
 
