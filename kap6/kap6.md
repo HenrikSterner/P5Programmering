@@ -1,10 +1,12 @@
 # 6. Funktioner
 
-Funktioner kan betragtes som små afsluttede programmer i programmet. Når først de mestres  er de et ekstremt kraftfuldt værktøj, som kan medvirke til at skabe overskuelighed og læsbarhed, en højere grad af genbrugelighed af sin kode, samt nemmere at rette og finde fejl og endelig at distribuere arbejdet ud, så flere mennesker kan arbejde på samme program.
+Funktioner kan betragtes som små afsluttede programmer i programmet. De kan tage input og returnere output, men behøver ikke at gøre nogle af delene. De er helt centrale i forhold til at skabe mere overskuelig og læsbar kode. Det understøtter nemmere og hurtigere fejlretning, hvis man kan lokalisere en evt fejl i en bestemt funktion fremfor hele programmet.  
+Ydermere understøtter funktioner højere grad af genbrugelighed af ens kode, hvilket er essentielt i forhold til at øge ens produktivitet som programmør. Vi finder nemlig ofte ud af, at selvom vi laver forskellige løsninger på forskellige problemer, så går mange af de samme udfordringer igen.  Endelig muliggør funktioner også i højere grad at distribuere arbejdet ud, så flere mennesker kan arbejde på samme program og man får nemmere ved at dele sine kode med andre, så de kan få gavn af ens arbejde. 
+Funktioner er med andre ord et helt essentielt værktøj i enhver programmørs værktøjskasse. 
 
 
 ## Konstruktion af en funktion
-Vi har allerede set flere eksempler på funktioner såsom setup og draw. Herunder en definition af funktionsbegrebet:
+Vi har allerede set flere eksempler på hvorledes funktioner kan konstrueres. Bare tænk på `setup` og `draw`. Herunder en definition af funktionsbegrebet:
 
 
 ```javascript
@@ -17,18 +19,64 @@ Vi har allerede set flere eksempler på funktioner såsom setup og draw. Herunde
 ```
 
 
-<code>navn<strong> </strong></code>skal erstattes med navnet for en funktion. Det er vigtigt med sigende funktionsnavne og være obs på, at der er forskel på små og store bogstaver. Det letter læsbarheden og forståelsen af programmets funktionalitet, hvis man har tildelt sine funktioner nogle navne der både er konsistente og fortæller noget om hvad funktionen gør.
+`navn` skal erstattes med navnet for en funktion. Det er vigtigt med sigende funktionsnavne og være opmærksom på, at der er forskel på små og store bogstaver. Det letter læsbarheden og forståelsen af programmets funktionalitet, hvis man har tildelt sine funktioner nogle navne der både er konsistente og fortæller noget om hvad funktionen gør.
+Parenteserne skal sættes uanset hvad. Vi skal senere se hvorfor de er relevante. 
 
-Herunder en funktion, der printer et navn ud:
-
+Herunder en funktion, der printer lidt tekst ud:
 
 ```javascript
 function sayHello() {
-  console.log('Hello Henrik');
+  console.log('Hej Henrik');
+  console.log(`Hvordan går det?`)
 }
-sayHello(); // kalder funktionen
+sayHello(); // kalder funktionen 
+```
+Når funktionen kaldes ved sit navn, så afvikles de instruktioner, som står i funktionens krop. 
+
+Herunder et lidt mere avanceret eksempel:
+
+```javascript
+function fib(){
+    N = 10
+    numbers = []
+    let a = 0
+    let b = 1
+    while numbers.length < N:
+        a = b
+        b = a + b
+        numbers.push(a)
+    console.log("Fibonacci tal" , numbers)
+}
 ```
 
+Funktionen returner en liste af de 10 første fibonacci tal (en talfølge som starter med 0, 1 og næste tal er så summen af de to foregående tal). 
+
+
+## Konstruktion af en funktion med parametre og argumenter
+Vi nævnte i starten, at funktioner minder lidt om små programmer i programmet. De kan ligesom programmer og så tage et input. Bl.a. i form af en eller flere variable/lister eller lignende. Herunder en generel definition:
+
+```javascript
+ function navn(x1, x2, x3, …,xn) //funktionshoved
+  {
+    //instruktioner -  funktionskrop
+    //...
+    //...
+  }
+```
+Her angiver x1, x2, x3, …, xn argumenter eller input til funktionen. 
+
+Her kommer et indledende eksempel:
+
+
+```javascript
+let myName = 'Henrik';
+function sayHello(name) {
+  console.log('Hello ' + name + '!');
+}
+sayHello(myName); // kalder funktionen med argumentet 'Henrik'
+```
+
+Bemærk, at når man har en konkret værdi, der evt er gemt i en variable, kaldes parameteren for argument i kommentaren. Parameter og argument blandes ofte sammen, men man bør være opmærksom på, at en inputvariabel i en funktionsdefinition kaldes en parameter men ved udførselspunktet, når den får en faktisk værdi kaldes denne et argument (eller formel parameter).
 
 
 ## Input fra mus, tekstfelter og knapper ved brug af funktioner
@@ -73,7 +121,7 @@ function keyTyped() {
 }
 ```
 
-En anden relevant funktion i forbindelse med tastaturtryk kunne være når man frigiver trykket på en tast. Her bruges funktionen keyRelased().
+En anden relevant funktion i forbindelse med tastaturtryk kunne være når man frigiver trykket på en tast. Her bruges funktionen ´keyRelased()`.
 
 Herunder et eksempel på hvordan man laver en funktion, der håndterer at der trykkes på en knap, som oprettes med den indbyggede funktion `createButton('Tekst på knappen')`:
 
@@ -126,34 +174,6 @@ function greet() {
 
 
 
-## Konstruktion af en funktion med parametre
-Vi nævnte i starten, at funktioner minder lidt om små programmer i programmet. De kan ligesom programmer og så tage et input. Bl.a. i form af en eller flere variable/lister (som :
-
-```javascript
- function navn(x1, x2, x3, …,xn) //funktionshoved
-  {
-    //instruktioner -  funktionskrop
-    //...
-    //...
-  }
-```
-
-
-Her angiver x1, x2, x3, …, xn parametre eller input til funktionen. 
-
-Her kommer et indledende eksempel:
-
-
-```javascript
-let myName = 'Henrik';
-function sayHello(name) {
-  console.log('Hello ' + name + '!');
-}
-sayHello(myName); // kalder funktionen med argumentet 'Henrik'
-```
-
-
-Bemærk, at når man har en konkret værdi, der evt er gemt i en variable, kaldes parameteren for argument i kommentaren. Parameter og argument blandes ofte sammen, men man bør være opmærksom på, at en inputvariabel i en funktionsdefinition kaldes en parameter men ved udførselspunktet, når den får en faktisk værdi kaldes denne et argument (eller formel parameter).
 
 
 ## Returnere i en funktion

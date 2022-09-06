@@ -486,13 +486,13 @@ function setup() {
 ```
 
 20. Tegn en tændstiksmand et sted til venstre på skærmen og en figur til højre for. Når du trykker på tasten K (for kast) sendes en cirkelformet genstand afsted ved en kasteparabel. Tegn banekurven og undersøg om genstanden rammer figuren til højre.
-21. Betragt følgende kode. Hvad gør koden og hvad kunne være et godt navn for funktionen, som kaldes "FunktionUdenOrdentligtNavn". Prøv at håndkøre funktionen med arrayet [4, 3, 5, 2, 1]:
+21. Betragt følgende kode. Hvad gør den?. Hvad sker der med  arrayet [4, 3, 5, 2, 1]?:
 
 ```javascript
-function FunktionUdenOrdentligtNavn(tal) {
-  let i = tal.length ‐ 1;
-  let antalSammenligninger = 0;
-  while (i >= 1) {
+let tal = [4, 3, 5, 2, 1]
+let i = tal.length ‐ 1;
+let antalSammenligninger = 0;
+while (i >= 1) {
     for (var j = 0; j < i; j++) {
       x = tal[j];
       y = tal[j + 1];
@@ -503,14 +503,11 @@ function FunktionUdenOrdentligtNavn(tal) {
       }
     }
     i ‐= 1;
-  }
-  console.log("Færdig. Der blev foretaget", antalSammenligninger, "sammenligninger
-");
-  return tal;
 }
-console.log(FunktionUdenOrdentligtNavn([4, 3, 5, 2, 1]));
+console.log("Færdig. Der blev foretaget", antalSammenligninger, "sammenligninger");
+console.log(tal);
 ```
-Hvor mange sammenligninger ville der mon blive foretaget, hvis arrayet bestod af $n$-elementer. 
+Hvor mange sammenligninger ville der mon blive foretaget, hvis arrayet bestod af $n$-elementer? 
 22. Betragt følgende kode og beskriv hvad der sker:
 ```javascript
 function setup() {
