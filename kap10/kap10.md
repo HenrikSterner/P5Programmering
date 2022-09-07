@@ -323,7 +323,7 @@ class PiratFish extends Fish
 
 13. Udvid nu klasserne, så hvis rovdyrene er sultne og kolliderer med pattedyr, så spises pattedyr. Hvis de ikke er sultne, så får pattedyrene lov at slippe. Afprøv koden i praksis.
 
-## Projekter
+## Projekt: Scene-generator
 I det følgende projekt er det endelige produkt en automatisk konstruktion af en scene sat sammen af forskellige geometriske figurer. Scenen kan eksempelvis forestille huse med træer, mennesker, blomster, skyer eller lignende. Man kan forestille sig, at denne scene generator kan bruges i spil, kunst eller til at simulere forskellige fysiske fænomener. 
 En scene kunne eksempelvis bestå af et hus, der består af en trekant ovenpå en firkant, nogle skyer bestående af overlappende cirkler osv. 
 Til at starte med skal konstrueres en GeometricFigure, der rummer nogle grundlæggende egenskaber ved en geometrisk figur. Det kunne være farve, form, koordinater m.m. Som børn til GeometricFigure oprettes forskellige primitive geometriske figurer såsom cirkler, linjestykker, trekanter, firkanter, polygoner... 

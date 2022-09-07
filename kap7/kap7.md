@@ -201,6 +201,7 @@ function draw() {
 }
 class Ball {
   constructor() {
+    // vi opretter to vektorer
     this.position = new createVector(random(100), random(100));
     this.velocity = new createVector(random(1,4), random(1,5));
   }
@@ -223,13 +224,24 @@ class Ball {
 }
 ```
 
-6. Udvid koden i 5. så der er fem forskellige cirkler med forskellige radier der bevæger sig rundt med forskellige hastigheder. Implementer en metode der giver point hvis der bliver trykket på cirklerne. De små og hurtigt bevægende cirkler skal give flere point.
-7. Konstruer en klasse der repræsenterer en fugl og lav metoder til at animere at den flyver og den bevæger sig vandret over skærmen. Det må gerne være en meget simpel fugl.
-8. Udvid med en simpel rektangulær riffel i bunden af skærmen, der skyder ellipseformede kugler af sted i den retning, der klikkes med musen.
-9. Konstruer en animation vha klasser, der visualiserer en række dominobrikker der vælter fra siden. Brug simple rektangler.
-10. Konstruer en klasse for en person. Klassen skal kunne tegne personen (bare en tændstiksmand). Lav metoder der kan bevæge arme og ben i stop motion stil ved at trykke på bestemte taster.
-11. Udvid 7)  så man kan gå fra venstre mod højre på skærmen. Lav flere personer der går efter hinanden.
-12. Lav en tændstiksmand, der kan danse nogle meget simple bevægelser vha selvvalgte taster. Brug klasser i implementeringen.
+6. Udvid koden i 5 med en metode, der tager en anden bold og returnerer hvorvidt de overlapper/kolliderer.
+7. Udvid koden i 5. så der er fem forskellige cirkler med forskellige radier der bevæger sig rundt med forskellige hastigheder. Implementer en metode der giver point hvis der bliver trykket på cirklerne. De små og hurtigt bevægende cirkler skal give flere point.
+8. Konstruer en klasse der repræsenterer en cirkel. Dvs. med attributter til at beskrive radius og placering samt metoder til at tegne og farvelægge cirklen. Udvid nu cirklen så den har en ekstra attribut, der beskriver farven af cirklen. Cirklen kan antage fem forskellige farver. Udvid draw, så den farvelægger cirklen efter den foreskrevne attribut.
+9. Konstruer en løkke, der genererer 100 af de nævnte cirkler fra forrige opgave med fire tilfældige farver. Skriv nu en funktion, der tager tre parametre (se nedenfor). De fire parametre består af listen af cirkler, koordinater. Funktionen har til opgave at finde farven for den nye cirkel ved at farvelæg den med den samme farve, som den cirkel der ligger nærmest den nye cirkel.
+```javascript
+function knn(cirkler, x, y, r)
+{
+
+}
+```
+10. Udvid koden i foregående opgave, så tager en ekstra parameter kaldet K, hvor K er et naturligt tal større end 1. Farvelæg nu cirklen efter den mest forekommende farve blandt de K nærmeste naboer til cirklen. Denne algoritme kaldes KNN (K-Nærmeste-Naboer) og er en basal, men vigtig algoritme indenfor maskinelæring og kunstig intelligens.
+11. Konstruer en klasse der repræsenterer en fugl og lav metoder til at animere at den flyver og den bevæger sig vandret over skærmen. Det må gerne være en meget simpel fugl.
+12. Udvid med en simpel rektangulær riffel i bunden af skærmen, der skyder ellipseformede kugler af sted i den retning, der klikkes med musen.
+13. Konstruer en animation vha klasser, der visualiserer en række dominobrikker der vælter fra siden. Brug simple rektangler.
+14. Konstruer en klasse for en person. Klassen skal kunne tegne personen (bare en tændstiksmand). Lav metoder der kan bevæge arme og ben i stop motion stil ved at trykke på bestemte taster.
+15. Udvid 7)  så man kan gå fra venstre mod højre på skærmen. Lav flere personer der går efter hinanden.
+16. Lav en tændstiksmand, der kan danse nogle meget simple bevægelser vha selvvalgte taster. Brug klasser i implementeringen.
+17. Lav et simpelt Pong-spil ved hjælp af klasser. En klasse til at repræsentere de to padler, som placeres i hver sin side. Bolden bevæger sig frem og tilbage, når den kolliderer med padlerne. Udvid Pong, så man kan have flere bolde i gang samtidig. Der er point til modstanderen hvis man ikke når at ramme bolden. I et af projekterne skal vi lave en kunstig intelligent modstander, så der har du også mulighed for at se hvorledes Pong kan laves. Men det er en god øvelse at lave det selv først.
 
 ## Projekt: Epidemi-simulation
 Konstruér et lærred med maksimal størrelse vha. de globale variabler windowWidth og windowHeight.
@@ -340,3 +352,326 @@ Nu bevæger n mennesker sig rundt på lærred. Du kan nu implementere følgende 
 1. Lad hvert menneske have sin egen farve ved at tilføje en farve-attribut til din constructor i Menneske-klassen og initialisere den til en bestemt farve, når du opretter et menneske.
 2. Skrive kode i draw-funktionen, der afgør om et menneske kolliderer med et andet menneske. Vink: Benyt en ny for-løkke.
 3. Skriv kode, der inddeler mennesker i 3 kategorier: Smittet, usmittet og raske.
+
+
+## Projekt: Ping-Pong AI
+I nærværende skal vi lave en kunstig intelligent modstander til Pong. Man kan vælge mange strategier. Herunder er bare nævnt nogle få stykker:
+* "Løberen": Bevæger sig efter bolden.
+* "Midteren": Bevæger sig ind til midten, når man har slået og bevæger sig først igen når modstanderen har slået.
+* "Beregneren": Forsøger at beregne banekurven for bolden og placere sig derefter. 
+
+Projektet er rigtig sjovt, hvis man er flere om at udvikle hver sin AI, så  man kan lade dem konkurrece mod hinanden.
+
+Start med at danne dig et overblik over koden og forstå hvad der sker. 
+Projektet er øvelse i at bruge klasser samt deres metoder og attributter. Men ydermere vil det også øve dig i at læse større mængder af eksisterende kode. Det er vigtig kompetence som programmør, da man jo sjældent starter med at udvikle noget fra bunden men i stedet ofte tager udgangspunkt i en eksisterende kodebase. 
+Selve spillet og koden er vedlagt men kan også tilgås online på https://editor.p5js.org/henrik.sterner/sketches/0cVpDHzZU​
+
+Herunder er koden for pong-spillet fordelt på flere filer. Husk at inkludere filerne i din index.html (se et eksempel til sidst):
+
+```javascript
+//ball.js: Håndtere bolden og dens fysik
+class Ball
+{
+  constructor()
+  {
+    this.START_SPEED = 4;
+    this.x = 200;
+    this.y = 100;
+    this.w = 20;
+    let a = random(-PI/4,PI/4)+random([0,PI]);
+    this.vx = cos(a)*this.START_SPEED;
+    this.vy = sin(a)*this.START_SPEED;
+    this.history=[]//contains the 25 points from the last 25 frames
+  }
+  
+  move()
+  {
+    this.y +=this.vy;
+    this.x +=this.vx;
+  } 
+  
+  update()
+  {
+    if(this.y>=height || this.y<=0)
+    {
+      this.vy *= -1;
+    }
+    let v = createVector(this.x, this.y)
+    
+    if(this.history.length>25)
+    {
+      this.history=this.history.slice((1, 26))
+    }
+    this.history.push(v)
+
+  }
+  reset()
+  {
+    this.history = [];
+    this.x = 200;
+    this.y = 100;
+    let a = random(-PI/4,PI/4)+random([0,PI]);
+    this.vx = cos(a)*this.START_SPEED;
+    this.vy = sin(a)*this.START_SPEED;
+  }
+  show()
+  {
+    fill(255);
+    noStroke();
+    ellipse(this.x,this.y,this.w);
+  }
+}
+```
+Herefter følger koden for den menneske paddle:
+
+```javascript
+//peddle.js håndtere at man kan bevæge paddlen med tastaturet
+class Peddle
+{
+  constructor(side,name)
+  {
+    this.name = name
+    this.x = this.selectPosition(side);
+    this.w = 20;
+    this.h = 100;
+    this.y = 200//height;
+    this.vy = 2;     
+  }
+
+  selectPosition(side)
+  {
+    if(side==="Left") return 10
+    if(side==="Right") return 390
+  }
+
+  update()
+  {
+    if(this.y>=height-50 || this.y<=50)
+    {
+      this.vy *=-1;
+    }
+  }
+  change_dir(y)
+  {
+    this.vy = y;
+  }
+  // ballx, bally er boldens nuværende postition
+  // ballxspeed, ballyspeed boldens velocity 
+  // history er en liste af vektorer der pejer på de sidste 25 pkt bolden har været
+  // Paddlex og Paddley er positionen af den anden paddle
+ 
+  move(ballx,bally,ballxspeed, ballyspeed, history,Paddlex,Paddley)
+  {
+    //The runner
+    this.y +=this.vy; 
+  }
+  show()
+  {
+    rect(this.x,this.y,this.w,this.h);
+  }
+  
+}
+```
+Endelige følger en skabelon for AI-modstanderen. 
+
+```javascript
+  //peddleAI.js
+  // Det er her i peddleAI.js=> move at I skal skrive noget kode der får jeres AI til at rykke sig
+  // ballx, bally er boldens nuværende postition
+  // ballxspeed, ballyspeed boldens velocity 
+  // history er en liste af vektorer der pejer på de sidste 25 pkt bolden har været
+  // Paddlex og Paddley er positionen af den anden paddle
+class PeddleAI
+{
+  constructor(side, name)
+  {
+    this.name = name
+    this.x = this.selectPosition(side);
+    this.w = 20;
+    this.h = 100;
+    this.y = 200//height;
+    this.vy = random([-2,2]);  
+  }
+
+  selectPosition(side)
+  {
+    if(side==="Left") return 10
+    if(side==="Right") return 390
+  }
+
+  update()
+  {
+    if(this.y>=height-50 || this.y<=50)
+    {
+      this.vy *=-1;
+    }
+  }
+  change_dir(y)
+  {
+    this.vy = y;
+  }
+
+  
+  move(ballx,bally,ballxspeed, ballyspeed, history,Paddlex,Paddley) 
+  {
+    //The chaser
+     
+    if(bally>this.y){
+      this.vy = 2
+      this.y = this.y+this.vy
+    }
+    else if(bally<this.y){
+      this.vy = -2
+      this.y = this.y + this.vy
+    }
+    
+    //this.y +=this.vy; bare køre op og ned 
+  }
+
+
+
+  show()
+  {
+    rect(this.x,this.y,this.w,this.h);
+  }
+  
+}
+```
+
+Efterfølgende er her sketch.js som samler de andre klasser:
+
+```javascript
+
+let r_p;  // right paddle
+let l_p;  // left paddle
+let ball;
+let prev_x = 0;
+
+let score1 = 0;
+let score2 = 0;
+const SPEED_UP = 1.02;
+
+function setup() {
+  createCanvas(400, 400);
+  rectMode(CENTER);
+  l_p= new Peddle("Left","The Runner");
+  r_p = new PeddleAI("Right","The Chaser");
+  ball = new Ball();
+}
+
+function moveHuman() //left side can be moved manually using arrows
+{
+    l_p.vy = 0
+    if(keyIsDown(UP_ARROW))
+    {
+      if(l_p.y<=50)
+      {
+        l_p.vy *=-1;
+      }
+      else {
+        l_p.y-=2
+      }
+      
+    }      
+    if(keyIsDown(DOWN_ARROW))
+    {
+      if(l_p.y>=height-50)
+      {
+        l_p.vy *=-1;
+      }
+      else {
+        l_p.y+=2
+      }
+    }
+    
+}
+function draw() {
+  background(0);
+  textSize(20);
+  text(l_p.name,30,50)
+  text(score1,45,25);
+  
+  text(r_p.name,290,50)
+  text(score2,340,25);
+
+  //moveHuman()   //uncomment to move left side manually
+  
+  l_p.move(ball.x,ball.y, ball.vx, ball.vy, ball.history,r_p.x,r_p.y);   //changes the y value using velocity
+  r_p.move(ball.x,ball.y, ball.vx, ball.vy, ball.history,l_p.x,l_p.y); //AI movement
+  r_p.update(); //checks if paddle is outside border
+  l_p.update(); //checks if paddle is outside border
+  l_p.show();  //show the paddle
+  r_p.show();   //show the paddle
+  
+  ball.move();
+  ball.show(); 
+  ball.update();
+  
+  //if ball goes outside
+  if (ball.x>=width)
+  {
+    score1++
+    ball.reset();
+  }
+  if (ball.x<=0)
+  {
+    score2++;
+    ball.reset();
+    
+  }
+
+  //detect collision
+  /*
+  if(ball.x>=380 && ball.y<=(r_p.y+50) && ball.y>=(r_p.y-50))
+  {
+    ball.vx *=-1;
+    ball.vx *= SPEED_UP;
+    ball.vy *= SPEED_UP;
+  }
+  
+  if(ball.x>=20 && ball.y<=(l_p.y+50) && ball.y>=(l_p.y-50))
+  {
+    ball.vx *=-1;
+    ball.vx *= SPEED_UP;
+    ball.vy *= SPEED_UP;
+  }
+  */
+  let dy = 50;
+  
+  //detect collision
+  if(ball.x >= 380 && prev_x < 380 && ball.y<=(r_p.y+dy) && ball.y>=(r_p.y-dy)) {
+    ball.vx *=-1;
+    ball.vx *= SPEED_UP;
+    ball.vy *= SPEED_UP;
+  }
+  
+  if(ball.x <= 20 && prev_x > 20 && ball.y<=(l_p.y+dy) && ball.y>=(l_p.y-dy)) {
+    ball.vx *=-1;
+    ball.vx *= SPEED_UP;
+    ball.vy *= SPEED_UP;
+  }
+  prev_x = ball.x
+  
+}
+```
+Til sidst et udsnit af html-filen. Forudsætter javascript filerne ligger samme sted som index.html:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+    <script src="peddle.js"></script>
+    <script src="peddleAI.js"></script>
+    <script src="ball.js"></script>
+  
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+    <script src="sketch.js"></script>
+  </body>
+</html>
+```
