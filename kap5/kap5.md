@@ -525,7 +525,7 @@ function setup() {
   }
 }
 ```
-Skriv noget kode der identificerer om der er nogle af cirklerne som overlapper. 
+Skriv noget kode der identificerer om der er nogle af cirklerne som overlapper. Lav en ny liste for hver cirkel, der rummer index på de cirkler, som overlapper. Bemærk to cirkler overlapper hvis afstanden fra de to centre er mindre end summen af deres radier. 
 
 ## Projekt: Opsparing eller aktier?
 
