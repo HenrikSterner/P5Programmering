@@ -96,7 +96,7 @@ fib(20)
 fib(30)
 ```
 
-Fremfor at definere a og b inde i funktion kan vi give funktionen nogle standard værdier, som kan ændres ved et evt kald til funktionen. Herunder en variant af fibonnaci-funktionen:
+Fremfor at definere a og b inde i funktion kan vi give funktionen nogle standard værdier, som kan ændres ved et evt kald til funktionen. Herunder en variant af fibonnaci-funktionen, der giver mulighed for at ændre på de første to værdier i talfølgen ved at ændre på funktionens parametre:
 
 ```javascript
 function fib(N,a=0,b=1){
@@ -113,12 +113,54 @@ fib(20,1,3) // printer de 20 første fibonnaci tal med start værdierne 1 og 3
 fib(30,0,7) // printer de 30 første fibonnaci tal med start værdierne 0 og 7
 ```
 
+## Returnere i en funktion
+
+Indtil nu har vi enten printet i funktionen eller bare ændret på nogle værdier. Ofte ønsker man at få et output fra funktionen, som man kan gemme i anden variable eller lignende til senere brug. 
+
+Til det bruges nøgleordet `return`, som samtidig sørger for at vi returnerer fra funktionen: 
+
+```javascript
+function beregnKvadrat(x) {
+  return x * x;
+}
+const resultat = beregnKvadrat(4); // returner 16
+console.log(resultat); // printer '16' til konsolen
+```
+Det at returnere betyder populært sagt, at vi kvitter funktionen hvorfor linjer skrevet efter en `return` aldrig vil blive udført. 
+
+Eller vores foregående eksempel med navn:
+
+```javascript
+function sayHello(name) {
+  console.log('Hej ' + name + '!');
+  return name;
+}
+let name = sayHej('Henrik'); // kalder funktionen med argumentet Henrik
+```
+
+Her gemmer vi resultatet fra funktionen ud i en variable. Bemærk det er med vilje, at vi har givet variablen samme navn (altså `name`). Det er for at indikere, at parametrenavne  kun er lokalt tilgængelige i funktionen, så `name` i kroppen er en anden variable end den vi samler returværdien op i. Undervejs i funktionen skriver vi i øvrigt til konsollen. Det kan man altid gøre, men så snart vi kalder `return` så returnerer vi fra funktionen.  
+
+Vi kan også udvide vores fibonacci-funktion, så den i stedet returnerer en liste af fibonacci tal:
+
+```javascript
+function fib(N,a=0,b=1){
+    numbers = []
+    while numbers.length < N:
+        a = b
+        b = a + b
+        numbers.push(a)
+    return numbers
+}
+//kald til fib
+L= fib(10) // opsamler de 10 første tal i listen L
+```
+
+
 ## Input fra mus, tekstfelter og knapper ved brug af funktioner
 
 Funktioner kan være særligt gode i forbindelse med at håndtere input fra forskellige enheder. Det skal vi se eksempler på herunder.
 
 Herunder en funktion, som håndtere input fra tastatur:
-
 
 ```javascript
 let value = 0;
@@ -138,7 +180,6 @@ function keyPressed() {
 Der er i øvrigt en lang række keycodes eksempelvis: BACKSPACE, DELETE, ENTER, RETURN, TAB, ESCAPE, SHIFT, CONTROL, OPTION, ALT, UP_ARROW, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW.
 
 Hvis du gerne vil kende forskel på små og store bogstaver så kan du bruge keyTyped():
-
 
 ```javascript
 let value = 0;
@@ -206,48 +247,6 @@ function greet() {
 }
 ```
 
-## Returnere i en funktion
-
-Indtil nu har vi enten printet i funktionen eller bare ændret på nogle værdier. Ofte ønsker man at få et output fra funktionen, som man kan gemme i anden variable eller lignende til senere brug. 
-
-Til det bruges nøgleordet `return`: 
-
-```javascript
-function beregnKvadrat(x) {
-  return x * x;
-}
-const resultat = beregnKvadrat(4); // returner 16
-console.log(resultat); // printer '16' til konsolen
-```
-
-Eller vores foregående eksempel med navn:
-
-```javascript
-function sayHello(name) {
-  console.log('Hello ' + name + '!');
-  return name;
-}
-let name = sayHello('Henrik'); // kalder funktionen med argumentet Henrik
-```
-
-
-Her gemmer vi resultatet fra funktionen ud i en variable. Bemærk det er med vilje, at vi har givet variablen samme navn (altså `name`). Det er for at indikere, at parametrenavne  kun er lokalt tilgængelige i funktionen.
-
-Vi kan også udvide vores fibonacci-funktion, så den i stedet returnerer en liste af fibonacci tal:
-
-```javascript
-function fib(N,a=0,b=1){
-    numbers = []
-    while numbers.length < N:
-        a = b
-        b = a + b
-        numbers.push(a)
-    return numbers
-}
-//kald til fib
-L= fib(10) // opsamler de 10 første tal i listen L
-```
-
 ## Øvelser
 
 1. Lav først en funktion, der printer summen af tallene 2 og 3. Udvid funktionen, så den kan printe summen af to vilkårlige parametre a og b. Afprøv funktionen på både tal og strenge. Hvad bliver resultatet? 
@@ -282,6 +281,88 @@ function draw() {
   }
 }
 ```
+12.  Skriv en funktion, der tegner et simpelt hus på baggrund af mindst fem parametre. Det kunne f.eks. være placering af huset på kanvas, bredde, længde, farven af huset, antallet af etager, antallet af vinduer etc. Prøv funktionen. Du bestemmer selv formen af huset.
+13.  Lav en funktion, der på baggrund af mindst tre parametre tegner et træ. Det  kunne f.eks. være placering af huset på kanvas, bredde, længde etc. Du bestemmer selv formen af træet.
+14.  Lav en funktion, der konstruerer skyer, som glider henover skærmen. 
+15.  Sæt nu funktionerne sammen fra opgave de tre foregående opgaver, så du konstruerer et maleri bestående af et hus, nogler træer og skyer der kan bevæge sig henover himlen.
 
 ## Projekt: Lommeregner
 Lav en lommeregner. Den behøver bare at kunne de helt basale regnearter samt kvadratrod, potens, fakultet, sin, cos, tan og potens, der alle skal implementeres som funktioner. 
+Du skal være velkommen til at udvide lommeregneren.
+
+## Projekt: Kryds og bolle
+I det følgende skal vi lave et simpelt kryds og bolle spil ved brug af funktioner.
+Herunder ses skelettet, som man kan eller bør tage udgangspunkt i. Er man flere om at udvikle på spillet kan man aftale at dele arbejdet op og efterfølgende overveje hvad gik godt og hvad gik mindre godt? 
+Hvis man gerne vil kode i samme dokument kan man overveje at bruge Live Share plugin til Visual Studio Code. Bemærk at der til sidst er en `setup` funktion, som P5 forventer det.
+Det er ikke nødvendigt at bruge draw. 
+```javascript
+
+//- represents place not taken
+// x and o means player inseret
+
+// 2-dim array 
+board = [["-","-","-"], // first list corresponds to cells i first row
+         ["-","-","-"], 
+         ["-","-","-"]]
+
+playerTurn = random(['x','o'])
+
+// implement function that draws the board in console
+function showBoard()
+{
+  //draw the lines
+}
+    
+
+// cleans the board and fill it with "-""
+function cleanBoard()
+{
+
+}
+  
+// implement function that inserts a piece (x/o) in the board at index [x][y]
+function insertPiece(x,y, piece):
+{
+
+}
+
+// asks for next players move (notice variable playerturn has to be changed)
+// this can be done in console or input from textfield
+function askInput()
+{
+
+}
+
+// implement function that returns x/o if anybody won, draw if there is no # places and "unfinished" otherwise
+function checkStatus()
+{
+
+}
+
+// implement function that plays an AI
+function playerAI()
+{
+ 
+}
+
+// implement main
+function main()
+{
+    while True:
+        if checkStatus()=="unfinished" :
+            askInput()
+        else:
+            if checkStatus()=="x":  
+                pass              
+            elif checkstatus()=="o":
+                pass
+            elif checkstatus()=="draw":
+                pass
+}
+
+// in setup we call main() 
+// you dont need to have a draw function
+function setup(){
+  main()
+}
+```
