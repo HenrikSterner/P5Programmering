@@ -1,14 +1,50 @@
 # 7. Objekter
 
-Et vigtigt begreb i programmering og softwareudvikling er objekter, som vi vil introducerer i nærværende afsnit. De spiller en central rolle i det objekt-orienteret programmeringsparadigme, hvor man groft sagt inddeler verden i objekter. Objekter bruges med andre ord til at sikre, at man kan implementerer og håndterer den enorme og stadigt voksende kompleksitet i verdenen. Objekter bruges i den sammenhæng til at indkapsle data samt inddrage relationer og abstraktioner mellem data, så vi herved opnår en form for modulær kode.
+Et vigtigt begreb i programmering og softwareudvikling i det hele taget er de såkaldte "objekter", som vi vil introducerer i nærværende afsnit. De spiller en central rolle i  objekt-orienteret programmering (forkortet OOP), som vel nok er den mest anvendte tilgang af professionelle programmører og softwareudviklere. 
 
-I det følgende handler det dog i første omgang blot om at få en fornemmelse for hvordan et objekt konstrueres og hvad de kan bruges til.
+Kort fortalt betragtes verdenen i OOP som opbygget af objekter. Objekter kan være alt muligt fra mennesker, dyr til ting osv. Grundlæggende gælder det for alle objekter, at de har to begreber knyttet til sig:
+1. Attributter: Der beskriver objektets nuværende tilstand. 
+2. Metoder: Dvs. en form for funktioner, der kan ændre på objektets nuværende tilstand. 
+   
+Objekter indkapsler med andre ord data og funktioner. Man kan tænke på dem som nogle containere, der ikke bare rummer statistiske værdier men også metoder til at ændre på disse værdier. Objekter kan have relationer til hinanden, de kan interagere med hinanden og ændre på hinandens tilstande. . 
+ 
+OOP bruges bl.a. til at sikre, at man bedre kan håndtere, overskue og implementere den enorme og stadigt voksende kompleksitet i programmer og systemer. Brugt rigtigt giver de ligesom funktioner pænere løsninger, der er nemmere at forstå, nemmere at udvide og modificere men også i højere grad at genbruge. 
 
+Til at starte med har vi fokus på at få en fornemmelse for hvordan et objekt konstrueres og hvad de kan bruges til.
 
 ## Oprette objekter 
+I Javascript konstrueres et objekt vha af nøgleordet “class”. Vi vil tillade at bruge klasse i stedet for class, når vi omtaler dem. Når man opretter en klasse konstrueres en datastruktur, der rummer både data eller egenskaber om det objekt, som klassen er en skabelon for, men også metoder (eller funktioner), der ændrer på objektets tilstand. 
 
-I Javascript konstrueres et objekt vha af nøgleordet “class”. Vi vil tillade at bruge klasse i stedet for class, når vi omtaler dem. Når man opretter en klasse konstrueres en datastruktur, der rummer både data eller egenskaber om objektet men også metoder (eller funktioner), der ændrer på objektets tilstand. Et eksempel på et objekt kunne være en cirkel. Herunder et eksempel på hvordan. En skabelon eller en klasse for en cirkel kunne se således ud: 	
+Vi konstruerer en klasse ved at skrive `class` efterfulgt af navnet på klassen. Navnet skal være i et ord. Herefter følger kroppen omkrænset af en start og slut krølparentes:
+```javascript
 
+class "Navn_på_klasse"
+{
+
+
+}
+```
+Klassen er vores skabelon, som kan bruges til at konstruere eller med et fint ord "instantiere" objekter af denne skabelon. Dvs. objekter er med andre ord konstrueret ud fra vores skabelon. 
+Når vi opretter et objekt dvs. en instans af klassen er vi typisk interesseret i at indlæse nogle grundlæggende egenskaber fra start af. Det gør vi ved brug af en såkaldt "konstruktør", som er en funktion eller metode, der har til formål at sætte nogle bestemte værdier på forhånd for den konkrete instans af klassen. I JS bruges nøgleordet ´constructor`. Herunder har vi udvidet klassen med konstruktører, der har mulighed for at tage ingen eller op til n parametre med angivet ved p1,..,pn :
+
+```javascript
+class "Navn_på_klasse"
+{
+  constructor()
+  {
+
+  }
+  //...
+  constructor(p1,p2,...,pn)
+  {
+
+  }
+}
+```
+Vi kan altså have lige så mange konstruktører, som vi ønsker. Men de skal hver især have forskellige antal parametre eller forskellige typer af parametre for at javascript kan forstå, hvilken konstruktør den skal anvende. 
+
+Lad os prøve at konkretisere det ved at lave en klasse for cirkler.
+En skabelon eller mere præcist en klasse for en cirkel kunne se ud: 	
 
 ```javascript
 class Cirkel{
@@ -18,12 +54,73 @@ class Cirkel{
    this.ypos = height/2;
    this.radius = 1;
   }
+ constructor(x,y,r) {
+   this.color = color(255);
+   this.xpos = x;
+   this.ypos = y;
+   this.radius = r;
+  }
 }
 ```
 
+Her angiver farve, position og radius nogle egenskaber ved en cirkel. Disse værdier kan naturligvis variere fra cirkel til cirkel. Vi bemærker, at der er to konstruktører. En der der selv generer alle værdier, mens den anden forventer at få nogle værdier.
 
-Her angiver farve, position og radius nogle egenskaber ved en cirkel. Der kan blive behov for at ændre på cirklens tilstand såsom at bevæge cirklen et andet sted end på skærmen og tegne cirklen. Det kan vi gøre ved at implementere en funktioner, der typisk kaldes metoder, når de flyttes ind i en klasse. Herunder kode igen nu med to metoder, move og draw:
+Man kan måske undre sig over hvad ´this´ betyder. I denne sammenhæng refererer `this` til den konkrete instans af klassen altså objektet. Hvert objekt er en cirkel, som skal kunne have forskellige egenskaber. Ved at bruge `this` får vi mulighed for at opbevare forskellige attributter hos de respektive cirkler. Igen er det en god ide at tænke på objekter som containere, der indeholder forskellige værdier.
 
+Vi kan nu oprette objekter vha. af vores klasse. Det gør vi ved brug af nøgleordet `new`:
+```javascript
+let V = new K(A)
+```
+Variablenavnet er repræsenteret ved "V" og skal erstattes af et sigende navn/forkortelse for den klasse, som vi opretter en instans af. "K" repræsenterer klassens navn, og A betegner en eller flere attributter (adskilt af komma), som man kan give med til konstruktøren. 
+
+Herunder eksempel der forhåbentlig giver en bedre forståelse end den generelle definition:
+
+```javascript
+let c1;
+let c2;
+function setup() {
+  createCanvas(400, 400);
+  c1 = new Cirkel(); //vi opretter et nyt cirkel-objekt vha new
+  c2 = new Cirkel(100,100,20); //vi opretter et nyt cirkel-objekt vha new 
+}
+```
+Vi har oprettet to forskellige cirkel-objekter med de to forskellige konstruktører her og gemt referencer til dem i de to variabler c1 og c2. Variablernes type er af typen "Cirkel". Vi har med andre ord konstrueret vores helt egen type. Vi bemærk i øvrigt, at variablerne i virkeligheden blot peger på en adresse til de to objekter. Det er vi mener, når vi skriver "referencer". 
+
+Som vi nævnte før, så rummer klasser også metoder, der kan ændre på objektets tilstand. Herunder har vi udvidet vores generelle klassedefinition med metoder. Vi skal tænke på metoder som funktioner. De kan tage et input og et output. Dvs. reelt er der bare tale om funktioner, men de kaldes typisk for "metoder", når de flyttes ind i en klasse. Herunder først en generisk formulering af metoder:
+
+
+
+```javascript
+class "Navn_på_klasse"
+{
+  constructor()
+  {
+
+  }
+  //...
+  constructor(p1,p2,...,pn)
+  {
+
+  }
+  // erstat metode1 med et sigende navn
+  // kan have ingen eller op til n parametre
+  metode1(p11,....p1n)
+  {
+
+  }
+  //...
+  // erstat metode1 med et sigende navn
+  // kan have ingen eller op til n parametre
+  metodeM(pm1,....pmn)
+  {
+
+  }
+}
+```
+Vi kan have ligeså mange metoder vi ønsker, der tager lige så mange parametre som vi ønsker, og vi kan sågar have metoder ved samme navn, men ligesom det gælder for konstruktører, så skal de have forskellige antal parametre eller typer af parametre, for at JS kan identificere hvilken metode, der skal anvendes. 
+
+Lad os konkretisere det i vores eksempel fra før med cirklen. 
+Der kan eksempelvis blive behov for at ændre på cirklens tilstand såsom at bevæge cirklen et andet sted end på skærmen samt at tegne cirklen:
 
 ```javascript
 class Cirkel{
@@ -45,10 +142,9 @@ class Cirkel{
 ```
 
 
-Bemærk flere vigtige ting her: 1)Vi skriver ikke længere function foran, når vi implementere en metode til en klasse. 2) Metode move tager to parametre mens draw ikke tager nogle. I metoden move bliver x og y brugt til at sætte centrums koordinaterne for x og y, der betegnes med xpos og ypos. 3) I metoden draw udnytter vi, at klassen har indlejret en række egenskaber, såsom centrum for cirklen, der betegnes med xpos og ypos.
+Bemærk flere vigtige ting her: 1) Selvom metoder reelt bare er funktioner, så skriver vi ikke længere function foran, når vi implementere en metode til en klasse. 2) Metode move tager to parametre mens draw ikke tager nogle. I metoden move bliver x og y brugt til at sætte centrums koordinaterne for x og y, der betegnes med xpos og ypos. 3) I metoden draw udnytter vi, at klassen har indlejret en række egenskaber, såsom centrum for cirklen, der betegnes med xpos og ypos.
 
 Herunder viser vi nu hvordan man kan bruge klassen til at oprette og bevæge en cirkel rundt på skærmen. Dvs. vi antager at koden ovenfor er tilføjet over funktionen setup:
-
 
 ```javascript
 let c;
@@ -62,11 +158,11 @@ function setup() {
 ```
 
 
-Bemærk her særligt konstruktionen af et nyt cirkel objekt. Vi bruger nøgleordet new. Vi giver den argumenterne 200, 200 og 50, som xpos, ypos og radius bliver sat til jf. Klasse-definitionen.
+Bemærk her særligt konstruktionen af et nyt cirkel objekt. Vi bruger nøgleordet new. Vi giver den argumenterne 200, 200 og 50, som xpos, ypos og radius bliver sat til jf. klasse-definitionen.
 
 Vi tegner herefter cirklen og flytter den til position (300,300). Afslutningsvis tegner vi den igen.
 
-Vi kunne let konstruere lige så mange cirkler som vi nu havde lyst til bare ved at bruge og vi skal i næste afsnit se hvordan vi kan opbevare mange af de samme objekter uden at skulle konstruere tilsvarende ligeså mange variabler. Men herunder følger et eksempel hvor vi har konstrueret to cirkler:
+Vi kunne let konstruere lige så mange cirkler som vi nu havde lyst til og vi skal i næste afsnit se hvordan vi kan opbevare mange af de samme objekter uden at skulle konstruere tilsvarende ligeså mange variabler. Men herunder følger et eksempel hvor vi har konstrueret to cirkler og kalder deres respektive metoder:
 
 
 ```javascript
