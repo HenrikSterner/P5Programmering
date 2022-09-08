@@ -1,6 +1,6 @@
 # 8. Rekursive funktioner
 
-Rekursive funktioner betegner funktioner, som kalder sig selv i deres funktionskrop. Dvs. funktioner der er selvrefererende. Tankegangen bag kaldes rekursion og kan være et godt værktøj til værktøjskassen herunder til at løse bestemte typer af problemer, som ikke nødvendigvis altid lader sig så let løse på anden vis. Ofte kan visse problemer løses mere elegant og kompakt ved brug af rekursion. Vi kan eksempelvis ofte omskrive funktion, der indrager iterative strukturer såsom løkker til rekursiv variant. 
+Rekursive funktioner betegner funktioner, som kalder sig selv i deres funktionskrop. Dvs. det er funktioner, som er selvrefererende. Tankegangen bag kaldes rekursion og kan være et godt værktøj til værktøjskassen herunder til at løse bestemte typer af problemer, som ikke nødvendigvis altid lader sig så let løse på anden vis. Ofte kan visse problemer løses mere elegant og kompakt ved brug af rekursion. Vi kan eksempelvis ofte omskrive funktion, der indrager iterative strukturer såsom løkker til rekursiv variant. 
 De typer problemer, der lader sig løse elegant ved brug af rekursion, er ofte problemer, som kan deles ind i mindre similære problemer.
 I det følgende skal vi se eksempler på rekursive funktioner og eksempler på hvor de kan være gode at bruge. 
 
@@ -63,6 +63,21 @@ function factorial(n)
 }
 factorial(3); // returnerer 6=1*2*3
 ```
+Herunder illustrerer vi hvorledes kaldene til funktionen foregår for `factorial(5)`:
+```javascript
+factorial(5)
+=5*factorial(4)
+=5*4*factorial(3)
+=5*4*3*factorial(2)
+=5*4*3*2*factorial(1)
+=5*4*3*2*1
+=120
+```
+Det kan illustreres med et rekursionstræ, som kunne se således ud:
+
+![Rekursionstræ fakultetsfunktion](../kap8/images/factree.png)
+
+
 Bemærk det rekursive kald hvor vi dekrementerer værdien af n med 1. På et tidspunkt vil funktionen blive kaldt med værdien $1$ hvorved at funktionen returnerer.
 Der hvor funktionen returnerer kaldes basistilfældet, mens der hvor funktionen kalder sig selv, benævnes ofte som det rekursive kald.
 
@@ -82,7 +97,8 @@ fibonacci(4); // returnerer 2
 ```
 Vi kan konstruere et såkaldt rekursionstræ, der viser hvordan funktionskaldene foregår:
 
-FIGUR
+
+![Rekursionstræ fibonacci funktion](../kap8/images/fibtree.png)
 
 Det fremgår af figuren hvorfor rekursive funktioner ikke nødvendigvis altid er de mest effektive implementationer. Problemet med den rekursive løsning er, at vi ender med relativt mange kald til funktionen, hvilket er med til at gøre den ineffektiv. Sættes $n=50$ er vi oppe på over 2 milliarder kald til funktionen og mange af disse beregninger er redundante forstået på den måde, at vi allerede har regnet funktionen med det givne argument.
 Det ændre dog ikke på, at vi får en rigtig pæn løsning der korresponderer nærmest en til en med den matematiske definition.
@@ -181,19 +197,47 @@ function branch(len){
 ```
 
 ## Øvelser
-1. Skriv en rekursiv funktion, der beregner eksponenten af et tal
-2. Skriv en rekursiv funktion, der tegner et kvadrat inde i et kvadrat inde i kvadrat indtil den når en vis dybde.
-3. Skriv en rekursiv funktion der undersøger om et tal er lige eller ulige
-4. Skriv en rekursiv funktion, der foretager binær søgning på en liste af tal.
-5. Skriv en rekursiv funktioner, der undersøger om et ord er et palindrome. Dvs. hvorvidt det læses forfra og bagfra på samme måde. 
-6. Skriv en rekursiv funktion der tegner en vandret linje, og nedenunder tegner samme vandrette linje, men hvor den miderste tredjedel er væk, fortsæt med at fjerne den miderste tredjedel indtil du har tegnet de første 15 linjer.
-7. Skriv en rekursiv funktion, der finder største fælles divisor af to tal
-8. Skriv en rekursiv funktion, der returnerer alle tænkelige permutationer af et ord (eksempel: ”abc” så er ”acb” en permutation.
-9.  Skriv en rekursiv funktion, der beregner mindste fælles divisor
-10.  Skriv en rekursiv funktion, der konstruerer og visualiserer Pascals Trekant.	
-11. Skriv en rekursiv funktion, der finder det største tal i en liste
-12. Skriv en rekursiv funktion, der beregner Tribonacci rækkefølgen  (starter med 0,0,1)
-13. Udvid koden for fraktaltræer, så der dannes grønne blade for enden af grenene.
+Herunder en række øvelser. Som minimum bør man lave 1. til og med 8. Gerne lav et af projekterne. 
+
+1. Forklar hvad funktionen gør og udskriv kaldene for sum(5):
+```javascript
+function sum(n) {
+  if (n == 0 || n == 1)
+    return 1;
+  if (n > 0)
+    return n + sum(n ‐ 1);
+}
+```
+2. Skriv en rekursiv funktion, der beregner eksponenten af et ta.
+3. Skriv en funktion der rekursivt skifter mellem at addere og subtrahere tal i en liste. Hvis listen eksempelvis er [5,3,1,2,4] så skal funktionen udregne: 5-3+1-2+4=5.
+4. Skriv en rekursiv funktion, der tegner et kvadrat inde i et kvadrat inde i kvadrat indtil den når en vis dybde.
+5. Skriv en rekursiv funktion der undersøger om et tal er lige eller ulige
+6. Hvad gør følgende funktion. Forklar koden i detaljer:
+```javascript
+function recBinSearch(n, arr) {
+  let mid = Math.floor(arr.length / 2);
+  if (arr.length === 1 && arr[0] != n) {
+    return false;
+  }
+  if (n === arr[mid]) {
+    return true;
+  } else if (n < arr[mid]) {
+    return recBinSearch(n, arr.slice(0, mid));
+  } else if (n > arr[mid]) {
+    return recBinSearch(n, arr.slice(mid));
+  }
+}
+```
+7. Skriv en rekursiv funktion, der undersøger om et ord er et palindrome. Dvs. hvorvidt det læses forfra og bagfra på samme måde. 
+8. Skriv en rekursiv funktion der tegner en vandret linje, og nedenunder tegner samme vandrette linje, men hvor den miderste tredjedel er væk, fortsæt med at fjerne den miderste tredjedel indtil du har tegnet de første 15 linjer.
+9. Skriv en rekursiv funktion, der finder største fælles divisor af to tal
+10. Skriv en rekursiv funktion, der returnerer alle tænkelige permutationer af et ord (eksempel: ”abc” så er ”acb” en permutation.
+11. Skriv en rekursiv funktion, der beregner mindste fælles divisor
+12. Skriv en rekursiv funktion der afgør om et naturligt tal er et primtal eller ej. 
+13.  Skriv en rekursiv funktion, der konstruerer og visualiserer Pascals Trekant.	
+14. Skriv en rekursiv funktion, der finder det største tal i en liste
+15. Skriv en rekursiv funktion, der beregner Tribonacci rækkefølgen  (starter med 0,0,1)
+16. Udvid koden for fraktaltræer, så der dannes grønne blade for enden af grenene.
 
 
 ## Projekt: Selv-similære figurer
