@@ -508,6 +508,7 @@ function draw() {
 Hver tast har sin egen keycode, som man kan finde på følgende side: [http://keycode.info/](http://keycode.info/).
 
 ## Øvelser
+Herunder følger en række øvelser. Lav som minimum øvelserne 1. til 16. 
 
 1. Som nævnt kan du hente finde musens position ved brug af variablerne `mouseX` og `mouseY`. Skriv noget kode, der printer musens position ud i konsollen. Du skal inddrage følgende to streng variabler i den tekst du udskriver:
 ```javascript

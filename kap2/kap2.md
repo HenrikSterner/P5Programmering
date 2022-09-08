@@ -252,7 +252,7 @@ I kapitel 18 gennemgår vi i langt flere detajler installationen og  brugen af V
 
 
 ## Øvelser 
-
+Herunder følger en række øvelser. Lav som minimum øvelserne 1. til 9. Dele af projektet kan også være sjovt at lave.  
 1. Tegn de forskellige geometriske former i forskellige farver 
 2. Gør baggrunden mørkeblå. Tegn to linjer der krydser diagonalt i en hvid farve. 
 3. Tegn OL-logoet i farver

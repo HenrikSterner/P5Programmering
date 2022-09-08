@@ -274,6 +274,7 @@ console.log(x>=z) // true
 ```
 
 ## Øvelser
+Herunder følger en række øvelser. Lav som minimum øvelserne 1. til 11 samt et projekt.  
 
 1. Overvej i det følgende hvad der printes i konsollen:
 ```javascript

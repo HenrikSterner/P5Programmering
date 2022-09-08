@@ -126,6 +126,7 @@ Det kan være en god ide relativt tidligt i sin læringsproces at få en forstå
 Ved hvert kapitel er der en række øvelser og større projekter. Det anbefales at lave så mange øvelser som muligt og gerne de projekter, som man finder interessante. Projekterne, er generelt noget større og åbne opgaver.
 
 ## Øvelser
+Herunder følger en række øvelser. Lav som minimum øvelserne 1. til 7.  
 1. Overvej nogle eksempler fra din hverdag hvor du i et eller andet omfang interagerer med programmer. Hvorledes påvirker disse programmer mon din eller andres adfærd?
 2. Hvorfor er det vigtigt, at vi får en bred og divers gruppe af udviklere til at kode fremtidens løsninger?
 3. Giv tre eksempler på hvor programmering kan bruges til at automatisere kedelige opgaver.
