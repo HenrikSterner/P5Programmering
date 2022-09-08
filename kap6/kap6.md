@@ -248,6 +248,7 @@ function greet() {
 ```
 
 ## Øvelser
+Herunder følger en række øvelser. Lav som minimum øvelserne 1. til 10. Lav desuden gerne et af projekterne.
 
 1. Lav først en funktion, der printer summen af tallene 2 og 3. Udvid funktionen, så den kan printe summen af to vilkårlige parametre a og b. Afprøv funktionen på både tal og strenge. Hvad bliver resultatet? 
 2. Lav en funktion der konstruerer en gul cirkel ud fra tre parametre, x, y og radius.

@@ -382,6 +382,8 @@ function setup() {
 Bemærk måden vi refererer til flerdimensionelle arrays er igen ved brug af firkantede parenteser.  Første firkantede parenteser refererer til index i det ydre array, der opbevarer en samling af indre arrays som beskriver nogle cirkler, mens de næste firkantede parenteser refererer til de konkrete cirkler. 
 
 ## Øvelser
+Herunder følger en række øvelser. Lav som minimum øvelserne 1. til 7 samt 13. til 18. 
+Derudover kan det anbefales at lave et af projekterne. 
 
 1. Forklar hvad følgende kode gør:
 ```javascript
@@ -451,7 +453,7 @@ function draw() {
 ```
 
 
-13. Hvad gør følgende kode? Prøv den gerne af i praksis og juster på de enkelte dele i løkken:
+14. Hvad gør følgende kode? Prøv den gerne af i praksis og juster på de enkelte dele i løkken:
 ```javascript
 function setup() {
   createCanvas(720, 400);
@@ -464,12 +466,12 @@ function setup() {
   }
 }
 ```
-14. Lav en løkke, der summer de første 100 tal og printer dem i konsollen.
-15. Lav en liste med 10 selvvalgte navne. Lav en ordsky på kanvas af navnene. Jo flere karakterer et navn består af, jo større skrift skal teksten være. 
-16. Lav en løkke, der tilføje de lige tal i en liste og de ulige tal i en anden liste. Skriv de lige tal tilfældige steder i højre side af kanvas og de ulige tal, tilfældige steder, i venstre side af kanvas.
-17. Betragt listen [7,4,5,6,9,1,2,8,3,10]. Skriv et program, der finder det største element i en liste, printer det i konsollen og fjerner det fra listen. Gentag denne procedure (gerne med en løkke inde i en løkke) indtil listen er tom.  Brug evt. en eller flere af operationerne `push`,`unshift`,`pop`,`shift`,`slice`. Hvad har du opnået
-18. Tegn en masse linjer der roterer om det samme centrum vha af løkker.
-19. Konstruer et koordinatsystem med midten af skærmen som centrum. Tegn graferne for en selvvalgt ret linje, en andengradsfunktion,  kvadratrodsfunktionen, den reciprokke funktion samt cos og sin. Herunder nogle eksempler på brugen af matematik i javascript:
+15. Lav en løkke, der summer de første 100 tal og printer dem i konsollen.
+16. Lav en liste med 10 selvvalgte navne. Lav en ordsky på kanvas af navnene. Jo flere karakterer et navn består af, jo større skrift skal teksten være. 
+17. Lav en løkke, der tilføje de lige tal i en liste og de ulige tal i en anden liste. Skriv de lige tal tilfældige steder i højre side af kanvas og de ulige tal, tilfældige steder, i venstre side af kanvas.
+18. Betragt listen [7,4,5,6,9,1,2,8,3,10]. Skriv et program, der finder det største element i en liste, printer det i konsollen og fjerner det fra listen. Gentag denne procedure (gerne med en løkke inde i en løkke) indtil listen er tom.  Brug evt. en eller flere af operationerne `push`,`unshift`,`pop`,`shift`,`slice`. Hvad har du opnået
+19. Tegn en masse linjer der roterer om det samme centrum vha af løkker.
+20. Konstruer et koordinatsystem med midten af skærmen som centrum. Tegn graferne for en selvvalgt ret linje, en andengradsfunktion,  kvadratrodsfunktionen, den reciprokke funktion samt cos og sin. Herunder nogle eksempler på brugen af matematik i javascript:
 
 ```javascript
   Math.PI;            // returner 3.141592653589793
@@ -485,8 +487,8 @@ function setup() {
   //man kan også bruge radians(grader), som konverterer grader til radianer
 ```
 
-20. Tegn en tændstiksmand et sted til venstre på skærmen og en figur til højre for. Når du trykker på tasten K (for kast) sendes en cirkelformet genstand afsted ved en kasteparabel. Tegn banekurven og undersøg om genstanden rammer figuren til højre.
-21. Betragt følgende kode. Hvad gør den?. Hvad sker der med  arrayet [4, 3, 5, 2, 1]?:
+21. Tegn en tændstiksmand et sted til venstre på skærmen og en figur til højre for. Når du trykker på tasten K (for kast) sendes en cirkelformet genstand afsted ved en kasteparabel. Tegn banekurven og undersøg om genstanden rammer figuren til højre.
+22. Betragt følgende kode. Hvad gør den?. Hvad sker der med  arrayet [4, 3, 5, 2, 1]?:
 
 ```javascript
 let tal = [4, 3, 5, 2, 1]
@@ -508,7 +510,7 @@ console.log("Færdig. Der blev foretaget", antalSammenligninger, "sammenligninge
 console.log(tal);
 ```
 Hvor mange sammenligninger ville der mon blive foretaget, hvis arrayet bestod af $n$-elementer? 
-22. Betragt følgende kode og beskriv hvad der sker:
+23. Betragt følgende kode og beskriv hvad der sker:
 ```javascript
 function setup() {
   createCanvas(400, 400);

@@ -180,6 +180,8 @@ function setup() {
 ```
 
 ## Øvelser
+Herunder følger en række øvelser. Lav som minimum øvelserne 1. til 7 samt et af projekterne.
+
 1. Hvilke egenskaber og metoder kunne være relevante for en bil, et dyr og et selvvalgt objekt som den tredje. Giv mindst 3 metoder og 3 egenskaber for hver af de tre objekter. Overvej egenskabernes datatyper og hvordan metoderne bør kodes. Metoderne må ikke være draw.
 2. Implementer en konstruktør med egenskaber og metoder for hver af de nævnte i 1.
 3. Implementer en draw metode, der kan tegne de tre objekter. Metoden skal gerne inddrage nogle af de 3 egenskaber for hver af de 3 objekter. Dvs. udfaldet af draw skal gerne påvirkes af ændringer i egenskaberne. Eksempelvis kan højden på en bil ændre tegningen af bilen.
