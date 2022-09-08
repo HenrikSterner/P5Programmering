@@ -96,10 +96,12 @@ Herunder en generel definition på brug af den boolske og-operator, der i javasc
 boolsk_udtryk_1 && boolsk_udtryk_2
 ```
 
-Udtrykket ovenfor kan også skrives med ampersander:
+De boolske udtryk kan også blot være to boolske variable:
+
+```javascript
+boolsk_variable_1 || boolsk_variable_2
 ```
-boolsk_udtryk_1 && boolsk_udtryk_2
-```
+
 
 For at et boolsk udtryk med AND skal evalures til sandt skal begge udtryk/variable være sande ellers vil det samlede udtryk blive falsk.
 
@@ -111,7 +113,7 @@ if (mouseX > 100 && mouseX < 300){
 ```
 I det her tilfælde skal musens `x`-værdi altså både være større end 100 og mindre end 300 for at baggrundsfarven skiftes. 
 
-Herunder et eksempel hvor vi AND benytter to boolske variable til at erklære en ny variable:
+Herunder et eksempel hvor vi `&&` benytter to boolske variable til at erklære en ny variable:
 
 ```javascript
 let canSwim = true;
@@ -125,6 +127,8 @@ Modsat forholder det sig med OR/eller-operatoren, der er repræsenteret ved to l
 ```javascript
 boolsk_udtryk_1 || boolsk_udtryk_2
 ```
+
+De boolske udtryk kan også blot være to boolske variable:
 
 ```javascript
 boolsk_variable_1 || boolsk_variable_2
@@ -177,6 +181,38 @@ Man kan kombinere disse operatorer til mere komplekse udtryk. Eksempelvis:
 let isMammal = !canSwim && !canFly;
 ```
 
+## Sammenligningsoperatorer `==`,`===`,`!=`,`===`
+I mange tilfælde kan det også være relevant at spørge om to udtryk eller to variable er ens. Til det bruger vi sammenligningsoperatorerne `==` og `===`. Begge operatorer sammenligner operandernes værdier men med en vigtig forskel. Hvis X og Y er operanderne gælder 
+
+```javascript
+X==Y // returnerer sand hvis X og Y er lig hinanden, men ikke nødvendigvis samme type
+X===Y // returnerer sand kun hvis X og Y er lig hinanden og har samme type
+```
+
+Herunder nogle eksempler på de to operatorer:
+```javascript
+let x = 7
+console.log(x==9) // false
+console.log(x==7) // true
+console.log(x=="7") // true
+console.log(x===7) // true
+console.log(x==="7") // false
+```
+Bemærk særligt sidste eksempel. Tre lighedstegn returnerer falsk fordi vi sammenligner tal og tekst. 
+Herunder et par eksempler hvor vis sammenligner strenge:
+```javascript
+let str1 = 'Henrik';
+let str2 = 'Henrik';
+let str3 = 'HenRik';
+
+console.log(str1 == str2); // true
+console.log(str1 == str3); // false
+console.log(str1 === str2); // true
+console.log(str1 === str3); // false
+```
+Sammenligningen med `str3` bliver falsk da der "R" er skrevet med stort.
+
+Ligesom vi kan undersøge om to udtryk er ens kan vi også undersøge om to udtryk er forskellige. Det gøres med `!=` og `!==`:
 
 ## Øvelser
 
