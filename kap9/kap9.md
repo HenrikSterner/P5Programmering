@@ -18,9 +18,10 @@ let string2 = new String("Hvordan har du det?");
 ```
 
 Den overordnede syntaks er altså:
+```javascript
 var val1 = new String(string);
 let val2 = new String(string);
-
+```
 Bemærk der her er tale om en konstruktør til String klassen og at det String skrives med stort S.
 
 Javascript konverterer automatisk mellem primitive strenge og strenge som objekter, så i praksis kan man reelt undlade at bekymre sig om det.
