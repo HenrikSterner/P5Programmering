@@ -214,6 +214,65 @@ Sammenligningen med `str3` bliver falsk da der "R" er skrevet med stort.
 
 Ligesom vi kan undersøge om to udtryk er ens kan vi også undersøge om to udtryk er forskellige. Det gøres med `!=` og `!==`:
 
+```javascript
+X!=Y // returnerer sand hvis X og Y er forskellige fra hinanden, men ikke nødvendigvis samme type
+X!==Y // returnerer sand kun hvis X og Y er forskellige fra hinanden og har forskellig  type
+```
+Herunder nogle eksempler:
+```javascript
+let x = 7
+console.log(x!=9) // true
+console.log(x!=7) // false
+console.log(x!="7") // false
+console.log(x!==7) // false
+console.log(x!=="7") // true
+```
+Særligt tredje og femte linje er centrale. Bemærk altså, at `!=` returnerer falsk når vi sammenligner tallet 7 med strengen "7". 
+Endelig et par eksempler hvor vi kun bruger strenge som operander:
+```javascript
+let str1 = 'Henrik';
+let str2 = 'Henrik';
+let str3 = 'HenRik';
+
+console.log(str1 != str2); // false
+console.log(str1 != str3); // true
+console.log(str1 !== str2); // false
+console.log(str1 !== str3); // true
+```
+
+## Større end (`>`) og mindre end (`<`) operatorer
+Vi har også mulighed for at spørge om noget er større end eller mindre end noget andet. Typisk er det tal som vi ønsker at undersøge.
+Herunder den generelle definition:
+
+```javascript
+X>Y // returnerer sand hvis X er større end Y 
+X<Y // returnerer sand hvis X er mindre end Y
+```
+Herunder  nogle eksempler:
+```javascript
+let x = 7
+let y = 5
+let z = 7.0
+console.log(x>y) // true
+console.log(x<y) // false
+console.log(x>z) // false
+```
+ 
+Man kan kombinere disse operatorer med lighedstegn:
+```javascript
+X>=Y // returnerer sand hvis X er større end eller lig med Y 
+X<=Y // returnerer sand hvis X er mindre end eller lig med Y
+```
+Herunder nogle eksempler:
+```javascript
+let x = 7
+let y = 5
+let z = 7.0
+console.log(x>=y) // true
+console.log(x<=y) // false
+console.log(x>=z) // true
+```
+
 ## Øvelser
 
 1. Overvej i det følgende hvad der printes i konsollen:
