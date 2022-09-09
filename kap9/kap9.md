@@ -148,12 +148,12 @@ function setup() {
 
 }
 ```
-Ofte kan det også være rart hvis brugeren af programmet selv kan gå ind og browse eller vælge en fil med en dialogboks. Herunder et eksempel:
-
 
 
 ## Øvelser
-1. Følgende øvelser skal træne dig i at manipulere med operere på tekststrenge. 
+Herunder en række øvelser. Som minimum bør du lave 1.-4., 7.-9. samt et af projekterne. 
+
+1. Følgende øvelser skal træne dig i at manipulere med og operere på tekststrenge. 
     1. Skriv et program der konstruerer 3 tekst variabler, som rummer teksterne “Der var engang”, “ en mand som” og “boede i en spand. Spanden var af ler”. 
     2. Sammenkæd de tre tekststrenge via variablerne
     3. Bestem længden af hver af dem.
@@ -164,7 +164,7 @@ Ofte kan det også være rart hvis brugeren af programmet selv kan gå ind og br
     8. Sammenflet de tre variabler så det første bog stav er fra den første variable, den anden fra den anden osv.
     9. Undersøg hvor mange forekomster af "e" der er i teksten.
   
-2. Herunder en række små delopgaver, hvor strenge skal manipuleres:
+2. Herunder en række små delopgaver, hvor strenge skal undersøges og manipuleres:
     1. Skriv et program, der finder alle de store bogstaver og små bogstaver i en streng.
     2. Skriv et program, der finder alle mellemrum
     3. Skriv et program, der undersøger hvor mange forskellige bogstaver to strenge har.
@@ -187,7 +187,8 @@ Ofte kan det også være rart hvis brugeren af programmet selv kan gå ind og br
 14. Lav igen to tekstfelter. Overvej og implementer en selvvalgt metode, der rapporterer hvor sammenlignelige de to strenge er. Dvs. en form for plagiatkontrol. 
 15. Lav to tekstfelter. Den ene bruges som kilde til at søge i efter den anden. Rapporter alle de steder hvor den søgte tekststreng forekommer i kilden. Giv mulighed for at man kan erstatte den søgte streng med en anden streng.
 16. Lav et tekstfelt hvor brugeren kan skrive en sætning. Prøv at lav en simpel analyse af sætningens sentiment og rapporter hvorvidt sætningen er positivt eller negativt ladet. 
-17. Zipfs lov for forkortelser er en empirisk lov/princip, der foreskriver, at jo oftere et ord bruges i en tekst, jo kortere er ordet. Og omvendt. Jo sjældnere et ord bruges, jo længere er det typisk. Lav et program, der analyserer og visualiserer de 10 mest forekomne ord og de 10 mindst forekomne ord. Visualiser antallet af ord
+17. Zipfs lov for forkortelser er en empirisk lov/princip, der foreskriver, at jo oftere et ord bruges i en tekst, jo kortere er ordet. Og omvendt. Jo sjældnere et ord bruges, jo længere er det typisk. Lav et program, der analyserer og visualiserer de 10 mest forekomne ord og de 10 mindst forekomne ord. Visualiser antallet af ord. Du vælger selv teksten men den skal indlæses fra en fil vha af `loadString()` metoden. 
+18. Brug metoden `loadTable()` til at indlæse en tabel fra en selvvalgt csv fil. Det kan eksempelvis være fra Danmarks Statistik eller lignende. Kravet er at tabellen skal have nogle kolonner med data. Prøv at udføre nogle beregninger på kolonnerne/rækkerne. Det kunne eksempelvis være fra deskriptiv statistik såsom gennemsnittet, hyppighed, medianen, øvre og nedre kvartiler. Det afgørende er at træne din forståelse af at bruge tabeller. 
 
 
 ## Projekt: Lix-tallet
@@ -210,7 +211,7 @@ $LIX < 25$: Let tekst for alle læsere, f.eks. børnelitteratur.
 
 Lav et program, der bestemmer Lix-tallet af en tekststreng. Programmet skal fortælle hvilket niveau teksten ligger på. Antag at du får teksten i en string-variable.
 
-Benyt din LIX-beregner på en selvvalgt tekst. Giv resultatet mening?
+Benyt din LIX-beregner på en selvvalgt tekst, som du indlæser. Giver resultatet mening?
 
 ## Projekt: Blindskrift Tester
 I dette projekt skal du udvikle et simpelt system til at teste hvor hurtig man er til at skrive blindskrift. Dvs. en tekst skal rulle henover skærmen mens man skriver og programmet skal registrere hvor mange ord man når at taste samt hvor mange fejl, der er, indenfor et givent tidsrum.
@@ -225,4 +226,4 @@ hvor `P` er sandsynligheden for at det ledende tal er `d` og `log` er 10-tals lo
 ![Benfords lov](../kap9/images/benford.png)
 Eksempelvis så siger loven, at `1` vil forekomme seks gange så ofte som `8`. 
 
-Skriv et program der kan teste Benfords lov for forskellige data. Prøv den af på forskellige datasæt f.eks. fra Danmarks Statistisk eller data i medierne på nettet.
+Skriv et program der kan teste Benfords lov for forskellige data. Prøv den af på forskellige datasæt f.eks. fra Danmarks Statistik eller data i medierne på nettet. Du må meget gerne læse data ind via eksempelvis `loadTable()`metoden. 
