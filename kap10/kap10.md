@@ -333,3 +333,4 @@ I det følgende projekt er det endelige produkt en automatisk konstruktion af en
 En scene kunne eksempelvis bestå af et hus, der består af en trekant ovenpå en firkant, nogle skyer bestående af overlappende cirkler osv. 
 Til at starte med skal konstrueres en GeometricFigure, der rummer nogle grundlæggende egenskaber ved en geometrisk figur. Det kunne være farve, form, koordinater m.m. Som børn til GeometricFigure oprettes forskellige primitive geometriske figurer såsom cirkler, linjestykker, trekanter, firkanter, polygoner... 
 Endelig oprettes klasser til at repræsentere huse, mennesker, skyer m.m. Disse klasser skal benytte de nævnte geometriske figurer til at konstruere huse m.m.
+
