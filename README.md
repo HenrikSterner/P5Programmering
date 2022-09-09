@@ -23,7 +23,7 @@ Peter & Henrik
 - [Kapitel 8: Rekursion](kap8/kap8.md)
 - [Kapitel 9: Strenge](kap9/kap9.md)
 - [Kapitel 10: Objektorienteret principper](kap10/kap10.md)
-- [Kapitel 11: Softwarearkitektur](kap10/kap11.md)
+- [Kapitel 11: Softwarearkitektur](kap11/kap11.md)
 - [Kapitel 12: Dokumentation og kravspecikation](kap11/kap12.md)
 - [Kapitel 13: Testning, debug og fejlhåndtering](kap13/kap13.md)
 - [Kapitel 14: Udviklingsprocesser](kap14/kap14.md)
