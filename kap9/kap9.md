@@ -88,24 +88,41 @@ string1.toUpperCase() //returnerer 'ER DU DER?'
 
 
 ## Øvelser
-1. Lav en knap der genererer et 'sikkert' password. Ved sikkert forstås, at det skal være minimum 8 bogstaver langt samt indeholde både et stort og lille bogstav samt et tal. Udvid selv med et relevant kriterie.
-2. Lav et tekst input felt hvor det forventes, at man indtaster et sikkert password. Giv brugeren besked hvis det er tilfældet eller ej. Ved sikkert forstås definitionen fra 1. 
-3. Lav et tekst input felt hvor det forventes, at man indtaster et CPR-NR. Skriv noget kode, der tjekker hvorvidt det er tilfældet.
-4. Lav en bogstavsky ud fra et tekst inputfelt. Dvs. brugeren indtaster nogle ord/bogstaver og på baggrund heraf genereres en sky af bogstaverne. Jo flere gange et bogstav forekommer jo større bliver det vist. 
-5. Lav et tekstfelt og undersøg om input fra brugeren er et palindrom. Dvs. hvorvidt der ordet læses ens forfra og bagfra. Bemærk at det kan gøres ret kort ved at bruge rekursion.
-6. Lav et 'Hang-man' spil eller 'gæt et bogstav', hvor et ords bogstaver er markeret med stjerner og ved at gætte bogstaver via et inputfelt, erstattes stjerne med de faktiske bogstaver. For hver gang der gættes forkert tegnes dele af en hængt mand. Man er også velkommen til at lave sin egen illustration.
-
-7. Konstruer et array af sætninger gerne således at brugeren selv kan tilføje input til arrayet. På baggrund heraf skal konstrueres et Haiku-digt. Et Haiku-digt består af 17 stavelser fordelt på 5-7-5 i de tre linjer. 
-
-8. Lav to tekstfelter hvor brugeren kan indtaste tekst, der skal krypteres hhv tekst der skal dekrypteres. Implementer en selvvalgt kryptering. Det kan eksempelvis være at bytte om på rækkefølgen af bogstaver.
-
-9. Lav igen to tekstfelter. Overvej og implementer en selvvalgt metode, der rapporterer hvor sammenlignelige de to strenge er. Dvs. en form for plagiatkontrol. 
-
-10. Lav to tekstfelter. Den ene bruges som kilde til at søge i efter den anden. Rapporter alle de steder hvor den søgte tekststreng forekommer i kilden. Giv mulighed for at man kan erstatte den søgte streng med en anden streng.
-
-11. Lav et tekstfelt hvor brugeren kan skrive en sætning. Prøv at lav en simpel analyse af sætningens sentiment og rapporter hvorvidt sætningen er positivt eller negativt ladet. 
-
-12. Zipfs lov for forkortelser er en empirisk lov/princip, der foreskriver, at jo oftere et ord bruges i en tekst, jo kortere er ordet. Og omvendt. Jo sjældnere et ord bruges, jo længere er det typisk. Lav et program, der analyserer og visualiserer de 10 mest forekomne ord og de 10 mindst forekomne ord. Visualiser antallet af ord
+1. Følgende øvelser skal træne dig i at manipulere med operere på tekststrenge. 
+    1. Skriv et program der konstruerer 3 tekst variabler, som rummer teksterne “Der var engang”, “ en mand som” og “boede i en spand. Spanden var af ler”. 
+    2. Sammenkæd de tre tekststrenge via variablerne
+    3. Bestem længden af hver af dem.
+    4. Undersøg det andet bogstav i hver af dem
+    5. Undersøg om to af variablerne er det samme
+    6. Skriv hele teksten som versaler
+    7. Lav en ny variable der er en delstreng af en af variablerne.
+    8. Sammenflet de tre variabler så det første bog stav er fra den første variable, den anden fra den anden osv.
+    9. Undersøg hvor mange forekomster af "e" der er i teksten.
+  
+2. Herunder en række små delopgaver, hvor strenge skal manipuleres:
+    1. Skriv et program, der finder alle de store bogstaver og små bogstaver i en streng.
+    2. Skriv et program, der finder alle mellemrum
+    3. Skriv et program, der undersøger hvor mange forskellige bogstaver to strenge har.
+    4. Skriv et program, der erstatter alle bogstaver “i” med “k” i en streng.
+    5. Skriv et program, der undersøger om en given delstreng er indeholdt i en anden streng
+3. Skriv et program, der tager en tekststreng indlæst i en variable. Teksten skal bestå af mindst 100 ord og split ordene op i en liste ved brug af split-funktionen.
+   1. Tæl antallet af kommaer og punktummer
+   2. Find det ord der forekommer flest gange
+   3. Lav en liste der viser hvor mange gange hvert ord forekommmer
+4. Lav en knap der genererer et 'sikkert' password. Ved sikkert forstås, at det skal være minimum 8 bogstaver langt samt indeholde både et stort og lille bogstav samt et tal. Udvid selv med et relevant kriterie.  
+5. Lav et tekst input felt hvor det forventes, at man indtaster et sikkert password. Giv brugeren besked hvis det er tilfældet eller ej. Ved sikkert forstås definitionen fra forrige opgave. 
+6. Skriv et program, der givet en tekststreng med 10 cifre undersøger strengen udgør et validt CPR-NR. Bemærk valid betyder bare, at den overholder dag, måned og år format samt at alle 10 tegn er tal.
+7. Skriv et program, der oplister alle CPR-numre i konsollen. Du behøver ikke rent faktisk at printe dem alle, men skrive et program, der systematisk kan printe dem allesammen, hvis det fik tid nok.
+8. Skriv et program, der genererer lotto-tallene og tegner dem på kanvas.  
+9. Lav en bogstavsky ud fra et tekst inputfelt. Dvs. brugeren indtaster nogle ord/bogstaver og på baggrund heraf genereres en sky af bogstaverne. Jo flere gange et bogstav forekommer jo større bliver det vist. 
+10. Lav et tekstfelt og undersøg om input fra brugeren er et palindrom. Dvs. hvorvidt der ordet læses ens forfra og bagfra. Bemærk at det kan gøres ret kort ved at bruge rekursion.
+11. Lav et 'Hang-man' spil eller 'gæt et bogstav', hvor et ords bogstaver er markeret med stjerner og ved at gætte bogstaver via et inputfelt, erstattes stjerne med de faktiske bogstaver. For hver gang der gættes forkert tegnes dele af en hængt mand. Man er også velkommen til at lave sin egen illustration.
+12. Konstruer et array af sætninger gerne således at brugeren selv kan tilføje input til arrayet. På baggrund heraf skal konstrueres et Haiku-digt. Et Haiku-digt består af 17 stavelser fordelt på 5-7-5 i de tre linjer. 
+13. Lav to tekstfelter hvor brugeren kan indtaste tekst, der skal krypteres hhv tekst der skal dekrypteres. Implementer en selvvalgt kryptering. Det kan eksempelvis være at bytte om på rækkefølgen af bogstaver.
+14. Lav igen to tekstfelter. Overvej og implementer en selvvalgt metode, der rapporterer hvor sammenlignelige de to strenge er. Dvs. en form for plagiatkontrol. 
+15. Lav to tekstfelter. Den ene bruges som kilde til at søge i efter den anden. Rapporter alle de steder hvor den søgte tekststreng forekommer i kilden. Giv mulighed for at man kan erstatte den søgte streng med en anden streng.
+16. Lav et tekstfelt hvor brugeren kan skrive en sætning. Prøv at lav en simpel analyse af sætningens sentiment og rapporter hvorvidt sætningen er positivt eller negativt ladet. 
+17. Zipfs lov for forkortelser er en empirisk lov/princip, der foreskriver, at jo oftere et ord bruges i en tekst, jo kortere er ordet. Og omvendt. Jo sjældnere et ord bruges, jo længere er det typisk. Lav et program, der analyserer og visualiserer de 10 mest forekomne ord og de 10 mindst forekomne ord. Visualiser antallet af ord
 
 
 ## Projekt: Lix-tallet
@@ -133,3 +150,14 @@ Benyt din LIX-beregner på en selvvalgt tekst. Giv resultatet mening?
 ## Projekt: Blindskrift Tester
 I dette projekt skal du udvikle et simpelt system til at teste hvor hurtig man er til at skrive blindskrift. Dvs. en tekst skal rulle henover skærmen mens man skriver og programmet skal registrere hvor mange ord man når at taste samt hvor mange fejl, der er, indenfor et givent tidsrum.
 Udvid systemet så man kan vælge forskellige typer tekst at indtaste ud fra tekstens lixtal.
+
+## Projekt: Benfords lov
+Benfords lov (eller måske mere præcist princip) fortæller noget om hvilke cifre, der hyppigst vil forekomme f.eks. fra lister  dagligdagen, såsom husnumre, priser, indbyggertal, længder på floder, aktiekurser etc. 
+Formlen er givet ved:
+$$P(d)=log(d+1)-log(d)$$
+hvor `P` er sandsynligheden for at det ledende tal er `d` og `log` er 10-tals logaritmen. Herunder en illustration af Benfords lov:
+
+![Benfords lov](../kap9/images/benford.png)
+Eksempelvis så siger loven, at `1` vil forekomme seks gange så ofte som `8`. 
+
+Skriv et program der kan teste Benfords lov for forskellige data. Prøv den af på forskellige datasæt f.eks. fra Danmarks Statistisk eller data i medierne på nettet.
