@@ -4,7 +4,7 @@ Objekter, repræsenteret ved en klasse bestående af metoder og variable, spille
 I det følgende vil vi se på nogle af de centrale ideer eller principper, der er med til at retfærdiggøre brugen af objekter i det hele taget. Vi kigger på principperne enkeltvis, men vi gør samtidig opmærksom på, at de skal ses i en sammenhæng. Det ene princip er i vis forstand afhængig af, at vi benytter de andre principper.
 
 ## Indkapsling
-Indkapslingsprincippet betoner, at objekter kan opfattes for en form for container af data og at objekter principielt set bør skjule mest mulig unødig kompleksitet for andre klasser. Som standard så skjuler de fleste objekt-orienteret sprog ikke nødvendigvis data.  Herunder et eksempel på, at variabler implementeret i klasser umiddelbart let kan tilgås andre steder i programmet: 
+Indkapslingsprincippet betoner, at objekter kan opfattes som  en form for container, der rummer data og at objekter principielt set bør skjule mest mulig unødig kompleksitet for andre klasser. Som standard så skjuler de fleste objekt-orienteret sprog ikke nødvendigvis data.  Herunder et eksempel på, at variabler implementeret i klasser umiddelbart let kan tilgås andre steder i programmet: 
 
 ```javascript
 class Car {
@@ -30,21 +30,21 @@ function setup() {
 }
 ```
 Indkapslingsprincippet, bruges nærmest overalt i den virkelige verden, uden at man nødvendigvis kaldet det for indkapsling. 
-Tænk på et produkt af en vis kompleksitet. Det kunne være en bil, en støvsuger eller mobiltelefon. Her bekymrer vi os ikke om hvordan bilen eller nogle af de nævnte produkter fungerer nedenunder, men vi tilgår blot den komplekse teknologi nedenunder ved brug af en simpel (bruger)grænseflade.  
+Tænk på et produkt af en vis kompleksitet. Det kunne være en bil, en støvsuger eller mobiltelefon. Her bekymrer vi os ikke om hvordan bilen eller nogle af de nævnte produkter fungerer nedenunder, men tilgår i stedet blot den komplekse teknologi nedenunder ved brug af en simpel (bruger)grænseflade.  
 
-Ved at skjule unødig kompleksitet undgår man bl.a. at andre klasser ændrer eller læser data, som de ikke bør have adgang til. Man opfordres også derved til implicit at være bevidst om data, som er essentielle for klassen og som bør være private for klassen. Man fordres med andre ord til at kode op mode veldefineret grænseflader for en klasse, der består af metoder og attributter, som er tilgængelige for andre klasser.
+Ved at skjule unødig kompleksitet undgår man bl.a. at andre klasser ændrer eller læser data, som de ikke bør have adgang til. Man opfordres også derved til implicit at være bevidst om de data, som er essentielle for klassen og som bør være private for klassen. Man fordres med andre ord til at kode op mode veldefineret grænseflader for en klasse, der består af metoder og attributter, som er tilgængelige for andre klasser.
 
 Herved sikres, at bruger af delsystemet ikke behøver at bekymre sig om hvordan delsystemet rent faktisk er implementeret neden under. Vi undgår samtidig i højere grad, at den samme kode gentages flere steder ud fra devicen om, at hvis det er vigtigt, at to stykker ens kode holdes ens, så bør der i praksis ikke være en kopi. 
-I praksis gør indkapsling det samtidig muligt, at vi i højere grad kan uddistribuere det egentlige udviklingsarbejde op til flere programmører og at vi i visse tilfælde i højere grad kan parallellisere vores programmer til afvikling på flere processorer/tråd for at optimere køretiden.
+I praksis gør indkapsling det samtidig muligt, at vi i højere grad kan uddeligere det egentlige udviklingsarbejde op til flere programmører og at vi i visse tilfælde i højere grad kan parallellisere vores programmer til afvikling på flere processorer/tråde for at optimere køretiden.
 
 I praksis implementeres indkapsling ved at kontrustere metoder i klassen, som andre klasser skal kalde for at tilgå disse komponenter.
 
 I langt de fleste sprog implementeres indkapsling ved brug af et keyword såsom private, som man sætter foran erklæringen af sin variable. 
-I Javascript bruges hashtag. Herunder et eksempel:
+I Javascript bruges hashtag, `#`. Herunder et eksempel:
 
 ```javascript
 class Car {
-  #speed;
+  #speed; // privat variable for klassen Car
   constructor(speed) {
     this.#speed = speed;
   }
@@ -68,13 +68,13 @@ function setup() {
   c.#speed = 130 //fejl
 }
 ```
-Bemærk at de sidste to linjer i setup giver fejl. Vi kan ikke direkte tilgå variablen #speed. Havde vi undladt hashtag var det muligt at læse og skrive speed variablen direkte, hvilket vi ikke ønsker er muligt. I stedet konstrueres metoderne getSpeed hhv. setSpeed, som også kaldes for en accessor- hhv. mutator-metode.
+Bemærk at de sidste to linjer i setup giver fejl. Vi kan ikke direkte tilgå variablen #speed. Havde vi undladt hashtag var det muligt at læse og skrive speed variablen direkte, hvilket vi ikke ønsker er muligt. I stedet konstrueres metoderne getSpeed hhv. setSpeed, som også kaldes for en accessor- hhv. mutator-metode. Det er her vi implementerer muligheden for at tilgå eller ændre variablen. 
 
 ## Nedarvning
-Lidt ligesom et barn arver egenskaber fra sine forældre, så handler nedarvningsprincippet om, at klasser (kaldet børn) kan arve data og metoder fra en forældre klasse (kaldet super).  
-På den måde kan konstrueres børneklasser, som udvider de grundlæggende egenskaber og funktionalitet fra superklassen uden at skulle kode de samme ting flere gange.
+Lidt ligesom et barn arver egenskaber fra sine forældre, så handler nedarvningsprincippet om, at klasser (kaldet børn) kan arve data og metoder fra en forældreklasse (kaldet super).  
+På den måde kan konstrueres børneklasser, som udvider de grundlæggende egenskaber og funktionalitet fra superklassen uden at man skal kode de samme ting flere gange.
 
-I Javascript implementeres nedarvning ved brug af nøgleordet extends. Herunder et generisk eksempel:
+I Javascript implementeres nedarvning ved brug af nøgleordet `extends`. Herunder et generisk eksempel:
 
 ```javascript
 class Father {
@@ -84,9 +84,10 @@ class Son extends Father {
 }
 
 ```
-Alle metoder og variable der er implementeret i Father er tilgængelige i Son også. Hvis sønnen en dag får et barn kan barnet tilsvarende og så nedarve fra sønnen og derved arve  fra Father også. I visse sprog kan børn arve fra multiple forældre. Dette er dog ikke muligt i JavaScript.
+Alle metoder og variable der er implementeret i `Father` er tilgængelige i `Son`. Hvis sønnen en dag får et barn kan barnet tilsvarende og så nedarve fra sønnen og herigennem arve fra `Father` . Man kalder også `Father`for superklassen eller forældreklassen, mens `Son`kaldes for børneklassen. 
+I visse sprog kan børn arve fra multiple forældre. Dette er dog ikke muligt i JavaScript. Ønsker man derfor at en klasse skal arve for begge forældre er det bedre at samle de fælles egenskaber i en forældreklasse. 
 
-Herunder et eksempel på hvorledes Car klassen kan udvides
+Herunder et eksempel på hvorledes `Car`-klassen kan udvides:
 
 ```javascript
 class Van extends Car {
@@ -108,24 +109,26 @@ function setup() {
   v.getSpeed() //writes 10
 }
 ```
-Klassen Van er et barn af forældren eller superklassen Car hvilkes ses ved, at den udvider (se nøgleordet extends) klassen.
-I konstruktøren kaldes super() for at initialisere barnet ud fra superklassen. 
 
-I metoden setSpeed har vi valgt at undersøge hvorvidt hastigheden bliver mere end 120, da vi i dette eksempel tillader os at forestille os, at det ikke er lovligt for en Van. Vi har med andre ord overskrevet metoden setSpeed i børneklassen, så den implementerer sin egen adfærd forskellig fra forældren. 
+Klassen `Van` er et barn af forældren eller superklassen `Car` hvilkes ses ved, at den udvider (se nøgleordet extends) klassen.
+I konstruktøren kaldes `super()` for at initialisere barnet ud fra superklassen. Ved at kalde `super()` kaldes altså forældrens konstruktør. 
+
+I metoden `setSpeed()` har vi valgt at undersøge hvorvidt hastigheden bliver mere end 120, da vi i dette eksempel  forestiller os, at det ikke er lovligt for en `Van`. Vi har med andre ord overskrevet metoden `setSpeed()` i børneklassen, så den implementerer sin egen adfærd forskelligt fra forældren(e). 
+
 
 Ydermere ser vi, at vi uden videre kan kalde eksisterende metoder fra superklassen jf. vores kald til getSpeed. 
 Vi kan også konstruere helt nye metoder eller variable. Det gøres fuldstændig på samme måde som hvis vi havde gjort det i superklassen.
 
 ## Polymorfi
-Polymorfi består af to ord, poly og morf, som betyder hhv. mange og former. Underforstået så handler polymorfi helt grundlæggende i programmering om, at objekter kan antage forskellige former, men vi kan stadig behandle dem på en ens måde. Det betyder i praksis mere kompakt læsbar kode med forhåbentlig færre fejl, som også i højere grad kan justeres og skaleres. Det er en af de mere komplekse dele af den objektorienteret programmering, som kan tage noget tid at blive vant, men det er omvendt også et særdeles kraftfuldt værktøj.
+Polymorfi består af to ord, "poly" og "morf", som betyder hhv. "mange" og "former". Underforstået så handler polymorfi om, at objekter kan antage forskellige former, men vi kan stadig behandle dem på en ensartet måde. Det betyder i praksis mere kompakt læsbar kode med forhåbentlig færre fejl, som også i højere grad kan justeres og skaleres. Det er en af de mere komplekse dele af den objektorienteret programmering, som kan tage noget tid at blive vant til, men det er omvendt også et særdeles kraftfuldt værktøj.
 
-Når vi skriver, at vi kan behandle forskellige former ens, så betyder det mere konkret, at man kan justere på børneklassers nedarvede metoder så de ikke afvikles de præcis samme instruktioner som forældreklassen, men at vi kan tilpasse dem den konkrete kontekst i børneklassen. 
+Når vi skriver, at vi kan behandle forskellige former ens, så betyder det mere konkret, at man kan justere på børneklassers nedarvede metoder så de ikke afvikler de præcis samme instruktioner som forældreklassen, men at vi kan tilpasse dem den konkrete kontekst i børneklassen. 
 
-I praksis er der to forskelige måder at opnå denne form for polymorfisme. Den ene kaldes overskrivning og den anden overloading.
+I praksis er der grundlæggende to forskelige måder at opnå denne form for polymorfisme. Den ene kaldes "overskrivning" og den anden "overloading".
 I det følgende vil vi illustere hvorledes disse to metoder fungerer.
 
 ### Overskrivning
-Vi kan forestille os, at vores Car klasse skal repræsentere både en varevogn og en last, og at vi vælger at samle de ting de har til fælles i Car, og de ting der adskiller dem i deres respektive børneklasser. Herunder et eksempel:
+Vi kan forestille os, at vores `Car`-klasse skal repræsentere både en varevogn og en lastvogn, og at vi vælger at samle de ting de har til fælles i `Car`, og de ting der adskiller dem i deres respektive børneklasser. Herunder et eksempel:
 ```javascript
 class Truck extends Car {
   setSpeed(amount)
@@ -179,6 +182,8 @@ setSpeed("one",2,true); // result = one2true
 ```
 
 ## Øvelser
+Herunder følger en række øvelser. Det anbefales, at man som minimum laver øvelse 1.-10. samt projektet. 
+
 1. I det følgende ses kode for en klasse Car. Omskriv koden så den bruger private variabler. Forklar desuden hvad metoderne gør.
 
 
@@ -239,7 +244,7 @@ function draw() {
 
 4. Vi forestiller os nu, at I vi udvider med to nye klasser, der nedarver fra Car.  Den ene skal håndtere elektriske biler (kaldet EVCar) og den anden skal håndtere ikke elektrisk biler (kaldet NonEVCar). Begge klasser har fælles egenskaber, som angivet I den oprindelige Car klasse. Men de har forskellige egenskaber som skal implementeres i de respektive klasser. Opret de to respektive klasser og implementer, at en elektrisk bil skal bruge tid på at lade op (vha en særlig attribut) og at den ikke elektriske version hurtigt kan tanke benzin.  Dvs. metoden move skal overskrives.
 
-5. En dyrehandler har brug for et visuelt aquarium til sin butik, hvor børn kan simulere et aquarium og lave sjov med forskellige fisk. Der skal udvikles et visuelt simuleret aquarium man som bruger kan interagere med. Herunder skeletkode, der simulerer et simpelt akvarium. 
+5. En dyrehandler har brug for et visuelt aquarium til sin butik, hvor børn kan simulere et aquarium og lave sjov med forskellige fisk. Der skal udvikles et visuelt simuleret aquarium som en bruger kan interagere med. Herunder skeletkode, der simulerer et simpelt akvarium. 
 
 ```javascript
 // The Fish class defines fish objects, that move around on the
@@ -296,7 +301,7 @@ class Fish {
 
 7. Brugeren af systemet skal kunne interagere med fiskene. Eksempler på interaktioner kunne være at give mad til fisk, fjerne fisk, farve fisk, sætte forskellige fisk i aquarium, trykke på fisk så de bliver bange og svømmer væk, indsætte planter og andre ting i akvariet, give fisk mulighed for at få finner og haler. Udvælg selv nogle interaktioner og prøv at implementere disse. Prøv dem af i praksis.
 
-8. Det skal være muligt at indsætte piratfisk, der æder de andre hvis de kolliderer. De skal være større og se farlige ud. Herunder ses skelet kode for et barn af Fish. Udvid denne klasse så piratfisk svømmer hurtigere, er større og hvis de kolliderer med en af de andre fisk, så spiser de dem. 
+8. Det skal være muligt at indsætte piratfisk, der æder de andre hvis de kolliderer. De skal være større og se farlige ud. Herunder ses skelet kode for et barn af Fish. Udvid denne klasse så piratfisk svømmer hurtigere, er større og hvis de kolliderer med en af de andre fisk, spiser de dem. 
 ```javascript
 class PiratFish extends Fish
 {

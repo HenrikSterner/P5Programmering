@@ -227,3 +227,28 @@ hvor `P` er sandsynligheden for at det ledende tal er `d` og `log` er 10-tals lo
 Eksempelvis så siger loven, at `1` vil forekomme seks gange så ofte som `8`. 
 
 Skriv et program der kan teste Benfords lov for forskellige data. Prøv den af på forskellige datasæt f.eks. fra Danmarks Statistik eller data i medierne på nettet. Du må meget gerne læse data ind via eksempelvis `loadTable()`metoden. 
+
+
+## Projekt: ELIZA Chatbot - Kan Turing-testen bestås?
+Chatbots er blevet enormt populære og vi møder dem alle steder, når vi eksempelvis chatter med webshops, banker og forsikringsselskaber, så er det første vi er i kontakt med typisk en chatbot. Chatbots kan typiske svare på de mest almindelige spørgsmål også sende folk videre hvis det er nødvendigt. 
+I det følgende skal vi lave en simpel chatbot, Eliza, som blev 
+udviklet tilbage i 60'erne på MIT Artificial Intelligence Laboratory af Joseph Weizenbaum. 
+
+ELIZA simulerede en samtale ved at bruge grundlæggende  mønstergenkendelse og erstatning af ord, som gav brugeren en oplevelse af at blive forstået af maskinen, til trods for at programmet overhovedet ikke havde nogen forståelsesramme for miljø og hændelser.
+
+I sin helt enkle form fungerer  ELIZA på følgende måde:
+1.	Først konstrueres en  prioriteret liste af nøgleord, som benyttes overfor input. Nøgleordet med højest prioritet, som findes i brugerens sætning, anvendes. Eksempler på nøgleord kunne være:
+    1.	"kan du" → svar 1-3 anvendes
+    2.	"kan jeg" → svar 4-5 anvendes
+    3.	"du er" → svar 6-9 anvendes
+    4.	...
+    5.	(ikke fundet) → svar 106-112 anvendes
+2.Nøgleordet har ledt til et sæt af svar; et af disse vælges tilfældigt. Fx kan svarene til "kan du" være:
+    1.	    "Tror du ikke jeg kan ...?"
+    2.	"Du vil måske gerne være i stand til at ...?"
+    3.	"Du vil gerne, om jeg kan ...?)
+3.	Vi kan komplicere svaret ved at indsætte den del, som kommer efter nøgleordet. .
+4.	Ydermere så vendes svaret således, at 1. person (jeg, mig) erstattes af 2. person (du, dig) og omvendt. 
+
+Implementer ELIZA i sin mest enkle form. Implementer desuden en simpel brugergrænseflade.
+Udvid gerne chatbotten så meget som du nu lyster. F.eks. kan det undgås, at samme svar for det enkelte nøgleord anvendes flere gange i træk, og der kan indarbejdes en særlig håndtering af korte svar fra brugeren. Man kan også inddrage andre heuristikker, såsom at chatbotten udvælger  respons fra et valg af predefineret svar. 
