@@ -86,6 +86,71 @@ string1.toLowerCase() //returner 'er du der?'
 string1.toUpperCase() //returnerer 'ER DU DER?'
 ```
 
+## Indlæse filer med tekst
+Ofte er det nødvendigt at hente data ind fra et andet sted end selve programmet. Det kunne eksempelvis være fra en tekstfil. 
+Det gøres med funktionen
+
+```javascript
+loadStrings(sti til tekstfilen)
+```
+Metoden returnerer et array af string hvor hvert element er en linje i tekstfilen. Vær obs på at stien til tekstfilen er korrekt. 
+Hvis tekstfilen ligger samme sted som script-filen, så kan du reelt nøjes med at angive hele filnavnet med efternavnet såsom ".txt" eller ".csv" (komma seperaret fil). 
+
+Ofte er vi interesseret i at indlæse inden `setup` eller `draw` afvikles. Det kan vi gøre ved at indsætte det i funktionen `preload()`, som sikrer at koden afvikles inden de to andre kører.
+
+Herunder et eksempel på hvorledes det kan gøres:
+
+```javascript
+let lines;
+function preload() {
+  lines = loadStrings('test.txt');
+}
+
+function setup() {
+  background(200);
+  text(random(lines), 30, 30, 100, 100);
+}
+```
+Metoden `random` udvælger tilfældige elementer i et array. Dvs. tilfældige linjer, som printes på kanvas. 
+
+Hvis man læser en "csv" fil (dvs. en kommaseperaret fil) kan det være en fordel at bruge `loadTable()`. Herunder en forsimplet definition i den forstand, at funktionen kan tage flere parametre, men følgende er nok de mest typiske:
+```javascript
+loadTable(sti_til_fil, filtype, 'header');
+```
+Vi bemærker, at `header` kan undværes hvis tekstfilens kommaseperaret kolonner ikke har nogen titel. 
+
+Herunder et eksempel der indlæser en liste af navne og id'er
+```javascript
+// id,navn
+// 0,Martin
+// 1,Michella
+// 2,Michael
+//...
+
+let table;
+function preload() {
+  //da filen er kommaseperaret og af typen csv:
+  table = loadTable('navne.csv', 'csv', 'header');
+}
+
+function setup() {
+  //tæl antallet af rækker og kolonner
+  print(table.getRowCount() + ' antal rækker');
+  print(table.getColumnCount() + ' antal kolonner');
+  print(table.getColumn('name'));
+  //["Martin", "Michella", "Michael"]
+
+  //itererer gennem tabellen
+  for (let r = 0; r < table.getRowCount(); r++)
+    for (let c = 0; c < table.getColumnCount(); c++) {
+      print(table.getString(r, c));
+    }
+
+}
+```
+Ofte kan det også være rart hvis brugeren af programmet selv kan gå ind og browse eller vælge en fil med en dialogboks. Herunder et eksempel:
+
+
 
 ## Øvelser
 1. Følgende øvelser skal træne dig i at manipulere med operere på tekststrenge. 
