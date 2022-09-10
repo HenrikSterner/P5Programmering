@@ -345,7 +345,7 @@ function draw() {
   
   //Move
   x += xspeed;
-  ellipse(x, height/2, 50, 50);
+  circle(x, height/2, 50);
 }
 ```
 
@@ -425,7 +425,7 @@ function draw() {
   }
 
   clear();
-  ellipse(x, y, 50, 50);
+  circle(x, y, 50);
 }
 ```
 
