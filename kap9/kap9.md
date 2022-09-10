@@ -237,18 +237,17 @@ udviklet tilbage i 60'erne på MIT Artificial Intelligence Laboratory af Joseph 
 ELIZA simulerede en samtale ved at bruge grundlæggende  mønstergenkendelse og erstatning af ord, som gav brugeren en oplevelse af at blive forstået af maskinen, til trods for at programmet overhovedet ikke havde nogen forståelsesramme for miljø og hændelser.
 
 I sin helt enkle form fungerer  ELIZA på følgende måde:
-1.	Først konstrueres en  prioriteret liste af nøgleord, som benyttes overfor input. Nøgleordet med højest prioritet, som findes i brugerens sætning, anvendes. Eksempler på nøgleord kunne være:
-    1.	"kan du" → svar 1-3 anvendes
-    2.	"kan jeg" → svar 4-5 anvendes
-    3.	"du er" → svar 6-9 anvendes
+1.	Konstruer en prioriteret liste af nøgleord, som benyttes overfor input.
+2. Anvend det nøgleord som har højest prioritet og som eksisterer i brugerens sætning  Eksempler på nøgleord kunne være:
+    1.	"kan jeg" → svarene 1-7 kan anvendes
+    2.	"kan vi " → svarene 8-11 kan anvendes
+    3.	"du er" → svarene 12-15 kan anvendes
     4.	...
-    5.	(ikke fundet) → svar 106-112 anvendes
-2.Nøgleordet har ledt til et sæt af svar; et af disse vælges tilfældigt. Fx kan svarene til "kan du" være:
-    1.	    "Tror du ikke jeg kan ...?"
-    2.	"Du vil måske gerne være i stand til at ...?"
-    3.	"Du vil gerne, om jeg kan ...?)
-3.	Vi kan komplicere svaret ved at indsætte den del, som kommer efter nøgleordet. .
+    5.	(ikke fundet) → svarene kan 106-112 anvendes
+3. Vælg tilfældigt blandt de mulige svar i 2. 
+3.	Vi kan efterfølgende komplicere svaret ved at indsætte den del, som kommer efter nøgleordet. 
 4.	Ydermere så vendes svaret således, at 1. person (jeg, mig) erstattes af 2. person (du, dig) og omvendt. 
 
-Implementer ELIZA i sin mest enkle form. Implementer desuden en simpel brugergrænseflade.
-Udvid gerne chatbotten så meget som du nu lyster. F.eks. kan det undgås, at samme svar for det enkelte nøgleord anvendes flere gange i træk, og der kan indarbejdes en særlig håndtering af korte svar fra brugeren. Man kan også inddrage andre heuristikker, såsom at chatbotten udvælger  respons fra et valg af predefineret svar. 
+Projektet hander nu om at implementere ELIZA i sin mest enkle form. Implementer desuden en simpel brugergrænseflade i P5.
+Udvid gerne chatbotten så meget som du nu lyster. F.eks. kan det undgås, at samme svar for det enkelte nøgleord anvendes flere gange i træk, og der kan indarbejdes en særlig håndtering af korte svar fra brugeren. Man kan også inddrage andre heuristikker, såsom at chatbotten udvælger  respons fra et valg af predefineret svar.
+Prøv den af i praksis. Gerne på nogle andre. Overvej om den mon kunne består Turing-testen, som handler om hvorvidt en tredje person, der blot kigger på chatten, mon kan afgøre om der er tale om en computer/AI eller et menneske.  
