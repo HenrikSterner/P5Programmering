@@ -10,6 +10,8 @@ God fornøjelse!
 
 Peter & Henrik
 
+Copyright © Henrik Sterner & Peter Sterner 2022.
+
 
 # Kapitler
 
