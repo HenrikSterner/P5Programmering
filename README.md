@@ -11,7 +11,7 @@ God fornøjelse!
 Peter & Henrik
 
 Mekanisk, elektronisk eller anden gengivelse af eller kopiering fra denne digitale udgave af bogen eller 
-dele heraf er ifølge gældende dansk lov om ophavsret ikke tilladt
+dele heraf er ifølge gældende dansk lov om ophavsret ikke tilladt.
 Copyright © Henrik Sterner & Peter Sterner 2022.
 
 # Kapitler
