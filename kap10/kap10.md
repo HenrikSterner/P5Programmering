@@ -334,3 +334,24 @@ En scene kunne eksempelvis bestå af et hus, der består af en trekant ovenpå e
 Til at starte med skal konstrueres en GeometricFigure, der rummer nogle grundlæggende egenskaber ved en geometrisk figur. Det kunne være farve, form, koordinater m.m. Som børn til GeometricFigure oprettes forskellige primitive geometriske figurer såsom cirkler, linjestykker, trekanter, firkanter, polygoner... 
 Endelig oprettes klasser til at repræsentere huse, mennesker, skyer m.m. Disse klasser skal benytte de nævnte geometriske figurer til at konstruere huse m.m.
 
+## Projekt: Fly (ikke færdig)
+I nærværende projekt skal du simulere software for en flyradar hvor du skal implementere forskellige flytyper vha af klasser og objektorienteret principper.
+
+Radaraen holder øje med forskelige og sørger for at de ikke er på kollisons kurs med andre fly. 
+
+Herunder et skelet for for en overordnet flyklasse:
+
+```javascript
+class Fly
+{
+  constructor(model)
+  {
+    this.model = 
+    this.name = 
+    this.x = 
+    this.y =
+    this.curve = //lineær, kvadratisk,kubisk 
+  }
+
+}
+```
