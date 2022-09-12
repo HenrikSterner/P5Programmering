@@ -338,33 +338,43 @@ Endelig oprettes klasser til at repræsentere huse, mennesker, skyer m.m. Disse 
 I nærværende projekt skal du simulere software for en flyradar hvor du skal implementere forskellige flytyper og lufthavne vha af klasser og objektorienteret principper.
 
 Radaraen holder øje med forskelige og sørger for at de ikke er på kollisons kurs med andre fly samt at der plads til at lande i lufthavnen (må ikke overstige kapaciteten). Lufthavnene kan håndtere tre slags fly, der kan flyve med forskellige hastigheder, farver og passagerer: 
-* PassagerFly (100 km/t) med farven blå og kan have 200 passagerer
+* PassagerFly (100 km/t) med farven blå og kan have 200 passagerer. 
 * JetFly(200 km/t) med farven rød og kan have 2 passagerer
 * PropelFly(50 km/t) med farven grøn og kan have 10 passager
-  
+
+Lufthavne har forskellige kapaciteter og typer. Typen afgør hvilke fly, som lufthavnen kan håndtere. Typen er en liste af maksimalt tre elementer bestående af de typer af fly, som lufthavnen tillader. 
+
+Opgaven er: 
+1. Implementér de forskellige typer lufthavne, så de ser forskellige ud, kan starte og tage imod fly fra andre lufthavne samt sikre, at kapaciteten ikke overskrides eller de modtager forkerte flytyper. Hvis det er tilfældet skal flyene sendes videre til en anden lufthavn. 
+2.  Implementér de forskellige fly, så de ser forskellige ud, flyver med forskellig hastighed, samt at de sendes i en anden retning, hvis de er på kollisonskurs. Registrer hvor mange fly der lander undervejs. 
+
+Brug gerne objektorienteret principper i udviklingen af systemet. 
+
 
 Herunder et skelet for for en Lufthavn:
 ```javascript
 class Lufthavn
 {
-  constructor(x,y,name,capacity)
+  constructor(x,y,name,capacity,type)
   {     
     this.x = x 
     this.y = y
     this.name = name
     this.capacity = capacity
+    this.type = type // liste
   }
 
-  display() {
+  display(){
     // Display airport at x position
-    text(this.namem,thix.x,this.y)
+    text(this.name,this.x,this.y)
     stroke(0);
     fill(175);
-    rect(this.position.x, this.position.y, 50,50);
+    rect(this.x, this.y, 25,25);
   }
 }
 ```
 Herunder et skelet for for en overordnet flyklasse:
+
 ```javascript
 class Fly
 {
@@ -389,3 +399,25 @@ class Fly
 
 }
 ```
+Afslutningsvis kommer her et setup, som initialiserer en række lufthavne:
+```javascript
+function setup() {
+  createCanvas(800, 800);
+  L=[] //rummer lufthavne
+  L.push(new Lufthavn(200,200,"Københavns Lufthavn", 50,["PassagerFly"]))
+  L.push(new Lufthavn(500,50,"Stockholms Lufthavn", 15,["PropelFly","PassagerFly"]))
+  L.push(new Lufthavn(100,500,"Madrids Lufthavn", 30,["PropelFly","PassagerFly"]))
+  L.push(new Lufthavn(10,20,"Londons Lufthavn", 1000,["PropelFly","PassagerFly"]))
+  L.push(new Lufthavn(700,600,"Dubais Lufthavn", 40,["PropelFly","PassagerFly"]))
+  L.push(new Lufthavn(200,400,"Roms Lufthavn", 90,["PropelFly","PassagerFly"]))
+  L.push(new Lufthavn(700,300,"Moska Lufthavn", 10,["JetFly"]))
+  L.push(new Lufthavn(300,750,"Alaska Lufthavn", 400,["JetFly"]))
+  
+  let i = 0;
+  while(i<L.length){
+    L[i].display()
+    i++
+  }  
+}
+```
+
