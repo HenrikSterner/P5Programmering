@@ -335,22 +335,56 @@ Til at starte med skal konstrueres en GeometricFigure, der rummer nogle grundlæ
 Endelig oprettes klasser til at repræsentere huse, mennesker, skyer m.m. Disse klasser skal benytte de nævnte geometriske figurer til at konstruere huse m.m.
 
 ## Projekt: Flyradar (ikke færdig)
-I nærværende projekt skal du simulere software for en flyradar hvor du skal implementere forskellige flytyper vha af klasser og objektorienteret principper.
+I nærværende projekt skal du simulere software for en flyradar hvor du skal implementere forskellige flytyper og lufthavne vha af klasser og objektorienteret principper.
 
-Radaraen holder øje med forskelige og sørger for at de ikke er på kollisons kurs med andre fly. 
+Radaraen holder øje med forskelige og sørger for at de ikke er på kollisons kurs med andre fly samt at der plads til at lande i lufthavnen (må ikke overstige kapaciteten). Lufthavnene kan håndtere tre slags fly, der kan flyve med forskellige hastigheder, farver og passagerer: 
+* PassagerFly (100 km/t) med farven blå og kan have 200 passagerer
+* JetFly(200 km/t) med farven rød og kan have 2 passagerer
+* PropelFly(50 km/t) med farven grøn og kan have 10 passager
+  
 
+Herunder et skelet for for en Lufthavn:
+```javascript
+class Lufthavn
+{
+  constructor(x,y,name,capacity)
+  {     
+    this.x = x 
+    this.y = y
+    this.name = name
+    this.capacity = capacity
+  }
+
+  display() {
+    // Display airport at x position
+    text(this.namem,thix.x,this.y)
+    stroke(0);
+    fill(175);
+    rect(this.position.x, this.position.y, 50,50);
+  }
+}
+```
 Herunder et skelet for for en overordnet flyklasse:
-
 ```javascript
 class Fly
 {
-  constructor(model)
+  constructor(startLufthavn,slutLufthavn, model, type)
   {
-    this.model = 
-    this.name = 
-    this.x = 
-    this.y =
-    this.curve = //lineær, kvadratisk,kubisk 
+    this.startLufthavn= startLufthavn
+    this.slutLufthavn = slutLufthavn 
+    this.model = model //enten PassagerFly, JetFly eller PropelFly   
+  }
+
+  update() {
+    //updates the position
+  }
+
+  display() {
+    //displays the plane
+  }
+  setDirection(x,y)
+  {
+    //sets the direction
   }
 
 }
