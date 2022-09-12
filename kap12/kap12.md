@@ -1,4 +1,4 @@
-# 11. Softwarearkitektur
+# 12. Softwarearkitektur
 Softwarearkitektur definerer en grundlæggende organisering af et system og opførsel herunder hvordan de enkelte komponenter i system er samlet samt deres forhold til hinanden og kommunikationen mellem dem. Softwarearkitektur er et slags blueprint for hvorledes systemet er opbygget og danner grundlag for udviklingsgrundlag for programmørerne samtidig med at det inddrager og afbalancerer forskellige aktørers behov og hvorledes holdet bag udviklingen organiseres.
 Det er med andre ord en ekstremt vigtig del i udviklingen er mere komplekse systemer. 
 I det følgende gennemgår vi en række forskellige modeller til at konceptualisere og visualisere systemarkitektur. Det giver et bedre grundlag til at forstå hvorledes et system bør opbygges og belyser noget af den tavse viden og kompleksitet, som ligger gemt i systemer af en vis størrelse.
