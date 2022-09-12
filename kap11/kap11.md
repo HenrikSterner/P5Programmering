@@ -1,4 +1,4 @@
-# 11. Dokumentation
+# 11. Kravspecifikation og dokumentation
 Dokumentation af ens kode og programmer består typisk af skreven tekst og illustrationer knyttet til koden, og spiller en central rolle i softwareudvikling i forhold til at kommunikere med andre udviklere, slutbrugerne af programmet eller andre aktører.
 
 Målene med dokumentation kan bl.a. være at forklare: 
