@@ -27,7 +27,7 @@ Copyright © Henrik Sterner & Peter Sterner 2022.
 - [Kapitel 9: Strenge](kap9/kap9.md)
 - [Kapitel 10: Objektorienteret principper](kap10/kap10.md)
 - [Kapitel 11: Softwarearkitektur](kap11/kap11.md)
-- [Kapitel 12: Dokumentation og kravspecikation](kap11/kap12.md)
+- [Kapitel 12: Dokumentation og kravspecikation](kap12/kap12.md)
 - [Kapitel 13: Testning, debug og fejlhåndtering](kap13/kap13.md)
 - [Kapitel 14: Udviklingsprocesser](kap14/kap14.md)
 - [Kapitel 15: Designmønstre](kap10/kap10.md)
