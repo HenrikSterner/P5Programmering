@@ -28,7 +28,7 @@ Typisk består kravfasen af følgende faser:
 
 
 ## Programmets opbygning
-Vi har allerede set på metoder til at visualisere arkitekturer. I det følgende kigger vi på hvorledes man kan dokumentere og formidle på et mere kodenært niveau. 
+I det følgende kigger vi på hvorledes man kan dokumentere og formidle sin kode på et kodenært niveau. 
 
 ### Indlejret kommentarer til kildekoden
 Et vigtigt værktøj til at dokumentere sin kode er ved brug af inline kommentarer. De kan bruges efter behov og er særligt relevante ved mere komplekse instruktioner. Man bør generelt undgå at kommentere alt for meget, da det også kan forstyrre forståelsen. Ved større funktioner eller klasser kan man skrive over den overordnede definition af disse, nogle linjer der i grove træk skitserer hvad disse gør. 

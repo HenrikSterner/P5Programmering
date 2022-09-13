@@ -329,7 +329,6 @@ function draw() {
 
 ```javascript
 let x;
-let justHitRightWall;
 let xspeed = 3;
 
 function setup() { 
@@ -447,7 +446,7 @@ function draw() {
 
 ```javascript
 function borderCheck() {
- if (x + d / 2 >= windowWidth) {
+ if (x + d / 2 >= width) {
    a = -speed;
    b = 0;
  }
@@ -455,7 +454,7 @@ function borderCheck() {
    a = speed;
    b = 0;
  }
- if (y + d / 2 >= windowHeight) {
+ if (y + d / 2 >= height) {
    a = 0;
    b = -speed;
  }
