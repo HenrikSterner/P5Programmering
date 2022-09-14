@@ -1,4 +1,4 @@
-# 11. Kravspecifikation og dokumentation
+# 11. Dokumentation og kravspecifikation
 Dokumentation af ens kode og programmer består typisk af skreven tekst og illustrationer knyttet til koden, og spiller en central rolle i softwareudvikling i forhold til at kommunikere med andre udviklere, slutbrugerne af programmet eller andre aktører.
 
 Målene med dokumentation kan bl.a. være at forklare: 
@@ -9,22 +9,6 @@ Målene med dokumentation kan bl.a. være at forklare:
   
 I det følgende vil vi gennemgå hvorledes disse tre punkter kan dokumenteres og indføre nogle værktøjer/modeller, som kan være relevante at bruge i formidlingen.
 
-## Kravspecifikation
-En kravspecifikation er særdeles væsentligt at udarbejde og inddrage i udviklingen af nye systemer. Det handler helt konkret om at få formuleret så præcist som muligt hvad skal programmet kunne og mindst ligeså vigtigt, hvad det ikke skal kunne. 
-I den sammenhæng kan det være relevant at gå i dialog med brugeren, kunden eller andre relevante aktører ved brug af eksempelvis spørgeskemaer eller interviews. 
-
-Afhængig af systemets kontekst og hvilket fokus en given aktør har, kan et system bestå af en rækkke forskellige typer krav. Herunder tre forskellige typer krav, som er væsentlige have i fokus i udviklingen af systemet: 
-
-- Forretningskrav. 
-- Brugerkrav. 
-- Systemkrav. 
-
-Typisk består kravfasen af følgende faser:
-- Indsamling af feedback og ønsker fra bruger
-- Analyse af om de foreslået krav aligner med visionen med systemet. 
-- Definering af krav fra et brugerperspektiv og en detaljeret beskrivelse af de funktionelle og tekniske krav
-- Prioritisering og planlægning af hvilke krav der implmenteres hvor og hvornår
-- Validering og vedligeholdelse af systemet mhb på at sikre at systemet rent faktisk understøtter de relevante krav.
 
 
 ## Programmets opbygning
@@ -110,7 +94,7 @@ Herunder eksempler på forskellige figurer der indgår i flowdiagrammer og efter
 - Forbindelse. Bruges til at forbinde flowcharts der fylder mere end én side. Man kan skrive: Til Forbindelse 3 på side 2.		
 - Flow kontrol. Viser retningen I flowet fra en kasse til en anden
 
-
+![Symboler anvendt i flowdiagrammer](../kap9/images/flowdiagramsymboler.png)
 
 
 ### Brugerhistorier
@@ -138,13 +122,51 @@ Herunder et eksempel på en brugerhistorie, der bliver brugt i en online pizzabu
 Programmet lukker dialogen.
 
 
+## Kravspecifikation
+En kravspecifikation er særdeles væsentligt at udarbejde og inddrage i udviklingen af nye systemer. Det handler helt konkret om at få formuleret så præcist som muligt hvad skal programmet kunne og mindst ligeså vigtigt, hvad det ikke skal kunne. 
+Som vi skal se senere, så er der en lang række forskellige aktører i spil, når et system skal udvikles, og der kan være stor forskel på de enkeltes perspektiv. Det forsøger figuren nedenfor på humoristisk vis at illustrere:
+
+![Forskellige perspektiver](../kap9/images/rollersoftware.png)
+
+Det handler med andre ord om at være meget præcis i sin kommunikation ikke mindst i kravspecifikationen. 
+I den sammenhæng kan det være relevant at gå i dialog med brugeren, kunden eller andre relevante aktører ved brug af eksempelvis spørgeskemaer eller interviews. 
+
+Afhængig af systemets kontekst og hvilket fokus en given aktør har, kan et system bestå af en rækkke forskellige typer krav. Herunder tre forskellige typer krav, som er væsentlige at have i fokus i udviklingen af systemet: 
+
+- Forretningskrav. 
+- Brugerkrav. ,
+- Systemkrav. 
+
+Typisk består kravfasen af følgende faser:
+- Indsamling af feedback og ønsker fra bruger
+- Analyse af om de foreslået krav er realistiske i forhold til visionen med systemet. 
+- Definering af krav fra et brugerperspektiv og en detaljeret beskrivelse af de funktionelle og tekniske krav
+- Prioritisering og planlægning af hvilke krav der implmenteres hvor og hvornår
+- Validering og vedligeholdelse af systemet med henblik på at sikre at systemet rent faktisk understøtter de relevante krav.
+
+
 ## Øvelser
 
 1. Skriv noget pseudokode for hvordan du vil logge på facebook? 
 2. Tegn et flowdiagram, der ligger tallene 30 og 40 sammen. 
-3. Lav pseudokode og flowdiagrammer for hver af følgende:
-- Find summen af 5 tal
-- Print ”Hej Verden” 10 gange
-- Program, der læser to tal, ganger (multiplicerer) dem og printer deres produkt
-- Program, der gør det følgende: Spørg brugeren om et tal. Hvis tallet er mellem 0 og 10, så skriv tallet i blåt. Hvis tallet er mellem 10 og 20, så skriv det i rødt. Hvis tallet er mellem 20 og 30, så skriv det i grønt. Hvis tallet er noget andet så skriv det er en forkert farve option.
-
+3. Lav pseudokode og/eller flowdiagrammer for hver af følgende:
+   * Find summen af 5 tal
+   * Print ”Hej Verden” 10 gange
+   * Program, der læser to tal, ganger (multiplicerer) dem og printer deres produkt
+   * Program, der gør det følgende: Spørg brugeren om et tal. Hvis tallet er mellem 0 og 10, så skriv tallet i blåt. Hvis tallet er mellem 10 og 20, så skriv det i rødt. Hvis tallet er mellem 20 og 30, så skriv det i grønt. Hvis tallet er noget andet så skriv det er en forkert farve option.
+4. I det følgende ses noget prosakode på punktform for et program, der tager en streng og returner sandt eller falsk. Overvej hvad programmet gør og prøv at oversætte prosakoden til mere kodenær pseudokode.  
+    a. Tjek først om strengen består af et eller flere tegn. Hvis den er tom eller kun består af et tegn returner da sandt.
+    b. Hvis den består af flere tegn sammenlign første og sidst bogstav. Hvis de to bogstaver er forskellige returner falsk. Ellers fjern dem fra strengen og start algoritmen forfra men nu
+    med den reducerede streng som input.
+5.  Herunder ses kode pseudokode for en søgerutine. Hvad gør koden? Prøv at oversætte den til rigtig kode:
+```javascript
+procedure linear_search (list, value)
+    for each item in the list
+        if match item == value
+            return the item's location
+        end if
+    end for
+end procedure
+```
+6. Skriv pseudokode for et program, der tager en tekststreng og returner strengens karakterer i omvendt rækkefølge. Husk at det gerne skal være nogenlunde uafhængig af et specifikt sprog og at det gerne skal være detaljeret alligevel. 
+7. 
