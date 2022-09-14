@@ -38,6 +38,7 @@ Eller algoritmen for at lave te:
 Pseudokode minder om rigtig kode i den forstand, at den inddrager typiske nøgleord fra programmering såsom if-else, while, for m.m. og dermed induceres mere eller mere direkte en struktur for programmet men man abstraherer for en række væsentlige detaljer såsom valg af datastruktur etc. 
 Man kan tænke på pseudokode som et skelet for rigtig kode, der kan oversættes til maskinekode uden at gøre noget. God pseudokode skal gerne gøre det nemmere og hurtigere at implementere den givne algoritme i ægte kode. 
 Der findes ingen fast konvention for hvorledes pseudokode skal se ud, men det er vigtigt, at valget af syntaks er konsekvent og konsistent. 
+
 #### Navngivning af program/algoritme/funktion
 Første trin i pseudokode er at finde et navn til sit program. Typisk bruges navne der benytter CamelCase, dvs. starter med stort og består af to ord. Det andet ord starter også med stort. Eksempel. InsertionSort, SelectionSort der beskriver to forskellige sorteringsalgoritmer (dvs programmer der sorterer tal i stigende/faldende rækkefølge) etc.
 
@@ -144,6 +145,14 @@ Typisk består kravfasen af følgende faser:
 - Prioritisering og planlægning af hvilke krav der implmenteres hvor og hvornår
 - Validering og vedligeholdelse af systemet med henblik på at sikre at systemet rent faktisk understøtter de relevante krav.
 
+I det følgende vil vi gennemgå nogle grundlæggende men centrale værktøjer i forhold til at udforme en kravspecifikation. 
+
+### Nice to have og need to have
+
+### Kravmatrix
+
+
+
 
 ## Øvelser
 
@@ -169,4 +178,6 @@ procedure linear_search (list, value)
 end procedure
 ```
 6. Skriv pseudokode for et program, der tager en tekststreng og returner strengens karakterer i omvendt rækkefølge. Husk at det gerne skal være nogenlunde uafhængig af et specifikt sprog og at det gerne skal være detaljeret alligevel. 
-7. 
+7. Forklar hvad følgende flowdiagram gør og omskriv det til konkret kode. ![Flowdiagram](../kap11/images/flowmax3numbers.png)
+8. Forklar hvad følgende flowdiagram gør og omskriv det til konkret kode. ![Flowdiagram](../kap11/images/linearsearch.png)
+9. Forklar hvad følgende flowdiagram gør og omskriv det til konkret kode. ![Flowdiagram](../kap11/images/primeflow.png)
