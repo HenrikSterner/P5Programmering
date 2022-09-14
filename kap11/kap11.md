@@ -129,24 +129,27 @@ Som vi skal se senere, så er der en lang række forskellige aktører i spil, n�
 
 ![Forskellige perspektiver](../kap9/images/rollersoftware.png)
 
-Det handler med andre ord om at være meget præcis i sin kommunikation ikke mindst i kravspecifikationen. 
-I den sammenhæng kan det være relevant at gå i dialog med brugeren, kunden eller andre relevante aktører ved brug af eksempelvis spørgeskemaer eller interviews. 
+Udformingen af en kravspecifikation er i høj grad en kommunikationsopgave. Det handler om at være så præcis og skarp i sin kommunikation, at de mulige aktører får en så ensartet opfattelse af løsningen. 
+I den sammenhæng er det mao relevant at gå i dialog med brugeren, kunden eller andre relevante aktører ved brug af eksempelvis kvantitive undersøgelser såsom spørgeskemaer eller kvalitative interviews. 
 
 Afhængig af systemets kontekst og hvilket fokus en given aktør har, kan et system bestå af en rækkke forskellige typer krav. Herunder tre forskellige typer krav, som er væsentlige at have i fokus i udviklingen af systemet: 
 
-- Forretningskrav. 
-- Brugerkrav. ,
-- Systemkrav. 
+* Forretningskrav danner en rammesætning om det overordende projekt og formuleres ud fra nogle høj niveau mål, der ikke nødvendigvis har fokus på de tekniske aspekter ved det endelige produkt.   
+* Brugerkrav betegner de krav som brugeren eller en potentiel bruger har til systemet. De er typisk udledt af kvalitative og kvantitative undersøgelser, såsom spørgeskemaer, interviews og tænke-højt forsøg.  
+* Systemkrav betoner de tekniske krav til systemet.  
 
-Typisk består kravfasen af følgende faser:
-- Indsamling af feedback og ønsker fra bruger
-- Analyse af om de foreslået krav er realistiske i forhold til visionen med systemet. 
-- Definering af krav fra et brugerperspektiv og en detaljeret beskrivelse af de funktionelle og tekniske krav
-- Prioritisering og planlægning af hvilke krav der implmenteres hvor og hvornår
-- Validering og vedligeholdelse af systemet med henblik på at sikre at systemet rent faktisk understøtter de relevante krav.
+Typisk består kravspecifikationen af følgende faser:
+1. Indsamling af feedback og ønsker fra bruger
+2. Analyse af om de foreslået krav er realistiske i forhold til visionen med systemet. 
+3. Definering af krav fra et brugerperspektiv og en detaljeret beskrivelse af de funktionelle og tekniske krav
+4. Prioritisering og planlægning af hvilke krav der implmenteres hvor og hvornår
+5. Validering og vedligeholdelse af systemet med henblik på at sikre at systemet rent faktisk understøtter de relevante krav.
 
-I det følgende vil vi gennemgå nogle grundlæggende men centrale værktøjer i forhold til at udforme en kravspecifikation. 
+Selvom udarbejdelsen af en kravspecifikation ikke nødvendigvis kræver en særlig teknisk indsigt til det endelig produkt, så er det stadig en god ide at kende noget til nogle af de aktiviteter og værktøjer, som kan bruges og inddrages i processen. 
 
+I det følgende vil vi gennemgå nogle grundlæggende men centrale værktøjer og aktiviteter i forhold til at udforme en kravspecifikation. 
+
+### Use-case diagrammer 
 ### Nice to have og need to have
 
 ### Kravmatrix
