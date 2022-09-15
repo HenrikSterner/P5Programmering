@@ -211,6 +211,35 @@ Disse stumper pseudokode er særdeles højniveau og ligger langt fra den mere pr
 
 Pseudokode minder om rigtig kode i den forstand, at den inddrager typiske nøgleord fra programmering såsom if-else, while, for m.m. og dermed induceres mere eller mere direkte en struktur for programmet men man abstraherer for en række væsentlige detaljer såsom valg af datastruktur etc. 
 Man kan tænke på pseudokode som et skelet for rigtig kode, der kan oversættes til maskinekode uden at gøre noget. God pseudokode skal gerne gøre det nemmere og hurtigere at implementere den givne algoritme i ægte kode. 
+Herunder et eksempel på pseudokode, hvor vi i højere grad begynder at nærmere os egentlige kodesyntax for en fibonacci-funktion:
+
+```javascript
+fibonacci (n):
+    loop mellem 0 og n
+        sum de to tidligere fibonacci tal
+        når vi når n, returneres værdien
+```
+Vi er stadig et stykke fra rigtig kode, men vi begynder at se strukturen af et egentligt program. Der er en række uklarheder såsom at summe de to tidligere fibonacci tal. 
+Herunder et endnu mere kodenært eksempel, hvor vi tydeliggøre nogle af uklarhederne:
+
+```javascript
+function fibonacci(n):
+    if n er 0 eller 1, return 1
+
+    // indlæs de første to fibonacci tal
+    f1 = 1
+    f2 = 1
+
+    loop fra 2 til n:
+        fibi = f1 + f2
+        //Opdater tidligere fibonnaci tal
+        f2 = f1
+        f1 = fibi
+
+   return fibi
+```
+Her nærmer vi os meget den almindelige kode og kender man til de basale strukturer som løkker, så burde det være muligt ud fra denne pseudokode ret hurtigt at implementere i praksis. 
+
 Der findes ingen fast konvention for hvorledes pseudokode skal se ud, men det er vigtigt, at valget af syntaks er konsekvent og konsistent. 
 
 #### Navngivning af program/algoritme/funktion
