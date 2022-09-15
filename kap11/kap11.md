@@ -43,6 +43,7 @@ function plus(x, y) {
   ...
 }
 ```
+
 Ved at gøre brug af denne notation kan man gøre brug af markup-sproget JSDoc se <https://jsdoc.app/>, som giver mulighed for let at autogenerere dokumentation via html-sider. 
 Har man installeret JS Doc kan man reelt bare skrive
 ```javascript
@@ -111,20 +112,102 @@ class Point extends Circle {
     }
 }
 ```
+### Refaktorisering
+Som det blev nævnt tidligere, så er god kode ofte kendetegnet ved at være relativt selvforklarende og lettere tilgængeligt. Derved bliver dokumentationsbehovet reduceret. Med andre ord fremfor at skrive en masse kommentarer kan man nogle gange også lave en såkaldt refaktorisering af sin kode for at gøre den mere læsbar. `Refaktorisering` betegner den proces hvorved man omskriver kode, så den er mere enkel og lettere at forstå.  
+Herunder et eksempel på kode, hvor man kan reducere behovet for dokumentation ved at refaktorisere.  Først den oprindelige version:
+```javascript
+//Version 1:
+function listPrimes(N) {
+  for (let i = 2; i < N; i++) {
+    // checks if the integer i is a prime number
+    for (let j = 2; j < i; j++) {
+      if (i % j == 0) continue nextPrime;
+    }
+    console.log(i)
+  }
+}
+```
+Løkker inde i løkker kan ofte være svære for nogle at forstå og kan gøres mere læsbare og forståelige, hvis man deler det op i mindre bider. Eksempelvis kan man sætte den inderste løkke ind i en funktion:
+```javascript
+function listPrimes(N) {
+  for (let i = 2; i < N; i++) {
+    if (!isPrime(i)) continue;
+    console.log(i)
+  }
+}
+
+function isPrime(N) {
+  for (let i = 2; i < N; i++) {
+    if (N % i == 0) return false;
+  }
+  return true;
+}
+```
+Her har vi sat den inderste løkke, der tjekker om tallet `N` er et primtal. 
+
+Et andet eksempel kunne være hvor vi har løkker efterfulgt af hinanden. Her kan det ofte være hensigtsmæssigt refaktorisere løkkerne til funktioner. 
+
+```javascript
+let Lx= []
+let Ly= []
+let n = 20
+for(let i=0;i<n;i++)
+{
+    let x = random(i,i+5)
+    Lx.push(x)
+    let y = random(i,i+5)
+    Ly.push(y)
+}
+
+beginShape(LINES);
+    for(let i=0;i<n;i++)
+    {
+        vertex(Lx[i],Ly[i])
+    }
+endShape();
+```
+I sådanne tilfælde kan det være bedre at konstruere nogle funktioner der erstatter løkkerne:
+
+```javascript
+function generatePoints(n)
+{
+    for(let i=0;i<n;i++)
+    {
+        let x = random(i,i+5)
+        Lx.push(x)
+        let y = random(i,i+5)
+        Ly.push(y)
+    }
+}
+
+function drawLines(n)
+{
+    beginShape(LINES);
+        for(let i=0;i<n;i++)
+        {
+            vertex(Lx[i],Ly[i])
+        }
+    endShape();
+}
+```
+
 ### Pseudokode
-Pseudokode er formuleret i almindeligt engelsk, dansk eller et tredje sprog, og udgør en mere abstrakt højniveau beskrivelse af koden, som er lettere tilgængelig end den egentlige kode. Pseudokode er typisk formuleret, så det er uafhængig af programmeringssprog og bliver brugt i stor stil i videnskabelige tekster og lærebøger til at kommunikere og formidle centrale ideer og hvorledes de kan omsættes til kode. Pseudokode bruges ofte til at formidle mere komplekse stykker kode, der løser et mere generisk problem. Et godt eksempel herpå er algoritmer, som er en afsluttet sekvens af instruktioner, der løser et problem eller udfører en konkret opgave. Herunder et eksempel på pseudokode for en algoritme der ligger to tal sammen:
+Pseudokode betyder frit oversat "ikke ægte kode". Det er formuleret i almindeligt engelsk, dansk eller et tredje sprog, og udgør en mere abstrakt højniveau beskrivelse af koden, som er lettere tilgængelig end den egentlige kode. 
+Det er kendetegnende for pseudokode, at det typisk er formuleret, så det er uafhængig af programmeringssprog. Pseudokoder bliver brugt i stor stil i videnskabelige tekster og lærebøger til at kommunikere og formidle centrale ideer og hvorledes de kan omsættes til kode. 
+Pseudokode bruges ofte til at formidle mere komplekse stykker kode, der løser et mere generisk problem. Et godt eksempel herpå er algoritmer, som er en afsluttet sekvens af instruktioner, der løser et problem eller udfører en konkret opgave. Herunder et eksempel på pseudokode for en algoritme der ligger to tal sammen:
 
-- Tag to tal
-- Lig tallene sammen
-- Vis resultatet
-
-Skulle disse tre linjer implementeres i praksis ville de fylde betydeligt mere. 
+1. Indlæs to tal
+2. Adder tallene 
+3. Print resultatet
 
 Eller algoritmen for at lave te:
 - Tag 1 tepose og placer den i en kop
 - Hæld kogende vand ned i koppen
 - Lad den trække i 5 minutter
 - Tag teposen op af vandet og smid den ud
+
+Disse stumper pseudokode er særdeles højniveau og ligger langt fra den mere programmeringsnære variant af pseudokoden, som vi skal se senere. Skulle disse tre linjer implementeres i praksis ville de fylde betydeligt mere. Den gode pseudokode er typisk kendetegnet ved en fornuftig balance mellem kompleksiteten af den løsning man for søger at beskrive med deltaljegraden af pseudokoden i forhold til den målgruppe, som man skriver til. 
+
 
 Pseudokode minder om rigtig kode i den forstand, at den inddrager typiske nøgleord fra programmering såsom if-else, while, for m.m. og dermed induceres mere eller mere direkte en struktur for programmet men man abstraherer for en række væsentlige detaljer såsom valg af datastruktur etc. 
 Man kan tænke på pseudokode som et skelet for rigtig kode, der kan oversættes til maskinekode uden at gøre noget. God pseudokode skal gerne gøre det nemmere og hurtigere at implementere den givne algoritme i ægte kode. 
