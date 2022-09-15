@@ -30,7 +30,7 @@ Copyright © Henrik Sterner & Peter Sterner 2022.
 - [Kapitel 12: Softwarearkitektur](kap12/kap12.md)
 - [Kapitel 13: Testning, debug og fejlhåndtering](kap13/kap13.md)
 - [Kapitel 14: Udviklingsprocesser](kap14/kap14.md)
-- [Kapitel 15: Designmønstre](kap10/kap10.md)
+- [Kapitel 15: Designmønstre og andre datastrukturer](kap15/kap15.md)
 - [Kapitel 16: Avanceret datastrukturer](kap10/kap10.md)
 - [Kapitel 17: Computationel tænkning](kap10/kap10.md)
 - [Kapitel 18: Udviklingsmiljø og versioneringskontrol](kap18/kap18.md)
