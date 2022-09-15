@@ -4,14 +4,14 @@ Velkommen til hjemmesiden til lærebogen *Programmering i p5.js*, som er under u
 
 I de respektive mapper finder man kapitlerne samt tilhørende øvelser.
 
-OBS: Bogen er i den grad under udarbejdelse, så forvent masser af fejl og mangler. Skriv gerne til henrik.sterner@gmail.com hvis du har forslag til forbedringer eller rettelser. Du er også velkommen til at clone/forke projektet fra github. Bogens hjemmeside:  [(henriksterner.github.io/P5Programmering/)](henriksterner.github.io/P5Programmering/).
+OBS: Bogen er i den grad under udarbejdelse, så forvent masser af fejl og mangler. Skriv gerne til <henrik.sterner@gmail.com> hvis du har forslag til forbedringer eller rettelser. Du er også velkommen til at clone/forke projektet fra github. Bogens hjemmeside:  [henriksterner.github.io/P5Programmering](henriksterner.github.io/P5Programmering/).
 
 God fornøjelse!
 
 Peter & Henrik
 
 Mekanisk, elektronisk eller anden gengivelse af eller kopiering fra denne digitale udgave af bogen eller 
-dele heraf er ifølge gældende dansk lov om ophavsret ikke tilladt.
+dele heraf er uden eksplicit aftale med os ifølge gældende dansk lov om ophavsret ikke tilladt.
 Copyright © Henrik Sterner & Peter Sterner 2022.
 
 # Kapitler
