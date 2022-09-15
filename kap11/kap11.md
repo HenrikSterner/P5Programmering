@@ -1,5 +1,5 @@
 # 11. Dokumentation og kravspecifikation
-Dokumentation af ens kode og programmer består typisk af skreven tekst og illustrationer knyttet til koden, og spiller en central rolle i softwareudvikling i forhold til at kommunikere med andre udviklere, slutbrugerne af programmet eller andre aktører.
+Dokumentation af ens kode og programmer består typisk af skreven tekst og illustrationer knyttet til koden, og spiller en central rolle i softwareudvikling i forhold til at kommunikere med andre udviklere, slutbrugerne af programmerne, andre aktører eller dig selv. Du vil blive overrasket over hvor hurtigt man glemmer hvad man egentlig tænkte, da man skrev koden for uger eller bare dage siden. 
 
 Målene med dokumentation kan bl.a. være at forklare: 
 
@@ -8,6 +8,9 @@ Målene med dokumentation kan bl.a. være at forklare:
 - Slutbrugermanual: Hvordan bruges programmet.
   
 I det følgende vil vi gennemgå hvorledes disse tre punkter kan dokumenteres og indføre nogle værktøjer/modeller, som kan være relevante at bruge i formidlingen.
+
+Ligesom dokumentationen er væsentlig er det mindst ligeså essentielt at få udformet en ordentlig kravspecifikation inden man starter udviklingen. Det er kravspecifikationen der sætter de overordnede rammer og mål for projektet. Man kan være nok så dygtig en programmør, der kan skrive tusindvis af linjers kode i løbet af ingen tid, men hvis målene ikke er klare, kan det hurtigt ende galt. Som den indisiske politiker Gandhi formulerede det, så uanset hvor hurtigt du skrider frem, når du ikke din destination, hvis du ikke går i den rigtige retning. 
+Vi dedikerer derfor sidste del af dette kapitel til at folde arbejdet med kravspecifikationen lidt ud og beskrive nogle gode værktøjer, som er relevante at inddrage i processen. 
 
 
 
@@ -20,6 +23,94 @@ Et vigtigt værktøj til at dokumentere sin kode er ved brug af inline kommentar
 Til et hvert større sprog findes guides eller regler for hvorledes god kode bør skrives og dokumenteres. Det kan være alt fra hvorledes man bør navngive sine variabler, til indenteringen, til hvor man skifter linje. Det er vigtigt, at man i den sammenhæng husker at være konsistent og konsekvent i brugen af de valgte regler.
 Et vigtigt aspekt ved god kode er, at det også er læsbar kode. 
 
+Pas med andre ord på kommentarer, der bruger mange linjer på at forklare hvad koden gør. Hvis koden er så uklar, at den skal uddybes for meget så er det måske et tegn på, at den bør omskrives. Undgå altså gerne kommentarer såsom følgende: 
+
+```javascript
+// Denne kode vil gøre det her (....) og det her (....)
+// og hvem ved hvad den ellers gør
+//...
+```
+Prøv i stedet at give en høj niveau beskrivelse af kontrolflowet i forskellige situationer. Herunder et eksempel for en funktion der udregner summen af to tal:
+```javascript
+/**
+ * Returnerer summen af to tal x og y.
+ *
+ * @param {number} x Den første operand skal være et reelt tal.
+ * @param {number} x Den anden operand skal være et reelt tal.
+ * @return {number} x Udregner summen af x og y.
+ */
+function plus(x, y) {
+  ...
+}
+```
+Ved at gøre brug af denne notation kan man gøre brug af markup-sproget JSDoc se <https://jsdoc.app/>, som giver mulighed for let at autogenerere dokumentation via html-sider. 
+Har man installeret JS Doc kan man reelt bare skrive
+```javascript
+jsdoc navn_på_fil.js
+```
+Hvor "navn_på_fil.js" skal erstattes af den konkrete javascript-fil, så genereres automatisk en html side med dokumentation i samme bibliotek. Ydermere understøtter de fleste udviklingsmiljøer (herunder VS code) JSDocs notation, så man kan få autogenereret kode fremover ved at benytte JSDoc. Øvelserne vil gå mere i dybden med brugen af JSDoc. 
+
+Når man bruger JSDoc bør man også overveje, hvilket sprog man skriver sine kommentarer i om det eksempelvis skal være dansk eller engelsk. Generelt er det en god ide at skrive på engelsk, da nøgleordene også er på engelsk og en langt større grupppe af udviklere forstår engelsk fremfor dansk. Vi varierer lidt i denne tekst, da der er tale om en lærebog og at understrege, at det grundlæggende også er ok, at bruge dansk. Man skal bare være opmærksom på det og passe på med at blande engelsk og dansk i kommentarer eller kode.  
+
+Herunder et lidt større eksempler hvor der indgår klasser og metoder i dokumentationen ved brug af JS Doc.
+
+```javascript
+/** Class that represents a circle. */
+class Circle {
+    /**
+     * Constructs a circle
+     * @param {number} x - Circles x coordinate.
+     * @param {number} y - Circles y coordinate.
+     */
+    constructor(x, y) {
+        // ...
+    }
+
+    /**
+     * Gets x-value.
+     * @return {number} x-value.
+     */
+    getX() {
+        // ...
+    }
+
+    /**
+     * Get y værdien.
+     * @return {number} y-value.
+     */
+    getY() {
+        // ...
+    }
+
+}
+```
+Herunder et eksempel på nedarvning fra ovenstående klasse:
+
+```javascript
+/**
+ * Class that represents point
+ * @extends Cirkel
+ */
+class Point extends Circle {
+    /**
+     * Creates a point (circle (without radius)).
+     * @param {number} x - value.
+     * @param {number} y - value
+     * @param {number} c - value.
+     */
+    constructor(x, y) {
+        // ...
+    }
+
+    /**
+     * Gets color of point.
+     * @return {number} color of point in colorcode.
+     */
+    getColor() {
+        // ...
+    }
+}
+```
 ### Pseudokode
 Pseudokode er formuleret i almindeligt engelsk, dansk eller et tredje sprog, og udgør en mere abstrakt højniveau beskrivelse af koden, som er lettere tilgængelig end den egentlige kode. Pseudokode er typisk formuleret, så det er uafhængig af programmeringssprog og bliver brugt i stor stil i videnskabelige tekster og lærebøger til at kommunikere og formidle centrale ideer og hvorledes de kan omsættes til kode. Pseudokode bruges ofte til at formidle mere komplekse stykker kode, der løser et mere generisk problem. Et godt eksempel herpå er algoritmer, som er en afsluttet sekvens af instruktioner, der løser et problem eller udfører en konkret opgave. Herunder et eksempel på pseudokode for en algoritme der ligger to tal sammen:
 
@@ -184,3 +275,12 @@ end procedure
 7. Forklar hvad følgende flowdiagram gør og omskriv det til konkret kode. ![Flowdiagram](../kap11/images/flowmax3numbers.png)
 8. Forklar hvad følgende flowdiagram gør og omskriv det til konkret kode. ![Flowdiagram](../kap11/images/linearsearch.png)
 9. Forklar hvad følgende flowdiagram gør og omskriv det til konkret kode. ![Flowdiagram](../kap11/images/primeflow.png)
+10. I det følgende skal laves flowdiagrammer og/pseudokode for følgende funktioner: 
+    1. Skriv en funktion der finder det mindste positive tal af fire givne tal som argumenter.
+    2. Skriv en funktion der summer alle tal i en liste.
+    3. Skriv en funktion, der bytter om på rækkefølgen i en given liste.
+    4. Skriv en funktion, der undersøger om et tal er indenfor et givent interval.
+    5. Skriv en funktion, der tager en liste af tal og returnerer en ny liste der består af de unikke tal fra den liste.
+    6. Skriv en funktion, der givet en liste kun printer de lige tal.
+11. Dokumenter funktionerne ved brug JSDoc formatet. Det er automatisk understøttet i de nyeste versioner af VS code. Alternativt kan det installeres fra <https://jsdoc.app/>.
+12. Prøv nu at implementere et par af funktionerne og importer dem i din kode. VS Code skulle gerne tilbyde hjælp (den såkaldte "Intellisense") til at genere dele af funktionen. 
