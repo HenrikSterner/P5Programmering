@@ -261,56 +261,60 @@ Der findes ingen fast konvention for hvorledes pseudokode skal se ud, men det er
 #### Regler for pseudokode
 Selvom der ikke findes nogen entydige krav til syntaksreglerne i pseudokode kommer herunder en række forslag, som kan være gode at følge. 
 
-** Første trin i pseudokode er at finde et navn til sit program. Typisk bruges navne der benytter CamelCase, dvs. starter med stort og består af to ord. Det andet ord starter også med stort. Eksempel. InsertionSort, SelectionSort der beskriver to forskellige sorteringsalgoritmer (dvs programmer der sorterer tal i stigende/faldende rækkefølge) etc.
+- Første trin i pseudokode er at finde et navn til sit program. Typisk bruges navne der benytter CamelCase, dvs. starter med stort og består af to ord. Det andet ord starter også med stort. Eksempel. InsertionSort, SelectionSort der beskriver to forskellige sorteringsalgoritmer (dvs programmer der sorterer tal i stigende/faldende rækkefølge) etc.
 
-** Når vi designer pseudokode antager vi at koden udføres sekventielt. Det gør vi ret ofte, når vi designer algoritmer. Såfremt man skriver pseudokode, der kan afvikles parallelt af flere computere bør man gøre opmærksom på det i pseudokoden. 
+- Når vi designer pseudokode antager vi at koden udføres sekventielt. Det gør vi ret ofte, når vi designer algoritmer. Såfremt man skriver pseudokode, der kan afvikles parallelt af flere computere bør man gøre opmærksom på det i pseudokoden. 
 
-** Pseudokode varierer i stil fra programmør til programmør, men man låner typisk i sin syntax fra programmeringssprog såsom Python, Java, C++ og lignende. 
+- Pseudokode varierer i stil fra programmør til programmør, men man låner typisk i sin syntax fra programmeringssprog såsom Python, Java, C++ og lignende. 
 Selvom pseudokode generelt skal være sproguafhængig kan det stadig være en god idé at låne den syntax, man skal lave selve koden i. Skal man eksempelvis skrive et Python program, kan man låne den syntax en smule til sin pseudokode
 
-** Prøv at (meta-)kommuniker allerede igennem navngivningen af metoder/funktioner/algoritmer eller lignende, hvad de gør samtidig med, at navnene skal  letforståelige og sigende.  F.eks. er det helt indlysende bedre at give en funktion, der adderer noget sammen titlen  "sum()" fremfor eksempelvis et tilfældigt navn som "x3j67()". Husk på at hele ideen med pseudokode er at gøre koden lettere tilgængelig for andre.
+- Prøv at (meta-)kommuniker allerede igennem navngivningen af metoder/funktioner/algoritmer eller lignende, hvad de gør samtidig med, at navnene skal  letforståelige og sigende.  F.eks. er det helt indlysende bedre at give en funktion, der adderer noget sammen titlen  "sum()" fremfor eksempelvis et tilfældigt navn som "x3j67()". Husk på at hele ideen med pseudokode er at gøre koden lettere tilgængelig for andre.
 Hvis et navn er sammensat af mere end et ord, kan man starte andet ord med stort eller lave en underscore f.eks.
 "squareRoot()" eller square_root()"
 
-* Navngivning og initialisering af variable: Variabler skal også have letforståelige og sigende navne f.eks. navn, alder, højde. Hvis variablen har mere end et ord kan man starte andet ord med stort såsom forNavn eller efterNavn. Erklæring (Initialisering)  af variabler kan gøres ved brug af eksempelvis nøgleordet Set, hvor man gerne må give den en værdi med det samme.Det kunne være Set sum = 0
-** Hvis man skal erklære mange variabler kan det være en god ide at gøre det på samme linje, så som:
+- Navngivning og initialisering af variable: Variabler skal også have letforståelige og sigende navne f.eks. navn, alder, højde. Hvis variablen har mere end et ord kan man starte andet ord med stort såsom forNavn eller efterNavn. Erklæring (Initialisering)  af variabler kan gøres ved brug af eksempelvis nøgleordet Set, hvor man gerne må give den en værdi med det samme.Det kunne være Set sum = 0
+-  Hvis man skal erklære mange variabler kan det være en god ide at gøre det på samme linje, så som:
 ```javascript
 sum = 0, Set x = 0, Set y = 0, Set z = 0, Set isCube = FALSE
 ```
-En sådan erklæring eksekveres fra venstre til højre.
-** Man kan læse data fra variabler, lister eller lignende ved brug af et nøgleord som READ. Herunder eksempler:
-```javascript
-Read: Liste af variabler
-Read: x
-Read: x,y,z
+    En sådan erklæring eksekveres fra venstre til højre.
+- Man kan læse data fra variabler, lister eller lignende ved brug af et nøgleord som READ. Herunder eksempler:
+    ```javascript
+    Read: Liste af variabler
+    Read: x
+    Read: x,y,z
+    ```
+- Tilsvarende kan man præciserere output ved brug af eksempelvis `Print` eller `Write`. Herunder et eksempel: 
+    ```javascript
+    Print: Besked eller Variabel
+    Print: ”Hello World” //Besked
+    Print: x, y	       //Variabler	
+    Write: Besked eller Variabel 
+    Write: ”Hello World”       //Besked
+    Write: ”Værdien er”, x	 //Besked og variabler
 ```
-** Tilsvarende kan man præciserere output ved brug af eksempelvis `Print` eller `Write`. Herunder et eksempel: 
-```javascript
-Print: Besked eller Variabel
-Print: ”Hello World” //Besked
-Print: x, y	       //Variabler	
-Write: Besked eller Variabel 
-Write: ”Hello World”       //Besked
-Write: ”Værdien er”, x	 //Besked og variabler
-```
-** Undgå generelt at skriv mere end et udsagn pr. linje. Det gør generelt pseudokode nemmere at læse for de fleste.  
-** Sæt evt nøgle ord med store bogstaver eller fed skrift (såsom `READ`, `WRITE`, `IF`, `WHILE`, `FOR`).
-** Ryk ind eller tabuler for at vise hierarkiet i ens kode. Særligt relevant når man eksempelvis har betinget udførsel, løkker eller funktioner i sin pseudokode. 
-** Afslut flere linjers strukturer. Har man eksempelvis en `IF` betinget udførsel er det en god ide at slutte med eksempelvis `END IF` eller lignende.  
-** Undgå at blande forskellige sprog i sin pseudokode. Dvs. undgå eksempelvis at blande dansk og engelsk. 
-** Overvej hvem din målgruppe er og hvilken detaljegrad af pseudokoden, der er relevant. 
+- Undgå generelt at skriv mere end et udsagn pr. linje. Det gør generelt pseudokode nemmere at læse for de fleste.  
+- Sæt evt nøgle ord med store bogstaver eller fed skrift (såsom `READ`, `WRITE`, `IF`, `WHILE`, `FOR`).
+- Ryk ind eller tabuler for at vise hierarkiet i ens kode. Særligt relevant når man eksempelvis har betinget udførsel, løkker eller funktioner i sin pseudokode. 
+- Afslut flere linjers strukturer. Har man eksempelvis en `IF` betinget udførsel er det en god ide at slutte med eksempelvis `END IF` eller lignende.  
+- Undgå at blande forskellige sprog i sin pseudokode. Dvs. undgå eksempelvis at blande dansk og engelsk. 
+- Overvej hvem din målgruppe er og hvilken detaljegrad af pseudokoden, der er relevant. Skal man kunne implementere pseudokoden selv eller er hensigten mere at formidle en ide eller et koncept?
 
 ### Prosakode
-Prosakode er en mindre kodenær beskrivelse. Der stilles ingen krav til, at man bruger bestemte keywords eller lignende. Vigtigste er dog, at prosakoden faciliterer en forståelse af hvorledes man kan skabe en overordnet struktur for programmet. 
+Prosakode er en mindre kodenær beskrivelse. Der stilles ingen krav til, at man bruger bestemte keywords eller lignende. Vigtigste er dog, at prosakoden faciliterer og understøtter en forståelse af hvorledes man kan skabe en overordnet struktur for programmet. 
 Det er også muligt at kombinere prosakode og pseudokode. 
 Herunder et eksempel på prosakode for en funktion, der givet en streng returnerer hvorvidt det er et palindrome eller ej:
 
-Givet en streng $s$
-a.	Tjek først om strengen $s$ består af et eller flere tegn. Hvis den er tom eller kun består af et tegn returner da sandt.
-b.	Hvis den består af flere tegn sammenlign første og sidst element. Hvis de to elementer er forskellige returnes falsk. Ellers fjern dem fra strengen og start algoritmen forfra men nu med den reducerede streng som input.
+Givet en streng $s$ som input. Vores program gør da følgende: 
+** 1. Tjek først om strengen $s$ består af et eller flere tegn. Hvis den er tom eller kun består af et tegn returner da sandt.
+** 2. Hvis den består af flere tegn sammenlign første og sidst element. Hvis de to elementer er forskellige returnes falsk. Ellers fjern dem fra strengen og start algoritmen forfra men nu med den reducerede streng som input.
 
 ### Flowdiagrammer
-Flowdiagrammer eller rutediagrammer kan bruges til at lave en visuel repræsentation af  programmets flow, der grundlæggende er uafhængig af det valgte sprog, hvilket muliggør at programmører i andre sprog kan gøre brug af diagrammet. Det kan være en ide at bruge, når man skal illustrere eller dokumentere mindre mere komplekse stykker kode til andre programmører. Den klare ulempe ved flowdiagrammer er, at jo større stykker af kode man forsøgere at visualisere med flowdiagrammer, jo mere kompleks og til tider uoverskuelig risikerer flowdiagrammet at blive. Som supplement til pseudokode og prosakode er flowdiagrammer rigtig gode.
+Flowdiagrammer eller rutediagrammer kan bruges til at lave en visuel repræsentation af  programmets flow, der grundlæggende er uafhængig af det valgte sprog, hvilket muliggør at programmører i andre sprog kan gøre brug af diagrammet. 
+
+Det kan være en ide at bruge, når man skal illustrere eller dokumentere mindre mere komplekse stykker kode til andre programmører. 
+Den klare ulempe ved flowdiagrammer er, at jo større stykker af kode man forsøgere at visualisere med flowdiagrammer, jo mere kompleks og til tider uoverskuelig risikerer flowdiagrammet at blive. Som supplement til pseudokode og prosakode er flowdiagrammer rigtig gode.
+
 Flowcharts tegnes generelt fra toppen til bunden
 Alle elementer (æsker) skal forbindes med pile (Flow kontrol)
 Alle flowcharts starter med et Terminal eller Proces element
@@ -325,15 +329,25 @@ Herunder eksempler på forskellige figurer der indgår i flowdiagrammer og efter
 - Forbindelse. Bruges til at forbinde flowcharts der fylder mere end én side. Man kan skrive: Til Forbindelse 3 på side 2.		
 - Flow kontrol. Viser retningen I flowet fra en kasse til en anden
 
-![Symboler anvendt i flowdiagrammer](../kap9/images/flowdiagramsymboler.png)
+![Symboler anvendt i flowdiagrammer](../kap11/images/flowdiagramsymboler.png)
+
+Herunder nogle eksempler på flowdiagrammer. 
+
+I det første eksempel indlæses to tal og vi returnerer det største:
+
+![Det største af to tal](../kap11/images/flowmax2numbers.png)
+
+Herefter et kodenært flowdiagram for Fibonacci-funktionen:
+
+![Fibonacci funktionen](../kap11/images/fibflow.png)
 
 
 ### Brugerhistorier
-Brugerhistorier beskriver en afgrænset interaktion mellem brugeren og systemet og kan være relevante at inddrage i sin dokumentation enten som en del af koden eller måske prosakoden. Brugerhistorie kan være gode til at belyse noget af den tavse viden som ofte ligger gemt i de indledende faser af softwareudvikling.
+Brugerhistorier beskriver en afgrænset interaktion mellem brugeren og systemet og kan være relevante at inddrage i sin dokumentation enten som en del af koden eller måske prosakoden. Brugerhistorier kan være gode til at belyse noget af den tavse viden som ofte ligger gemt i de indledende faser af softwareudvikling. Med tavs viden skal her forstå viden, som vi først bliver opmærksomme på, når vi først er længere henne i udviklingsprocessen.
 
 En effektiv brugerhistorie er kendetegnet ved, at den er
-- skrevet i et naturligt sprog, idet den skal fungere som kommunikationsmiddel mellem programmets bruger og udviklingsteamet.
-- evaluerbar. Når brugerhistorien er implementeret, kan brugerhistorien bruges som udgangspunkt for en test af programmets funktion.
+** skrevet i et naturligt sprog, idet den skal fungere som kommunikationsmiddel mellem programmets bruger og udviklingsteamet.
+** evaluerbar. Når brugerhistorien er implementeret, kan brugerhistorien bruges som udgangspunkt for en test af programmets funktion.
 
 Detaljegraden giver mulighed for at implementere brugerhistorien på en entydig måde, uden at blive så omstændig, at den hæmmer forståelsen.
 
@@ -344,14 +358,15 @@ Herunder et eksempel på en brugerhistorie, der bliver brugt i en online pizzabu
 - Brugeren vælger først en pizza udfra listen af pizzaer.
 - Brugeren klikker på knappen ”Bestil flere”.
 - Programmet viser en dialog, hvor brugeren kan se:
-- Pizzaens navn og hvilke ingredienser den indeholder
-- En dropdown box, hvor man kan vælge det antal pizzaer man ønsker at bestille. (0-10)
-- En ”OK”-knap
+  - Pizzaens navn og hvilke ingredienser den indeholder
+  - En dropdown box, hvor man kan vælge det antal pizzaer man ønsker at bestille. (0-10)
+  - En ”OK”-knap
 - Brugeren vælger det ønskede antal pizzaer af den bestemte type og klikker ”OK”.
-- Hvis antallet er større end 0, oprettes en transaktion, hvor pizzaernes samlede pris justeres, og pizzaerne tilføjes til kurven.
-- Hvis antallet er 0 oprettes ingen transaktion, og der sker intet med kurven.
-Programmet lukker dialogen.
+  - Hvis antallet er større end 0, oprettes en transaktion, hvor pizzaernes samlede pris justeres, og pizzaerne tilføjes til kurven.
+  - Hvis antallet er 0 oprettes ingen transaktion, og der sker intet med kurven.
+- Programmet lukker dialogen.
 
+Man kan evt. supplere sine brugerhistorier med figurer, men det er ikke et krav. 
 
 ## Kravspecifikation
 En kravspecifikation er særdeles væsentligt at udarbejde og inddrage i udviklingen af nye systemer. Det handler helt konkret om at få formuleret så præcist som muligt hvad skal programmet kunne og mindst ligeså vigtigt, hvad det ikke skal kunne. 
