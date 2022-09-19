@@ -201,29 +201,44 @@ Pseudokode bruges ofte til at formidle mere komplekse stykker kode, der løser e
 3. Print resultatet
 
 Eller algoritmen for at lave te:
-- Tag 1 tepose og placer den i en kop
-- Hæld kogende vand ned i koppen
-- Lad den trække i 5 minutter
-- Tag teposen op af vandet og smid den ud
+1. Tag 1 tepose og placer den i en kop
+2. Hæld kogende vand ned i koppen
+3. Lad den trække i 5 minutter
+4. Tag teposen op af vandet og smid den ud
 
-Disse stumper pseudokode er særdeles højniveau og ligger langt fra den mere programmeringsnære variant af pseudokoden, som vi skal se senere. Skulle disse tre linjer implementeres i praksis ville de fylde betydeligt mere. Den gode pseudokode er typisk kendetegnet ved en fornuftig balance mellem kompleksiteten af den løsning man for søger at beskrive med deltaljegraden af pseudokoden i forhold til den målgruppe, som man skriver til. 
-
-
-Pseudokode minder om rigtig kode i den forstand, at den inddrager typiske nøgleord fra programmering såsom if-else, while, for m.m. og dermed induceres mere eller mere direkte en struktur for programmet men man abstraherer for en række væsentlige detaljer såsom valg af datastruktur etc. 
-Man kan tænke på pseudokode som et skelet for rigtig kode, der kan oversættes til maskinekode uden at gøre noget. God pseudokode skal gerne gøre det nemmere og hurtigere at implementere den givne algoritme i ægte kode. 
-Herunder et eksempel på pseudokode, hvor vi i højere grad begynder at nærmere os egentlige kodesyntax for en fibonacci-funktion:
+Endelig også et højniveau eksempel på hvorledes vi kunne konstruere Fibonacci-talfølgen, som er langt fra egentlig kode:
 
 ```javascript
-fibonacci (n):
+// Version 1: Højniveau pseudokode for Fibonacci 
+Fibonnaci:
+1. Indlæs tallene 0 og 1
+2. Konstruer en talfølge, hvor næste element er summen af de to foregående. 
+```
+
+Disse stumper pseudokode er særdeles højniveau og ligger langt fra den mere programmeringsnære variant af pseudokoden, som vi skal se senere. Skulle disse tre linjer implementeres i praksis ville de fylde betydeligt mere. 
+Den gode pseudokode er typisk kendetegnet ved en fornuftig balance mellem kompleksiteten af den løsning man for søger at beskrive med deltaljegraden af pseudokoden i forhold til den målgruppe, som man skriver til. 
+
+Pseudokode minder om rigtig kode i den forstand, at den inddrager typiske nøgleord fra programmering såsom `if-else`, `while`, `for` m.m. og dermed induceres mere eller mere direkte en struktur for programmet men man abstraherer for en række væsentlige detaljer såsom valg af datastruktur etc. Det gøres med henblik på at gøre det nemmere at kommunikere det overordnede dataflow i ens program/algoritme. 
+
+Man kan tænke på pseudokode som et skelet for rigtig kode, der kan oversættes til maskinekode uden at gøre noget. God pseudokode skal gerne gøre det nemmere og hurtigere at implementere den givne algoritme i ægte kode. 
+
+Herunder et eksempel på pseudokode for fibonacci-funktionen, hvor vi i højere grad begynder at nærmere os egentlige kode. Vi klassificerer derfor koden som værende på mellemniveau. 
+
+```javascript
+// Version 2: Mellemniveau pseudokode for Fibonacci 
+Fibonacci (n):
     loop mellem 0 og n
         sum de to tidligere fibonacci tal
         når vi når n, returneres værdien
 ```
+
 Vi er stadig et stykke fra rigtig kode, men vi begynder at se strukturen af et egentligt program. Der er en række uklarheder såsom at summe de to tidligere fibonacci tal. 
-Herunder et endnu mere kodenært eksempel, hvor vi tydeliggøre nogle af uklarhederne:
+
+Herunder et endnu mere kodenært eksempel, hvor vi tydeliggøre nogle af uklarhederne. Da vi er meget nær rigtig kode kaldes denne version for lavniveau:
 
 ```javascript
-function fibonacci(n):
+// Version 3: Lavniveau pseudokode for Fibonacci 
+function Fibonacci(n):
     if n er 0 eller 1, return 1
 
     // indlæs de første to fibonacci tal
@@ -238,40 +253,52 @@ function fibonacci(n):
 
    return fibi
 ```
-Her nærmer vi os meget den almindelige kode og kender man til de basale strukturer som løkker, så burde det være muligt ud fra denne pseudokode ret hurtigt at implementere i praksis. 
+
+Udfra denne pseudokode burde det være muligt ret hurtigt at implementere fibonacci i praksis. 
 
 Der findes ingen fast konvention for hvorledes pseudokode skal se ud, men det er vigtigt, at valget af syntaks er konsekvent og konsistent. 
 
-#### Navngivning af program/algoritme/funktion
-Første trin i pseudokode er at finde et navn til sit program. Typisk bruges navne der benytter CamelCase, dvs. starter med stort og består af to ord. Det andet ord starter også med stort. Eksempel. InsertionSort, SelectionSort der beskriver to forskellige sorteringsalgoritmer (dvs programmer der sorterer tal i stigende/faldende rækkefølge) etc.
+#### Regler for pseudokode
+Selvom der ikke findes nogen entydige krav til syntaksreglerne i pseudokode kommer herunder en række forslag, som kan være gode at følge. 
 
-Når vi designer pseudokode antager vi at koden udføres sekventielt. Det gør vi ret ofte, når vi designer algoritmer. 
-Pseudokode varierer i stil fra programmør til programmør, men man låner typisk i sin syntax fra programmeringssprog såsom Python, Java, C++ og lignende. 
+** Første trin i pseudokode er at finde et navn til sit program. Typisk bruges navne der benytter CamelCase, dvs. starter med stort og består af to ord. Det andet ord starter også med stort. Eksempel. InsertionSort, SelectionSort der beskriver to forskellige sorteringsalgoritmer (dvs programmer der sorterer tal i stigende/faldende rækkefølge) etc.
+
+** Når vi designer pseudokode antager vi at koden udføres sekventielt. Det gør vi ret ofte, når vi designer algoritmer. Såfremt man skriver pseudokode, der kan afvikles parallelt af flere computere bør man gøre opmærksom på det i pseudokoden. 
+
+** Pseudokode varierer i stil fra programmør til programmør, men man låner typisk i sin syntax fra programmeringssprog såsom Python, Java, C++ og lignende. 
 Selvom pseudokode generelt skal være sproguafhængig kan det stadig være en god idé at låne den syntax, man skal lave selve koden i. Skal man eksempelvis skrive et Python program, kan man låne den syntax en smule til sin pseudokode
 
-Prøv at (meta-)kommuniker allerede igennem navngivningen af metoder/funktioner/algoritmer eller lignende, hvad de gør samtidig med, at navnene skal  letforståelige og sigende.  F.eks. er det bedre at give en funktion, der adderer noget med  "sum()" end "x3j67()".
-Husk på at hele ideen med pseudokode er at gøre koden lettere tilgængelig for andre.
+** Prøv at (meta-)kommuniker allerede igennem navngivningen af metoder/funktioner/algoritmer eller lignende, hvad de gør samtidig med, at navnene skal  letforståelige og sigende.  F.eks. er det helt indlysende bedre at give en funktion, der adderer noget sammen titlen  "sum()" fremfor eksempelvis et tilfældigt navn som "x3j67()". Husk på at hele ideen med pseudokode er at gøre koden lettere tilgængelig for andre.
 Hvis et navn er sammensat af mere end et ord, kan man starte andet ord med stort eller lave en underscore f.eks.
 "squareRoot()" eller square_root()"
 
-- Navngivning og initialisering af variable: Variabler skal også have letforståelige og sigende navne f.eks. navn, alder, højde. Hvis variablen har mere end et ord kan man starte andet ord med stort såsom forNavn eller efterNavn. Erklæring (Initialisering)  af variabler kan gøres ved brug af eksempelvis nøgleordet Set, hvor man gerne må give den en værdi med det samme.Det kunne være Set sum = 0
-Man kan også erklære mange variabler på en gang
-Set sum = 0, Set x = 0, Set y = 0, Set z = 0, Set isCube = FALSE
+* Navngivning og initialisering af variable: Variabler skal også have letforståelige og sigende navne f.eks. navn, alder, højde. Hvis variablen har mere end et ord kan man starte andet ord med stort såsom forNavn eller efterNavn. Erklæring (Initialisering)  af variabler kan gøres ved brug af eksempelvis nøgleordet Set, hvor man gerne må give den en værdi med det samme.Det kunne være Set sum = 0
+** Hvis man skal erklære mange variabler kan det være en god ide at gøre det på samme linje, så som:
+```javascript
+sum = 0, Set x = 0, Set y = 0, Set z = 0, Set isCube = FALSE
+```
 En sådan erklæring eksekveres fra venstre til højre.
-- Input og output
-Man kan læse data fra variabler, lister eller lignende ved brug af et nøgleord som READ. Herunder eksempler:
+** Man kan læse data fra variabler, lister eller lignende ved brug af et nøgleord som READ. Herunder eksempler:
+```javascript
 Read: Liste af variabler
 Read: x
 Read: x,y,z
-Tilsvarende kan man præciserere output ved brug af eksempelvis Print eller Write.
+```
+** Tilsvarende kan man præciserere output ved brug af eksempelvis `Print` eller `Write`. Herunder et eksempel: 
+```javascript
 Print: Besked eller Variabel
 Print: ”Hello World” //Besked
 Print: x, y	       //Variabler	
 Write: Besked eller Variabel 
 Write: ”Hello World”       //Besked
 Write: ”Værdien er”, x	 //Besked og variabler
-
-Herunder eksempler på pseudokode. 
+```
+** Undgå generelt at skriv mere end et udsagn pr. linje. Det gør generelt pseudokode nemmere at læse for de fleste.  
+** Sæt evt nøgle ord med store bogstaver eller fed skrift (såsom `READ`, `WRITE`, `IF`, `WHILE`, `FOR`).
+** Ryk ind eller tabuler for at vise hierarkiet i ens kode. Særligt relevant når man eksempelvis har betinget udførsel, løkker eller funktioner i sin pseudokode. 
+** Afslut flere linjers strukturer. Har man eksempelvis en `IF` betinget udførsel er det en god ide at slutte med eksempelvis `END IF` eller lignende.  
+** Undgå at blande forskellige sprog i sin pseudokode. Dvs. undgå eksempelvis at blande dansk og engelsk. 
+** Overvej hvem din målgruppe er og hvilken detaljegrad af pseudokoden, der er relevant. 
 
 ### Prosakode
 Prosakode er en mindre kodenær beskrivelse. Der stilles ingen krav til, at man bruger bestemte keywords eller lignende. Vigtigste er dog, at prosakoden faciliterer en forståelse af hvorledes man kan skabe en overordnet struktur for programmet. 
@@ -387,13 +414,14 @@ end procedure
 7. Forklar hvad følgende flowdiagram gør og omskriv det til konkret kode. ![Flowdiagram](../kap11/images/flowmax3numbers.png)
 8. Forklar hvad følgende flowdiagram gør og omskriv det til konkret kode. ![Flowdiagram](../kap11/images/linearsearch.png)
 9. Forklar hvad følgende flowdiagram gør og omskriv det til konkret kode. ![Flowdiagram](../kap11/images/primeflow.png)
-10. I det følgende skal laves flowdiagrammer og/pseudokode for følgende funktioner: 
+10. Skriv højniveau, mellemniveau og meget kodenær pseudokode for følgende funktioner (som vi gjorde med Fibonacci ovenfor):
     1. Skriv en funktion der finder det mindste positive tal af fire givne tal som argumenter.
     2. Skriv en funktion der summer alle tal i en liste.
     3. Skriv en funktion, der bytter om på rækkefølgen i en given liste.
-    4. Skriv en funktion, der undersøger om et tal er indenfor et givent interval.
-    5. Skriv en funktion, der tager en liste af tal og returnerer en ny liste der består af de unikke tal fra den liste.
-    6. Skriv en funktion, der givet en liste kun printer de lige tal.
-11. Dokumenter funktionerne ved brug JSDoc formatet. Det er automatisk understøttet i de nyeste versioner af VS code. Alternativt kan det installeres fra <https://jsdoc.app/>.
-12. Prøv nu at implementere et par af funktionerne og importer dem i din kode. VS Code skulle gerne tilbyde hjælp (den såkaldte "Intellisense") til at genere dele af funktionen. 
-13. Udvælg et større projekt som du har arbejdet med, hvor du også benytter klasser. Brug notationen fra JSDoc til at kommentere din kode, som eksemplet med klassen Cirkel i nærværende kapitel. 
+11. I det følgende skal laves flowdiagrammer og/pseudokode for følgende funktioner: 
+    1. Skriv en funktion, der undersøger om et tal er indenfor et givent interval.
+    2. Skriv en funktion, der tager en liste af tal og returnerer en ny liste der består af de unikke tal fra den liste.
+    3. Skriv en funktion, der givet en liste kun printer de lige tal.
+12. Dokumenter funktionerne ved brug JSDoc formatet. Det er automatisk understøttet i de nyeste versioner af VS code. Alternativt kan det installeres fra <https://jsdoc.app/>.
+13. Prøv nu at implementere et par af funktionerne og importer dem i din kode. VS Code skulle gerne tilbyde hjælp (den såkaldte "Intellisense") til at genere dele af funktionen. 
+14. Udvælg et større projekt som du har arbejdet med, hvor du også benytter klasser. Brug notationen fra JSDoc til at kommentere din kode, som eksemplet med klassen Cirkel i nærværende kapitel. 
