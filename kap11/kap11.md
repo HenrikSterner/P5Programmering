@@ -208,13 +208,12 @@ Eller algoritmen for at lave te:
 
 Endelig også et højniveau eksempel på hvorledes vi kunne konstruere Fibonacci-talfølgen, som er langt fra egentlig kode:
 
-```javascript
-// Version 1: Højniveau pseudokode for Fibonacci 
-Fibonnaci:
-1. Indlæs tallene 0 og 1
-2. Konstruer en talfølge, hvor næste element er summen af de to foregående. 
-```
 
+1. Givet tal N:
+2. Indlæs tallene 0 og 1
+3. Konstruer en talfølge, hvor næste element er summen af de to foregående. 
+4. Stop når vi har summet op til N elementer. 
+   
 Disse stumper pseudokode er særdeles højniveau og ligger langt fra den mere programmeringsnære variant af pseudokoden, som vi skal se senere. Skulle disse tre linjer implementeres i praksis ville de fylde betydeligt mere. 
 Den gode pseudokode er typisk kendetegnet ved en fornuftig balance mellem kompleksiteten af den løsning man for søger at beskrive med deltaljegraden af pseudokoden i forhold til den målgruppe, som man skriver til. 
 
@@ -222,7 +221,7 @@ Pseudokode minder om rigtig kode i den forstand, at den inddrager typiske nøgle
 
 Man kan tænke på pseudokode som et skelet for rigtig kode, der kan oversættes til maskinekode uden at gøre noget. God pseudokode skal gerne gøre det nemmere og hurtigere at implementere den givne algoritme i ægte kode. 
 
-Herunder et eksempel på pseudokode for fibonacci-funktionen, hvor vi i højere grad begynder at nærmere os egentlige kode. Vi klassificerer derfor koden som værende på mellemniveau. 
+Herunder et eksempel på pseudokode for fibonacci-funktionen, hvor vi i højere grad begynder at nærmere os egentlige kode. Vi klassificerer derfor koden som værende på et mellemniveau. 
 
 ```javascript
 // Version 2: Mellemniveau pseudokode for Fibonacci 
@@ -312,8 +311,8 @@ Det er også muligt at kombinere prosakode og pseudokode.
 Herunder et eksempel på prosakode for en funktion, der givet en streng returnerer hvorvidt det er et palindrome eller ej:
 
 Givet en streng $s$ som input. Vores program gør da følgende: 
-** 1. Tjek først om strengen $s$ består af et eller flere tegn. Hvis den er tom eller kun består af et tegn returner da sandt.
-** 2. Hvis den består af flere tegn sammenlign første og sidst element. Hvis de to elementer er forskellige returnes falsk. Ellers fjern dem fra strengen og start algoritmen forfra men nu med den reducerede streng som input.
+1. Tjek først om strengen $s$ består af et eller flere tegn. Hvis den er tom eller kun består af et tegn returner da sandt.
+2. Hvis den består af flere tegn sammenlign første og sidst element. Hvis de to elementer er forskellige returnes falsk. Ellers fjern dem fra strengen og start algoritmen forfra men nu med den reducerede streng som input.
 
 ### Flowdiagrammer
 Flowdiagrammer eller rutediagrammer kan bruges til at lave en visuel repræsentation af  programmets flow, der grundlæggende er uafhængig af det valgte sprog, hvilket muliggør at programmører i andre sprog kan gøre brug af diagrammet. 
@@ -396,11 +395,15 @@ Typisk består kravspecifikationen af følgende faser:
 4. Prioritisering og planlægning af hvilke krav der implmenteres hvor og hvornår
 5. Validering og vedligeholdelse af systemet med henblik på at sikre at systemet rent faktisk understøtter de relevante krav.
 
-Selvom udarbejdelsen af en kravspecifikation ikke nødvendigvis kræver en særlig teknisk indsigt til det endelig produkt, så er det stadig en god ide at kende noget til nogle af de aktiviteter og værktøjer, som kan bruges og inddrages i processen. 
+Selvom udarbejdelsen af en kravspecifikation ikke nødvendigvis kræver en særlig teknisk indsigt til det endelige produkt, så er det stadig en god ide at kende noget til nogle af de aktiviteter og værktøjer, som kan bruges og inddrages i processen. 
 
 I det følgende vil vi gennemgå nogle grundlæggende men centrale værktøjer og aktiviteter i forhold til at udforme en kravspecifikation. 
 
-### Use-case diagrammer 
+### Use-case diagrammer
+Et use-case diagram er en grafisk illustration af brugerens mulige interaktioner med et program eller system. Det viser bl.a. den centrale funktionalitet systemet har, men også hvilke roller eller brugere, der har adgang til systemet. 
+Diagrammet giver med andre ord en abstrakt, højniveau beskrivelse af systemet og det brugere, hvor man har skrællet meget af programmeringsteknikaliteten væk for at give interessenterne en overordnet forståelse af systemet samt mulighed for at belyse den overordnede interaktion mellem brugere og systemet. Man behøver med andre ord ikke et dybere kendskab til kode for at læse og forstå et diagram, og det kan bidrage til tidlidt i udviklingsfasen at belyse noget af den såkaldte "tavse" vide og krav, som ofte først erkendes senere i processen. Med tavs viden og krav skal forstå implicit viden og krav, der ikke nødvendigvis er i talesat eller skrevet ned i starten og som man måske ikke engang er bevidst om i den indledende fase, men først senere i processen (eller måske aldrig) bliver bevidst omkring. 
+
+
 ### Nice to have og need to have
 
 ### Kravmatrix
