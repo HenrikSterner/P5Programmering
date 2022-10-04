@@ -306,7 +306,7 @@ Det er ikke nødvendigt at bruge draw.
 // each cell corresponds to rows in the board
 board = [["-","-","-"],["-","-","-"],["-","-","-"]]
 
-playerTurn = random(['x','o'])
+playerTurn = random(["x","o"])
 
 // implement function that draws the board
 function showBoard()
