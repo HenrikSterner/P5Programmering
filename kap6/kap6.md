@@ -293,89 +293,11 @@ Du skal være velkommen til at udvide lommeregneren.
 
 ## Projekt: Kryds og bolle
 I det følgende skal vi lave et simpelt kryds og bolle spil ved brug af funktioner.
-Herunder ses skelettet, som man kan eller bør tage udgangspunkt i. Er man flere om at udvikle på spillet kan man aftale at dele arbejdet op og efterfølgende overveje hvad gik godt og hvad gik mindre godt? 
-Hvis man gerne vil kode i samme dokument kan man overveje at bruge Live Share plugin til Visual Studio Code. Bemærk at der til sidst er en `setup` funktion, som P5 forventer det.
-Det er ikke nødvendigt at bruge draw. 
+Der skal som minimum være funktioner til følgende dele af spillet:
+- Tegne brættet
+- Rense brættet/starte forfra
+- Undersøge om der er en vinder eller taber
+- Sætte en brik
+- En funktioner der starter spillet (også kaldet `main`)
 
-```javascript
-
-//- represents place not taken
-// x and o means player inseret
-
-// 2-dim array 
-// each cell corresponds to rows in the board
-board = [["-","-","-"],["-","-","-"],["-","-","-"]]
-
-playerTurn = random(["x","o"])
-
-// implement function that draws the board
-function showBoard()
-{
-  //draw the lines
-}
-    
-
-// cleans the board and fill it with "-""
-function cleanBoard()
-{
-
-}
-  
-// implement function that inserts a piece (x/o) in the board at index [x][y]
-function insertPiece(x,y, piece):
-{
-
-}
-
-// asks for next players move (notice variable playerturn has to be changed)
-// this can be done in console or input from textfield
-function askInput()
-{
-
-}
-
-// implement function that returns x/o if anybody won, draw if there is no # places and "unfinished" otherwise
-function checkStatus()
-{
-
-}
-
-// implement function that plays an AI
-function playerAI()
-{
- 
-}
-
-// implement main
-function main()
-{
-    while(true)
-    {
-        if (checkStatus()==="unfinished")
-        {
-            askInput()
-        }
-        else
-        {
-            if(checkStatus()==="x")
-            {  
-                //fyld ud              
-            }
-            elif(checkstatus()==="o")
-            {
-                //fyld ud
-            }
-            elif(checkstatus()==="draw")
-            {
-                //fyld ud
-            }
-        }
-    }
-}
-
-// in setup we call main() 
-// you dont need to have a draw function
-function setup(){
-  main()
-} 
-```
+Derudover må I selv helt bestemme hvordan I vil implementere spillet og hvorvidt I vil tilføje flere funktioner. Overvej gerne undervejs fordele og ulemper ved at bruge funktioner. 
