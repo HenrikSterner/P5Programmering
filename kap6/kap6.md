@@ -303,9 +303,8 @@ Det er ikke nødvendigt at bruge draw.
 // x and o means player inseret
 
 // 2-dim array 
-board = [["-","-","-"], // first list corresponds to cells i first row
-         ["-","-","-"], 
-         ["-","-","-"]]
+// each cell corresponds to rows in the board
+board = [["-","-","-"],["-","-","-"],["-","-","-"]]
 
 playerTurn = random(['x','o'])
 
