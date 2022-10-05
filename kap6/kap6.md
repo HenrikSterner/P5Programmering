@@ -41,10 +41,12 @@ function fib(){
     numbers = []
     let a = 0
     let b = 1
-    while numbers.length < N:
+    while(numbers.length < N)
+    {
         a = b
         b = a + b
         numbers.push(a)
+    }
     console.log("Fibonacci tal" , numbers)
 }
 ```
@@ -84,10 +86,12 @@ function fib(N){
     numbers = []
     let a = 0
     let b = 1
-    while numbers.length < N:
+    while(numbers.length < N)
+    {
         a = b
         b = a + b
         numbers.push(a)
+    }
     console.log("Fibonacci tal" , numbers)
 }
 //kald til fib
