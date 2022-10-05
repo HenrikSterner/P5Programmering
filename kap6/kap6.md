@@ -300,4 +300,4 @@ Der skal som minimum være funktioner til følgende dele af spillet:
 - Sætte en brik
 - En funktioner der starter spillet (også kaldet `main`)
 
-Derudover må I selv helt bestemme hvordan I vil implementere spillet og hvorvidt I vil tilføje flere funktioner. Overvej gerne undervejs fordele og ulemper ved at bruge funktioner. 
+Derudover må man helt selv bestemme hvordan man vil implementere spillet og hvorvidt man vil tilføje flere funktioner. Overvej gerne undervejs fordele og ulemper ved at bruge funktioner. 
