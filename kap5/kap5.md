@@ -262,9 +262,9 @@ Dernæst prøver vi nu at tilgå nogle elementer i de fire lister:
 
 ```javascript
 console.log(talListe[0]) //printer 4
-console.log(talListe[1]) //printer "Anders"
-console.log(talListe[2]) //printer true
-console.log(talListe[3]) //printer 6.7
+console.log(tekstListe[1]) //printer "Anders"
+console.log(boolskListe[2]) //printer true
+console.log(blandetListe[3]) //printer 6.7
 ```
 
 Som læseren måske allerede tænker, så kan det gøres smartere, hvis vi nu eksempelvis ønsker at printe alle navne i tekstlisten. Vores løkke-konstruktioner bliver brugbare her:
@@ -278,7 +278,7 @@ for(let i = 0;i<tekstListe.length;i++)
 
 I tilfældet her betyder tekstListe.length antallet af elementer i listen. Bemærk vores løkker løber til skarpt mindre end længden af listen, da listers første element har index 0. 
 
-Herunder et eksempel hvor vi benytter `while`-løkke i kombination med `for`-løkken.
+Herunder et eksempel hvor vi benytter `while`-løkke i kombination med betinget udførsel.
 
 ```javascript
 let i = 0
@@ -388,6 +388,7 @@ Derudover kan det anbefales at lave et af projekterne.
 1. Forklar hvad følgende kode gør:
 ```javascript
 function setup() {
+  let i = 0
   createCanvas(400, 400);
   while(i<100)
     {
@@ -551,11 +552,9 @@ Lige siden opdagelsen af pi, har man været interesseret i at bestemme pi med fl
 
 
 Den første og letteste at implementere er “Leipniz sum” der konvergerer mod en kvart pi, men så er det jo bare at gange med fire:
-$$
-\sum_{n=0}^{\infty} \frac{(-1)^n}{2n+1} = \frac{1}{1} - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} - \cdots.
-$$
+$$\sum_{n=0}^{\infty} \frac{(-1)^n}{2n+1} = \frac{1}{1} - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} - \cdots.$$
 
-1. Skriv en funktion, der givet $n$ beregner de første $n$ led i ovenstående. Husk at du kan skrive ud til konsollen vha. kommandoen (console.log). Et skelet til funktionen ses herunder:
+1. Skriv en funktion, der givet $n$ beregner de første $n$ led i ovenstående alternerende sum. Husk at du kan skrive ud til konsollen vha. kommandoen (console.log). Et skelet til funktionen ses herunder:
 
 ```
 function computeLeipniz(i)
@@ -566,9 +565,7 @@ function computeLeipniz(i)
 ```
 
 2. Prøv herefter at skrive en tilsvarende funktion, der implementerer Newtons formel:
-$$
-\pi = \dfrac {3 \sqrt 3} 4 + 24 \paren {\dfrac 2 {3 \times 2^3} - \dfrac 1 {5 \times 2^5} - \dfrac 1 {28 \times 2^7} - \dfrac 1 {72 \times 2^9} - \dfrac 5 {704 \times 2^{11} } - \dfrac 7 {1664 \times 2^{13} } - \cdots}
-$$
+$$\pi = \dfrac {3 \sqrt 3} 4 + 24 \cdot (  {\dfrac 2 {3 \times 2^3} - \dfrac 1 {5 \times 2^5} - \dfrac 1 {28 \times 2^7} - \dfrac 1 {72 \times 2^9} - \dfrac 5 {704 \times 2^{11} } - \dfrac 7 {1664 \times 2^{13} } - \cdots})$$
 
 3. Prøv endelig Ramanujans formel:
 $$
