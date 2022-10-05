@@ -149,10 +149,11 @@ Vi kan også udvide vores fibonacci-funktion, så den i stedet returnerer en lis
 ```javascript
 function fib(N,a=0,b=1){
     numbers = []
-    while numbers.length < N:
+    while (numbers.length < N){
         a = b
         b = a + b
         numbers.push(a)
+    }
     return numbers
 }
 //kald til fib
