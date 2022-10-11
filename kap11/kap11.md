@@ -403,11 +403,33 @@ I det følgende vil vi gennemgå nogle grundlæggende men centrale værktøjer o
 Et use-case diagram er en grafisk illustration af brugerens mulige interaktioner med et program eller system. Det viser bl.a. den centrale funktionalitet systemet har, men også hvilke roller eller brugere, der har adgang til systemet. 
 Diagrammet giver med andre ord en abstrakt, højniveau beskrivelse af systemet og det brugere, hvor man har skrællet meget af programmeringsteknikaliteten væk for at give interessenterne en overordnet forståelse af systemet samt mulighed for at belyse den overordnede interaktion mellem brugere og systemet. Man behøver med andre ord ikke et dybere kendskab til kode for at læse og forstå et diagram, og det kan bidrage til tidlidt i udviklingsfasen at belyse noget af den såkaldte "tavse" vide og krav, som ofte først erkendes senere i processen. Med tavs viden og krav skal forstå implicit viden og krav, der ikke nødvendigvis er i talesat eller skrevet ned i starten og som man måske ikke engang er bevidst om i den indledende fase, men først senere i processen (eller måske aldrig) bliver bevidst omkring. 
 
+### Nødvendige og mindre nødvendige egenskaber
+Ofte kan det være en god ide inden man overhovedet begynder at udvikle på systemet at gøre sig klart hvad der er essentielle krav til  ens system versus krav, som kunne være rare at have men ikke er absolut nødvendige. Man taler i den sammenhæng også om det engelske udtryk "Nice to have and need too have". 
+Det hander reelt set om at få alle aktører i processen en fælles forståelse af de hvilke elementer, der implementeres først og hvilke kan vente til senere eller måske slet ikke er nødvendige at implementere. Alt for mange startups og nystartende projekter forsinkes eller mislykkedes fordi man eksempelvis ikke har gjort sig klart, hvad der er essentielt i ens system, men i stedet bruger en masse ressourser på at implementere krav, som ikke er umiddelbart nødvendige.
 
-### Nice to have og need to have
+"Nice to have og need to have" er del af den så kaldte "MoSCoW"-tilgang, som står for:
+- "Must have": Krav til systemet skal implementeres. 
+- "Should have": Krav til systemet der bør implementeres på sigt. 
+- "Could have": Krav der kan implementers, når kravene i "Must have" og "Should Have" er implementeret. 
+- "Will not have": Krav til systemet, som ikke implementeres.  
 
-### Kravmatrix
 
+Herunder en figur, der illustrer hvorledes man kan opstille MoSCoW på en smart og brugervenlig måde. Det kan være en digital og/eller fysisk tavle. Man kan evt bruge gule notes fysisk, så man let kan rykke rundt på de enkelte krav. 
+![MoSCoW i praksis](../kap11/images/moscow.png)
+
+Fordelene ved MoSCow-metoden er bl.a., at det er en effektiv og simpel måde at belyse kravspecifikationen samt at få det kommunikeret ud til programmører, kunder, projektledere med mere. Netop det at den ignorerer detaljer omkring implementationen,  gør det muligt uafhængig af kodeforståelse at få en fornemmelse for hvad system skal kunne. 
+
+Ulempen ved metoden er, at der ikke nødvendigvis er et rationale eller begrundelse for prioriteringen af de givne beslutninger og at der kun er fire prioritetsniveauer. 
+
+I forhold til at gøre MoSCow-metoden en smule mere kodenær, kan man vælge at inddrage nøgleord såsom  "skal" og "kan" i sine brugerhistorier til at fortæller vigtigen af noget funktionalitet. Herunder et eksempel hvor vi kigger på nogle udvalgte brugerhistorier: 
+
+- Brugeren SKAL registrere en ny konto i systemet.
+- Brugeren SKAL logge ind på applikationen med et brugernavn og en adgangskode.
+- Brugeren BØR se alle nye enheder i netværket.
+- Brugeren MÅ IKKE kunne se login fra andre brugere.
+- Brugeren SKAL vælge en pizza udfra listen af pizzaer.
+- Brugeren KAN vælge drikkevare  udfra listen af pizzaer.
+- Brugeren KAN klikker på knappen ”Bestil flere”.
 
 
 
@@ -449,3 +471,5 @@ end procedure
 12. Dokumenter funktionerne ved brug JSDoc formatet. Det er automatisk understøttet i de nyeste versioner af VS code. Alternativt kan det installeres fra <https://jsdoc.app/>.
 13. Prøv nu at implementere et par af funktionerne og importer dem i din kode. VS Code skulle gerne tilbyde hjælp (den såkaldte "Intellisense") til at genere dele af funktionen. 
 14. Udvælg et større projekt som du har arbejdet med, hvor du også benytter klasser. Brug notationen fra JSDoc til at kommentere din kode, som eksemplet med klassen Cirkel i nærværende kapitel. 
+15. I det følgende skal man ved brug af brugerhistorier, use-case diagrammer og MoSCow-metoden overveje, beskrive og argumentere for en kravspecifikation til en webshop, der handler med sko. 
+16. I det følgende skal man ved brug af brugerhistorier og MoSCow-metoden overveje, beskrive og argumentere for en kravspecifikation til et system, der skal håndtere dyrenes spisetider og hvor meget de har fået at spise i en Zoologisk Have.
