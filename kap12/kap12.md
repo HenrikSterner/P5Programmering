@@ -1,6 +1,14 @@
 # 12. Softwarearkitektur
-Softwarearkitektur definerer en grundlæggende organisering af et system og opførsel herunder hvordan de enkelte komponenter i system er samlet samt deres forhold til hinanden og kommunikationen mellem dem. Softwarearkitektur er et slags blueprint for hvorledes systemet er opbygget og danner grundlag for udviklingsgrundlag for programmørerne samtidig med at det inddrager og afbalancerer forskellige aktørers behov og hvorledes holdet bag udviklingen organiseres.
-Det er med andre ord en ekstremt vigtig del i udviklingen er mere komplekse systemer. 
+Systemer har det med tiden at udvikle sig i omfang og kompleksitet. Tag eksempelvis fysikmotoren, Unreal Engine, der vurderes at fylde et par millioner linjers kode, eller styresystemet, Android, som i dag vurderes at være oppe på 13-15 millioner linjers kode. Begge systemer har hundreder eller tusinder af udviklere bag. For at skabe struktur og systematik samt et fællessprog til at beskrive systemet overordnede rammer, er der brug for at inddrage softwarearkitektur. 
+
+Softwarearkitektur definerer en grundlæggende organisering af et system og dets opførsel herunder hvordan de enkelte komponenter i systemet er samlet samt deres forhold til hinanden og kommunikationen mellem dem.
+
+Softwarearkitektur er et slags "blueprint" for hvorledes systemet er opbygget. 
+Den danner derudover udviklingsgrundlaget for programmørerne, testerne, designerne osv, så de ved hvad der skal laves hvornår og i overordnet termer hvordan.  
+Samtidig inddrager og afbalancerer den projektets forskellige aktørers behov og ønsker samt hvorledes holdet bag udviklingen organiseres.
+
+Det er med andre ord en ekstremt vigtig del i udviklingen af større og mere komplekse systemer. 
+
 I det følgende gennemgår vi en række forskellige modeller til at konceptualisere og visualisere systemarkitektur. Det giver et bedre grundlag til at forstå hvorledes et system bør opbygges og belyser noget af den tavse viden og kompleksitet, som ligger gemt i systemer af en vis størrelse.
 
 ## Master-slave eller klient-server arkitektur - n-tier model
@@ -12,25 +20,27 @@ Tre-lags-arkitektur er en ret simpel struktur, der inddeler et system i tre lag:
 - Et datalag hvor data knyttet til systemet er gemt og dets opgave er at bistå applikationslaget i at sende relevante data og information. 
 
 Præsentationslaget kommunikerer med datalaget igennem applikationslaget og aldrig direkte. Herved separeres programlogik fra data og brugergrænseflade. Skal der ændres i nogle af lagene kan det i højere grad gøres uafhængig af de andre lag.
-Tre-lags-arkitektur kan bruges med stort set alle tænke systemer. Eksempelvis et website, hvor man klikker på en knap, der så kalder noget kode i applikationslaget, som henter nogle data frem, der så sendes tilbage til brugergrænsefladen og vises på sitet.
+Tre-lags-arkitektur kan bruges med stort set alle tænkelige systemer, som en grundlæggende arkitektur. Eksempelvis et website, hvor man klikker på en knap, der så kalder noget kode i applikationslaget, som henter nogle data frem, der så sendes tilbage til brugergrænsefladen og vises på sitet.
 
 ## UML-diagrammer
 UML står for Unified Modelling Language og er et diagramsprog til modellering af ens systemer. 
 Det giver en fælles forståelsesramme og sprog til at kommunikere funktionalitet og arkitektur ud på tværs af teknologi og sprog. 
 
-UML omfatter mange forskellige diagramtyper og man kunne skrive lange bøger om UMLs forskellige strukturer. I det følgende vil vi introducere nogle få af de mange mulige diagrammer nemlig klassediagrammet samt use-case-diagrammet. Det skal understreges, at UML er ekstremt omfattende og man kunne fylde flere bøger alene om UML, men her berøres kun hvad der er essentielt i forhold modellering af klasser og deres overordnede relationer til hinanden.
+UML omfatter mange forskellige diagramtyper og man kunne skrive lange bøger om UMLs forskellige strukturer. I det følgende vil vi introducere nogle klassediagrammer, som er centrale i forhold til at visualisere og illustrere objektorienteret arkitekturer. Det skal understreges, at UML er ekstremt omfattende og man kunne fylde flere bøger alene om UML, men her berøres kun hvad der er essentielt i forhold modellering af klasser og deres overordnede relationer til hinanden.
 
 ### Klassediagrammer
 Et klassediagram kan betragtes som en visuel repræsentant for et objekt. Man tegner et rektangel med 3 under-inddelinger bestående af:
-Navn
-Attributter
-Operationer
-
-Modifikatorer som prefix for attributter og operationer indikerer synligheden af disse. F.eks. betegner et + betegner at klassen er metoderne eller attributterne er offentlige. Dvs. tilgængelig for andre klasser og - betegner at klassen er privat. Man kan også indikerer med en hashtag, at attributten er beskyttet/protected. Dvs. kun tilgængelig for venner og børn af den definerende klasse.
-
+-Navn: Klassenavnet
+-Attributter: De feltvariable som er knyttet til klassen. 
+-Metoder: De operationer/funktioner som er implementeret i klassen. Typisk opererere de på attributterne. 
 Herunder et eksempel på et generisk klassediagram:
+![Klassediagram](../kap12/images/klassediagram.png)
 
-Herunder et eksempel på et klassediagram:
+Modifikatorer som prefix for attributter og operationer indikerer synligheden af disse. F.eks. betegner et "+", at metoderne eller attributterne er offentlige. Dvs. tilgængelig for andre klasser og "-" betegner at klassen er privat. Man kan også indikerer med en hashtag, at attributten er beskyttet/protected. Dvs. kun tilgængelig for  børn af den definerende klasse.
+
+Herunder et eksempel på et klassediagram hvor det er illustreret hvordan man signalere synligheden af attributter og metoder:
+
+![Udvidet klassediagram](../kap12/images/udvidetklassediagram.png)
 
 Klassediagrammer kan sammensættes og man kan med forskellige relationer illustrere hvorledes de er forbundet.
 Herunder en oversigt over nogle af vigtigste mulige relationer man kan sætte mellem klasser. For en fuldstændig oversigt bedes man konfererere med referencemanualen til UML.
