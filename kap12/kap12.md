@@ -42,8 +42,24 @@ Herunder et eksempel på et klassediagram hvor det er illustreret hvordan man si
 
 ![Udvidet klassediagram](../kap12/images/udvidetklassediagram.png)
 
-Klassediagrammer kan sammensættes og man kan med forskellige relationer illustrere hvorledes de er forbundet.
-Herunder en oversigt over nogle af vigtigste mulige relationer man kan sætte mellem klasser. For en fuldstændig oversigt bedes man konfererere med referencemanualen til UML.
+Generelt kan det variere hvor mange detaljer man ønsker at give sine klassediagrammer. Man kan typisk skelne mellem tre niveauer:
+
+- Konceptuelt niveau hvor kun navnet på klassen angives
+- Specifikationsniveau hvor klassens navn, metoder og attributter samt deres tilgængelige er inkluderet
+- Implementeringsniveau hvor man også angiver typerne på attributterne og typer til parametre for de angivne metoder/operationer. Man sætter et ":" hvor typen indikeres. 
+  
+Det afhænger bl.a. af målgruppen hvilket niveau af detaljeringsgrad man vælger, men også hvor omfangsrigt projektet er. 
+
+Klassediagrammer kan sammensættes og man kan med forskellige relationer illustrere hvorledes de er forbundet. 
+Herunder et eksempel:
+
+![Klassediagrammer](../kap12/images/udvidetklassediagram.png)
+
+Som det bemærkes kan et klasser have forskellige relationer til hinanden. 
+
+Herunder en oversigt over nogle af vigtigste mulige relationer man kan sætte mellem klasser. Vi vælger at bruge de engelske betegnelser, så det er nemmere at slå op. For en fuldstændig oversigt bedes man konfererere med referencemanualen til UML.
+
+![Relationer mellem klassediagrammer](../kap12/images/relationerdiagrammer.png)
 
 ### Tilstandsdiagrammer
 Tilstandsdiagrammer beskriver forskellige tilstande, som programmet kan være i og hvordan man bevæger sig fra en tilstand til en anden. Herunder et eksempel på et tilstandsdigram:
