@@ -287,7 +287,7 @@ while(i<talListe.length)
 {
   if(talListe[i]<min)
   {
-    min = talliste[i]
+    min = talListe[i]
   }
 }
 console.log(min) // hvad mon der printes?
@@ -353,7 +353,7 @@ Heruder et par eksempler på vores
 ```javascript
 let nyListe
 nyListe = tekstListe.slice(0, 2) //nyListe bliver til ["Martin","Paul"]
-nyListe = tekstListe.slice(3)  //nyListe bliver ["Martin","Paul", "Anders"]
+nyListe = tekstListe.slice(3)  //nyListe bliver ["Steen","Peter"]
 ```
 Da operationen ikke ændrer på den oprindelige liste er det vigtigt at gemme en reference til den nye liste i en variable.
 
@@ -404,7 +404,7 @@ function setup() {
 2. Omskriv koden i opgave 1, så den benytter en `for`-løkke. Udvid herefter en af de to løkker, så cirkler tegnes i venstre halvdel hvis i er lige, og hvis i er ulige tegnes cirkler i højre halvdel. 
 3. Brug en `for`-løkke til at tegne de lige tal mellem 0 og 100 tilfældige steder på skærmen med farven rød.
 4. Brug en `while`-løkke til at tegne de ulige tal mellem 0 og 100 tilfældige steder på skærmen med farven blå. 
-5. Tegn en cirkel i centrum og dernæst en lidt større. Gør det 30 gange ved brug af både for og while. Det er ikke forventet at du laver en animation. Overvej forskellen på løkker og draw. Vi opfordrer at du overvejer at skrive koden i setup eller skriver `noLoop()` i setup, hvis du vil skrive koden i draw. 
+5. Tegn en cirkel i centrum og dernæst en ny cirkel, som er en smule større men med samme centrum. Gør det 30 gange ved brug af både for og while. Det er ikke forventet at du laver en animation. Overvej forskellen på løkker og draw. Vi opfordrer at du overvejer at skrive koden i setup eller skriver `noLoop()` i setup, hvis du vil skrive koden i draw. 
 6. Tegn 10 forskellige ellipser forskellige steder på skærmen både ved brug af while og for.
 7. Overvej hvad følgende kode gør:
 ```javascript
