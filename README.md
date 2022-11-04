@@ -4,7 +4,7 @@ Velkommen til hjemmesiden til lærebogen *Programmering i p5.js*, som er under u
 
 I de respektive mapper finder man kapitlerne samt tilhørende øvelser.
 
-OBS: Bogen er i den grad under udarbejdelse, så forvent masser af fejl og mangler. Skriv gerne til <henrik.sterner@gmail.com> hvis du har forslag til forbedringer eller rettelser. Bogens hjemmeside:  (henriksterner.github.io/P5Programmering/).
+OBS: Bogen er i den grad under udarbejdelse, så forvent masser af fejl og mangler. Skriv gerne til <henrik.sterner@gmail.com> hvis du har forslag til forbedringer eller rettelser. Bogens hjemmeside:  [henriksterner.github.io/P5Programmering](http://henriksterner.github.io/P5Programmering/).
 
 God fornøjelse!
 
