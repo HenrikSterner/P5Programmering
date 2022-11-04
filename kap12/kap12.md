@@ -62,7 +62,15 @@ Herunder en oversigt over nogle af vigtigste mulige relationer man kan sætte me
 ![Relationer mellem klassediagrammer](../kap12/images/relationerdiagrammer.png)
 
 ### Tilstandsdiagrammer
-Tilstandsdiagrammer beskriver forskellige tilstande, som programmet kan være i og hvordan man bevæger sig fra en tilstand til en anden. Herunder et eksempel på et tilstandsdigram:
+Tilstandsdiagrammer beskriver forskellige tilstande, som programmet kan være i og hvordan man bevæger sig fra en tilstand til en anden.
+De kan bruges til at modellere et system eller en klasses adfærd. 
+
+Vi skelner overordnet mellem to slags tilstandsdiagrammer:
+
+1. Adfærds-tilstandsdiagram: Som beskriver adfærden  af et element i systemet. Det kan i princippet også være hele systemet. Det bruges til at repræsentere en konkret implementation af et system. 
+2. Protokol-tilstandsdiagram: Beskriver adfærden af en protokol, som betegner et sæt af regler, der beskriver systemets adfærd. De repræsenterer en specifik implementation af et element i systemet. 
+   
+Herunder et eksempel på et tilstandsdigram:
 
 Herunder nogle eksempler på mulige relationer i et tilstandsdiagram.
 
