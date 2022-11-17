@@ -65,25 +65,37 @@ Herunder en oversigt over nogle af vigtigste mulige relationer man kan sætte me
 Tilstandsdiagrammer beskriver forskellige tilstande, som programmet kan være i og hvordan man bevæger sig fra en tilstand til en anden.
 De kan bruges til at modellere et system eller en klasses adfærd. 
 
-Vi skelner overordnet mellem to slags tilstandsdiagrammer:
+Der findes forskellige variationer over tilstandsdiagrammer og hvordan de tegnes, men i praksis skelner vi overordnet mellem to slags tilstandsdiagrammer:
 
 1. Adfærds-tilstandsdiagram: Som beskriver adfærden  af et element i systemet. Det kan i princippet også være hele systemet. Det bruges til at repræsentere en konkret implementation af et system. 
 2. Protokol-tilstandsdiagram: Beskriver adfærden af en protokol, som betegner et sæt af regler, der beskriver systemets adfærd. De repræsenterer en specifik implementation af et element i systemet. 
    
-Herunder et eksempel på et tilstandsdigram:
+Herunder to eksempler tilstandsdigrammer. Først et meget simpel et der beskriver tilstandene for en dør, som kan være åben eller lukket samt pile, der illustrerer en transition:
+![Tilstandsdiagram for en dør](../kap12/images/statediagram0.png)
 
-Herunder nogle eksempler på mulige relationer i et tilstandsdiagram.
+I objekt-orienteret forstand kan man tænke på tilstande, som nogle af de data, der er knyttet til objekt, mens objekets metoder er transitionerne, der ændre på de mulige tilstande. 
+
+Herunder et mere komplekst eksempel på et tilstandsdiagram: 
+![Tilstandsdiagram for en opvarmningsproces](../kap12/images/statediagram1.png)
+Diagrammet illustrerer, at en tilstand kan have forgrenet tilstande. Her handler det om at når man vil varme noget op i en ovn eller lignende, så vil man muligvis først skulle aktivere ovnen for derefter at kategorisere den som aktiv. 
 
 
 ### Use-case-diagrammer
 Et use case-diagram illustrerer på et overordnet niveau forholdet mellem forskellige brugsscenarier, aktører/ og systemer. De fortæller ikke noget om rækkefølgen som funktioner/sekvenser udføres i.
 Use-case-diagram kan illustrere hvorledes bruger og system interagerer med hinanden, definere og organisere funktionelle krav i systemet samt angive konteksten og kravene til systemet
 
-Use cases er repræsenteret med en mærket oval form. Pindefigurer repræsenterer aktører i processen, og aktørens deltagelse i systemet modelleres med en linje mellem aktør og use case. For at skildre systemgrænsen skal du tegne en boks rundt om selve use casen.
-
+Use cases er repræsenteret med en mærket oval form. Pindefigurer repræsenterer aktører i processen, og aktørens deltagelse i systemet modelleres med en linje mellem aktør og use case. For at skildre systemgrænsen skal du tegne en boks rundt om selve use casen. Herunder er de enkelte komponenter i et use-case-diagram illustreret
 Herunder et eksempel på et use-case-diagram:
+![Elementer i et use-case-diagram](../kap12/images/usecasesymbols.png)
+
+Herefter et eksempel på et use-case-diagram, hvor vi benytter figurerne til at lave et simpelt use-case-diagram:
+![Et eksempel på et use-case-diagram](../kap12/images/usecasediagramexample.png)
 
 ### Sekvensdiagrammer
+
+Herunder ses et generisk eksempel på et sekvensdiagram til at beskrive interaktionen mellem klient-server og en database. 
+![Et generisk eksempel på et sekvensdiagram](../kap12/images/sequencediagram.png)
+
 
 ## C4-model
 En mere moderne og forenklet tilgang til  beskrivelse og visualisering af en  softwarearkitektur på er ved brug af den såkaldte C4-model, som har fokus på abstraktioner først. Man kan tænke på C4 lidt som at læse et kort over et land. Vi starter med placere landet på verdenskortet. Dernæst zoomer vi ind på landet og kigger på de enkelte regioner og byer. Vi kan zoome mere og mere ind til vi kommer til det område, som vi befinder os i. Vi navigerer med andre ord ofte et ukendt sted ved at orientere os ud fra bestemte steder og lidt på samme måde fungerer det når vi skal forholde os til komplekse softwaresystemer.

@@ -350,7 +350,6 @@ Opgaven er:
 
 Brug gerne objektorienteret principper i udviklingen af systemet. 
 
-
 Herunder et skelet for for en Lufthavn:
 ```javascript
 class Lufthavn
