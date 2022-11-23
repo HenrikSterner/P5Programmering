@@ -92,26 +92,63 @@ Herefter et eksempel på et use-case-diagram, hvor vi benytter figurerne til at 
 ![Et eksempel på et use-case-diagram](../kap12/images/usecasediagramexample.png)
 
 ### Sekvensdiagrammer
+Ulemperne ved use-case-diagrammer er, at de ikke er specielt detaljeret i fht at modellere logikken i en mere sofistikeret procedure eller funktion, og de giver heller ikke noget billede af hvilken rækkefølge objekter interagerer med hinanden. 
+Sekvensdiagrammer har tilformål at komme disse mangler til livs. 
+De beskriver rækkefølgen og mere detaljeret hvorledes objekter og komponenter i et sytem  interagerer med hinanden i fht at afslutte en proces. På den måde giver de et mere detaljeret billede af hvorledes systemet implementeres eller hvorledes fremtidig funktionalitet bør konstrueres.  
+Herunder ses et generisk eksempel på et sekvensdiagram til at beskrive en generisk interaktion mellem først to efter følgende tre objekter
+![Et generisk eksempel på et sekvensdiagram mellem to objekter](../kap12/images/sequencediagram0.png)
+Objekterne er identificeret ved kassogrammerne for oven. 
+De lodrette søjler markerer er såkaldte aktiveringsfelter, som indikerer at både "Message Caller" og "Message Receiver" er aktive. 
+Beskeden, der bliver sendt mellem de to objekter, er markeret med pilen og en tekst, som beskriver beskedens indhold. Beskeder kan gå i vilkårlige retninger
+Man behøver ikke skrive andet end titlen på beskeden men den samlede signatur er givet ved: 
+<center>attribute = message_name (arguments): return_type</center>  
 
-Herunder ses et generisk eksempel på et sekvensdiagram til at beskrive interaktionen mellem klient-server og en database. 
-![Et generisk eksempel på et sekvensdiagram](../kap12/images/sequencediagram.png)
+Et objekt kan sende en returbesked, der signalerer, at modtageren er færdig med at processere beskeden:
 
+![Asynkron returbesked](../kap12/images/sequencediagram2.png)
+
+Man skelner mellem to typer beskeder. Synkrone (hele pile) og asynkrone (stiplede pile). Sidstnævnte betyder, at afsenderen ikke venter på, at høre fra modtageren men at afsenderen godt kan finde på at sende beskeder til andre objekter. 
+Ved synkrone beskeder ventes på at modtageren sender signal om at beskeden er modtaget inden processen fortsættes.  
+
+Herunder ses tre objekter, der interagerer med hinanden: 
+
+![Et generisk eksempel på et sekvensdiagram mellem tre objekter](../kap12/images/sequencediagram.jpg)
+
+Herunder eksempler på hvorledes sekvensdiagrammer kan bruges i praksis:
+
+![Et eksempel på anvendelse af sekvensdiagrammer](../kap12/images/sequencediagramapplied0.jpg)
+
+Bemærk at eksemplet illustrer, at man kan vælge at tegne en tændstikfigur for en aktør. Det indikerer, at der er knyttet en særlig use-case til sekvensdiagrammet. 
+
+![Endnu et eksempel på anvendelse af sekvensdiagrammer](../kap12/images/sequencediagramapplied1.jpg)
 
 ## C4-model
-En mere moderne og forenklet tilgang til  beskrivelse og visualisering af en  softwarearkitektur på er ved brug af den såkaldte C4-model, som har fokus på abstraktioner først. Man kan tænke på C4 lidt som at læse et kort over et land. Vi starter med placere landet på verdenskortet. Dernæst zoomer vi ind på landet og kigger på de enkelte regioner og byer. Vi kan zoome mere og mere ind til vi kommer til det område, som vi befinder os i. Vi navigerer med andre ord ofte et ukendt sted ved at orientere os ud fra bestemte steder og lidt på samme måde fungerer det når vi skal forholde os til komplekse softwaresystemer.
+En mere moderne og forenklet tilgang til  beskrivelse og visualisering af en  softwarearkitektur på er ved brug af den såkaldte C4-model, som har fokus på abstraktioner først. Man kan tænke på C4 lidt som at læse et kort over et landskab. Man forestiller sig mao at vores system som et kort over en række delkomponenter som på den eller anden måde interagerer eller relaterer sig til hinanden. 
 
-C4-modellen bygger ovenpå 4+1-arkitekturen og UML. Den består, som navnet antyder, af fire lag:
--Context: Diagram der giver et start sted for systemets sigte og hvordan det passer ind i verdenen omkring det.
-- Container: Her zoomer vi mere ind på de konkrete byggeblokke i systemet og hvordan de spiller sammen. 
+Ofte når vi navigerer et  ukendt sted, så navigerer vi ved at orientere os ud fra bestemte steder og lidt på samme måde fungerer det når vi skal forholde os til komplekse softwaresystemer. Vi starter med at forstå en del og ligesom ringe i vandet udvider vi vores forståelse og horisont.  
+
+I C4-modellen starter vi med at placere systemet på et slags verdenskort, hvor vi kan se hvorledes vores land er placeret i forhold til andre lande. Tænker vi på landet som vores it-system, så handler det om at orientere sig mod hvordan  det interagerer og relaterer sig til omkringliggende systemer. Er vi eksempelvis ved at lave et it-system til skoler, så vil det system typisk interagere med andre offentlige systemer.   
+
+Dernæst zoomer vi ind på landet og kigger på de enkelte regioner og byer. Vi kan zoome mere og mere ind til vi kommer til det område, som vi befinder os i. 
+
+Herefter kan vi vælge at zoome endnu mere ind og se hvordan de enkelte byer eller komponenter er konstrueret. 
+
+C4-modellen består, som navnet antyder, af fire lag:
+-Context: Diagram der giver et start sted for systemets ,sigte og hvordan det passer ind i verdenen omkring det.
+- Container: På dette niveau belyses de konkrete byggeblokke i systemet og hvordan de spiller sammen. 
 - Component: På dette niveau zoomes endnu længere ind på hver af de enkelte byggeblokke i containerniveauet og illustrerer meget detaljeret hvorledes hver af disse er bygget op. 
-- Code: Til sidst zoom helt ind og vi rammer det egentlig kodelag, som typisk er repræsenteret ved UML-diagrammer i form af klassediagrammer og lignende.  
+- Code: Til sidst zoomes helt ind og vi rammer det egentlig kodelag, som typisk er repræsenteret ved UML-diagrammer i form af klassediagrammer og use-case-diagrammer.  
 
-Modellen giver mulighed for at fortælle forskellige historier afhængig af målgruppen og deres tekniske indsigt. 
+En af styrkerne ved modellen er, at den giver mulighed for at fortælle forskellige historier afhængig af målgruppen og deres tekniske indsigt. 
 
-Herunder eksempler på hver af de fire diagrammer for et konkret system. 
+Herunder eksemplificeres et internet bank-system hvordan man kan konstruere  hver af de fire diagrammer. Det er vigtigt at understrege, at der findes ikke en entydig optimal løsning. Forskellige personer vil designe systemet vidt forskelligt. Men ideen med C4 handler i lige så høj grad om at give et fælles (visuelt) sprog mellem softwarearkitekter, programmører og testere m.fl. til at forstå hvorledes systemet grundlæggende er opbygget.  
 
+Niveau 1 giver det overordnede overblik. Menneskefiguren symboliserer brugeren. De grå felter er nogle af de centrale systemer, som systemet interagerer. Pilene beskriver flowet i data og hvorledes de enkelte dele (også kaldet "container" her) interagerer. Hver del kan beskrives med nogle få linjers tekst. 
+![C4-model niveau 1: ](../kap12/images/c41.png)
 
-Det bemærkes, at diagrammerne består af:
+Efterfølgende zoomer vi ind på 
+![C4-model niveau 2: ](../kap12/images/c41.png)
+
 
 - En person som repræsenterer en bruger af systemet 
 - En container der repræsenterer en system/program eller en database. Den skal køre for at det samlet system kører
