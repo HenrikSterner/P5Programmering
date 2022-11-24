@@ -184,7 +184,7 @@ setSpeed("one",2,true); // result = one2true
 ## Øvelser
 Herunder følger en række øvelser. Det anbefales, at man som minimum laver øvelse 1.-10. samt projektet. 
 
-1. I det følgende ses kode for en klasse Car. Omskriv koden så den bruger private variabler. Forklar desuden hvad metoderne gør.
+1. I det følgende ses kode for en klasse `Car`. Omskriv koden så den bruger private variabler. Forklar desuden hvad metoderne gør.
 
 
 ```javascript
