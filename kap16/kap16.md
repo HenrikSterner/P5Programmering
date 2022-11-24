@@ -8,8 +8,8 @@ I det følgende vil vi introducere vektorer ved at implementere ved brug af grun
 Dernæst vil vi motivere brugen af biblioteket ved at kode simulere et økosystem i form af et akvarium med forskellige fisk.
 
 ## Et bibliotek af vektorer
-Den opmærksomme læser har måske bemærket, at vi allerede har benyttet os af indbyggede vektorer, og undre sig over hvorfor vi ikke bare benytter disse. Det er der mange grunde til. For det første giver det en langt bedre forståelse at implementere ting fra bunden ikke mindst vektorer, som er centrale i forhold . For det andet er implementationen af et vektorbibliotek en god øvelse i at bruge grundlæggende objektorienteret tangegang. For det tredje er vektorer en  en central rolle i simuleringen af n
-
+Den opmærksomme læser har måske bemærket, at vi allerede har benyttet os af indbyggede vektorer, og undre sig over hvorfor vi ikke bare benytter disse. Det er der mange grunde til. For det første giver det en langt bedre forståelse at implementere ting fra bunden ikke mindst vektorer, som er centrale i forhold til at simulere fænomener i den verden vi er en del af. For det andet er implementationen af et vektorbibliotek en god øvelse i at bruge grundlæggende objektorienteret tangegang. 
+Endelig vil vi også gerne opfordre enhver programmør til at designe og implementere generiske løsninger, der kan sættes i spil i andre sammenhænge end det konkrete projekt, som de netop arbejder på. 
 
 ### Konstruktion af en vektor
 En vektor kan betragtes som en afstand mellem to punkter, den kan transformere noget fra et punkt til noget andet. 
@@ -78,8 +78,54 @@ function draw(){
 ```
 I `draw` sikres at vores cirkel bouncer af på skærmen hvis vi når en af kanterne. 
 
+## Vektorbiblioteket i praksis: Simulering af et økosystem
+I denne del vil vi gøre brug af vores vektorbibliotek til at simulere et akvarium med fisk, som et eksempel på et simpelt økosystem. 
 
-### Vektorer i praksis: Et økosystem
+### En fiske-klasse
+Til at starte med konstrueres en klasse, der skal stå for at repræsentere en fisk. Vi benytter vektorer til at beskrives dens lokation og hastighed, og vi implementerer to metoder, der opdatere fiskens position samt tegner den:
+```javascript
+class Fish{
+    constructor(location,velocity)
+    {
+        this.location = location
+        this.velocity = velocity
+        this.size = 50
+    }
+
+    update()
+    {
+        this.location.add(this.velocity);
+    }
+
+    draw()
+    {        
+        if ((this.location.x > width) || (this.location.x < 0)) {
+          this.velocity.x = this.velocity.x * -1;
+        }
+        if ((this.location.y > height) || (this.location.y < 0)) {
+          this.velocity.y = this.velocity.y * -1;
+        }
+        fill(130);
+        circle(this.location.x,this.location.y,this.size);
+    }
+}
+```
+Vi kan nu med ganske få linjers kode konstruere nogle fisk: 
+```javascript
+function setup(){
+  createCanvas(400, 400);
+  fish1 = new Fish(new Vector(200,300),new Vector(5,-4))
+  fish2 = new Fish(new Vector(100,100),new Vector(-3,7))
+}
+
+function draw(){
+  background(255)
+  fish1.update()
+  fish1.draw()
+  fish2.update()
+  fish2.draw()
+}
+```
 
 ## Øvelser
 1. Udvid vektorklassen med subtraktionsmetode mfl.
