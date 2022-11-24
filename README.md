@@ -26,7 +26,7 @@ Copyright © Henrik Sterner & Peter Sterner 2022.
 - [Kapitel 7: Objekter](kap7/kap7.md)
 - [Kapitel 8: Rekursion](kap8/kap8.md)
 - [Kapitel 9: Strenge](kap9/kap9.md)
-- [Kapitel 10: Objektorienteret principper](kap10/kap10.md)
+- [Kapitel 10: Objektorienteret principper](https://github.com/HenrikSterner/P5Programmering/blob/main/kap10/kap10.md)
 - [Kapitel 11: Dokumentation og kravspecikation](kap11/kap11.md)
 - [Kapitel 12: Softwarearkitektur](kap12/kap12.md)
 - [Kapitel 13: Testning, debug og fejlhåndtering](kap13/kap13.md)
