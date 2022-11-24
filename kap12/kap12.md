@@ -144,14 +144,15 @@ En af styrkerne ved modellen er, at den giver mulighed for at fortælle forskell
 Herunder eksemplificeres et internet bank-system hvordan man kan konstruere  hver af de fire diagrammer. Det er vigtigt at understrege, at der findes ikke en entydig optimal løsning. Forskellige personer vil designe systemet vidt forskelligt. Men ideen med C4 handler i lige så høj grad om at give et fælles (visuelt) sprog mellem softwarearkitekter, programmører og testere m.fl. til at forstå hvorledes systemet grundlæggende er opbygget.  
 
 Niveau 1 giver det overordnede overblik. Menneskefiguren symboliserer brugeren. De grå felter er nogle af de centrale systemer, som systemet interagerer. Pilene beskriver flowet i data og hvorledes de enkelte dele (også kaldet "container" her) interagerer. Hver del kan beskrives med nogle få linjers tekst. 
-![C4-model Kontekst niveau (1): ](../kap12/images/c41.png)
+![C4-model Kontekst-niveau (1): ](../kap12/images/c41.png)
 
-Efterfølgende kan vi zoome ind på de enkelte dele.  
-![C4-model Kontainer niveau (2): ](../kap12/images/c42.png)
+Efterfølgende kan vi zoome ind på de enkelte dele. Til at starte med zoomer vi ind på en `container`. En container repræsenterer et system/program eller en database. Den skal køre for at det samlet system kører:  
+![C4-model container-niveau (2): ](../kap12/images/c42.png)
 
 
-- En person som repræsenterer en bruger af systemet 
-- En container der repræsenterer en system/program eller en database. Den skal køre for at det samlet system kører
+![C4-model Komponent-niveau (3): ](../kap12/images/c43.png)
+
+- 
 - Et component/komponent som er en samling af beslægtet og veldefineret funktionalitet, som kan kaldes igennem en veldefineret grænseflade. Det kunne eksempelvis være et sæt af beslægtede klasser.
 
 ## Øvelser
