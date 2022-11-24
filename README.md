@@ -1,8 +1,10 @@
-# P5Programmering i p5.js
+# Programmering i teori og praksis ved brug af P5.JS
+## Af Henrik van Bedaf Sterner og Peter Sterner
 
 Velkommen til hjemmesiden til lærebogen *Programmering i p5.js*, som er under udarbejdelse og skrevet af Peter og Henrik Sterner. 
 
 I de respektive mapper finder man kapitlerne samt tilhørende øvelser.
+Grundet GitHub Pages er langsomme om at opdatere, så peger links herunder direkte på filerne i repository for at sikre, at læseren har den nyeste opdatering.  
 
 OBS: Bogen er i den grad under udarbejdelse, så forvent masser af fejl og mangler. Skriv gerne til <henrik.sterner@gmail.com> hvis du har forslag til forbedringer eller rettelser. Bogens hjemmeside:  
 <a href = "http://henriksterner.github.io/P5Programmering/">henriksterner.github.io/P5Programmering</a>.
