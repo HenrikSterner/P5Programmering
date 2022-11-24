@@ -133,27 +133,38 @@ Dernæst zoomer vi ind på landet og kigger på de enkelte regioner og byer. Vi 
 
 Herefter kan vi vælge at zoome endnu mere ind og se hvordan de enkelte byer eller komponenter er konstrueret. 
 
-C4-modellen består, som navnet antyder, af fire lag:
--Context: Diagram der giver et start sted for systemets ,sigte og hvordan det passer ind i verdenen omkring det.
-- Container: På dette niveau belyses de konkrete byggeblokke i systemet og hvordan de spiller sammen. 
-- Component: På dette niveau zoomes endnu længere ind på hver af de enkelte byggeblokke i containerniveauet og illustrerer meget detaljeret hvorledes hver af disse er bygget op. 
-- Code: Til sidst zoomes helt ind og vi rammer det egentlig kodelag, som typisk er repræsenteret ved UML-diagrammer i form af klassediagrammer og use-case-diagrammer.  
+C4-modellen består, som navnet antyder, af fire lag, der alle er navngivet med `C` som første bogstav. Vi tillader os dog at nævne de danske oversættelser i parenteser: Context (kontekst), Container (container), Component (komponent) og Code (kode).
 
-En af styrkerne ved modellen er, at den giver mulighed for at fortælle forskellige historier afhængig af målgruppen og deres tekniske indsigt. 
+### C4 eksemplificeret
+Herunder eksemplificeres C4-modellen fire niveau ved at præsentere et internet bank-system. 
+Det er vigtigt at understrege, at der findes ikke en entydig optimal løsning. Forskellige personer vil designe systemet vidt forskelligt. Men ideen med C4 handler i lige så høj grad om at give et fælles (visuelt) sprog mellem softwarearkitekter, programmører og testere m.fl. til at forstå hvorledes systemet grundlæggende er opbygget.  
 
-Herunder eksemplificeres et internet bank-system hvordan man kan konstruere  hver af de fire diagrammer. Det er vigtigt at understrege, at der findes ikke en entydig optimal løsning. Forskellige personer vil designe systemet vidt forskelligt. Men ideen med C4 handler i lige så høj grad om at give et fælles (visuelt) sprog mellem softwarearkitekter, programmører og testere m.fl. til at forstå hvorledes systemet grundlæggende er opbygget.  
-
+#### Niveau 1: Kontekst/context
 Niveau 1 giver det overordnede overblik. Menneskefiguren symboliserer brugeren. De grå felter er nogle af de centrale systemer, som systemet interagerer. Pilene beskriver flowet i data og hvorledes de enkelte dele (også kaldet "container" her) interagerer. Hver del kan beskrives med nogle få linjers tekst. 
 ![C4-model Kontekst-niveau (1): ](../kap12/images/c41.png)
 
+#### Niveau 2: Container
 Efterfølgende kan vi zoome ind på de enkelte dele. Til at starte med zoomer vi ind på en `container`. En container repræsenterer et system/program eller en database. Den skal køre for at det samlede system kører. Bemærk de stiplede linjer, som markerer bank-systemet fra forrige niveau.  
 ![C4-model container-niveau (2): ](../kap12/images/c42.png)
 
+#### Niveau 3: Komponent/Component
 Herefter kan vi zooome ind på de enkelte container. Nedenfor er zoomet ind på containeren ved navn `API Application`. Vi skal tænke på et komponent som en samling af beslægtet og veldefineret funktionalitet, der typisk kan kaldes igennem en veldefineret grænseflade. 
 ![C4-model Komponent-niveau (3): ](../kap12/images/c43.png)
 
-Endelig kan vi zoome yderligere ind på de enkelte komponenter og få visualiseret komponentet ved brug af et klassediagram:
+#### Niveau 4: Kode/code
+Endelig kan vi zoome yderligere ind på de enkelte komponenter og få visualiseret komponentet ved brug af et klassediagram, use-case-diagrammer eller noget helt tredje:
 ![C4-model Klassediagram-niveau (4): ](../kap12/images/c44.png)
+
+
+Det bemærkes, at I takt med at vi kommer længere og længere ned C4-modellen, så kommer vi stadig tættere på koden og relationerne bliver beskrevet mere kodenært. 
+
+#### Symboler og figurer brugt i C4
+Herunder forslag til hvilke figurer man kan overveje at bruge til at visualisere og repræsentere de enkelte dele i C4. Det er ikke nødvendigvis afgørende, at man præcis bruger disse figurer, men vigtigere at man i teamet bliver enige om hvilke figurer, der repræsenterer hvilke niveauer og komponenter. 
+
+![C4-model Figurer: ](../kap12/images/c45.png)
+
+En af de helt klare styrker ved modellen er, at den giver mulighed for at fortælle forskellige historier afhængig af målgruppen og deres tekniske indsigt. 
+Samtidig er den visuelt orienteret og det giver for mange ofte et bedre og mere tilgængeligt overblik over systemets enkelte del samt hvorledes de er forbundet. 
 
 ## Øvelser
 
