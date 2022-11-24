@@ -146,14 +146,14 @@ Herunder eksemplificeres et internet bank-system hvordan man kan konstruere  hve
 Niveau 1 giver det overordnede overblik. Menneskefiguren symboliserer brugeren. De grå felter er nogle af de centrale systemer, som systemet interagerer. Pilene beskriver flowet i data og hvorledes de enkelte dele (også kaldet "container" her) interagerer. Hver del kan beskrives med nogle få linjers tekst. 
 ![C4-model Kontekst-niveau (1): ](../kap12/images/c41.png)
 
-Efterfølgende kan vi zoome ind på de enkelte dele. Til at starte med zoomer vi ind på en `container`. En container repræsenterer et system/program eller en database. Den skal køre for at det samlet system kører:  
+Efterfølgende kan vi zoome ind på de enkelte dele. Til at starte med zoomer vi ind på en `container`. En container repræsenterer et system/program eller en database. Den skal køre for at det samlede system kører. Bemærk de stiplede linjer, som markerer bank-systemet fra forrige niveau.  
 ![C4-model container-niveau (2): ](../kap12/images/c42.png)
 
-
+Herefter kan vi zooome ind på de enkelte container. Nedenfor er zoomet ind på containeren ved navn `API Application`. Vi skal tænke på et komponent som en samling af beslægtet og veldefineret funktionalitet, der typisk kan kaldes igennem en veldefineret grænseflade. 
 ![C4-model Komponent-niveau (3): ](../kap12/images/c43.png)
 
-- 
-- Et component/komponent som er en samling af beslægtet og veldefineret funktionalitet, som kan kaldes igennem en veldefineret grænseflade. Det kunne eksempelvis være et sæt af beslægtede klasser.
+Endelig kan vi zoome yderligere ind på de enkelte komponenter og få visualiseret komponentet ved brug af et klassediagram:
+![C4-model Klassediagram-niveau (4): ](../kap12/images/c44.png)
 
 ## Øvelser
 
