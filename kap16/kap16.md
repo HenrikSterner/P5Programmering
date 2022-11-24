@@ -1,17 +1,22 @@
 # 16. Vektorer
-Vektorer betegner en entitet, som består af en længde og en retning. Man kan tænke på den som pile. 
+Vektorer betegner en entitet, som består af en længde og en retning. Man kan tænke på dem som pile, der kan beskrive bevægelser, kræfter og meget mere.  
 
 Vektorer, spiller en helt central rolle i forhold til at beskrive, modellere og simulere fænomener i naturen og fysikkens verden. 
 
-I det følgende vil vi introducere vektorer ved først at implementere dem fra bunden og en del metoder, som er centrale i forhold til at operere på vektorer. 
-Dernæst vil vi ved brug af disse vektorer og  objekt-orienteret programmering simulere et simpelt økosystem i form af et akvarium med forskellige fisk.
+I det følgende vil vi introducere vektorer ved at implementere ved brug af grundlæggende objekt-orienteret programmering et vektorbibliotek, der kan konstruere og modificere og behandle vektorer. 
 
-## Konstruktion af en vektor
+Dernæst vil vi motivere brugen af biblioteket ved at kode simulere et økosystem i form af et akvarium med forskellige fisk.
+
+## Et bibliotek af vektorer
+Den opmærksomme læser har måske bemærket, at vi allerede har benyttet os af indbyggede vektorer, og undre sig over hvorfor vi ikke bare benytter disse. Det er der mange grunde til. For det første giver det en langt bedre forståelse at implementere ting fra bunden ikke mindst vektorer, som er centrale i forhold . For det andet er implementationen af et vektorbibliotek en god øvelse i at bruge grundlæggende objektorienteret tangegang. For det tredje er vektorer en  en central rolle i simuleringen af n
+
+
+### Konstruktion af en vektor
 En vektor kan betragtes som en afstand mellem to punkter, den kan transformere noget fra et punkt til noget andet. 
 Herunder et eksempel på en vektor skrevet med vektornotation: 
 $$\overrightarrow{a}=(2,3).$$
 
-Det betyder i praksis, at står vi i vilkårligt punkt i planen, så vil vektoren $\overrightarrow{a}$ transformere os til punkter ved at gå 2 skridt i x-aksens retning og 3 skridt i y-aksens retning. 
+Det betyder i praksis, at står vi i et vilkårligt punkt i planen, så vil vektoren $\overrightarrow{a}$ transformere os til et nyt ved at gå 2 skridt i x-aksens retning (til højre) og 3 skridt i y-aksens retning (opad). 
 Vi får mao mulighed for at beskrive objekters bevægelse ved brug af vektorer. Det skal vi vende tilbage til. Først skal vi konstruere en simpel vektorklasse i P5:
 ```javascript
 class Vector{
@@ -71,4 +76,12 @@ function draw(){
   circle(place.x,place.y,50);
 }
 ```
-I `draw` sikres at vores cirkel bouncer af på skærmen hvis når en af kanterne. 
+I `draw` sikres at vores cirkel bouncer af på skærmen hvis vi når en af kanterne. 
+
+
+### Vektorer i praksis: Et økosystem
+
+## Øvelser
+1. Udvid vektorklassen med subtraktionsmetode mfl.
+2. Udvid draw metoden, så den tegner egentlig fisk.  
+
