@@ -126,6 +126,64 @@ function draw(){
   fish2.draw()
 }
 ```
+Selvom koden er blevet meget pænere og mere let læselig ved brug af klasser, kan det stadig bliver omfangsrigt, når vi begynder at få mange fisk. Vi sætter derfor fiskene ind i en liste og løber den igennem med en løkke. Herunder genereres $n$ fisk tilfældige steder på skærmen: 
+```javascript
+let n = 10
+let fishes =[]
+function setup(){
+  createCanvas(400, 400); 
+  for(let i = 0;i <n;i++){
+    fishes.push(new Fish(new Vector(random(0,width),random(0,height)),new Vector(random(-10,10),random(-10,10))))
+  }
+}
+
+function draw(){
+  background(255)
+  for(let i = 0;i <n;i++){
+    fishes[i].update()
+    fishes[i].draw()
+  }
+}
+```
+### Flok intelligens: Beskeder mellem objekter
+Det simple økosystem i form af akvariet kan udvides på mange måder. Et sted at starte kunne være at få fiskene til at opføre sig mere naturligt. Eksempelvis ved vi, at visse fiskearter har tilbøjelighed til at svømme i flokke (lidt ligesom fugle, myrer, mennesker og mange andre dyr). 
+
+![Fisk bevæger sig ofte i blokke ligesom mange andre dyr](../kap16/images/fishflock.jpg)
+
+Det er spændende at undersøge af mange grunde. Bl.a. fordi naturens indbyggede flok-intelligens viser sig, at være anvedelig i en lang række eksempel såsom kurering af kræft, optimering af processer, simulering af individulles adfærd i grupper etc. Men desuden er stiller implementeringen af flok-intelligens krav om, at vores fiske-objekter udveklser informationer mellem hinanden, så de ved hvor hinanden er. Dvs. for programmører er implementationen af flok-intelligens et godt eksempel på, hvordan objekter kan kommunikere med hinanden. 
+I det følgende gennemgås nogle simple regler for hvorledes flok-mentaliteten kan implementeres i praksis ved brug af interagerende objekter. 
+
+- Seperation: Fisk vil forsøge at svømme væk fra andre fisk, der er tæt på dem. Men ligesom naturen vil ingen fisk have viden om alle fisk i flokken.
+- Justering: Fisk vil forsøge at efterleve hastighen af andre fisk i nærheden. 
+-  Samhørighed: Fisk vil forsøge at svømme mod centrum af flokken. 
+
+```javascript
+for hver fisk:
+
+    # indlæs lokale attributter til nul
+    xpos_avg, ypos_avg, xvel_avg, yvel_avg, neighboring_boids, close_dx, close_dy = 0
+
+    )
+```
+
+De tre regler bør implementeres i hver enkelt fisk, medfører, at vi bør udvide vores Fiske-klasse med en række attributter: 
+```javascript
+
+```javascript
+class Fish{
+    constructor(location,velocity)
+    {
+        this.location = location //(x,y) peger på fiskens placering
+        this.velocity = velocity // (xvel,yvel) peger på fiskens hastighed i de to retninger
+        this.size = 50
+    }
+}
+
+```
+
+
+
+
 
 ## Øvelser
 1. Udvid vektorklassen med subtraktionsmetode mfl.
