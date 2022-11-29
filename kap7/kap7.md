@@ -84,7 +84,7 @@ class Cirkel{
   }
 }
 ```
-Hvis vi ikke angiver andet i konstruktøren, så vil de angive variable bliver initialiseret med de samme værdier som i den foregående konstruktør. 
+Hvis vi ikke angiver andet i konstruktøren, så vil de angive variable bliver initialiseret med de samme værdier som i den foregående konstruktør. Meget vigtigt at gøre opmærksom på er dog, at konstruktøren forventer at få argumenterne i den anviste rækkefølge, når vi opretter en konkret instans af klassen.
 
 Hvert objekt er en cirkel, som skal kunne have forskellige egenskaber. Ved at bruge `this` får vi mulighed for at opbevare forskellige attributter hos de respektive cirkler. Igen er det en god ide at tænke på objekter som containere, der indeholder forskellige værdier.
 
@@ -107,6 +107,13 @@ function setup() {
 ```
 Vi har oprettet to forskellige cirkel-objekter med de to forskellige kald til den samme konstruktør her og gemt referencer til dem i de to variabler c1 og c2. Variablernes type er af typen "Cirkel". Vi har med andre ord konstrueret vores helt egen type. Vi bemærk i øvrigt, at variablerne i virkeligheden blot peger på en adresse til de to objekter. Det er vi mener, når vi skriver "referencer". 
 
+Endelig gør vi opmærksom på at ved at bruge standard værdier til at rumme i praksis flere konstruktører er vi tvunget til at overholde rækkefølgen i argumenterne. Eksempelvis kunne man forestille sig følgende instantiering:
+```javascript
+c3 = new Cirkel(100,100,20)
+```
+
+Umiddelbart ville man tror det var en cirkel magen til referencen i `c2` men i praksis er det en cirkel med farvekoden `100` og centrum i `(x,y)=(100,20)` og radius `1`. Man skal med andre ord være opmærksom på rækkefølgen af ens argumenter/parametre i konstruktøren er overholdt ellers risikerer man at blande "æbler og bananer". 
+
 Som vi nævnte før, så rummer klasser også metoder, der kan ændre på objektets tilstand. Herunder har vi udvidet vores generelle klassedefinition med metoder. Vi skal tænke på metoder som funktioner. De kan tage et input og et output. Dvs. reelt er der bare tale om funktioner, men de kaldes typisk for "metoder", når de flyttes ind i en klasse. Herunder først en generisk formulering af metoder:
 
 
@@ -117,7 +124,7 @@ class "Navn_på_klasse"
   // først konstruktøren ...
   constructor(p1='',p2='',...,pn='')
   {
-
+    //...
   }
   // erstat metode1 med et sigende navn
   // kan have ingen eller op til n parametre
