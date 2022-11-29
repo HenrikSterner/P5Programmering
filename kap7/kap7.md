@@ -86,7 +86,7 @@ class Cirkel{
   }
 }
 ```
-Hvis vi ikke angiver andet i konstruktøren, så vil de angive variable bliver initialiseret med de samme værdier som i den foregående konstruktør. Meget vigtigt at gøre opmærksom på er dog, at konstruktøren forventer at få argumenterne i den anviste rækkefølge, når vi opretter en konkret instans af klassen.
+Hvis vi ikke angiver andet i konstruktøren, så vil de angivne variabler blive initialiseret med de samme værdier som i den foregående konstruktør. Meget vigtigt at gøre opmærksom på i denne sammenhæng er dog, at konstruktøren forventer at få argumenterne i den anviste rækkefølge, når vi opretter en konkret instans af klassen. Det vender vi tilbage til om lidt.
 
 Hvert objekt er en cirkel, som skal kunne have forskellige egenskaber. Ved at bruge `this` får vi mulighed for at opbevare forskellige attributter hos de respektive cirkler. Igen er det en god ide at tænke på objekter som containere, der indeholder forskellige værdier.
 
@@ -96,7 +96,7 @@ let V = new K(A)
 ```
 Variablenavnet er repræsenteret ved "V" og skal erstattes af et sigende navn/forkortelse for den klasse, som vi opretter en instans af. "K" repræsenterer klassens navn, og A betegner en eller flere attributter (adskilt af komma), som man kan give med til konstruktøren. 
 
-Herunder eksempel der forhåbentlig giver en bedre forståelse end den generelle definition:
+Herunder et eksempel der forhåbentlig giver en bedre forståelse end den generelle definition:
 
 ```javascript
 let c1;
@@ -109,16 +109,16 @@ function setup() {
 ```
 Vi har oprettet to forskellige cirkel-objekter med de to forskellige kald til den samme konstruktør her og gemt referencer til dem i de to variabler c1 og c2. Variablernes type er af typen "Cirkel". Vi har med andre ord konstrueret vores helt egen type. Vi bemærk i øvrigt, at variablerne i virkeligheden blot peger på en adresse til de to objekter. Det er vi mener, når vi skriver "referencer". 
 
-Endelig gør vi opmærksom på at ved at bruge standard værdier til at rumme i praksis flere konstruktører er vi tvunget til at overholde rækkefølgen i argumenterne. Eksempelvis kunne man forestille sig følgende instantiering:
+Endelig gør vi, som vi nævnte før, opmærksom på at ved at bruge standard værdier til at rumme forskellige antal argumenter til  konstruktørerne, er vi tvunget til at overholde rækkefølgen i argumenterne. Eksempelvis kunne man forestille sig følgende instantiering:
 ```javascript
 c3 = new Cirkel(100,100,20)
 ```
-
+ 
 Umiddelbart ville man tror det var en cirkel magen til referencen i `c2` men i praksis er det en cirkel med farvekoden `100` og centrum i `(x,y)=(100,20)` og radius `1`. Man skal med andre ord være opmærksom på rækkefølgen af ens argumenter/parametre i konstruktøren er overholdt ellers risikerer man at blande "æbler og bananer". 
 
+
+## Objekters metoder
 Som vi nævnte før, så rummer klasser også metoder, der kan ændre på objektets tilstand. Herunder har vi udvidet vores generelle klassedefinition med metoder. Vi skal tænke på metoder som funktioner. De kan tage et input og et output. Dvs. reelt er der bare tale om funktioner, men de kaldes typisk for "metoder", når de flyttes ind i en klasse. Herunder først en generisk formulering af metoder:
-
-
 
 ```javascript
 class "Navn_på_klasse"
@@ -130,22 +130,25 @@ class "Navn_på_klasse"
   }
   // erstat metode1 med et sigende navn
   // kan have ingen eller op til n parametre
-  metode1(p11,....p1n)
+  "metode1"(p11,....p1n)
   {
 
   }
   //...
   // erstat metode1 med et sigende navn
   // kan have ingen eller op til n parametre
-  metodeM(pm1,....pmn)
+  "metodeM"(pm1,....pmn)
   {
 
   }
 }
 ```
+
+I ovenstående har vi for overskuelighedens skyld givet metoderne navnene "metode1", ...,"metodem", men i praksis bør man selvfølgelig give dem nogle sigende navne for den kontekst man arbejder med og være opmærksom på, at man navngiver metoderne på en ensartet måde. 
+
 Vi kan have ligeså mange metoder vi ønsker, der tager lige så mange parametre som vi ønsker, og vi kan sågar have metoder ved samme navn, men i såfald vil den sidst defineret blive kaldt, hvorfor vi opfordre til at man undgår det eller løser det på samme måde som med konstruktøren, der har nogle standard værdier.  
 
-Lad os konkretisere det i vores eksempel fra før med cirklen. 
+Lad os konkretisere brugen af metoder i vores eksempel fra før med cirklen. 
 Der kan eksempelvis blive behov for at ændre på cirklens tilstand såsom at bevæge cirklen et andet sted end på skærmen samt at tegne cirklen:
 
 ```javascript
@@ -183,13 +186,11 @@ function setup() {
 }
 ```
 
-
-Bemærk her særligt konstruktionen af et nyt cirkel objekt. Vi bruger nøgleordet new. Vi giver den argumenterne 200, 200 og 50, som xpos, ypos og radius bliver sat til jf. klasse-definitionen.
+Bemærk her særligt konstruktionen af et nyt cirkelobjekt. Vi bruger nøgleordet `new`. Vi giver den argumenterne 200, 200 og 50, som xpos, ypos og radius bliver sat til jf. klasse-definitionen.
 
 Vi tegner herefter cirklen og flytter den til position (300,300). Afslutningsvis tegner vi den igen.
 
 Vi kunne let konstruere lige så mange cirkler som vi nu havde lyst til og vi skal i næste afsnit se hvordan vi kan opbevare mange af de samme objekter uden at skulle konstruere tilsvarende ligeså mange variabler. Men herunder følger et eksempel hvor vi har konstrueret to cirkler og kalder deres respektive metoder:
-
 
 ```javascript
 let c1;
