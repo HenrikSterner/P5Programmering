@@ -154,7 +154,8 @@ Der kan eksempelvis blive behov for at ændre på cirklens tilstand såsom at be
 ```javascript
 class Cirkel{
  constructor(x,y,r) {
-   this.color = color(255);
+   this.color = color(255); // bemærk vi har valgt at give den en prædefineret farvekode 
+                            // og ikke som argument til konstruktøren 
    this.xpos = x;
    this.ypos = y;
    this.radius = r;
