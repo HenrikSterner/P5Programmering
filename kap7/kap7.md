@@ -25,7 +25,7 @@ class "Navn_på_klasse"
 }
 ```
 Klassen er vores skabelon, som kan bruges til at konstruere eller med et fint ord "instantiere" objekter af denne skabelon. Dvs. objekter er med andre ord konstrueret ud fra vores skabelon. 
-Når vi opretter et objekt dvs. en instans af klassen er vi typisk interesseret i at indlæse nogle grundlæggende egenskaber fra start af. Det gør vi ved brug af en såkaldt "konstruktør", som er en funktion eller metode, der har til formål at sætte nogle bestemte værdier på forhånd for den konkrete instans af klassen. I JS bruges nøgleordet `constructor`. Herunder et eksempel på en klasse som ingen argumenter tager:  
+Når vi opretter et objekt dvs. en instans af klassen er vi typisk interesseret i at indlæse nogle grundlæggende egenskaber fra start af. Det gør vi ved brug af en såkaldt "konstruktør", som er en funktion eller metode, der har til formål at sætte nogle bestemte værdier på forhånd for den konkrete instans af klassen. I JS bruges nøgleordet `constructor` (eller konstruktør på dansk). Herunder et eksempel på en klasse som ingen argumenter tager og heller ingen værdier sætter i konstruktøren:  
 
 ```javascript
 class "Navn_på_klasse"
@@ -36,7 +36,7 @@ class "Navn_på_klasse"
   }
 }
 ```
-Modsat mange andre sprog, så understøtter Javascript som udgangspunkt kun en konstruktør uden mulighed for at `overloade` denne. Med dette skal forstås, at I mange andre sprog kan man faktisk lave flere konstruktører og skelne mellem de enkelte ved at have forskellige antal argumenter. Dette lader sig ikke umiddelbart gøre i Javascript, men man kan i stedet gøre brug af et mindre "hack", hvor man bruger standardværdier, og på den måde opnå nogenlunde samme funktionalitet i praksis.
+Modsat mange andre sprog, så understøtter Javascript som udgangspunkt kun en konstruktør uden mulighed for at `overloade` denne. Med dette skal forstås, at I mange andre sprog kan man faktisk lave flere konstruktører og skelne mellem de enkelte ved at have forskellige antal argumenter til konstruktøren. Dette lader sig ikke umiddelbart gøre i Javascript, men man kan i stedet gøre brug af et mindre "hack", hvor man bruger standardværdier, og på den måde opnår nogenlunde samme funktionalitet i praksis.
 
 Herunder et eksempel på ovenstående hvor vi har lavet en konstruktør, der har mulighed for at tage ingen eller op til n parametre med angivet ved p1,..,pn :
 
@@ -54,6 +54,8 @@ class "Navn_på_klasse"
 }
 ```
 Ved at sætte p1,...,pn til en tom streng giver vi mulighed for at konstruktøren kan tage op til n-argumenter. De kan initialiseres eller undlades at initialiseres fuldstændig. Initialiseres de tildeles variablerne i kroppen af konstruktøren den ønskede værdi og ellers antager Javascript blot, at de er er den tomme streng.
+Bemærk i øvrigt at vi gemmer værdierne som har de samme respektive navne som argumenterne til konstruktøren. Brugen af `this.p1 = p1`,..., `this.pn = pn` betyder, at vi knytter argumenterne givet i konstruktøren til det konkrete objekt, som klassen er en skabelon for.
+`this` refererer altså til den konkrete instans af klassen som vi også kalder for objektet.
 
 Lad os prøve at konkretisere det ved at lave en klasse for cirkler.
 En skabelon eller mere præcist en klasse for en cirkel kunne se ud: 	
@@ -84,8 +86,7 @@ class Cirkel{
 ```
 Hvis vi ikke angiver andet i konstruktøren, så vil de angive variable bliver initialiseret med de samme værdier som i den foregående konstruktør. 
 
-
-Man kan måske undre sig over hvad ´this´ betyder. I denne sammenhæng refererer `this` til den konkrete instans af klassen altså objektet. Hvert objekt er en cirkel, som skal kunne have forskellige egenskaber. Ved at bruge `this` får vi mulighed for at opbevare forskellige attributter hos de respektive cirkler. Igen er det en god ide at tænke på objekter som containere, der indeholder forskellige værdier.
+Hvert objekt er en cirkel, som skal kunne have forskellige egenskaber. Ved at bruge `this` får vi mulighed for at opbevare forskellige attributter hos de respektive cirkler. Igen er det en god ide at tænke på objekter som containere, der indeholder forskellige værdier.
 
 Vi kan nu oprette objekter vha. af vores klasse. Det gør vi ved brug af nøgleordet `new`:
 ```javascript
