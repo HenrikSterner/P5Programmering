@@ -100,8 +100,8 @@ let c1;
 let c2;
 function setup() {
   createCanvas(400, 400);
-  c1 = new Cirkel(); //vi opretter et nyt cirkel-objekt vha new
-  c2 = new Cirkel(100,100,20); //vi opretter et nyt cirkel-objekt vha new 
+  c1 = new Cirkel(); //vi opretter et nyt cirkel-objekt vha new (standard værdi for cirklen)
+  c2 = new Cirkel(255,100,100,20); //vi opretter et nyt cirkel-objekt vha new (colorcode = 255, x = 100, y= 100, radius = 20) 
 }
 ```
 Vi har oprettet to forskellige cirkel-objekter med de to forskellige kald til den samme konstruktør her og gemt referencer til dem i de to variabler c1 og c2. Variablernes type er af typen "Cirkel". Vi har med andre ord konstrueret vores helt egen type. Vi bemærk i øvrigt, at variablerne i virkeligheden blot peger på en adresse til de to objekter. Det er vi mener, når vi skriver "referencer". 
@@ -114,7 +114,7 @@ Som vi nævnte før, så rummer klasser også metoder, der kan ændre på objekt
 class "Navn_på_klasse"
 {
   // først konstruktøren ...
-  constructor(p1=,p2,...,pn)
+  constructor(p1='',p2='',...,pn='')
   {
 
   }
