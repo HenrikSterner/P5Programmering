@@ -25,7 +25,7 @@ class "Navn_på_klasse"
 }
 ```
 Klassen er vores skabelon, som kan bruges til at konstruere eller med et fint ord "instantiere" objekter af denne skabelon. Dvs. objekter er med andre ord konstrueret ud fra vores skabelon. 
-Når vi opretter et objekt dvs. en instans af klassen er vi typisk interesseret i at indlæse nogle grundlæggende egenskaber fra start af. Det gør vi ved brug af en såkaldt "konstruktør", som er en funktion eller metode, der har til formål at sætte nogle bestemte værdier på forhånd for den konkrete instans af klassen. I JS bruges nøgleordet ´constructor`. Herunder har vi udvidet klassen med konstruktører, der har mulighed for at tage ingen eller op til n parametre med angivet ved p1,..,pn :
+Når vi opretter et objekt dvs. en instans af klassen er vi typisk interesseret i at indlæse nogle grundlæggende egenskaber fra start af. Det gør vi ved brug af en såkaldt "konstruktør", som er en funktion eller metode, der har til formål at sætte nogle bestemte værdier på forhånd for den konkrete instans af klassen. I JS bruges nøgleordet `constructor`. Herunder et eksempel på en klasse som ingen argumenter tager:  
 
 ```javascript
 class "Navn_på_klasse"
@@ -34,14 +34,26 @@ class "Navn_på_klasse"
   {
 
   }
-  //...
-  constructor(p1,p2,...,pn)
+}
+```
+Modsat mange andre sprog, så understøtter Javascript som udgangspunkt kun en konstruktør uden mulighed for at `overloade` denne. Med dette skal forstås, at I mange andre sprog kan man faktisk lave flere konstruktører og skelne mellem de enkelte ved at have forskellige antal argumenter. Dette lader sig ikke umiddelbart gøre i Javascript, men man kan i stedet gøre brug af et mindre "hack", hvor man bruger standardværdier, og på den måde opnå nogenlunde samme funktionalitet i praksis.
+
+Herunder et eksempel på ovenstående hvor vi har lavet en konstruktør, der har mulighed for at tage ingen eller op til n parametre med angivet ved p1,..,pn :
+
+```javascript
+class "Navn_på_klasse"
+{
+  constructor(p1='',p2='',...,pn='')
   {
+    this.p1 = p1
+    this.p2 = p2
+    ...
+    this.pn = pn
 
   }
 }
 ```
-Vi kan altså have lige så mange konstruktører, som vi ønsker. Men de skal hver især have forskellige antal parametre eller forskellige typer af parametre for at javascript kan forstå, hvilken konstruktør den skal anvende. 
+Ved at sætte p1,...,pn til en tom streng giver vi mulighed for at konstruktøren kan tage op til n-argumenter. De kan initialiseres eller undlades at initialiseres fuldstændig. Initialiseres de tildeles variablerne i kroppen af konstruktøren den ønskede værdi og ellers antager Javascript blot, at de er er den tomme streng.
 
 Lad os prøve at konkretisere det ved at lave en klasse for cirkler.
 En skabelon eller mere præcist en klasse for en cirkel kunne se ud: 	
@@ -50,20 +62,28 @@ En skabelon eller mere præcist en klasse for en cirkel kunne se ud:
 class Cirkel{
  constructor() {
    this.color = color(255);
-   this.xpos = width/2;
+   this.xpos = width/2; 
    this.ypos = height/2;
    this.radius = 1;
   }
- constructor(x,y,r) {
-   this.color = color(255);
-   this.xpos = x;
-   this.ypos = y;
-   this.radius = r;
+}
+```
+Her angiver farve, position og radius nogle egenskaber ved en cirkel. De to variable `width`og `heigth` er prædefineret variable i P5. 
+
+Disse værdier kan naturligvis variere fra cirkel til cirkel, hvorfor det vil give mening at implementere i sin konstruktør:
+
+```javascript
+class Cirkel{
+ constructor(colorcode=255,xpos = width/2,ypos = height/2,radius = 1 ) {
+   this.color = color(colorcode);
+   this.xpos = xpos; 
+   this.ypos = ypos;
+   this.radius = radius;
   }
 }
 ```
+Hvis vi ikke angiver andet i konstruktøren, så vil de angive variable bliver initialiseret med de samme værdier som i den foregående konstruktør. 
 
-Her angiver farve, position og radius nogle egenskaber ved en cirkel. Disse værdier kan naturligvis variere fra cirkel til cirkel. Vi bemærker, at der er to konstruktører. En der der selv generer alle værdier, mens den anden forventer at få nogle værdier.
 
 Man kan måske undre sig over hvad ´this´ betyder. I denne sammenhæng refererer `this` til den konkrete instans af klassen altså objektet. Hvert objekt er en cirkel, som skal kunne have forskellige egenskaber. Ved at bruge `this` får vi mulighed for at opbevare forskellige attributter hos de respektive cirkler. Igen er det en god ide at tænke på objekter som containere, der indeholder forskellige værdier.
 
@@ -84,7 +104,7 @@ function setup() {
   c2 = new Cirkel(100,100,20); //vi opretter et nyt cirkel-objekt vha new 
 }
 ```
-Vi har oprettet to forskellige cirkel-objekter med de to forskellige konstruktører her og gemt referencer til dem i de to variabler c1 og c2. Variablernes type er af typen "Cirkel". Vi har med andre ord konstrueret vores helt egen type. Vi bemærk i øvrigt, at variablerne i virkeligheden blot peger på en adresse til de to objekter. Det er vi mener, når vi skriver "referencer". 
+Vi har oprettet to forskellige cirkel-objekter med de to forskellige kald til den samme konstruktør her og gemt referencer til dem i de to variabler c1 og c2. Variablernes type er af typen "Cirkel". Vi har med andre ord konstrueret vores helt egen type. Vi bemærk i øvrigt, at variablerne i virkeligheden blot peger på en adresse til de to objekter. Det er vi mener, når vi skriver "referencer". 
 
 Som vi nævnte før, så rummer klasser også metoder, der kan ændre på objektets tilstand. Herunder har vi udvidet vores generelle klassedefinition med metoder. Vi skal tænke på metoder som funktioner. De kan tage et input og et output. Dvs. reelt er der bare tale om funktioner, men de kaldes typisk for "metoder", når de flyttes ind i en klasse. Herunder først en generisk formulering af metoder:
 
@@ -93,12 +113,8 @@ Som vi nævnte før, så rummer klasser også metoder, der kan ændre på objekt
 ```javascript
 class "Navn_på_klasse"
 {
-  constructor()
-  {
-
-  }
-  //...
-  constructor(p1,p2,...,pn)
+  // først konstruktøren ...
+  constructor(p1=,p2,...,pn)
   {
 
   }
@@ -117,7 +133,7 @@ class "Navn_på_klasse"
   }
 }
 ```
-Vi kan have ligeså mange metoder vi ønsker, der tager lige så mange parametre som vi ønsker, og vi kan sågar have metoder ved samme navn, men ligesom det gælder for konstruktører, så skal de have forskellige antal parametre eller typer af parametre, for at JS kan identificere hvilken metode, der skal anvendes. 
+Vi kan have ligeså mange metoder vi ønsker, der tager lige så mange parametre som vi ønsker, og vi kan sågar have metoder ved samme navn, men i såfald vil den sidst defineret blive kaldt, hvorfor vi opfordre til at man undgår det eller løser det på samme måde som med konstruktøren, der har nogle standard værdier.  
 
 Lad os konkretisere det i vores eksempel fra før med cirklen. 
 Der kan eksempelvis blive behov for at ændre på cirklens tilstand såsom at bevæge cirklen et andet sted end på skærmen samt at tegne cirklen:

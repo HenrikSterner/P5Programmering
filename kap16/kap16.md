@@ -151,11 +151,15 @@ Det simple økosystem i form af akvariet kan udvides på mange måder. Et sted a
 ![Fisk bevæger sig ofte i blokke ligesom mange andre dyr](../kap16/images/fishflock.jpg)
 
 Det er spændende at undersøge af mange grunde. Bl.a. fordi naturens indbyggede flok-intelligens viser sig, at være anvedelig i en lang række eksempel såsom kurering af kræft, optimering af processer, simulering af individulles adfærd i grupper etc. Men desuden er stiller implementeringen af flok-intelligens krav om, at vores fiske-objekter udveklser informationer mellem hinanden, så de ved hvor hinanden er. Dvs. for programmører er implementationen af flok-intelligens et godt eksempel på, hvordan objekter kan kommunikere med hinanden. 
-I det følgende gennemgås nogle simple regler for hvorledes flok-mentaliteten kan implementeres i praksis ved brug af interagerende objekter. 
+I det følgende gennemgås nogle simple regler for hvorledes flok-mentaliteten, som vi efterfølgende kan implementeres i praksis ved brug af interagerende objekter og attributter knyttet til disse. 
 
-- Seperation: Fisk vil forsøge at svømme væk fra andre fisk, der er tæt på dem. Men ligesom naturen vil ingen fisk have viden om alle fisk i flokken.
+- Seperation: Fisk vil forsøge at svømme væk fra andre fisk, der er tæt på dem. Men ligesom naturen vil ingen fisk have viden om alle fisk i flokken. 
 - Justering: Fisk vil forsøge at efterleve hastighen af andre fisk i nærheden. 
--  Samhørighed: Fisk vil forsøge at svømme mod centrum af flokken. 
+-  Samhørighed: Fisk vil forsøge at svømme mod centrum af flokken.
+
+Vi skal mao indføre nogle variable, der holder styr på antal fisk, der er synlige for en given fisk, gennemsnitshastigheden for disse fisk samt centrum af mængden af fisk. 
+Herunder pseudokode der beskriver det overordnede system:
+
 
 ```javascript
 for hver fisk:
