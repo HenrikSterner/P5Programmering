@@ -53,12 +53,14 @@ class "Navn_på_klasse"
   }
 }
 ```
-Ved at sætte p1,...,pn til en tom streng giver vi mulighed for at konstruktøren kan tage op til n-argumenter. De kan initialiseres eller undlades at initialiseres fuldstændig. Initialiseres de tildeles variablerne i kroppen af konstruktøren den ønskede værdi og ellers antager Javascript blot, at de er er den tomme streng.
-Bemærk i øvrigt at vi gemmer værdierne som har de samme respektive navne som argumenterne til konstruktøren. Brugen af `this.p1 = p1`,..., `this.pn = pn` betyder, at vi knytter argumenterne givet i konstruktøren til det konkrete objekt, som klassen er en skabelon for.
-`this` refererer altså til den konkrete instans af klassen som vi også kalder for objektet.
+Ved at sætte p1,...,pn til en tom streng giver vi mulighed for at konstruktøren kan tage op til n-argumenter. De kan initialiseres eller undlades at initialiseres fuldstændig. Hvis vi initialiserer dem til andre værdier end de prædefineret tildeles variablerne i kroppen af konstruktøren den ønskede værdi. Alternativt sætter Javascript blot disse attributter til den tomme streng. 
+
+Variablerne i konstruktøren kaldes også for `attributter`. Og som angivet ovenfor er det vigtigt at understrege, at selvom argumenterne har samme navne som attributterne, så er der tale om to forskellige ting.
+Brugen af `this.p1 = p1`,..., `this.pn = pn` betyder, at vi knytter argumenterne givet i konstruktøren som attributter til det konkrete objekt, som klassen er en skabelon for.
+`this` refererer altså til den konkrete instans af klassen eller objektet.
 
 Lad os prøve at konkretisere det ved at lave en klasse for cirkler.
-En skabelon eller mere præcist en klasse for en cirkel kunne se ud: 	
+En skabelon eller mere præcist en klasse for en cirkel kunne se således ud: 	
 
 ```javascript
 class Cirkel{
