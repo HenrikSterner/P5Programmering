@@ -125,7 +125,7 @@ c3 = new Cirkel(100,100,20)
  
 Umiddelbart ville man tror det var en cirkel magen til referencen i `c2` men i praksis er det en cirkel med farvekoden `100` og centrum i `(x,y)=(100,20)` og radius `1`. Man skal med andre ord være opmærksom på rækkefølgen af ens argumenter/parametre i konstruktøren er overholdt ellers risikerer man at blande "æbler og bananer". 
 
-I den forbindelse bør man derfor være meget bevidst om hvilke attributter, som man i en instantiering har brug for at indlæse versus hvilke som altid kan justeres under vejs. 
+I den forbindelse bør man derfor være meget bevidst om hvilke attributter, som man i en instantiering har brug for at indlæse versus hvilke som altid kan justeres undervejs. 
 Tænkes eksempelvis på en cirkel kunne man spørge sig selv, hvad er det der gør en cirkel til en cirkel? Er det ikke i højere grad et punkt og en radius fremfor eksempelvis farvekoden? I praksis kunne man derfor overveje helt at undlade farvekoden som argument til konstruktøren. Den kan nemlig altid justeres. Herunder et eksempel på en ny klasse konstruktion:
 
 ```javascript
