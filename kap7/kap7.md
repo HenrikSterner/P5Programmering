@@ -157,7 +157,10 @@ I praksis anbefales derfor at justere på ikke essentielle attributter (såsom f
 
 
 ## Objekters metoder
-Som vi nævnte før, så rummer klasser også metoder, der kan ændre på objektets tilstand. Herunder har vi udvidet vores generelle klassedefinition med metoder. Vi skal tænke på metoder som funktioner. De kan tage et input og et output. Dvs. reelt er der bare tale om funktioner, men de kaldes typisk for "metoder", når de flyttes ind i en klasse. Herunder først en generisk formulering af metoder:
+Som vi nævnte før, så rummer klasser også metoder, der kan ændre på objektets tilstand. Herunder har vi udvidet vores generelle klassedefinition med metoder. Vi skal tænke på metoder som funktioner. De kan tage et input og returnere et output. Dvs. reelt er der bare tale om funktioner, men de kaldes typisk for "metoder", når de flyttes ind i en klasse. 
+Målet med metoder er typisk at ændre på et konkret objekts tilstand, som typisk er beskrevet ved dets attributter. Det kunne eksempelvis være at ændre på centrum for cirklen eller farvekoden. 
+
+Herunder først en generisk formulering af metoder:
 
 ```javascript
 class "Navn_på_klasse"
