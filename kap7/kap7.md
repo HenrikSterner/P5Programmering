@@ -155,6 +155,8 @@ c.xpos = 50 //ændre x-koordinatet til 50 i stedet for 100
 ```
 I praksis anbefales derfor at justere på ikke essentielle attributter (såsom farvekoden ovenfor) på denne måde.
 
+Vi gør desuden opmærksom på, at man også kan specificere at visse attributter er `private`. Dvs. de ikke bare lader sig ændre alle mulige steder i koder men at de skal ændres ved brug af bestemte metoder, så vi sikrer at de ændres korrekt. Det vender vi tilbage til i et senere kapitel.
+
 
 ## Objekters metoder
 Som vi nævnte før, så rummer klasser også metoder, der kan ændre på objektets tilstand. Herunder har vi udvidet vores generelle klassedefinition med metoder. Vi skal tænke på metoder som funktioner. De kan tage et input og returnere et output. Dvs. reelt er der bare tale om funktioner, men de kaldes typisk for "metoder", når de flyttes ind i en klasse. 
@@ -186,7 +188,7 @@ class "Navn_på_klasse"
 }
 ```
 
-I ovenstående har vi for overskuelighedens skyld givet metoderne navnene "metode1", ...,"metodem", men i praksis bør man selvfølgelig give dem nogle sigende navne for den kontekst man arbejder med og være opmærksom på, at man navngiver metoderne på en ensartet måde. 
+I ovenstående har vi for overskuelighedens skyld givet metoderne navnene "metode1", ...,"metodeM", men i praksis bør man selvfølgelig give dem nogle sigende navne for den kontekst man arbejder med og være opmærksom på, at man navngiver metoderne på en ensartet måde. 
 
 Vi kan have ligeså mange metoder vi ønsker, der tager lige så mange parametre som vi ønsker, og vi kan sågar have metoder ved samme navn, men i såfald vil den sidst defineret blive kaldt, hvorfor vi opfordre til at man undgår det eller løser det på samme måde som med konstruktøren, der har nogle standard værdier.  
 
@@ -248,15 +250,43 @@ function setup() {
   c2.draw();
 }
 ```
+## Navngivning af klasser, metoder og attributter
+For at øge læsbarheden på tværs af programmer og programmører, så anbefales det kraftigt, at man er konsekvent i sin navngivning af klasser, metoder og variable.
+I JavaScript ligesom alle mulige andre sprog, er der en række konventioner, som man forslås at følge.
+
+Når man navngiver en klasse skrives første bogstav med stort. Hvis klassens navn består af flere ord benyttes `PascalCase`. Dvs. hvert nyt ord skal starte med stort. Herunder nogle tænkte eksempler på klassenavne der illustrer ideen:
+
+```javascript
+hund = new Hund()
+hundEjer = new HundEjer(hund)
+p1 = new Punkt()
+p2 = new Punkt()
+ls = new LinjeSegment(p1,p2)
+```
+
+For navngivningen af metoder gælder, at man opfordres til at bruge at `CamelCase`, der modsat `PascalCase` tillader at det første bogstav i det første ord starter med småt. Ydermere anbefales det, at det første ord er et verbum som indikerer en handling (eller en ændring af objektets tilstand). Herunder nogle tænkte eksempler fra de ovenfor instantieret klasser:
+
+```javascript
+hundeNavn.sætNavn("Terry") //sætter hundens navn
+console.log(hundEjer.hentNavn()) // printer "Tintin" ;-)
+p1.sætKoordinater(2,3) //sætter koordinater for punkter
+p2.sætKoordinater(7,4)
+ls = new LinjeSegment(p1,p2) //konstruerer et linjesegment udfra punkterne
+```
+
+Attributter og variablenavne kan også erklæres med `CamelCase` som eksemplerne ovenfor. Man bør i øvrigt være opmærksom på at for både klasser, metoder og attributter, så gælder der, at de er "case sensitive", hvilket betyder, at Javascript skelner mellem navne/ord, hvor den eneste forskel er om et eller flere af bogstaverne er skrevet med små eller store bogstaver. 
+
+Endelig bør man også være bevidst om, at man skriver på engelsk eller dansk. Generelt vil vi opfordre læseren til at overveje hvem målgruppen er og så i øvrigt være konsekvent i sine valg. 
 
 ## Øvelser
 Herunder følger en række øvelser. Lav som minimum øvelserne 1. til 7 samt et af projekterne.
 
 1. Hvilke egenskaber og metoder kunne være relevante for en bil, et dyr og et selvvalgt objekt som den tredje. Giv mindst 3 metoder og 3 egenskaber for hver af de tre objekter. Overvej egenskabernes datatyper og hvordan metoderne bør kodes. Metoderne må ikke være draw.
-2. Implementer en konstruktør med egenskaber og metoder for hver af de nævnte i 1.
-3. Implementer en draw metode, der kan tegne de tre objekter. Metoden skal gerne inddrage nogle af de 3 egenskaber for hver af de 3 objekter. Dvs. udfaldet af draw skal gerne påvirkes af ændringer i egenskaberne. Eksempelvis kan højden på en bil ændre tegningen af bilen.
-4. Vi laver i det følgende et simpelt spil kaldet “Afraid of raindrops”, hvor man i bunden har en vandret linje, som ens helt kan bevæge sig til venstre og højre på. Fra oven regner det med forskellige cirkler, der oprettes i toppen af skærmen og bevæger sig lodret ned. Cirklerne har forskellige størrelser og bevæger sig i forskellige hastigheder. Hvis ens cirkel kolliderer med ens helt, så er det gameover. Implementer en klasse for en cirkel, der håndterer forskellige størrelser, placeringer, hastigheder og kollision med ens helt. Implementer desuden, at man kan starte forfra og hold styr på antallet af cirkler, som man undgår. 
-5. Forklar hvad følgende kode gør vha. kommentarer:
+2. Navngiv metoderne hhv. klasserne ud fra reglerne om `CamelCase` hhv. `PascalCase`.
+3. Implementer en konstruktør med egenskaber og metoder for hver af de nævnte i 1.
+4. Implementer en draw metode, der kan tegne de tre objekter. Metoden skal gerne inddrage nogle af de 3 egenskaber for hver af de 3 objekter. Dvs. udfaldet af draw skal gerne påvirkes af ændringer i egenskaberne. Eksempelvis kan højden på en bil ændre tegningen af bilen.
+5. Vi laver i det følgende et simpelt spil kaldet “Afraid of raindrops”, hvor man i bunden har en vandret linje, som ens helt kan bevæge sig til venstre og højre på. Fra oven regner det med forskellige cirkler, der oprettes i toppen af skærmen og bevæger sig lodret ned. Cirklerne har forskellige størrelser og bevæger sig i forskellige hastigheder. Hvis ens cirkel kolliderer med ens helt, så er det gameover. Implementer en klasse for en cirkel, der håndterer forskellige størrelser, placeringer, hastigheder og kollision med ens helt. Implementer desuden, at man kan starte forfra og hold styr på antallet af cirkler, som man undgår. 
+6. Forklar hvad følgende kode gør vha. kommentarer:
 
 ```javascript
 let b; 
