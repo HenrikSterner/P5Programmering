@@ -12,7 +12,7 @@ OOP bruges bl.a. til at sikre, at man bedre kan håndtere, overskue og implement
 
 Til at starte med har vi fokus på at få en fornemmelse for hvordan et objekt konstrueres og hvad de kan bruges til.
 
-## Oprette objekter 
+## Oprette en klasse som skabelon for et objekt 
 I Javascript konstrueres et objekt vha af nøgleordet “class”. Vi vil tillade at bruge klasse i stedet for class, når vi omtaler dem. Når man opretter en klasse konstrueres en datastruktur, der rummer både data eller egenskaber om det objekt, som klassen er en skabelon for, men også metoder (eller funktioner), der ændrer på objektets tilstand. 
 
 Vi konstruerer en klasse ved at skrive `class` efterfulgt af navnet på klassen. Navnet skal være i et ord. Herefter følger kroppen omkrænset af en start og slut krølparentes:
@@ -25,6 +25,8 @@ class "Navn_på_klasse"
 }
 ```
 Klassen er vores skabelon, som kan bruges til at konstruere eller med et fint ord "instantiere" objekter af denne skabelon. Dvs. objekter er med andre ord konstrueret ud fra vores skabelon. 
+
+## Klassens konstruktør initialiserer objektet
 Når vi opretter et objekt dvs. en instans af klassen er vi typisk interesseret i at indlæse nogle grundlæggende egenskaber fra start af. Det gør vi ved brug af en såkaldt "konstruktør", som er en funktion eller metode, der har til formål at sætte nogle bestemte værdier på forhånd for den konkrete instans af klassen. I JS bruges nøgleordet `constructor` (eller konstruktør på dansk). Herunder et eksempel på en klasse som ingen argumenter tager og heller ingen værdier sætter i konstruktøren:  
 
 ```javascript
@@ -36,6 +38,8 @@ class "Navn_på_klasse"
   }
 }
 ```
+
+## Multiple konstruktører og klassens attributter
 Modsat mange andre sprog, så understøtter Javascript som udgangspunkt kun en konstruktør uden mulighed for at `overloade` denne. Med dette skal forstås, at I mange andre sprog kan man faktisk lave flere konstruktører og skelne mellem de enkelte ved at have forskellige antal argumenter til konstruktøren. Dette lader sig ikke umiddelbart gøre i Javascript, men man kan i stedet gøre brug af et mindre "hack", hvor man bruger standardværdier, og på den måde opnår nogenlunde samme funktionalitet i praksis.
 
 Herunder et eksempel på ovenstående hvor vi har lavet en konstruktør, der har mulighed for at tage ingen eller op til n parametre med angivet ved p1,..,pn :
@@ -53,14 +57,17 @@ class "Navn_på_klasse"
   }
 }
 ```
-Ved at sætte p1,...,pn til en tom streng giver vi mulighed for at konstruktøren kan tage op til n-argumenter. De kan initialiseres eller undlades at initialiseres fuldstændig. Hvis vi initialiserer dem til andre værdier end de prædefineret tildeles variablerne i kroppen af konstruktøren den ønskede værdi. Alternativt sætter Javascript blot disse attributter til den tomme streng. 
+Ved at sætte p1,...,pn til en tom streng giver vi mulighed for at konstruktøren kan tage op til n-argumenter. De kan initialiseres eller undlades at initialiseres fuldstændig. Hvis vi initialiserer dem til andre værdier end de prædefineret, tildeles variablerne i kroppen af konstruktøren den/de ønskede værdi(er). Alternativt sætter Javascript blot disse attributter til den tomme streng. 
 
 Variablerne i konstruktøren kaldes også for `attributter`. Og som angivet ovenfor er det vigtigt at understrege, at selvom argumenterne har samme navne som attributterne, så er der tale om to forskellige ting.
+
 Brugen af `this.p1 = p1`,..., `this.pn = pn` betyder, at vi knytter argumenterne givet i konstruktøren som attributter til det konkrete objekt, som klassen er en skabelon for.
 `this` refererer altså til den konkrete instans af klassen eller objektet.
 
-Lad os prøve at konkretisere det ved at lave en klasse for cirkler.
-En skabelon eller mere præcist en klasse for en cirkel kunne se således ud: 	
+
+## Eksempel på en klasse: Cirkel
+Lad os prøve at konkretisere ovenstående ved at lave en klasse for cirkler.
+En skabelon eller mere præcist en klasse for en cirkel kunne se således ud, men det er vigtigt at understrege, at den kunne se ud på mange forskellige måder: 	
 
 ```javascript
 class Cirkel{
@@ -90,6 +97,7 @@ Hvis vi ikke angiver andet i konstruktøren, så vil de angivne variabler blive 
 
 Hvert objekt er en cirkel, som skal kunne have forskellige egenskaber. Ved at bruge `this` får vi mulighed for at opbevare forskellige attributter hos de respektive cirkler. Igen er det en god ide at tænke på objekter som containere, der indeholder forskellige værdier.
 
+## Oprette et objekt eller instans af klassen med nøgleordet `new`
 Vi kan nu oprette objekter vha. af vores klasse. Det gør vi ved brug af nøgleordet `new`:
 ```javascript
 let V = new K(A)
@@ -103,18 +111,49 @@ let c1;
 let c2;
 function setup() {
   createCanvas(400, 400);
-  c1 = new Cirkel(); //vi opretter et nyt cirkel-objekt vha new (standard værdi for cirklen)
+  c1 = new Cirkel(); //vi opretter et nyt cirkel-objekt vha new (standard værdier for cirklen indlæses som attributter)
   c2 = new Cirkel(255,100,100,20); //vi opretter et nyt cirkel-objekt vha new (colorcode = 255, x = 100, y= 100, radius = 20) 
 }
 ```
-Vi har oprettet to forskellige cirkel-objekter med de to forskellige kald til den samme konstruktør her og gemt referencer til dem i de to variabler c1 og c2. Variablernes type er af typen "Cirkel". Vi har med andre ord konstrueret vores helt egen type. Vi bemærk i øvrigt, at variablerne i virkeligheden blot peger på en adresse til de to objekter. Det er vi mener, når vi skriver "referencer". 
+Vi har oprettet to forskellige cirkel-objekter med de to forskellige kald til den samme konstruktør her og gemt referencer til dem i de to variabler c1 og c2. Variablernes type er af typen "Cirkel". Vi har med andre ord konstrueret vores helt egen type. Vi bemærk i øvrigt, at variablerne i virkeligheden blot peger på en adresse til de to objekter. Det er netop det vi forsøger at indikere, når vi taler om "referencer". 
 
+## Rækkefølgen af argumenter til konstruktøren
 Endelig gør vi, som vi nævnte før, opmærksom på at ved at bruge standard værdier til at rumme forskellige antal argumenter til  konstruktørerne, er vi tvunget til at overholde rækkefølgen i argumenterne. Eksempelvis kunne man forestille sig følgende instantiering:
 ```javascript
 c3 = new Cirkel(100,100,20)
 ```
  
 Umiddelbart ville man tror det var en cirkel magen til referencen i `c2` men i praksis er det en cirkel med farvekoden `100` og centrum i `(x,y)=(100,20)` og radius `1`. Man skal med andre ord være opmærksom på rækkefølgen af ens argumenter/parametre i konstruktøren er overholdt ellers risikerer man at blande "æbler og bananer". 
+
+I den forbindelse bør man derfor være meget bevidst om hvilke attributter, som man i en instantiering har brug for at indlæse versus hvilke som altid kan justeres under vejs. 
+Tænkes eksempelvis på en cirkel kunne man spørge sig selv, hvad er det der gør en cirkel til en cirkel? Er det ikke i højere grad et punkt og en radius fremfor eksempelvis farvekoden? I praksis kunne man derfor overveje helt at undlade farvekoden som argument til konstruktøren. Den kan nemlig altid justeres. Herunder et eksempel på en ny klasse konstruktion:
+
+```javascript
+class Cirkel{
+ constructor(x,y,r) {
+   this.color = color(255); // bemærk vi har valgt at give den en prædefineret farvekode 
+                            // og ikke som argument til konstruktøren 
+   this.xpos = x;
+   this.ypos = y;
+   this.radius = r;
+  }
+
+```
+
+## Ændre attributter efter konstruktøren er blevet kaldt
+Vi kan som udgangspunkt ganske let ændre på attributternes værdier i et objekt, når vi først har instantieret det. Vi benytter følgende overordnede struktur:
+
+```javascript
+VariableObjekt.AttributNavn = NyVærdi
+```
+
+Herunder et eksempel der illustrerer hvorledes vi kan ændre en instans af cirklens attributter ovenfor:
+```javascript
+c = new Cirkel(100,100,20)
+c.color = color(75) // ændre farvekoden for cirklen
+c.xpos = 50 //ændre x-koordinatet til 50 i stedet for 100
+```
+I praksis anbefales derfor at justere på ikke essentielle attributter (såsom farvekoden ovenfor) på denne måde.
 
 
 ## Objekters metoder
@@ -128,14 +167,14 @@ class "Navn_på_klasse"
   {
     //...
   }
-  // erstat metode1 med et sigende navn
+  // erstat selv "metode1" med et sigende navn
   // kan have ingen eller op til n parametre
   "metode1"(p11,....p1n)
   {
 
   }
   //...
-  // erstat metode1 med et sigende navn
+  // erstat selv "metodeM" med et sigende navn
   // kan have ingen eller op til n parametre
   "metodeM"(pm1,....pmn)
   {
