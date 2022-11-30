@@ -276,7 +276,7 @@ ls = new LinjeSegment(p1,p2) //konstruerer et linjesegment udfra punkterne
 
 Attributter og variablenavne kan også erklæres med `CamelCase` som eksemplerne ovenfor. Man bør i øvrigt være opmærksom på at for både klasser, metoder og attributter, så gælder der, at de er "case sensitive", hvilket betyder, at Javascript skelner mellem navne/ord, hvor den eneste forskel er om et eller flere af bogstaverne er skrevet med små eller store bogstaver. 
 
-Endelig bør man også være bevidst om, at man skriver på engelsk eller dansk. Generelt vil vi opfordre læseren til at overveje hvem målgruppen er og så i øvrigt være konsekvent i sine valg. 
+Endelig bør man også være bevidst om, at man skriver på engelsk eller dansk. Generelt vil vi opfordre læseren til at overveje hvem målgruppen er og så i øvrigt være konsekvent og konsistent i sine valg. 
 
 ## Øvelser
 Herunder følger en række øvelser. Lav som minimum øvelserne 1. til 7 samt et af projekterne.
