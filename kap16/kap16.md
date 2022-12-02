@@ -102,6 +102,8 @@ class Vector{
   }
 ```
 
+### Hvad med flere dimensioner?
+
 ## Vektorbiblioteket i praksis: Simulering af et økosystem
 I denne del vil vi gøre brug af vores vektorbibliotek til at simulere et akvarium med fisk, som et eksempel på et simpelt økosystem. 
 
