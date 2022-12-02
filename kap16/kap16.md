@@ -150,16 +150,31 @@ Det simple økosystem i form af akvariet kan udvides på mange måder. Et sted a
 
 ![Fisk bevæger sig ofte i blokke ligesom mange andre dyr](../kap16/images/fishflock.jpg)
 
-Det er spændende at undersøge af mange grunde. Bl.a. fordi naturens indbyggede flok-intelligens viser sig, at være anvedelig i en lang række eksempel såsom kurering af kræft, optimering af processer, simulering af individulles adfærd i grupper etc. Men desuden er stiller implementeringen af flok-intelligens krav om, at vores fiske-objekter udveklser informationer mellem hinanden, så de ved hvor hinanden er. Dvs. for programmører er implementationen af flok-intelligens et godt eksempel på, hvordan objekter kan kommunikere med hinanden. 
+Det er spændende at undersøge af mange grunde. Bl.a. fordi naturens indbyggede flok-intelligens viser sig, at være anvedelig i en lang række eksempel såsom kurering af kræft, optimering af processer, simulering af individulles adfærd i grupper etc. Men desuden stiller implementeringen af flok-intelligens krav om, at vores fiske-objekter udveklser informationer mellem hinanden, så de ved hvor hinanden er. Dvs. for programmører er implementationen af flok-intelligens et godt eksempel på, hvordan objekter kan kommunikere med hinanden. 
+
 I det følgende gennemgås nogle simple regler for hvorledes flok-mentaliteten, som vi efterfølgende kan implementeres i praksis ved brug af interagerende objekter og attributter knyttet til disse. 
 
-- Seperation: Fisk vil forsøge at svømme væk fra andre fisk, der er tæt på dem. Men ligesom naturen vil ingen fisk have viden om alle fisk i flokken. 
-- Justering: Fisk vil forsøge at efterleve hastighen af andre fisk i nærheden. 
--  Samhørighed: Fisk vil forsøge at svømme mod centrum af flokken.
+- Seperation: En fisk vil forsøge at svømme væk fra andre fisk, der er tæt på den. Men ligesom naturen vil ingen fisk have viden om alle fisk i flokken. Til at holde styr på antallet af synlige naboer indføres en variable kaldet `neighboring_boids`. 
+- Justering: En fisk vil forsøge at efterleve hastigheden af andre fisk i nærheden. Vi indfører vektoren `xvel_avg` og `yvel_avg`. 
+-  Samhørighed: En fisk vil forsøge at svømme mod centrum af flokken. Vi indfører variablerne `xpos_avg` og `ypos_avg`. 
 
-Vi skal mao indføre nogle variable, der holder styr på antal fisk, der er synlige for en given fisk, gennemsnitshastigheden for disse fisk samt centrum af mængden af fisk. 
-Herunder pseudokode der beskriver det overordnede system:
+Udover de nævnte vil det også være relvant at prædefinere en minimumshastighed og maksimumshastighed for vores fisk. 
 
+Vi er nu klar til at formulere en højniveau pseudokode version af den overordnede algoritme:
+
+```javascript
+for hver fisk F:
+  Nulstil variablerne xpos_avg, ypos_avg, xvel_avg, yvel_avg, neighboring_boids, close_dx, close_dy = 0
+  for hver anden fisk G:
+    F.seperation(G)
+    F.justering(G)
+    F.samhørighed(G)
+```
+
+Som det fremgår af pseudokoden, så kommer vi ikke uden om at skulle have en løkke i en løkke, da vi er nødsaget til for hvert fiskeobjekt at kommunikere med alle andre fiskeobjekter om deres placering og fart. Vi inddeler desuden ovenstående pseudokode i nogle mindre metoder for at gøre det mere overskueligt. 
+
+
+```javascript
 
 ```javascript
 for hver fisk:
@@ -171,7 +186,7 @@ for hver fisk:
 ```
 
 De tre regler bør implementeres i hver enkelt fisk, medfører, at vi bør udvide vores Fiske-klasse med en række attributter: 
-```javascript
+
 
 ```javascript
 class Fish{
