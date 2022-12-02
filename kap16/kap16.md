@@ -1,23 +1,26 @@
 # 16. Vektorer
 Vektorer betegner en entitet, som består af en længde og en retning. Man kan tænke på dem som pile, der kan beskrive bevægelser, kræfter og meget mere.  
 
-Vektorer, spiller en helt central rolle i forhold til at beskrive, modellere og simulere fænomener i naturen og fysikkens verden. 
+Vektorer, spiller en helt central rolle i forhold til at beskrive, modellere og simulere fænomener i naturen og fysikkens verden.
 
-I det følgende vil vi introducere vektorer ved at implementere ved brug af grundlæggende objekt-orienteret programmering et vektorbibliotek, der kan konstruere og modificere og behandle vektorer. 
+I det følgende vil vi introducere vektorer ved at implementere ved brug af grundlæggende objekt-orienteret programmering et vektorbibliotek, der kan konstruere og operere på vektorer. 
 
 Dernæst vil vi motivere brugen af biblioteket ved at kode simulere et økosystem i form af et akvarium med forskellige fisk.
 
 ## Et bibliotek af vektorer
-Den opmærksomme læser har måske bemærket, at vi allerede har benyttet os af indbyggede vektorer, og undre sig over hvorfor vi ikke bare benytter disse. Det er der mange grunde til. For det første giver det en langt bedre forståelse at implementere ting fra bunden ikke mindst vektorer, som er centrale i forhold til at simulere fænomener i den verden vi er en del af. For det andet er implementationen af et vektorbibliotek en god øvelse i at bruge grundlæggende objektorienteret tangegang. 
-Endelig vil vi også gerne opfordre enhver programmør til at designe og implementere generiske løsninger, der kan sættes i spil i andre sammenhænge end det konkrete projekt, som de netop arbejder på. 
+Den opmærksomme læser har måske bemærket, at vi allerede har benyttet os af indbyggede vektorer, og undre sig over hvorfor vi ikke bare benytter disse. Det er der mange grunde til. 
+For det første giver det en langt bedre forståelse at implementere ting fra bunden ikke mindst vektorer, som er en central datastruktur i programmering og som bruges intensivt mange sammenhænge bl.a. i forhold til at simulere naturfænomener. 
+For det andet er implementationen af et vektorbibliotek en god øvelse i at bruge grundlæggende objektorienteret tankegang, hvor vi får trænet brugen af konstruktion af objekter og metoder knyttet hertil. 
+Endelig vil vi også gerne opfordre enhver programmør til at designe og implementere generiske løsninger, der kan sættes i spil i andre sammenhænge end det konkrete projekt, som de netop arbejder på. Det er vektorbiblioteket et godt eksempel på. 
 
 ### Konstruktion af en vektor
-En vektor kan betragtes som en afstand mellem to punkter, den kan transformere noget fra et punkt til noget andet. 
+En vektor kan betragtes som en afstand mellem to punkter eller en transformation fra et sted i koordinatsystemet til et andet. 
 Herunder et eksempel på en vektor skrevet med vektornotation: 
 $$\overrightarrow{a}=(2,3).$$
 
 Det betyder i praksis, at står vi i et vilkårligt punkt i planen, så vil vektoren $\overrightarrow{a}$ transformere os til et nyt ved at gå 2 skridt i x-aksens retning (til højre) og 3 skridt i y-aksens retning (opad). 
-Vi får mao mulighed for at beskrive objekters bevægelse ved brug af vektorer. Det skal vi vende tilbage til. Først skal vi konstruere en simpel vektorklasse i P5:
+Vi får mao mulighed for at beskrive objekters bevægelse ved brug af vektorer. Det skal vi vende tilbage til. Først skal vi konstruere en simpel vektorklasse i P5 til at håndtere vektorer i to dimensioner. Vi gør opmærksom på, at vektorer let kan generaliseres til både og tre og n-dimensioner. Det bliver en af øvelserne for læseren. 
+Herunder en hel basal vektorklasse med en konstruktør, der tager et x og y:
 ```javascript
 class Vector{
   constructor(x,y){
@@ -25,8 +28,9 @@ class Vector{
     this.y = y;
   }
 ```
-Reelt set er vores vektorklasse bare en container, der opbevarer et koordinatsæt. 
-Herunder tegner vi en cirkel ud fra en vektor: 
+Reelt set er vores vektorklasse nu bare en container eller et punkt, der opbevarer et koordinatsæt. Man kan tænke på nuværende vektor, som en såkaldt `stedvektor`, der starter i origo (dvs. $(0,0)$) og peger på et punkt $(x,y)$.
+
+Herunder benytter vi klassen til at tegne cirkel ud fra vores vektor: 
 ```javascript
 let vec
 function setup() {
@@ -38,7 +42,9 @@ function draw() {
   circle(vec.x,vec.y,50)
 }
 ```
-## Animere ved brug af vektorer
+Som det fremgår af koden, kan vi uden videre tilgå vores attributter x og y. 
+
+## Animere ved brug af vektoraddition
 Hvis vi ønsker at animere vores vektor har vi brug for at ændre vektorens koordinater, hvorfor vi indfører begrebet `hastighed` (eller `velocity` på engelsk) i form af to nye variable kaldet `xspeed` hhv. `yspeed`, som vi ønsker at addere til vores vektors koordinater:
 ```javascript
 x = x + xspeed
@@ -46,11 +52,12 @@ y = y + yspeed
 ```  
 Fra matematik kender vi det som vektoraddition. Givet $\overrightarrow{a}=(a_1,a_2)$
 og $\overrightarrow{b}=(b_1,b_2)$, så er additionen givet ved $$\overrightarrow{a}+\overrightarrow{b}=(a_1+b_1,a_2+b_2).$$
-Ved vektoraddition summer vi koordinatvis, så vi kan let implementere en metode i vores klasse, som udfører vektoraddition:
+I praksis svarer addition af vektorer til, at vi starter i punktet for den første vektor, bevæger os til enden af den og bevæger os fra det endepunkt til enden af den anden vektor. 
+I praksis svarer det til at summe vektorerne koordinatvis, hvilket let kan implementere i praksis:
 ```javascript
-  add(velocityVector){
-    this.x += velocityVector.x
-    this.y += velocityVector.y
+  add(v){
+    this.x += v.x
+    this.y += v.y
   } 
 ```
 Vi kan nu let sætte vores cirkel i bevægelse:
@@ -77,6 +84,23 @@ function draw(){
 }
 ```
 I `draw` sikres at vores cirkel bouncer af på skærmen hvis vi når en af kanterne. 
+
+### Andre vigtige metoder til vores vektorbibliotek
+Hvis vi havde nok i bare at kunne addere vektorer, så var der næsten ingen grund til at lave et vektorbibliotek. 
+Herunder gennemgår vi kort en række metoder, som vores vektorbibliotek skal have implementeret. 
+
+
+### Indkasplingsprincippet
+Til at starte med vil vi gerne inddrage indkapslingsprincippet fra OOP. Det handler knytte data (det vil bl.a. sige $x$ og $y$) med de metoder, som skal operere på dem, men også om at skjule unødig kompleksitet fra brugeren. 
+I praksis kan det gøres ved at sætte en hashtag (#) i konstruktøren:
+```javascript
+```javascript
+class Vector{
+  constructor(x,y){
+    this.#x = x;
+    this.#y = y;
+  }
+```
 
 ## Vektorbiblioteket i praksis: Simulering af et økosystem
 I denne del vil vi gøre brug af vores vektorbibliotek til at simulere et akvarium med fisk, som et eksempel på et simpelt økosystem. 
