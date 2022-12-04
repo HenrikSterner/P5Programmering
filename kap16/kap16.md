@@ -1,24 +1,25 @@
 # 16. Vektorer
 Vektorer betegner en entitet, som består af en længde og en retning. Man kan tænke på dem som pile, der kan beskrive bevægelser, kræfter og meget mere.  
 
-Vektorer, spiller en helt central rolle i forhold til at beskrive, modellere og simulere fænomener i naturen og fysikkens verden.
+Vektorer, spiller en helt central rolle i forhold til at beskrive, undersøge og simulere fænomener i naturen og fysikkens verden.
 
-I det følgende vil vi introducere vektorer ved at implementere ved brug af grundlæggende objekt-orienteret programmering et vektorbibliotek, der kan konstruere og operere på vektorer. 
+I det følgende startes med at implementere et basalt vektorbibliotek, der kan konstruere og operere på vektorer, ved brug af principperne fra OOP. 
 
-Dernæst vil vi motivere brugen af biblioteket ved at kode simulere et økosystem i form af et akvarium med forskellige fisk.
+Dernæst motiveres brugen af biblioteket ved at kode en simulering af et mikro økosystem i form af et akvarium med forskellige typer fisk. Ved brug af vores vektorbibliotek og objekter vil vi bl.a. simulere et naturfæonomen nemlig visse dyr (og i tilfældet her fisks) flokadfærd. Umiddelbart kunne dyrs flokmentalitet tyde på en højere og dybere intelligens, men som vi skal se, kan vi denne adfærd faktisk reduceres til nogle simple regler.  
 
 ## Et bibliotek af vektorer
-Den opmærksomme læser har måske bemærket, at vi allerede har benyttet os af indbyggede vektorer, og undre sig over hvorfor vi ikke bare benytter disse. Det er der mange grunde til. 
-For det første giver det en langt bedre forståelse at implementere ting fra bunden ikke mindst vektorer, som er en central datastruktur i programmering og som bruges intensivt mange sammenhænge bl.a. i forhold til at simulere naturfænomener. 
-For det andet er implementationen af et vektorbibliotek en god øvelse i at bruge grundlæggende objektorienteret tankegang, hvor vi får trænet brugen af konstruktion af objekter og metoder knyttet hertil. 
-Endelig vil vi også gerne opfordre enhver programmør til at designe og implementere generiske løsninger, der kan sættes i spil i andre sammenhænge end det konkrete projekt, som de netop arbejder på. Det er vektorbiblioteket et godt eksempel på. 
+P5 har på forhånd stillet et vektorbibliotek til rådighed, så man kan måske undre sig over hvorfor vi ikke bare benytter dette. Det er der mange grunde til. 
+For det første giver det en langt bedre forståelse at implementere ting fra bunden ikke mindst vektorer, som er en central datastruktur i programmering og som bruges intensivt i mange sammenhænge. Bl.a. når programmering skal facilitere  og undersøge et emne indenfor eksempelvis fysiki forhold til at simulere naturfænomener. 
+For det andet er implementationen af et vektorbibliotek en god øvelse i at bruge grundlæggende objektorienteret tankegang, hvor vi får trænet brugen af konstruktion af objekter og metoder knyttet hertil. Det såkaldte indkapslingsprincip.  
+Endelig vil vi også gerne opfordre enhver programmør til at designe og implementere generiske løsninger, der kan sættes i spil i andre sammenhænge end det konkrete projekt, som de netop arbejder på. 
 
-### Konstruktion af en vektor
-En vektor kan betragtes som en afstand mellem to punkter eller en transformation fra et sted i koordinatsystemet til et andet. 
+### Konstruktion af en vektor: Indkapslingsprincippet i praksis
+Indkapslingsprincippet, som er en af grundprincipperne indenfor OOP, betoner, at vi pakker data og metoder, som opererer på disse data, i en og samme enhed (læs: klasse). 
+Vektorer er et godt eksempel på en sådan enhed. En vektor kan betragtes som en afstand mellem to punkter eller en transformation fra et sted i koordinatsystemet til et andet. 
 Herunder et eksempel på en vektor skrevet med vektornotation: 
 $$\overrightarrow{a}=(2,3).$$
 
-Det betyder i praksis, at står vi i et vilkårligt punkt i planen, så vil vektoren $\overrightarrow{a}$ transformere os til et nyt ved at gå 2 skridt i x-aksens retning (til højre) og 3 skridt i y-aksens retning (opad). 
+Det betyder i praksis, at står vi i et vilkårligt punkt i planen, så vil vektoren $\overrightarrow{a}$ transformere os til et nyt punkt ved at gå 2 skridt i x-aksens retning (til højre) og 3 skridt i y-aksens retning (opad). 
 Vi får mao mulighed for at beskrive objekters bevægelse ved brug af vektorer. Det skal vi vende tilbage til. Først skal vi konstruere en simpel vektorklasse i P5 til at håndtere vektorer i to dimensioner. Vi gør opmærksom på, at vektorer let kan generaliseres til både og tre og n-dimensioner. Det bliver en af øvelserne for læseren. 
 Herunder en hel basal vektorklasse med en konstruktør, der tager et x og y:
 ```javascript
@@ -28,7 +29,7 @@ class Vector{
     this.y = y;
   }
 ```
-Reelt set er vores vektorklasse nu bare en container eller et punkt, der opbevarer et koordinatsæt. Man kan tænke på nuværende vektor, som en såkaldt `stedvektor`, der starter i origo (dvs. $(0,0)$) og peger på et punkt $(x,y)$.
+Reelt set er vores vektorklasse nu bare en container eller et punkt, der opbevarer et koordinatsæt. Man kan tænke på vores nuværende vektor, som en såkaldt `stedvektor`, der starter i origo (dvs. $(0,0)$) og peger på et punkt $(x,y)$. Men det er vigtigt at understrege, at vi kan abstrahere fra dette og placerer vores vektor et vilkårligt sted i planen. 
 
 Herunder benytter vi klassen til at tegne cirkel ud fra vores vektor: 
 ```javascript
@@ -42,7 +43,23 @@ function draw() {
   circle(vec.x,vec.y,50)
 }
 ```
-Som det fremgår af koden, kan vi uden videre tilgå vores attributter x og y. 
+Som det fremgår af koden, kan vi uden videre tilgå vores attributter x og y. Ifølge indkapslingsprincippet er det god designpraksis at skjule så megen unødig kompleksitet og information for brugeren som muligt.  I javascript kan det gøres ved brug af hashtag, som nedenfor:
+
+```javascript
+class Vector{
+  constructor(x,y){
+    this.#x = x;
+    this.#y = y;
+  }
+```
+På den måde kan vi ikke længere tilgå attributterne x og y, men må i stedet implementere accessor og mutator-metoder, som kan ændre og hente værdierne. Af hensyn til læsbarheden af vores kode vælger vi dog i første omgang at gå på kompromis med princippet og overlade det som en øvelse til læseren at implementere disse metoder. Vi implementerer til gengæld herunder en accessor-metoder til at hente længden af vektoren ud fra Pythagoras læresætning:
+
+```javascript
+    getLength()
+    {
+      return Math.sqrt(Math.pow(this.x,2)+Math.pow(this.y,2))
+    }
+```
 
 ## Animere ved brug af vektoraddition
 Hvis vi ønsker at animere vores vektor har vi brug for at ændre vektorens koordinater, hvorfor vi indfører begrebet `hastighed` (eller `velocity` på engelsk) i form af to nye variable kaldet `xspeed` hhv. `yspeed`, som vi ønsker at addere til vores vektors koordinater:
@@ -83,24 +100,21 @@ function draw(){
   circle(place.x,place.y,50);
 }
 ```
-I `draw` sikres at vores cirkel bouncer af på skærmen hvis vi når en af kanterne. 
+I `draw` sikres at vores cirkel bouncer af på skærmen hvis vi, når en af kanterne. 
 
 ### Andre vigtige metoder til vores vektorbibliotek
 Hvis vi havde nok i bare at kunne addere vektorer, så var der næsten ingen grund til at lave et vektorbibliotek. 
-Herunder gennemgår vi kort en række metoder, som vores vektorbibliotek skal have implementeret. 
+Herunder gennemgår vi kort en række metoder, som vores vektorbibliotek kan eller skal have implementeret. Vi overlader det til læseren at implementere disse metoder vis navne står i firkantede parenteser med deres parametre i parenteser:
 
-
-### Indkasplingsprincippet
-Til at starte med vil vi gerne inddrage indkapslingsprincippet fra OOP. Det handler knytte data (det vil bl.a. sige $x$ og $y$) med de metoder, som skal operere på dem, men også om at skjule unødig kompleksitet fra brugeren. 
-I praksis kan det gøres ved at sætte en hashtag (#) i konstruktøren:
-```javascript
-```javascript
-class Vector{
-  constructor(x,y){
-    this.#x = x;
-    this.#y = y;
-  }
-```
+- Skalering [`scalar(k)`]: En vektor kan skaleres i længde værdien $k$. Det sker ved at multiplicere $k$ på både x og y.  Metoden skal returnere ændre vektoren og returnere den skaleret vektor. 
+- Tegne vektor [`drawVector(xstart=0,ystart=0)`]: Skal tegne vektoren fra startpunktet $(xstart,ystart)$. Hvis ingen argumenter angives, tegnes stedvektoren. 
+- Til streng [`toString()`]: Skal returnere en streng, der består af koordinaterne og vektorens længde. 
+- Prikproduktet [`dotProduct(v)`]: Beregner prikproduktet med en anden vektor `v`. Det er summen af koordinaterne multipliceret koordinatvis. 
+- Normalisering [`normalize()`]: Vi kan konstruere en såkaldt enhedsvektor med samme retning som vores oprindelige vektor, men med længden $1$ ved at skalere med $\frac{1}{Længden af vektoren}$. 
+- Ens retning [`isParallel(v)`]: Hvis vi normaliserer vores vektorer, beregner prikproduktet og det giver 1, så betyder det, at vektorerne er ens eller parallelle. Metoden skal returnere sand eller fask.
+- Modsat retning [`isOpposite(v)`]: Hvis vi normaliserer vores vektorer, beregner prikproduktet og det giver -1, så betyder det, at vektorerne står vinkelret på hinandnen. Metoden skal returnere sand eller fask. 
+- Vinkelret [`isPerpendicular(v)`]: Hvis vi normaliserer vores vektorer, beregner prikproduktet og det giver nul, så betyder det, at vektorerne står vinkelret på hinandnen. Metoden skal returnere sand eller fask.
+- Vinklen mellem [`angleBetween(v)`]: 
 
 ### Hvad med flere dimensioner?
 
