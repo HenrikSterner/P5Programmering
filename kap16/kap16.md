@@ -51,6 +51,7 @@ class Vector{
     this.#x = x;
     this.#y = y;
   }
+}
 ```
 På den måde kan vi ikke længere tilgå attributterne x og y, men må i stedet implementere accessor og mutator-metoder, som kan ændre og hente værdierne. Af hensyn til læsbarheden af vores kode vælger vi dog i første omgang at gå på kompromis med princippet og overlade det som en øvelse til læseren at implementere disse metoder. Vi implementerer til gengæld herunder en accessor-metoder til at hente længden af vektoren ud fra Pythagoras læresætning:
 
@@ -114,9 +115,96 @@ Herunder gennemgår vi kort en række metoder, som vores vektorbibliotek kan ell
 - Ens retning [`isParallel(v)`]: Hvis vi normaliserer vores vektorer, beregner prikproduktet og det giver 1, så betyder det, at vektorerne er ens eller parallelle. Metoden skal returnere sand eller fask.
 - Modsat retning [`isOpposite(v)`]: Hvis vi normaliserer vores vektorer, beregner prikproduktet og det giver -1, så betyder det, at vektorerne står vinkelret på hinandnen. Metoden skal returnere sand eller fask. 
 - Vinkelret [`isPerpendicular(v)`]: Hvis vi normaliserer vores vektorer, beregner prikproduktet og det giver nul, så betyder det, at vektorerne står vinkelret på hinandnen. Metoden skal returnere sand eller fask.
-- Vinklen mellem [`angleBetween(v)`]: 
+- Negering af vektor [`negate()`]: Hvis vi ønsker en vektor i modsat retning kan vi "negere" den oprindelige vektor ved at skalere med -1. Metoden skal returnere den negeret vektor. 
+
+Vi beder læseren om at implementere disse i øvelserne.  
+Som et eksempel på hvorledes det kan gøres har vi i det følgende implementeret en metode [`getAngleBetween(v)`], som finder vinklen mellem to vektorer og returnerer resultatet i grader:
+```javascript
+class Vector{
+  //...
+  getAngleBetween(v) {
+    let vrad = Math.acos(this.dotProduct(other) / (this.getLength() * v.getLength()))
+    return ((vrad*180)/Math.PI)
+  }
+}
+const v1 = new Vector(0, 2)
+const v2 = new Vector(1, 0)
+console.log(v1.getAngleBetween(v2))
+```
 
 ### Hvad med flere dimensioner?
+Vektorer behøver ikke kun være knyttet til 2-dimensioner, men kan generaliseres til både tre og et vilkårligt antal dimensioner. I tilfældet med 3 dimensioner kan vi benytte javascripts notation for standardværdier. Herunder et eksempel:
+```javascript
+class Vector{
+  constructor(x,y,z=0){
+    this.x = x;
+    this.y = y;
+    this.z = z;
+  }
+}
+```
+Hvis ikke andet angives sættes z til 0. 
+Alle metoderne nævnt ovenfor lader sig let generalisere ved reelt bare at inddrage z i udregningen. Vi overlader det som en øvelse til læseren, at udvide bibliotektet, så det kan håndtere 3-dimensioner. 
+
+Såfremt man ønsker at udvide med flere dimensioner, hvilket kan være særdeles relevant når man skal arbejde med kunstig intelligens og datavidenskab, så vil det formentlig være bedre at give et array af tal, som argument til konstruktøren. Alternativt kan man hente listen af argumenter fra en metode ud vha af `arguments`. Herunder et eksempel der blot printer koordinaterne i konsollen:
+```javascript
+class Vector{
+    constructor() {
+        for (var i = 0; i < arguments.length; i++) {
+            console.log(arguments[i]);
+        }
+    }
+}
+
+v1 = new Vector(1,2)
+v2 = new Vector(3,4,5)
+```
+I øvelserne opfordres du til at implementere et mere generisk vektorbibliotek, der kan håndtere vilkårligt mange dimensioner. 
+
+### Hvad med dokumentationen?
+En central del af det at udvikle et bibliotek eller API ("Application Programmer Interface") er at dokumentere hvorledes det bruges. I Javascript benyttes typisk formatet JSDoc. Kræver installation af `npm` og kørsel af følgende linje i kommandoprompt `npm install -g jsdoc`. 
+Fordelene ved at brug JSDoc er bl.a. at sikre en ensartet måde at dokumentere kode på og at brugere af ens bibliotekt får mulighed for at få automatiseret forslag i sit udviklingsmiljø til hvorledes biblioteket bruges. Herunder et eksempel på dokumentation af vores vektorklasse:
+```javascript
+/** Class representing a Vector. */
+class Vector {
+    /**
+     * Create a Vector.
+     * @param {number} x - The x value.
+     * @param {number} y - The y value.
+     */
+    constructor(x, y) {
+        // ...
+    }
+
+    /**
+     * Get the x value.
+     * @return {number} The x value.
+     */
+    getX() {
+        // ...
+    }
+
+    /**
+     * Get the y value.
+     * @return {number} The y value.
+     */
+    getY() {
+        // ...
+    }
+
+    /**
+     * Scales a vector
+     * @param {float} float - The scalar a real number.
+     * @return {Vector} A scaled vector.
+     */
+    scale(flt) {
+        // ...
+    }
+    //...
+}
+```
+Vi overlader det som en øvelse til læseren at dokumentere metoderne. 
+
 
 ## Vektorbiblioteket i praksis: Simulering af et økosystem
 I denne del vil vi gøre brug af vores vektorbibliotek til at simulere et akvarium med fisk, som et eksempel på et simpelt økosystem. 
@@ -185,6 +273,24 @@ function draw(){
   }
 }
 ```
+
+### Forskellige typer af fisk: Nedarvningsprincippet
+Vi ønsker at vores system skal have to forskellige typer af fisk:
+- En "bytte" fisk som svømmer rundt vilkårligt efter mad
+- En "jager" eller "pirat" fisk, der jager byttefiskene. 
+
+På trods af at de to umiddelbart virker forskellige, så er de også meget ens. Fremfor at implementere to forskellige klasser af fisk, så kan vi gøre brug af nedarvningsprincippet. Her samler vi de egenskaber og metoder, der er til fælles, i den oprindelige fiskeklasse, og ved at udlede børneklasser, der på den ene side arver fælles egenskaber og på anden side divergerer på attributter og metoder, sikres, at vi kan genbruge store dele af koden og at vi senere kan behandle de forskellige typer fisk på en ensartet måde. Det fører igen til mere elegant og læsbar kode, som også i højere grad lader sig skalere og udvide. 
+
+I praksis kan vi i Javascript udvide med nøgleordet `extends`:
+
+```javascript
+class BytteFisk extends Fisk{
+  //...
+}
+class PiratFisk extends Fisk{
+  //...
+}
+```
 ### Flok intelligens: Beskeder mellem objekter
 Det simple økosystem i form af akvariet kan udvides på mange måder. Et sted at starte kunne være at få fiskene til at opføre sig mere naturligt. Eksempelvis ved vi, at visse fiskearter har tilbøjelighed til at svømme i flokke (lidt ligesom fugle, myrer, mennesker og mange andre dyr). 
 
@@ -215,8 +321,6 @@ Som det fremgår af pseudokoden, så kommer vi ikke uden om at skulle have en l�
 
 
 ```javascript
-
-```javascript
 for hver fisk:
 
     # indlæs lokale attributter til nul
@@ -245,6 +349,6 @@ class Fish{
 
 
 ## Øvelser
-1. Udvid vektorklassen med subtraktionsmetode mfl.
+1. Udvid vektorklassen med de nævnte metoder. 
 2. Udvid draw metoden, så den tegner egentlig fisk.  
 
