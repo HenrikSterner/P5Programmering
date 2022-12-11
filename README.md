@@ -34,7 +34,7 @@ Copyright © Henrik Sterner & Peter Sterner 2022.
 - [Kapitel 13: Testning, debug og fejlhåndtering](https://github.com/HenrikSterner/P5Programmering/blob/main/kap13/kap13.md)
 - [Kapitel 14: Udviklingsprocesser](https://github.com/HenrikSterner/P5Programmering/blob/main/kap14/kap14.md)
 - [Kapitel 15: Designmønstre (ikke skrevet endnu)](kap15/kap15.md)
-- [Kapitel 16: Vektorer](https://github.com/HenrikSterner/P5Programmering/blob/main/kap16/kap16.md)
+- [Kapitel 16: Vektorer (ikke skrevet endnu)](https://github.com/HenrikSterner/P5Programmering/blob/main/kap16/kap16.md)
 - [Kapitel 17: Computationel tænkning (ikke skrevet endnu)](kap10/kap10.md)
 - [Kapitel 18: Udviklingsmiljø og versioneringskontrol](https://github.com/HenrikSterner/P5Programmering/blob/main/kap18/kap18.md)
 
