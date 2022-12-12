@@ -349,7 +349,7 @@ class Fish{
 
 
 ## Øvelser
-I afsnittet er øvelserne inddelt i hvorvidt de knytter sig til vektorer eller eksemplet.
+I afsnittet er øvelserne inddelt i hvorvidt de knytter sig til vektorer eller eksemplet. Til at starte med arbejdes i to dimensioner. Senere i øvelserne skal alle resultaterne generaliseres til n-dimensioner. Det er dog en god ide at starte i 2-dimensioner. Generelt opfordres til, at man i alle øvelserne starter med at justere klassediagrammet, udvide med en skeletmetode og herefter test den. Endelig bør man teste og dokumentere alle udvidelser. 
 
 ### Øvelser om vektorer
 1. Modeller vektorklassen ved at konstruere et klassediagram, hvor du tilføjer relevante attributter til at starte med. Blandt de relevante attributter x- og y-koordinater, vektorens farve, tykkelse og navn. Indiker typerne i diagrammet.
@@ -362,5 +362,37 @@ I afsnittet er øvelserne inddelt i hvorvidt de knytter sig til vektorer eller e
 8.  Dokumenter alle metoder ved brug af JsDoc formatet. 
 9.  Udvid med en metode, der undersøger om en vektor er lig med eller forskellig fra en anden vektor. Dvs. hvorvidt koordinaterne er ens. 
 10. Tilføj en metode der giver mulighed for at lave elementvis multiplikation og division mellem to vektorer. Husk at teste og dokumentere dem.  
-11. Udvid vektorklasen med nedenstående statiske metoder (ved at skrive `static` i erklæringen af metoderne). Vær opmærksom på, at ved at erklære metoderne for static kan de kaldes uden, at man behøver at instantiere dem. Husk at teste og dokumentere dem.  
-12. Udvid nu med selvvalgte metoder
+11. Udvid vektorklasen med nedenstående statiske sammenligningsmetoder (ved at skrive `static` i erklæringen af metoderne). Vær opmærksom på, at ved at erklære metoderne for `static` kan de kaldes uden, at man behøver at instantiere dem. Husk at teste og dokumentere dem. 
+    - `lessThan(a,b)`: Undersøger om hvert koordinat i vektor a er skarpt mindre end tilsvarende koordinat i vektor b. Returner sand hvis det er tilfældet ellers falsk.
+    - `lessThanOrEqualTo(a,b)`: Undersøger om hvert koordinat i vektor a er mindre end eller lig tilsvarende koordinat i vektor b. Returner sand hvis det er tilfældet ellers falsk.
+    - `greaterThan(a,b)`: Undersøger om hvert koordinat i vektor a er skarpt større end tilsvarende koordinat i vektor b. Returner sand hvis det er tilfældet ellers falsk.
+    - `greaterThanOrEqualTo(a,b)`: Undersøger om hvert koordinat i vektor a er større end eller lig tilsvarende koordinat i vektor b. Returner sand hvis det er tilfældet ellers falsk.
+12. Udvid nu med selvvalgte statiske metoder `max(a,b)` og `min(a,b)`, der finder det hhv. største og mindste koordinat i to vektorer, a og b. 
+13. Udvid biblioteket med følgende statiske metoder:
+    - `abs(v)`: Returnerer en ny vektor med koordinater som vektor v, men hvor den absolutte/numeriske værdi er taget på hver af koordinaterne. 
+    - `floor(v)`: Returnerer det største hele tal mindre end eller lig med hvert koordinat i vektoren. 
+    - `ceil(v)`: Returnerer det mindste hele tal større end eller lig med hvert koordinat i vektoren. 
+14. Udvid biblioteket med følgende statiske metoder:
+    - `power(vec,n)`: Metoden opløfter hvert element i heltallet `n`.
+    - `power(a,b)`: Metoden opløfter hvert element i vektor a med tilhørende element i vektor b. 
+15. Generaliser vektorbiblioteket så det kan håndtere og operere på vektorer i n-dimensioner. 
+16. Generaliser alle metoderne, som du har implementeret i 2d til n-dimensioner. F.eks. bør getters og setters tage parametre, der indikerer hvilke koordinat i form af et heltal fra 0 til n-1, der indikerer hvilket koordinat man ønsker at hente eller sætte. Overvej desuden hvilken datastrukturer, der skal bruges til at håndtere data. 
+
+### Øvelser om animationer af fisk
+Herunder følger en række øvelser, som udvide økosystemet eller akvariet med ny funktionalitet. Igen bør man løbende opdatere klassediagrammet med nye metoder og attributter samt teste og dokumentere sin kode.  
+1.  Konstruer klassediagrammer med metoder og attributter for de to slags fisk. 
+2.  Implementer klassen fisk, så fisken tegnes som en trekant og at de bevæger sig rundt på skærmen.
+3.  Sørg for at fiskene "bouncer" af på kanterne af skærmen i en tilpas afstand f.eks. med en margin på 100 pixels. 
+4.  Overskriv måden fiskene tegnes på i de to børn, så jægerfiskene og byttefiskene ser forskellige ud i fht form og farve.  
+5.  Udvid byttefiskenes måde at svømme på så de svømmer væk fra jægerfisk. 
+6.  Udvid jægerfiskene så de forsøger at fange byttefisk. 
+7.  Hvis jægerfisk kolliderer med byttefisk så spises byttefisk. Dvs. den forsvinder og jægerfisk bliver en lille smule større i næste frame. 
+8.  Udvid så jægerfiskene undervejs og helt tilfældigt holder nogle små pauser, hvor de "står stille" i vandet. 
+9.  Udvid med en ny klasse "Food", som dumper ned for oven og lander i bunden. Der må max ligge 5 stykker mad på bunden til et givent tidspunkt. 
+10. Hvis byttefiskene kolliderer med maden svarer det til at de har spist maden. Spiser de noget mad skal de tegnes en lille smule større i næste frame. 
+11. Udvid byttefiskenes svømmemønster så ud over at undgå jægerfisk forsøger de også at fange maden. Lad afstanden bestemme hvilken ting de prioriterer højest.   
+
+
+### Øvelser om implementering af flokadfærd hos fisk 
+Herunder følger en række øvelser, der skal udvide akvariet så særligt byttefiskene har tendens til at svømme i flok. 
+
