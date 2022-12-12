@@ -349,6 +349,18 @@ class Fish{
 
 
 ## Øvelser
-1. Udvid vektorklassen med de nævnte metoder. 
-2. Udvid draw metoden, så den tegner egentlig fisk.  
+I afsnittet er øvelserne inddelt i hvorvidt de knytter sig til vektorer eller eksemplet.
 
+### Øvelser om vektorer
+1. Modeller vektorklassen ved at konstruere et klassediagram, hvor du tilføjer relevante attributter til at starte med. Blandt de relevante attributter x- og y-koordinater, vektorens farve, tykkelse og navn. Indiker typerne i diagrammet.
+2. Udvid med en klasse, der initialiserer de indførte attributter.
+3. Overvej hvilke attributter som bør være private. Juster klassediagrammet. 
+4. Indfør relevante mutator-metoder (getters og setters) for alle dine attributter og tilføj metoderne til klassediagrammet.  Prøv metoderne af og se om de
+5. Udvid klassediagrammet med metoder `scalar(k)`, `drawVector(xstart=0,ystart=0)`, `toString()`, `dotProduct(v)`,`normalize()`, `isParallel(v)`, `isOpposite(v)`, `isPerpendicular(v)` og `negate()`.
+6. Udarbej skeletmetoder for hver af metoderne hvor du tilføjer kommentaren `//pass` til alle metoderne, og prøv herefter at implementer de relevante metoder. 
+7.  Prøv alle metoderne af og se om de giver det ønskede resultat.
+8.  Dokumenter alle metoder ved brug af JsDoc formatet. 
+9.  Udvid med en metode, der undersøger om en vektor er lig med eller forskellig fra en anden vektor. Dvs. hvorvidt koordinaterne er ens. 
+10. Tilføj en metode der giver mulighed for at lave elementvis multiplikation og division mellem to vektorer. Husk at teste og dokumentere dem.  
+11. Udvid vektorklasen med nedenstående statiske metoder (ved at skrive `static` i erklæringen af metoderne). Vær opmærksom på, at ved at erklære metoderne for static kan de kaldes uden, at man behøver at instantiere dem. Husk at teste og dokumentere dem.  
+12. Udvid nu med selvvalgte metoder
