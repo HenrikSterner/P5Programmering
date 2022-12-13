@@ -349,6 +349,19 @@ F.samhørighed():
 Divisionen med 100 er for at sikre, at den ikke bevæger sig for hurtigt mod centrum. Ved at dividere med 100 svarer det til at den bevæger sig 1 procent tættere på centeret. Ydermere kunne det overvejes hvor stor $N$ bør være. I øvelserne opfordres til at der indføres skydere, som justerer på disse parametre. 
 
 #### Seperation: Fiskene søger væk nærmeste naboer
+Givet en fisk F kigges herpå en hver anden fisk G. Målet er at undersøge om G er inden for en prædefineret afstand, $D$. I såfald flyttes F så væk. I praksis ved at trække fra en vektor c forskydningen af ​​alle fisk G, som er i nærheden. Til at starte med sættes c til nul, da den resulterende vektor skal flytte fisken fra den nuværende position og væk fra de omkringliggende. 
+Herunder pseudokode:
+
+```javascript
+F.seperation():
+  Vektor pCenter= 0 //nul vektoren 
+  for hver fisk G:
+    Hvis F !=G:
+      Hvis |G.position - F.position| < D :
+					pCenter = pCenter - (G.position - F.position)
+  returner pCenter 
+```
+#### Justering: Fiskene søger samme gennemsnitshastighed som nærmeste naboer
 
 
 ```javascript
