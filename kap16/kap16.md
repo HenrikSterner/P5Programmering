@@ -306,39 +306,59 @@ I det følgende gennemgås nogle simple regler for hvorledes flok-mentaliteten, 
 
 Udover de nævnte vil det også være relvant at prædefinere en minimumshastighed og maksimumshastighed for vores fisk. 
 
-Vi er nu klar til at formulere en højniveau pseudokode version af den overordnede algoritme:
+Vi er nu klar til at formulere en meget højniveau pseudokode version af den overordnede algoritme:
+```javascript
+Indlæs positioner for alle fisk
+for hver fisk F
+  Tegn fisken F
+  Opdater position for F
+
+```
+Fiskene indlæses på tilfældige positioner. Når fiskene tegnes menes, at fiskene tegnes en frame ad gangen. Hvorefter deres position opdateres. 
+
+Den centrale del handler om at opdatere deres position i forhold til de tre regler. Heldigvis kan det gøres både ret let og elegant ved brug af vektorer, som resulterer i tre fartvektorer, der kan summes til den samlede far  
 
 ```javascript
+Vector v1,v2,v3
 for hver fisk F:
-  Nulstil variablerne xpos_avg, ypos_avg, xvel_avg, yvel_avg, neighboring_boids, close_dx, close_dy = 0
-  for hver anden fisk G:
-    F.seperation(G)
-    F.justering(G)
-    F.samhørighed(G)
+  v1 = F.seperation()
+  v2 = F.justering()
+  v3 = F.samhørighed()
+  F.fartvektor += v1 + v2 + v3
+  F.positionsvektor += F.fartvektor
 ```
+Bemærk at de tre metoder implementeres i fiskeklassen, der hver især repræsenterer en af de tre regler. Fartvektoren opdateres og udfra det opdateres positionen (bemærk `+=` i de sidste to linjer). 
+Som det inddirekte fremgår af pseudokoden, så kommer vi ikke uden om at skulle have en løkke i en løkke, da vi er nødsaget til for hvert fiskeobjekt at kommunikere med alle andre fiskeobjekter om deres placering og fart. Vi inddeler desuden ovenstående pseudokode i nogle mindre metoder for at gøre det mere overskueligt. 
 
-Som det fremgår af pseudokoden, så kommer vi ikke uden om at skulle have en løkke i en løkke, da vi er nødsaget til for hvert fiskeobjekt at kommunikere med alle andre fiskeobjekter om deres placering og fart. Vi inddeler desuden ovenstående pseudokode i nogle mindre metoder for at gøre det mere overskueligt. 
+I det følgende gennemgås i detaljer hvorledes de tre regler kan implementeres. 
 
+#### Samhørighed: Fisk søger mod centrum af naboerne
+Givet $N$ fisk, $F_1,...,F_n$, med hver deres positionsvektor, $pos_1,...,pos_n$, da kan konstrueres en vektor, kaldet $F_{center}$, som betegner et centrum, hvor hver fisk vægtes ligeligt, ved at bruge addition og skalering med ($1/N$):
+$$F_{center} = \frac{(F_1.pos_1+...+F_n.pos_N)}{N}.$$ 
+Man kan diskutere eller overveje om det er hensigtsmæssigt, at fisken egen position inkluderes i beregningen. Herunder pseudokode for metoden:
 
 ```javascript
-for hver fisk:
-
-    # indlæs lokale attributter til nul
-    xpos_avg, ypos_avg, xvel_avg, yvel_avg, neighboring_boids, close_dx, close_dy = 0
-
-    )
+F.samhørighed():
+  Vektor pCenter 
+  for hver fisk G:
+    Hvis F !=G:
+      pCenter += G.position
+  pCenter = pCenter / N-1
+  returner (pCenter - F.position) / 100
 ```
+Divisionen med 100 er for at sikre, at den ikke bevæger sig for hurtigt mod centrum. Ved at dividere med 100 svarer det til at den bevæger sig 1 procent tættere på centeret. Ydermere kunne det overvejes hvor stor $N$ bør være. I øvelserne opfordres til at der indføres skydere, som justerer på disse parametre. 
 
-De tre regler bør implementeres i hver enkelt fisk, medfører, at vi bør udvide vores Fiske-klasse med en række attributter: 
+#### Seperation: Fiskene søger væk nærmeste naboer
 
 
 ```javascript
 class Fish{
-    constructor(location,velocity)
+    constructor(position,velocity)
     {
-        this.location = location //(x,y) peger på fiskens placering
+        //..
+        this.position = position //(x,y) peger på fiskens placering
         this.velocity = velocity // (xvel,yvel) peger på fiskens hastighed i de to retninger
-        this.size = 50
+        //...
     }
 }
 
@@ -390,8 +410,7 @@ I afsnittet er øvelserne inddelt i hvorvidt de knytter sig til vektorer eller e
   ```javascript
   A.map(f)
   ```
-18. Udvid vektorbiblioteket, så det inkluderer en `map(f)` funktion, der lader funktionen f virke på alle koordinater i vektoren. Prøv map af i praksis med forskellige funktioner. Bemærk at `f` skal være en funktion som tager et reelt tal og returnerer et reelt tal. 
-
+1.  Udvid vektorbiblioteket, så det inkluderer en `map(f)` funktion, der lader funktionen f virke på alle koordinater i vektoren. Prøv map af i praksis med forskellige funktioner. Bemærk at `f` skal være en funktion som tager et reelt tal og returnerer et reelt tal. 
 
 ### B. Øvelser om animationer af fisk
 Herunder følger en række øvelser, som udvide økosystemet eller akvariet med ny funktionalitet. Igen bør man løbende opdatere klassediagrammet med nye metoder og attributter samt teste og dokumentere sin kode.  
@@ -405,11 +424,18 @@ Herunder følger en række øvelser, som udvide økosystemet eller akvariet med 
 8.  Udvid så jægerfiskene undervejs og helt tilfældigt holder nogle små pauser, hvor de "står stille" i vandet. 
 9.  Udvid med en ny klasse "Food", som dumper ned for oven og lander i bunden. Der må max ligge 5 stykker mad på bunden til et givent tidspunkt. 
 10. Hvis byttefiskene kolliderer med maden svarer det til at de har spist maden. Spiser de noget mad skal de tegnes en lille smule større i næste frame. 
-11. Udvid byttefiskenes svømmemønster så ud over at undgå jægerfisk forsøger de også at fange maden. Lad afstanden bestemme hvilken ting de prioriterer højest.   
+11. Udvid byttefiskenes svømmemønster så ud over at undgå jægerfisk forsøger de også at fange maden. Lad afstanden bestemme hvilket mål de prioriterer.   
 
 
 ### C. Øvelser om implementering af flokadfærd hos fisk 
 Herunder følger en række øvelser, der skal udvide akvariet så særligt byttefiskene har tendens til at svømme i flok. Igen bør man løbende opdatere klassediagrammet med nye metoder og attributter samt teste og dokumentere sin kode.  
 
-1. 
-2. Modeller en ny klasse, der kaldes for "Flock". 
+1. Udvid fiskeklassen med en metode, så den kan håndtere seperation. Inddrag en parameter, der indikerer hvor meget en fisk forsøger at undgå de andre fisk.
+2. Udvid fiskeklassen med en metode, så den kan håndtere samhørighed. Dvs. den svømmer mod centrum af flokken Inddrag gerne en parameter, der indikerer hvor mange naboer, som hver fisk tager med i sin betragtning. 
+3. Udvid fiskeklassen med en metode, så den kan håndtere justering. Dvs. hver fisk forsøger at svømme med samme hastighed som resten af flokken. 
+3. Indfør skydere der kan justere på de parametre og prøv at finde en fornuftig balance mellem de valgte parametre, så det ser fornuftigt ud. 
+4. Udvid fiskenes adfærd, så når de nærmer sig bunden, holder de en kortere pause før de svømmer hen til flokken igen. Igen kan man indføre skydere, der justerer på hvor mange, hvor ofte de gør det og hvor længe ad gangen. 
+5. Udvid adfærden så grupper af fisk opfører sig biased ift. hele gruppen. Det kan eksempelvis være, at en bestemt andel af fiskene kender til et område, hvor der ligger mad eller lignende og derfor foretrækker de at opholde sig dér. 
+6. Udvid så fiskene som flok bevæger sig mod et bestemt punkt eller – omvendt - flygter fra et bestemt punkt. Eksempelvis en fjendtlig fisk.   
+7. Udvid En vektor beskriver strømninger i vandet der påvirker fiskenes hastighed 
+8. Modeller en ny klasse, der kaldes for "Flock". Klassen skal håndtere flokkke af fisk, der opfører sig ens.  
