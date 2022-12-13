@@ -377,6 +377,21 @@ I afsnittet er øvelserne inddelt i hvorvidt de knytter sig til vektorer eller e
     - `power(a,b)`: Metoden opløfter hvert element i vektor a med tilhørende element i vektor b. 
 15. Generaliser vektorbiblioteket så det kan håndtere og operere på vektorer i n-dimensioner. 
 16. Generaliser alle metoderne, som du har implementeret i 2d til n-dimensioner. F.eks. bør getters og setters tage parametre, der indikerer hvilke koordinat i form af et heltal fra 0 til n-1, der indikerer hvilket koordinat man ønsker at hente eller sætte. Overvej desuden hvilken datastrukturer, der skal bruges til at håndtere data. 
+17. I det følgende skal anvendes en såkaldt højere ordens funktion ved navn `map`. Funktionen `map` tager en funktion og lader den virke på hvert element i et array. Herunder et eksempel, som skal prøves af:
+  ```javascript
+  const lstNumbers = [1, 2, 3, 4];
+  const sqrNumbers = numbers.map(mySquareFunction)
+
+  function mySquareFunction(num) {
+    return num * num;
+  }
+  ```
+  Givet et array ved navn A og en funktion f kan `map´ altså kaldes ved:
+  ```javascript
+  A.map(f)
+  ```
+18. Udvid vektorbiblioteket, så det inkluderer en `map(f)` funktion, der lader funktionen f virke på alle koordinater i vektoren. Prøv map af i praksis med forskellige funktioner. Bemærk at `f` skal være en funktion som tager et reelt tal og returnerer et reelt tal. 
+
 
 ### B. Øvelser om animationer af fisk
 Herunder følger en række øvelser, som udvide økosystemet eller akvariet med ny funktionalitet. Igen bør man løbende opdatere klassediagrammet med nye metoder og attributter samt teste og dokumentere sin kode.  
