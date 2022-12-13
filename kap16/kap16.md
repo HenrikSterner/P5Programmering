@@ -351,7 +351,7 @@ class Fish{
 ## Øvelser
 I afsnittet er øvelserne inddelt i hvorvidt de knytter sig til vektorer eller eksemplet. Til at starte med arbejdes i to dimensioner. Senere i øvelserne skal alle resultaterne generaliseres til n-dimensioner. Det er dog en god ide at starte i 2-dimensioner. Generelt opfordres til, at man i alle øvelserne starter med at justere klassediagrammet, udvide med en skeletmetode og herefter test den. Endelig bør man teste og dokumentere alle udvidelser. 
 
-### Øvelser om vektorer
+### A. Øvelser om vektorer
 1. Modeller vektorklassen ved at konstruere et klassediagram, hvor du tilføjer relevante attributter til at starte med. Blandt de relevante attributter x- og y-koordinater, vektorens farve, tykkelse og navn. Indiker typerne i diagrammet.
 2. Udvid med en klasse, der initialiserer de indførte attributter.
 3. Overvej hvilke attributter som bør være private. Juster klassediagrammet. 
@@ -378,7 +378,7 @@ I afsnittet er øvelserne inddelt i hvorvidt de knytter sig til vektorer eller e
 15. Generaliser vektorbiblioteket så det kan håndtere og operere på vektorer i n-dimensioner. 
 16. Generaliser alle metoderne, som du har implementeret i 2d til n-dimensioner. F.eks. bør getters og setters tage parametre, der indikerer hvilke koordinat i form af et heltal fra 0 til n-1, der indikerer hvilket koordinat man ønsker at hente eller sætte. Overvej desuden hvilken datastrukturer, der skal bruges til at håndtere data. 
 
-### Øvelser om animationer af fisk
+### B. Øvelser om animationer af fisk
 Herunder følger en række øvelser, som udvide økosystemet eller akvariet med ny funktionalitet. Igen bør man løbende opdatere klassediagrammet med nye metoder og attributter samt teste og dokumentere sin kode.  
 1.  Konstruer klassediagrammer med metoder og attributter for de to slags fisk. 
 2.  Implementer klassen fisk, så fisken tegnes som en trekant og at de bevæger sig rundt på skærmen.
@@ -393,6 +393,8 @@ Herunder følger en række øvelser, som udvide økosystemet eller akvariet med 
 11. Udvid byttefiskenes svømmemønster så ud over at undgå jægerfisk forsøger de også at fange maden. Lad afstanden bestemme hvilken ting de prioriterer højest.   
 
 
-### Øvelser om implementering af flokadfærd hos fisk 
-Herunder følger en række øvelser, der skal udvide akvariet så særligt byttefiskene har tendens til at svømme i flok. 
+### C. Øvelser om implementering af flokadfærd hos fisk 
+Herunder følger en række øvelser, der skal udvide akvariet så særligt byttefiskene har tendens til at svømme i flok. Igen bør man løbende opdatere klassediagrammet med nye metoder og attributter samt teste og dokumentere sin kode.  
 
+1. 
+2. Modeller en ny klasse, der kaldes for "Flock". 
