@@ -1,4 +1,4 @@
-# 12. Softwarearkitektur
+# 13. Softwarearkitektur
 Systemer har det med tiden at udvikle sig i omfang og kompleksitet. Tag eksempelvis fysikmotoren, Unreal Engine, der vurderes at fylde et par millioner linjers kode, eller styresystemet, Android, som i dag vurderes at være oppe på 13-15 millioner linjers kode. Begge systemer har hundreder eller tusinder af udviklere bag. For at skabe struktur og systematik samt et fællessprog til at beskrive systemet overordnede rammer, er der brug for at inddrage softwarearkitektur. 
 
 Softwarearkitektur definerer en grundlæggende organisering af et system og dets opførsel herunder hvordan de enkelte komponenter i systemet er samlet samt deres forhold til hinanden og kommunikationen mellem dem.
