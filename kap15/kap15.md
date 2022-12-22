@@ -1,4 +1,4 @@
-# 15. Design mønstre 
+# 15. Computationel tænkning og Designmønstre (ikke skrevet endnu)
 
 ikke skrevet
 
