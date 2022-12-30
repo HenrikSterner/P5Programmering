@@ -23,7 +23,12 @@ Designmønstre kan inddeles i fire overordnede typer:
 - Adfærdsmønstre (på engelsk "behavioral patterns"): Beskriver hvorledes ansvar fordeles mellem forskellige objekter og hvorledes algoritmer kan integreres.
 
 ### Konstruktionsmønstre
-  
+
+#### Fabrik
+
+#### Bygge 
+
+#### Prototype
 
 
 factory pattern

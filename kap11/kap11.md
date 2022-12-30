@@ -28,6 +28,7 @@ class Vector{
     this.x = x;
     this.y = y;
   }
+}
 ```
 Reelt set er vores vektorklasse nu bare en container eller et punkt, der opbevarer et koordinatsæt. Man kan tænke på vores nuværende vektor, som en såkaldt `stedvektor`, der starter i origo (dvs. $(0,0)$) og peger på et punkt $(x,y)$. Men det er vigtigt at understrege, at vi kan abstrahere fra dette og placerer vores vektor et vilkårligt sted i planen. 
 
@@ -53,7 +54,30 @@ class Vector{
   }
 }
 ```
-På den måde kan vi ikke længere tilgå attributterne x og y, men må i stedet implementere accessor og mutator-metoder, som kan ændre og hente værdierne. Af hensyn til læsbarheden af vores kode vælger vi dog i første omgang at gå på kompromis med princippet og overlade det som en øvelse til læseren at implementere disse metoder. Vi implementerer til gengæld herunder en accessor-metoder til at hente længden af vektoren ud fra Pythagoras læresætning:
+På den måde kan vi ikke længere tilgå attributterne x og y, men må i stedet implementere accessor og mutator-metoder, som kan ændre og hente værdierne:
+```javascript
+class Vector{ 
+
+  constructor(x,y){ 
+    this.#x = x; //private attribut ved brug af # 
+    this.#y = y; 
+  } 
+  setX(x){ 
+    this.x = x 
+  } 
+  setY(y){ 
+    this.y = y 
+  } 
+  getX(){ 
+    return this.x 
+  } 
+  getY(){ 
+    return this.y 
+  } 
+} 
+```
+
+ Vi overlade det som en øvelse til læseren at implementere disse metoder for de enkelte attributter. Herunder en accessor-metoder til at hente længden af vektoren ud fra Pythagoras læresætning:
 
 ```javascript
     getLength()
@@ -397,7 +421,7 @@ I afsnittet er øvelserne inddelt i hvorvidt de knytter sig til vektorer eller e
 1. Modeller vektorklassen ved at konstruere et klassediagram, hvor du tilføjer relevante attributter til at starte med. Blandt de relevante attributter x- og y-koordinater, vektorens farve, tykkelse og navn. Indiker typerne i diagrammet.
 2. Udvid med en klasse, der initialiserer de indførte attributter.
 3. Overvej hvilke attributter som bør være private. Juster klassediagrammet. 
-4. Indfør relevante mutator-metoder (getters og setters) for alle dine attributter og tilføj metoderne til klassediagrammet.  Prøv metoderne af og se om de
+4. Indfør relevante mutator-metoder (getters og setters) for alle dine attributter og tilføj metoderne til klassediagrammet.  Prøv metoderne af og se om de virker.
 5. Udvid klassediagrammet med metoder `scalar(k)`, `drawVector(xstart=0,ystart=0)`, `toString()`, `dotProduct(v)`,`normalize()`, `isParallel(v)`, `isOpposite(v)`, `isPerpendicular(v)` og `negate()`.
 6. Udarbej skeletmetoder for hver af metoderne hvor du tilføjer kommentaren `//pass` til alle metoderne, og prøv herefter at implementer de relevante metoder. 
 7.  Prøv alle metoderne af og se om de giver det ønskede resultat.
