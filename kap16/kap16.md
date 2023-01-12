@@ -156,3 +156,49 @@ console.log(config2.getData()); // returner ["Et tal"]
 Ved at tjekke i instanstieringen af klassen hvorvidt klassen allerede er oprettet. Hvis det er tilfældes returnes den eksisterende instans og ellers oprettes den for første gang. Således kan forskellige instanser af klassen arbejde på de samme data. 
 
 ### Strukturelle mønstre
+
+#### Adapter-mønsteret
+Adapter-mønsteret er et designmønster, der gør det muligt for to funktioner/klasser/biblioteker med forskellige grænseflader at arbejde sammen ved at tilpasse den ene grænseflade til den anden. I p5.js bruges Adapter-mønsteret ofte til at tilpasse JavaScript-objekter eller biblioteker til at kommunikere med biblioteket p5.
+
+Herunder et eksempel. Fra P5 ved vi, at der eksisterer en metode til at tegne en cirkel, der tager tre parametre: x,y og radius. 
+
+Vi kunne forestille os, at vi ville gøre brug af den i et andet program lave en grænseflade til denne metode, så vi kan gøre brug af den heri. Det kunne eksempelvis gøres ved at lave en funktion, hvor vi sikrer, at cirklen stadig får radius og ikke diameteren. 
+
+```javascript
+function DrawCircleAdapter(x,y,d)
+{
+    circle(x,y,d/2)
+}
+```
+
+#### Facade-mønsteret
+Facade-mønsteret giver en simpel grænseflade til en kompleks system. På den måde tilbydes et abstraktionslag mellem klienten og det komplekse system, hvilket gør det nemmere at bruge og forstå. I p5.js kan facade-mønsteret bruges til at skjule kompleksiteten i at bruge flere forskellige biblioteker eller funktioner i en enkel grænseflade. På denne måde kan man f.eks. opbygge et komplekst program med mange forskellige funktioner og stadig gøre det nemt at bruge og forstå for en bruger. 
+
+Herunder et eksempel:
+
+```javascript
+class P5SketchFacade {
+  constructor() {
+    this.graphics = new p5(); // her instantieres et p5 objekt, som normalt håndtere scenen
+    this.sound = new p5.sound(); //her instantieres lyd til p5
+  }
+  drawCircle(x, y, r) {
+    this.graphics.ellipse(x, y, r);
+  }
+  createButton(lblName, x, y) {
+    this.dom.createButton(lblName).position(x, y);
+  }
+  playSound(file) {
+    this.sound.play(file);
+  }
+
+}
+```
+
+Herunder bruges facade-mønsteret i praksis:
+```javascript
+let sketch = new P5SketchFacade();
+sketch.createButton("Spil", 50, 40);
+sketch.playSound("lyd.mp3");
+sketch.drawCircle(100, 100, 50);
+```
