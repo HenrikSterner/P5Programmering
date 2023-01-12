@@ -156,6 +156,7 @@ console.log(config2.getData()); // returner ["Et tal"]
 Ved at tjekke i instanstieringen af klassen hvorvidt klassen allerede er oprettet. Hvis det er tilfældes returnes den eksisterende instans og ellers oprettes den for første gang. Således kan forskellige instanser af klassen arbejde på de samme data. 
 
 ### Strukturelle mønstre
+Herunder gennemgås tre af de mest anvendte strukturelle mønstre, adapter-mønsteret, facade-mønsteret og komposit-mønsteret.
 
 #### Adapter-mønsteret
 Adapter-mønsteret er et designmønster, der gør det muligt for to funktioner/klasser/biblioteker med forskellige grænseflader at arbejde sammen ved at tilpasse den ene grænseflade til den anden. I p5.js bruges Adapter-mønsteret ofte til at tilpasse JavaScript-objekter eller biblioteker til at kommunikere med biblioteket p5.
@@ -202,3 +203,139 @@ sketch.createButton("Spil", 50, 40);
 sketch.playSound("lyd.mp3");
 sketch.drawCircle(100, 100, 50);
 ```
+
+#### Komposit-mønsteret
+Komposit-mønsteret muliggør at arbejde med en samling af objekter på en ensartet måde. Samlingen af objekter kan behandles som var det et enkelt objekt. Det giver mere overskuelig og elegant kode, og nemmere at organisere og manipulere komplekse hierarkier af objekter. 
+
+Et godt eksempel i p5 kunne være at opbygge mere komplekse animationer eller scener ved at sammensætte simple objekter til mere komplekse objekter, som knyttes til en scene. Herunder et eksempel hvor vi igen kan tilføje forskellige geometriske figurer til scenen.
+
+```javascript
+class Scene {
+    constructor() {
+        this.shapes = [];
+    }
+    add(shape) {
+        this.shapes.push(shape);
+    }
+    remove(shape) {
+        let index = this.shapes.indexOf(shape);
+        if(index !== -1) {
+            this.shapes.splice(index, 1);
+        }
+    }
+    draw() {
+        for (let shape of this.shapes) {
+            shape.draw();
+        }
+    }
+}
+```
+Mønsteret minder om byggemønsteret men adskiller sig ved, at vi abstraherer fra hvilken slags geometrisk form, som vi ønsker at tilføje til scenen. 
+
+Eksempelvis kunne vi bruge mønsteret på at tilføje forskellige figurer på en elegant måde og efterfølgende tegne den:
+
+```javascript
+let myScene = new Scene();
+let square = new Square(100, 100, 30);
+let circle = new Circle(200, 300, 40);
+let triangle = new Triangle(300, 490, 70);
+myScene.add(square);
+myScene.add(circle);
+myScene.add(triangle);
+myScene.draw()
+```
+
+
+### Adfærdsmønstre
+Herunder gennemgås tre af de vigste adfærdsmønstre, ansvarskæden-mønsteret, kommando-mønsteret og iterator-mønsteret. 
+
+#### Ansvarskæde-mønsteret ("Chain of responsibility")
+Ansvarskæde muliggør at sende et objekt gennem en kæde af objekter til det når et objekt, der kan operere på det. Det giver en fleksibel måde at håndtere begivenheder eller anmodninger i et system. Eksempelvis kunne det være relevant ved håndteringen forskellige typer input fra brugeren:
+
+```javascript
+class ClickHandler {
+    constructor() {
+        this.next = null;
+    }
+    handleClick(x, y) {
+        if (this.next) {
+            this.next.handleClick(x, y);
+        }
+    }
+}
+class CircleHandler extends ClickHandler {
+    handleClick(x, y) {
+        if (insideCircle(x, y)) {
+            console.log("Vi har klikket på en cirkel");
+        } else {
+            super.handleClick(x, y);
+        }
+    }
+}
+class SquareHandler extends ClickHandler {
+    handleClick(x, y) {
+        if (insideSquare(x, y)) {
+            console.log("Vi har klikket på et kvadrat");
+        } else {
+            super.handleClick(x, y);
+        }
+    }
+}
+```
+Her tjekker metoderne `insideCircle` og `insideSquare` hvorvidt vi har klikket indenfor en cirkel hhv. et kvadrat. 
+Metoderne er ikke implementeret, hvilket overlades til læseren.  De skal havde adgang til hvor cirklerne og kvadraterne er placeret. Her kunne man eksempelvis gør brug af eksempelvis singletonmønsteret. 
+
+Herunder anvendes mønsteret til at håndtere forskellige kliks:
+```javascript
+let circle = new CircleHandler();
+let square = new SquareHandler();
+circle.next = square;
+
+function mouseClicked() {
+    circle.handleClick(mouseX, mouseY);
+}
+```
+
+#### Kommandomønsteret
+Command-mønsteret er et designmønster, der adskiller en anmodning om at udføre en handling fra selve handlingen. Det giver en fleksibel måde at håndtere handlinger eller kommandoer i et system. I p5.js kan Command-mønsteret bruges til at håndtere input eller interaktioner fra brugeren.
+
+For eksempel, hvis man ønsker at opbygge en interaktiv scene med flere forskellige interaktionsmuligheder, kan man oprette et Command-objekt for hver handling, der skal udføres.
+
+Man kunne forestille sig, at der bygges en scene hvor brugeren kan skifte baggrundsfarve ved at trykke på en knap.
+
+I din forbindelse oprettes en Command-klasse med en eksekveringsmetode kaldet `execute()`. 
+Ved at skifte baggrundsfarve kan repræsenteres som en ny instans af Command-klassen med sin specifikke implementering af execute()-metoden.
+
+```javascript
+class Command {
+    constructor() {
+        this.execute = function(){};
+    }
+}
+
+class changeBGColor extends Command {
+    constructor(color) {
+        super();
+        this.color = color;
+        this.execute = function() {
+            background(color);
+        };
+    }
+}
+```
+
+I scenen kan nu oprettes en ny instans af `changeBGColor`, når brugeren trykker på knappen, og kalder `execute()`:
+
+
+```javascript
+function setup() {
+    let button = createButton("Ændre baggrundsfarven");
+    button.mousePressed(changeBackground);
+}
+function changeBackground() {
+    let cmd = new changeBGColor("yellow");
+    cmd.execute();
+}
+```
+
+## Øvelser
