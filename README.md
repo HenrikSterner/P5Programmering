@@ -30,9 +30,9 @@ Del I: Introduktion til basal programmering
 
 Del II: Objektorienteret programmering
 - [Kapitel 8: Objekter](https://github.com/HenrikSterner/P5Programmering/blob/main/kap8/kap8.md)
-- [Kapitel 9: Strenge](https://github.com/HenrikSterner/P5Programmering/blob/main/kap9/kap9.md)
+- [Kapitel 9: Objekter i praksis: Strenge](https://github.com/HenrikSterner/P5Programmering/blob/main/kap9/kap9.md)
 - [Kapitel 10: Objektorienteret principper](https://github.com/HenrikSterner/P5Programmering/blob/main/kap10/kap10.md)
-- [Kapitel 11: Vektorer](https://github.com/HenrikSterner/P5Programmering/blob/main/kap11/kap11.md)
+- [Kapitel 11: Objektorienteret principper i praksis: Vektorer](https://github.com/HenrikSterner/P5Programmering/blob/main/kap11/kap11.md)
 
 Del III: Softwareudvikling
 
