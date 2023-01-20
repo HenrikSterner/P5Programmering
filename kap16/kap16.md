@@ -8,6 +8,25 @@ Fælles for begreberne "computationel tænkning" og "designmønstre" er, at de h
 I næste afsnit gives en mere detaljeret gennemgang af nogle af de vigtigste principper, der knytter sig til computationel tænkning. Herefter et afsnit om nogle af de mest anvendte designmønstre.
 
 ## Computationel tænkning
+Computationel tænkning er et paraplybegreb, som dækker over en række færdigheder og metoder man typisk gør brug af i arbejdet med at udvikle løsninger på problemer indenfor programmering og datalogi.  
+
+For forskere og udviklere såsom dataloger og programmører giver brugen af computationel tænkning mulighed for bedre at forstå hvordan systemer funger og skabe nye computatinelle modeller og algoritmer. 
+
+For studerende er computationel tænkning et effektivt  værktøj til at hjælpe med udvikle strategier i forhold til at løse diverse problemer. 
+Et oplagt eksempel på anvendelse computationel tænkning er i konstruktionen af de algoritmer, som implementeres, når man udvikler et nyt system. Men computationel tænkning bruges i den grad også udenfor programmering. Eksempelvis når man skal bage en kage eller når man skal instrueres i at bygge et fysisk produkt såsom et legetøj fra Lego eller et møbel fra Ikea.
+
+Netop fordi den digitaliseret verden bliver stadig mere nærværende har der i de senere år været et stadig stigende fokus på at træne og udvikle computationel tænkning fra grundskolen til gymnasiet og det gælder i øvrigt på tværs af lande. 
+Det hænger desuden sammen med, at stort set alle fag og aspekter af samfundet har fået øjenene op for, at den computationelle tankegang er relevant og nødvendig i mange sammenhænge i forhold til at kommunikere med computeren og løse problemer. 
+
+Herunder gennemgår vi fire af de vigtigste principper indenfor computationel tænkning kaldet dekomposition, abstraktion, mønstergenkendelse og algoritme design. Det er i den sammenhæng vigtigt at understrege, at computationel tænkning ikke kan reduceres til disse fire principper men dækker over et langt mere omfattende teori og begrebsapparat, men at disse principper er centrale for forståelsen og anvendelsen af computationel tænkning indenfor programmering. 
+
+## Abstraktion
+Abstraktion eller generalisering handler om at kigge på sit problem eller domæne fra et helikopterperspektiv. Når vi kigger på tingene fra en helikopter fokuserer vi på de vigtigste informationer og elementer i det eller de problemer, som vi forsøger at løse, og vi ignorer nogle af de unødige detaljer. Dermed ikke sagt at detaljen på et tidspunkt ikke er vigtig, men abstraktion sker typisk i designfasen af ens problem. 
+
+
+### Forskellen på datalogi og computationel tænkning
+
+
 
 
 ## Designmønstre
@@ -325,8 +344,6 @@ class changeBGColor extends Command {
 ```
 
 I scenen kan nu oprettes en ny instans af `changeBGColor`, når brugeren trykker på knappen, og kalder `execute()`:
-
-
 ```javascript
 function setup() {
     let button = createButton("Ændre baggrundsfarven");
