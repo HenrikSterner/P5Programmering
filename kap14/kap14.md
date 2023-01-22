@@ -1,4 +1,4 @@
-# 13. Testning, debug og fejlhåndtering
+# 14. Testning, debug og fejlhåndtering
 Et helt central i al softwareudvikling og programmering er at teste, at ens system eller program rent faktisk fungerer efter hensigten. Ikke desto mindre har det historisk set været nedprioriteret og ofte betragtet som en adskilt del eller en eftertanke af udviklingsprocessen. 
 
 ## Testning er vigtigt tidligt i udviklingsfasen 

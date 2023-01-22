@@ -396,7 +396,7 @@ F.seperation():
   for hver fisk G:
     Hvis F !=G:
       Hvis |G.position - F.position| < D :
-					pCenter = pCenter - (G.position - F.position)
+	pCenter = pCenter - (G.position - F.position)
   returner pCenter 
 ```
 #### Justering: Fiskene søger samme gennemsnitshastighed som nærmeste naboer
@@ -409,7 +409,7 @@ F.alignment():
   Vektor pVelocity;
   for hver fisk G:
     Hvis F !=G:
-			pVelocity +=  G.velocity 
+	pVelocity +=  G.velocity 
   pVelocity = pVelocity/N-1
   returner (pVelocity-G.velocity)/chgVelocity 
 ```
