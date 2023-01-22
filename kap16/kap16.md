@@ -18,10 +18,56 @@ Et oplagt eksempel på anvendelse computationel tænkning er i konstruktionen af
 Netop fordi den digitaliseret verden bliver stadig mere nærværende har der i de senere år været et stadig stigende fokus på at træne og udvikle computationel tænkning fra grundskolen til gymnasiet og det gælder i øvrigt på tværs af lande. 
 Det hænger desuden sammen med, at stort set alle fag og aspekter af samfundet har fået øjenene op for, at den computationelle tankegang er relevant og nødvendig i mange sammenhænge i forhold til at kommunikere med computeren og løse problemer. 
 
-Herunder gennemgår vi fire af de vigtigste principper indenfor computationel tænkning kaldet dekomposition, abstraktion, mønstergenkendelse og algoritme design. Det er i den sammenhæng vigtigt at understrege, at computationel tænkning ikke kan reduceres til disse fire principper men dækker over et langt mere omfattende teori og begrebsapparat, men at disse principper er centrale for forståelsen og anvendelsen af computationel tænkning indenfor programmering. 
+Herunder gennemgår vi fire af de vigtigste principper indenfor computationel tænkning kaldet dekomposition, abstraktion, mønstergenkendelse og algoritme design. Det er i den sammenhæng vigtigt at understrege, at computationel tænkning ikke kan reduceres til disse fire principper men dækker over et langt mere omfattende teori og begrebsapparat, men at disse principper er centrale for forståelsen og anvendelsen af computationel tænkning indenfor programmering.
+
+I gennemgangen af de fire principper tages udgangspunkt i udviklingen af et simpelt kryds og bolle spil. 
+
+## Dekomposition
+Dekomposition minder ret meget om princippet "del og hersk", men der er dog forskelle. Førstnævnte har rod i problemløsning, hvor det handler om at løse et problem i mindre dele, som både mennesket og computeren har nemmere ved at forstå og samtidig finde en løsning på. Dekomposition er mao. en ret kodenær strategi, som gør det muligt at indele koden i mindre dele og efterfølgende gør det nemmere at teste og fejlrette. Del og hersk har rødder i algoritmikken, som en teknik til at dele problemer ind i mindre similære problemer indtil de kan løses, hvilket rekursive algoritmer er et godt eksempel på.  
+
+I forhold til at bruge dekomposition i udviklinge af kryds og bolle kunne man eksempelvis oprette funktioner, der har forskellige opgaver. Det kunne eksempelvis være at tage imod input fra brugeren, tjekke brættet for mulige vinderkombinationer eller tegne brættet. 
 
 ## Abstraktion
 Abstraktion eller generalisering handler om at kigge på sit problem eller domæne fra et helikopterperspektiv. Når vi kigger på tingene fra en helikopter fokuserer vi på de vigtigste informationer og elementer i det eller de problemer, som vi forsøger at løse, og vi ignorer nogle af de unødige detaljer. Dermed ikke sagt at detaljen på et tidspunkt ikke er vigtig, men abstraktion sker typisk i designfasen af ens problem. 
+
+I forhold til kryds og bolle kunne man eksempelvis betragte de to mulige spillere `X` og `O`. Selvom de på papiret ser forskellige ud så har de også meget til fælles. De skal begge tegnes i en celle, tre på stribe giver sejr osv. Man kan med andre ord forestille sig, at man i praksis koder kun enkelt spiller og blot ændre måden denne spiller tegnes på ud fra hvis tur det er. 
+
+En anden vinkel på abstraktion er i forhold til at repræsentationen af brættet, hvor man eksempelvis kunne bruge et to-dimensionelt array.
+Eller de mulige vinderkombinationer kunne faktisk også repræsenteres som et to-dimensionelt array. Herunder en skitsering af funktion til at konstruere brættets repræsentation: 
+
+```javascript
+function createBoard(rows,cols) {
+  let board = [];
+  for (let r = 0; r < rows; r++) {
+    board[r] = [];
+    for (let c = 0; c < cols; c++) {
+      board[r][c] = "";
+    }
+  }
+  return board;
+}
+```
+
+Funktionen tager to parametre svarende til antallet af rækker og kolonner. Igen et eksempel på hvorledes abstraktion skaber langt mere elegant kode, hvis man senere ønsker at generalisere brættet til vilkårlige størrelser. 
+
+```javascript
+function checkWinnerCombo(board){
+  let winnerCombos = [board[0]+board[1]+board[2],
+                      board[3]+board[4]+board[5],
+                      board[6]+board[7]+board[8]]
+}
+```
+
+
+
+
+## Mønstergenkendelse
+Mønstergenkendelse: Brug loops og betingelser for at tjekke for mønstre som tre i træk på spillebrættet.
+
+## Algoritme design
+Opret en algoritme til at håndtere logikken i spillet, inklusiv tjek for sejre og uafgjort, og bestemme næste spillers tur.
+P5.js: Brug p5.js biblioteket til at tegne spillebrættet og håndtere brugerinput. Biblioteket giver en række funktioner til at oprette og manipulere grafik, samt håndtere brugerinput.
+
 
 
 ### Forskellen på datalogi og computationel tænkning
