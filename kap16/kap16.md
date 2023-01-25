@@ -30,7 +30,7 @@ I forhold til at bruge dekomposition i udviklinge af kryds og bolle kunne man ek
 ## Abstraktion
 Abstraktion eller generalisering handler om at kigge på sit problem eller domæne fra et helikopterperspektiv. Når vi kigger på tingene fra en helikopter fokuserer vi på de vigtigste informationer og elementer i det eller de problemer, som vi forsøger at løse, og vi ignorer nogle af de unødige detaljer. Dermed ikke sagt at detaljen på et tidspunkt ikke er vigtig, men abstraktion sker typisk i designfasen af ens problem. 
 
-I forhold til kryds og bolle kunne man eksempelvis betragte de to mulige spillere `X` og `O`. Selvom de på papiret ser forskellige ud så har de også meget til fælles. De skal begge tegnes i en celle, tre på stribe giver sejr osv. Man kan med andre ord forestille sig, at man i praksis koder kun enkelt spiller og blot ændre måden denne spiller tegnes på ud fra hvis tur det er. 
+I forhold til kryds og bolle kunne man eksempelvis betragte de to mulige spillere `X` og `O`. Selvom de på papiret ser forskellige ud så har de også meget til fælles. De skal begge tegnes i en celle, tre på stribe giver sejr osv. Man kan med andre ord forestille sig, at man i praksis koder kun enkelt spiller og blot ændre måden denne spiller tegnes på ud fra hvis tur det er. På denne måde bliver logikken adskilt fra repræsentationen, hvilket muliggør, at man kan ændre de to dele for sig uden at skulle ændre på den anden. 
 
 En anden vinkel på abstraktion er i forhold til at repræsentationen af brættet, hvor man eksempelvis kunne bruge et to-dimensionelt array.
 Eller de mulige vinderkombinationer kunne faktisk også repræsenteres som et to-dimensionelt array. Herunder en skitsering af funktion til at konstruere brættets repræsentation: 
@@ -47,8 +47,14 @@ function createBoard(rows,cols) {
   return board;
 }
 ```
-
 Funktionen tager to parametre svarende til antallet af rækker og kolonner. Igen et eksempel på hvorledes abstraktion skaber langt mere elegant kode, hvis man senere ønsker at generalisere brættet til vilkårlige størrelser. 
+
+Endelig kunne man også forestille sig at indlejre selve spillet i en klasse, der indeholder metoder til at håndtere spillets tilstand, om der er en vinder eller visualiseringen af brættet. 
+
+## Mønstergenkendelse
+Man kunne bruge mønstergenkendelse til at identificere de mulige vinderkombinationer enten ved brug af en kombination af strenge eller ved brug af løkker/betinget udførsel til at tjekke om brættet opfylder en vinderkombination. 
+
+Herunder er vist hvorledes man kunne opbevare de mulige vindermønstre/kombinationer dog kun for rækkerne. Det overlades til læseren at udvide med kolonner og diagonaler:
 
 ```javascript
 function checkWinnerCombo(board){
@@ -57,12 +63,6 @@ function checkWinnerCombo(board){
                       board[6]+board[7]+board[8]]
 }
 ```
-
-
-
-
-## Mønstergenkendelse
-Mønstergenkendelse: Brug loops og betingelser for at tjekke for mønstre som tre i træk på spillebrættet.
 
 ## Algoritme design
 Opret en algoritme til at håndtere logikken i spillet, inklusiv tjek for sejre og uafgjort, og bestemme næste spillers tur.
