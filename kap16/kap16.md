@@ -49,6 +49,7 @@ function createBoard(rows,cols) {
 ```
 Funktionen tager to parametre svarende til antallet af rækker og kolonner. Igen et eksempel på hvorledes abstraktion skaber langt mere elegant kode, hvis man senere ønsker at generalisere brættet til vilkårlige størrelser. 
 
+<<<<<<< Updated upstream
 Endelig kunne man også forestille sig at indlejre selve spillet i en klasse, der indeholder metoder til at håndtere spillets tilstand, om der er en vinder eller visualiseringen af brættet. 
 
 ## Mønstergenkendelse
@@ -69,6 +70,10 @@ function checkWinnerCombo(board){
 
 
 
+>>>>>>> Stashed changes
+## Algoritme design
+I denne fase beskrives hvorledes logikken i spillet herunder hvorledes det verificeres om der er en som har vundet eller hvem den næstes tur er. 
+En simpel måde at tjekke for evt sejre er ved at samle de mulige vinderkombinationer i form af strenge og tjekke om en af dem består af tre krydser eller tre boller. 
 
 Herunder en skitsering af hvorledes funktionen til at afgøre hvorvidt "x" eller "o" har vundet:
 ```javascript
@@ -417,3 +422,5 @@ function changeBackground() {
 ```
 
 ## Øvelser
+1. Udvælg et relevant problem og prøv at anvende computationel tænkning til at løse det. Beskriv løsningen ud fra hvorledes du anvender de fire principper, abstraktion, dekomposition, mønstergenkendelse og algoritme design. 
+2. 
