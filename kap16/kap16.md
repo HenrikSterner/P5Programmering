@@ -22,12 +22,12 @@ Herunder gennemgår vi fire af de vigtigste principper indenfor computationel t�
 
 I gennemgangen af de fire principper tages udgangspunkt i udviklingen af et simpelt kryds og bolle spil. 
 
-## Dekomposition
+### Dekomposition
 Dekomposition minder ret meget om princippet "del og hersk", men der er dog forskelle. Førstnævnte har rod i problemløsning, hvor det handler om at løse et problem i mindre dele, som både mennesket og computeren har nemmere ved at forstå og samtidig finde en løsning på. Dekomposition er mao. en ret kodenær strategi, som gør det muligt at indele koden i mindre dele og efterfølgende gør det nemmere at teste og fejlrette. Del og hersk har rødder i algoritmikken, som en teknik til at dele problemer ind i mindre similære problemer indtil de kan løses, hvilket rekursive algoritmer er et godt eksempel på.  
 
 I forhold til at bruge dekomposition i udviklinge af kryds og bolle kunne man eksempelvis oprette funktioner, der har forskellige opgaver. Det kunne eksempelvis være at tage imod input fra brugeren, tjekke brættet for mulige vinderkombinationer eller tegne brættet. 
 
-## Abstraktion
+### Abstraktion
 Abstraktion eller generalisering handler om at kigge på sit problem eller domæne fra et helikopterperspektiv. Når vi kigger på tingene fra en helikopter fokuserer vi på de vigtigste informationer og elementer i det eller de problemer, som vi forsøger at løse, og vi ignorer nogle af de unødige detaljer. Dermed ikke sagt at detaljen på et tidspunkt ikke er vigtig, men abstraktion sker typisk i designfasen af ens problem. 
 
 I forhold til kryds og bolle kunne man eksempelvis betragte de to mulige spillere `X` og `O`. Selvom de på papiret ser forskellige ud så har de også meget til fælles. De skal begge tegnes i en celle, tre på stribe giver sejr osv. Man kan med andre ord forestille sig, at man i praksis koder kun enkelt spiller og blot ændre måden denne spiller tegnes på ud fra hvis tur det er. På denne måde bliver logikken adskilt fra repræsentationen, hvilket muliggør, at man kan ændre de to dele for sig uden at skulle ændre på den anden. 
@@ -49,33 +49,27 @@ function createBoard(rows,cols) {
 ```
 Funktionen tager to parametre svarende til antallet af rækker og kolonner. Igen et eksempel på hvorledes abstraktion skaber langt mere elegant kode, hvis man senere ønsker at generalisere brættet til vilkårlige størrelser. 
 
-<<<<<<< Updated upstream
 Endelig kunne man også forestille sig at indlejre selve spillet i en klasse, der indeholder metoder til at håndtere spillets tilstand, om der er en vinder eller visualiseringen af brættet. 
 
-## Mønstergenkendelse
+### Mønstergenkendelse
 Man kunne bruge mønstergenkendelse til at identificere de mulige vinderkombinationer enten ved brug af en kombination af strenge eller ved brug af løkker/betinget udførsel til at tjekke om brættet opfylder en vinderkombination. 
 
-Herunder er vist hvorledes man kunne opbevare de mulige vindermønstre/kombinationer dog kun for rækkerne. Det overlades til læseren at udvide med kolonner og diagonaler:
+![Kryds og bolle ](../kap16/images/tictactoe.png)
+Hvis repræsentationen af brættet er et to-dimensionelt array jf. figuren herunder, vil vindermønstrene bestå af en sammenkædning af følgende celler:
 
-```javascript
-function checkWinnerCombo(board){
-  let winnerCombos = [board[0]+board[1]+board[2],
-                      board[3]+board[4]+board[5],
-                      board[6]+board[7]+board[8]]
-}
-```
+* Første række: (0,0)+(1,0)+(2,0)
+* Anden række: (0,1)+(1,1)+(1,2)
+* Tredje række: (0,2)+(1,2)+(2,2)  
+* Første kolonne: (0,0)+(0,1)+(0,2)
+* Anden koloonne: (1,0)+(1,1)+(1,2)
+* Tredje kolonne: (2,0)+(1,2)+(2,2)
+* Første diagonal: (0,0)+(1,1)+(2,2) * Anden diagonal: (2,0)+(1,1)+(0,2)
 
-=======
+Da brættet er relativt småt er det næsten nemmere at finde disse mønstre ved brug af sammensatte strenge. Gør vi brættet større eller udvider det til fire-på-stribe kunne man passende benytte en løkkekonstruktion til at indhente de givne mønstre. 
 
-
-
-
->>>>>>> Stashed changes
 ## Algoritme design
-I denne fase beskrives hvorledes logikken i spillet herunder hvorledes det verificeres om der er en som har vundet eller hvem den næstes tur er. 
-En simpel måde at tjekke for evt sejre er ved at samle de mulige vinderkombinationer i form af strenge og tjekke om en af dem består af tre krydser eller tre boller. 
+I denne fase formuleres en skridt for skridt procedure eller algoritme, som løser den konkrete opgave såsom at tjekke hvorvidt en spiller har vundet. Herunder en funktion, der tjekker for nogle af de mulige vinderkombinationer fundet tidligere: 
 
-Herunder en skitsering af hvorledes funktionen til at afgøre hvorvidt "x" eller "o" har vundet:
 ```javascript
 function checkWinnerCombo(board){
   let winnerCombos = [board[0][1]+board[1][0]+board[2][0],
@@ -92,8 +86,14 @@ function checkWinnerCombo(board){
 ```
 Arrayet `winnerCombos`samler strenge af krydser og boller for at identficere om der findes en celle med enten "xxx" eller "ooo". Funktionen returner enten "X","O" eller "-" afhængig af om der er en vinder og i såfald hvem.
 
-## Mønstergenkendelse
-Fremfor at samle vinderkombinationer i et array kunne man bruge mønstergenkendelse til at identficere hvorvidt der er tre på stribe. Det kunne i praksis ske ved en løkkekonstruktion. 
+Et andet eksempel på algoritme design ved kryds og bolle er at udvide spillet med en simpel AI. 
+Da der er et begrænset antal mulige valg kan man diskutere hvor avanceret implementering af en AI man ønsker. Men en mulighed kunne være at bruge en såkaldt `minmax` algoritme. Som udgangspunkt forventer algoritmen altid, at modstanderen vælger det bedst mulige træk, så den vælger ud fra det hvad det bedst mulige træk er for den.  Groft skitseret vil den følge følgende trin:
+1. Evaluer brættets tilstand og tildel point til hver tom celle på brættet
+2. Generer en liste af mulige træk, som kan tages ud fra spillets nuværende tilstand 
+3. For hvert træk simuleres modstanderens mulige svar
+4. Der tildeles en score i forhold til den resulterende tilstand af brættet
+5. AI vælger det træk der resulterer i den højeste score for den selv. 
+
 
 ## Designmønstre
 Har man kodet længe nok begynder man formentlig at opdage, at man løber ind i mange af de samme problemer og udfordringer uafhængig af hvilket system man udvikler,hvilken kontekst/domæne man arbejder indenfor eller hvilket sprog man koder i. 
@@ -423,4 +423,6 @@ function changeBackground() {
 
 ## Øvelser
 1. Udvælg et relevant problem og prøv at anvende computationel tænkning til at løse det. Beskriv løsningen ud fra hvorledes du anvender de fire principper, abstraktion, dekomposition, mønstergenkendelse og algoritme design. 
-2. 
+2. Anvend computationel tænkning til at lave et fire-på-stribe spil. Beskriv løsningen ud fra hvorledes du anvender de fire principper, abstraktion, dekomposition, mønstergenkendelse og algoritme design. Du behøver ikke at implementere den faktiske kode. Men pseudokoden skal være så kodenær, at det er let at gøre. 
+3. I det følgende skal udvikles fabriksmønstre til at oprette forskellige typer figurer på scenen og forskellige animationer (såsom hoppende bolde eller svævende trekanter). 
+4. Implementer et byggemønster, der kan konstruere forskellige typer af to-dimensionelle huse set fra siden. De må gerne tegnes ud fra simple geometriske primitiver. 
