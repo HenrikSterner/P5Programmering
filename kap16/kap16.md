@@ -64,16 +64,31 @@ function checkWinnerCombo(board){
 }
 ```
 
-## Algoritme design
-Opret en algoritme til at håndtere logikken i spillet, inklusiv tjek for sejre og uafgjort, og bestemme næste spillers tur.
-P5.js: Brug p5.js biblioteket til at tegne spillebrættet og håndtere brugerinput. Biblioteket giver en række funktioner til at oprette og manipulere grafik, samt håndtere brugerinput.
+=======
 
 
 
-### Forskellen på datalogi og computationel tænkning
 
 
+Herunder en skitsering af hvorledes funktionen til at afgøre hvorvidt "x" eller "o" har vundet:
+```javascript
+function checkWinnerCombo(board){
+  let winnerCombos = [board[0][1]+board[1][0]+board[2][0],
+                      board[1][3]+board[1][4]+board[1][5],
+                      board[2][6]+board[2][7]+board[2][8]]
+  if(winnerCombos.contain("xxx")){
+    return "X"
+  }
+  if (winnerCombos.contain("ooo")){
+    return "O"
+  }
+  return "-"
+}
+```
+Arrayet `winnerCombos`samler strenge af krydser og boller for at identficere om der findes en celle med enten "xxx" eller "ooo". Funktionen returner enten "X","O" eller "-" afhængig af om der er en vinder og i såfald hvem.
 
+## Mønstergenkendelse
+Fremfor at samle vinderkombinationer i et array kunne man bruge mønstergenkendelse til at identficere hvorvidt der er tre på stribe. Det kunne i praksis ske ved en løkkekonstruktion. 
 
 ## Designmønstre
 Har man kodet længe nok begynder man formentlig at opdage, at man løber ind i mange af de samme problemer og udfordringer uafhængig af hvilket system man udvikler,hvilken kontekst/domæne man arbejder indenfor eller hvilket sprog man koder i. 
