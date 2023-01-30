@@ -334,17 +334,17 @@ Herunder eksempler på forskellige figurer der indgår i flowdiagrammer og efter
 - Forbindelse. Bruges til at forbinde flowcharts der fylder mere end én side. Man kan skrive: Til Forbindelse 3 på side 2.		
 - Flow kontrol. Viser retningen I flowet fra en kasse til en anden
 
-![Symboler anvendt i flowdiagrammer](../kap11/images/flowdiagramsymboler.png)
+![Symboler anvendt i flowdiagrammer](../kap12/images/flowdiagramsymboler.png)
 
 Herunder nogle eksempler på flowdiagrammer. 
 
 I det første eksempel indlæses to tal og vi returnerer det største:
 
-![Det største af to tal](../kap11/images/flowmax2numbers.png)
+![Det største af to tal](../kap12/images/flowmax2numbers.png)
 
 Herefter et kodenært flowdiagram for Fibonacci-funktionen:
 
-![Fibonacci funktionen](../kap11/images/fibflow.png)
+![Fibonacci funktionen](../kap12/images/fibflow.png)
 
 
 ### Brugerhistorier
@@ -377,7 +377,7 @@ Man kan evt. supplere sine brugerhistorier med figurer, men det er ikke et krav.
 En kravspecifikation er særdeles væsentligt at udarbejde og inddrage i udviklingen af nye systemer. Det handler helt konkret om at få formuleret så præcist som muligt hvad skal programmet kunne og mindst ligeså vigtigt, hvad det ikke skal kunne. 
 Som vi skal se senere, så er der en lang række forskellige aktører i spil, når et system skal udvikles, og der kan være stor forskel på de enkeltes perspektiv. Det forsøger figuren nedenfor på humoristisk vis at illustrere:
 
-![Forskellige perspektiver i softwareudvikling](../kap11/images/rollersoftware.jpg)
+![Forskellige perspektiver i softwareudvikling](../kap12/images/rollersoftware.jpg)
 
 Udformingen af en kravspecifikation er i høj grad en kommunikationsopgave. Det handler om at være så præcis og skarp i sin kommunikation, at de mulige aktører får en så ensartet opfattelse af løsningen. 
 I den sammenhæng er det mao relevant at gå i dialog med brugeren, kunden eller andre relevante aktører ved brug af eksempelvis kvantitive undersøgelser såsom spørgeskemaer eller kvalitative interviews. 
@@ -415,7 +415,7 @@ Det hander reelt set om at få alle aktører i processen en fælles forståelse 
 
 
 Herunder en figur, der illustrer hvorledes man kan opstille MoSCoW på en smart og brugervenlig måde. Det kan være en digital og/eller fysisk tavle. Man kan evt bruge gule notes fysisk, så man let kan rykke rundt på de enkelte krav. 
-![MoSCoW i praksis](../kap11/images/moscow.png)
+![MoSCoW i praksis](../kap12/images/moscow.png)
 
 Fordelene ved MoSCow-metoden er bl.a., at det er en effektiv og simpel måde at belyse kravspecifikationen samt at få det kommunikeret ud til programmører, kunder, projektledere med mere. Netop det at den ignorerer detaljer omkring implementationen,  gør det muligt uafhængig af kodeforståelse at få en fornemmelse for hvad system skal kunne. 
 

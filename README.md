@@ -32,7 +32,7 @@ Del II: Objektorienteret programmering
 - [Kapitel 8: Objekter](https://github.com/HenrikSterner/P5Programmering/blob/main/kap8/kap8.md)
 - [Kapitel 9: Strengobjekter](https://github.com/HenrikSterner/P5Programmering/blob/main/kap9/kap9.md)
 - [Kapitel 10: Objektorienteret principper](https://github.com/HenrikSterner/P5Programmering/blob/main/kap10/kap10.md)
-- [Kapitel 11: Et vektorbibliotekt - objektorienteret principper i praksis](https://github.com/HenrikSterner/P5Programmering/blob/main/kap11/kap11.md)
+- [Kapitel 11: Et vektorbibliotek - objektorienteret principper i praksis](https://github.com/HenrikSterner/P5Programmering/blob/main/kap11/kap11.md)
 
 Del III: Softwareudvikling
 
