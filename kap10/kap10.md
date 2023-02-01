@@ -85,12 +85,15 @@ class Son extends Father {
 
 ```
 Alle metoder og variable der er implementeret i `Father` er tilgængelige i `Son`. Hvis sønnen en dag får et barn kan barnet tilsvarende og så nedarve fra sønnen og herigennem arve fra `Father` . Man kalder også `Father`for superklassen eller forældreklassen, mens `Son`kaldes for børneklassen. 
-I visse sprog kan børn arve fra multiple forældre. Dette er dog ikke muligt i JavaScript. Ønsker man derfor at en klasse skal arve for begge forældre er det bedre at samle de fælles egenskaber i en forældreklasse. 
+I visse sprog kan børn arve fra multiple forældre. Dette er dog ikke muligt i JavaScript. Ønsker man derfor at en klasse skal arve for begge forældre er det måske bedre at samle de fælles egenskaber i en forældreklasse. 
 
 Herunder et eksempel på hvorledes `Car`-klassen kan udvides:
 
 ```javascript
 class Van extends Car {
+  constructor(speed) {
+    super(speed) // vi kalder forældrens konstruktør   
+  }
   setSpeed(amount)
   {
     if((this.#speed+amount) > 110) 
@@ -115,9 +118,22 @@ I konstruktøren kaldes `super()` for at initialisere barnet ud fra superklassen
 
 I metoden `setSpeed()` har vi valgt at undersøge hvorvidt hastigheden bliver mere end 120, da vi i dette eksempel  forestiller os, at det ikke er lovligt for en `Van`. Vi har med andre ord overskrevet metoden `setSpeed()` i børneklassen, så den implementerer sin egen adfærd forskelligt fra forældren(e). 
 
-
 Ydermere ser vi, at vi uden videre kan kalde eksisterende metoder fra superklassen jf. vores kald til getSpeed. 
 Vi kan også konstruere helt nye metoder eller variable. Det gøres fuldstændig på samme måde som hvis vi havde gjort det i superklassen.
+
+Hvis vi ønsker, at vores børneklasse skal have nogle attributter knyttet til sig, som ikke allerede er tilgængelige i forældreklassen, bør vi kalde forældreklassens konstruktør og tilføje nye attributter efterfølgende i konstruktøren. I praksis gøres det ved brug af `super()` i konstruktøren af børneklassen, som i eksemplet ovenfor. 
+Herundet et eksempel, hvor vi udvider med en ekstra attribut i et barn af `Car`. Det er en børneklasse som skal repræsentere en lastbil (kaldet `Truck`):
+
+```javascript
+class Truck extends Car { 
+  #weight;    
+  constructor(speed,weight) {
+    super(speed) //kalder forældreklassens konstruktør
+    this.#weight = weight  //udvider med en ny privat attribut
+  }
+}
+```
+I eksemplet ovenfor udvider i børneklassen med en attribut `weight`, der kunne bruges til at beskrive hvor meget vægt lastbilen måtte bære. Som i tilfældet med `Van` kaldes først forældreklassens konstruktør. Det er ikke nødvendigt at initialisere speed, da den allerede er kendt af forældreklassen.  
 
 ## Polymorfi
 Polymorfi består af to ord, "poly" og "morf", som betyder hhv. "mange" og "former". Underforstået så handler polymorfi om, at objekter kan antage forskellige former, men vi kan stadig behandle dem på en ensartet måde. Det betyder i praksis mere kompakt læsbar kode med forhåbentlig færre fejl, som også i højere grad kan justeres og skaleres. Det er en af de mere komplekse dele af den objektorienteret programmering, som kan tage noget tid at blive vant til, men det er omvendt også et særdeles kraftfuldt værktøj.
