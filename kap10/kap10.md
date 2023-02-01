@@ -96,9 +96,9 @@ class Van extends Car {
   }
   setSpeed(amount)
   {
-    if((this.#speed+amount) > 110) 
+    if((this.#speed+amount) > 90) 
     {
-      console.log("A van is not allowed to drive faster then 110 km/s")
+      console.log("A van is not allowed to drive faster then 90 km/h")
     }
     else{
       this.#speed += amount
@@ -147,11 +147,16 @@ I det følgende vil vi illustere hvorledes disse to metoder fungerer.
 Vi kan forestille os, at vores `Car`-klasse skal repræsentere både en varevogn og en lastvogn, og at vi vælger at samle de ting de har til fælles i `Car`, og de ting der adskiller dem i deres respektive børneklasser. Herunder et eksempel:
 ```javascript
 class Truck extends Car {
+  #weight;    
+  constructor(speed,weight) {
+    super(speed) //kalder forældreklassens konstruktør
+    this.#weight = weight  //udvider med en ny privat attribut
+  }
   setSpeed(amount)
   {
-    if((this.#speed+amount) > 90) 
+    if((this.#speed+amount) > 80) 
     {
-      console.log("A van is not allowed to drive faster then 90 km/s")
+      console.log("A truck is not allowed to drive faster then 80 km/h")
     }
     else{
       this.#speed += amount
@@ -163,7 +168,7 @@ class Van extends Car {
   {
     if((this.#speed+amount) > 110) 
     {
-      console.log("A van is not allowed to drive faster then 110 km/s")
+      console.log("A van is not allowed to drive faster then 90 km/s")
     }
     else{
       this.#speed += amount
