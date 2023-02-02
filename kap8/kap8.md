@@ -213,6 +213,10 @@ I ovenstående har vi for overskuelighedens skyld givet metoderne navnene "metod
 
 Vi kan have ligeså mange metoder vi ønsker, der tager lige så mange parametre som vi ønsker, og vi kan sågar have metoder ved samme navn, men i såfald vil den sidst defineret blive kaldt, hvorfor vi opfordre til at man undgår det eller løser det på samme måde som med konstruktøren, der har nogle standard værdier.  
 
+Herunder har vi modelleret denne generelle klasse ovenfor i et generisk klassediagram:
+![Et generelt klassediagram](../kap8/images/genereltklassediagram.drawio.png) 
+Vi bemærker, at diagrammet er udvidet med en indikation af hvilken type attributterne har og hvilken type metoderne returnerer. Der er med andre ord mulighed for at eksplicitere. Det er ikke nødvendigvis et krav og afhænger i høj grad af hvem man kommunikerer til. Handler det om at give et overblik så kan det undlades og omvendt, hvis det er til en programmør. Vi vender tilbage til klassediagrammer i detaljer i kapitel 13. 
+
 Lad os konkretisere brugen af metoder i vores eksempel fra før med cirklen. 
 Der kan eksempelvis blive behov for at ændre på cirklens tilstand såsom at bevæge cirklen et andet sted end på skærmen samt at tegne cirklen:
 
