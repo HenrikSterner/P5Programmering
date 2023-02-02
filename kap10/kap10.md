@@ -203,6 +203,17 @@ setSpeed("one");        // result = one
 setSpeed("one",2);      // result = one2
 setSpeed("one",2,true); // result = one2true
 ```
+## Komposition
+Komposition er et særdels vigtigt koncept indenfor objekt-orienteret programmering, der ofte ikke er prioriteret nært så højt i litteraturen som de fire principper introduceret ovenfor. I praksis er komposition dog særdeles nyttig og kan ofte være mindst ligeså nyttig som nedarvning. 
+
+Både nedarvning og komposition benyttes til at etablere associationer og relationer mellem forskellige klasser, men hvor nedarvning har fokus på skabe relationer ved at børneklasser udleder data og metoder fra forældre, så handler komposition populært sagt om at definere klasser ud fra summen af eksisterende klasser. 
+
+Det lyder måske lidt mystisk, så lad os forsøge at tydeliggøre det med nogle eksempler. Komposition indikerer at en klasse er en del af en anden klasse eller at et objekt har en . Det kunne eksempelvis være:
+
+- En læge har en patient
+- Et menneske har en lever og to nyrer
+- En skole har elever og lærere
+
 
 ## Øvelser
 Herunder følger en række øvelser. Det anbefales, at man som minimum laver øvelse 1.-10. samt projektet. 
