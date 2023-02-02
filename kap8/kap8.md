@@ -81,7 +81,7 @@ Til at starte med rummer klassen kun attributter, der skal beskrive cirklen. Vi 
 En skabelon eller mere præcist en klasse for en cirkel kunne se således ud, men det er vigtigt at understrege, at den kunne se ud på mange forskellige måder: 	
 
 ```javascript
-class Circle{
+class Cirkel{
  constructor() {
    this.color = color(255);
    this.xpos = width/2; 
@@ -100,7 +100,7 @@ Konstruktøren kan betragtes som klassens første og meget vigtige metode, da de
 fra cirkel til cirkel. I det følgende ændres koden, så værdierne gives med i konstruktøren:
 
 ```javascript
-class Circle{
+class Cirkel{
  constructor(colorcode=255,xpos = width/2,ypos = height/2,radius = 1 ) {
    this.color = color(colorcode);
    this.xpos = xpos; 
@@ -134,7 +134,9 @@ function setup() {
   c2 = new Cirkel(255,100,100,20); //vi opretter et nyt cirkel-objekt vha new (colorcode = 255, x = 100, y= 100, radius = 20) 
 }
 ```
-Vi har oprettet to forskellige cirkel-objekter med de to forskellige kald til den samme konstruktør her og gemt referencer til dem i de to variabler c1 og c2. Variablernes type er af typen "Cirkel". Vi har med andre ord konstrueret vores helt egen type. Vi bemærk i øvrigt, at variablerne i virkeligheden blot peger på en adresse til de to objekter. Det er netop det vi forsøger at indikere, når vi taler om "referencer". 
+Vi har oprettet to forskellige cirkel-objekter med de to forskellige kald til den samme konstruktør her og gemt referencer til dem i de to variabler c1 og c2. Variablernes type er af typen "Cirkel". Vi har med andre ord konstrueret vores helt egen type. Vi bemærk i øvrigt, at variablerne i virkeligheden blot peger på en adresse til de to objekter. Det er netop det vi forsøger at indikere, når vi taler om "referencer". Herunder en illustration af ovenstående kode:
+
+![En cirkel og instanser af denne](../kap8/images/circleinstance.drawio.png) 
 
 ## Rækkefølgen af argumenter til konstruktøren
 Endelig gør vi, som vi nævnte før, opmærksom på at ved at bruge standard værdier til at rumme forskellige antal argumenter til  konstruktørerne, er vi tvunget til at overholde rækkefølgen i argumenterne. Eksempelvis kunne man forestille sig følgende instantiering:
