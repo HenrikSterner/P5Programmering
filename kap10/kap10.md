@@ -210,9 +210,14 @@ Både nedarvning og komposition benyttes til at etablere associationer og relati
 
 Det lyder måske lidt mystisk, så lad os forsøge at tydeliggøre det med nogle eksempler. Komposition indikerer at en klasse er en del af en anden klasse eller at et objekt har en . Det kunne eksempelvis være:
 
+- En katteejer har en kat
+- En kat har et hoved, en krop og en hale
+- En trekant har tre linjesegmenter
+- Et linjesegment har to punkter
 - En læge har en patient
-- Et menneske har en lever og to nyrer
-- En skole har elever og lærere
+- Et patient har en lever 
+
+Der eksisterer to former for komposition, aggregation og association. Begge beskriver relationer mellem klasser. 
 
 
 ## Øvelser
