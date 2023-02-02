@@ -176,6 +176,6 @@ Samtidig er den visuelt orienteret og det giver for mange ofte et bedre og mere 
 6. Lav klassediagramer over et system, som skal håndtere elever, klasser, lærere, administration/IT og klasselokaler. Systemet skal håndtere karakterer, skema, timer m.m.
 7. Lav klassediagrammer over et computerspil (eksisterende eller fiktivt)
 8. Konstruer de tre øverste lag i C4-modellen over en online pizzabutik kaldet MustEat, der skal understøtte muligheden for at kunder kan bestille pizzaer fra en menu over nettet.
-9) Konstruer de tre øverste lag i C4-modellen for NetFix, som skal være en streamingkanal. 
-10) Konstruer alle fire lag i en C4-model herunder relevante klassediagrammer i kodelaget til en app, der skal facilitere, at man kan sende penge til hinanden og betale regninger
-11) Konstruer alle fire lag i en C4-model herunder relevante klassediagrammer i kodelaget til et nyt social medie.
+9. Konstruer de tre øverste lag i C4-modellen for NetFix, som skal være en streamingkanal. 
+10. Konstruer alle fire lag i en C4-model herunder relevante klassediagrammer i kodelaget til en app, der skal facilitere, at man kan sende penge til hinanden og betale regninger
+11. Konstruer alle fire lag i en C4-model herunder relevante klassediagrammer i kodelaget til et nyt social medie.

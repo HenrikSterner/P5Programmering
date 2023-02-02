@@ -6,11 +6,18 @@ Kort fortalt betragtes verdenen i OOP som opbygget af objekter. Objekter kan væ
 1. Attributter: Der beskriver objektets nuværende tilstand. 
 2. Metoder: Dvs. en form for funktioner, der kan ændre på objektets nuværende tilstand. 
    
-Objekter indkapsler med andre ord data og funktioner. Man kan tænke på dem som nogle containere, der ikke bare rummer statistiske værdier men også metoder til at ændre på disse værdier. Objekter kan have relationer til hinanden, de kan interagere med hinanden og ændre på hinandens tilstande. . 
- 
-OOP bruges bl.a. til at sikre, at man bedre kan håndtere, overskue og implementere den enorme og stadigt voksende kompleksitet i programmer og systemer. Brugt rigtigt giver de ligesom funktioner pænere løsninger, der er nemmere at forstå, nemmere at udvide og modificere men også i højere grad at genbruge. 
+Objekter indkapsler med andre ord data og funktioner. Man kan tænke på dem som nogle containere, der ikke bare rummer statistiske værdier men også metoder til at ændre på disse værdier. Objekter kan have relationer til hinanden, de kan interagere med hinanden og ændre på hinandens tilstande. Herunder en figur der illustrerer det overordnede klassebegreb som en kapsel, der rummer metoder(eller adfærd) og variabler (eller data/attributter):
+![En klasse som en kapsel ](../kap8/images/kapsel.png) 
 
-Til at starte med har vi fokus på at få en fornemmelse for hvordan et objekt konstrueres og hvad de kan bruges til.
+En klasse kan også modelleres efter et såkaldt klassediagram, som er en nem måde at skabe et overblik over klassens funktionalitet:
+
+![En klasse som en kapsel ](../kap8/images/class.png) 
+
+Som vi skal se i senere kapitler kan man tilføje rigtig megen information omkring en klasses metoder og attributter. I det følgende vil diagrammet blive brugt til at give en mere visuel repræsentation af klassebegrebet, og i takt med at vi udvider vores forståelse tilføjer vi flere informationer.  
+
+I praksis kan OOP bruges bl.a. til at sikre, at man bedre kan håndtere, overskue og implementere den enorme og stadigt voksende kompleksitet i programmer og systemer. Brugt rigtigt giver de ligesom funktioner pænere løsninger, der er nemmere at forstå, nemmere at udvide og modificere men også i højere grad at genbruge. 
+
+Til at starte med har vi fokus på at få en fornemmelse for hvordan et objekt konstrueres og hvad de kan bruges til herunder hvorledes vi tilføjer data og metoder samt benytter dem i praksis. 
 
 ## Oprette en klasse som skabelon for et objekt 
 I Javascript konstrueres et objekt vha af nøgleordet “class”. Vi vil tillade at bruge klasse i stedet for class, når vi omtaler dem. Når man opretter en klasse konstrueres en datastruktur, der rummer både data eller egenskaber om det objekt, som klassen er en skabelon for, men også metoder (eller funktioner), der ændrer på objektets tilstand. 
@@ -18,7 +25,7 @@ I Javascript konstrueres et objekt vha af nøgleordet “class”. Vi vil tillad
 Vi konstruerer en klasse ved at skrive `class` efterfulgt af navnet på klassen. Navnet skal være i et ord. Herefter følger kroppen omkrænset af en start og slut krølparentes:
 ```javascript
 
-class "Navn_på_klasse"
+class "KlasseNavn"
 {
 
 
@@ -30,7 +37,7 @@ Klassen er vores skabelon, som kan bruges til at konstruere eller med et fint or
 Når vi opretter et objekt dvs. en instans af klassen er vi typisk interesseret i at indlæse nogle grundlæggende egenskaber fra start af. Det gør vi ved brug af en såkaldt "konstruktør", som er en funktion eller metode, der har til formål at sætte nogle bestemte værdier på forhånd for den konkrete instans af klassen. I JS bruges nøgleordet `constructor` (eller konstruktør på dansk). Herunder et eksempel på en klasse som ingen argumenter tager og heller ingen værdier sætter i konstruktøren:  
 
 ```javascript
-class "Navn_på_klasse"
+class "KlasseNavn"
 {
   constructor()
   {
@@ -45,7 +52,7 @@ Modsat mange andre sprog, så understøtter Javascript som udgangspunkt kun en k
 Herunder et eksempel på ovenstående hvor vi har lavet en konstruktør, der har mulighed for at tage ingen eller op til n parametre med angivet ved p1,..,pn :
 
 ```javascript
-class "Navn_på_klasse"
+class "KlasseNavn"
 {
   constructor(p1='',p2='',...,pn='')
   {
@@ -59,18 +66,22 @@ class "Navn_på_klasse"
 ```
 Ved at sætte p1,...,pn til en tom streng giver vi mulighed for at konstruktøren kan tage op til n-argumenter. De kan initialiseres eller undlades at initialiseres fuldstændig. Hvis vi initialiserer dem til andre værdier end de prædefineret, tildeles variablerne i kroppen af konstruktøren den/de ønskede værdi(er). Alternativt sætter Javascript blot disse attributter til den tomme streng. 
 
-Variablerne i konstruktøren kaldes også for `attributter`. Og som angivet ovenfor er det vigtigt at understrege, at selvom argumenterne har samme navne som attributterne, så er der tale om to forskellige ting.
+Variablerne i konstruktøren kaldes som tidligere nævnt også for `attributter`. Og som angivet ovenfor er det vigtigt at understrege, at selvom konstruktørens parametre har samme navne som attributterne, så er der tale om to forskellige ting.
 
 Brugen af `this.p1 = p1`,..., `this.pn = pn` betyder, at vi knytter argumenterne givet i konstruktøren som attributter til det konkrete objekt, som klassen er en skabelon for.
 `this` refererer altså til den konkrete instans af klassen eller objektet.
 
 
 ## Eksempel på en klasse: Cirkel
-Lad os prøve at konkretisere ovenstående ved at lave en klasse for cirkler.
+Lad os prøve at konkretisere ovenstående ved at lave en klasse for cirkler. Vi starter med at visualisere den i et klassediagram:
+![En klasse for en cirkel](../kap8/images/classcircle.drawio.png) 
+
+Til at starte med rummer klassen kun attributter, der skal beskrive cirklen. Vi skal senere udvide med metoder. 
+
 En skabelon eller mere præcist en klasse for en cirkel kunne se således ud, men det er vigtigt at understrege, at den kunne se ud på mange forskellige måder: 	
 
 ```javascript
-class Cirkel{
+class Circle{
  constructor() {
    this.color = color(255);
    this.xpos = width/2; 
@@ -81,10 +92,15 @@ class Cirkel{
 ```
 Her angiver farve, position og radius nogle egenskaber ved en cirkel. De to variable `width`og `heigth` er prædefineret variable i P5. 
 
-Disse værdier kan naturligvis variere fra cirkel til cirkel, hvorfor det vil give mening at implementere i sin konstruktør:
+I det følgende har vi tilføjet konstruktøren, som vores første metode:
+
+![En klasse for en cirkel med konstruktør](../kap8/images/classcircleconstructor.drawio.png) 
+
+Konstruktøren kan betragtes som klassens første og meget vigtige metode, da den konstruerer klassen som objekt og initialiserer attributterne. Den første konstruktør tager ingen parametre, men i praksis vil det dog være rart selv at kunne bestemme værdierne, da de naturligvis varierer
+fra cirkel til cirkel. I det følgende ændres koden, så værdierne gives med i konstruktøren:
 
 ```javascript
-class Cirkel{
+class Circle{
  constructor(colorcode=255,xpos = width/2,ypos = height/2,radius = 1 ) {
    this.color = color(colorcode);
    this.xpos = xpos; 
@@ -93,6 +109,9 @@ class Cirkel{
   }
 }
 ```
+Herunder et klassediagram der illustrer ovenstående: 
+![En klasse for en cirkel med konstruktør](../kap8/images/classcircleconstructorparam.drawio.png) 
+
 Hvis vi ikke angiver andet i konstruktøren, så vil de angivne variabler blive initialiseret med de samme værdier som i den foregående konstruktør. Meget vigtigt at gøre opmærksom på i denne sammenhæng er dog, at konstruktøren forventer at få argumenterne i den anviste rækkefølge, når vi opretter en konkret instans af klassen. Det vender vi tilbage til om lidt.
 
 Hvert objekt er en cirkel, som skal kunne have forskellige egenskaber. Ved at bruge `this` får vi mulighed for at opbevare forskellige attributter hos de respektive cirkler. Igen er det en god ide at tænke på objekter som containere, der indeholder forskellige værdier.
@@ -165,7 +184,7 @@ Målet med metoder er typisk at ændre på et konkret objekts tilstand, som typi
 Herunder først en generisk formulering af metoder:
 
 ```javascript
-class "Navn_på_klasse"
+class "KlasseNavn"
 {
   // først konstruktøren ...
   constructor(p1='',p2='',...,pn='')

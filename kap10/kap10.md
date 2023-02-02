@@ -4,7 +4,7 @@ Objekter, repræsenteret ved en klasse bestående af metoder og variable, spille
 I det følgende vil vi se på nogle af de centrale ideer eller principper, der er med til at retfærdiggøre brugen af objekter i det hele taget. Vi kigger på principperne enkeltvis, men vi gør samtidig opmærksom på, at de skal ses i en sammenhæng. Det ene princip er i vis forstand afhængig af, at vi benytter de andre principper.
 
 ## Indkapsling
-Indkapslingsprincippet betoner, at objekter kan opfattes som  en form for container, der rummer data og at objekter principielt set bør skjule mest mulig unødig kompleksitet for andre klasser. Som standard så skjuler de fleste objekt-orienteret sprog ikke nødvendigvis data.  Herunder et eksempel på, at variabler implementeret i klasser umiddelbart let kan tilgås andre steder i programmet: 
+Indkapslingsprincippet betoner, at principielt set bør mest mulig unødig kompleksitet skjules for andre klasser. Som standard så skjuler de fleste objekt-orienteret sprog ikke nødvendigvis data.  Herunder et eksempel på, at variabler implementeret i klasser umiddelbart let kan tilgås andre steder i programmet: 
 
 ```javascript
 class Car {
@@ -69,6 +69,8 @@ function setup() {
 }
 ```
 Bemærk at de sidste to linjer i setup giver fejl. Vi kan ikke direkte tilgå variablen #speed. Havde vi undladt hashtag var det muligt at læse og skrive speed variablen direkte, hvilket vi ikke ønsker er muligt. I stedet konstrueres metoderne getSpeed hhv. setSpeed, som også kaldes for en accessor- hhv. mutator-metode. Det er her vi implementerer muligheden for at tilgå eller ændre variablen. 
+
+
 
 ## Nedarvning
 Lidt ligesom et barn arver egenskaber fra sine forældre, så handler nedarvningsprincippet om, at klasser (kaldet børn) kan arve data og metoder fra en forældreklasse (kaldet super).  
