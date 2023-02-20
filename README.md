@@ -40,6 +40,6 @@ Del III: Softwareudvikling
 - [Kapitel 13: Softwarearkitektur](https://github.com/HenrikSterner/P5Programmering/blob/main/kap13/kap13.md)
 - [Kapitel 14: Testning, debug og fejlhåndtering](https://github.com/HenrikSterner/P5Programmering/blob/main/kap14/kap14.md)
 - [Kapitel 15: Udviklingsprocesser](https://github.com/HenrikSterner/P5Programmering/blob/main/kap15/kap15.md)
-- [Kapitel 16: Computationel tænkning og Designmønstre (ikke skrevet endnu)](kap16/kap16.md)
+- [Kapitel 16: Computationel tænkning og Designmønstre (under udarbejdelse)](kap16/kap16.md)
 - [Kapitel 17: Udviklingsmiljø og versioneringskontrol](https://github.com/HenrikSterner/P5Programmering/blob/main/kap17/kap17.md)
 
