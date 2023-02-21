@@ -30,10 +30,22 @@ I forhold til at bruge dekomposition i udviklinge af kryds og bolle kunne man ek
 ### Abstraktion
 Abstraktion eller generalisering handler om at kigge på sit problem eller domæne fra et helikopterperspektiv. Når vi kigger på tingene fra en helikopter fokuserer vi på de vigtigste informationer og elementer i det eller de problemer, som vi forsøger at løse, og vi ignorer nogle af de unødige detaljer. Dermed ikke sagt at detaljen på et tidspunkt ikke er vigtig, men abstraktion sker typisk i designfasen af ens problem. 
 
-I forhold til kryds og bolle kunne man eksempelvis betragte de to mulige spillere `X` og `O`. Selvom de på papiret ser forskellige ud så har de også meget til fælles. De skal begge tegnes i en celle, tre på stribe giver sejr osv. Man kan med andre ord forestille sig, at man i praksis koder kun enkelt spiller og blot ændre måden denne spiller tegnes på ud fra hvis tur det er. På denne måde bliver logikken adskilt fra repræsentationen, hvilket muliggør, at man kan ændre de to dele for sig uden at skulle ændre på den anden. 
+I forhold til kryds og bolle kunne man eksempelvis betragte de to mulige spillere `X` og `O`. Selvom de på papiret ser forskellige ud så har de også meget til fælles. De skal begge tegnes i en celle, tre på stribe giver sejr osv. Man kan med andre ord forestille sig, at man i praksis koder kun en enkelt spiller og blot ændre måden denne spiller tegnes på ud fra hvis tur det er. På denne måde bliver logikken adskilt fra den grafiske repræsentationen, hvilket muliggør, at man kan ændre de to dele for sig uden at skulle ændre på den anden. 
 
-En anden vinkel på abstraktion er i forhold til at repræsentationen af brættet, hvor man eksempelvis kunne bruge et to-dimensionelt array.
-Eller de mulige vinderkombinationer kunne faktisk også repræsenteres som et to-dimensionelt array. Herunder en skitsering af funktion til at konstruere brættets repræsentation: 
+Abstraktion kan også bruges i forhold til at gøre sig overvejelser omkring repræsentation af brættet i den faktiske kode. I praksis kunne de 3*3 felter repræsenteres af hver deres variable, men i den sammenhæng indses det ret hurtigt, at det nok er bedre at bruge et array eller en liste.  
+
+```javascript
+function createBoard() {
+  let board = [];
+  for (let i = 0; i < 9; i++) {
+    board[i] = "-";
+  }
+  return board;
+}
+```
+Her initialiseres de ni celler med en bindestreg blot for at illustrere, at cellerne er tomme. 
+
+En anden mere lidt mere skalerbar repræsentation af brættet ville være ved brug af et to-dimensionelt array. Herunder en skitsering af funktion til at konstruere brættets repræsentation: 
 
 ```javascript
 function createBoard(rows,cols) {
@@ -54,7 +66,18 @@ Endelig kunne man også forestille sig at indlejre selve spillet i en klasse, de
 ### Mønstergenkendelse
 Man kunne bruge mønstergenkendelse til at identificere de mulige vinderkombinationer enten ved brug af en kombination af strenge eller ved brug af løkker/betinget udførsel til at tjekke om brættet opfylder en vinderkombination. 
 
-![Kryds og bolle ](../kap16/images/tictactoe.png)
+Hvis brættet var repræsenteret ved et en-dimensionelt array, så ville vinderkombinationerne se således ud, hvor tallene refererer til index i arrayet og plus refererer til en sammenkædning af de enkelte felter:
+
+* Første række: 0+1+2
+* Anden række: 3+4+5
+* Tredje række: 6+7+8
+* Første kolonne: 0+3+6
+* Anden koloonne: 1+4+7
+* Tredje kolonne: 2+5+8
+* Første diagonal: 0+4+8
+* Anden diagonal: 2+4+6
+
+
 Hvis repræsentationen af brættet er et to-dimensionelt array jf. figuren herunder, vil vindermønstrene bestå af en sammenkædning af følgende celler:
 
 * Første række: (0,0)+(1,0)+(2,0)
@@ -63,12 +86,41 @@ Hvis repræsentationen af brættet er et to-dimensionelt array jf. figuren herun
 * Første kolonne: (0,0)+(0,1)+(0,2)
 * Anden koloonne: (1,0)+(1,1)+(1,2)
 * Tredje kolonne: (2,0)+(1,2)+(2,2)
-* Første diagonal: (0,0)+(1,1)+(2,2) * Anden diagonal: (2,0)+(1,1)+(0,2)
+* Første diagonal: (0,0)+(1,1)+(2,2) 
+* Anden diagonal: (2,0)+(1,1)+(0,2)
+
+![Kryds og bolle ](../kap16/images/tictactoe.png)
 
 Da brættet er relativt småt er det næsten nemmere at finde disse mønstre ved brug af sammensatte strenge. Gør vi brættet større eller udvider det til fire-på-stribe kunne man passende benytte en løkkekonstruktion til at indhente de givne mønstre. 
 
 ## Algoritme design
-I denne fase formuleres en skridt for skridt procedure eller algoritme, som løser den konkrete opgave såsom at tjekke hvorvidt en spiller har vundet. Herunder en funktion, der tjekker for nogle af de mulige vinderkombinationer fundet tidligere: 
+I denne fase formuleres en skridt for skridt procedure eller algoritme, som løser den konkrete opgave såsom at tjekke hvorvidt en spiller har vundet. Herunder en funktion, der tjekker for nogle af de mulige vinderkombinationer fundet tidligere. 
+
+Herunder en version der tjekker for vinderkombinationer, hvor brættet er repræsenteret ved et 1-dimensionelt array:
+
+```javascript
+function checkWinnerCombo(board){
+  let winnerCombos = []
+  winnerCombos.push(board[0]+board[1]+board[2])
+  winnerCombos.push(board[3]+board[4]+board[5])
+  winnerCombos.push(board[6]+board[7]+board[8])
+  winnerCombos.push(board[0]+board[3]+board[6])
+  winnerCombos.push(board[1]+board[4]+board[7])
+  winnerCombos.push(board[2]+board[5]+board[8])
+  winnerCombos.push(board[0]+board[4]+board[8])
+  winnerCombos.push(board[2]+board[4]+board[6])
+  if(winnerCombos.contain("xxx")){
+    return "X"
+  }
+  if (winnerCombos.contain("ooo")){
+    return "O"
+  }
+  return "-"
+}
+```
+Alle de mulige vinderkombinationer tilføjes som streng-elementer i en liste. Til sidst tjekkes om nogle af disse indeholder tre ens symboler ("x" hhv "o"). 
+
+Herunder en tilsvarende funktion for det 2-dimensionelle bræt:
 
 ```javascript
 function checkWinnerCombo(board){
@@ -84,6 +136,7 @@ function checkWinnerCombo(board){
   return "-"
 }
 ```
+
 Arrayet `winnerCombos`samler strenge af krydser og boller for at identficere om der findes en celle med enten "xxx" eller "ooo". Funktionen returner enten "X","O" eller "-" afhængig af om der er en vinder og i såfald hvem.
 
 Et andet eksempel på algoritme design ved kryds og bolle er at udvide spillet med en simpel AI. 
@@ -96,7 +149,7 @@ Da der er et begrænset antal mulige valg kan man diskutere hvor avanceret imple
 
 
 ## Designmønstre
-Har man kodet længe nok begynder man formentlig at opdage, at man løber ind i mange af de samme problemer og udfordringer uafhængig af hvilket system man udvikler,hvilken kontekst/domæne man arbejder indenfor eller hvilket sprog man koder i. 
+Har man kodet længe nok oplever man nok, at man løber ind i mange af de samme problemer og udfordringer uafhængig af hvilket system man udvikler, hvilken kontekst/domæne man arbejder indenfor eller hvilket sprog man koder i. Kigges eksempelvis på mobile webapplikationer er der megen af den samme funktionalitet og mange af de samme problemer uafhængig af om der udvikles et nyt socialt medie, en webshop eller lignende. 
 Designmønstre (kaldet "design patterns" på engelsk) er et forsøg på at komme disse typiske problemer til livs ved at tilbyde generiske løsninger og generelle koncepter, som kan sættes i spil. Modsat algoritmer, der ligesom en madopskrift typisk definerer et meget præcist sæt af instruktioner, som løser en konkret opgave, så er designmønstre mere generiske konceptuelle skabeloner på løsninger, der kan justeres til den konkrete kontekst og system.
 
 I det følgende gives først et overblik over de forskellige typer af designmønstre og gennemgår vi i flere detaljer med konkrete kodeeksempler, en række af de vigtigste designmønstre.
@@ -130,12 +183,36 @@ class TriangleFactory {
 }
 
 const factory = new TriangleFactory();
-const regularSquare = factory.create('normal');
-const roundedSquare = factory.create('obtuse');
-const imageSquare = factory.create('pointed');
+const triangle1 = factory.create('normal');
+const triangle2 = factory.create('obtuse');
+const triangle3 = factory.create('pointed');
+triangle1.draw()
+triangle2.draw()
+triangle3.draw()
 ```
 
 Metoden `create()` tager en parameter på baggrund heraf returneres en instans af den tilsvarende klasse.
+
+De enkelte klasser, der repræsenterer de tre typer trekanter skal stadig konstrueres. Typisk kunne det gøres ved brug af nedarvning, hvor de tre trekantklasser arver fra en fælles forældreklasse:
+
+```javascript
+class Triangle {
+  //...
+  draw() {
+    console.log("Drawing from Triangle")
+  }
+
+}
+class NormalTriangle extends Triangle {
+  //...
+  draw() {
+    console.log("Drawing from NormalTriangle")
+  }
+}
+//...
+```
+
+Mønsteret er relevante at bruge, når vi har en forældreklasse med flere børn, og baseret på input skal vi returnere en af børneklasserne. Ved at bruge mønsteret fratages ansvaret for instansieringen af ​​en klasse og tildeles i stedet fabriksklassen. Herved centraliseres koden og gør det nemmere at ændre og justere hvis eksempelvis man udvider med flere børneklasser senere. 
 
 
 #### Byggemønsteret ("Builder pattern")
@@ -423,6 +500,8 @@ function changeBackground() {
 
 ## Øvelser
 1. Udvælg et relevant problem og prøv at anvende computationel tænkning til at løse det. Beskriv løsningen ud fra hvorledes du anvender de fire principper, abstraktion, dekomposition, mønstergenkendelse og algoritme design. 
-2. Anvend computationel tænkning til at lave et fire-på-stribe spil. Beskriv løsningen ud fra hvorledes du anvender de fire principper, abstraktion, dekomposition, mønstergenkendelse og algoritme design. Du behøver ikke at implementere den faktiske kode. Men pseudokoden skal være så kodenær, at det er let at gøre. 
-3. I det følgende skal udvikles fabriksmønstre til at oprette forskellige typer figurer på scenen og forskellige animationer (såsom hoppende bolde eller svævende trekanter). 
-4. Implementer et byggemønster, der kan konstruere forskellige typer af to-dimensionelle huse set fra siden. De må gerne tegnes ud fra simple geometriske primitiver. 
+2. Færdiggør implementationen af kryds og bolle spillet som beskrevet i starten af kapitlet. Udvid gerne med en simpel AI-modstander. 
+3. Anvend computationel tænkning til at lave et fire-på-stribe spil. Beskriv løsningen ud fra hvorledes du anvender de fire principper, abstraktion, dekomposition, mønstergenkendelse og algoritme design. Du behøver ikke at implementere den faktiske kode. Men pseudokoden skal være så kodenær, at det er let at gøre. 
+4. I det følgende skal udvikles fabriksmønstre til at oprette forskellige typer figurer på scenen og forskellige animationer (såsom hoppende bolde eller svævende trekanter). 
+5. Overvej hvornår 
+6. Implementer et byggemønster, der kan konstruere forskellige typer af to-dimensionelle huse set fra siden. De må gerne tegnes ud fra simple geometriske primitiver. 
