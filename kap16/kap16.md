@@ -252,7 +252,7 @@ builder.addRectangle(30, 30, 40, 40);
 const mySketch = builder.getSketch();
 ```
 I eksemplet ovenfor tilføjes en cirkel, en trekant og et rektangel til en scene, der reelt bare er et tomt array. 
-Ved at bruge builder-mønsteret kan man nemt tilføje eller fjerne figurer i scenen, uden at skulle ændre i selve scenen, og kan også nemt skifte mellem forskellige måder at opbygge scenen på, ved at have flere forskellige scenebyggere.
+Ved at bruge builder-mønsteret kan man nemt tilføje eller fjerne figurer i scenen, uden at skulle ændre i selve scenen. Ligesom man også nemt kan skifte mellem forskellige måder at opbygge scenen på ved at have flere forskellige scenebyggere.
 
 #### Prototypemønsteret
 Prototypemønsteret bruges til at oprette nye objekter ved at klone eksisterende objekter i stedet for at oprette dem fra bunden. Det gør det nemmere at oprette flere objekter, som minder meget om hinanden men stadig er unikke. 
@@ -503,5 +503,24 @@ function changeBackground() {
 2. Færdiggør implementationen af kryds og bolle spillet som beskrevet i starten af kapitlet. Udvid gerne med en simpel AI-modstander. 
 3. Anvend computationel tænkning til at lave et fire-på-stribe spil. Beskriv løsningen ud fra hvorledes du anvender de fire principper, abstraktion, dekomposition, mønstergenkendelse og algoritme design. Du behøver ikke at implementere den faktiske kode. Men pseudokoden skal være så kodenær, at det er let at gøre. 
 4. I det følgende skal udvikles fabriksmønstre til at oprette forskellige typer figurer på scenen og forskellige animationer (såsom hoppende bolde eller svævende trekanter). 
-5. Overvej hvornår 
+5. Overvej forskellige eksempler hvor det kan være relevant at bruge fabriksmønsteret. 
 6. Implementer et byggemønster, der kan konstruere forskellige typer af to-dimensionelle huse set fra siden. De må gerne tegnes ud fra simple geometriske primitiver. 
+7. Beskriv hvorledes byggemønsteret er brugt herunder og hvad det gør:
+
+```javascript
+  class ColorBuilder {
+    constructor() {
+      this.grey = 0;
+    }
+    
+    withGrey(grey) {
+      this.grey = grey;
+      return this;
+    }
+    
+    build() {
+      return color(this.grey);
+    }
+  }
+```
+8. Udvid forrige opgave ved brug af byggemønsteret så den kan konstruere en RGB-farve. 
