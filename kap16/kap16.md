@@ -524,3 +524,5 @@ function changeBackground() {
   }
 ```
 8. Udvid forrige opgave ved brug af byggemønsteret så den kan konstruere en RGB-farve. 
+
+
