@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>3&period; Variabler&comma; animationer og input</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension goessner.mdmath */
+@font-face{font-family:KaTeX_AMS;font-style:normal;font-weight:400;src:url(fonts/KaTeX_AMS-Regular.woff2) format("woff2"),url(fonts/KaTeX_AMS-Regular.woff) format("woff"),url(fonts/KaTeX_AMS-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Caligraphic;font-style:normal;font-weight:700;src:url(fonts/KaTeX_Caligraphic-Bold.woff2) format("woff2"),url(fonts/KaTeX_Caligraphic-Bold.woff) format("woff"),url(fonts/KaTeX_Caligraphic-Bold.ttf) format("truetype")}@font-face{font-family:KaTeX_Caligraphic;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Caligraphic-Regular.woff2) format("woff2"),url(fonts/KaTeX_Caligraphic-Regular.woff) format("woff"),url(fonts/KaTeX_Caligraphic-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Fraktur;font-style:normal;font-weight:700;src:url(fonts/KaTeX_Fraktur-Bold.woff2) format("woff2"),url(fonts/KaTeX_Fraktur-Bold.woff) format("woff"),url(fonts/KaTeX_Fraktur-Bold.ttf) format("truetype")}@font-face{font-family:KaTeX_Fraktur;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Fraktur-Regular.woff2) format("woff2"),url(fonts/KaTeX_Fraktur-Regular.woff) format("woff"),url(fonts/KaTeX_Fraktur-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Main;font-style:normal;font-weight:700;src:url(fonts/KaTeX_Main-Bold.woff2) format("woff2"),url(fonts/KaTeX_Main-Bold.woff) format("woff"),url(fonts/KaTeX_Main-Bold.ttf) format("truetype")}@font-face{font-family:KaTeX_Main;font-style:italic;font-weight:700;src:url(fonts/KaTeX_Main-BoldItalic.woff2) format("woff2"),url(fonts/KaTeX_Main-BoldItalic.woff) format("woff"),url(fonts/KaTeX_Main-BoldItalic.ttf) format("truetype")}@font-face{font-family:KaTeX_Main;font-style:italic;font-weight:400;src:url(fonts/KaTeX_Main-Italic.woff2) format("woff2"),url(fonts/KaTeX_Main-Italic.woff) format("woff"),url(fonts/KaTeX_Main-Italic.ttf) format("truetype")}@font-face{font-family:KaTeX_Main;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Main-Regular.woff2) format("woff2"),url(fonts/KaTeX_Main-Regular.woff) format("woff"),url(fonts/KaTeX_Main-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Math;font-style:italic;font-weight:700;src:url(fonts/KaTeX_Math-BoldItalic.woff2) format("woff2"),url(fonts/KaTeX_Math-BoldItalic.woff) format("woff"),url(fonts/KaTeX_Math-BoldItalic.ttf) format("truetype")}@font-face{font-family:KaTeX_Math;font-style:italic;font-weight:400;src:url(fonts/KaTeX_Math-Italic.woff2) format("woff2"),url(fonts/KaTeX_Math-Italic.woff) format("woff"),url(fonts/KaTeX_Math-Italic.ttf) format("truetype")}@font-face{font-family:"KaTeX_SansSerif";font-style:normal;font-weight:700;src:url(fonts/KaTeX_SansSerif-Bold.woff2) format("woff2"),url(fonts/KaTeX_SansSerif-Bold.woff) format("woff"),url(fonts/KaTeX_SansSerif-Bold.ttf) format("truetype")}@font-face{font-family:"KaTeX_SansSerif";font-style:italic;font-weight:400;src:url(fonts/KaTeX_SansSerif-Italic.woff2) format("woff2"),url(fonts/KaTeX_SansSerif-Italic.woff) format("woff"),url(fonts/KaTeX_SansSerif-Italic.ttf) format("truetype")}@font-face{font-family:"KaTeX_SansSerif";font-style:normal;font-weight:400;src:url(fonts/KaTeX_SansSerif-Regular.woff2) format("woff2"),url(fonts/KaTeX_SansSerif-Regular.woff) format("woff"),url(fonts/KaTeX_SansSerif-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Script;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Script-Regular.woff2) format("woff2"),url(fonts/KaTeX_Script-Regular.woff) format("woff"),url(fonts/KaTeX_Script-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Size1;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Size1-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size1-Regular.woff) format("woff"),url(fonts/KaTeX_Size1-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Size2;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Size2-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size2-Regular.woff) format("woff"),url(fonts/KaTeX_Size2-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Size3;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Size3-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size3-Regular.woff) format("woff"),url(fonts/KaTeX_Size3-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Size4;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Size4-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size4-Regular.woff) format("woff"),url(fonts/KaTeX_Size4-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Typewriter;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Typewriter-Regular.woff2) format("woff2"),url(fonts/KaTeX_Typewriter-Regular.woff) format("woff"),url(fonts/KaTeX_Typewriter-Regular.ttf) format("truetype")}.katex{font:normal 1.21em KaTeX_Main,Times New Roman,serif;line-height:1.2;text-indent:0;text-rendering:auto}.katex *{-ms-high-contrast-adjust:none!important;border-color:currentColor}.katex .katex-version:after{content:"0.13.11"}.katex .katex-mathml{clip:rect(1px,1px,1px,1px);border:0;height:1px;overflow:hidden;padding:0;position:absolute;width:1px}.katex .katex-html>.newline{display:block}.katex .base{position:relative;white-space:nowrap;width:-webkit-min-content;width:-moz-min-content;width:min-content}.katex .base,.katex .strut{display:inline-block}.katex .textbf{font-weight:700}.katex .textit{font-style:italic}.katex .textrm{font-family:KaTeX_Main}.katex .textsf{font-family:KaTeX_SansSerif}.katex .texttt{font-family:KaTeX_Typewriter}.katex .mathnormal{font-family:KaTeX_Math;font-style:italic}.katex .mathit{font-family:KaTeX_Main;font-style:italic}.katex .mathrm{font-style:normal}.katex .mathbf{font-family:KaTeX_Main;font-weight:700}.katex .boldsymbol{font-family:KaTeX_Math;font-style:italic;font-weight:700}.katex .amsrm,.katex .mathbb,.katex .textbb{font-family:KaTeX_AMS}.katex .mathcal{font-family:KaTeX_Caligraphic}.katex .mathfrak,.katex .textfrak{font-family:KaTeX_Fraktur}.katex .mathtt{font-family:KaTeX_Typewriter}.katex .mathscr,.katex .textscr{font-family:KaTeX_Script}.katex .mathsf,.katex .textsf{font-family:KaTeX_SansSerif}.katex .mathboldsf,.katex .textboldsf{font-family:KaTeX_SansSerif;font-weight:700}.katex .mathitsf,.katex .textitsf{font-family:KaTeX_SansSerif;font-style:italic}.katex .mainrm{font-family:KaTeX_Main;font-style:normal}.katex .vlist-t{border-collapse:collapse;display:inline-table;table-layout:fixed}.katex .vlist-r{display:table-row}.katex .vlist{display:table-cell;position:relative;vertical-align:bottom}.katex .vlist>span{display:block;height:0;position:relative}.katex .vlist>span>span{display:inline-block}.katex .vlist>span>.pstrut{overflow:hidden;width:0}.katex .vlist-t2{margin-right:-2px}.katex .vlist-s{display:table-cell;font-size:1px;min-width:2px;vertical-align:bottom;width:2px}.katex .vbox{-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-box-align:baseline;align-items:baseline;display:-webkit-inline-box;display:inline-flex;flex-direction:column}.katex .hbox{width:100%}.katex .hbox,.katex .thinbox{-webkit-box-orient:horizontal;-webkit-box-direction:normal;display:-webkit-inline-box;display:inline-flex;flex-direction:row}.katex .thinbox{max-width:0;width:0}.katex .msupsub{text-align:left}.katex .mfrac>span>span{text-align:center}.katex .mfrac .frac-line{border-bottom-style:solid;display:inline-block;width:100%}.katex .hdashline,.katex .hline,.katex .mfrac .frac-line,.katex .overline .overline-line,.katex .rule,.katex .underline .underline-line{min-height:1px}.katex .mspace{display:inline-block}.katex .clap,.katex .llap,.katex .rlap{position:relative;width:0}.katex .clap>.inner,.katex .llap>.inner,.katex .rlap>.inner{position:absolute}.katex .clap>.fix,.katex .llap>.fix,.katex .rlap>.fix{display:inline-block}.katex .llap>.inner{right:0}.katex .clap>.inner,.katex .rlap>.inner{left:0}.katex .clap>.inner>span{margin-left:-50%;margin-right:50%}.katex .rule{border:0 solid;display:inline-block;position:relative}.katex .hline,.katex .overline .overline-line,.katex .underline .underline-line{border-bottom-style:solid;display:inline-block;width:100%}.katex .hdashline{border-bottom-style:dashed;display:inline-block;width:100%}.katex .sqrt>.root{margin-left:.27777778em;margin-right:-.55555556em}.katex .fontsize-ensurer.reset-size1.size1,.katex .sizing.reset-size1.size1{font-size:1em}.katex .fontsize-ensurer.reset-size1.size2,.katex .sizing.reset-size1.size2{font-size:1.2em}.katex .fontsize-ensurer.reset-size1.size3,.katex .sizing.reset-size1.size3{font-size:1.4em}.katex .fontsize-ensurer.reset-size1.size4,.katex .sizing.reset-size1.size4{font-size:1.6em}.katex .fontsize-ensurer.reset-size1.size5,.katex .sizing.reset-size1.size5{font-size:1.8em}.katex .fontsize-ensurer.reset-size1.size6,.katex .sizing.reset-size1.size6{font-size:2em}.katex .fontsize-ensurer.reset-size1.size7,.katex .sizing.reset-size1.size7{font-size:2.4em}.katex .fontsize-ensurer.reset-size1.size8,.katex .sizing.reset-size1.size8{font-size:2.88em}.katex .fontsize-ensurer.reset-size1.size9,.katex .sizing.reset-size1.size9{font-size:3.456em}.katex .fontsize-ensurer.reset-size1.size10,.katex .sizing.reset-size1.size10{font-size:4.148em}.katex .fontsize-ensurer.reset-size1.size11,.katex .sizing.reset-size1.size11{font-size:4.976em}.katex .fontsize-ensurer.reset-size2.size1,.katex .sizing.reset-size2.size1{font-size:.83333333em}.katex .fontsize-ensurer.reset-size2.size2,.katex .sizing.reset-size2.size2{font-size:1em}.katex .fontsize-ensurer.reset-size2.size3,.katex .sizing.reset-size2.size3{font-size:1.16666667em}.katex .fontsize-ensurer.reset-size2.size4,.katex .sizing.reset-size2.size4{font-size:1.33333333em}.katex .fontsize-ensurer.reset-size2.size5,.katex .sizing.reset-size2.size5{font-size:1.5em}.katex .fontsize-ensurer.reset-size2.size6,.katex .sizing.reset-size2.size6{font-size:1.66666667em}.katex .fontsize-ensurer.reset-size2.size7,.katex .sizing.reset-size2.size7{font-size:2em}.katex .fontsize-ensurer.reset-size2.size8,.katex .sizing.reset-size2.size8{font-size:2.4em}.katex .fontsize-ensurer.reset-size2.size9,.katex .sizing.reset-size2.size9{font-size:2.88em}.katex .fontsize-ensurer.reset-size2.size10,.katex .sizing.reset-size2.size10{font-size:3.45666667em}.katex .fontsize-ensurer.reset-size2.size11,.katex .sizing.reset-size2.size11{font-size:4.14666667em}.katex .fontsize-ensurer.reset-size3.size1,.katex .sizing.reset-size3.size1{font-size:.71428571em}.katex .fontsize-ensurer.reset-size3.size2,.katex .sizing.reset-size3.size2{font-size:.85714286em}.katex .fontsize-ensurer.reset-size3.size3,.katex .sizing.reset-size3.size3{font-size:1em}.katex .fontsize-ensurer.reset-size3.size4,.katex .sizing.reset-size3.size4{font-size:1.14285714em}.katex .fontsize-ensurer.reset-size3.size5,.katex .sizing.reset-size3.size5{font-size:1.28571429em}.katex .fontsize-ensurer.reset-size3.size6,.katex .sizing.reset-size3.size6{font-size:1.42857143em}.katex .fontsize-ensurer.reset-size3.size7,.katex .sizing.reset-size3.size7{font-size:1.71428571em}.katex .fontsize-ensurer.reset-size3.size8,.katex .sizing.reset-size3.size8{font-size:2.05714286em}.katex .fontsize-ensurer.reset-size3.size9,.katex .sizing.reset-size3.size9{font-size:2.46857143em}.katex .fontsize-ensurer.reset-size3.size10,.katex .sizing.reset-size3.size10{font-size:2.96285714em}.katex .fontsize-ensurer.reset-size3.size11,.katex .sizing.reset-size3.size11{font-size:3.55428571em}.katex .fontsize-ensurer.reset-size4.size1,.katex .sizing.reset-size4.size1{font-size:.625em}.katex .fontsize-ensurer.reset-size4.size2,.katex .sizing.reset-size4.size2{font-size:.75em}.katex .fontsize-ensurer.reset-size4.size3,.katex .sizing.reset-size4.size3{font-size:.875em}.katex .fontsize-ensurer.reset-size4.size4,.katex .sizing.reset-size4.size4{font-size:1em}.katex .fontsize-ensurer.reset-size4.size5,.katex .sizing.reset-size4.size5{font-size:1.125em}.katex .fontsize-ensurer.reset-size4.size6,.katex .sizing.reset-size4.size6{font-size:1.25em}.katex .fontsize-ensurer.reset-size4.size7,.katex .sizing.reset-size4.size7{font-size:1.5em}.katex .fontsize-ensurer.reset-size4.size8,.katex .sizing.reset-size4.size8{font-size:1.8em}.katex .fontsize-ensurer.reset-size4.size9,.katex .sizing.reset-size4.size9{font-size:2.16em}.katex .fontsize-ensurer.reset-size4.size10,.katex .sizing.reset-size4.size10{font-size:2.5925em}.katex .fontsize-ensurer.reset-size4.size11,.katex .sizing.reset-size4.size11{font-size:3.11em}.katex .fontsize-ensurer.reset-size5.size1,.katex .sizing.reset-size5.size1{font-size:.55555556em}.katex .fontsize-ensurer.reset-size5.size2,.katex .sizing.reset-size5.size2{font-size:.66666667em}.katex .fontsize-ensurer.reset-size5.size3,.katex .sizing.reset-size5.size3{font-size:.77777778em}.katex .fontsize-ensurer.reset-size5.size4,.katex .sizing.reset-size5.size4{font-size:.88888889em}.katex .fontsize-ensurer.reset-size5.size5,.katex .sizing.reset-size5.size5{font-size:1em}.katex .fontsize-ensurer.reset-size5.size6,.katex .sizing.reset-size5.size6{font-size:1.11111111em}.katex .fontsize-ensurer.reset-size5.size7,.katex .sizing.reset-size5.size7{font-size:1.33333333em}.katex .fontsize-ensurer.reset-size5.size8,.katex .sizing.reset-size5.size8{font-size:1.6em}.katex .fontsize-ensurer.reset-size5.size9,.katex .sizing.reset-size5.size9{font-size:1.92em}.katex .fontsize-ensurer.reset-size5.size10,.katex .sizing.reset-size5.size10{font-size:2.30444444em}.katex .fontsize-ensurer.reset-size5.size11,.katex .sizing.reset-size5.size11{font-size:2.76444444em}.katex .fontsize-ensurer.reset-size6.size1,.katex .sizing.reset-size6.size1{font-size:.5em}.katex .fontsize-ensurer.reset-size6.size2,.katex .sizing.reset-size6.size2{font-size:.6em}.katex .fontsize-ensurer.reset-size6.size3,.katex .sizing.reset-size6.size3{font-size:.7em}.katex .fontsize-ensurer.reset-size6.size4,.katex .sizing.reset-size6.size4{font-size:.8em}.katex .fontsize-ensurer.reset-size6.size5,.katex .sizing.reset-size6.size5{font-size:.9em}.katex .fontsize-ensurer.reset-size6.size6,.katex .sizing.reset-size6.size6{font-size:1em}.katex .fontsize-ensurer.reset-size6.size7,.katex .sizing.reset-size6.size7{font-size:1.2em}.katex .fontsize-ensurer.reset-size6.size8,.katex .sizing.reset-size6.size8{font-size:1.44em}.katex .fontsize-ensurer.reset-size6.size9,.katex .sizing.reset-size6.size9{font-size:1.728em}.katex .fontsize-ensurer.reset-size6.size10,.katex .sizing.reset-size6.size10{font-size:2.074em}.katex .fontsize-ensurer.reset-size6.size11,.katex .sizing.reset-size6.size11{font-size:2.488em}.katex .fontsize-ensurer.reset-size7.size1,.katex .sizing.reset-size7.size1{font-size:.41666667em}.katex .fontsize-ensurer.reset-size7.size2,.katex .sizing.reset-size7.size2{font-size:.5em}.katex .fontsize-ensurer.reset-size7.size3,.katex .sizing.reset-size7.size3{font-size:.58333333em}.katex .fontsize-ensurer.reset-size7.size4,.katex .sizing.reset-size7.size4{font-size:.66666667em}.katex .fontsize-ensurer.reset-size7.size5,.katex .sizing.reset-size7.size5{font-size:.75em}.katex .fontsize-ensurer.reset-size7.size6,.katex .sizing.reset-size7.size6{font-size:.83333333em}.katex .fontsize-ensurer.reset-size7.size7,.katex .sizing.reset-size7.size7{font-size:1em}.katex .fontsize-ensurer.reset-size7.size8,.katex .sizing.reset-size7.size8{font-size:1.2em}.katex .fontsize-ensurer.reset-size7.size9,.katex .sizing.reset-size7.size9{font-size:1.44em}.katex .fontsize-ensurer.reset-size7.size10,.katex .sizing.reset-size7.size10{font-size:1.72833333em}.katex .fontsize-ensurer.reset-size7.size11,.katex .sizing.reset-size7.size11{font-size:2.07333333em}.katex .fontsize-ensurer.reset-size8.size1,.katex .sizing.reset-size8.size1{font-size:.34722222em}.katex .fontsize-ensurer.reset-size8.size2,.katex .sizing.reset-size8.size2{font-size:.41666667em}.katex .fontsize-ensurer.reset-size8.size3,.katex .sizing.reset-size8.size3{font-size:.48611111em}.katex .fontsize-ensurer.reset-size8.size4,.katex .sizing.reset-size8.size4{font-size:.55555556em}.katex .fontsize-ensurer.reset-size8.size5,.katex .sizing.reset-size8.size5{font-size:.625em}.katex .fontsize-ensurer.reset-size8.size6,.katex .sizing.reset-size8.size6{font-size:.69444444em}.katex .fontsize-ensurer.reset-size8.size7,.katex .sizing.reset-size8.size7{font-size:.83333333em}.katex .fontsize-ensurer.reset-size8.size8,.katex .sizing.reset-size8.size8{font-size:1em}.katex .fontsize-ensurer.reset-size8.size9,.katex .sizing.reset-size8.size9{font-size:1.2em}.katex .fontsize-ensurer.reset-size8.size10,.katex .sizing.reset-size8.size10{font-size:1.44027778em}.katex .fontsize-ensurer.reset-size8.size11,.katex .sizing.reset-size8.size11{font-size:1.72777778em}.katex .fontsize-ensurer.reset-size9.size1,.katex .sizing.reset-size9.size1{font-size:.28935185em}.katex .fontsize-ensurer.reset-size9.size2,.katex .sizing.reset-size9.size2{font-size:.34722222em}.katex .fontsize-ensurer.reset-size9.size3,.katex .sizing.reset-size9.size3{font-size:.40509259em}.katex .fontsize-ensurer.reset-size9.size4,.katex .sizing.reset-size9.size4{font-size:.46296296em}.katex .fontsize-ensurer.reset-size9.size5,.katex .sizing.reset-size9.size5{font-size:.52083333em}.katex .fontsize-ensurer.reset-size9.size6,.katex .sizing.reset-size9.size6{font-size:.5787037em}.katex .fontsize-ensurer.reset-size9.size7,.katex .sizing.reset-size9.size7{font-size:.69444444em}.katex .fontsize-ensurer.reset-size9.size8,.katex .sizing.reset-size9.size8{font-size:.83333333em}.katex .fontsize-ensurer.reset-size9.size9,.katex .sizing.reset-size9.size9{font-size:1em}.katex .fontsize-ensurer.reset-size9.size10,.katex .sizing.reset-size9.size10{font-size:1.20023148em}.katex .fontsize-ensurer.reset-size9.size11,.katex .sizing.reset-size9.size11{font-size:1.43981481em}.katex .fontsize-ensurer.reset-size10.size1,.katex .sizing.reset-size10.size1{font-size:.24108004em}.katex .fontsize-ensurer.reset-size10.size2,.katex .sizing.reset-size10.size2{font-size:.28929605em}.katex .fontsize-ensurer.reset-size10.size3,.katex .sizing.reset-size10.size3{font-size:.33751205em}.katex .fontsize-ensurer.reset-size10.size4,.katex .sizing.reset-size10.size4{font-size:.38572806em}.katex .fontsize-ensurer.reset-size10.size5,.katex .sizing.reset-size10.size5{font-size:.43394407em}.katex .fontsize-ensurer.reset-size10.size6,.katex .sizing.reset-size10.size6{font-size:.48216008em}.katex .fontsize-ensurer.reset-size10.size7,.katex .sizing.reset-size10.size7{font-size:.57859209em}.katex .fontsize-ensurer.reset-size10.size8,.katex .sizing.reset-size10.size8{font-size:.69431051em}.katex .fontsize-ensurer.reset-size10.size9,.katex .sizing.reset-size10.size9{font-size:.83317261em}.katex .fontsize-ensurer.reset-size10.size10,.katex .sizing.reset-size10.size10{font-size:1em}.katex .fontsize-ensurer.reset-size10.size11,.katex .sizing.reset-size10.size11{font-size:1.19961427em}.katex .fontsize-ensurer.reset-size11.size1,.katex .sizing.reset-size11.size1{font-size:.20096463em}.katex .fontsize-ensurer.reset-size11.size2,.katex .sizing.reset-size11.size2{font-size:.24115756em}.katex .fontsize-ensurer.reset-size11.size3,.katex .sizing.reset-size11.size3{font-size:.28135048em}.katex .fontsize-ensurer.reset-size11.size4,.katex .sizing.reset-size11.size4{font-size:.32154341em}.katex .fontsize-ensurer.reset-size11.size5,.katex .sizing.reset-size11.size5{font-size:.36173633em}.katex .fontsize-ensurer.reset-size11.size6,.katex .sizing.reset-size11.size6{font-size:.40192926em}.katex .fontsize-ensurer.reset-size11.size7,.katex .sizing.reset-size11.size7{font-size:.48231511em}.katex .fontsize-ensurer.reset-size11.size8,.katex .sizing.reset-size11.size8{font-size:.57877814em}.katex .fontsize-ensurer.reset-size11.size9,.katex .sizing.reset-size11.size9{font-size:.69453376em}.katex .fontsize-ensurer.reset-size11.size10,.katex .sizing.reset-size11.size10{font-size:.83360129em}.katex .fontsize-ensurer.reset-size11.size11,.katex .sizing.reset-size11.size11{font-size:1em}.katex .delimsizing.size1{font-family:KaTeX_Size1}.katex .delimsizing.size2{font-family:KaTeX_Size2}.katex .delimsizing.size3{font-family:KaTeX_Size3}.katex .delimsizing.size4{font-family:KaTeX_Size4}.katex .delimsizing.mult .delim-size1>span{font-family:KaTeX_Size1}.katex .delimsizing.mult .delim-size4>span{font-family:KaTeX_Size4}.katex .nulldelimiter{display:inline-block;width:.12em}.katex .delimcenter,.katex .op-symbol{position:relative}.katex .op-symbol.small-op{font-family:KaTeX_Size1}.katex .op-symbol.large-op{font-family:KaTeX_Size2}.katex .accent>.vlist-t,.katex .op-limits>.vlist-t{text-align:center}.katex .accent .accent-body{position:relative}.katex .accent .accent-body:not(.accent-full){width:0}.katex .overlay{display:block}.katex .mtable .vertical-separator{display:inline-block;min-width:1px}.katex .mtable .arraycolsep{display:inline-block}.katex .mtable .col-align-c>.vlist-t{text-align:center}.katex .mtable .col-align-l>.vlist-t{text-align:left}.katex .mtable .col-align-r>.vlist-t{text-align:right}.katex .svg-align{text-align:left}.katex svg{fill:currentColor;stroke:currentColor;fill-rule:nonzero;fill-opacity:1;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;display:block;height:inherit;position:absolute;width:100%}.katex svg path{stroke:none}.katex img{border-style:none;max-height:none;max-width:none;min-height:0;min-width:0}.katex .stretchy{display:block;overflow:hidden;position:relative;width:100%}.katex .stretchy:after,.katex .stretchy:before{content:""}.katex .hide-tail{overflow:hidden;position:relative;width:100%}.katex .halfarrow-left{left:0;overflow:hidden;position:absolute;width:50.2%}.katex .halfarrow-right{overflow:hidden;position:absolute;right:0;width:50.2%}.katex .brace-left{left:0;overflow:hidden;position:absolute;width:25.1%}.katex .brace-center{left:25%;overflow:hidden;position:absolute;width:50%}.katex .brace-right{overflow:hidden;position:absolute;right:0;width:25.1%}.katex .x-arrow-pad{padding:0 .5em}.katex .cd-arrow-pad{padding:0 .55556em 0 .27778em}.katex .mover,.katex .munder,.katex .x-arrow{text-align:center}.katex .boxpad{padding:0 .3em}.katex .fbox,.katex .fcolorbox{border:.04em solid;box-sizing:border-box}.katex .cancel-pad{padding:0 .2em}.katex .cancel-lap{margin-left:-.2em;margin-right:-.2em}.katex .sout{border-bottom-style:solid;border-bottom-width:.08em}.katex .angl{border-right:.049em solid;border-top:.049em solid;box-sizing:border-content;margin-right:.03889em}.katex .anglpad{padding:0 .03889em}.katex .eqn-num:before{content:"(" counter(katexEqnNo) ")";counter-increment:katexEqnNo}.katex .mml-eqn-num:before{content:"(" counter(mmlEqnNo) ")";counter-increment:mmlEqnNo}.katex .mtr-glue{width:50%}.katex .cd-vert-arrow{display:inline-block;position:relative}.katex .cd-label-left{display:inline-block;position:absolute;right:-webkit-calc(50% + .3em);right:calc(50% + .3em);text-align:left}.katex .cd-label-right{display:inline-block;left:-webkit-calc(50% + .3em);left:calc(50% + .3em);position:absolute;text-align:right}.katex-display{display:block;margin:1em 0;text-align:center}.katex-display>.katex{display:block;text-align:center;white-space:nowrap}.katex-display>.katex>.katex-html{display:block;position:relative}.katex-display>.katex>.katex-html>.tag{position:absolute;right:0}.katex-display.leqno>.katex>.katex-html>.tag{left:0;right:auto}.katex-display.fleqn>.katex{padding-left:2em;text-align:left}body{counter-reset:katexEqnNo mmlEqnNo}
+
+/* style for html inside of browsers */
+.katex { font-size: 1em !important; } /* align KaTeX font-size to surrounding text */
+
+eq { display: inline-block; }
+eqn { display: block}
+section.eqno {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    align-items: center;
+}
+section.eqno > eqn {
+    width: 100%;
+    margin-left: 3em;
+}
+section.eqno > span {
+    width:3em;
+    text-align:right;
+}
+
+p { 
+    text-align: justify; 
+    hyphens: auto;
+}
+
+table {
+    display: table;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+figure {
+    margin: 0.5em auto;
+}
+figure > img {
+    display: block;
+    margin: 0 auto;
+    page-break-inside: avoid;
+    text-align: center;
+}
+figcaption { 
+    font-size: 0.9em;
+    margin-top: 0.5em;
+    text-align: center;
+}
+
+aside {
+  font-size: 0.9em;
+  max-width: 300px;
+  padding: 0 0 0 1em;
+  margin: 0 0 0 1em;
+  float: right;
+}
+
+aside > *:first-child {
+  margin-top: 0;
+}
+aside > *:last-child {
+  margin-bottom: 0;
+}
+
+</style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="3-variabler-animationer-og-input">3. Variabler, animationer og input</h1>
+<p>Variabler udgør de centrale byggesten i ethvert program. Variabler kan tænkes på som navngivne pladser i computerens hukommelse, og de bruges til at opbevare data af forskellige typer. Det skal vi kigge nærmere på nedenfor, hvor vi også vil se på hvorledes man håndterer input fra brugeren i form af taster på tastaturet eller input fra musen.
+Undervejs ser vi også eksempler på hvorledes man kan lave ikke bare statiske tegninger men også animationer.</p>
+<h2 id="variabler-og-datatyper">Variabler og datatyper</h2>
+<p>Variabler bruges til at opbevare data.  Dataens “form” eller type kaldes også datatypen. Når man erklærer eller konstruerer en variable, så reserverer vi en plads i computerens hukommelse, hvor variablens værdi opbevares.
+Man erklærer variabler ved at bruge nøgleordet **let **, <strong>var</strong> eller <strong>const</strong> i kombination med tildelingsoperatoren.  Helt overordnet vil en erklæring se således ud:</p>
+<p align="center">
+<b>let</b> <i>variablenavn</i> <b>=</b> <i>værdi</i><br>
+<b>var</b> <i>variablenavn</i> <b>=</b> <i>værdi</i><br>
+<b>const</b> <i>variablenavn</i> <b>=</b> <i>værdi</i>
+</p>
+Bemærk variablenavn skal erstattes med et navn, som du vælger. Det bør gerne være sigende for den værdi variablen skal indeholde. Værdien angives på højre side skal angives i stedet for værdi.
+Vi skal senere studere forskellen på brugen af let, var og const i detaljer. En væsentlig forskel er, at const ikke kan ændres i værdi eller erklæres på ny. Den er som nøgleordet antyder konstant. "let" blev introduceret i 2015 og er typisk den måde variabler erklæres på i moderne javascript. Ældre applikationer bruger dog stadig var og det kan nogle få gange være relevant at bruge. Men generelt er rådet at bruge let så meget som muligt, da det typisk reducerer risikoen for fejl. Vi vil derfor primært fokusere på at bruge let  forskellen på og hvorfor "let" er at foretrække.
+<p>Herunder nogle eksempler på erklæringer af forskellige variabler og initialiseringer af :</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">let</span> n = <span class="hljs-number">1</span>; <span class="hljs-comment">// variablen n peger nu på tallet 1 </span>
+<span class="hljs-keyword">var</span> m = <span class="hljs-number">2</span>; <span class="hljs-comment">// variablen n peger nu på tallet 2 </span>
+<span class="hljs-keyword">const</span> p = <span class="hljs-number">3</span> <span class="hljs-comment">// variablen p peger nu på tallet 3 og kan ikke ændres/erklæres på ny</span>
+<span class="hljs-keyword">let</span> s = <span class="hljs-string">&quot;Hej&quot;</span>; <span class="hljs-comment">// variablen s peger nu på teksten &quot;Hej&quot;</span>
+<span class="hljs-keyword">var</span> t = <span class="hljs-string">&quot;med dig&quot;</span>; <span class="hljs-comment">// variablen t peger nu på teksten &quot;Hej&quot;</span>
+<span class="hljs-keyword">const</span> r = <span class="hljs-string">&quot;Halløj&quot;</span>; <span class="hljs-comment">// variablen r peger nu på teksten &quot;Halløj&quot; og kan ikke ændres/erklæres på ny</span>
+</code></pre>
+<p>Disse eksempler illustrerer brugen af de tre nøgleord til at erklære og dermed konstruere nogle forskellige variable med forskellige værdier. Når vi nu bruger variablenavnene i en kontekst udgør de en pladsholder for den konkrete værdi, som vi har</p>
+<p>Der findes overordnet syv forskellige typer i javascript:</p>
+<p><img src="file:///c:\code\P5Programmering\kap3\images\data-types-in-python.png" alt="alt_text" title="Overblik over de forskellige datatyper i Javascript"></p>
+<p>I følgende kapitel vil vi primært fokusere på de primitive typer kaldet</p>
+<ul>
+<li>&quot;Number&quot;: Der består af heltal (integers på engelsk) og kommatal (floats på engelsk).</li>
+<li>&quot;String&quot;: Der består af strenge af tekst eller karakterer.</li>
+<li>&quot;Boolean&quot;: Der består af de boolske værdier true og false.</li>
+</ul>
+<p>Vi vender senere tilbage til de andre typer.</p>
+<p>Javascript er et såkaldt dynamisk typet sprog. Dvs. at du ikke på forhånd behøver at erklære hvilken type variablen skal have, hvilket typisk gøre det nemmere at  bruge sproget.
+Omvendt risikerer man at lave nogle fejl, som kan være svære at finde.</p>
+<p>Eksempel herunder hvor kommentaren angiver datatypen.</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">let</span> n = <span class="hljs-number">80</span>; <span class="hljs-comment">// Number - heltal/integer </span>
+<span class="hljs-keyword">let</span> s = <span class="hljs-string">&quot;Hej&quot;</span>; <span class="hljs-comment">// String - tekst </span>
+<span class="hljs-keyword">let</span> b = <span class="hljs-literal">true</span>; <span class="hljs-comment">// Boolean - boolsk</span>
+<span class="hljs-keyword">let</span> f = <span class="hljs-number">10.2</span>; <span class="hljs-comment">// Number - kommatal/float</span>
+</code></pre>
+<p>Er du i tvivl om en variables type kan du bruge kommandoen &quot;typeof()&quot;:</p>
+<pre><code class="language-javascript"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">typeof</span>(n)) <span class="hljs-comment">// Number - heltal/integer </span>
+</code></pre>
+<h2 id="primitive-typer-og-muterbarhed">Primitive typer og muterbarhed</h2>
+<p>Generelt kan vi sige om de primitive datatyper, at de er datatyper, som kun opbevarer en enkelt værdi. De er desuden &quot;ikke muterbare&quot;. I praksis betyder, at vi kan ikke ændre variablernes værdi.</p>
+<p>Lad os se et eksempel på det ved at betragte en streng variable:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">let</span> navn = <span class="hljs-string">&quot;Hemrik&quot;</span>
+</code></pre>
+<p>Der er tydeligvis en stavefejl i navnet. Vi kan heldigvis tilgå de enkelte elementer i navn ved at skrive &quot;[x]&quot; hvor x kan antage værdier fra 0 til og med 5, da første bogstaver står på plads 0 og der i alt er 6 bogstaver i strengen. Dvs.  hente de enkelte bogstaver ud af navnet således:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">let</span> navn = <span class="hljs-string">&quot;Hemrik&quot;</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(navn[<span class="hljs-number">0</span>]) <span class="hljs-comment">//printer &quot;H&quot;</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(navn[<span class="hljs-number">1</span>]) <span class="hljs-comment">//printer &quot;e&quot;</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(navn[<span class="hljs-number">2</span>]) <span class="hljs-comment">//printer &quot;m&quot;</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(navn[<span class="hljs-number">3</span>]) <span class="hljs-comment">//printer &quot;r&quot;</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(navn[<span class="hljs-number">4</span>]) <span class="hljs-comment">//printer &quot;i&quot;</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(navn[<span class="hljs-number">5</span>]) <span class="hljs-comment">//printer &quot;k&quot;</span>
+</code></pre>
+<p>Umiddelbart kunne vi måske prøve bare at tildele værdien på:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">let</span> navn = <span class="hljs-string">&quot;Hemrik&quot;</span>
+navn[<span class="hljs-number">2</span>]=<span class="hljs-string">&quot;n&quot;</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(navn) <span class="hljs-comment">//printer stadig &quot;Hemrik&quot;</span>
+</code></pre>
+<p>Hvis du prøver koden af vil du opdage, at der stadig printes &quot;Hemrik&quot;, hvilket altså skyldes at navn ikke lader sig ændre eller med et fint udtryk &quot;er immuterbar&quot;.</p>
+<p>Kan vi så overhovedet tildele navn en ny værdi? Svaret er ja, men det kan kun lade sig gøre ved at bruge tildelingsoperatoren &quot;=&quot; og ikke ved at ændre den eksisterende værdi. Herunder retter vi stavefejlen i navn:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">let</span> navn = <span class="hljs-string">&quot;Hemrik&quot;</span>
+navn=<span class="hljs-string">&quot;Henrik&quot;</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(navn) <span class="hljs-comment">//printer nu korrekt &quot;Henrik&quot;</span>
+</code></pre>
+<p>Bemærk altså at vi ikke muterer navn men i stedet tildeler den en ny værdi.</p>
+<p>Det leder frem til en vigtig pointe, som vi kort vil illustrere med følgende simple eksempel:</p>
+<pre><code class="language-javascript">  <span class="hljs-keyword">let</span> navn = <span class="hljs-string">&quot;Hemrik&quot;</span>;
+  <span class="hljs-keyword">let</span> navn2 = navn;
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(navn2)
+  navn = <span class="hljs-string">&quot;Henrik&quot;</span> + <span class="hljs-string">&quot; Sterner&quot;</span>;
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(navn2)
+</code></pre>
+<p>Hvad skrives mon ud i konsollen i de to tilfælde? I det første er det nok ikke så overraskende &quot;Henrik&quot; men det er det faktisk også i det andet tilfælde!</p>
+<p>Når vi tildeler variablen &quot;navn&quot; en ny værdi, så ændrer vi variablen, så den nu peger på strengværdien &quot;Henrik Sterner&quot;, hvorfor værdien af &quot;navn2&quot; ikke er påvirket.</p>
+<p>Man hører ofte metaforeren om variabler, som en slags container i form af en navngiven kasse eller spand med en konkret værdi. Det er et godt billede, når vi arbejder med statisk typede sprog, hvor vi erklærer typerne på forhånd, som det eksempelis er gjort herunder i java:</p>
+<pre><code class="language-java"><span class="hljs-type">int</span> <span class="hljs-variable">x</span> <span class="hljs-operator">=</span> <span class="hljs-number">6</span>; <span class="hljs-comment">//erklærer en heltalsvariable der rummer 6</span>
+</code></pre>
+<p>Men i dynamiske sprog som Javascript, er det bedre at tænke på variabler, som nogle størrelser der peger på en anden spand/kasse, som rummer værdien 6. Det har derfor heller ingen betydning i dynamiske sprog om vi eksempelvis lader x pege på et tal eller en streng, som det eksempelvis er tilfældet i følgende:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">let</span> x = <span class="hljs-number">6</span>
+x = <span class="hljs-string">&quot;Hej med dig&quot;</span>
+</code></pre>
+<h2 id="variablers-scope">Variablers scope</h2>
+<p>Variabler har et såkaldt scope eller sigte. Dvs. hvor de er tilgængelige i koden. Erklæres en variable indenfor eksempelvis <code>setup</code>  er den kun tilgængelig derinde. Omvendt kan man lave en global variable ved at erklære den udenfor metodernes kroppe:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">let</span> n = <span class="hljs-number">5</span>; <span class="hljs-comment">//global variable </span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">setup</span>(<span class="hljs-params"></span>){
+ <span class="hljs-keyword">let</span> x = <span class="hljs-number">7</span>; <span class="hljs-comment">//lokal variable </span>
+}
+</code></pre>
+<p>Hvis du ønsker at ændre værdien undervejs kan man overveje at bruge nøgleordet <code>var</code> i stedet for:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">var</span> a=<span class="hljs-number">1</span>;
+<span class="hljs-keyword">var</span> b=<span class="hljs-number">2</span>;
+<span class="hljs-keyword">if</span>(a===<span class="hljs-number">1</span>){
+ <span class="hljs-keyword">var</span> a=<span class="hljs-number">11</span>; <span class="hljs-comment">//scope er globalt</span>
+ <span class="hljs-keyword">let</span> b=<span class="hljs-number">22</span>; <span class="hljs-comment">//scope er indenfor if-blokken dvs. Krølparenteser</span>
+ <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a); <span class="hljs-comment">//11</span>
+ <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(b); <span class="hljs-comment">//22</span>
+}
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a); <span class="hljs-comment">//11</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(b); <span class="hljs-comment">//2</span>
+</code></pre>
+<p>Bruger vi &quot;let&quot; kan vi <b>ikke</b> redeklarere en eksisterende variable, hvis det sker indenfor de samme krølparenteser.
+Skriver vi eksempelvis følgende får vi en fejl:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">let</span> a= <span class="hljs-number">2</span>
+<span class="hljs-keyword">let</span> a= <span class="hljs-number">3</span>
+</code></pre>
+<p>Sætter vi den sidste erklæring i krølparenteser får den et lokalt sigte eller scope:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">let</span> a = <span class="hljs-number">2</span>
+{
+  <span class="hljs-keyword">let</span> a = <span class="hljs-number">3</span>
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a)
+}
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a)
+</code></pre>
+<p>Når vi printer her så vil resultatet være 3 og 2, da den sidste print vil refererer til den oprindelige værdi af a som var 2.</p>
+<p>Bruger vi &quot;var&quot; kan det godt lade sig gøre at erklære en variable igen:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">var</span> a= <span class="hljs-number">2</span>
+<span class="hljs-keyword">var</span> a= <span class="hljs-number">3</span>
+</code></pre>
+<p>Man kan dog overveje om det er en god ide.</p>
+<p>De vigtigste forskelle mellem let og var:</p>
+<ul>
+<li>
+<ol>
+<li><code>let</code> kan ikke bruges til at redeklarere en variable i samme krølparenteser. Det kan godt lade sig gøre med <code>var</code></li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Variabler deklareret med <code>let</code>  er kun tilgængelige indenfor den lukkede blok, som de er omgrænset af. Variabler, der er erklæret med <code>var</code> har et globalt scope og kan bruge overalt i en funktion</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>En variable deklareret med <code>let</code> skal deklareres før dens brug. Det er ikke nødvendigt med <code>var</code></li>
+</ol>
+</li>
+</ul>
+<p>Herunder nogle flere eksempler på brugen af <code>let</code> og <code>var</code>:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">var</span> carName = <span class="hljs-string">&quot;Volvo&quot;</span>;
+<span class="hljs-comment">// koden kan bruge carName</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">setup</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-comment">// kode her kan bruge carName</span>
+}
+</code></pre>
+<p>Havde vi erklæret carName inde i funktionen i setup, kunne vi ikke bruge den udenfor. Det samme gør sig dog ikke gældende hvis man laver en blok, som eksemplet herunder viser:</p>
+<pre><code class="language-javascript">{
+  <span class="hljs-keyword">var</span> x = <span class="hljs-number">2</span>;
+  <span class="hljs-keyword">let</span> y = <span class="hljs-number">2</span>;
+}
+<span class="hljs-comment">// x kan bruges her men y kan ikke bruges her</span>
+</code></pre>
+<p>Til at illustrere punkt 2 kommer her et eksempel:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">setup</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">let</span> a = <span class="hljs-string">&#x27;hej&#x27;</span>;
+
+    <span class="hljs-comment">// variable b kan ikke bruges her</span>
+    {
+        <span class="hljs-comment">// variable b kan bruges</span>
+        <span class="hljs-keyword">let</span> b = <span class="hljs-string">&#x27;verden&#x27;</span>;
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a + <span class="hljs-string">&#x27; &#x27;</span> + b);
+    }
+
+     <span class="hljs-comment">// variable b kan ikke bruges</span>
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a + <span class="hljs-string">&#x27; &#x27;</span> + b); <span class="hljs-comment">// giver en fejl</span>
+}
+<span class="hljs-comment">// variable a kan ikke bruges her</span>
+
+
+<span class="hljs-title class_">Som</span> vi nævnte før skal man passe på med at redeklarere variabler med <span class="hljs-string">&quot;var&quot;</span>, da det ofte forvirrer mere end det gavner. <span class="hljs-title class_">Pas</span> eksempelvis på med redeklarationer med **<span class="hljs-keyword">var</span>**, som eksemplet <span class="hljs-attr">illustrerer</span>:
+
+<span class="hljs-string">``</span><span class="hljs-string">`javascript
+var x = 10;
+// x er 10
+{
+  var x = 2;
+  // x er 2
+}
+// x er 2
+</span></code></pre>
+<p>Til forskel fra følgende:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">var</span> x = <span class="hljs-number">10</span>;
+<span class="hljs-comment">// x er 10</span>
+{
+  <span class="hljs-keyword">let</span> x = <span class="hljs-number">2</span>;
+  <span class="hljs-comment">// x er 2</span>
+}
+<span class="hljs-comment">// x er 10</span>
+</code></pre>
+<p>Det er ofte en god ide at undgå for mange globale variable. Prøv hellere at indlejre dem i setup eller draw ved brug af &quot;let&quot;-konstruktionen.</p>
+<h2 id="operationer-på-variable">Operationer på variable</h2>
+<p>Herunder en kort oversigt over de vigtigste operatorer.</p>
+<table>
+  <tr>
+   <td>=
+   </td>
+   <td>Tildeling
+   </td>
+  </tr>
+  <tr>
+   <td>+
+   </td>
+   <td>Addition (plus)
+   </td>
+  </tr>
+  <tr>
+   <td>-
+   </td>
+   <td>Subtraktion (minus)
+   </td>
+  </tr>
+  <tr>
+   <td>*
+   </td>
+   <td>Multiplikation (gange)
+   </td>
+  </tr>
+  <tr>
+   <td>**
+   </td>
+   <td>Eksponent (et tal x opløftet i y skrive x**y)
+   </td>
+  </tr>
+  <tr>
+   <td>/
+   </td>
+   <td>Division (deling)
+   </td>
+  </tr>
+  <tr>
+   <td>%
+   </td>
+   <td>Modulus (bestemmer resten af en division.)
+   </td>
+  </tr>
+  <tr>
+   <td>++
+   </td>
+   <td>Inkrementering (x++ betyder at man lægger en til x)
+   </td>
+  </tr>
+  <tr>
+   <td>--
+   </td>
+   <td>Dekrementering (x-- betyder at man trækker en fra x)
+   </td>
+  </tr>
+</table>
+<p>Her et eksempel på tildeling og addition</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">let</span> x = <span class="hljs-number">5</span>;         <span class="hljs-comment">// tildeler x værdien 5</span>
+<span class="hljs-keyword">let</span> y = <span class="hljs-number">2</span>+x;       <span class="hljs-comment">// tildeler y værdien af x adderet med 2</span>
+</code></pre>
+<p>Dernæst multiplikation:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">let</span> x = <span class="hljs-number">5</span>;
+<span class="hljs-keyword">let</span> y = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">let</span> z = x * y;
+</code></pre>
+<p>Man kan kombinere en lang række operationer:</p>
+<table>
+  <tr>
+   <td><strong>Operator</strong>
+   </td>
+   <td><strong>Eksempel</strong>
+   </td>
+   <td><strong>Det samme som</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>=
+   </td>
+   <td>x = y
+   </td>
+   <td>x = y
+   </td>
+  </tr>
+  <tr>
+   <td>+=
+   </td>
+   <td>x += y
+   </td>
+   <td>x = x + y
+   </td>
+  </tr>
+  <tr>
+   <td>-=
+   </td>
+   <td>x -= y
+   </td>
+   <td>x = x - y
+   </td>
+  </tr>
+  <tr>
+   <td>*=
+   </td>
+   <td>x *= y
+   </td>
+   <td>x = x * y
+   </td>
+  </tr>
+  <tr>
+   <td>/=
+   </td>
+   <td>x /= y
+   </td>
+   <td>x = x / y
+   </td>
+  </tr>
+  <tr>
+   <td>%=
+   </td>
+   <td>x %= y
+   </td>
+   <td>x = x % y
+   </td>
+  </tr>
+  <tr>
+   <td>**=
+   </td>
+   <td>x **= y
+   </td>
+   <td>x = x ** y
+   </td>
+  </tr>
+</table>
+<p>Særlig for tekst strenge betyder +, at man konkatinerer to tekststrenge. Dvs. kæder dem sammen:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">let</span> txt1 = <span class="hljs-string">&quot;John&quot;</span>;
+<span class="hljs-keyword">let</span> txt2 = <span class="hljs-string">&quot;Doe&quot;</span>;
+<span class="hljs-keyword">let</span> txt3 = txt1 + <span class="hljs-string">&quot; &quot;</span> + txt2;
+</code></pre>
+<h2 id="input-fra-mus">Input fra mus</h2>
+<p>Vi kan hente musens koordinater ved bruge af variablerne mouseX og mouseY, som er af typen heltal. De er prædefineret og starter altid med at være 0, når programmet indlæses:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">draw</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-title function_">background</span>(<span class="hljs-number">255</span>);
+  <span class="hljs-title function_">frameRate</span>(<span class="hljs-number">12</span>);
+  <span class="hljs-title function_">text</span>(<span class="hljs-string">&quot;X: &quot;</span>+mouseX, <span class="hljs-number">0</span>, height/<span class="hljs-number">4</span>);
+  <span class="hljs-title function_">text</span>(<span class="hljs-string">&quot;Y: &quot;</span>+mouseY, <span class="hljs-number">0</span>, height/<span class="hljs-number">2</span>);
+}
+</code></pre>
+<p>Vi benytter funktionen frameRate til at sikre, at draw ikke udføres for ofte. Det sker for at sikre, at den ikke overskriver vores to tekstfelter.</p>
+<p>Herunder tegner vi en hvid cirkel hvor musen er:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">setup</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-title function_">createCanvas</span>(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>);
+  <span class="hljs-title function_">noStroke</span>();
+}
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">draw</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-title function_">background</span>(<span class="hljs-number">126</span>);
+  <span class="hljs-title function_">ellipse</span>(mouseX, mouseY, <span class="hljs-number">33</span>, <span class="hljs-number">33</span>);
+}
+</code></pre>
+<p>Her tegner vi en linje efter musen. Holder vi musen stille er det bare en cirkel:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">setup</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-title function_">createCanvas</span>(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>);
+  <span class="hljs-title function_">strokeWeight</span>(<span class="hljs-number">8</span>);
+}
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">draw</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-title function_">background</span>(<span class="hljs-number">204</span>);
+  <span class="hljs-title function_">line</span>(mouseX, mouseY, pmouseX, pmouseY);
+}
+</code></pre>
+<p>Herunder skifter vi farve på et rektangel når vi klikker på den:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">setup</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-title function_">createCanvas</span>(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>);
+  <span class="hljs-title function_">noStroke</span>();
+  <span class="hljs-title function_">fill</span>(<span class="hljs-number">0</span>);
+}
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">draw</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-title function_">background</span>(<span class="hljs-number">204</span>);
+  <span class="hljs-keyword">if</span> (mouseIsPressed == <span class="hljs-literal">true</span>) {
+    <span class="hljs-title function_">fill</span>(<span class="hljs-number">255</span>); <span class="hljs-comment">// White</span>
+  }
+  <span class="hljs-keyword">else</span> {
+    <span class="hljs-title function_">fill</span>(<span class="hljs-number">0</span>);   <span class="hljs-comment">// Black</span>
+  }
+  <span class="hljs-title function_">rect</span>(<span class="hljs-number">25</span>, <span class="hljs-number">25</span>, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>);
+}
+</code></pre>
+<p>Centralt er <code>if (mouseIsPressed == true) </code>, som betyder, at vi undersøger om musen er trykket ellers gør vi noget andet. Vi vender tilbage til den såkaldte betinget udførsel (if-else) i næste modul.</p>
+<p>Vi kender forskel på højre og venstre museklik ved følgende:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">setup</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-title function_">createCanvas</span>(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>);
+  <span class="hljs-title function_">noStroke</span>();
+  <span class="hljs-title function_">fill</span>(<span class="hljs-number">0</span>);
+}
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">draw</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-title function_">background</span>(<span class="hljs-number">204</span>);
+  <span class="hljs-keyword">if</span> (mouseIsPressed == <span class="hljs-literal">true</span>) {
+    <span class="hljs-keyword">if</span> (mouseButton == <span class="hljs-variable constant_">LEFT</span>) {
+      <span class="hljs-title function_">fill</span>(<span class="hljs-number">0</span>);   <span class="hljs-comment">// sort</span>
+    }
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (mouseButton == <span class="hljs-variable constant_">RIGHT</span>) {
+      <span class="hljs-title function_">fill</span>(<span class="hljs-number">255</span>); <span class="hljs-comment">// hvid</span>
+    }
+  }
+  <span class="hljs-keyword">else</span> {
+    <span class="hljs-title function_">fill</span>(<span class="hljs-number">126</span>);   <span class="hljs-comment">// grå</span>
+  }
+  <span class="hljs-title function_">rect</span>(<span class="hljs-number">40</span>, <span class="hljs-number">20</span>, <span class="hljs-number">40</span>, <span class="hljs-number">60</span>);
+}
+</code></pre>
+<p>Som nævnt vender vi lige straks tilbage til 'if' og 'else if', men forhåbentlig giver det god mening, at vi tjekker først om musen er trykket og hvis det er tilfældet, undersøger vi om det er højre eller venstre. Prøv meget gerne koden af selv.</p>
+<h2 id="input-fra-keyboard">Input fra keyboard</h2>
+<p>Herunder et eksempel på hvordan et rektangel farvelægges forskelligt når man registrerer om der trykkes pil op eller ned:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">let</span> fillVal = <span class="hljs-number">126</span>;
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">draw</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-title function_">fill</span>(fillVal);
+  <span class="hljs-title function_">rect</span>(<span class="hljs-number">25</span>, <span class="hljs-number">25</span>, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>);
+  <span class="hljs-keyword">if</span> (keyCode === <span class="hljs-variable constant_">UP_ARROW</span>) {
+    fillVal = <span class="hljs-number">255</span>;
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (keyCode === <span class="hljs-variable constant_">DOWN_ARROW</span>) {
+    fillVal = <span class="hljs-number">0</span>;
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+}
+</code></pre>
+<p>Hver tast har sin egen keycode, som man kan finde på følgende side: <a href="http://keycode.info/">http://keycode.info/</a>.</p>
+<h2 id="øvelser">Øvelser</h2>
+<p>Herunder følger en række øvelser. Lav som minimum øvelserne 1. til 16.</p>
+<ol>
+<li>Som nævnt kan du hente finde musens position ved brug af variablerne <code>mouseX</code> og <code>mouseY</code>. Skriv noget kode, der printer musens position ud i konsollen. Du skal inddrage følgende to streng variabler i den tekst du udskriver:</li>
+</ol>
+<pre><code class="language-javascript"><span class="hljs-keyword">let</span> musPosX = <span class="hljs-string">&quot;Din mus x-koordinat er givet ved &quot;</span>
+<span class="hljs-keyword">let</span> musPosY = <span class="hljs-string">&quot;Din mus y-koordinat er givet ved &quot;</span>
+</code></pre>
+<ol start="2">
+<li>Udover musens position i den nuværende frame kan du også få musens position i den foregående frame ved brug af <code>pmouseX</code> og <code>pmouseY</code>. Udvid dit program så du også udskriver <code>x</code> og <code>y</code> fra den foregående frame.</li>
+<li>Beregn nu hastigheden i x-retningen og i y-retningen ved at udskrive forskellen mellem <code>x</code>-værdierne og tilsvarende med <code>y</code>-værdierne.</li>
+<li>Beregn et udtryk for farten af din mus ved at bruge formlen:<section><eqn><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msqrt><mrow><mo stretchy="false">(</mo><mi>m</mi><mi>o</mi><mi>u</mi><mi>s</mi><mi>e</mi><mi>X</mi><mo>−</mo><mi>p</mi><mi>m</mi><mi>o</mi><mi>u</mi><mi>s</mi><mi>e</mi><mi>X</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>+</mo><mo stretchy="false">(</mo><mi>m</mi><mi>o</mi><mi>u</mi><mi>s</mi><mi>e</mi><mi>X</mi><mo>−</mo><mi>p</mi><mi>m</mi><mi>o</mi><mi>u</mi><mi>s</mi><mi>e</mi><mi>X</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow></msqrt><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\sqrt{(mouseX-pmouseX)^2 + (mouseX-pmouseX)^2}.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.24em;vertical-align:-0.25612499999999994em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.983875em;"><span class="svg-align" style="top:-3.2em;"><span class="pstrut" style="height:3.2em;"></span><span class="mord" style="padding-left:1em;"><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">u</span><span class="mord mathnormal">se</span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathnormal">p</span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">u</span><span class="mord mathnormal">se</span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">u</span><span class="mord mathnormal">se</span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathnormal">p</span><span class="mord mathnormal">m</span><span class="mord mathnormal">o</span><span class="mord mathnormal">u</span><span class="mord mathnormal">se</span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-2.9438750000000002em;"><span class="pstrut" style="height:3.2em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.28em;"><svg width='400em' height='1.28em' viewBox='0 0 400000 1296' preserveAspectRatio='xMinYMin slice'><path d='M263,681c0.7,0,18,39.7,52,119
+c34,79.3,68.167,158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120
+c340,-704.7,510.7,-1060.3,512,-1067
+l0 -0
+c4.7,-7.3,11,-11,19,-11
+H40000v40H1012.3
+s-271.3,567,-271.3,567c-38.7,80.7,-84,175,-136,283c-52,108,-89.167,185.3,-111.5,232
+c-22.3,46.7,-33.8,70.3,-34.5,71c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1
+s-109,-253,-109,-253c-72.7,-168,-109.3,-252,-110,-252c-10.7,8,-22,16.7,-34,26
+c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26s76,-59,76,-59s76,-60,76,-60z
+M1001 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.25612499999999994em;"><span></span></span></span></span></span><span class="mord">.</span></span></span></span></span></eqn></section></math>
+</li>
+<li>Definerer to variable x og y og sæt den lig med hhv. 5 og 3. Brug nu javascript til at beregne summen, differencen, multiplikationen og divisionen af de to samt find resten ved divisionen.</li>
+<li>Hvad bliver x og y i slutningen af hver instruktion? Kommenter koden og forklar hvad variablen resultat er efter hver operation. Brug evt console.log til at finde svaret.</li>
+</ol>
+<pre><code class="language-javascript"><span class="hljs-keyword">let</span> x = <span class="hljs-number">5</span>
+<span class="hljs-keyword">let</span> y = <span class="hljs-number">7</span>
+<span class="hljs-keyword">let</span> resultat
+resultat=--x;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(resultat)
+resultat=x++;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(resultat)
+resultat=y*(x++);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(resultat)
+resultat=x**((y--)-<span class="hljs-number">4</span>)
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(resultat)
+resultat+=(resultat%(x**<span class="hljs-number">2</span>))
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(resultat)
+</code></pre>
+<ol start="7">
+<li>Lav et program der tegner en cirkel alle de steder du bevæger musen hen.</li>
+<li>Lav et program, der tegner en cirkel når du klikker med venstre mus og et rektangel med højre mus.</li>
+<li>I det følgende nogle boolske udtryk. Overvej typerne af variablerne og udtrykkene herunder. Hvad mon der printes i konsollen?:</li>
+</ol>
+<pre><code class="language-javascript">x=<span class="hljs-number">12</span>
+y=<span class="hljs-number">12.5</span>
+s=<span class="hljs-string">&quot;Hej&quot;</span>
+t=<span class="hljs-string">&quot;12.5&quot;</span>
+b=<span class="hljs-literal">true</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">typeof</span>(x))
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">typeof</span>(y))
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">typeof</span>(s))
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">typeof</span>(t))
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">typeof</span>(b))
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">typeof</span>(x+y))
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">typeof</span>(s+t))
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">typeof</span>(x+t))
+</code></pre>
+<ol start="10">
+<li>Lav et simpelt tegneprogram der tegner en streg efter musens bevægelse</li>
+<li>Lav et program, der tegner en firkant hvis du trykker f, en cirkel hvis du trykker c eller en ellipse hvis du trykker e.</li>
+<li>Lav et program, der tegner en firkant hvor musen er.</li>
+<li>Hvad gør følgende kode:</li>
+</ol>
+<pre><code class="language-javascript"><span class="hljs-keyword">var</span> x = <span class="hljs-number">200</span>;
+<span class="hljs-keyword">var</span> y = <span class="hljs-number">200</span>;
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">setup</span>(<span class="hljs-params"></span>) { 
+  <span class="hljs-title function_">createCanvas</span>(<span class="hljs-number">400</span>, <span class="hljs-number">400</span>);
+} 
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">draw</span>(<span class="hljs-params"></span>) { 
+  <span class="hljs-title function_">background</span>(<span class="hljs-number">220</span>);
+  <span class="hljs-title function_">fill</span>(<span class="hljs-number">0</span>);
+  <span class="hljs-title function_">ellipse</span>(x,y,<span class="hljs-number">50</span>,<span class="hljs-number">50</span>);   
+  <span class="hljs-keyword">if</span> (x &gt;= <span class="hljs-number">400</span>){
+   x = <span class="hljs-number">0</span>; 
+  }
+  <span class="hljs-keyword">if</span> (keyCode === <span class="hljs-variable constant_">UP_ARROW</span>) {
+    y = y - <span class="hljs-number">1</span>;
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (keyCode === <span class="hljs-variable constant_">DOWN_ARROW</span>) {
+   y = y + <span class="hljs-number">1</span>;
+  }
+  <span class="hljs-keyword">if</span> (keyCode === <span class="hljs-variable constant_">LEFT_ARROW</span>) {
+    x = x - <span class="hljs-number">1</span>;
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (keyCode === <span class="hljs-variable constant_">RIGHT_ARROW</span>) {
+    x = x + <span class="hljs-number">1</span>;
+  }
+}
+</code></pre>
+<ol start="14">
+<li>Forklar hvad følgende kode gør:</li>
+</ol>
+<pre><code class="language-javascript"><span class="hljs-keyword">let</span> x; 
+<span class="hljs-keyword">let</span> y; 
+<span class="hljs-keyword">let</span> xspeed; 
+<span class="hljs-keyword">let</span> yspeed; 
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">setup</span>(<span class="hljs-params"></span>) { 
+  <span class="hljs-title function_">createCanvas</span>(<span class="hljs-number">400</span>, <span class="hljs-number">400</span>);
+  x = width/<span class="hljs-number">2</span>
+  y = height/<span class="hljs-number">2</span>
+  xspeed = -<span class="hljs-number">1</span>; 
+  yspeed = <span class="hljs-number">0.5</span>*xspeed; 
+} 
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">draw</span>(<span class="hljs-params"></span>) { 
+  <span class="hljs-title function_">background</span>(<span class="hljs-number">220</span>);
+  <span class="hljs-title function_">ellipse</span>(x, y, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>); 
+  x+=xspeed; 
+  y+=yspeed; 
+}
+</code></pre>
+<ol start="15">
+<li>Prøv at udvide 7 så cirklen ikke kan bevæge sig ud af skærmen og bagefter, at man kan klikke et sted på skærmen med musen og så følger cirklen det punkt.</li>
+<li>Lav to cirkler og sæt dem i fart i en given retning. Undersøg om de kolliderer med hinanden.</li>
+<li>Konstruer en vandret linje der bevæger sig op og ned af skærmen. Når den når toppen af skærmen bevæger den sig nedad. Og omvendt.</li>
+<li>Konstruer en lodret linje, der bevæger sig til højre og venstre. Når den når højre side bevæger den sig tilbage mod venstre side. Og omvendt.</li>
+</ol>
+<h2 id="projekt-algoritmisk-kunst">Projekt: Algoritmisk kunst</h2>
+<p>I det følgende skal vi udvikle noget algoritmisk kunst, der er kendetegnet ved at følge regler som kan formaliseres i instruktioner der kan implementeres i et programmeringssprog.</p>
+<p>På følgende link kan I se en lang række eksempler:</p>
+<p><a href="http://www.generative-gestaltung.de/2/">http://www.generative-gestaltung.de/2/</a></p>
+<ol>
+<li>Udvælg et eksempel og kig på koden bag. Prøv at forstå hvad koden gør og sæt kommentarer på.</li>
+<li>Lav din egen algoritmiske kunst ved først at formulere kunsten i almindelig prosa, listeform, pseudokode eller lignende.</li>
+<li>Prøv at implementere den i P5. Husk at kommentere koden.</li>
+<li>Overvej om algoritmisk kunst er rigtig kunst.</li>
+</ol>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </body>
+    </html>

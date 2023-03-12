@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>12&period; Dokumentation og kravspecifikation</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension goessner.mdmath */
+@font-face{font-family:KaTeX_AMS;font-style:normal;font-weight:400;src:url(fonts/KaTeX_AMS-Regular.woff2) format("woff2"),url(fonts/KaTeX_AMS-Regular.woff) format("woff"),url(fonts/KaTeX_AMS-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Caligraphic;font-style:normal;font-weight:700;src:url(fonts/KaTeX_Caligraphic-Bold.woff2) format("woff2"),url(fonts/KaTeX_Caligraphic-Bold.woff) format("woff"),url(fonts/KaTeX_Caligraphic-Bold.ttf) format("truetype")}@font-face{font-family:KaTeX_Caligraphic;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Caligraphic-Regular.woff2) format("woff2"),url(fonts/KaTeX_Caligraphic-Regular.woff) format("woff"),url(fonts/KaTeX_Caligraphic-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Fraktur;font-style:normal;font-weight:700;src:url(fonts/KaTeX_Fraktur-Bold.woff2) format("woff2"),url(fonts/KaTeX_Fraktur-Bold.woff) format("woff"),url(fonts/KaTeX_Fraktur-Bold.ttf) format("truetype")}@font-face{font-family:KaTeX_Fraktur;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Fraktur-Regular.woff2) format("woff2"),url(fonts/KaTeX_Fraktur-Regular.woff) format("woff"),url(fonts/KaTeX_Fraktur-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Main;font-style:normal;font-weight:700;src:url(fonts/KaTeX_Main-Bold.woff2) format("woff2"),url(fonts/KaTeX_Main-Bold.woff) format("woff"),url(fonts/KaTeX_Main-Bold.ttf) format("truetype")}@font-face{font-family:KaTeX_Main;font-style:italic;font-weight:700;src:url(fonts/KaTeX_Main-BoldItalic.woff2) format("woff2"),url(fonts/KaTeX_Main-BoldItalic.woff) format("woff"),url(fonts/KaTeX_Main-BoldItalic.ttf) format("truetype")}@font-face{font-family:KaTeX_Main;font-style:italic;font-weight:400;src:url(fonts/KaTeX_Main-Italic.woff2) format("woff2"),url(fonts/KaTeX_Main-Italic.woff) format("woff"),url(fonts/KaTeX_Main-Italic.ttf) format("truetype")}@font-face{font-family:KaTeX_Main;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Main-Regular.woff2) format("woff2"),url(fonts/KaTeX_Main-Regular.woff) format("woff"),url(fonts/KaTeX_Main-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Math;font-style:italic;font-weight:700;src:url(fonts/KaTeX_Math-BoldItalic.woff2) format("woff2"),url(fonts/KaTeX_Math-BoldItalic.woff) format("woff"),url(fonts/KaTeX_Math-BoldItalic.ttf) format("truetype")}@font-face{font-family:KaTeX_Math;font-style:italic;font-weight:400;src:url(fonts/KaTeX_Math-Italic.woff2) format("woff2"),url(fonts/KaTeX_Math-Italic.woff) format("woff"),url(fonts/KaTeX_Math-Italic.ttf) format("truetype")}@font-face{font-family:"KaTeX_SansSerif";font-style:normal;font-weight:700;src:url(fonts/KaTeX_SansSerif-Bold.woff2) format("woff2"),url(fonts/KaTeX_SansSerif-Bold.woff) format("woff"),url(fonts/KaTeX_SansSerif-Bold.ttf) format("truetype")}@font-face{font-family:"KaTeX_SansSerif";font-style:italic;font-weight:400;src:url(fonts/KaTeX_SansSerif-Italic.woff2) format("woff2"),url(fonts/KaTeX_SansSerif-Italic.woff) format("woff"),url(fonts/KaTeX_SansSerif-Italic.ttf) format("truetype")}@font-face{font-family:"KaTeX_SansSerif";font-style:normal;font-weight:400;src:url(fonts/KaTeX_SansSerif-Regular.woff2) format("woff2"),url(fonts/KaTeX_SansSerif-Regular.woff) format("woff"),url(fonts/KaTeX_SansSerif-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Script;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Script-Regular.woff2) format("woff2"),url(fonts/KaTeX_Script-Regular.woff) format("woff"),url(fonts/KaTeX_Script-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Size1;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Size1-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size1-Regular.woff) format("woff"),url(fonts/KaTeX_Size1-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Size2;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Size2-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size2-Regular.woff) format("woff"),url(fonts/KaTeX_Size2-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Size3;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Size3-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size3-Regular.woff) format("woff"),url(fonts/KaTeX_Size3-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Size4;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Size4-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size4-Regular.woff) format("woff"),url(fonts/KaTeX_Size4-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Typewriter;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Typewriter-Regular.woff2) format("woff2"),url(fonts/KaTeX_Typewriter-Regular.woff) format("woff"),url(fonts/KaTeX_Typewriter-Regular.ttf) format("truetype")}.katex{font:normal 1.21em KaTeX_Main,Times New Roman,serif;line-height:1.2;text-indent:0;text-rendering:auto}.katex *{-ms-high-contrast-adjust:none!important;border-color:currentColor}.katex .katex-version:after{content:"0.13.11"}.katex .katex-mathml{clip:rect(1px,1px,1px,1px);border:0;height:1px;overflow:hidden;padding:0;position:absolute;width:1px}.katex .katex-html>.newline{display:block}.katex .base{position:relative;white-space:nowrap;width:-webkit-min-content;width:-moz-min-content;width:min-content}.katex .base,.katex .strut{display:inline-block}.katex .textbf{font-weight:700}.katex .textit{font-style:italic}.katex .textrm{font-family:KaTeX_Main}.katex .textsf{font-family:KaTeX_SansSerif}.katex .texttt{font-family:KaTeX_Typewriter}.katex .mathnormal{font-family:KaTeX_Math;font-style:italic}.katex .mathit{font-family:KaTeX_Main;font-style:italic}.katex .mathrm{font-style:normal}.katex .mathbf{font-family:KaTeX_Main;font-weight:700}.katex .boldsymbol{font-family:KaTeX_Math;font-style:italic;font-weight:700}.katex .amsrm,.katex .mathbb,.katex .textbb{font-family:KaTeX_AMS}.katex .mathcal{font-family:KaTeX_Caligraphic}.katex .mathfrak,.katex .textfrak{font-family:KaTeX_Fraktur}.katex .mathtt{font-family:KaTeX_Typewriter}.katex .mathscr,.katex .textscr{font-family:KaTeX_Script}.katex .mathsf,.katex .textsf{font-family:KaTeX_SansSerif}.katex .mathboldsf,.katex .textboldsf{font-family:KaTeX_SansSerif;font-weight:700}.katex .mathitsf,.katex .textitsf{font-family:KaTeX_SansSerif;font-style:italic}.katex .mainrm{font-family:KaTeX_Main;font-style:normal}.katex .vlist-t{border-collapse:collapse;display:inline-table;table-layout:fixed}.katex .vlist-r{display:table-row}.katex .vlist{display:table-cell;position:relative;vertical-align:bottom}.katex .vlist>span{display:block;height:0;position:relative}.katex .vlist>span>span{display:inline-block}.katex .vlist>span>.pstrut{overflow:hidden;width:0}.katex .vlist-t2{margin-right:-2px}.katex .vlist-s{display:table-cell;font-size:1px;min-width:2px;vertical-align:bottom;width:2px}.katex .vbox{-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-box-align:baseline;align-items:baseline;display:-webkit-inline-box;display:inline-flex;flex-direction:column}.katex .hbox{width:100%}.katex .hbox,.katex .thinbox{-webkit-box-orient:horizontal;-webkit-box-direction:normal;display:-webkit-inline-box;display:inline-flex;flex-direction:row}.katex .thinbox{max-width:0;width:0}.katex .msupsub{text-align:left}.katex .mfrac>span>span{text-align:center}.katex .mfrac .frac-line{border-bottom-style:solid;display:inline-block;width:100%}.katex .hdashline,.katex .hline,.katex .mfrac .frac-line,.katex .overline .overline-line,.katex .rule,.katex .underline .underline-line{min-height:1px}.katex .mspace{display:inline-block}.katex .clap,.katex .llap,.katex .rlap{position:relative;width:0}.katex .clap>.inner,.katex .llap>.inner,.katex .rlap>.inner{position:absolute}.katex .clap>.fix,.katex .llap>.fix,.katex .rlap>.fix{display:inline-block}.katex .llap>.inner{right:0}.katex .clap>.inner,.katex .rlap>.inner{left:0}.katex .clap>.inner>span{margin-left:-50%;margin-right:50%}.katex .rule{border:0 solid;display:inline-block;position:relative}.katex .hline,.katex .overline .overline-line,.katex .underline .underline-line{border-bottom-style:solid;display:inline-block;width:100%}.katex .hdashline{border-bottom-style:dashed;display:inline-block;width:100%}.katex .sqrt>.root{margin-left:.27777778em;margin-right:-.55555556em}.katex .fontsize-ensurer.reset-size1.size1,.katex .sizing.reset-size1.size1{font-size:1em}.katex .fontsize-ensurer.reset-size1.size2,.katex .sizing.reset-size1.size2{font-size:1.2em}.katex .fontsize-ensurer.reset-size1.size3,.katex .sizing.reset-size1.size3{font-size:1.4em}.katex .fontsize-ensurer.reset-size1.size4,.katex .sizing.reset-size1.size4{font-size:1.6em}.katex .fontsize-ensurer.reset-size1.size5,.katex .sizing.reset-size1.size5{font-size:1.8em}.katex .fontsize-ensurer.reset-size1.size6,.katex .sizing.reset-size1.size6{font-size:2em}.katex .fontsize-ensurer.reset-size1.size7,.katex .sizing.reset-size1.size7{font-size:2.4em}.katex .fontsize-ensurer.reset-size1.size8,.katex .sizing.reset-size1.size8{font-size:2.88em}.katex .fontsize-ensurer.reset-size1.size9,.katex .sizing.reset-size1.size9{font-size:3.456em}.katex .fontsize-ensurer.reset-size1.size10,.katex .sizing.reset-size1.size10{font-size:4.148em}.katex .fontsize-ensurer.reset-size1.size11,.katex .sizing.reset-size1.size11{font-size:4.976em}.katex .fontsize-ensurer.reset-size2.size1,.katex .sizing.reset-size2.size1{font-size:.83333333em}.katex .fontsize-ensurer.reset-size2.size2,.katex .sizing.reset-size2.size2{font-size:1em}.katex .fontsize-ensurer.reset-size2.size3,.katex .sizing.reset-size2.size3{font-size:1.16666667em}.katex .fontsize-ensurer.reset-size2.size4,.katex .sizing.reset-size2.size4{font-size:1.33333333em}.katex .fontsize-ensurer.reset-size2.size5,.katex .sizing.reset-size2.size5{font-size:1.5em}.katex .fontsize-ensurer.reset-size2.size6,.katex .sizing.reset-size2.size6{font-size:1.66666667em}.katex .fontsize-ensurer.reset-size2.size7,.katex .sizing.reset-size2.size7{font-size:2em}.katex .fontsize-ensurer.reset-size2.size8,.katex .sizing.reset-size2.size8{font-size:2.4em}.katex .fontsize-ensurer.reset-size2.size9,.katex .sizing.reset-size2.size9{font-size:2.88em}.katex .fontsize-ensurer.reset-size2.size10,.katex .sizing.reset-size2.size10{font-size:3.45666667em}.katex .fontsize-ensurer.reset-size2.size11,.katex .sizing.reset-size2.size11{font-size:4.14666667em}.katex .fontsize-ensurer.reset-size3.size1,.katex .sizing.reset-size3.size1{font-size:.71428571em}.katex .fontsize-ensurer.reset-size3.size2,.katex .sizing.reset-size3.size2{font-size:.85714286em}.katex .fontsize-ensurer.reset-size3.size3,.katex .sizing.reset-size3.size3{font-size:1em}.katex .fontsize-ensurer.reset-size3.size4,.katex .sizing.reset-size3.size4{font-size:1.14285714em}.katex .fontsize-ensurer.reset-size3.size5,.katex .sizing.reset-size3.size5{font-size:1.28571429em}.katex .fontsize-ensurer.reset-size3.size6,.katex .sizing.reset-size3.size6{font-size:1.42857143em}.katex .fontsize-ensurer.reset-size3.size7,.katex .sizing.reset-size3.size7{font-size:1.71428571em}.katex .fontsize-ensurer.reset-size3.size8,.katex .sizing.reset-size3.size8{font-size:2.05714286em}.katex .fontsize-ensurer.reset-size3.size9,.katex .sizing.reset-size3.size9{font-size:2.46857143em}.katex .fontsize-ensurer.reset-size3.size10,.katex .sizing.reset-size3.size10{font-size:2.96285714em}.katex .fontsize-ensurer.reset-size3.size11,.katex .sizing.reset-size3.size11{font-size:3.55428571em}.katex .fontsize-ensurer.reset-size4.size1,.katex .sizing.reset-size4.size1{font-size:.625em}.katex .fontsize-ensurer.reset-size4.size2,.katex .sizing.reset-size4.size2{font-size:.75em}.katex .fontsize-ensurer.reset-size4.size3,.katex .sizing.reset-size4.size3{font-size:.875em}.katex .fontsize-ensurer.reset-size4.size4,.katex .sizing.reset-size4.size4{font-size:1em}.katex .fontsize-ensurer.reset-size4.size5,.katex .sizing.reset-size4.size5{font-size:1.125em}.katex .fontsize-ensurer.reset-size4.size6,.katex .sizing.reset-size4.size6{font-size:1.25em}.katex .fontsize-ensurer.reset-size4.size7,.katex .sizing.reset-size4.size7{font-size:1.5em}.katex .fontsize-ensurer.reset-size4.size8,.katex .sizing.reset-size4.size8{font-size:1.8em}.katex .fontsize-ensurer.reset-size4.size9,.katex .sizing.reset-size4.size9{font-size:2.16em}.katex .fontsize-ensurer.reset-size4.size10,.katex .sizing.reset-size4.size10{font-size:2.5925em}.katex .fontsize-ensurer.reset-size4.size11,.katex .sizing.reset-size4.size11{font-size:3.11em}.katex .fontsize-ensurer.reset-size5.size1,.katex .sizing.reset-size5.size1{font-size:.55555556em}.katex .fontsize-ensurer.reset-size5.size2,.katex .sizing.reset-size5.size2{font-size:.66666667em}.katex .fontsize-ensurer.reset-size5.size3,.katex .sizing.reset-size5.size3{font-size:.77777778em}.katex .fontsize-ensurer.reset-size5.size4,.katex .sizing.reset-size5.size4{font-size:.88888889em}.katex .fontsize-ensurer.reset-size5.size5,.katex .sizing.reset-size5.size5{font-size:1em}.katex .fontsize-ensurer.reset-size5.size6,.katex .sizing.reset-size5.size6{font-size:1.11111111em}.katex .fontsize-ensurer.reset-size5.size7,.katex .sizing.reset-size5.size7{font-size:1.33333333em}.katex .fontsize-ensurer.reset-size5.size8,.katex .sizing.reset-size5.size8{font-size:1.6em}.katex .fontsize-ensurer.reset-size5.size9,.katex .sizing.reset-size5.size9{font-size:1.92em}.katex .fontsize-ensurer.reset-size5.size10,.katex .sizing.reset-size5.size10{font-size:2.30444444em}.katex .fontsize-ensurer.reset-size5.size11,.katex .sizing.reset-size5.size11{font-size:2.76444444em}.katex .fontsize-ensurer.reset-size6.size1,.katex .sizing.reset-size6.size1{font-size:.5em}.katex .fontsize-ensurer.reset-size6.size2,.katex .sizing.reset-size6.size2{font-size:.6em}.katex .fontsize-ensurer.reset-size6.size3,.katex .sizing.reset-size6.size3{font-size:.7em}.katex .fontsize-ensurer.reset-size6.size4,.katex .sizing.reset-size6.size4{font-size:.8em}.katex .fontsize-ensurer.reset-size6.size5,.katex .sizing.reset-size6.size5{font-size:.9em}.katex .fontsize-ensurer.reset-size6.size6,.katex .sizing.reset-size6.size6{font-size:1em}.katex .fontsize-ensurer.reset-size6.size7,.katex .sizing.reset-size6.size7{font-size:1.2em}.katex .fontsize-ensurer.reset-size6.size8,.katex .sizing.reset-size6.size8{font-size:1.44em}.katex .fontsize-ensurer.reset-size6.size9,.katex .sizing.reset-size6.size9{font-size:1.728em}.katex .fontsize-ensurer.reset-size6.size10,.katex .sizing.reset-size6.size10{font-size:2.074em}.katex .fontsize-ensurer.reset-size6.size11,.katex .sizing.reset-size6.size11{font-size:2.488em}.katex .fontsize-ensurer.reset-size7.size1,.katex .sizing.reset-size7.size1{font-size:.41666667em}.katex .fontsize-ensurer.reset-size7.size2,.katex .sizing.reset-size7.size2{font-size:.5em}.katex .fontsize-ensurer.reset-size7.size3,.katex .sizing.reset-size7.size3{font-size:.58333333em}.katex .fontsize-ensurer.reset-size7.size4,.katex .sizing.reset-size7.size4{font-size:.66666667em}.katex .fontsize-ensurer.reset-size7.size5,.katex .sizing.reset-size7.size5{font-size:.75em}.katex .fontsize-ensurer.reset-size7.size6,.katex .sizing.reset-size7.size6{font-size:.83333333em}.katex .fontsize-ensurer.reset-size7.size7,.katex .sizing.reset-size7.size7{font-size:1em}.katex .fontsize-ensurer.reset-size7.size8,.katex .sizing.reset-size7.size8{font-size:1.2em}.katex .fontsize-ensurer.reset-size7.size9,.katex .sizing.reset-size7.size9{font-size:1.44em}.katex .fontsize-ensurer.reset-size7.size10,.katex .sizing.reset-size7.size10{font-size:1.72833333em}.katex .fontsize-ensurer.reset-size7.size11,.katex .sizing.reset-size7.size11{font-size:2.07333333em}.katex .fontsize-ensurer.reset-size8.size1,.katex .sizing.reset-size8.size1{font-size:.34722222em}.katex .fontsize-ensurer.reset-size8.size2,.katex .sizing.reset-size8.size2{font-size:.41666667em}.katex .fontsize-ensurer.reset-size8.size3,.katex .sizing.reset-size8.size3{font-size:.48611111em}.katex .fontsize-ensurer.reset-size8.size4,.katex .sizing.reset-size8.size4{font-size:.55555556em}.katex .fontsize-ensurer.reset-size8.size5,.katex .sizing.reset-size8.size5{font-size:.625em}.katex .fontsize-ensurer.reset-size8.size6,.katex .sizing.reset-size8.size6{font-size:.69444444em}.katex .fontsize-ensurer.reset-size8.size7,.katex .sizing.reset-size8.size7{font-size:.83333333em}.katex .fontsize-ensurer.reset-size8.size8,.katex .sizing.reset-size8.size8{font-size:1em}.katex .fontsize-ensurer.reset-size8.size9,.katex .sizing.reset-size8.size9{font-size:1.2em}.katex .fontsize-ensurer.reset-size8.size10,.katex .sizing.reset-size8.size10{font-size:1.44027778em}.katex .fontsize-ensurer.reset-size8.size11,.katex .sizing.reset-size8.size11{font-size:1.72777778em}.katex .fontsize-ensurer.reset-size9.size1,.katex .sizing.reset-size9.size1{font-size:.28935185em}.katex .fontsize-ensurer.reset-size9.size2,.katex .sizing.reset-size9.size2{font-size:.34722222em}.katex .fontsize-ensurer.reset-size9.size3,.katex .sizing.reset-size9.size3{font-size:.40509259em}.katex .fontsize-ensurer.reset-size9.size4,.katex .sizing.reset-size9.size4{font-size:.46296296em}.katex .fontsize-ensurer.reset-size9.size5,.katex .sizing.reset-size9.size5{font-size:.52083333em}.katex .fontsize-ensurer.reset-size9.size6,.katex .sizing.reset-size9.size6{font-size:.5787037em}.katex .fontsize-ensurer.reset-size9.size7,.katex .sizing.reset-size9.size7{font-size:.69444444em}.katex .fontsize-ensurer.reset-size9.size8,.katex .sizing.reset-size9.size8{font-size:.83333333em}.katex .fontsize-ensurer.reset-size9.size9,.katex .sizing.reset-size9.size9{font-size:1em}.katex .fontsize-ensurer.reset-size9.size10,.katex .sizing.reset-size9.size10{font-size:1.20023148em}.katex .fontsize-ensurer.reset-size9.size11,.katex .sizing.reset-size9.size11{font-size:1.43981481em}.katex .fontsize-ensurer.reset-size10.size1,.katex .sizing.reset-size10.size1{font-size:.24108004em}.katex .fontsize-ensurer.reset-size10.size2,.katex .sizing.reset-size10.size2{font-size:.28929605em}.katex .fontsize-ensurer.reset-size10.size3,.katex .sizing.reset-size10.size3{font-size:.33751205em}.katex .fontsize-ensurer.reset-size10.size4,.katex .sizing.reset-size10.size4{font-size:.38572806em}.katex .fontsize-ensurer.reset-size10.size5,.katex .sizing.reset-size10.size5{font-size:.43394407em}.katex .fontsize-ensurer.reset-size10.size6,.katex .sizing.reset-size10.size6{font-size:.48216008em}.katex .fontsize-ensurer.reset-size10.size7,.katex .sizing.reset-size10.size7{font-size:.57859209em}.katex .fontsize-ensurer.reset-size10.size8,.katex .sizing.reset-size10.size8{font-size:.69431051em}.katex .fontsize-ensurer.reset-size10.size9,.katex .sizing.reset-size10.size9{font-size:.83317261em}.katex .fontsize-ensurer.reset-size10.size10,.katex .sizing.reset-size10.size10{font-size:1em}.katex .fontsize-ensurer.reset-size10.size11,.katex .sizing.reset-size10.size11{font-size:1.19961427em}.katex .fontsize-ensurer.reset-size11.size1,.katex .sizing.reset-size11.size1{font-size:.20096463em}.katex .fontsize-ensurer.reset-size11.size2,.katex .sizing.reset-size11.size2{font-size:.24115756em}.katex .fontsize-ensurer.reset-size11.size3,.katex .sizing.reset-size11.size3{font-size:.28135048em}.katex .fontsize-ensurer.reset-size11.size4,.katex .sizing.reset-size11.size4{font-size:.32154341em}.katex .fontsize-ensurer.reset-size11.size5,.katex .sizing.reset-size11.size5{font-size:.36173633em}.katex .fontsize-ensurer.reset-size11.size6,.katex .sizing.reset-size11.size6{font-size:.40192926em}.katex .fontsize-ensurer.reset-size11.size7,.katex .sizing.reset-size11.size7{font-size:.48231511em}.katex .fontsize-ensurer.reset-size11.size8,.katex .sizing.reset-size11.size8{font-size:.57877814em}.katex .fontsize-ensurer.reset-size11.size9,.katex .sizing.reset-size11.size9{font-size:.69453376em}.katex .fontsize-ensurer.reset-size11.size10,.katex .sizing.reset-size11.size10{font-size:.83360129em}.katex .fontsize-ensurer.reset-size11.size11,.katex .sizing.reset-size11.size11{font-size:1em}.katex .delimsizing.size1{font-family:KaTeX_Size1}.katex .delimsizing.size2{font-family:KaTeX_Size2}.katex .delimsizing.size3{font-family:KaTeX_Size3}.katex .delimsizing.size4{font-family:KaTeX_Size4}.katex .delimsizing.mult .delim-size1>span{font-family:KaTeX_Size1}.katex .delimsizing.mult .delim-size4>span{font-family:KaTeX_Size4}.katex .nulldelimiter{display:inline-block;width:.12em}.katex .delimcenter,.katex .op-symbol{position:relative}.katex .op-symbol.small-op{font-family:KaTeX_Size1}.katex .op-symbol.large-op{font-family:KaTeX_Size2}.katex .accent>.vlist-t,.katex .op-limits>.vlist-t{text-align:center}.katex .accent .accent-body{position:relative}.katex .accent .accent-body:not(.accent-full){width:0}.katex .overlay{display:block}.katex .mtable .vertical-separator{display:inline-block;min-width:1px}.katex .mtable .arraycolsep{display:inline-block}.katex .mtable .col-align-c>.vlist-t{text-align:center}.katex .mtable .col-align-l>.vlist-t{text-align:left}.katex .mtable .col-align-r>.vlist-t{text-align:right}.katex .svg-align{text-align:left}.katex svg{fill:currentColor;stroke:currentColor;fill-rule:nonzero;fill-opacity:1;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;display:block;height:inherit;position:absolute;width:100%}.katex svg path{stroke:none}.katex img{border-style:none;max-height:none;max-width:none;min-height:0;min-width:0}.katex .stretchy{display:block;overflow:hidden;position:relative;width:100%}.katex .stretchy:after,.katex .stretchy:before{content:""}.katex .hide-tail{overflow:hidden;position:relative;width:100%}.katex .halfarrow-left{left:0;overflow:hidden;position:absolute;width:50.2%}.katex .halfarrow-right{overflow:hidden;position:absolute;right:0;width:50.2%}.katex .brace-left{left:0;overflow:hidden;position:absolute;width:25.1%}.katex .brace-center{left:25%;overflow:hidden;position:absolute;width:50%}.katex .brace-right{overflow:hidden;position:absolute;right:0;width:25.1%}.katex .x-arrow-pad{padding:0 .5em}.katex .cd-arrow-pad{padding:0 .55556em 0 .27778em}.katex .mover,.katex .munder,.katex .x-arrow{text-align:center}.katex .boxpad{padding:0 .3em}.katex .fbox,.katex .fcolorbox{border:.04em solid;box-sizing:border-box}.katex .cancel-pad{padding:0 .2em}.katex .cancel-lap{margin-left:-.2em;margin-right:-.2em}.katex .sout{border-bottom-style:solid;border-bottom-width:.08em}.katex .angl{border-right:.049em solid;border-top:.049em solid;box-sizing:border-content;margin-right:.03889em}.katex .anglpad{padding:0 .03889em}.katex .eqn-num:before{content:"(" counter(katexEqnNo) ")";counter-increment:katexEqnNo}.katex .mml-eqn-num:before{content:"(" counter(mmlEqnNo) ")";counter-increment:mmlEqnNo}.katex .mtr-glue{width:50%}.katex .cd-vert-arrow{display:inline-block;position:relative}.katex .cd-label-left{display:inline-block;position:absolute;right:-webkit-calc(50% + .3em);right:calc(50% + .3em);text-align:left}.katex .cd-label-right{display:inline-block;left:-webkit-calc(50% + .3em);left:calc(50% + .3em);position:absolute;text-align:right}.katex-display{display:block;margin:1em 0;text-align:center}.katex-display>.katex{display:block;text-align:center;white-space:nowrap}.katex-display>.katex>.katex-html{display:block;position:relative}.katex-display>.katex>.katex-html>.tag{position:absolute;right:0}.katex-display.leqno>.katex>.katex-html>.tag{left:0;right:auto}.katex-display.fleqn>.katex{padding-left:2em;text-align:left}body{counter-reset:katexEqnNo mmlEqnNo}
+
+/* style for html inside of browsers */
+.katex { font-size: 1em !important; } /* align KaTeX font-size to surrounding text */
+
+eq { display: inline-block; }
+eqn { display: block}
+section.eqno {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    align-items: center;
+}
+section.eqno > eqn {
+    width: 100%;
+    margin-left: 3em;
+}
+section.eqno > span {
+    width:3em;
+    text-align:right;
+}
+
+p { 
+    text-align: justify; 
+    hyphens: auto;
+}
+
+table {
+    display: table;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+figure {
+    margin: 0.5em auto;
+}
+figure > img {
+    display: block;
+    margin: 0 auto;
+    page-break-inside: avoid;
+    text-align: center;
+}
+figcaption { 
+    font-size: 0.9em;
+    margin-top: 0.5em;
+    text-align: center;
+}
+
+aside {
+  font-size: 0.9em;
+  max-width: 300px;
+  padding: 0 0 0 1em;
+  margin: 0 0 0 1em;
+  float: right;
+}
+
+aside > *:first-child {
+  margin-top: 0;
+}
+aside > *:last-child {
+  margin-bottom: 0;
+}
+
+</style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="12-dokumentation-og-kravspecifikation">12. Dokumentation og kravspecifikation</h1>
+<p>Dokumentation af ens kode og programmer består typisk af skreven tekst og illustrationer knyttet til koden, og spiller en central rolle i softwareudvikling i forhold til at kommunikere med andre udviklere, slutbrugerne af programmerne, andre aktører eller dig selv. Du vil blive overrasket over hvor hurtigt man glemmer hvad man egentlig tænkte, da man skrev koden for uger eller bare dage siden.</p>
+<p>Målene med dokumentation kan bl.a. være at forklare:</p>
+<ul>
+<li>Kravspecifikation: Hvilke krav stilles til systemet/brugeren m.m.</li>
+<li>Programmets opbygning: Hvordan er programmet overordnet opbygget (arkitekturen bag) og hvorledes fungerer enkeltdelene herunder funktioner, klasser, algoritmer osv.</li>
+<li>Slutbrugermanual: Hvordan bruges programmet.</li>
+</ul>
+<p>I det følgende vil vi gennemgå hvorledes disse tre punkter kan dokumenteres og indføre nogle værktøjer/modeller, som kan være relevante at bruge i formidlingen.</p>
+<p>Ligesom dokumentationen er væsentlig er det mindst ligeså essentielt at få udformet en ordentlig kravspecifikation inden man starter udviklingen. Det er kravspecifikationen der sætter de overordnede rammer og mål for projektet. Man kan være nok så dygtig en programmør, der kan skrive tusindvis af linjers kode i løbet af ingen tid, men hvis målene ikke er klare, kan det hurtigt ende galt. Som den indisiske politiker Gandhi formulerede det, så uanset hvor hurtigt du skrider frem, når du ikke din destination, hvis du ikke går i den rigtige retning.
+Vi dedikerer derfor sidste del af dette kapitel til at folde arbejdet med kravspecifikationen lidt ud og beskrive nogle gode værktøjer, som er relevante at inddrage i processen.</p>
+<h2 id="programmets-opbygning">Programmets opbygning</h2>
+<p>I det følgende kigger vi på hvorledes man kan dokumentere og formidle sin kode på et kodenært niveau.</p>
+<h3 id="indlejret-kommentarer-til-kildekoden">Indlejret kommentarer til kildekoden</h3>
+<p>Et vigtigt værktøj til at dokumentere sin kode er ved brug af inline kommentarer. De kan bruges efter behov og er særligt relevante ved mere komplekse instruktioner. Man bør generelt undgå at kommentere alt for meget, da det også kan forstyrre forståelsen. Ved større funktioner eller klasser kan man skrive over den overordnede definition af disse, nogle linjer der i grove træk skitserer hvad disse gør.</p>
+<p>Til et hvert større sprog findes guides eller regler for hvorledes god kode bør skrives og dokumenteres. Det kan være alt fra hvorledes man bør navngive sine variabler, til indenteringen, til hvor man skifter linje. Det er vigtigt, at man i den sammenhæng husker at være konsistent og konsekvent i brugen af de valgte regler.
+Et vigtigt aspekt ved god kode er, at det også er læsbar kode.</p>
+<p>Pas med andre ord på kommentarer, der bruger mange linjer på at forklare hvad koden gør. Hvis koden er så uklar, at den skal uddybes for meget så er det måske et tegn på, at den bør omskrives. Undgå altså gerne kommentarer såsom følgende:</p>
+<pre><code class="language-javascript"><span class="hljs-comment">// Denne kode vil gøre det her (....) og det her (....)</span>
+<span class="hljs-comment">// og hvem ved hvad den ellers gør</span>
+<span class="hljs-comment">//...</span>
+</code></pre>
+<p>Prøv i stedet at give en høj niveau beskrivelse af kontrolflowet i forskellige situationer. Herunder et eksempel for en funktion der udregner summen af to tal:</p>
+<pre><code class="language-javascript"><span class="hljs-comment">/**
+ * Returnerer summen af to tal x og y.
+ *
+ * <span class="hljs-doctag">@param</span> {<span class="hljs-type">number</span>} x Den første operand skal være et reelt tal.
+ * <span class="hljs-doctag">@param</span> {<span class="hljs-type">number</span>} x Den anden operand skal være et reelt tal.
+ * <span class="hljs-doctag">@return</span> {<span class="hljs-type">number</span>} x Udregner summen af x og y.
+ */</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">plus</span>(<span class="hljs-params">x, y</span>) {
+  ...
+}
+</code></pre>
+<p>Ved at gøre brug af denne notation kan man gøre brug af markup-sproget JSDoc se <a href="https://jsdoc.app/">https://jsdoc.app/</a>, som giver mulighed for let at autogenerere dokumentation via html-sider.
+Har man installeret JS Doc kan man reelt bare skrive</p>
+<pre><code class="language-javascript">jsdoc navn_på_fil.<span class="hljs-property">js</span>
+</code></pre>
+<p>Hvor &quot;navn_på_fil.js&quot; skal erstattes af den konkrete javascript-fil, så genereres automatisk en html side med dokumentation i samme bibliotek. Ydermere understøtter de fleste udviklingsmiljøer (herunder VS code) JSDocs notation, så man kan få autogenereret kode fremover ved at benytte JSDoc. Øvelserne vil gå mere i dybden med brugen af JSDoc.</p>
+<p>Når man bruger JSDoc bør man også overveje, hvilket sprog man skriver sine kommentarer i om det eksempelvis skal være dansk eller engelsk. Generelt er det en god ide at skrive på engelsk, da nøgleordene også er på engelsk og en langt større grupppe af udviklere forstår engelsk fremfor dansk. Vi varierer lidt i denne tekst, da der er tale om en lærebog og at understrege, at det grundlæggende også er ok, at bruge dansk. Man skal bare være opmærksom på det og passe på med at blande engelsk og dansk i kommentarer eller kode.</p>
+<p>Herunder et lidt større eksempler hvor der indgår klasser og metoder i dokumentationen ved brug af JS Doc.</p>
+<pre><code class="language-javascript"><span class="hljs-comment">/** Class that represents a circle. */</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Circle</span> {
+    <span class="hljs-comment">/**
+     * Constructs a circle
+     * <span class="hljs-doctag">@param</span> {<span class="hljs-type">number</span>} <span class="hljs-variable">x</span> - Circles x coordinate.
+     * <span class="hljs-doctag">@param</span> {<span class="hljs-type">number</span>} <span class="hljs-variable">y</span> - Circles y coordinate.
+     */</span>
+    <span class="hljs-title function_">constructor</span>(<span class="hljs-params">x, y</span>) {
+        <span class="hljs-comment">// ...</span>
+    }
+
+    <span class="hljs-comment">/**
+     * Gets x-value.
+     * <span class="hljs-doctag">@return</span> {<span class="hljs-type">number</span>} <span class="hljs-variable">x</span>-value.
+     */</span>
+    <span class="hljs-title function_">getX</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-comment">// ...</span>
+    }
+
+    <span class="hljs-comment">/**
+     * Get y værdien.
+     * <span class="hljs-doctag">@return</span> {<span class="hljs-type">number</span>} <span class="hljs-variable">y</span>-value.
+     */</span>
+    <span class="hljs-title function_">getY</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-comment">// ...</span>
+    }
+
+}
+</code></pre>
+<p>Herunder et eksempel på nedarvning fra ovenstående klasse:</p>
+<pre><code class="language-javascript"><span class="hljs-comment">/**
+ * Class that represents point
+ * <span class="hljs-doctag">@extends</span> <span class="hljs-variable">Cirkel</span>
+ */</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Point</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">Circle</span> {
+    <span class="hljs-comment">/**
+     * Creates a point (circle (without radius)).
+     * <span class="hljs-doctag">@param</span> {<span class="hljs-type">number</span>} <span class="hljs-variable">x</span> - value.
+     * <span class="hljs-doctag">@param</span> {<span class="hljs-type">number</span>} <span class="hljs-variable">y</span> - value
+     * <span class="hljs-doctag">@param</span> {<span class="hljs-type">number</span>} <span class="hljs-variable">c</span> - value.
+     */</span>
+    <span class="hljs-title function_">constructor</span>(<span class="hljs-params">x, y</span>) {
+        <span class="hljs-comment">// ...</span>
+    }
+
+    <span class="hljs-comment">/**
+     * Gets color of point.
+     * <span class="hljs-doctag">@return</span> {<span class="hljs-type">number</span>} color of point in colorcode.
+     */</span>
+    <span class="hljs-title function_">getColor</span>(<span class="hljs-params"></span>) {
+        <span class="hljs-comment">// ...</span>
+    }
+}
+</code></pre>
+<h3 id="refaktorisering">Refaktorisering</h3>
+<p>Som det blev nævnt tidligere, så er god kode ofte kendetegnet ved at være relativt selvforklarende og lettere tilgængeligt. Derved bliver dokumentationsbehovet reduceret. Med andre ord fremfor at skrive en masse kommentarer kan man nogle gange også lave en såkaldt refaktorisering af sin kode for at gøre den mere læsbar. <code>Refaktorisering</code> betegner den proces hvorved man omskriver kode, så den er mere enkel og lettere at forstå.<br>
+Herunder et eksempel på kode, hvor man kan reducere behovet for dokumentation ved at refaktorisere.  Først den oprindelige version:</p>
+<pre><code class="language-javascript"><span class="hljs-comment">//Version 1:</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">listPrimes</span>(<span class="hljs-params">N</span>) {
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">2</span>; i &lt; N; i++) {
+    <span class="hljs-comment">// checks if the integer i is a prime number</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = <span class="hljs-number">2</span>; j &lt; i; j++) {
+      <span class="hljs-keyword">if</span> (i % j == <span class="hljs-number">0</span>) <span class="hljs-keyword">continue</span> nextPrime;
+    }
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(i)
+  }
+}
+</code></pre>
+<p>Løkker inde i løkker kan ofte være svære for nogle at forstå og kan gøres mere læsbare og forståelige, hvis man deler det op i mindre bider. Eksempelvis kan man sætte den inderste løkke ind i en funktion:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">listPrimes</span>(<span class="hljs-params">N</span>) {
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">2</span>; i &lt; N; i++) {
+    <span class="hljs-keyword">if</span> (!<span class="hljs-title function_">isPrime</span>(i)) <span class="hljs-keyword">continue</span>;
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(i)
+  }
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">isPrime</span>(<span class="hljs-params">N</span>) {
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">2</span>; i &lt; N; i++) {
+    <span class="hljs-keyword">if</span> (N % i == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+</code></pre>
+<p>Her har vi sat den inderste løkke, der tjekker om tallet <code>N</code> er et primtal.</p>
+<p>Et andet eksempel kunne være hvor vi har løkker efterfulgt af hinanden. Her kan det ofte være hensigtsmæssigt refaktorisere løkkerne til funktioner.</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">let</span> <span class="hljs-title class_">Lx</span>= []
+<span class="hljs-keyword">let</span> <span class="hljs-title class_">Ly</span>= []
+<span class="hljs-keyword">let</span> n = <span class="hljs-number">20</span>
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)
+{
+    <span class="hljs-keyword">let</span> x = <span class="hljs-title function_">random</span>(i,i+<span class="hljs-number">5</span>)
+    <span class="hljs-title class_">Lx</span>.<span class="hljs-title function_">push</span>(x)
+    <span class="hljs-keyword">let</span> y = <span class="hljs-title function_">random</span>(i,i+<span class="hljs-number">5</span>)
+    <span class="hljs-title class_">Ly</span>.<span class="hljs-title function_">push</span>(y)
+}
+
+<span class="hljs-title function_">beginShape</span>(<span class="hljs-variable constant_">LINES</span>);
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)
+    {
+        <span class="hljs-title function_">vertex</span>(<span class="hljs-title class_">Lx</span>[i],<span class="hljs-title class_">Ly</span>[i])
+    }
+<span class="hljs-title function_">endShape</span>();
+</code></pre>
+<p>I sådanne tilfælde kan det være bedre at konstruere nogle funktioner der erstatter løkkerne:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">generatePoints</span>(<span class="hljs-params">n</span>)
+{
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)
+    {
+        <span class="hljs-keyword">let</span> x = <span class="hljs-title function_">random</span>(i,i+<span class="hljs-number">5</span>)
+        <span class="hljs-title class_">Lx</span>.<span class="hljs-title function_">push</span>(x)
+        <span class="hljs-keyword">let</span> y = <span class="hljs-title function_">random</span>(i,i+<span class="hljs-number">5</span>)
+        <span class="hljs-title class_">Ly</span>.<span class="hljs-title function_">push</span>(y)
+    }
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">drawLines</span>(<span class="hljs-params">n</span>)
+{
+    <span class="hljs-title function_">beginShape</span>(<span class="hljs-variable constant_">LINES</span>);
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)
+        {
+            <span class="hljs-title function_">vertex</span>(<span class="hljs-title class_">Lx</span>[i],<span class="hljs-title class_">Ly</span>[i])
+        }
+    <span class="hljs-title function_">endShape</span>();
+}
+</code></pre>
+<h3 id="pseudokode">Pseudokode</h3>
+<p>Pseudokode betyder frit oversat &quot;ikke ægte kode&quot;. Det er formuleret i almindeligt engelsk, dansk eller et tredje sprog, og udgør en mere abstrakt højniveau beskrivelse af koden, som er lettere tilgængelig end den egentlige kode.
+Det er kendetegnende for pseudokode, at det typisk er formuleret, så det er uafhængig af programmeringssprog. Pseudokoder bliver brugt i stor stil i videnskabelige tekster og lærebøger til at kommunikere og formidle centrale ideer og hvorledes de kan omsættes til kode.
+Pseudokode bruges ofte til at formidle mere komplekse stykker kode, der løser et mere generisk problem. Et godt eksempel herpå er algoritmer, som er en afsluttet sekvens af instruktioner, der løser et problem eller udfører en konkret opgave. Herunder et eksempel på pseudokode for en algoritme der ligger to tal sammen:</p>
+<ol>
+<li>Indlæs to tal</li>
+<li>Adder tallene</li>
+<li>Print resultatet</li>
+</ol>
+<p>Eller algoritmen for at lave te:</p>
+<ol>
+<li>Tag 1 tepose og placer den i en kop</li>
+<li>Hæld kogende vand ned i koppen</li>
+<li>Lad den trække i 5 minutter</li>
+<li>Tag teposen op af vandet og smid den ud</li>
+</ol>
+<p>Endelig også et højniveau eksempel på hvorledes vi kunne konstruere Fibonacci-talfølgen, som er langt fra egentlig kode:</p>
+<ol>
+<li>Givet tal N:</li>
+<li>Indlæs tallene 0 og 1</li>
+<li>Konstruer en talfølge, hvor næste element er summen af de to foregående.</li>
+<li>Stop når vi har summet op til N elementer.</li>
+</ol>
+<p>Disse stumper pseudokode er særdeles højniveau og ligger langt fra den mere programmeringsnære variant af pseudokoden, som vi skal se senere. Skulle disse tre linjer implementeres i praksis ville de fylde betydeligt mere.
+Den gode pseudokode er typisk kendetegnet ved en fornuftig balance mellem kompleksiteten af den løsning man for søger at beskrive med deltaljegraden af pseudokoden i forhold til den målgruppe, som man skriver til.</p>
+<p>Pseudokode minder om rigtig kode i den forstand, at den inddrager typiske nøgleord fra programmering såsom <code>if-else</code>, <code>while</code>, <code>for</code> m.m. og dermed induceres mere eller mere direkte en struktur for programmet men man abstraherer for en række væsentlige detaljer såsom valg af datastruktur etc. Det gøres med henblik på at gøre det nemmere at kommunikere det overordnede dataflow i ens program/algoritme.</p>
+<p>Man kan tænke på pseudokode som et skelet for rigtig kode, der kan oversættes til maskinekode uden at gøre noget. God pseudokode skal gerne gøre det nemmere og hurtigere at implementere den givne algoritme i ægte kode.</p>
+<p>Herunder et eksempel på pseudokode for fibonacci-funktionen, hvor vi i højere grad begynder at nærmere os egentlige kode. Vi klassificerer derfor koden som værende på et mellemniveau.</p>
+<pre><code class="language-javascript"><span class="hljs-comment">// Version 2: Mellemniveau pseudokode for Fibonacci </span>
+<span class="hljs-title class_">Fibonacci</span> (n):
+    loop mellem <span class="hljs-number">0</span> og n
+        sum de to tidligere fibonacci tal
+        når vi når n, returneres værdien
+</code></pre>
+<p>Vi er stadig et stykke fra rigtig kode, men vi begynder at se strukturen af et egentligt program. Der er en række uklarheder såsom at summe de to tidligere fibonacci tal.</p>
+<p>Herunder et endnu mere kodenært eksempel, hvor vi tydeliggøre nogle af uklarhederne. Da vi er meget nær rigtig kode kaldes denne version for lavniveau:</p>
+<pre><code class="language-javascript"><span class="hljs-comment">// Version 3: Lavniveau pseudokode for Fibonacci </span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">Fibonacci</span>(<span class="hljs-params">n</span>):
+    <span class="hljs-keyword">if</span> n er <span class="hljs-number">0</span> eller <span class="hljs-number">1</span>, <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>
+
+    <span class="hljs-comment">// indlæs de første to fibonacci tal</span>
+    f1 = <span class="hljs-number">1</span>
+    f2 = <span class="hljs-number">1</span>
+
+    loop fra <span class="hljs-number">2</span> til <span class="hljs-attr">n</span>:
+        fibi = f1 + f2
+        <span class="hljs-comment">//Opdater tidligere fibonnaci tal</span>
+        f2 = f1
+        f1 = fibi
+
+   <span class="hljs-keyword">return</span> fibi
+</code></pre>
+<p>Udfra denne pseudokode burde det være muligt ret hurtigt at implementere fibonacci i praksis.</p>
+<p>Der findes ingen fast konvention for hvorledes pseudokode skal se ud, men det er vigtigt, at valget af syntaks er konsekvent og konsistent.</p>
+<h3 id="tommelfingerregler-for-god-pseudokode">Tommelfingerregler for god pseudokode</h3>
+<p>Selvom der ikke findes nogen entydige krav til syntaksreglerne i pseudokode kommer herunder en række forslag, som kan være gode at følge.</p>
+<ul>
+<li>
+<p>Undgå generelt at skriv mere end et udsagn pr. linje. Det gør generelt pseudokode nemmere at læse for de fleste.</p>
+</li>
+<li>
+<p>Sæt evt nøgle ord med store bogstaver eller fed skrift (såsom <code>READ</code>, <code>WRITE</code>, <code>IF</code>, <code>WHILE</code>, <code>FOR</code>).</p>
+</li>
+<li>
+<p>Ryk ind eller tabuler for at vise hierarkiet i ens kode. Særligt relevant når man eksempelvis har betinget udførsel, løkker eller funktioner i sin pseudokode.</p>
+</li>
+<li>
+<p>Afslut flere linjers strukturer. Har man eksempelvis en <code>IF</code> betinget udførsel er det en god ide at slutte med eksempelvis <code>END IF</code> eller lignende.</p>
+</li>
+<li>
+<p>Undgå at blande forskellige sprog i sin pseudokode. Dvs. undgå eksempelvis at blande dansk og engelsk.</p>
+</li>
+<li>
+<p>Overvej hvem din målgruppe er og hvilken detaljegrad af pseudokoden, der er relevant. Skal man kunne implementere pseudokoden selv eller er hensigten mere at formidle en ide eller et koncept?</p>
+</li>
+<li>
+<p>Første trin i pseudokode er at finde et navn til sit program. Typisk bruges navne der benytter CamelCase, dvs. starter med stort og består af to ord. Det andet ord starter også med stort. Eksempel. InsertionSort, SelectionSort der beskriver to forskellige sorteringsalgoritmer (dvs programmer der sorterer tal i stigende/faldende rækkefølge) etc.</p>
+</li>
+<li>
+<p>Når vi designer pseudokode antager vi at koden udføres sekventielt. Det gør vi ret ofte, når vi designer algoritmer. Såfremt man skriver pseudokode, der kan afvikles parallelt af flere computere bør man gøre opmærksom på det i pseudokoden.</p>
+</li>
+<li>
+<p>Pseudokode varierer i stil fra programmør til programmør, men man låner typisk i sin syntax fra programmeringssprog såsom Python, Java, C++ og lignende.
+Selvom pseudokode generelt skal være sproguafhængig kan det stadig være en god idé at låne den syntax, man skal lave selve koden i. Skal man eksempelvis skrive et Python program, kan man låne den syntax en smule til sin pseudokode</p>
+</li>
+<li>
+<p>Prøv at (meta-)kommuniker allerede igennem navngivningen af metoder/funktioner/algoritmer eller lignende, hvad de gør samtidig med, at navnene skal  letforståelige og sigende.  F.eks. er det helt indlysende bedre at give en funktion, der adderer noget sammen titlen  &quot;sum()&quot; fremfor eksempelvis et tilfældigt navn som &quot;x3j67()&quot;. Husk på at hele ideen med pseudokode er at gøre koden lettere tilgængelig for andre.
+Hvis et navn er sammensat af mere end et ord, kan man starte andet ord med stort eller lave en underscore f.eks.
+&quot;squareRoot()&quot; eller square_root()&quot;</p>
+</li>
+<li>
+<p>Navngivning og initialisering af variable: Variabler skal også have letforståelige og sigende navne f.eks. navn, alder, højde. Hvis variablen har mere end et ord kan man starte andet ord med stort såsom forNavn eller efterNavn. Erklæring (Initialisering)  af variabler kan gøres ved brug af eksempelvis nøgleordet Set, hvor man gerne må give den en værdi med det samme.Det kunne være Set sum = 0</p>
+</li>
+<li>
+<p>Hvis man skal erklære mange variabler kan det være en god ide at gøre det på samme linje, så som:</p>
+<pre><code class="language-javascript">sum = <span class="hljs-number">0</span>, <span class="hljs-title class_">Set</span> x = <span class="hljs-number">0</span>, <span class="hljs-title class_">Set</span> y = <span class="hljs-number">0</span>, <span class="hljs-title class_">Set</span> z = <span class="hljs-number">0</span>, <span class="hljs-title class_">Set</span> isCube = <span class="hljs-variable constant_">FALSE</span>
+</code></pre>
+<p>En sådan erklæring eksekveres fra venstre til højre.</p>
+</li>
+<li>
+<p>Man kan læse data fra variabler, lister eller lignende ved brug af et nøgleord som READ. Herunder eksempler:</p>
+<pre><code class="language-javascript"><span class="hljs-title class_">Read</span>: <span class="hljs-title class_">Liste</span> af variabler
+<span class="hljs-title class_">Read</span>: x
+<span class="hljs-title class_">Read</span>: x,y,z
+</code></pre>
+</li>
+<li>
+<p>Tilsvarende kan man præciserere output ved brug af eksempelvis <code>Print</code> eller <code>Write</code>. Herunder et eksempel:</p>
+<pre><code class="language-javascript"><span class="hljs-title class_">Print</span>: <span class="hljs-title class_">Besked</span> eller <span class="hljs-title class_">Variabel</span>
+<span class="hljs-title class_">Print</span>: ”<span class="hljs-title class_">Hello</span> <span class="hljs-title class_">World</span>” <span class="hljs-comment">//Besked</span>
+<span class="hljs-title class_">Print</span>: x, y	       <span class="hljs-comment">//Variabler	</span>
+<span class="hljs-title class_">Write</span>: <span class="hljs-title class_">Besked</span> eller <span class="hljs-title class_">Variabel</span> 
+<span class="hljs-title class_">Write</span>: ”<span class="hljs-title class_">Hello</span> <span class="hljs-title class_">World</span>”       <span class="hljs-comment">//Besked</span>
+<span class="hljs-title class_">Write</span>: ”Værdien er”, x	 <span class="hljs-comment">//Besked og variabler</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="prosakode">Prosakode</h3>
+<p>Prosakode er en mindre kodenær beskrivelse. Der stilles ingen krav til, at man bruger bestemte keywords eller lignende. Vigtigste er dog, at prosakoden faciliterer og understøtter en forståelse af hvorledes man kan skabe en overordnet struktur for programmet.
+Det er også muligt at kombinere prosakode og pseudokode.
+Herunder et eksempel på prosakode for en funktion, der givet en streng returnerer hvorvidt det er et palindrome eller ej:</p>
+<p>Givet en streng <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">s</span></span></span></span></eq> som input. Vores program gør da følgende:</p>
+<ol>
+<li>Tjek først om strengen <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">s</span></span></span></span></eq> består af et eller flere tegn. Hvis den er tom eller kun består af et tegn returner da sandt.</li>
+<li>Hvis den består af flere tegn sammenlign første og sidst element. Hvis de to elementer er forskellige returnes falsk. Ellers fjern dem fra strengen og start algoritmen forfra men nu med den reducerede streng som input.</li>
+</ol>
+<h3 id="flowdiagrammer">Flowdiagrammer</h3>
+<p>Flowdiagrammer eller rutediagrammer kan bruges til at lave en visuel repræsentation af  programmets flow, der grundlæggende er uafhængig af det valgte sprog, hvilket muliggør at programmører i andre sprog kan gøre brug af diagrammet.</p>
+<p>Det kan være en ide at bruge, når man skal illustrere eller dokumentere mindre mere komplekse stykker kode til andre programmører.
+Den klare ulempe ved flowdiagrammer er, at jo større stykker af kode man forsøgere at visualisere med flowdiagrammer, jo mere kompleks og til tider uoverskuelig risikerer flowdiagrammet at blive. Som supplement til pseudokode og prosakode er flowdiagrammer rigtig gode.</p>
+<p>Flowcharts tegnes generelt fra toppen til bunden
+Alle elementer (æsker) skal forbindes med pile (Flow kontrol)
+Alle flowcharts starter med et Terminal eller Proces element
+Beslutningselementer har 2 udgange – en til sandt/ja (TRUE) og en til falsk/nej (FALSE)</p>
+<p>Herunder eksempler på forskellige figurer der indgår i flowdiagrammer og efterfølgende eksempler på hvorledes de kan sættes sammen til et konkret stykke kode, der gør noget.</p>
+<ul>
+<li>Terminal: Indikerer start eller slutning på algoritmen.  Vi tegner en terminal og skriver ”START” inden i den for at indikerer starten af flowchartet. På samme måde skriver vi ”STOP” inde i den terminal der afslutter flowchartet</li>
+<li>Data eller Input/Output (I/O). Viser at denne instruktion tager et input eller viser et output</li>
+<li>Proces. Indikerer en intern instruktion som f.eks. Initialisering, beregning eller lignende</li>
+<li>Beslutning. Bruges til at stille et spørgsmål der enten er sandt (TRUE) eller falsk (FALSE). F.eks. Er du online? Svaret er enten ja (TRUE) eller nej (FALSE)</li>
+<li>Forbindelse. Bruges til at forbinde flowcharts der fylder mere end én side. Man kan skrive: Til Forbindelse 3 på side 2.</li>
+<li>Flow kontrol. Viser retningen I flowet fra en kasse til en anden</li>
+</ul>
+<p><img src="file:///c:\code\P5Programmering\kap12\images\flowdiagramsymboler.png" alt="Symboler anvendt i flowdiagrammer"></p>
+<p>Herunder nogle eksempler på flowdiagrammer.</p>
+<p>I det første eksempel indlæses to tal og vi returnerer det største:</p>
+<p><img src="file:///c:\code\P5Programmering\kap12\images\flowmax2numbers.png" alt="Det største af to tal"></p>
+<p>Herefter et kodenært flowdiagram for Fibonacci-funktionen:</p>
+<p><img src="file:///c:\code\P5Programmering\kap12\images\fibflow.png" alt="Fibonacci funktionen"></p>
+<h3 id="brugerhistorier">Brugerhistorier</h3>
+<p>Brugerhistorier beskriver en afgrænset interaktion mellem brugeren og systemet og kan være relevante at inddrage i sin dokumentation enten som en del af koden eller måske prosakoden. Brugerhistorier kan være gode til at belyse noget af den tavse viden som ofte ligger gemt i de indledende faser af softwareudvikling. Med tavs viden skal her forstå viden, som vi først bliver opmærksomme på, når vi først er længere henne i udviklingsprocessen.</p>
+<p>En effektiv brugerhistorie er kendetegnet ved, at den opfylder følgende to kriterier:</p>
+<ul>
+<li>Første kriterie er, at den er skrevet i et naturligt sprog, idet den skal fungere som kommunikationsmiddel mellem programmets bruger og udviklingsteamet.</li>
+<li>Det andet kriterie er, at den er evaluerbar. Når brugerhistorien er implementeret, kan brugerhistorien bruges som udgangspunkt for en test af programmets funktion.</li>
+</ul>
+<p>Detaljegraden giver mulighed for at implementere brugerhistorien på en entydig måde, uden at blive så omstændig, at den hæmmer forståelsen.</p>
+<p>Brugerhistorierne nummereres - eller navngives på anden vis - så man kan henvise til dem på en struktureret og entydig måde.</p>
+<p>Herunder et eksempel på en brugerhistorie, der bliver brugt i en online pizzabutik, når man har valgt en pizza:</p>
+<ul>
+<li>Brugeren vælger først en pizza udfra listen af pizzaer.</li>
+<li>Brugeren klikker på knappen ”Bestil flere”.</li>
+<li>Programmet viser en dialog, hvor brugeren kan se:
+<ul>
+<li>Pizzaens navn og hvilke ingredienser den indeholder</li>
+<li>En dropdown box, hvor man kan vælge det antal pizzaer man ønsker at bestille. (0-10)</li>
+<li>En ”OK”-knap</li>
+</ul>
+</li>
+<li>Brugeren vælger det ønskede antal pizzaer af den bestemte type og klikker ”OK”.
+<ul>
+<li>Hvis antallet er større end 0, oprettes en transaktion, hvor pizzaernes samlede pris justeres, og pizzaerne tilføjes til kurven.</li>
+<li>Hvis antallet er 0 oprettes ingen transaktion, og der sker intet med kurven.</li>
+</ul>
+</li>
+<li>Programmet lukker dialogen.</li>
+</ul>
+<p>Man kan evt. supplere sine brugerhistorier med figurer, men det er ikke et krav.</p>
+<h2 id="kravspecifikation">Kravspecifikation</h2>
+<p>En kravspecifikation er særdeles væsentligt at udarbejde og inddrage i udviklingen af nye systemer. Det handler helt konkret om at få formuleret så præcist som muligt hvad skal programmet kunne og mindst ligeså vigtigt, hvad det ikke skal kunne.
+Som vi skal se senere, så er der en lang række forskellige aktører i spil, når et system skal udvikles, og der kan være stor forskel på de enkeltes perspektiv. Det forsøger figuren nedenfor på humoristisk vis at illustrere:</p>
+<p><img src="file:///c:\code\P5Programmering\kap12\images\rollersoftware.jpg" alt="Forskellige perspektiver i softwareudvikling"></p>
+<p>Udformingen af en kravspecifikation er i høj grad en kommunikationsopgave. Det handler om at være så præcis og skarp i sin kommunikation, at de mulige aktører får en så ensartet opfattelse af løsningen.
+I den sammenhæng er det mao relevant at gå i dialog med brugeren, kunden eller andre relevante aktører ved brug af eksempelvis kvantitive undersøgelser såsom spørgeskemaer eller kvalitative interviews.</p>
+<p>Afhængig af systemets kontekst og hvilket fokus en given aktør har, kan et system bestå af en rækkke forskellige typer krav. Herunder tre forskellige typer krav, som er væsentlige at have i fokus i udviklingen af systemet:</p>
+<ul>
+<li>Forretningskrav danner en rammesætning om det overordende projekt og formuleres ud fra nogle høj niveau mål, der ikke nødvendigvis har fokus på de tekniske aspekter ved det endelige produkt.</li>
+<li>Brugerkrav betegner de krav som brugeren eller en potentiel bruger har til systemet. De er typisk udledt af kvalitative og kvantitative undersøgelser, såsom spørgeskemaer, interviews og tænke-højt forsøg.</li>
+<li>Systemkrav betoner de tekniske krav til systemet.</li>
+</ul>
+<p>Typisk består kravspecifikationen af følgende faser:</p>
+<ol>
+<li>Indsamling af feedback og ønsker fra bruger</li>
+<li>Analyse af om de foreslået krav er realistiske i forhold til visionen med systemet.</li>
+<li>Definering af krav fra et brugerperspektiv og en detaljeret beskrivelse af de funktionelle og tekniske krav</li>
+<li>Prioritisering og planlægning af hvilke krav der implmenteres hvor og hvornår</li>
+<li>Validering og vedligeholdelse af systemet med henblik på at sikre at systemet rent faktisk understøtter de relevante krav.</li>
+</ol>
+<p>Selvom udarbejdelsen af en kravspecifikation ikke nødvendigvis kræver en særlig teknisk indsigt til det endelige produkt, så er det stadig en god ide at kende noget til nogle af de aktiviteter og værktøjer, som kan bruges og inddrages i processen.</p>
+<p>I det følgende vil vi gennemgå nogle grundlæggende men centrale værktøjer og aktiviteter i forhold til at udforme en kravspecifikation.</p>
+<h3 id="use-case-diagrammer">Use-case diagrammer</h3>
+<p>Et use-case diagram er en grafisk illustration af brugerens mulige interaktioner med et program eller system. Det viser bl.a. den centrale funktionalitet systemet har, men også hvilke roller eller brugere, der har adgang til systemet.
+Diagrammet giver med andre ord en abstrakt, højniveau beskrivelse af systemet og det brugere, hvor man har skrællet meget af programmeringsteknikaliteten væk for at give interessenterne en overordnet forståelse af systemet samt mulighed for at belyse den overordnede interaktion mellem brugere og systemet. Man behøver med andre ord ikke et dybere kendskab til kode for at læse og forstå et diagram, og det kan bidrage til tidlidt i udviklingsfasen at belyse noget af den såkaldte &quot;tavse&quot; vide og krav, som ofte først erkendes senere i processen. Med tavs viden og krav skal forstå implicit viden og krav, der ikke nødvendigvis er i talesat eller skrevet ned i starten og som man måske ikke engang er bevidst om i den indledende fase, men først senere i processen (eller måske aldrig) bliver bevidst omkring.</p>
+<h3 id="nødvendige-og-mindre-nødvendige-egenskaber">Nødvendige og mindre nødvendige egenskaber</h3>
+<p>Ofte kan det være en god ide inden man overhovedet begynder at udvikle på systemet at gøre sig klart hvad der er essentielle krav til  ens system versus krav, som kunne være rare at have men ikke er absolut nødvendige. Man taler i den sammenhæng også om det engelske udtryk &quot;Nice to have and need too have&quot;.
+Det hander reelt set om at få alle aktører i processen en fælles forståelse af de hvilke elementer, der implementeres først og hvilke kan vente til senere eller måske slet ikke er nødvendige at implementere. Alt for mange startups og nystartende projekter forsinkes eller mislykkedes fordi man eksempelvis ikke har gjort sig klart, hvad der er essentielt i ens system, men i stedet bruger en masse ressourser på at implementere krav, som ikke er umiddelbart nødvendige.</p>
+<p>&quot;Nice to have og need to have&quot; er del af den så kaldte &quot;MoSCoW&quot;-tilgang, som står for:</p>
+<ul>
+<li>&quot;Must have&quot;: Krav til systemet skal implementeres.</li>
+<li>&quot;Should have&quot;: Krav til systemet der bør implementeres på sigt.</li>
+<li>&quot;Could have&quot;: Krav der kan implementers, når kravene i &quot;Must have&quot; og &quot;Should Have&quot; er implementeret.</li>
+<li>&quot;Will not have&quot;: Krav til systemet, som ikke implementeres.</li>
+</ul>
+<p>Herunder en figur, der illustrer hvorledes man kan opstille MoSCoW på en smart og brugervenlig måde. Det kan være en digital og/eller fysisk tavle. Man kan evt bruge gule notes fysisk, så man let kan rykke rundt på de enkelte krav.
+<img src="file:///c:\code\P5Programmering\kap12\images\moscow.png" alt="MoSCoW i praksis"></p>
+<p>Fordelene ved MoSCow-metoden er bl.a., at det er en effektiv og simpel måde at belyse kravspecifikationen samt at få det kommunikeret ud til programmører, kunder, projektledere med mere. Netop det at den ignorerer detaljer omkring implementationen,  gør det muligt uafhængig af kodeforståelse at få en fornemmelse for hvad system skal kunne.</p>
+<p>Ulempen ved metoden er, at der ikke nødvendigvis er et rationale eller begrundelse for prioriteringen af de givne beslutninger og at der kun er fire prioritetsniveauer.</p>
+<p>I forhold til at gøre MoSCow-metoden en smule mere kodenær, kan man vælge at inddrage nøgleord såsom  &quot;skal&quot; og &quot;kan&quot; i sine brugerhistorier til at fortæller vigtigen af noget funktionalitet. Herunder et eksempel hvor vi kigger på nogle udvalgte brugerhistorier:</p>
+<ul>
+<li>Brugeren SKAL registrere en ny konto i systemet.</li>
+<li>Brugeren SKAL logge ind på applikationen med et brugernavn og en adgangskode.</li>
+<li>Brugeren BØR se alle nye enheder i netværket.</li>
+<li>Brugeren MÅ IKKE kunne se login fra andre brugere.</li>
+<li>Brugeren SKAL vælge en pizza udfra listen af pizzaer.</li>
+<li>Brugeren KAN vælge drikkevare  udfra listen af pizzaer.</li>
+<li>Brugeren KAN klikker på knappen ”Bestil flere”.</li>
+</ul>
+<h2 id="øvelser">Øvelser</h2>
+<ol>
+<li>Skriv noget pseudokode for hvordan du vil logge på facebook?</li>
+<li>Tegn et flowdiagram, der ligger tallene 30 og 40 sammen.</li>
+<li>Lav pseudokode og/eller flowdiagrammer for hver af følgende:
+<ul>
+<li>Find summen af 5 tal</li>
+<li>Print ”Hej Verden” 10 gange</li>
+<li>Program, der læser to tal, ganger (multiplicerer) dem og printer deres produkt</li>
+<li>Program, der gør det følgende: Spørg brugeren om et tal. Hvis tallet er mellem 0 og 10, så skriv tallet i blåt. Hvis tallet er mellem 10 og 20, så skriv det i rødt. Hvis tallet er mellem 20 og 30, så skriv det i grønt. Hvis tallet er noget andet så skriv det er en forkert farve option.</li>
+</ul>
+</li>
+<li>I det følgende ses noget prosakode på punktform for et program, der tager en streng og returner sandt eller falsk. Overvej hvad programmet gør og prøv at oversætte prosakoden til mere kodenær pseudokode.<br>
+a. Tjek først om strengen består af et eller flere tegn. Hvis den er tom eller kun består af et tegn returner da sandt.
+b. Hvis den består af flere tegn sammenlign første og sidst bogstav. Hvis de to bogstaver er forskellige returner falsk. Ellers fjern dem fra strengen og start algoritmen forfra men nu
+med den reducerede streng som input.</li>
+<li>Herunder ses kode pseudokode for en søgerutine. Hvad gør koden? Prøv at oversætte den til rigtig kode:</li>
+</ol>
+<pre><code class="language-javascript">procedure linear_search (list, value)
+    <span class="hljs-keyword">for</span> each item <span class="hljs-keyword">in</span> the list
+        <span class="hljs-keyword">if</span> match item == value
+            <span class="hljs-keyword">return</span> the item<span class="hljs-string">&#x27;s location
+        end if
+    end for
+end procedure
+</span></code></pre>
+<ol start="6">
+<li>Skriv pseudokode for et program, der tager en tekststreng og returner strengens karakterer i omvendt rækkefølge. Husk at det gerne skal være nogenlunde uafhængig af et specifikt sprog og at det gerne skal være detaljeret alligevel.</li>
+<li>Forklar hvad følgende flowdiagram gør og omskriv det til konkret kode. <img src="file:///c:\code\P5Programmering\kap12\images\flowmax3numbers.png" alt="Flowdiagram"></li>
+<li>Forklar hvad følgende flowdiagram gør og omskriv det til konkret kode. <img src="file:///c:\code\P5Programmering\kap12\images\linearsearch.png" alt="Flowdiagram"></li>
+<li>Forklar hvad følgende flowdiagram gør og omskriv det til konkret kode. <img src="file:///c:\code\P5Programmering\kap12\images\primeflow.png" alt="Flowdiagram"></li>
+<li>Skriv højniveau, mellemniveau og meget kodenær pseudokode for følgende funktioner (som vi gjorde med Fibonacci ovenfor):
+<ol>
+<li>Skriv en funktion der finder det mindste positive tal af fire givne tal som argumenter.</li>
+<li>Skriv en funktion der summer alle tal i en liste.</li>
+<li>Skriv en funktion, der bytter om på rækkefølgen i en given liste.</li>
+</ol>
+</li>
+<li>I det følgende skal laves flowdiagrammer og/pseudokode for følgende funktioner:
+<ol>
+<li>Skriv en funktion, der undersøger om et tal er indenfor et givent interval.</li>
+<li>Skriv en funktion, der tager en liste af tal og returnerer en ny liste der består af de unikke tal fra den liste.</li>
+<li>Skriv en funktion, der givet en liste kun printer de lige tal.</li>
+</ol>
+</li>
+<li>Dokumenter funktionerne ved brug JSDoc formatet. Det er automatisk understøttet i de nyeste versioner af VS code. Alternativt kan det installeres fra <a href="https://jsdoc.app/">https://jsdoc.app/</a>.</li>
+<li>Prøv nu at implementere et par af funktionerne og importer dem i din kode. VS Code skulle gerne tilbyde hjælp (den såkaldte &quot;Intellisense&quot;) til at genere dele af funktionen.</li>
+<li>Udvælg et større projekt som du har arbejdet med, hvor du også benytter klasser. Brug notationen fra JSDoc til at kommentere din kode, som eksemplet med klassen Cirkel i nærværende kapitel.</li>
+<li>I det følgende skal man ved brug af brugerhistorier, use-case diagrammer og MoSCow-metoden overveje, beskrive og argumentere for en kravspecifikation til en webshop, der handler med sko.</li>
+<li>I det følgende skal man ved brug af brugerhistorier og MoSCow-metoden overveje, beskrive og argumentere for en kravspecifikation til et system, der skal håndtere dyrenes spisetider og hvor meget de har fået at spise i en Zoologisk Have.</li>
+</ol>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </body>
+    </html>
