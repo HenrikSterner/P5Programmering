@@ -219,12 +219,13 @@ Det lyder måske lidt mystisk, så lad os forsøge at tydeliggøre det med nogle
 
 Der eksisterer to former for komposition, aggregation og association. Begge beskriver relationer mellem klasser. 
 
+### Aggregation er "har en"-relation
+En aggregation er samling af elementer eller ting. 
 
 ## Øvelser
 Herunder følger en række øvelser. Det anbefales, at man som minimum laver øvelse 1.-10. samt projektet. 
 
 1. I det følgende ses kode for en klasse `Car`. Omskriv koden så den bruger private variabler. Forklar desuden hvad metoderne gør.
-
 
 ```javascript
 class Car {

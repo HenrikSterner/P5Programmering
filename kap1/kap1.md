@@ -106,8 +106,6 @@ Dvs. overordnet foregår afviklingen af Javascript kode i følgende trin:
 
 Kompileren er en såkaldt Just-In-Time kompiler, der dynamisk oversætter i mens programmet kører (også kaldet "run time"). Der findes andre typer kompilere, som oversætter og optimerer al koden til maskinkode inden programmet kører. 
 
-
-
 ## Udviklingsmiljø
 Vi starter med blot at bruge editoren eller tekstfeltet, der er tilgængelig på P5JS. Den er simpel og let at komme i gang. Vigtigst er i første omgang at få skrevet noget kode og det er samtidig nemt at både dele og hente andres programmer, så man kan lade sig inspirere. 
 
@@ -127,6 +125,7 @@ Ved hvert kapitel er der en række øvelser og større projekter. Det anbefales 
 
 ## Øvelser
 Herunder følger en række øvelser. Lav som minimum øvelserne 1. til 7.  
+
 1. Overvej nogle eksempler fra din hverdag hvor du i et eller andet omfang interagerer med programmer. Hvorledes påvirker disse programmer mon din eller andres adfærd?
 2. Hvorfor er det vigtigt, at vi får en bred og divers gruppe af udviklere til at kode fremtidens løsninger?
 3. Giv tre eksempler på hvor programmering kan bruges til at automatisere kedelige opgaver.
@@ -143,6 +142,3 @@ Modellen har tre hjørner: Menneske, maskine og miljø. Med maskine skal forstå
 10. Der kan være mange vej til Rom. På samme måde kan et program have mange forskellige løsninger. Det skal denne øvelse illustrere. Øvelsen kan være god at lave med en anden. Tegn et kvadrat bestående af 8*8 mindre kvadrater vha noget kridt på asfalt. Brug evt noget papir, hvis du er alene. Sæt den ene person i et af kvadraterne og en bold eller noget et andet sted. Nu skal du som programmør skrive noget kode, der får den anden over til bolden. Du må kun bruge instruktionerne F samt V/H for hhv. Fremad og til Venstre/Højre betyder at du roterer 90 grader men bliver i samme felt. Programmet må først køres, når du har skrevet det færdig. Hvis du ikke når i mål, så prøv at debugge eller finde fejlen. Bemærk, der er undelige mange korrekte løsninger til programmet og uendelig mange forkerte. 
 11. Udvid nu ideen fra 10. så du skal have en robot eller lignende til at hente dig en kop vand eller lignende. Du må gerne selv finde på nogle nye instruktioner. En god instruktion at tilføje kunne være "Gentag følgende sålænge at ", der gentager instruktioner et vist antal gange. Prøv dit program af i praksis.
 12. Ofte har man brug for at sortere tal i stigende rækkefølge.  Det sker faktisk rigtig mange gange i løbet af en dag, når man googler, ser transaktioner på sin netbank, sorterer sit musikbibliotek osv. Tag nogle kort fra et kortspil eller en gruppe af mennesker med forskellige højder, der hver repræsenterer et unikt tal. Prøv at overveje et program og et entydigt sæt af instruktioner, der gør det muligt at sortere kortene eller menneskene i stigende rækkefølge. Prøv dit program af i praksis. Hvad gik godt og hvad gik mindre godt?
-
-
-
