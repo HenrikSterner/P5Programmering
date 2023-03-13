@@ -1,3 +1,7 @@
+ECHO Convert forord convert...
+cd forord/
+pandoc forord.md -o forord.docx
+cd ..
 ECHO Convert kap1 convert...
 cd kap1/
 pandoc kap1.md -o kap1.docx
@@ -66,6 +70,7 @@ ECHO Convert kap17 convert...
 cd kap17/
 pandoc kap17.md -o kap17.docx
 cd ..
+ECHO Combine word files
 
 
 

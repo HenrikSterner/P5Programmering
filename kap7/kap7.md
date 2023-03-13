@@ -75,7 +75,7 @@ factorial(5)
 ```
 Det kan illustreres med et rekursionstræ, som kunne se således ud:
 
-![Rekursionstræ fakultetsfunktion](../kap8/images/factree.png)
+![Rekursionstræ fakultetsfunktion](../kap7/images/factree.png)
 
 
 Bemærk det rekursive kald hvor vi dekrementerer værdien af n med 1. På et tidspunkt vil funktionen blive kaldt med værdien $1$ hvorved at funktionen returnerer.
@@ -98,7 +98,7 @@ fibonacci(4); // returnerer 2
 Vi kan konstruere et såkaldt rekursionstræ, der viser hvordan funktionskaldene foregår:
 
 
-![Rekursionstræ fibonacci funktion](../kap8/images/fibtree.png)
+![Rekursionstræ fibonacci funktion](../kap7/images/fibtree.png)
 
 Det fremgår af figuren hvorfor rekursive funktioner ikke nødvendigvis altid er de mest effektive implementationer. Problemet med den rekursive løsning er, at vi ender med relativt mange kald til funktionen, hvilket er med til at gøre den ineffektiv. Sættes $n=50$ er vi oppe på over 2 milliarder kald til funktionen og mange af disse beregninger er redundante forstået på den måde, at vi allerede har regnet funktionen med det givne argument.
 Det ændre dog ikke på, at vi får en rigtig pæn løsning der korresponderer nærmest en til en med den matematiske definition.
