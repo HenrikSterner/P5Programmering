@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>8&period; Objekter</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension goessner.mdmath */
+@font-face{font-family:KaTeX_AMS;font-style:normal;font-weight:400;src:url(fonts/KaTeX_AMS-Regular.woff2) format("woff2"),url(fonts/KaTeX_AMS-Regular.woff) format("woff"),url(fonts/KaTeX_AMS-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Caligraphic;font-style:normal;font-weight:700;src:url(fonts/KaTeX_Caligraphic-Bold.woff2) format("woff2"),url(fonts/KaTeX_Caligraphic-Bold.woff) format("woff"),url(fonts/KaTeX_Caligraphic-Bold.ttf) format("truetype")}@font-face{font-family:KaTeX_Caligraphic;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Caligraphic-Regular.woff2) format("woff2"),url(fonts/KaTeX_Caligraphic-Regular.woff) format("woff"),url(fonts/KaTeX_Caligraphic-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Fraktur;font-style:normal;font-weight:700;src:url(fonts/KaTeX_Fraktur-Bold.woff2) format("woff2"),url(fonts/KaTeX_Fraktur-Bold.woff) format("woff"),url(fonts/KaTeX_Fraktur-Bold.ttf) format("truetype")}@font-face{font-family:KaTeX_Fraktur;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Fraktur-Regular.woff2) format("woff2"),url(fonts/KaTeX_Fraktur-Regular.woff) format("woff"),url(fonts/KaTeX_Fraktur-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Main;font-style:normal;font-weight:700;src:url(fonts/KaTeX_Main-Bold.woff2) format("woff2"),url(fonts/KaTeX_Main-Bold.woff) format("woff"),url(fonts/KaTeX_Main-Bold.ttf) format("truetype")}@font-face{font-family:KaTeX_Main;font-style:italic;font-weight:700;src:url(fonts/KaTeX_Main-BoldItalic.woff2) format("woff2"),url(fonts/KaTeX_Main-BoldItalic.woff) format("woff"),url(fonts/KaTeX_Main-BoldItalic.ttf) format("truetype")}@font-face{font-family:KaTeX_Main;font-style:italic;font-weight:400;src:url(fonts/KaTeX_Main-Italic.woff2) format("woff2"),url(fonts/KaTeX_Main-Italic.woff) format("woff"),url(fonts/KaTeX_Main-Italic.ttf) format("truetype")}@font-face{font-family:KaTeX_Main;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Main-Regular.woff2) format("woff2"),url(fonts/KaTeX_Main-Regular.woff) format("woff"),url(fonts/KaTeX_Main-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Math;font-style:italic;font-weight:700;src:url(fonts/KaTeX_Math-BoldItalic.woff2) format("woff2"),url(fonts/KaTeX_Math-BoldItalic.woff) format("woff"),url(fonts/KaTeX_Math-BoldItalic.ttf) format("truetype")}@font-face{font-family:KaTeX_Math;font-style:italic;font-weight:400;src:url(fonts/KaTeX_Math-Italic.woff2) format("woff2"),url(fonts/KaTeX_Math-Italic.woff) format("woff"),url(fonts/KaTeX_Math-Italic.ttf) format("truetype")}@font-face{font-family:"KaTeX_SansSerif";font-style:normal;font-weight:700;src:url(fonts/KaTeX_SansSerif-Bold.woff2) format("woff2"),url(fonts/KaTeX_SansSerif-Bold.woff) format("woff"),url(fonts/KaTeX_SansSerif-Bold.ttf) format("truetype")}@font-face{font-family:"KaTeX_SansSerif";font-style:italic;font-weight:400;src:url(fonts/KaTeX_SansSerif-Italic.woff2) format("woff2"),url(fonts/KaTeX_SansSerif-Italic.woff) format("woff"),url(fonts/KaTeX_SansSerif-Italic.ttf) format("truetype")}@font-face{font-family:"KaTeX_SansSerif";font-style:normal;font-weight:400;src:url(fonts/KaTeX_SansSerif-Regular.woff2) format("woff2"),url(fonts/KaTeX_SansSerif-Regular.woff) format("woff"),url(fonts/KaTeX_SansSerif-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Script;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Script-Regular.woff2) format("woff2"),url(fonts/KaTeX_Script-Regular.woff) format("woff"),url(fonts/KaTeX_Script-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Size1;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Size1-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size1-Regular.woff) format("woff"),url(fonts/KaTeX_Size1-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Size2;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Size2-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size2-Regular.woff) format("woff"),url(fonts/KaTeX_Size2-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Size3;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Size3-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size3-Regular.woff) format("woff"),url(fonts/KaTeX_Size3-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Size4;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Size4-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size4-Regular.woff) format("woff"),url(fonts/KaTeX_Size4-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Typewriter;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Typewriter-Regular.woff2) format("woff2"),url(fonts/KaTeX_Typewriter-Regular.woff) format("woff"),url(fonts/KaTeX_Typewriter-Regular.ttf) format("truetype")}.katex{font:normal 1.21em KaTeX_Main,Times New Roman,serif;line-height:1.2;text-indent:0;text-rendering:auto}.katex *{-ms-high-contrast-adjust:none!important;border-color:currentColor}.katex .katex-version:after{content:"0.13.11"}.katex .katex-mathml{clip:rect(1px,1px,1px,1px);border:0;height:1px;overflow:hidden;padding:0;position:absolute;width:1px}.katex .katex-html>.newline{display:block}.katex .base{position:relative;white-space:nowrap;width:-webkit-min-content;width:-moz-min-content;width:min-content}.katex .base,.katex .strut{display:inline-block}.katex .textbf{font-weight:700}.katex .textit{font-style:italic}.katex .textrm{font-family:KaTeX_Main}.katex .textsf{font-family:KaTeX_SansSerif}.katex .texttt{font-family:KaTeX_Typewriter}.katex .mathnormal{font-family:KaTeX_Math;font-style:italic}.katex .mathit{font-family:KaTeX_Main;font-style:italic}.katex .mathrm{font-style:normal}.katex .mathbf{font-family:KaTeX_Main;font-weight:700}.katex .boldsymbol{font-family:KaTeX_Math;font-style:italic;font-weight:700}.katex .amsrm,.katex .mathbb,.katex .textbb{font-family:KaTeX_AMS}.katex .mathcal{font-family:KaTeX_Caligraphic}.katex .mathfrak,.katex .textfrak{font-family:KaTeX_Fraktur}.katex .mathtt{font-family:KaTeX_Typewriter}.katex .mathscr,.katex .textscr{font-family:KaTeX_Script}.katex .mathsf,.katex .textsf{font-family:KaTeX_SansSerif}.katex .mathboldsf,.katex .textboldsf{font-family:KaTeX_SansSerif;font-weight:700}.katex .mathitsf,.katex .textitsf{font-family:KaTeX_SansSerif;font-style:italic}.katex .mainrm{font-family:KaTeX_Main;font-style:normal}.katex .vlist-t{border-collapse:collapse;display:inline-table;table-layout:fixed}.katex .vlist-r{display:table-row}.katex .vlist{display:table-cell;position:relative;vertical-align:bottom}.katex .vlist>span{display:block;height:0;position:relative}.katex .vlist>span>span{display:inline-block}.katex .vlist>span>.pstrut{overflow:hidden;width:0}.katex .vlist-t2{margin-right:-2px}.katex .vlist-s{display:table-cell;font-size:1px;min-width:2px;vertical-align:bottom;width:2px}.katex .vbox{-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-box-align:baseline;align-items:baseline;display:-webkit-inline-box;display:inline-flex;flex-direction:column}.katex .hbox{width:100%}.katex .hbox,.katex .thinbox{-webkit-box-orient:horizontal;-webkit-box-direction:normal;display:-webkit-inline-box;display:inline-flex;flex-direction:row}.katex .thinbox{max-width:0;width:0}.katex .msupsub{text-align:left}.katex .mfrac>span>span{text-align:center}.katex .mfrac .frac-line{border-bottom-style:solid;display:inline-block;width:100%}.katex .hdashline,.katex .hline,.katex .mfrac .frac-line,.katex .overline .overline-line,.katex .rule,.katex .underline .underline-line{min-height:1px}.katex .mspace{display:inline-block}.katex .clap,.katex .llap,.katex .rlap{position:relative;width:0}.katex .clap>.inner,.katex .llap>.inner,.katex .rlap>.inner{position:absolute}.katex .clap>.fix,.katex .llap>.fix,.katex .rlap>.fix{display:inline-block}.katex .llap>.inner{right:0}.katex .clap>.inner,.katex .rlap>.inner{left:0}.katex .clap>.inner>span{margin-left:-50%;margin-right:50%}.katex .rule{border:0 solid;display:inline-block;position:relative}.katex .hline,.katex .overline .overline-line,.katex .underline .underline-line{border-bottom-style:solid;display:inline-block;width:100%}.katex .hdashline{border-bottom-style:dashed;display:inline-block;width:100%}.katex .sqrt>.root{margin-left:.27777778em;margin-right:-.55555556em}.katex .fontsize-ensurer.reset-size1.size1,.katex .sizing.reset-size1.size1{font-size:1em}.katex .fontsize-ensurer.reset-size1.size2,.katex .sizing.reset-size1.size2{font-size:1.2em}.katex .fontsize-ensurer.reset-size1.size3,.katex .sizing.reset-size1.size3{font-size:1.4em}.katex .fontsize-ensurer.reset-size1.size4,.katex .sizing.reset-size1.size4{font-size:1.6em}.katex .fontsize-ensurer.reset-size1.size5,.katex .sizing.reset-size1.size5{font-size:1.8em}.katex .fontsize-ensurer.reset-size1.size6,.katex .sizing.reset-size1.size6{font-size:2em}.katex .fontsize-ensurer.reset-size1.size7,.katex .sizing.reset-size1.size7{font-size:2.4em}.katex .fontsize-ensurer.reset-size1.size8,.katex .sizing.reset-size1.size8{font-size:2.88em}.katex .fontsize-ensurer.reset-size1.size9,.katex .sizing.reset-size1.size9{font-size:3.456em}.katex .fontsize-ensurer.reset-size1.size10,.katex .sizing.reset-size1.size10{font-size:4.148em}.katex .fontsize-ensurer.reset-size1.size11,.katex .sizing.reset-size1.size11{font-size:4.976em}.katex .fontsize-ensurer.reset-size2.size1,.katex .sizing.reset-size2.size1{font-size:.83333333em}.katex .fontsize-ensurer.reset-size2.size2,.katex .sizing.reset-size2.size2{font-size:1em}.katex .fontsize-ensurer.reset-size2.size3,.katex .sizing.reset-size2.size3{font-size:1.16666667em}.katex .fontsize-ensurer.reset-size2.size4,.katex .sizing.reset-size2.size4{font-size:1.33333333em}.katex .fontsize-ensurer.reset-size2.size5,.katex .sizing.reset-size2.size5{font-size:1.5em}.katex .fontsize-ensurer.reset-size2.size6,.katex .sizing.reset-size2.size6{font-size:1.66666667em}.katex .fontsize-ensurer.reset-size2.size7,.katex .sizing.reset-size2.size7{font-size:2em}.katex .fontsize-ensurer.reset-size2.size8,.katex .sizing.reset-size2.size8{font-size:2.4em}.katex .fontsize-ensurer.reset-size2.size9,.katex .sizing.reset-size2.size9{font-size:2.88em}.katex .fontsize-ensurer.reset-size2.size10,.katex .sizing.reset-size2.size10{font-size:3.45666667em}.katex .fontsize-ensurer.reset-size2.size11,.katex .sizing.reset-size2.size11{font-size:4.14666667em}.katex .fontsize-ensurer.reset-size3.size1,.katex .sizing.reset-size3.size1{font-size:.71428571em}.katex .fontsize-ensurer.reset-size3.size2,.katex .sizing.reset-size3.size2{font-size:.85714286em}.katex .fontsize-ensurer.reset-size3.size3,.katex .sizing.reset-size3.size3{font-size:1em}.katex .fontsize-ensurer.reset-size3.size4,.katex .sizing.reset-size3.size4{font-size:1.14285714em}.katex .fontsize-ensurer.reset-size3.size5,.katex .sizing.reset-size3.size5{font-size:1.28571429em}.katex .fontsize-ensurer.reset-size3.size6,.katex .sizing.reset-size3.size6{font-size:1.42857143em}.katex .fontsize-ensurer.reset-size3.size7,.katex .sizing.reset-size3.size7{font-size:1.71428571em}.katex .fontsize-ensurer.reset-size3.size8,.katex .sizing.reset-size3.size8{font-size:2.05714286em}.katex .fontsize-ensurer.reset-size3.size9,.katex .sizing.reset-size3.size9{font-size:2.46857143em}.katex .fontsize-ensurer.reset-size3.size10,.katex .sizing.reset-size3.size10{font-size:2.96285714em}.katex .fontsize-ensurer.reset-size3.size11,.katex .sizing.reset-size3.size11{font-size:3.55428571em}.katex .fontsize-ensurer.reset-size4.size1,.katex .sizing.reset-size4.size1{font-size:.625em}.katex .fontsize-ensurer.reset-size4.size2,.katex .sizing.reset-size4.size2{font-size:.75em}.katex .fontsize-ensurer.reset-size4.size3,.katex .sizing.reset-size4.size3{font-size:.875em}.katex .fontsize-ensurer.reset-size4.size4,.katex .sizing.reset-size4.size4{font-size:1em}.katex .fontsize-ensurer.reset-size4.size5,.katex .sizing.reset-size4.size5{font-size:1.125em}.katex .fontsize-ensurer.reset-size4.size6,.katex .sizing.reset-size4.size6{font-size:1.25em}.katex .fontsize-ensurer.reset-size4.size7,.katex .sizing.reset-size4.size7{font-size:1.5em}.katex .fontsize-ensurer.reset-size4.size8,.katex .sizing.reset-size4.size8{font-size:1.8em}.katex .fontsize-ensurer.reset-size4.size9,.katex .sizing.reset-size4.size9{font-size:2.16em}.katex .fontsize-ensurer.reset-size4.size10,.katex .sizing.reset-size4.size10{font-size:2.5925em}.katex .fontsize-ensurer.reset-size4.size11,.katex .sizing.reset-size4.size11{font-size:3.11em}.katex .fontsize-ensurer.reset-size5.size1,.katex .sizing.reset-size5.size1{font-size:.55555556em}.katex .fontsize-ensurer.reset-size5.size2,.katex .sizing.reset-size5.size2{font-size:.66666667em}.katex .fontsize-ensurer.reset-size5.size3,.katex .sizing.reset-size5.size3{font-size:.77777778em}.katex .fontsize-ensurer.reset-size5.size4,.katex .sizing.reset-size5.size4{font-size:.88888889em}.katex .fontsize-ensurer.reset-size5.size5,.katex .sizing.reset-size5.size5{font-size:1em}.katex .fontsize-ensurer.reset-size5.size6,.katex .sizing.reset-size5.size6{font-size:1.11111111em}.katex .fontsize-ensurer.reset-size5.size7,.katex .sizing.reset-size5.size7{font-size:1.33333333em}.katex .fontsize-ensurer.reset-size5.size8,.katex .sizing.reset-size5.size8{font-size:1.6em}.katex .fontsize-ensurer.reset-size5.size9,.katex .sizing.reset-size5.size9{font-size:1.92em}.katex .fontsize-ensurer.reset-size5.size10,.katex .sizing.reset-size5.size10{font-size:2.30444444em}.katex .fontsize-ensurer.reset-size5.size11,.katex .sizing.reset-size5.size11{font-size:2.76444444em}.katex .fontsize-ensurer.reset-size6.size1,.katex .sizing.reset-size6.size1{font-size:.5em}.katex .fontsize-ensurer.reset-size6.size2,.katex .sizing.reset-size6.size2{font-size:.6em}.katex .fontsize-ensurer.reset-size6.size3,.katex .sizing.reset-size6.size3{font-size:.7em}.katex .fontsize-ensurer.reset-size6.size4,.katex .sizing.reset-size6.size4{font-size:.8em}.katex .fontsize-ensurer.reset-size6.size5,.katex .sizing.reset-size6.size5{font-size:.9em}.katex .fontsize-ensurer.reset-size6.size6,.katex .sizing.reset-size6.size6{font-size:1em}.katex .fontsize-ensurer.reset-size6.size7,.katex .sizing.reset-size6.size7{font-size:1.2em}.katex .fontsize-ensurer.reset-size6.size8,.katex .sizing.reset-size6.size8{font-size:1.44em}.katex .fontsize-ensurer.reset-size6.size9,.katex .sizing.reset-size6.size9{font-size:1.728em}.katex .fontsize-ensurer.reset-size6.size10,.katex .sizing.reset-size6.size10{font-size:2.074em}.katex .fontsize-ensurer.reset-size6.size11,.katex .sizing.reset-size6.size11{font-size:2.488em}.katex .fontsize-ensurer.reset-size7.size1,.katex .sizing.reset-size7.size1{font-size:.41666667em}.katex .fontsize-ensurer.reset-size7.size2,.katex .sizing.reset-size7.size2{font-size:.5em}.katex .fontsize-ensurer.reset-size7.size3,.katex .sizing.reset-size7.size3{font-size:.58333333em}.katex .fontsize-ensurer.reset-size7.size4,.katex .sizing.reset-size7.size4{font-size:.66666667em}.katex .fontsize-ensurer.reset-size7.size5,.katex .sizing.reset-size7.size5{font-size:.75em}.katex .fontsize-ensurer.reset-size7.size6,.katex .sizing.reset-size7.size6{font-size:.83333333em}.katex .fontsize-ensurer.reset-size7.size7,.katex .sizing.reset-size7.size7{font-size:1em}.katex .fontsize-ensurer.reset-size7.size8,.katex .sizing.reset-size7.size8{font-size:1.2em}.katex .fontsize-ensurer.reset-size7.size9,.katex .sizing.reset-size7.size9{font-size:1.44em}.katex .fontsize-ensurer.reset-size7.size10,.katex .sizing.reset-size7.size10{font-size:1.72833333em}.katex .fontsize-ensurer.reset-size7.size11,.katex .sizing.reset-size7.size11{font-size:2.07333333em}.katex .fontsize-ensurer.reset-size8.size1,.katex .sizing.reset-size8.size1{font-size:.34722222em}.katex .fontsize-ensurer.reset-size8.size2,.katex .sizing.reset-size8.size2{font-size:.41666667em}.katex .fontsize-ensurer.reset-size8.size3,.katex .sizing.reset-size8.size3{font-size:.48611111em}.katex .fontsize-ensurer.reset-size8.size4,.katex .sizing.reset-size8.size4{font-size:.55555556em}.katex .fontsize-ensurer.reset-size8.size5,.katex .sizing.reset-size8.size5{font-size:.625em}.katex .fontsize-ensurer.reset-size8.size6,.katex .sizing.reset-size8.size6{font-size:.69444444em}.katex .fontsize-ensurer.reset-size8.size7,.katex .sizing.reset-size8.size7{font-size:.83333333em}.katex .fontsize-ensurer.reset-size8.size8,.katex .sizing.reset-size8.size8{font-size:1em}.katex .fontsize-ensurer.reset-size8.size9,.katex .sizing.reset-size8.size9{font-size:1.2em}.katex .fontsize-ensurer.reset-size8.size10,.katex .sizing.reset-size8.size10{font-size:1.44027778em}.katex .fontsize-ensurer.reset-size8.size11,.katex .sizing.reset-size8.size11{font-size:1.72777778em}.katex .fontsize-ensurer.reset-size9.size1,.katex .sizing.reset-size9.size1{font-size:.28935185em}.katex .fontsize-ensurer.reset-size9.size2,.katex .sizing.reset-size9.size2{font-size:.34722222em}.katex .fontsize-ensurer.reset-size9.size3,.katex .sizing.reset-size9.size3{font-size:.40509259em}.katex .fontsize-ensurer.reset-size9.size4,.katex .sizing.reset-size9.size4{font-size:.46296296em}.katex .fontsize-ensurer.reset-size9.size5,.katex .sizing.reset-size9.size5{font-size:.52083333em}.katex .fontsize-ensurer.reset-size9.size6,.katex .sizing.reset-size9.size6{font-size:.5787037em}.katex .fontsize-ensurer.reset-size9.size7,.katex .sizing.reset-size9.size7{font-size:.69444444em}.katex .fontsize-ensurer.reset-size9.size8,.katex .sizing.reset-size9.size8{font-size:.83333333em}.katex .fontsize-ensurer.reset-size9.size9,.katex .sizing.reset-size9.size9{font-size:1em}.katex .fontsize-ensurer.reset-size9.size10,.katex .sizing.reset-size9.size10{font-size:1.20023148em}.katex .fontsize-ensurer.reset-size9.size11,.katex .sizing.reset-size9.size11{font-size:1.43981481em}.katex .fontsize-ensurer.reset-size10.size1,.katex .sizing.reset-size10.size1{font-size:.24108004em}.katex .fontsize-ensurer.reset-size10.size2,.katex .sizing.reset-size10.size2{font-size:.28929605em}.katex .fontsize-ensurer.reset-size10.size3,.katex .sizing.reset-size10.size3{font-size:.33751205em}.katex .fontsize-ensurer.reset-size10.size4,.katex .sizing.reset-size10.size4{font-size:.38572806em}.katex .fontsize-ensurer.reset-size10.size5,.katex .sizing.reset-size10.size5{font-size:.43394407em}.katex .fontsize-ensurer.reset-size10.size6,.katex .sizing.reset-size10.size6{font-size:.48216008em}.katex .fontsize-ensurer.reset-size10.size7,.katex .sizing.reset-size10.size7{font-size:.57859209em}.katex .fontsize-ensurer.reset-size10.size8,.katex .sizing.reset-size10.size8{font-size:.69431051em}.katex .fontsize-ensurer.reset-size10.size9,.katex .sizing.reset-size10.size9{font-size:.83317261em}.katex .fontsize-ensurer.reset-size10.size10,.katex .sizing.reset-size10.size10{font-size:1em}.katex .fontsize-ensurer.reset-size10.size11,.katex .sizing.reset-size10.size11{font-size:1.19961427em}.katex .fontsize-ensurer.reset-size11.size1,.katex .sizing.reset-size11.size1{font-size:.20096463em}.katex .fontsize-ensurer.reset-size11.size2,.katex .sizing.reset-size11.size2{font-size:.24115756em}.katex .fontsize-ensurer.reset-size11.size3,.katex .sizing.reset-size11.size3{font-size:.28135048em}.katex .fontsize-ensurer.reset-size11.size4,.katex .sizing.reset-size11.size4{font-size:.32154341em}.katex .fontsize-ensurer.reset-size11.size5,.katex .sizing.reset-size11.size5{font-size:.36173633em}.katex .fontsize-ensurer.reset-size11.size6,.katex .sizing.reset-size11.size6{font-size:.40192926em}.katex .fontsize-ensurer.reset-size11.size7,.katex .sizing.reset-size11.size7{font-size:.48231511em}.katex .fontsize-ensurer.reset-size11.size8,.katex .sizing.reset-size11.size8{font-size:.57877814em}.katex .fontsize-ensurer.reset-size11.size9,.katex .sizing.reset-size11.size9{font-size:.69453376em}.katex .fontsize-ensurer.reset-size11.size10,.katex .sizing.reset-size11.size10{font-size:.83360129em}.katex .fontsize-ensurer.reset-size11.size11,.katex .sizing.reset-size11.size11{font-size:1em}.katex .delimsizing.size1{font-family:KaTeX_Size1}.katex .delimsizing.size2{font-family:KaTeX_Size2}.katex .delimsizing.size3{font-family:KaTeX_Size3}.katex .delimsizing.size4{font-family:KaTeX_Size4}.katex .delimsizing.mult .delim-size1>span{font-family:KaTeX_Size1}.katex .delimsizing.mult .delim-size4>span{font-family:KaTeX_Size4}.katex .nulldelimiter{display:inline-block;width:.12em}.katex .delimcenter,.katex .op-symbol{position:relative}.katex .op-symbol.small-op{font-family:KaTeX_Size1}.katex .op-symbol.large-op{font-family:KaTeX_Size2}.katex .accent>.vlist-t,.katex .op-limits>.vlist-t{text-align:center}.katex .accent .accent-body{position:relative}.katex .accent .accent-body:not(.accent-full){width:0}.katex .overlay{display:block}.katex .mtable .vertical-separator{display:inline-block;min-width:1px}.katex .mtable .arraycolsep{display:inline-block}.katex .mtable .col-align-c>.vlist-t{text-align:center}.katex .mtable .col-align-l>.vlist-t{text-align:left}.katex .mtable .col-align-r>.vlist-t{text-align:right}.katex .svg-align{text-align:left}.katex svg{fill:currentColor;stroke:currentColor;fill-rule:nonzero;fill-opacity:1;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;display:block;height:inherit;position:absolute;width:100%}.katex svg path{stroke:none}.katex img{border-style:none;max-height:none;max-width:none;min-height:0;min-width:0}.katex .stretchy{display:block;overflow:hidden;position:relative;width:100%}.katex .stretchy:after,.katex .stretchy:before{content:""}.katex .hide-tail{overflow:hidden;position:relative;width:100%}.katex .halfarrow-left{left:0;overflow:hidden;position:absolute;width:50.2%}.katex .halfarrow-right{overflow:hidden;position:absolute;right:0;width:50.2%}.katex .brace-left{left:0;overflow:hidden;position:absolute;width:25.1%}.katex .brace-center{left:25%;overflow:hidden;position:absolute;width:50%}.katex .brace-right{overflow:hidden;position:absolute;right:0;width:25.1%}.katex .x-arrow-pad{padding:0 .5em}.katex .cd-arrow-pad{padding:0 .55556em 0 .27778em}.katex .mover,.katex .munder,.katex .x-arrow{text-align:center}.katex .boxpad{padding:0 .3em}.katex .fbox,.katex .fcolorbox{border:.04em solid;box-sizing:border-box}.katex .cancel-pad{padding:0 .2em}.katex .cancel-lap{margin-left:-.2em;margin-right:-.2em}.katex .sout{border-bottom-style:solid;border-bottom-width:.08em}.katex .angl{border-right:.049em solid;border-top:.049em solid;box-sizing:border-content;margin-right:.03889em}.katex .anglpad{padding:0 .03889em}.katex .eqn-num:before{content:"(" counter(katexEqnNo) ")";counter-increment:katexEqnNo}.katex .mml-eqn-num:before{content:"(" counter(mmlEqnNo) ")";counter-increment:mmlEqnNo}.katex .mtr-glue{width:50%}.katex .cd-vert-arrow{display:inline-block;position:relative}.katex .cd-label-left{display:inline-block;position:absolute;right:-webkit-calc(50% + .3em);right:calc(50% + .3em);text-align:left}.katex .cd-label-right{display:inline-block;left:-webkit-calc(50% + .3em);left:calc(50% + .3em);position:absolute;text-align:right}.katex-display{display:block;margin:1em 0;text-align:center}.katex-display>.katex{display:block;text-align:center;white-space:nowrap}.katex-display>.katex>.katex-html{display:block;position:relative}.katex-display>.katex>.katex-html>.tag{position:absolute;right:0}.katex-display.leqno>.katex>.katex-html>.tag{left:0;right:auto}.katex-display.fleqn>.katex{padding-left:2em;text-align:left}body{counter-reset:katexEqnNo mmlEqnNo}
+
+/* style for html inside of browsers */
+.katex { font-size: 1em !important; } /* align KaTeX font-size to surrounding text */
+
+eq { display: inline-block; }
+eqn { display: block}
+section.eqno {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    align-items: center;
+}
+section.eqno > eqn {
+    width: 100%;
+    margin-left: 3em;
+}
+section.eqno > span {
+    width:3em;
+    text-align:right;
+}
+
+p { 
+    text-align: justify; 
+    hyphens: auto;
+}
+
+table {
+    display: table;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+figure {
+    margin: 0.5em auto;
+}
+figure > img {
+    display: block;
+    margin: 0 auto;
+    page-break-inside: avoid;
+    text-align: center;
+}
+figcaption { 
+    font-size: 0.9em;
+    margin-top: 0.5em;
+    text-align: center;
+}
+
+aside {
+  font-size: 0.9em;
+  max-width: 300px;
+  padding: 0 0 0 1em;
+  margin: 0 0 0 1em;
+  float: right;
+}
+
+aside > *:first-child {
+  margin-top: 0;
+}
+aside > *:last-child {
+  margin-bottom: 0;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="8-objekter">8. Objekter</h1>
+<p>Et vigtigt begreb i programmering og softwareudvikling i det hele taget er de såkaldte &quot;objekter&quot;, som vi vil introducerer i nærværende afsnit. De spiller en central rolle i  objekt-orienteret programmering (forkortet OOP), som vel nok er den mest anvendte tilgang af professionelle programmører og softwareudviklere.</p>
+<p>Kort fortalt betragtes verdenen i OOP som opbygget af objekter. Objekter kan være alt muligt fra mennesker, dyr til ting osv. Grundlæggende gælder det for alle objekter, at de har to begreber knyttet til sig:</p>
+<ol>
+<li>Attributter: Der beskriver objektets nuværende tilstand.</li>
+<li>Metoder: Dvs. en form for funktioner, der kan ændre på objektets nuværende tilstand.</li>
+</ol>
+<p>Objekter indkapsler med andre ord data og funktioner. Man kan tænke på dem som nogle containere, der ikke bare rummer statistiske værdier men også metoder til at ændre på disse værdier. Objekter kan have relationer til hinanden, de kan interagere med hinanden og ændre på hinandens tilstande. Herunder en figur der illustrerer det overordnede klassebegreb som en kapsel, der rummer metoder(eller adfærd) og variabler (eller data/attributter):
+<img src="file:///c:\code\P5Programmering\kap8\images\kapsel.png" alt="En klasse som en kapsel "></p>
+<p>En klasse kan også modelleres efter et såkaldt klassediagram, som er en nem måde at skabe et overblik over klassens funktionalitet:</p>
+<p><img src="file:///c:\code\P5Programmering\kap8\images\class.png" alt="En klasse som en kapsel "></p>
+<p>Som vi skal se i senere kapitler kan man tilføje rigtig megen information omkring en klasses metoder og attributter. I det følgende vil diagrammet blive brugt til at give en mere visuel repræsentation af klassebegrebet, og i takt med at vi udvider vores forståelse tilføjer vi flere informationer.</p>
+<p>I praksis kan OOP bruges bl.a. til at sikre, at man bedre kan håndtere, overskue og implementere den enorme og stadigt voksende kompleksitet i programmer og systemer. Brugt rigtigt giver de ligesom funktioner pænere løsninger, der er nemmere at forstå, nemmere at udvide og modificere men også i højere grad at genbruge.</p>
+<p>Til at starte med har vi fokus på at få en fornemmelse for hvordan et objekt konstrueres og hvad de kan bruges til herunder hvorledes vi tilføjer data og metoder samt benytter dem i praksis.</p>
+<h2 id="oprette-en-klasse-som-skabelon-for-et-objekt">Oprette en klasse som skabelon for et objekt</h2>
+<p>I Javascript konstrueres et objekt vha af nøgleordet “class”. Vi vil tillade at bruge klasse i stedet for class, når vi omtaler dem. Når man opretter en klasse konstrueres en datastruktur, der rummer både data eller egenskaber om det objekt, som klassen er en skabelon for, men også metoder (eller funktioner), der ændrer på objektets tilstand.</p>
+<p>Vi konstruerer en klasse ved at skrive <code>class</code> efterfulgt af navnet på klassen. Navnet skal være i et ord. Herefter følger kroppen omkrænset af en start og slut krølparentes:</p>
+<pre><code class="language-javascript">
+<span class="hljs-keyword">class</span> <span class="hljs-string">&quot;KlasseNavn&quot;</span>
+{
+
+
+}
+</code></pre>
+<p>Klassen er vores skabelon, som kan bruges til at konstruere eller med et fint ord &quot;instantiere&quot; objekter af denne skabelon. Dvs. objekter er med andre ord konstrueret ud fra vores skabelon.</p>
+<h2 id="klassens-konstruktør-initialiserer-objektet">Klassens konstruktør initialiserer objektet</h2>
+<p>Når vi opretter et objekt dvs. en instans af klassen er vi typisk interesseret i at indlæse nogle grundlæggende egenskaber fra start af. Det gør vi ved brug af en såkaldt &quot;konstruktør&quot;, som er en funktion eller metode, der har til formål at sætte nogle bestemte værdier på forhånd for den konkrete instans af klassen. I JS bruges nøgleordet <code>constructor</code> (eller konstruktør på dansk). Herunder et eksempel på en klasse som ingen argumenter tager og heller ingen værdier sætter i konstruktøren:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">class</span> <span class="hljs-string">&quot;KlasseNavn&quot;</span>
+{
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>)
+  {
+
+  }
+}
+</code></pre>
+<h2 id="multiple-konstruktører-og-klassens-attributter">Multiple konstruktører og klassens attributter</h2>
+<p>Modsat mange andre sprog, så understøtter Javascript som udgangspunkt kun en konstruktør uden mulighed for at <code>overloade</code> denne. Med dette skal forstås, at I mange andre sprog kan man faktisk lave flere konstruktører og skelne mellem de enkelte ved at have forskellige antal argumenter til konstruktøren. Dette lader sig ikke umiddelbart gøre i Javascript, men man kan i stedet gøre brug af et mindre &quot;hack&quot;, hvor man bruger standardværdier, og på den måde opnår nogenlunde samme funktionalitet i praksis.</p>
+<p>Herunder et eksempel på ovenstående hvor vi har lavet en konstruktør, der har mulighed for at tage ingen eller op til n parametre med angivet ved p1,..,pn :</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">class</span> <span class="hljs-string">&quot;KlasseNavn&quot;</span>
+{
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params">p1=<span class="hljs-string">&#x27;&#x27;</span>,p2=<span class="hljs-string">&#x27;&#x27;</span>,...,pn=<span class="hljs-string">&#x27;&#x27;</span></span>)
+  {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">p1</span> = p1
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">p2</span> = p2
+    ...
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">pn</span> = pn
+
+  }
+}
+</code></pre>
+<p>Ved at sætte p1,...,pn til en tom streng giver vi mulighed for at konstruktøren kan tage op til n-argumenter. De kan initialiseres eller undlades at initialiseres fuldstændig. Hvis vi initialiserer dem til andre værdier end de prædefineret, tildeles variablerne i kroppen af konstruktøren den/de ønskede værdi(er). Alternativt sætter Javascript blot disse attributter til den tomme streng.</p>
+<p>Variablerne i konstruktøren kaldes som tidligere nævnt også for <code>attributter</code>. Og som angivet ovenfor er det vigtigt at understrege, at selvom konstruktørens parametre har samme navne som attributterne, så er der tale om to forskellige ting.</p>
+<p>Brugen af <code>this.p1 = p1</code>,..., <code>this.pn = pn</code> betyder, at vi knytter argumenterne givet i konstruktøren som attributter til det konkrete objekt, som klassen er en skabelon for.
+<code>this</code> refererer altså til den konkrete instans af klassen eller objektet.</p>
+<h2 id="eksempel-på-en-klasse-cirkel">Eksempel på en klasse: Cirkel</h2>
+<p>Lad os prøve at konkretisere ovenstående ved at lave en klasse for cirkler. Vi starter med at visualisere den i et klassediagram:
+<img src="file:///c:\code\P5Programmering\kap8\images\classcircle.drawio.png" alt="En klasse for en cirkel"></p>
+<p>Til at starte med rummer klassen kun attributter, der skal beskrive cirklen. Vi skal senere udvide med metoder.</p>
+<p>En skabelon eller mere præcist en klasse for en cirkel kunne se således ud, men det er vigtigt at understrege, at den kunne se ud på mange forskellige måder:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Cirkel</span>{
+ <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>) {
+   <span class="hljs-variable language_">this</span>.<span class="hljs-property">color</span> = <span class="hljs-title function_">color</span>(<span class="hljs-number">255</span>);
+   <span class="hljs-variable language_">this</span>.<span class="hljs-property">xpos</span> = width/<span class="hljs-number">2</span>; 
+   <span class="hljs-variable language_">this</span>.<span class="hljs-property">ypos</span> = height/<span class="hljs-number">2</span>;
+   <span class="hljs-variable language_">this</span>.<span class="hljs-property">radius</span> = <span class="hljs-number">1</span>;
+  }
+}
+</code></pre>
+<p>Her angiver farve, position og radius nogle egenskaber ved en cirkel. De to variable <code>width</code>og <code>heigth</code> er prædefineret variable i P5.</p>
+<p>I det følgende har vi tilføjet konstruktøren, som vores første metode:</p>
+<p><img src="file:///c:\code\P5Programmering\kap8\images\classcircleconstructor.drawio.png" alt="En klasse for en cirkel med konstruktør"></p>
+<p>Konstruktøren kan betragtes som klassens første og meget vigtige metode, da den konstruerer klassen som objekt og initialiserer attributterne. Den første konstruktør tager ingen parametre, men i praksis vil det dog være rart selv at kunne bestemme værdierne, da de naturligvis varierer
+fra cirkel til cirkel. I det følgende ændres koden, så værdierne gives med i konstruktøren:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Cirkel</span>{
+ <span class="hljs-title function_">constructor</span>(<span class="hljs-params">colorcode=<span class="hljs-number">255</span>,xpos = width/<span class="hljs-number">2</span>,ypos = height/<span class="hljs-number">2</span>,radius = <span class="hljs-number">1</span> </span>) {
+   <span class="hljs-variable language_">this</span>.<span class="hljs-property">color</span> = <span class="hljs-title function_">color</span>(colorcode);
+   <span class="hljs-variable language_">this</span>.<span class="hljs-property">xpos</span> = xpos; 
+   <span class="hljs-variable language_">this</span>.<span class="hljs-property">ypos</span> = ypos;
+   <span class="hljs-variable language_">this</span>.<span class="hljs-property">radius</span> = radius;
+  }
+}
+</code></pre>
+<p>Herunder et klassediagram der illustrer ovenstående:
+<img src="file:///c:\code\P5Programmering\kap8\images\classcircleconstructorparam.drawio.png" alt="En klasse for en cirkel med konstruktør"></p>
+<p>Hvis vi ikke angiver andet i konstruktøren, så vil de angivne variabler blive initialiseret med de samme værdier som i den foregående konstruktør. Meget vigtigt at gøre opmærksom på i denne sammenhæng er dog, at konstruktøren forventer at få argumenterne i den anviste rækkefølge, når vi opretter en konkret instans af klassen. Det vender vi tilbage til om lidt.</p>
+<p>Hvert objekt er en cirkel, som skal kunne have forskellige egenskaber. Ved at bruge <code>this</code> får vi mulighed for at opbevare forskellige attributter hos de respektive cirkler. Igen er det en god ide at tænke på objekter som containere, der indeholder forskellige værdier.</p>
+<h2 id="oprette-et-objekt-eller-instans-af-klassen-med-nøgleordet-new">Oprette et objekt eller instans af klassen med nøgleordet <code>new</code></h2>
+<p>Vi kan nu oprette objekter vha. af vores klasse. Det gør vi ved brug af nøgleordet <code>new</code>:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">let</span> V = <span class="hljs-keyword">new</span> <span class="hljs-title function_">K</span>(A)
+</code></pre>
+<p>Variablenavnet er repræsenteret ved &quot;V&quot; og skal erstattes af et sigende navn/forkortelse for den klasse, som vi opretter en instans af. &quot;K&quot; repræsenterer klassens navn, og A betegner en eller flere attributter (adskilt af komma), som man kan give med til konstruktøren.</p>
+<p>Herunder et eksempel der forhåbentlig giver en bedre forståelse end den generelle definition:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">let</span> c1;
+<span class="hljs-keyword">let</span> c2;
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">setup</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-title function_">createCanvas</span>(<span class="hljs-number">400</span>, <span class="hljs-number">400</span>);
+  c1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Cirkel</span>(); <span class="hljs-comment">//vi opretter et nyt cirkel-objekt vha new (standard værdier for cirklen indlæses som attributter)</span>
+  c2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Cirkel</span>(<span class="hljs-number">255</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">20</span>); <span class="hljs-comment">//vi opretter et nyt cirkel-objekt vha new (colorcode = 255, x = 100, y= 100, radius = 20) </span>
+}
+</code></pre>
+<p>Vi har oprettet to forskellige cirkel-objekter med de to forskellige kald til den samme konstruktør her og gemt referencer til dem i de to variabler c1 og c2. Variablernes type er af typen &quot;Cirkel&quot;. Vi har med andre ord konstrueret vores helt egen type. Vi bemærk i øvrigt, at variablerne i virkeligheden blot peger på en adresse til de to objekter. Det er netop det vi forsøger at indikere, når vi taler om &quot;referencer&quot;. Herunder en illustration af ovenstående kode:</p>
+<p><img src="file:///c:\code\P5Programmering\kap8\images\circleinstance.drawio.png" alt="En cirkel og instanser af denne"></p>
+<h2 id="rækkefølgen-af-argumenter-til-konstruktøren">Rækkefølgen af argumenter til konstruktøren</h2>
+<p>Endelig gør vi, som vi nævnte før, opmærksom på at ved at bruge standard værdier til at rumme forskellige antal argumenter til  konstruktørerne, er vi tvunget til at overholde rækkefølgen i argumenterne. Eksempelvis kunne man forestille sig følgende instantiering:</p>
+<pre><code class="language-javascript">c3 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Cirkel</span>(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">20</span>)
+</code></pre>
+<p>Umiddelbart ville man tror det var en cirkel magen til referencen i <code>c2</code> men i praksis er det en cirkel med farvekoden <code>100</code> og centrum i <code>(x,y)=(100,20)</code> og radius <code>1</code>. Man skal med andre ord være opmærksom på rækkefølgen af ens argumenter/parametre i konstruktøren er overholdt ellers risikerer man at blande &quot;æbler og bananer&quot;.</p>
+<p>I den forbindelse bør man derfor være meget bevidst om hvilke attributter, som man i en instantiering har brug for at indlæse versus hvilke som altid kan justeres undervejs.
+Tænkes eksempelvis på en cirkel kunne man spørge sig selv, hvad er det der gør en cirkel til en cirkel? Er det ikke i højere grad et punkt og en radius fremfor eksempelvis farvekoden? I praksis kunne man derfor overveje helt at undlade farvekoden som argument til konstruktøren. Den kan nemlig altid justeres. Herunder et eksempel på en ny klasse konstruktion:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Cirkel</span>{
+ <span class="hljs-title function_">constructor</span>(<span class="hljs-params">x,y,r</span>) {
+   <span class="hljs-variable language_">this</span>.<span class="hljs-property">color</span> = <span class="hljs-title function_">color</span>(<span class="hljs-number">255</span>); <span class="hljs-comment">// bemærk vi har valgt at give den en prædefineret farvekode </span>
+                            <span class="hljs-comment">// og ikke som argument til konstruktøren </span>
+   <span class="hljs-variable language_">this</span>.<span class="hljs-property">xpos</span> = x;
+   <span class="hljs-variable language_">this</span>.<span class="hljs-property">ypos</span> = y;
+   <span class="hljs-variable language_">this</span>.<span class="hljs-property">radius</span> = r;
+  }
+
+</code></pre>
+<h2 id="ændre-attributter-efter-konstruktøren-er-blevet-kaldt">Ændre attributter efter konstruktøren er blevet kaldt</h2>
+<p>Vi kan som udgangspunkt ganske let ændre på attributternes værdier i et objekt, når vi først har instantieret det. Vi benytter følgende overordnede struktur:</p>
+<pre><code class="language-javascript"><span class="hljs-title class_">VariableObjekt</span>.<span class="hljs-property">AttributNavn</span> = <span class="hljs-title class_">NyV</span>ærdi
+</code></pre>
+<p>Herunder et eksempel der illustrerer hvorledes vi kan ændre en instans af cirklens attributter ovenfor:</p>
+<pre><code class="language-javascript">c = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Cirkel</span>(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">20</span>)
+c.<span class="hljs-property">color</span> = <span class="hljs-title function_">color</span>(<span class="hljs-number">75</span>) <span class="hljs-comment">// ændre farvekoden for cirklen</span>
+c.<span class="hljs-property">xpos</span> = <span class="hljs-number">50</span> <span class="hljs-comment">//ændre x-koordinatet til 50 i stedet for 100</span>
+</code></pre>
+<p>I praksis anbefales derfor at justere på ikke essentielle attributter (såsom farvekoden ovenfor) på denne måde.</p>
+<p>Vi gør desuden opmærksom på, at man også kan specificere at visse attributter er <code>private</code>. Dvs. de ikke bare lader sig ændre alle mulige steder i koder men at de skal ændres ved brug af bestemte metoder, så vi sikrer at de ændres korrekt. Det vender vi tilbage til i et senere kapitel.</p>
+<h2 id="objekters-metoder">Objekters metoder</h2>
+<p>Som vi nævnte før, så rummer klasser også metoder, der kan ændre på objektets tilstand. Herunder har vi udvidet vores generelle klassedefinition med metoder. Vi skal tænke på metoder som funktioner. De kan tage et input og returnere et output. Dvs. reelt er der bare tale om funktioner, men de kaldes typisk for &quot;metoder&quot;, når de flyttes ind i en klasse.
+Målet med metoder er typisk at ændre på et konkret objekts tilstand, som typisk er beskrevet ved dets attributter. Det kunne eksempelvis være at ændre på centrum for cirklen eller farvekoden.</p>
+<p>Herunder først en generisk formulering af metoder:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">class</span> <span class="hljs-string">&quot;KlasseNavn&quot;</span>
+{
+  <span class="hljs-comment">// først konstruktøren ...</span>
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params">p1=<span class="hljs-string">&#x27;&#x27;</span>,p2=<span class="hljs-string">&#x27;&#x27;</span>,...,pn=<span class="hljs-string">&#x27;&#x27;</span></span>)
+  {
+    <span class="hljs-comment">//...</span>
+  }
+  <span class="hljs-comment">// erstat selv &quot;metode1&quot; med et sigende navn</span>
+  <span class="hljs-comment">// kan have ingen eller op til n parametre</span>
+  <span class="hljs-string">&quot;metode1&quot;</span>(p11,....<span class="hljs-property">p1n</span>)
+  {
+
+  }
+  <span class="hljs-comment">//...</span>
+  <span class="hljs-comment">// erstat selv &quot;metodeM&quot; med et sigende navn</span>
+  <span class="hljs-comment">// kan have ingen eller op til n parametre</span>
+  <span class="hljs-string">&quot;metodeM&quot;</span>(pm1,....<span class="hljs-property">pmn</span>)
+  {
+
+  }
+}
+</code></pre>
+<p>I ovenstående har vi for overskuelighedens skyld givet metoderne navnene &quot;metode1&quot;, ...,&quot;metodeM&quot;, men i praksis bør man selvfølgelig give dem nogle sigende navne for den kontekst man arbejder med og være opmærksom på, at man navngiver metoderne på en ensartet måde.</p>
+<p>Vi kan have ligeså mange metoder vi ønsker, der tager lige så mange parametre som vi ønsker, og vi kan sågar have metoder ved samme navn, men i såfald vil den sidst defineret blive kaldt, hvorfor vi opfordre til at man undgår det eller løser det på samme måde som med konstruktøren, der har nogle standard værdier.</p>
+<p>Herunder har vi modelleret denne generelle klasse ovenfor i et generisk klassediagram:
+<img src="file:///c:\code\P5Programmering\kap8\images\genereltklassediagram.drawio.png" alt="Et generelt klassediagram">
+Vi bemærker, at diagrammet er udvidet med en indikation af hvilken type attributterne har og hvilken type metoderne returnerer. Der er med andre ord mulighed for at eksplicitere. Det er ikke nødvendigvis et krav og afhænger i høj grad af hvem man kommunikerer til. Handler det om at give et overblik så kan det undlades og omvendt, hvis det er til en programmør. Vi vender tilbage til klassediagrammer i detaljer i kapitel 13.</p>
+<p>Lad os konkretisere brugen af metoder i vores eksempel fra før med cirklen.
+Der kan eksempelvis blive behov for at ændre på cirklens tilstand såsom at bevæge cirklen et andet sted end på skærmen samt at tegne cirklen:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Cirkel</span>{
+ <span class="hljs-title function_">constructor</span>(<span class="hljs-params">x,y,r</span>) {
+   <span class="hljs-variable language_">this</span>.<span class="hljs-property">color</span> = <span class="hljs-title function_">color</span>(<span class="hljs-number">255</span>); <span class="hljs-comment">// bemærk vi har valgt at give den en prædefineret farvekode </span>
+                            <span class="hljs-comment">// og ikke som argument til konstruktøren </span>
+   <span class="hljs-variable language_">this</span>.<span class="hljs-property">xpos</span> = x;
+   <span class="hljs-variable language_">this</span>.<span class="hljs-property">ypos</span> = y;
+   <span class="hljs-variable language_">this</span>.<span class="hljs-property">radius</span> = r;
+  }
+  <span class="hljs-title function_">move</span>(<span class="hljs-params">x,y</span>){  <span class="hljs-comment">//start på metoden move</span>
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">xpos</span> = x;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">ypos</span> = y;
+  }
+  <span class="hljs-title function_">draw</span>() <span class="hljs-comment">//start på metoden draw</span>
+  {
+    <span class="hljs-title function_">ellipse</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">xpos</span>,<span class="hljs-variable language_">this</span>.<span class="hljs-property">ypos</span>,<span class="hljs-variable language_">this</span>.<span class="hljs-property">radius</span>);
+  }
+}
+</code></pre>
+<p>Bemærk flere vigtige ting her: 1) Selvom metoder reelt bare er funktioner, så skriver vi ikke længere function foran, når vi implementere en metode til en klasse. 2) Metode move tager to parametre mens draw ikke tager nogle. I metoden move bliver x og y brugt til at sætte centrums koordinaterne for x og y, der betegnes med xpos og ypos. 3) I metoden draw udnytter vi, at klassen har indlejret en række egenskaber, såsom centrum for cirklen, der betegnes med xpos og ypos.</p>
+<p>Herunder viser vi nu hvordan man kan bruge klassen til at oprette og bevæge en cirkel rundt på skærmen. Dvs. vi antager at koden ovenfor er tilføjet over funktionen setup:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">let</span> c;
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">setup</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-title function_">createCanvas</span>(<span class="hljs-number">400</span>, <span class="hljs-number">400</span>);
+  c = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Cirkel</span>(<span class="hljs-number">200</span>,<span class="hljs-number">200</span>,<span class="hljs-number">50</span>); <span class="hljs-comment">//vi opretter et nyt cirkel-objekt vha new</span>
+  c.<span class="hljs-title function_">draw</span>();
+  c.<span class="hljs-title function_">move</span>(<span class="hljs-number">300</span>,<span class="hljs-number">300</span>);
+  c.<span class="hljs-title function_">draw</span>();
+}
+</code></pre>
+<p>Bemærk her særligt konstruktionen af et nyt cirkelobjekt. Vi bruger nøgleordet <code>new</code>. Vi giver den argumenterne 200, 200 og 50, som xpos, ypos og radius bliver sat til jf. klasse-definitionen.</p>
+<p>Vi tegner herefter cirklen og flytter den til position (300,300). Afslutningsvis tegner vi den igen.</p>
+<p>Vi kunne let konstruere lige så mange cirkler som vi nu havde lyst til og vi skal i næste afsnit se hvordan vi kan opbevare mange af de samme objekter uden at skulle konstruere tilsvarende ligeså mange variabler. Men herunder følger et eksempel hvor vi har konstrueret to cirkler og kalder deres respektive metoder:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">let</span> c1;
+<span class="hljs-keyword">let</span> c2;
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">setup</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-title function_">createCanvas</span>(<span class="hljs-number">400</span>, <span class="hljs-number">400</span>);
+  c1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Cirkel</span>(<span class="hljs-number">200</span>,<span class="hljs-number">200</span>,<span class="hljs-number">50</span>);
+  c1.<span class="hljs-title function_">draw</span>();
+  c1.<span class="hljs-title function_">move</span>(<span class="hljs-number">300</span>,<span class="hljs-number">300</span>);
+  c1.<span class="hljs-title function_">draw</span>();
+  c2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Cirkel</span>(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">20</span>);
+  c2.<span class="hljs-title function_">draw</span>();
+}
+</code></pre>
+<h2 id="navngivning-af-klasser-metoder-og-attributter">Navngivning af klasser, metoder og attributter</h2>
+<p>For at øge læsbarheden på tværs af programmer og programmører, så anbefales det kraftigt, at man er konsekvent i sin navngivning af klasser, metoder og variable.
+I JavaScript ligesom alle mulige andre sprog, er der en række konventioner, som man forslås at følge.</p>
+<p>Når man navngiver en klasse skrives første bogstav med stort. Hvis klassens navn består af flere ord benyttes <code>PascalCase</code>. Dvs. hvert nyt ord skal starte med stort. Herunder nogle tænkte eksempler på klassenavne der illustrer ideen:</p>
+<pre><code class="language-javascript">hund = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Hund</span>()
+hundEjer = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HundEjer</span>(hund)
+p1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Punkt</span>()
+p2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Punkt</span>()
+ls = <span class="hljs-keyword">new</span> <span class="hljs-title class_">LinjeSegment</span>(p1,p2)
+</code></pre>
+<p>For navngivningen af metoder gælder, at man opfordres til at bruge at <code>CamelCase</code>, der modsat <code>PascalCase</code> tillader at det første bogstav i det første ord starter med småt. Ydermere anbefales det, at det første ord er et verbum som indikerer en handling (eller en ændring af objektets tilstand). Herunder nogle tænkte eksempler fra de ovenfor instantieret klasser:</p>
+<pre><code class="language-javascript">hundeNavn.<span class="hljs-property">s</span>æ<span class="hljs-title function_">tNavn</span>(<span class="hljs-string">&quot;Terry&quot;</span>) <span class="hljs-comment">//sætter hundens navn</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(hundEjer.<span class="hljs-title function_">hentNavn</span>()) <span class="hljs-comment">// printer &quot;Tintin&quot; ;-)</span>
+p1.<span class="hljs-property">s</span>æ<span class="hljs-title function_">tKoordinater</span>(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>) <span class="hljs-comment">//sætter koordinater for punkter</span>
+p2.<span class="hljs-property">s</span>æ<span class="hljs-title function_">tKoordinater</span>(<span class="hljs-number">7</span>,<span class="hljs-number">4</span>)
+ls = <span class="hljs-keyword">new</span> <span class="hljs-title class_">LinjeSegment</span>(p1,p2) <span class="hljs-comment">//konstruerer et linjesegment udfra punkterne</span>
+</code></pre>
+<p>Attributter og variablenavne kan også erklæres med <code>CamelCase</code> som eksemplerne ovenfor. Man bør i øvrigt være opmærksom på at for både klasser, metoder og attributter, så gælder der, at de er &quot;case sensitive&quot;, hvilket betyder, at Javascript skelner mellem navne/ord, hvor den eneste forskel er om et eller flere af bogstaverne er skrevet med små eller store bogstaver.</p>
+<p>Endelig bør man også være bevidst om, at man skriver på engelsk eller dansk. Generelt vil vi opfordre læseren til at overveje hvem målgruppen er og så i øvrigt være konsekvent og konsistent i sine valg.</p>
+<h2 id="øvelser">Øvelser</h2>
+<p>Herunder følger en række øvelser. Lav som minimum øvelserne 1. til 7 samt et af projekterne.</p>
+<ol>
+<li>Hvilke egenskaber og metoder kunne være relevante for en bil, et dyr og et selvvalgt objekt som den tredje. Giv mindst 3 metoder og 3 egenskaber for hver af de tre objekter. Overvej egenskabernes datatyper og hvordan metoderne bør kodes. Metoderne må ikke være draw.</li>
+<li>Navngiv metoderne hhv. klasserne ud fra reglerne om <code>CamelCase</code> hhv. <code>PascalCase</code>.</li>
+<li>Implementer en konstruktør med egenskaber og metoder for hver af de nævnte i 1.</li>
+<li>Implementer en draw metode, der kan tegne de tre objekter. Metoden skal gerne inddrage nogle af de 3 egenskaber for hver af de 3 objekter. Dvs. udfaldet af draw skal gerne påvirkes af ændringer i egenskaberne. Eksempelvis kan højden på en bil ændre tegningen af bilen.</li>
+<li>Vi laver i det følgende et simpelt spil kaldet “Afraid of raindrops”, hvor man i bunden har en vandret linje, som ens helt kan bevæge sig til venstre og højre på. Fra oven regner det med forskellige cirkler, der oprettes i toppen af skærmen og bevæger sig lodret ned. Cirklerne har forskellige størrelser og bevæger sig i forskellige hastigheder. Hvis ens cirkel kolliderer med ens helt, så er det gameover. Implementer en klasse for en cirkel, der håndterer forskellige størrelser, placeringer, hastigheder og kollision med ens helt. Implementer desuden, at man kan starte forfra og hold styr på antallet af cirkler, som man undgår.</li>
+<li>Forklar hvad følgende kode gør vha. kommentarer:</li>
+</ol>
+<pre><code class="language-javascript"><span class="hljs-keyword">let</span> b; 
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">setup</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-title function_">createCanvas</span>(<span class="hljs-number">640</span>, <span class="hljs-number">360</span>);
+  b = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Ball</span>(); 
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">draw</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-title function_">background</span>(<span class="hljs-number">255</span>);
+  b.<span class="hljs-title function_">update</span>(); 
+  b.<span class="hljs-title function_">display</span>();
+}
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Ball</span> {
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-comment">// vi opretter to vektorer</span>
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">position</span> = <span class="hljs-keyword">new</span> <span class="hljs-title function_">createVector</span>(<span class="hljs-title function_">random</span>(<span class="hljs-number">100</span>), <span class="hljs-title function_">random</span>(<span class="hljs-number">100</span>));
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">velocity</span> = <span class="hljs-keyword">new</span> <span class="hljs-title function_">createVector</span>(<span class="hljs-title function_">random</span>(<span class="hljs-number">1</span>,<span class="hljs-number">4</span>), <span class="hljs-title function_">random</span>(<span class="hljs-number">1</span>,<span class="hljs-number">5</span>));
+  }
+  
+  <span class="hljs-title function_">update</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">position</span>.<span class="hljs-title function_">add</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">velocity</span>);
+    
+    <span class="hljs-keyword">if</span> ((<span class="hljs-variable language_">this</span>.<span class="hljs-property">position</span>.<span class="hljs-property">x</span> &gt; width) || (<span class="hljs-variable language_">this</span>.<span class="hljs-property">position</span>.<span class="hljs-property">x</span> &lt; <span class="hljs-number">0</span>)) {
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">velocity</span>.<span class="hljs-property">x</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">velocity</span>.<span class="hljs-property">x</span> * -<span class="hljs-number">1</span>;
+    }
+    <span class="hljs-keyword">if</span> ((<span class="hljs-variable language_">this</span>.<span class="hljs-property">position</span>.<span class="hljs-property">y</span> &gt; height) || (<span class="hljs-variable language_">this</span>.<span class="hljs-property">position</span>.<span class="hljs-property">y</span> &lt; <span class="hljs-number">0</span>)) {
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">velocity</span>.<span class="hljs-property">y</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">velocity</span>.<span class="hljs-property">y</span> * -<span class="hljs-number">1</span>;
+    }
+  }
+  <span class="hljs-title function_">display</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-title function_">stroke</span>(<span class="hljs-number">0</span>);
+    <span class="hljs-title function_">fill</span>(<span class="hljs-number">175</span>);
+    <span class="hljs-title function_">ellipse</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">position</span>.<span class="hljs-property">x</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">position</span>.<span class="hljs-property">y</span>, <span class="hljs-number">48</span>, <span class="hljs-number">48</span>);
+  }
+}
+</code></pre>
+<ol start="6">
+<li>Udvid koden i 5 med en metode, der tager en anden bold og returnerer hvorvidt de overlapper/kolliderer.</li>
+<li>Udvid koden i 5. så der er fem forskellige cirkler med forskellige radier der bevæger sig rundt med forskellige hastigheder. Implementer en metode der giver point hvis der bliver trykket på cirklerne. De små og hurtigt bevægende cirkler skal give flere point.</li>
+<li>Konstruer en klasse der repræsenterer en cirkel. Dvs. med attributter til at beskrive radius og placering samt metoder til at tegne og farvelægge cirklen. Udvid nu cirklen så den har en ekstra attribut, der beskriver farven af cirklen. Cirklen kan antage fem forskellige farver. Udvid draw, så den farvelægger cirklen efter den foreskrevne attribut.</li>
+<li>Konstruer en løkke, der genererer 100 af de nævnte cirkler fra forrige opgave med fire tilfældige farver. Skriv nu en funktion, der tager tre parametre (se nedenfor). De fire parametre består af listen af cirkler, koordinater. Funktionen har til opgave at finde farven for den nye cirkel ved at farvelæg den med den samme farve, som den cirkel der ligger nærmest den nye cirkel.</li>
+</ol>
+<pre><code class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">knn</span>(<span class="hljs-params">cirkler, x, y, r</span>)
+{
+
+}
+</code></pre>
+<ol start="10">
+<li>Udvid koden i foregående opgave, så tager en ekstra parameter kaldet K, hvor K er et naturligt tal større end 1. Farvelæg nu cirklen efter den mest forekommende farve blandt de K nærmeste naboer til cirklen. Denne algoritme kaldes KNN (K-Nærmeste-Naboer) og er en basal, men vigtig algoritme indenfor maskinelæring og kunstig intelligens.</li>
+<li>Konstruer en klasse der repræsenterer en fugl og lav metoder til at animere at den flyver og den bevæger sig vandret over skærmen. Det må gerne være en meget simpel fugl.</li>
+<li>Udvid med en simpel rektangulær riffel i bunden af skærmen, der skyder ellipseformede kugler af sted i den retning, der klikkes med musen.</li>
+<li>Konstruer en animation vha klasser, der visualiserer en række dominobrikker der vælter fra siden. Brug simple rektangler.</li>
+<li>Konstruer en klasse for en person. Klassen skal kunne tegne personen (bare en tændstiksmand). Lav metoder der kan bevæge arme og ben i stop motion stil ved at trykke på bestemte taster.</li>
+<li>Udvid 7)  så man kan gå fra venstre mod højre på skærmen. Lav flere personer der går efter hinanden.</li>
+<li>Lav en tændstiksmand, der kan danse nogle meget simple bevægelser vha selvvalgte taster. Brug klasser i implementeringen.</li>
+<li>Lav et simpelt Pong-spil ved hjælp af klasser. En klasse til at repræsentere de to padler, som placeres i hver sin side. Bolden bevæger sig frem og tilbage, når den kolliderer med padlerne. Udvid Pong, så man kan have flere bolde i gang samtidig. Der er point til modstanderen hvis man ikke når at ramme bolden. I et af projekterne skal vi lave en kunstig intelligent modstander, så der har du også mulighed for at se hvorledes Pong kan laves. Men det er en god øvelse at lave det selv først.</li>
+</ol>
+<h2 id="projekt-epidemi-simulation">Projekt: Epidemi-simulation</h2>
+<p>Konstruér et lærred med maksimal størrelse vha. de globale variabler windowWidth og windowHeight.</p>
+<p>Lav to globale variabler x og y. Sæt x=windowWidth/2 og y=windowHeight/2.</p>
+<p>Lav en global variabel r og sæt den til et lille tal. F.eks. 10.</p>
+<p>Tegn en cirkel i (x,y) med radius r. En cirkel repræsenterer et menneske i vores simulation.</p>
+<p>Vi skal nu have mennesket til at bevæge sig:</p>
+<ul>
+<li>
+<p>Opret to globale variabler r1 og r2 og sæt dem til tal i ]0;1[.</p>
+</li>
+<li>
+<p>I funktionen draw opdateres cirklens centrum til x=x+r1 og y=y+r2.</p>
+</li>
+</ul>
+<p>Kør programmet. Mennesket bevæger sig nu (desværre ud af lærred).</p>
+<p>For at få mennesket til at bevæge sig tilbage, skal vi først tjekke om personen er på vej uden for. I draw-funktion skal du implementere følgende:</p>
+<ul>
+<li>
+<p>Hvis x-r&lt;0 er personen på vej ud til venstre for lærred. Sæt r1=- r1.</p>
+</li>
+<li>
+<p>Hvis x+r&gt;maxWidth er personen på vej ud til højre for lærred. Sæt r1=-r1.</p>
+</li>
+<li>
+<p>Hvis y&lt;0 er personen  på vej ud over lærred. Sæt r2=-r2.</p>
+</li>
+<li>
+<p>Hvis y&gt;maxHeight er personen på vej ud under lærred. Sæt r2=-r2.</p>
+</li>
+</ul>
+<p>Nu bevæger personen sig rundt på lærred så længe, at programmet kører. Svar på følgende spørgsmål:</p>
+<ol>
+<li>Hvorfor indgår radius r i beregningerne ovenfor?</li>
+<li>Hvad sker der, hvis vi eksempelvis sætter r1 eller r2 til et større tal?</li>
+<li>Hvorfor ændrer vi fortegn på retningsvektorens ene koordinat ved kollision med lærreds vægge? Vink: Forstå refleksionsloven: <a href="https://www.mathsisfun.com/physics/reflection.html">https://www.mathsisfun.com/physics/reflection.html</a></li>
+</ol>
+<p>For at få flere mennesker til at bevæge sig rundt, er det en god idé at benytte datatypen “array” samt lidt objekt-orienteret programmering (OOP). Da OOP er B-niveau er det helt i orden at kopiere koden nedenfor ind øverst i script.js.</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Menneske</span> {
+    <span class="hljs-title function_">constructor</span>(<span class="hljs-params">x, y, radius, retning_x, retning_y</span>) {
+   	 <span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span> = x;
+   	 <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span> = y;
+   	 <span class="hljs-variable language_">this</span>.<span class="hljs-property">radius</span> = radius;
+   	 <span class="hljs-variable language_">this</span>.<span class="hljs-property">retning_x</span> = retning_x;
+   	 <span class="hljs-variable language_">this</span>.<span class="hljs-property">retning_y</span> = retning_y;
+    }
+
+    <span class="hljs-title function_">draw</span>(<span class="hljs-params"></span>) {
+   	 <span class="hljs-title function_">circle</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">radius</span>*<span class="hljs-number">2</span>);
+    }
+
+    <span class="hljs-title function_">collision</span>(<span class="hljs-params">windowWidth, windowHeight</span>) {
+   	 <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span> + <span class="hljs-variable language_">this</span>.<span class="hljs-property">radius</span> &gt; windowWidth) {
+   		 <span class="hljs-variable language_">this</span>.<span class="hljs-property">retning_x</span> = -<span class="hljs-variable language_">this</span>.<span class="hljs-property">retning_x</span>;
+
+   	 }
+   	 <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span> - <span class="hljs-variable language_">this</span>.<span class="hljs-property">radius</span> &lt;= <span class="hljs-number">0</span>) {
+   		 <span class="hljs-variable language_">this</span>.<span class="hljs-property">retning_x</span> = -<span class="hljs-variable language_">this</span>.<span class="hljs-property">retning_x</span>;
+
+   	 }
+   	 <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span> + <span class="hljs-variable language_">this</span>.<span class="hljs-property">radius</span> &gt; windowHeight) {
+   		 <span class="hljs-variable language_">this</span>.<span class="hljs-property">retning_y</span> = -<span class="hljs-variable language_">this</span>.<span class="hljs-property">retning_y</span>;
+   	 }
+   	 <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span> - <span class="hljs-variable language_">this</span>.<span class="hljs-property">radius</span> &lt;= <span class="hljs-number">0</span>) {
+   		 <span class="hljs-variable language_">this</span>.<span class="hljs-property">retning_y</span> = -<span class="hljs-variable language_">this</span>.<span class="hljs-property">retning_y</span>;
+   	 }
+   	 <span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span> + <span class="hljs-variable language_">this</span>.<span class="hljs-property">retning_x</span>;
+   	 <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span> + <span class="hljs-variable language_">this</span>.<span class="hljs-property">retning_y</span>;
+    }
+
+}
+</code></pre>
+<p>Lav nu et globalt array, der er tomt. Kald det “mennesker”.</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">let</span> mennesker = [];
+</code></pre>
+<p>Opret en global variabel n og sæt den til f.eks. 500. Denne variabel betegner hvor mange mennesker, der indgår i vores simulation.</p>
+<p>I setup-funktionen tilføjer du en for-løkke. I for-løkken skal nye menneske-objekter oprettes og tilføjes til dit array. Det gøres med new-operatoren:</p>
+<pre><code class="language-javascript">mennesker.<span class="hljs-title function_">push</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Menneske</span>(<span class="hljs-title function_">random</span>(<span class="hljs-number">0</span>, windowWidth), <span class="hljs-title function_">random</span>(<span class="hljs-number">0</span>, windowHeight), radius, <span class="hljs-title function_">random</span>(-<span class="hljs-number">5</span>, <span class="hljs-number">5</span>), <span class="hljs-title function_">random</span>(-<span class="hljs-number">5</span>, <span class="hljs-number">5</span>)));
+</code></pre>
+<p>Bemærk: push-funktionen er en metode på array-objektet, der tilføjer nye elementer til arrayet.</p>
+<p>Random-funktionen sikrer bare, at menneskene indsættes forskellige steder på lærred og bevæger sig med forskellige hastigheder.</p>
+<p>Tilbage er bare at konstruere en for-løkke i din draw-funktion, der tegner alle menneskene i dit array.</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+   mennesker[i].<span class="hljs-title function_">draw</span>();
+   mennesker[i].<span class="hljs-title function_">collision</span>(windowWidth, windowHeight);
+}
+</code></pre>
+<p>Nu bevæger n mennesker sig rundt på lærred. Du kan nu implementere følgende funktionalitet selv:</p>
+<ol>
+<li>Lad hvert menneske have sin egen farve ved at tilføje en farve-attribut til din constructor i Menneske-klassen og initialisere den til en bestemt farve, når du opretter et menneske.</li>
+<li>Skrive kode i draw-funktionen, der afgør om et menneske kolliderer med et andet menneske. Vink: Benyt en ny for-løkke.</li>
+<li>Skriv kode, der inddeler mennesker i 3 kategorier: Smittet, usmittet og raske.</li>
+</ol>
+<h2 id="projekt-ping-pong-ai">Projekt: Ping-Pong AI</h2>
+<p>I nærværende skal vi lave en kunstig intelligent modstander til Pong. Man kan vælge mange strategier. Herunder er bare nævnt nogle få stykker:</p>
+<ul>
+<li>&quot;Løberen&quot;: Bevæger sig efter bolden.</li>
+<li>&quot;Midteren&quot;: Bevæger sig ind til midten, når man har slået og bevæger sig først igen når modstanderen har slået.</li>
+<li>&quot;Beregneren&quot;: Forsøger at beregne banekurven for bolden og placere sig derefter.</li>
+</ul>
+<p>Projektet er rigtig sjovt, hvis man er flere om at udvikle hver sin AI, så  man kan lade dem konkurrece mod hinanden.</p>
+<p>Start med at danne dig et overblik over koden og forstå hvad der sker.
+Projektet er øvelse i at bruge klasser samt deres metoder og attributter. Men ydermere vil det også øve dig i at læse større mængder af eksisterende kode. Det er vigtig kompetence som programmør, da man jo sjældent starter med at udvikle noget fra bunden men i stedet ofte tager udgangspunkt i en eksisterende kodebase.
+Selve spillet og koden er vedlagt men kan også tilgås online på <a href="https://editor.p5js.org/henrik.sterner/sketches/0cVpDHzZU%E2%80%8B">https://editor.p5js.org/henrik.sterner/sketches/0cVpDHzZU​</a></p>
+<p>Herunder er koden for pong-spillet fordelt på flere filer. Husk at inkludere filerne i din index.html (se et eksempel til sidst):</p>
+<pre><code class="language-javascript"><span class="hljs-comment">//ball.js: Håndtere bolden og dens fysik</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Ball</span>
+{
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>)
+  {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">START_SPEED</span> = <span class="hljs-number">4</span>;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span> = <span class="hljs-number">200</span>;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span> = <span class="hljs-number">100</span>;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">w</span> = <span class="hljs-number">20</span>;
+    <span class="hljs-keyword">let</span> a = <span class="hljs-title function_">random</span>(-<span class="hljs-variable constant_">PI</span>/<span class="hljs-number">4</span>,<span class="hljs-variable constant_">PI</span>/<span class="hljs-number">4</span>)+<span class="hljs-title function_">random</span>([<span class="hljs-number">0</span>,<span class="hljs-variable constant_">PI</span>]);
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">vx</span> = <span class="hljs-title function_">cos</span>(a)*<span class="hljs-variable language_">this</span>.<span class="hljs-property">START_SPEED</span>;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">vy</span> = <span class="hljs-title function_">sin</span>(a)*<span class="hljs-variable language_">this</span>.<span class="hljs-property">START_SPEED</span>;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">history</span>=[]<span class="hljs-comment">//contains the 25 points from the last 25 frames</span>
+  }
+  
+  <span class="hljs-title function_">move</span>(<span class="hljs-params"></span>)
+  {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span> +=<span class="hljs-variable language_">this</span>.<span class="hljs-property">vy</span>;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span> +=<span class="hljs-variable language_">this</span>.<span class="hljs-property">vx</span>;
+  } 
+  
+  <span class="hljs-title function_">update</span>(<span class="hljs-params"></span>)
+  {
+    <span class="hljs-keyword">if</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span>&gt;=height || <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span>&lt;=<span class="hljs-number">0</span>)
+    {
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">vy</span> *= -<span class="hljs-number">1</span>;
+    }
+    <span class="hljs-keyword">let</span> v = <span class="hljs-title function_">createVector</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span>, <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span>)
+    
+    <span class="hljs-keyword">if</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">history</span>.<span class="hljs-property">length</span>&gt;<span class="hljs-number">25</span>)
+    {
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">history</span>=<span class="hljs-variable language_">this</span>.<span class="hljs-property">history</span>.<span class="hljs-title function_">slice</span>((<span class="hljs-number">1</span>, <span class="hljs-number">26</span>))
+    }
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">history</span>.<span class="hljs-title function_">push</span>(v)
+
+  }
+  <span class="hljs-title function_">reset</span>(<span class="hljs-params"></span>)
+  {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">history</span> = [];
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span> = <span class="hljs-number">200</span>;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span> = <span class="hljs-number">100</span>;
+    <span class="hljs-keyword">let</span> a = <span class="hljs-title function_">random</span>(-<span class="hljs-variable constant_">PI</span>/<span class="hljs-number">4</span>,<span class="hljs-variable constant_">PI</span>/<span class="hljs-number">4</span>)+<span class="hljs-title function_">random</span>([<span class="hljs-number">0</span>,<span class="hljs-variable constant_">PI</span>]);
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">vx</span> = <span class="hljs-title function_">cos</span>(a)*<span class="hljs-variable language_">this</span>.<span class="hljs-property">START_SPEED</span>;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">vy</span> = <span class="hljs-title function_">sin</span>(a)*<span class="hljs-variable language_">this</span>.<span class="hljs-property">START_SPEED</span>;
+  }
+  <span class="hljs-title function_">show</span>(<span class="hljs-params"></span>)
+  {
+    <span class="hljs-title function_">fill</span>(<span class="hljs-number">255</span>);
+    <span class="hljs-title function_">noStroke</span>();
+    <span class="hljs-title function_">ellipse</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span>,<span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span>,<span class="hljs-variable language_">this</span>.<span class="hljs-property">w</span>);
+  }
+}
+</code></pre>
+<p>Herefter følger koden for den menneske paddle:</p>
+<pre><code class="language-javascript"><span class="hljs-comment">//peddle.js håndtere at man kan bevæge paddlen med tastaturet</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Peddle</span>
+{
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params">side,name</span>)
+  {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span> = name
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">selectPosition</span>(side);
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">w</span> = <span class="hljs-number">20</span>;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">h</span> = <span class="hljs-number">100</span>;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span> = <span class="hljs-number">200</span><span class="hljs-comment">//height;</span>
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">vy</span> = <span class="hljs-number">2</span>;     
+  }
+
+  <span class="hljs-title function_">selectPosition</span>(<span class="hljs-params">side</span>)
+  {
+    <span class="hljs-keyword">if</span>(side===<span class="hljs-string">&quot;Left&quot;</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">10</span>
+    <span class="hljs-keyword">if</span>(side===<span class="hljs-string">&quot;Right&quot;</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">390</span>
+  }
+
+  <span class="hljs-title function_">update</span>(<span class="hljs-params"></span>)
+  {
+    <span class="hljs-keyword">if</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span>&gt;=height-<span class="hljs-number">50</span> || <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span>&lt;=<span class="hljs-number">50</span>)
+    {
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">vy</span> *=-<span class="hljs-number">1</span>;
+    }
+  }
+  <span class="hljs-title function_">change_dir</span>(<span class="hljs-params">y</span>)
+  {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">vy</span> = y;
+  }
+  <span class="hljs-comment">// ballx, bally er boldens nuværende postition</span>
+  <span class="hljs-comment">// ballxspeed, ballyspeed boldens velocity </span>
+  <span class="hljs-comment">// history er en liste af vektorer der pejer på de sidste 25 pkt bolden har været</span>
+  <span class="hljs-comment">// Paddlex og Paddley er positionen af den anden paddle</span>
+ 
+  <span class="hljs-title function_">move</span>(<span class="hljs-params">ballx,bally,ballxspeed, ballyspeed, history,Paddlex,Paddley</span>)
+  {
+    <span class="hljs-comment">//The runner</span>
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span> +=<span class="hljs-variable language_">this</span>.<span class="hljs-property">vy</span>; 
+  }
+  <span class="hljs-title function_">show</span>(<span class="hljs-params"></span>)
+  {
+    <span class="hljs-title function_">rect</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span>,<span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span>,<span class="hljs-variable language_">this</span>.<span class="hljs-property">w</span>,<span class="hljs-variable language_">this</span>.<span class="hljs-property">h</span>);
+  }
+  
+}
+</code></pre>
+<p>Endelige følger en skabelon for AI-modstanderen.</p>
+<pre><code class="language-javascript">  <span class="hljs-comment">//peddleAI.js</span>
+  <span class="hljs-comment">// Det er her i peddleAI.js=&gt; move at I skal skrive noget kode der får jeres AI til at rykke sig</span>
+  <span class="hljs-comment">// ballx, bally er boldens nuværende postition</span>
+  <span class="hljs-comment">// ballxspeed, ballyspeed boldens velocity </span>
+  <span class="hljs-comment">// history er en liste af vektorer der pejer på de sidste 25 pkt bolden har været</span>
+  <span class="hljs-comment">// Paddlex og Paddley er positionen af den anden paddle</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">PeddleAI</span>
+{
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params">side, name</span>)
+  {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span> = name
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">selectPosition</span>(side);
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">w</span> = <span class="hljs-number">20</span>;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">h</span> = <span class="hljs-number">100</span>;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span> = <span class="hljs-number">200</span><span class="hljs-comment">//height;</span>
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">vy</span> = <span class="hljs-title function_">random</span>([-<span class="hljs-number">2</span>,<span class="hljs-number">2</span>]);  
+  }
+
+  <span class="hljs-title function_">selectPosition</span>(<span class="hljs-params">side</span>)
+  {
+    <span class="hljs-keyword">if</span>(side===<span class="hljs-string">&quot;Left&quot;</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">10</span>
+    <span class="hljs-keyword">if</span>(side===<span class="hljs-string">&quot;Right&quot;</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">390</span>
+  }
+
+  <span class="hljs-title function_">update</span>(<span class="hljs-params"></span>)
+  {
+    <span class="hljs-keyword">if</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span>&gt;=height-<span class="hljs-number">50</span> || <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span>&lt;=<span class="hljs-number">50</span>)
+    {
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">vy</span> *=-<span class="hljs-number">1</span>;
+    }
+  }
+  <span class="hljs-title function_">change_dir</span>(<span class="hljs-params">y</span>)
+  {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">vy</span> = y;
+  }
+
+  
+  <span class="hljs-title function_">move</span>(<span class="hljs-params">ballx,bally,ballxspeed, ballyspeed, history,Paddlex,Paddley</span>) 
+  {
+    <span class="hljs-comment">//The chaser</span>
+     
+    <span class="hljs-keyword">if</span>(bally&gt;<span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span>){
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">vy</span> = <span class="hljs-number">2</span>
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span>+<span class="hljs-variable language_">this</span>.<span class="hljs-property">vy</span>
+    }
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(bally&lt;<span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span>){
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">vy</span> = -<span class="hljs-number">2</span>
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span> + <span class="hljs-variable language_">this</span>.<span class="hljs-property">vy</span>
+    }
+    
+    <span class="hljs-comment">//this.y +=this.vy; bare køre op og ned </span>
+  }
+
+
+
+  <span class="hljs-title function_">show</span>(<span class="hljs-params"></span>)
+  {
+    <span class="hljs-title function_">rect</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span>,<span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span>,<span class="hljs-variable language_">this</span>.<span class="hljs-property">w</span>,<span class="hljs-variable language_">this</span>.<span class="hljs-property">h</span>);
+  }
+  
+}
+</code></pre>
+<p>Efterfølgende er her sketch.js som samler de andre klasser:</p>
+<pre><code class="language-javascript">
+<span class="hljs-keyword">let</span> r_p;  <span class="hljs-comment">// right paddle</span>
+<span class="hljs-keyword">let</span> l_p;  <span class="hljs-comment">// left paddle</span>
+<span class="hljs-keyword">let</span> ball;
+<span class="hljs-keyword">let</span> prev_x = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">let</span> score1 = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">let</span> score2 = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-variable constant_">SPEED_UP</span> = <span class="hljs-number">1.02</span>;
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">setup</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-title function_">createCanvas</span>(<span class="hljs-number">400</span>, <span class="hljs-number">400</span>);
+  <span class="hljs-title function_">rectMode</span>(<span class="hljs-variable constant_">CENTER</span>);
+  l_p= <span class="hljs-keyword">new</span> <span class="hljs-title class_">Peddle</span>(<span class="hljs-string">&quot;Left&quot;</span>,<span class="hljs-string">&quot;The Runner&quot;</span>);
+  r_p = <span class="hljs-keyword">new</span> <span class="hljs-title class_">PeddleAI</span>(<span class="hljs-string">&quot;Right&quot;</span>,<span class="hljs-string">&quot;The Chaser&quot;</span>);
+  ball = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Ball</span>();
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">moveHuman</span>(<span class="hljs-params"></span>) <span class="hljs-comment">//left side can be moved manually using arrows</span>
+{
+    l_p.<span class="hljs-property">vy</span> = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">if</span>(<span class="hljs-title function_">keyIsDown</span>(<span class="hljs-variable constant_">UP_ARROW</span>))
+    {
+      <span class="hljs-keyword">if</span>(l_p.<span class="hljs-property">y</span>&lt;=<span class="hljs-number">50</span>)
+      {
+        l_p.<span class="hljs-property">vy</span> *=-<span class="hljs-number">1</span>;
+      }
+      <span class="hljs-keyword">else</span> {
+        l_p.<span class="hljs-property">y</span>-=<span class="hljs-number">2</span>
+      }
+      
+    }      
+    <span class="hljs-keyword">if</span>(<span class="hljs-title function_">keyIsDown</span>(<span class="hljs-variable constant_">DOWN_ARROW</span>))
+    {
+      <span class="hljs-keyword">if</span>(l_p.<span class="hljs-property">y</span>&gt;=height-<span class="hljs-number">50</span>)
+      {
+        l_p.<span class="hljs-property">vy</span> *=-<span class="hljs-number">1</span>;
+      }
+      <span class="hljs-keyword">else</span> {
+        l_p.<span class="hljs-property">y</span>+=<span class="hljs-number">2</span>
+      }
+    }
+    
+}
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">draw</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-title function_">background</span>(<span class="hljs-number">0</span>);
+  <span class="hljs-title function_">textSize</span>(<span class="hljs-number">20</span>);
+  <span class="hljs-title function_">text</span>(l_p.<span class="hljs-property">name</span>,<span class="hljs-number">30</span>,<span class="hljs-number">50</span>)
+  <span class="hljs-title function_">text</span>(score1,<span class="hljs-number">45</span>,<span class="hljs-number">25</span>);
+  
+  <span class="hljs-title function_">text</span>(r_p.<span class="hljs-property">name</span>,<span class="hljs-number">290</span>,<span class="hljs-number">50</span>)
+  <span class="hljs-title function_">text</span>(score2,<span class="hljs-number">340</span>,<span class="hljs-number">25</span>);
+
+  <span class="hljs-comment">//moveHuman()   //uncomment to move left side manually</span>
+  
+  l_p.<span class="hljs-title function_">move</span>(ball.<span class="hljs-property">x</span>,ball.<span class="hljs-property">y</span>, ball.<span class="hljs-property">vx</span>, ball.<span class="hljs-property">vy</span>, ball.<span class="hljs-property">history</span>,r_p.<span class="hljs-property">x</span>,r_p.<span class="hljs-property">y</span>);   <span class="hljs-comment">//changes the y value using velocity</span>
+  r_p.<span class="hljs-title function_">move</span>(ball.<span class="hljs-property">x</span>,ball.<span class="hljs-property">y</span>, ball.<span class="hljs-property">vx</span>, ball.<span class="hljs-property">vy</span>, ball.<span class="hljs-property">history</span>,l_p.<span class="hljs-property">x</span>,l_p.<span class="hljs-property">y</span>); <span class="hljs-comment">//AI movement</span>
+  r_p.<span class="hljs-title function_">update</span>(); <span class="hljs-comment">//checks if paddle is outside border</span>
+  l_p.<span class="hljs-title function_">update</span>(); <span class="hljs-comment">//checks if paddle is outside border</span>
+  l_p.<span class="hljs-title function_">show</span>();  <span class="hljs-comment">//show the paddle</span>
+  r_p.<span class="hljs-title function_">show</span>();   <span class="hljs-comment">//show the paddle</span>
+  
+  ball.<span class="hljs-title function_">move</span>();
+  ball.<span class="hljs-title function_">show</span>(); 
+  ball.<span class="hljs-title function_">update</span>();
+  
+  <span class="hljs-comment">//if ball goes outside</span>
+  <span class="hljs-keyword">if</span> (ball.<span class="hljs-property">x</span>&gt;=width)
+  {
+    score1++
+    ball.<span class="hljs-title function_">reset</span>();
+  }
+  <span class="hljs-keyword">if</span> (ball.<span class="hljs-property">x</span>&lt;=<span class="hljs-number">0</span>)
+  {
+    score2++;
+    ball.<span class="hljs-title function_">reset</span>();
+    
+  }
+
+  <span class="hljs-comment">//detect collision</span>
+  <span class="hljs-comment">/*
+  if(ball.x&gt;=380 &amp;&amp; ball.y&lt;=(r_p.y+50) &amp;&amp; ball.y&gt;=(r_p.y-50))
+  {
+    ball.vx *=-1;
+    ball.vx *= SPEED_UP;
+    ball.vy *= SPEED_UP;
+  }
+  
+  if(ball.x&gt;=20 &amp;&amp; ball.y&lt;=(l_p.y+50) &amp;&amp; ball.y&gt;=(l_p.y-50))
+  {
+    ball.vx *=-1;
+    ball.vx *= SPEED_UP;
+    ball.vy *= SPEED_UP;
+  }
+  */</span>
+  <span class="hljs-keyword">let</span> dy = <span class="hljs-number">50</span>;
+  
+  <span class="hljs-comment">//detect collision</span>
+  <span class="hljs-keyword">if</span>(ball.<span class="hljs-property">x</span> &gt;= <span class="hljs-number">380</span> &amp;&amp; prev_x &lt; <span class="hljs-number">380</span> &amp;&amp; ball.<span class="hljs-property">y</span>&lt;=(r_p.<span class="hljs-property">y</span>+dy) &amp;&amp; ball.<span class="hljs-property">y</span>&gt;=(r_p.<span class="hljs-property">y</span>-dy)) {
+    ball.<span class="hljs-property">vx</span> *=-<span class="hljs-number">1</span>;
+    ball.<span class="hljs-property">vx</span> *= <span class="hljs-variable constant_">SPEED_UP</span>;
+    ball.<span class="hljs-property">vy</span> *= <span class="hljs-variable constant_">SPEED_UP</span>;
+  }
+  
+  <span class="hljs-keyword">if</span>(ball.<span class="hljs-property">x</span> &lt;= <span class="hljs-number">20</span> &amp;&amp; prev_x &gt; <span class="hljs-number">20</span> &amp;&amp; ball.<span class="hljs-property">y</span>&lt;=(l_p.<span class="hljs-property">y</span>+dy) &amp;&amp; ball.<span class="hljs-property">y</span>&gt;=(l_p.<span class="hljs-property">y</span>-dy)) {
+    ball.<span class="hljs-property">vx</span> *=-<span class="hljs-number">1</span>;
+    ball.<span class="hljs-property">vx</span> *= <span class="hljs-variable constant_">SPEED_UP</span>;
+    ball.<span class="hljs-property">vy</span> *= <span class="hljs-variable constant_">SPEED_UP</span>;
+  }
+  prev_x = ball.<span class="hljs-property">x</span>
+  
+}
+</code></pre>
+<p>Til sidst et udsnit af html-filen. Forudsætter javascript filerne ligger samme sted som index.html:</p>
+<pre><code class="language-html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;peddle.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;peddleAI.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;ball.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;style.css&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span> /&gt;</span>
+
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;sketch.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+
+        
+        
+    </body>
+    </html>

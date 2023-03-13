@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>15&period; Udviklingsprocesser</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension goessner.mdmath */
+@font-face{font-family:KaTeX_AMS;font-style:normal;font-weight:400;src:url(fonts/KaTeX_AMS-Regular.woff2) format("woff2"),url(fonts/KaTeX_AMS-Regular.woff) format("woff"),url(fonts/KaTeX_AMS-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Caligraphic;font-style:normal;font-weight:700;src:url(fonts/KaTeX_Caligraphic-Bold.woff2) format("woff2"),url(fonts/KaTeX_Caligraphic-Bold.woff) format("woff"),url(fonts/KaTeX_Caligraphic-Bold.ttf) format("truetype")}@font-face{font-family:KaTeX_Caligraphic;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Caligraphic-Regular.woff2) format("woff2"),url(fonts/KaTeX_Caligraphic-Regular.woff) format("woff"),url(fonts/KaTeX_Caligraphic-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Fraktur;font-style:normal;font-weight:700;src:url(fonts/KaTeX_Fraktur-Bold.woff2) format("woff2"),url(fonts/KaTeX_Fraktur-Bold.woff) format("woff"),url(fonts/KaTeX_Fraktur-Bold.ttf) format("truetype")}@font-face{font-family:KaTeX_Fraktur;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Fraktur-Regular.woff2) format("woff2"),url(fonts/KaTeX_Fraktur-Regular.woff) format("woff"),url(fonts/KaTeX_Fraktur-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Main;font-style:normal;font-weight:700;src:url(fonts/KaTeX_Main-Bold.woff2) format("woff2"),url(fonts/KaTeX_Main-Bold.woff) format("woff"),url(fonts/KaTeX_Main-Bold.ttf) format("truetype")}@font-face{font-family:KaTeX_Main;font-style:italic;font-weight:700;src:url(fonts/KaTeX_Main-BoldItalic.woff2) format("woff2"),url(fonts/KaTeX_Main-BoldItalic.woff) format("woff"),url(fonts/KaTeX_Main-BoldItalic.ttf) format("truetype")}@font-face{font-family:KaTeX_Main;font-style:italic;font-weight:400;src:url(fonts/KaTeX_Main-Italic.woff2) format("woff2"),url(fonts/KaTeX_Main-Italic.woff) format("woff"),url(fonts/KaTeX_Main-Italic.ttf) format("truetype")}@font-face{font-family:KaTeX_Main;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Main-Regular.woff2) format("woff2"),url(fonts/KaTeX_Main-Regular.woff) format("woff"),url(fonts/KaTeX_Main-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Math;font-style:italic;font-weight:700;src:url(fonts/KaTeX_Math-BoldItalic.woff2) format("woff2"),url(fonts/KaTeX_Math-BoldItalic.woff) format("woff"),url(fonts/KaTeX_Math-BoldItalic.ttf) format("truetype")}@font-face{font-family:KaTeX_Math;font-style:italic;font-weight:400;src:url(fonts/KaTeX_Math-Italic.woff2) format("woff2"),url(fonts/KaTeX_Math-Italic.woff) format("woff"),url(fonts/KaTeX_Math-Italic.ttf) format("truetype")}@font-face{font-family:"KaTeX_SansSerif";font-style:normal;font-weight:700;src:url(fonts/KaTeX_SansSerif-Bold.woff2) format("woff2"),url(fonts/KaTeX_SansSerif-Bold.woff) format("woff"),url(fonts/KaTeX_SansSerif-Bold.ttf) format("truetype")}@font-face{font-family:"KaTeX_SansSerif";font-style:italic;font-weight:400;src:url(fonts/KaTeX_SansSerif-Italic.woff2) format("woff2"),url(fonts/KaTeX_SansSerif-Italic.woff) format("woff"),url(fonts/KaTeX_SansSerif-Italic.ttf) format("truetype")}@font-face{font-family:"KaTeX_SansSerif";font-style:normal;font-weight:400;src:url(fonts/KaTeX_SansSerif-Regular.woff2) format("woff2"),url(fonts/KaTeX_SansSerif-Regular.woff) format("woff"),url(fonts/KaTeX_SansSerif-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Script;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Script-Regular.woff2) format("woff2"),url(fonts/KaTeX_Script-Regular.woff) format("woff"),url(fonts/KaTeX_Script-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Size1;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Size1-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size1-Regular.woff) format("woff"),url(fonts/KaTeX_Size1-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Size2;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Size2-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size2-Regular.woff) format("woff"),url(fonts/KaTeX_Size2-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Size3;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Size3-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size3-Regular.woff) format("woff"),url(fonts/KaTeX_Size3-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Size4;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Size4-Regular.woff2) format("woff2"),url(fonts/KaTeX_Size4-Regular.woff) format("woff"),url(fonts/KaTeX_Size4-Regular.ttf) format("truetype")}@font-face{font-family:KaTeX_Typewriter;font-style:normal;font-weight:400;src:url(fonts/KaTeX_Typewriter-Regular.woff2) format("woff2"),url(fonts/KaTeX_Typewriter-Regular.woff) format("woff"),url(fonts/KaTeX_Typewriter-Regular.ttf) format("truetype")}.katex{font:normal 1.21em KaTeX_Main,Times New Roman,serif;line-height:1.2;text-indent:0;text-rendering:auto}.katex *{-ms-high-contrast-adjust:none!important;border-color:currentColor}.katex .katex-version:after{content:"0.13.11"}.katex .katex-mathml{clip:rect(1px,1px,1px,1px);border:0;height:1px;overflow:hidden;padding:0;position:absolute;width:1px}.katex .katex-html>.newline{display:block}.katex .base{position:relative;white-space:nowrap;width:-webkit-min-content;width:-moz-min-content;width:min-content}.katex .base,.katex .strut{display:inline-block}.katex .textbf{font-weight:700}.katex .textit{font-style:italic}.katex .textrm{font-family:KaTeX_Main}.katex .textsf{font-family:KaTeX_SansSerif}.katex .texttt{font-family:KaTeX_Typewriter}.katex .mathnormal{font-family:KaTeX_Math;font-style:italic}.katex .mathit{font-family:KaTeX_Main;font-style:italic}.katex .mathrm{font-style:normal}.katex .mathbf{font-family:KaTeX_Main;font-weight:700}.katex .boldsymbol{font-family:KaTeX_Math;font-style:italic;font-weight:700}.katex .amsrm,.katex .mathbb,.katex .textbb{font-family:KaTeX_AMS}.katex .mathcal{font-family:KaTeX_Caligraphic}.katex .mathfrak,.katex .textfrak{font-family:KaTeX_Fraktur}.katex .mathtt{font-family:KaTeX_Typewriter}.katex .mathscr,.katex .textscr{font-family:KaTeX_Script}.katex .mathsf,.katex .textsf{font-family:KaTeX_SansSerif}.katex .mathboldsf,.katex .textboldsf{font-family:KaTeX_SansSerif;font-weight:700}.katex .mathitsf,.katex .textitsf{font-family:KaTeX_SansSerif;font-style:italic}.katex .mainrm{font-family:KaTeX_Main;font-style:normal}.katex .vlist-t{border-collapse:collapse;display:inline-table;table-layout:fixed}.katex .vlist-r{display:table-row}.katex .vlist{display:table-cell;position:relative;vertical-align:bottom}.katex .vlist>span{display:block;height:0;position:relative}.katex .vlist>span>span{display:inline-block}.katex .vlist>span>.pstrut{overflow:hidden;width:0}.katex .vlist-t2{margin-right:-2px}.katex .vlist-s{display:table-cell;font-size:1px;min-width:2px;vertical-align:bottom;width:2px}.katex .vbox{-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-box-align:baseline;align-items:baseline;display:-webkit-inline-box;display:inline-flex;flex-direction:column}.katex .hbox{width:100%}.katex .hbox,.katex .thinbox{-webkit-box-orient:horizontal;-webkit-box-direction:normal;display:-webkit-inline-box;display:inline-flex;flex-direction:row}.katex .thinbox{max-width:0;width:0}.katex .msupsub{text-align:left}.katex .mfrac>span>span{text-align:center}.katex .mfrac .frac-line{border-bottom-style:solid;display:inline-block;width:100%}.katex .hdashline,.katex .hline,.katex .mfrac .frac-line,.katex .overline .overline-line,.katex .rule,.katex .underline .underline-line{min-height:1px}.katex .mspace{display:inline-block}.katex .clap,.katex .llap,.katex .rlap{position:relative;width:0}.katex .clap>.inner,.katex .llap>.inner,.katex .rlap>.inner{position:absolute}.katex .clap>.fix,.katex .llap>.fix,.katex .rlap>.fix{display:inline-block}.katex .llap>.inner{right:0}.katex .clap>.inner,.katex .rlap>.inner{left:0}.katex .clap>.inner>span{margin-left:-50%;margin-right:50%}.katex .rule{border:0 solid;display:inline-block;position:relative}.katex .hline,.katex .overline .overline-line,.katex .underline .underline-line{border-bottom-style:solid;display:inline-block;width:100%}.katex .hdashline{border-bottom-style:dashed;display:inline-block;width:100%}.katex .sqrt>.root{margin-left:.27777778em;margin-right:-.55555556em}.katex .fontsize-ensurer.reset-size1.size1,.katex .sizing.reset-size1.size1{font-size:1em}.katex .fontsize-ensurer.reset-size1.size2,.katex .sizing.reset-size1.size2{font-size:1.2em}.katex .fontsize-ensurer.reset-size1.size3,.katex .sizing.reset-size1.size3{font-size:1.4em}.katex .fontsize-ensurer.reset-size1.size4,.katex .sizing.reset-size1.size4{font-size:1.6em}.katex .fontsize-ensurer.reset-size1.size5,.katex .sizing.reset-size1.size5{font-size:1.8em}.katex .fontsize-ensurer.reset-size1.size6,.katex .sizing.reset-size1.size6{font-size:2em}.katex .fontsize-ensurer.reset-size1.size7,.katex .sizing.reset-size1.size7{font-size:2.4em}.katex .fontsize-ensurer.reset-size1.size8,.katex .sizing.reset-size1.size8{font-size:2.88em}.katex .fontsize-ensurer.reset-size1.size9,.katex .sizing.reset-size1.size9{font-size:3.456em}.katex .fontsize-ensurer.reset-size1.size10,.katex .sizing.reset-size1.size10{font-size:4.148em}.katex .fontsize-ensurer.reset-size1.size11,.katex .sizing.reset-size1.size11{font-size:4.976em}.katex .fontsize-ensurer.reset-size2.size1,.katex .sizing.reset-size2.size1{font-size:.83333333em}.katex .fontsize-ensurer.reset-size2.size2,.katex .sizing.reset-size2.size2{font-size:1em}.katex .fontsize-ensurer.reset-size2.size3,.katex .sizing.reset-size2.size3{font-size:1.16666667em}.katex .fontsize-ensurer.reset-size2.size4,.katex .sizing.reset-size2.size4{font-size:1.33333333em}.katex .fontsize-ensurer.reset-size2.size5,.katex .sizing.reset-size2.size5{font-size:1.5em}.katex .fontsize-ensurer.reset-size2.size6,.katex .sizing.reset-size2.size6{font-size:1.66666667em}.katex .fontsize-ensurer.reset-size2.size7,.katex .sizing.reset-size2.size7{font-size:2em}.katex .fontsize-ensurer.reset-size2.size8,.katex .sizing.reset-size2.size8{font-size:2.4em}.katex .fontsize-ensurer.reset-size2.size9,.katex .sizing.reset-size2.size9{font-size:2.88em}.katex .fontsize-ensurer.reset-size2.size10,.katex .sizing.reset-size2.size10{font-size:3.45666667em}.katex .fontsize-ensurer.reset-size2.size11,.katex .sizing.reset-size2.size11{font-size:4.14666667em}.katex .fontsize-ensurer.reset-size3.size1,.katex .sizing.reset-size3.size1{font-size:.71428571em}.katex .fontsize-ensurer.reset-size3.size2,.katex .sizing.reset-size3.size2{font-size:.85714286em}.katex .fontsize-ensurer.reset-size3.size3,.katex .sizing.reset-size3.size3{font-size:1em}.katex .fontsize-ensurer.reset-size3.size4,.katex .sizing.reset-size3.size4{font-size:1.14285714em}.katex .fontsize-ensurer.reset-size3.size5,.katex .sizing.reset-size3.size5{font-size:1.28571429em}.katex .fontsize-ensurer.reset-size3.size6,.katex .sizing.reset-size3.size6{font-size:1.42857143em}.katex .fontsize-ensurer.reset-size3.size7,.katex .sizing.reset-size3.size7{font-size:1.71428571em}.katex .fontsize-ensurer.reset-size3.size8,.katex .sizing.reset-size3.size8{font-size:2.05714286em}.katex .fontsize-ensurer.reset-size3.size9,.katex .sizing.reset-size3.size9{font-size:2.46857143em}.katex .fontsize-ensurer.reset-size3.size10,.katex .sizing.reset-size3.size10{font-size:2.96285714em}.katex .fontsize-ensurer.reset-size3.size11,.katex .sizing.reset-size3.size11{font-size:3.55428571em}.katex .fontsize-ensurer.reset-size4.size1,.katex .sizing.reset-size4.size1{font-size:.625em}.katex .fontsize-ensurer.reset-size4.size2,.katex .sizing.reset-size4.size2{font-size:.75em}.katex .fontsize-ensurer.reset-size4.size3,.katex .sizing.reset-size4.size3{font-size:.875em}.katex .fontsize-ensurer.reset-size4.size4,.katex .sizing.reset-size4.size4{font-size:1em}.katex .fontsize-ensurer.reset-size4.size5,.katex .sizing.reset-size4.size5{font-size:1.125em}.katex .fontsize-ensurer.reset-size4.size6,.katex .sizing.reset-size4.size6{font-size:1.25em}.katex .fontsize-ensurer.reset-size4.size7,.katex .sizing.reset-size4.size7{font-size:1.5em}.katex .fontsize-ensurer.reset-size4.size8,.katex .sizing.reset-size4.size8{font-size:1.8em}.katex .fontsize-ensurer.reset-size4.size9,.katex .sizing.reset-size4.size9{font-size:2.16em}.katex .fontsize-ensurer.reset-size4.size10,.katex .sizing.reset-size4.size10{font-size:2.5925em}.katex .fontsize-ensurer.reset-size4.size11,.katex .sizing.reset-size4.size11{font-size:3.11em}.katex .fontsize-ensurer.reset-size5.size1,.katex .sizing.reset-size5.size1{font-size:.55555556em}.katex .fontsize-ensurer.reset-size5.size2,.katex .sizing.reset-size5.size2{font-size:.66666667em}.katex .fontsize-ensurer.reset-size5.size3,.katex .sizing.reset-size5.size3{font-size:.77777778em}.katex .fontsize-ensurer.reset-size5.size4,.katex .sizing.reset-size5.size4{font-size:.88888889em}.katex .fontsize-ensurer.reset-size5.size5,.katex .sizing.reset-size5.size5{font-size:1em}.katex .fontsize-ensurer.reset-size5.size6,.katex .sizing.reset-size5.size6{font-size:1.11111111em}.katex .fontsize-ensurer.reset-size5.size7,.katex .sizing.reset-size5.size7{font-size:1.33333333em}.katex .fontsize-ensurer.reset-size5.size8,.katex .sizing.reset-size5.size8{font-size:1.6em}.katex .fontsize-ensurer.reset-size5.size9,.katex .sizing.reset-size5.size9{font-size:1.92em}.katex .fontsize-ensurer.reset-size5.size10,.katex .sizing.reset-size5.size10{font-size:2.30444444em}.katex .fontsize-ensurer.reset-size5.size11,.katex .sizing.reset-size5.size11{font-size:2.76444444em}.katex .fontsize-ensurer.reset-size6.size1,.katex .sizing.reset-size6.size1{font-size:.5em}.katex .fontsize-ensurer.reset-size6.size2,.katex .sizing.reset-size6.size2{font-size:.6em}.katex .fontsize-ensurer.reset-size6.size3,.katex .sizing.reset-size6.size3{font-size:.7em}.katex .fontsize-ensurer.reset-size6.size4,.katex .sizing.reset-size6.size4{font-size:.8em}.katex .fontsize-ensurer.reset-size6.size5,.katex .sizing.reset-size6.size5{font-size:.9em}.katex .fontsize-ensurer.reset-size6.size6,.katex .sizing.reset-size6.size6{font-size:1em}.katex .fontsize-ensurer.reset-size6.size7,.katex .sizing.reset-size6.size7{font-size:1.2em}.katex .fontsize-ensurer.reset-size6.size8,.katex .sizing.reset-size6.size8{font-size:1.44em}.katex .fontsize-ensurer.reset-size6.size9,.katex .sizing.reset-size6.size9{font-size:1.728em}.katex .fontsize-ensurer.reset-size6.size10,.katex .sizing.reset-size6.size10{font-size:2.074em}.katex .fontsize-ensurer.reset-size6.size11,.katex .sizing.reset-size6.size11{font-size:2.488em}.katex .fontsize-ensurer.reset-size7.size1,.katex .sizing.reset-size7.size1{font-size:.41666667em}.katex .fontsize-ensurer.reset-size7.size2,.katex .sizing.reset-size7.size2{font-size:.5em}.katex .fontsize-ensurer.reset-size7.size3,.katex .sizing.reset-size7.size3{font-size:.58333333em}.katex .fontsize-ensurer.reset-size7.size4,.katex .sizing.reset-size7.size4{font-size:.66666667em}.katex .fontsize-ensurer.reset-size7.size5,.katex .sizing.reset-size7.size5{font-size:.75em}.katex .fontsize-ensurer.reset-size7.size6,.katex .sizing.reset-size7.size6{font-size:.83333333em}.katex .fontsize-ensurer.reset-size7.size7,.katex .sizing.reset-size7.size7{font-size:1em}.katex .fontsize-ensurer.reset-size7.size8,.katex .sizing.reset-size7.size8{font-size:1.2em}.katex .fontsize-ensurer.reset-size7.size9,.katex .sizing.reset-size7.size9{font-size:1.44em}.katex .fontsize-ensurer.reset-size7.size10,.katex .sizing.reset-size7.size10{font-size:1.72833333em}.katex .fontsize-ensurer.reset-size7.size11,.katex .sizing.reset-size7.size11{font-size:2.07333333em}.katex .fontsize-ensurer.reset-size8.size1,.katex .sizing.reset-size8.size1{font-size:.34722222em}.katex .fontsize-ensurer.reset-size8.size2,.katex .sizing.reset-size8.size2{font-size:.41666667em}.katex .fontsize-ensurer.reset-size8.size3,.katex .sizing.reset-size8.size3{font-size:.48611111em}.katex .fontsize-ensurer.reset-size8.size4,.katex .sizing.reset-size8.size4{font-size:.55555556em}.katex .fontsize-ensurer.reset-size8.size5,.katex .sizing.reset-size8.size5{font-size:.625em}.katex .fontsize-ensurer.reset-size8.size6,.katex .sizing.reset-size8.size6{font-size:.69444444em}.katex .fontsize-ensurer.reset-size8.size7,.katex .sizing.reset-size8.size7{font-size:.83333333em}.katex .fontsize-ensurer.reset-size8.size8,.katex .sizing.reset-size8.size8{font-size:1em}.katex .fontsize-ensurer.reset-size8.size9,.katex .sizing.reset-size8.size9{font-size:1.2em}.katex .fontsize-ensurer.reset-size8.size10,.katex .sizing.reset-size8.size10{font-size:1.44027778em}.katex .fontsize-ensurer.reset-size8.size11,.katex .sizing.reset-size8.size11{font-size:1.72777778em}.katex .fontsize-ensurer.reset-size9.size1,.katex .sizing.reset-size9.size1{font-size:.28935185em}.katex .fontsize-ensurer.reset-size9.size2,.katex .sizing.reset-size9.size2{font-size:.34722222em}.katex .fontsize-ensurer.reset-size9.size3,.katex .sizing.reset-size9.size3{font-size:.40509259em}.katex .fontsize-ensurer.reset-size9.size4,.katex .sizing.reset-size9.size4{font-size:.46296296em}.katex .fontsize-ensurer.reset-size9.size5,.katex .sizing.reset-size9.size5{font-size:.52083333em}.katex .fontsize-ensurer.reset-size9.size6,.katex .sizing.reset-size9.size6{font-size:.5787037em}.katex .fontsize-ensurer.reset-size9.size7,.katex .sizing.reset-size9.size7{font-size:.69444444em}.katex .fontsize-ensurer.reset-size9.size8,.katex .sizing.reset-size9.size8{font-size:.83333333em}.katex .fontsize-ensurer.reset-size9.size9,.katex .sizing.reset-size9.size9{font-size:1em}.katex .fontsize-ensurer.reset-size9.size10,.katex .sizing.reset-size9.size10{font-size:1.20023148em}.katex .fontsize-ensurer.reset-size9.size11,.katex .sizing.reset-size9.size11{font-size:1.43981481em}.katex .fontsize-ensurer.reset-size10.size1,.katex .sizing.reset-size10.size1{font-size:.24108004em}.katex .fontsize-ensurer.reset-size10.size2,.katex .sizing.reset-size10.size2{font-size:.28929605em}.katex .fontsize-ensurer.reset-size10.size3,.katex .sizing.reset-size10.size3{font-size:.33751205em}.katex .fontsize-ensurer.reset-size10.size4,.katex .sizing.reset-size10.size4{font-size:.38572806em}.katex .fontsize-ensurer.reset-size10.size5,.katex .sizing.reset-size10.size5{font-size:.43394407em}.katex .fontsize-ensurer.reset-size10.size6,.katex .sizing.reset-size10.size6{font-size:.48216008em}.katex .fontsize-ensurer.reset-size10.size7,.katex .sizing.reset-size10.size7{font-size:.57859209em}.katex .fontsize-ensurer.reset-size10.size8,.katex .sizing.reset-size10.size8{font-size:.69431051em}.katex .fontsize-ensurer.reset-size10.size9,.katex .sizing.reset-size10.size9{font-size:.83317261em}.katex .fontsize-ensurer.reset-size10.size10,.katex .sizing.reset-size10.size10{font-size:1em}.katex .fontsize-ensurer.reset-size10.size11,.katex .sizing.reset-size10.size11{font-size:1.19961427em}.katex .fontsize-ensurer.reset-size11.size1,.katex .sizing.reset-size11.size1{font-size:.20096463em}.katex .fontsize-ensurer.reset-size11.size2,.katex .sizing.reset-size11.size2{font-size:.24115756em}.katex .fontsize-ensurer.reset-size11.size3,.katex .sizing.reset-size11.size3{font-size:.28135048em}.katex .fontsize-ensurer.reset-size11.size4,.katex .sizing.reset-size11.size4{font-size:.32154341em}.katex .fontsize-ensurer.reset-size11.size5,.katex .sizing.reset-size11.size5{font-size:.36173633em}.katex .fontsize-ensurer.reset-size11.size6,.katex .sizing.reset-size11.size6{font-size:.40192926em}.katex .fontsize-ensurer.reset-size11.size7,.katex .sizing.reset-size11.size7{font-size:.48231511em}.katex .fontsize-ensurer.reset-size11.size8,.katex .sizing.reset-size11.size8{font-size:.57877814em}.katex .fontsize-ensurer.reset-size11.size9,.katex .sizing.reset-size11.size9{font-size:.69453376em}.katex .fontsize-ensurer.reset-size11.size10,.katex .sizing.reset-size11.size10{font-size:.83360129em}.katex .fontsize-ensurer.reset-size11.size11,.katex .sizing.reset-size11.size11{font-size:1em}.katex .delimsizing.size1{font-family:KaTeX_Size1}.katex .delimsizing.size2{font-family:KaTeX_Size2}.katex .delimsizing.size3{font-family:KaTeX_Size3}.katex .delimsizing.size4{font-family:KaTeX_Size4}.katex .delimsizing.mult .delim-size1>span{font-family:KaTeX_Size1}.katex .delimsizing.mult .delim-size4>span{font-family:KaTeX_Size4}.katex .nulldelimiter{display:inline-block;width:.12em}.katex .delimcenter,.katex .op-symbol{position:relative}.katex .op-symbol.small-op{font-family:KaTeX_Size1}.katex .op-symbol.large-op{font-family:KaTeX_Size2}.katex .accent>.vlist-t,.katex .op-limits>.vlist-t{text-align:center}.katex .accent .accent-body{position:relative}.katex .accent .accent-body:not(.accent-full){width:0}.katex .overlay{display:block}.katex .mtable .vertical-separator{display:inline-block;min-width:1px}.katex .mtable .arraycolsep{display:inline-block}.katex .mtable .col-align-c>.vlist-t{text-align:center}.katex .mtable .col-align-l>.vlist-t{text-align:left}.katex .mtable .col-align-r>.vlist-t{text-align:right}.katex .svg-align{text-align:left}.katex svg{fill:currentColor;stroke:currentColor;fill-rule:nonzero;fill-opacity:1;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;display:block;height:inherit;position:absolute;width:100%}.katex svg path{stroke:none}.katex img{border-style:none;max-height:none;max-width:none;min-height:0;min-width:0}.katex .stretchy{display:block;overflow:hidden;position:relative;width:100%}.katex .stretchy:after,.katex .stretchy:before{content:""}.katex .hide-tail{overflow:hidden;position:relative;width:100%}.katex .halfarrow-left{left:0;overflow:hidden;position:absolute;width:50.2%}.katex .halfarrow-right{overflow:hidden;position:absolute;right:0;width:50.2%}.katex .brace-left{left:0;overflow:hidden;position:absolute;width:25.1%}.katex .brace-center{left:25%;overflow:hidden;position:absolute;width:50%}.katex .brace-right{overflow:hidden;position:absolute;right:0;width:25.1%}.katex .x-arrow-pad{padding:0 .5em}.katex .cd-arrow-pad{padding:0 .55556em 0 .27778em}.katex .mover,.katex .munder,.katex .x-arrow{text-align:center}.katex .boxpad{padding:0 .3em}.katex .fbox,.katex .fcolorbox{border:.04em solid;box-sizing:border-box}.katex .cancel-pad{padding:0 .2em}.katex .cancel-lap{margin-left:-.2em;margin-right:-.2em}.katex .sout{border-bottom-style:solid;border-bottom-width:.08em}.katex .angl{border-right:.049em solid;border-top:.049em solid;box-sizing:border-content;margin-right:.03889em}.katex .anglpad{padding:0 .03889em}.katex .eqn-num:before{content:"(" counter(katexEqnNo) ")";counter-increment:katexEqnNo}.katex .mml-eqn-num:before{content:"(" counter(mmlEqnNo) ")";counter-increment:mmlEqnNo}.katex .mtr-glue{width:50%}.katex .cd-vert-arrow{display:inline-block;position:relative}.katex .cd-label-left{display:inline-block;position:absolute;right:-webkit-calc(50% + .3em);right:calc(50% + .3em);text-align:left}.katex .cd-label-right{display:inline-block;left:-webkit-calc(50% + .3em);left:calc(50% + .3em);position:absolute;text-align:right}.katex-display{display:block;margin:1em 0;text-align:center}.katex-display>.katex{display:block;text-align:center;white-space:nowrap}.katex-display>.katex>.katex-html{display:block;position:relative}.katex-display>.katex>.katex-html>.tag{position:absolute;right:0}.katex-display.leqno>.katex>.katex-html>.tag{left:0;right:auto}.katex-display.fleqn>.katex{padding-left:2em;text-align:left}body{counter-reset:katexEqnNo mmlEqnNo}
+
+/* style for html inside of browsers */
+.katex { font-size: 1em !important; } /* align KaTeX font-size to surrounding text */
+
+eq { display: inline-block; }
+eqn { display: block}
+section.eqno {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    align-items: center;
+}
+section.eqno > eqn {
+    width: 100%;
+    margin-left: 3em;
+}
+section.eqno > span {
+    width:3em;
+    text-align:right;
+}
+
+p { 
+    text-align: justify; 
+    hyphens: auto;
+}
+
+table {
+    display: table;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+figure {
+    margin: 0.5em auto;
+}
+figure > img {
+    display: block;
+    margin: 0 auto;
+    page-break-inside: avoid;
+    text-align: center;
+}
+figcaption { 
+    font-size: 0.9em;
+    margin-top: 0.5em;
+    text-align: center;
+}
+
+aside {
+  font-size: 0.9em;
+  max-width: 300px;
+  padding: 0 0 0 1em;
+  margin: 0 0 0 1em;
+  float: right;
+}
+
+aside > *:first-child {
+  margin-top: 0;
+}
+aside > *:last-child {
+  margin-bottom: 0;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="15-udviklingsprocesser">15. Udviklingsprocesser</h1>
+<p>Softwaresystemer komplekse af natur. De kan tage år at udvikle (af flere hundrede eller tusind udviklere), bestå af millioner af linjers kode og koste mange penge at lave og vedligeholde.
+Eksempelvis blev det estimeret, at det nu forældet styresystem Microsoft Windows 98 tog i omegnen af 200 programmører, 16 år, dag og nat at udvikle. Og på trods af de massive mængder ressourcer, der blev sat af, så fejlede systemet alligevel da Microsofts Bill Gates skulle præsentere det live med blå skærm.</p>
+<p>Udviklingen af softwaresystemer af en vis størrelse er mao en kompliceret proces, hvor der i de er behov for planlægning og en klar proces for udviklinge af systemet for at sikre den nødvendige struktur og at systemet fungerer hensigtsmæssigt. Hvis man ikke planlægger, så planlægger man at fejle.</p>
+<p>Helt grundlæggende kan softwaresystems livscyklus fra ide til færdigt produkt beskrives i fire overordnede trin:</p>
+<p>Trin 1: Planlægning
+Trin 2: Implementering
+Trin 3: Test
+Trin 4: Implementering og vedligeholdelse</p>
+<p>I de senere år er der forsket i og udviklet en lang række forskellige metoder til at skabe systemer og . I det følgende vil vi gennemgå nogle af de vigtigste metodologier. Det er i den sammenhæng vigtigt at understrege, at der ikke findes en tilgang, der passer til alle. Valg af metodologi til udviklingsprocessen afhænger af mange ting såsom projekts omfang, antal udviklere, kontekst osv.</p>
+<h2 id="vandfaldsmodel">Vandfaldsmodel</h2>
+<p>Vandfaldsmodellen er en af de ældste og mest traditionelle modellering af udviklingsprocessen. Som et vandfald, der pga tyngdeloven falder og falder, så er udgangspunktet for denne model, at man udfører en række skridt  inden man bevæger sig videre til næste skridt. I praksis er der dog typisk nogle små overlap mellem de enkelte faser/skridt.
+Modellen blev oprindeligt brugt dengang hvor man udviklede til større mainframe systemer.
+Selvom den måske ikke bruges umiddelbart så meget i dag, er den stadig særdeles vigtig at kende til fordi den strukturerer mange af de overvejelser, som udviklingen af ethvert system bør inddrage.
+Vandfaldsmodellen kan være god  at bruge når mål og krav med systemet står meget klar, og teknologi-stakken er veldefineret og velkendt. Mao. hvor man ikke forventer større, radikale ændringer undervejs i processen. Det kunne eksempelvis være i større organisationer, såsom i udviklingen af offentlige it-systemer.
+En klar ulempe ved modellen er, at den mangler grundlæggende fleksibilitet. Hvis du f.eks.  udvikler et mindre system eller en prototype, der skal formes eller tilpasses markant undervejs - måske udfra feedback fra brugere/testere - så er vandfaldsmodellen formentlig ikke hensigtsmæssig at bruge.</p>
+<h2 id="skridtvis-forfining">Skridtvis forfining</h2>
+<p>I skridtvis forfining udvikles systemet i en række iterationer eller skridt, hvor man i hvert skridt transformerer abstrakte programbeskrivelser til konkrete forfininger af et program, så der ikke ændres på programmets grundlæggende funktionalitet og adfærd. Del-og-hersk princippet, som handler om at dele problemer, der er svære at løse, ind i mindre delproblemer, som måske lettere kan løses. Ved at løse delproblemerne kan man måske løse det mere generelle problem.
+Skridtvis forfiningen har nogle klare fordele. Ved at inddele problemet i mindre dele får man en god forståelse af det overordnede problem og delproblemerne kan typisk løses af forskellige (hold af) programmører og gør det nemt at administrere. Endelig er det også muligt i høj grad at træffe design beslutninger undervejs i udviklingen, hvilket gør det noget hurtigere at ændre i stedet for efter programmeringen, som det eksempelvis er tilfældet med vandfaldsmodellen.
+Skridtvis forfinings grundlæggende antagelse er, at man på forhånd kender alle krav til programmet for at kunne foretage de nødvendige forbedringer, hvilket gør metoden mindre effektiv, når man udvikler systemer hvor krav og funktionaliteten af systemet ændres undervejs.</p>
+<h2 id="skridtvis-forbedring">Skridtvis forbedring</h2>
+<p>Skridtvis forbedring også kaldet inkrementel udvikling betoner, at systemer udvikles løbende i skridt eller iterationer, hvor hver iteration består af følgende faser:</p>
+<ul>
+<li>En kravanalyse fase hvor krav og specifikationer til systemet indsamles og klassificeres</li>
+<li>En design fase hvor systemets funktioner designet</li>
+<li>En kode fase hvor designet implementeres ved brug af programmering</li>
+<li>En test fase hvor den nye funktionalitet testes.</li>
+</ul>
+<p>Hver ny iteration tilfører ny funktionalitet til systemet og systemet sættes i produktion, når den første iteration er fuldført.</p>
+<p>Til forskel fra skridtvis forfining, så er skridtvis forbedring i højere grad en eksplorativ proces, hvor man bevæger sig imellem at udvikle, omstrukturere og forfine kode</p>
+<p>I første iteration udvikles typisk den grundlæggende funktionalitet af produktet, så kernen af produktet er på plads. Supplerende funktionalitet tilføjes typisk i de efterfølgende iterationer.</p>
+<p>Man kunne eksempelvis forestille sig, at man ønske at udvikle et transportmiddel. Til at starte med udvikles måske et skateboard i første iteration. Man bliver bevidst om, at det måske er for upraktisk og der er brug for mere fart, så man viderudvikler til en cykel og i den efterfølgende iteration til en bil.</p>
+<p>Inkrementel udvikling kan være god at bruge, når kravene til ens system er veldefineret og klare.</p>
+<p>En konkret procedure for implementering af skridtvis forbedring ved brug af objekter kan være den såkaldte STREAM metode, som forløber i følgende skridt.</p>
+<ol>
+<li>Skeletklasser konstrueres. Skeletklasser også kaldet stubs er reelt klasser der kun består af metoder. STREAM forudsætter altså, at man på forhånd har et kendskab til hvorledes systemet skal sammensættes af de enkelte klasser. Hvis metoderne returnerer en værdi består metoden af et simpelt kald ved brug af return og den respektive værdi. Hvis ikke det er tanken, at metoden skal returnere noget, så er metoden bare tom.</li>
+<li>Test skeletklasserne. Det sker i praksis ved at man implementere en række unit tests, som typisk vil fejle til at starte med men forhåbentlig på sigt vil sikre, at klasserne opfører sig som de skal.</li>
+<li>Repræsentationer genovervejs. Her overvejes det om klasserne igennem deres tilknyttede attributter kan repræsenteres på en anden måde. Mindst to mulige repræsentationer bør inddrages hvor svære de er at implementere i praksis.</li>
+<li>Evaluering af repræsentationer. De forskellige repræsentationer fra punkt 3 evalueres ud fra hvor svære de er at implementere.</li>
+<li>Attributter inddrages og implementeres i fht til den valgte repræsentation. Mulighed for at kommentere i koden på attributtens mulige værdier og betydning. Klassens konstruktør implementeres så attributterne initialiseres.</li>
+<li>Metode implementering. Så længe der er ufærdige metoder, vælges en ny metode, som implementeres, og så længe en metode er ufærdig bør den forbedres og efterfølgende testes. Ved forbedres forstå, at man udvider, forfiner eller omstrukturer.</li>
+</ol>
+<h2 id="den-iterative-udviklingsmetode">Den iterative udviklingsmetode</h2>
+<p>Iterativ udviklingsmetode har vundet indpas i den seneste årrække. Metoden er modsat vandfandsmodellen af en cyklisk natur, hvor man på baggrund af en ide, starter med at samle og analysere på data relateret til systemet man ønskere at udvikle. Herefter konstruerer typisk nogle få enkle krav til systemet, der planlægges implementeret.  Efterfølgende tilpasses og justeres disse krav i takt med at systemet tager form og man får feedback fra bruger eller anden ny information.
+Den bagvedliggende tanke er, at man ikke nødvendigvis på forhånd kender det optimale system og krav til et system, da disse i høj grad kan ændres undervejs. Man bliver mao i stedet i takt med udviklingen af systemet stadig klogere på den bedste løsning og de respektive krav. Den iterative model giver altså mulighed for at tilpasse disse krav til en dynamisk verden og kontekst.</p>
+<p>Hvor inkrementel udvikling i høj grad handler om at få en system ud så hurtigt som muligt og så i de efterfølgende iterationer udvide systemet, har den iterative proces i højere grad fokus på at inddrage feedback fra brugere og testfasen. På den måde skulle projektet gerne blive bedre i takt med, at man itererer over løsningen.</p>
+<p>I metoden itererer man efterfølgende over eller gentager følgende faser indtil man når sine ønskede mål med systemet/produktet, hvorefter systemet kan frigives til brugeren. Det er en projektmanager/leder, der koordinerer og er ansvarlig for hver iteration:</p>
+<ul>
+<li>Design: I denne fase forberedes systemet til at opfylde de fornødne krav for designet, der kan være et nyt eller en udvidelse af en tidligere version.</li>
+<li>Implementation og test: I denne fase er man optaget af implementere eller programmere de nødvendige krav. Undervejs testes systemet regelmæssigt og systematisk.</li>
+<li>Evaluering: I denne fase evalueres systemet i fht de aktuelle krav. Man overvejer og reflekterer over den nuværende løsning og man diskuterer muligheden for nye mulige krav i den næste iteration/opdatering.</li>
+</ul>
+<p>I en verden hvor teknologien og kravene ændres stort set hele tiden kan modellen være rigtig god at bruge fremfor eksempelvis vandfaldsmodellen.
+Når kravene og nødvendighederne til systemet ikke nødvendigvis er veldefineret men kan forstås og klassificeres, så kan modellen være god at bruge til over tid at udvikle en fornuftig løsning.</p>
+<p>Hvis der er behov for at udvikle eller opdatere eksisterende systemer til eksempelvis at integrere den seneste teknologi, kan metoden også bruges, fordi man kan udvikle inkrementelt og opdatere systemet løbende modsat eksempelvis vandfaldsmodellen, hvor man i højere grad tvinges til at starte forfra.</p>
+<p>Men den iterative udviklingsmetode kan i højere grad end vandfaldsmodellen give mulighed for at identificere høj-risiko problemer eller udfordringer, som kan have stor betydning for den endelige løsning, ved at tilbyde mulighed for justering for disse udfordringer undervejs. Herved opnår man i højere grad at skulle forholde sig til lav-risiko beslutninger, der i mindre grad påvirker det samlede system. I vandfaldsmodellen ender man i højere grad tvunget til at tage høj-risiko beslutninger i starten og slutningen af processen.</p>
+<h2 id="agil-udvikling-og-scrum">Agil udvikling og SCRUM</h2>
+<p>Agil, betegner noget der let, hurtigt og smidigt. Med andre ord tilpasningsparat. Agil udvikling og agile metoder er en tilgang til projektstyring, der kombinerer både iterativ og inkremental udvikling med henblik på at skabe en tilpasningsparat udviklingsproces. I sidste ende handler det om at øge tilfredsheden hos kunden og slutbrugeren ved hurtigt at kunne frigive et produkt.</p>
+<p>Modsat vandfaldsmodellen handler agil udvikling om at være tilpasningsparat i en dynamisk verden, hvor alting hurtigt kan ændre sig om det er feedback fra brugere, ændringer i konteksten, kravmodifikationer eller lignende.
+Den agile udvikling har modsat vandfaldsmodellen overlappende faser og systemet udvikles af små selvorganiserende og samarbejdende teams, som i kontinuerte cykluser også kaldet sprints udvider systemer. Det sker i tæt samarbejde med kunden, der er involveret i processen fra start til slut.</p>
+<p>Den agile udviklingsmetode er beskrevet i et manifest, der består af fire vigtige værdier og tolv principper, der fungerer som en guide for den agile tilgang.
+De fire vigtige værdier, som den agile metode tager udgangspunkt i, kan kort sagt opsummeres således:</p>
+<ol>
+<li>Hellere samarbejde og mennesker end processer og værktøjer</li>
+<li>Hellere et velfungerende system end omfattende dokumentation</li>
+<li>Hellere dialog og samarbejde med kunden end forhandling af kontrakt</li>
+<li>Hellere muliggøre håndtering af forandringer end ensidigt fokus på fastholdelse af en plan.</li>
+</ol>
+<p>Disse værdier skal i et vist omfang ses som prioriteringer.
+Dvs. i den agile udviklingsmetodologi sættes stadig stor pris på punkterne der står til sidst. Men man værdsætter bare de andre værdier til venstre endnu højere.</p>
+<p>Med udgangspunkt i værdisættet har man i manifestet formuleret følgende principper:</p>
+<ol>
+<li>Kundens tilfredshed er af højeste prioritet. Det sker gennem tidlige og løbende afleveringer af værdifuld systemet.</li>
+<li>Ændringer i krav imødekommes også sent i udviklingen af systemet. De agile ændringer sikrer, at ændringerne er til kundens fordel i sidste ende.</li>
+<li>Løbende evaluering og test af systemet. Jo oftere, jo bedre.</li>
+<li>Udviklere og repræsentanter for forretningsdelen skal samarbejde dagligt.</li>
+<li>Opbyg projekter omkring motiverede folk. Giv dem de rette omgivelser og relevant støtte. Stol på dem.</li>
+<li>Den mest effektive form for kommunikation er ansigt til ansigt.</li>
+<li>Fremdrift måles på hvor velfungerende systemet er.</li>
+<li>Agil udvikling fremmer bæredygtig udvikling. Udviklere og brugere bør altid kunne holde et bestemt tempo i udviklingen.</li>
+<li>Agil udvikling fremmes ved godt design og ekspertise</li>
+<li>Hold det enkelt (KISS - Keep It Simple and Straight) og tænk i løsninger der er så simple som mulige og kun kan det de skal.</li>
+<li>Selvorganiserede teams der langt hen ad vejen leder sig selv. Det er karakteristisk at når alle i gruppen tager ansvar og respekterer hinanden, så følger ofte gode resultater.</li>
+<li>Reflekterende praksis hvor der løbende kigges tilbage på hvad der er gået godt og hvad der er gået mindre godt. Hvorledes kan kunden inddrages undervejs i processen.</li>
+</ol>
+<p>I figuren er det illustreret hvorledes agil udvikling fungerer.
+<img src="file:///c:\code\P5Programmering\kap15\images\agileprojekt.jpg" alt="Agil udvikling"></p>
+<p>Som det også er illustreret i figuren, så inddeles produktet i mindre inkrementale komponenter. Heraf den inkrementelle udviklingstilgang.</p>
+<p>I næste afsnit kigger vi på en konkret implementering af de agile tankegang, som kaldes for SCRUM.</p>
+<h3 id="agil-vs-iterativ-udvikling">Agil vs iterativ udvikling</h3>
+<p>Iterativ udvikling i høj grad er fokuseret på softwarens struktur og hvorledes man kan anvende sine ressourcer bedst muligt til at udvikle og udvide systemet med mindre komponenter, så det på sigt giver systemet ny værdi for brugeren, men ikke nødvendigvis i den nuværende iteration.
+Agil udvikling adskiller sig fra iterativ udvikling i den forstand, at ved hver ny iteration bør der skabes ny værdi for brugeren ellers har iterationen fejlet.</p>
+<h3 id="agil-udvikling-i-praksis-scrum">Agil udvikling i praksis: SCRUM</h3>
+<p>Et eksempel på meget anvendt og anerkendt agil udviklingsmetode er SCRUM, som er taget fra rugby og betyder noget i retning af &quot;skærmydsler&quot;.</p>
+<p>Man starter typisk en SCRUM proces i forberedelses fasen med at formulere følgende:</p>
+<ul>
+<li>Produkt vision. Her beskrives de overordnede mål for udviklingen af systemet.</li>
+<li>Produkt roadmap. Her beskrives ved brug af milepæle en overordnet plan for hvornår de vigtigste nøglefunktioer eller features er klar til levering.</li>
+<li>Release plan. Her inddeles road map i punkt 2 i indtil flere releases, hvor første release betegner et såkaldt &quot;minimum viable project&quot; eller minimum levedygtigt produkt. Dvs. de funktioner/features, som er essentielle for produktet.</li>
+</ul>
+<p>I SCRUM arbejdes med tre forskellige roller:</p>
+<ul>
+<li>Product owner, som er ansvarlig for at planlægge leveringer til kunden og at der er styr på kravene til produktet. Den pågældende er mao den egentlige ansvarlige for produktet.</li>
+<li>Scrum master, som sikrer at de enkelte iterationer - de såkaldte sprints -  gennemføres og at det kommunikeres ud og synliggøres for Product owner.</li>
+<li>Scrum teamet, som er en mindre grupper af mennesker der står for at udføre de enkelte sprints.</li>
+</ul>
+<p>Grundlaget for ethvert SCRUM projekt består af følgende såkaldte artefakter eller materialer:</p>
+<ul>
+<li>Produkt Backlog er en samling af alle krav til systemet og projektet, som administreres af Product owner. De enkelte krav prioriteres og jo højere prioritering, jo mere præcis skal kravene være beskrevet.</li>
+<li>Sprint Backlog indikerer hvilke dele af Product Backlog altså hvilke krav, som implementeres i den kommende sprint.</li>
+<li>Burndown Chart er et visuelt diagram af fremdriften i en iteration. Hvor iterationer (typisk målt i dage) er ud af x-aksen men systemets backlog er opad y-aksen. Den kan også måles i tid eller antal opgaver. Se figuren for et eksempel på et sådan plot.</li>
+</ul>
+<p>Et sprint forløber i fire ceremonier hvor hele teamet mødes og det er SCRUM masterens opgave at facilitere og koordinere møderne..</p>
+<ul>
+<li>Planlægning af sprint hvor det enkelt sprint koordineres i fht de enkelte medlemmer i teamet</li>
+<li>Dagligt Stand Up hvor hvert medlem af teamet fortæller om hvad de har lavet, hvad de skal i dag og hvorvidt de har nogle problemer eller ting som kan blokere for at opnå dagens program</li>
+<li>Sprint review hvor sprintets leveringer gennemgås og godkendes</li>
+</ul>
+<p>Efterfølgende foretages også en retrospektiv proces som har fokus på hvorledes samarbejdet forløber og hvad der kan gøres bedre til næste sprint.</p>
+<h3 id="agil-udvikling-i-praksis-kanban">Agil udvikling i praksis: Kanban</h3>
+<p>Kanban betyder tegnetavle og stammer fra Japan. Det er udviklet med henblik på just in time produktion, hvor der ligges vægt på at være klar over hvad, hvornår og hvor meget der produceres.
+Alt fra supermarkeder til bilfirmaet Toyota, har blandt gjort brug af Kanban til bl.a. at optimere og forbedre sin produktionscyklus. Målet er at skabe et flow mellem efterspørgslen og produktionen, således, at man undgår at have for meget på lager, men omvendt stadig kan garantere at et produkt kunden ønsker, stadig er tilgængelig.
+Teknikken var så succesfuld, at mange af de samme principper blev adopteret i softwareudviklingen. Det skyldes ikke mindst, at softwareudviklere kan begynde at gøre brug af principperne, så snart de forstår dem, modsat eksempelvis Toytas fabrikker, fordi det stillede højere krav til de fysiske processer og materialer.</p>
+<p>Softwareudviklere kræver blot en tavle og nogle kort, som i øvrigt også kan være virtuelt. Ofte foretrækkes faktisk virtuelle tavler, da det er nemmere at synkronisere og samarbejde på tværs af virksomheden, som fysisk kan være placeret forskellige steder i verdenen.</p>
+<p>Al arbejde i et Kanban team omhandler den såkalde Kanban tavle. Den bruges som et værktøj til at visualisere og optimere arbejdet mellem de enkelte udviklere og hold.
+En kanban tavle har typisk tre kolonner, som rummer en eller flere aktiviteter/opgaver også kaldet Kanban kort. Kanban kort rummer grundlæggende og kritisk information om de enkelte opgaver. Det kan være den ansvarlige person, hvornår opgaverne er løst, et billede af løsningen osv.
+En typisk tavle vil have følgende tre kolonner af kanban kort:</p>
+<ul>
+<li>To do: Liste af kanban kort, der skal løses. Typisk prioriteret i lav, middel og høj.</li>
+<li>In Progress: Liste af kanban kort, der er i gang med at blive løst med angivelse i procent hvor tæt vi er på målet</li>
+<li>Done: Liste med færdiggjorte kanban kort og en angivelse af hvornår.</li>
+</ul>
+<p>Typisk opdateres tavlen af en produktejer.</p>
+<p>Kolonnerne kan ændres afhængig af den konkrete kontekst og man kan sågar udvide med flere kolonner, hvis det giver mening for teamet.
+Eksempelvis kan tilføjes en code review kolonne, der skal håndtere at kode tjekkes grundigt igennem for fejl og mangler.</p>
+<p>Der er en række fordele ved Kanban-metoden. Bl.a. et øget fokus på hvad der rent faktisk er aktivt i udviklingsfasen/processen. Ydermere får man som kunde mere værdi for pengene, fordi det helt naturligt vil være de vigtigste ting for kunden, som er aktive og i fokus på tavlen, og man har som både kunde og udvikler et bedre overblik over hvor langt vi er i processen.
+Flaskehalsproblemer reduceres og de der er nemmere at identificere og dermed løses hurtigere.
+En væsentlig pointe med kanban metoden er, at multitaskning ikke nødvendigvis altid er en god ting. I softwareudvikling har det tilbøjelighed til at øge udviklingstiden, fordi teamet af udviklere bruger tid på at kontekstskifte.
+For at undgå dette indføres en såkaldt WIP grænsværdi for hver af kolonnerne på tavlen. WIP betegner Work-In-Progress grænse. Dvs. et maksimalt antal opgaver, som et team arbejder på i daværende øjeblik.
+Det kunne eksempelvis måske være en god ide at have en lav WIP for kolonnen code review, fordi man som udikler derved fordres til at rette og teste fremfor at udvikle ny kode, hvilket de fleste udviklere typisk foretrækker.</p>
+<h2 id="øvelser">Øvelser</h2>
+<ol>
+<li>Overvej styrker og svagheder ved vandfaldsmodellen. Hvornår er det er en fordel at bruge vandfaldsmodellen fremfor eksempelvis iterativ udvikling?</li>
+<li>Sammenlign skridtvis forfining, inkrementel udvikling og iterativ udvikling. Hvilke ligheder er der og hvordan adskiller de sig?</li>
+<li>Undersøg tre forskellige større IT-projekter, der har fejlet eller været forsinket i udviklingem. Hvad synes årsagen at være? Kan den relateres til udviklingsmetoden?</li>
+<li>I det følgende skal du beskrive i ord og figurer hvorledes man ved brug af skridtvis forfining kan udvikle et simpelt kryds og bolle spil mod en kunstig intelligent spiller. Det er ikke et krav at skrive egentlig kode blot at man beskriver de enkelte trin i processen. De enkelte trin skal dog være så tæt på rigtig kode, at man let kan implementere spillet i praksis.</li>
+<li>I det følgende skal konstrueres et system til at holde styr på klokken ved brug af STREAM</li>
+</ol>
+
+        
+        
+    </body>
+    </html>
