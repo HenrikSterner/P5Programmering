@@ -13,38 +13,38 @@ Versioneringssystemer spiller en central rolle i moderne udvikling, da det giver
 ## Brug af editoren på p5js.org
 For at starte op med at kode skal du ind på p5js.org og trykke på "Editor":<br>
 
-![P5JS.org Editor](../kap18/images/p5editorstart.png)
+![P5JS.org Editor](../kap17/images/p5editorstart.png)
 
 Det vil kun være muligt at gemme, hvis du opretter en konto og/eller logger ind. Det kan gøres ret nemt med en gmail/github konto eller man kan oprette en konto på en anden mail. Alle filer bliver gemt i skyen. Du kan selvfølgelig hente dine programmer ned, hvis du er interesseret i det. 
 
 Herefter kommer du ind i en menu, der ser således ud:
 
-![P5JS.org brugergrænsefladen](../kap18/images/p5hovedmenu.png)
+![P5JS.org brugergrænsefladen](../kap17/images/p5hovedmenu.png)
 
 Til venstre ses feltet hvor du skriver koden. Til højre resultatet af din kode, hvis du har trykket "Play" på den røde knap med trekanten. 
 Konsollen ses nederst i venstre hjørne. Den kan eksempelvis være god at bruge, når du f.eks. vil udskrive nogle variablers værdier for at tjekke om de rent faktisk er det du tror de er.
 Du kan lave nye filer under, dele projekter og se andres projekter oppe i menuen:
-![Ny sketch/program](../kap18/images/sketches.png)
+![Ny sketch/program](../kap17/images/sketches.png)
 
 Kollektioner er en mulighed for at samle filer og dele dem med andre: 
 
-![Kollektioner](../kap18/images/collections.png)
+![Kollektioner](../kap17/images/collections.png)
 
-![Dele kollektioner](../kap18/images/sharecollection.png)
+![Dele kollektioner](../kap17/images/sharecollection.png)
 
 
 Når du ønsker at sprede din kode udover flere filer, så kan det også ret let lade sig gøre ved at gå op i hovedmenuen og trykke på "Sketch" efterfulgt af menupunktet "Add file". Her giver du filen et navn. Husk at hvis det skal være javascript kode skal den have efternavnet js til sidst. I det følgende har vi lavet en ny fil som vi har kaldt for sketch2.js. Tryk på vinklen ude til venstre for at danne dig et overblik over din kode: 
 
-![Tilføj fil](../kap18/images/p5newfile.png)
+![Tilføj fil](../kap17/images/p5newfile.png)
 
 For at du kan bruge filen er det nødvendigt at inkludere den i din html kode. Vær her særligt opmærksom på rækkefølgen af de filer du inkluderer. Hvis en fil y er afhængig af en anden fil x, så bør x inkluderes før y. 
 
-![Inkluder filen i html](../kap18/images/p5includeinhtml.png)
+![Inkluder filen i html](../kap17/images/p5includeinhtml.png)
 
 Generelt er det en god ide tidligt at lave en fornuftig filstruktur for dine projekter. Det bliver essentielt når man begynder at lave større projekter, der måske spreder sig over mange forskellige kodefiler og som inkluderer måske, både lyd, billeder og video. 
 En mulig overordnet struktur kunne være noget ala følgende: 
 
-![Inkluder filen i html](../kap18/images/p5filestruct.png)
+![Inkluder filen i html](../kap17/images/p5filestruct.png)
 
 Mapperne kan du lave op under Sketch->Add folder. 
 - src rummer alle javascript filerne
@@ -56,7 +56,7 @@ Ud fra hver folder kan du tilføjer nye filer eller uploade filer til mappen.
 
 Vær dog opmærksom på at inkludere de rigtige stier i din html fil. Her er et eksempel på hvorledes man kunne inkludere en fil kaldet sketch.js, som ligger i src:
 
-![Inkluder filen i html](../kap18/images/p5includefromsrc.png)
+![Inkluder filen i html](../kap17/images/p5includefromsrc.png)
 
 Bemærk tilføjelsen af "src/" i linje 13.
 
@@ -82,11 +82,11 @@ https://code.visualstudio.com/) og kør den ekskverbare installationsfil.
 ### Overblik over menuen 
 Herunder ses hovedmenuen når man starter VS code. Bemærk først og fremmest, at systemet nok ser lidt anderledes ud hos læseren. Det skyldes bl.a. at ikke alle menupunkter er installeret ved en nyinstalleret version af miljøet. 
 
-![Opstart i VS Code](../kap18/images/vscodehovedmenu.png)
+![Opstart i VS Code](../kap17/images/vscodehovedmenu.png)
 
 I venstre side ses nogle af de centrale menupunkter og dem vil vi kort dvæle ved:
 
-![Genveje i hovedmenuen i VS Code](../kap18/images/vscodehovedmenu.png)
+![Genveje i hovedmenuen i VS Code](../kap17/images/vscodehovedmenu.png)
 
 Filosofien bag VS code er i høj grad, at man bør bruge tastaturet så meget som muligt fremfor at bruge musen. Det betyder, at der er en lang række genveje som er gode at kende. Illustrationen ovenfor viser nogle af de centrale genveje, som er gode at øve sig i at bruge. Man er selvfølgelig altid velkommen til at bruge musen, hvis man har glemt en genvej. 
 
@@ -99,7 +99,7 @@ For rigtig at komme i gang med miljøet bør man starte med at udvælge en mappe
 
 Når du nu bruger stifinderen (Ctrl/Command+Shift+E), så vil du få en menu frem i venstre side, der viser dine mapper i dit workspace. 
 
-![Explorer/stifinder i VS Code](../kap18/images/explorervscode.png)
+![Explorer/stifinder i VS Code](../kap17/images/explorervscode.png)
 
 ### Installation af P5 
 Til at afvikle applikationer i P5 har vi brug nogle få plugins. 
@@ -119,11 +119,11 @@ Når disse tre plugins er installeret, så bør VS code genstartes. Herefter bur
 
 Når processen er færdig skulle du meget gerne i dit workspace have en filstruktur:
 
-![P5 projekt i VScode](../kap18/images/createp5vscode.png)
+![P5 projekt i VScode](../kap17/images/createp5vscode.png)
 
 Når du så vil starte dit projekt, går du ind i html filen og trykker på knappen som vist i figuren:  
 
-![Start af webserveren](../kap18/images/webservervscode.png)
+![Start af webserveren](../kap17/images/webservervscode.png)
 
 Du behøver kun at starte din webserver engang. Når du gemmer ændringer i din kode i VS code genstartes din P5 applikation automatisk.
 
@@ -145,7 +145,7 @@ Man kan skelne mellem to slags versioneringssystemer:
 
 Figuren nedenfor illustrerer de to forskellige versioneringssystemer:
 
-![Versioneringssystemer](../kap18/images/versioneringssystemer.png)
+![Versioneringssystemer](../kap17/images/versioneringssystemer.png)
 
 Git, som Github er en frontend til, er et decentraliseret (distributivt) versionskontrolsystem. Git er open source, har fokus på hastighed og benyttes i mange store og små software-projekter. 
 
@@ -190,7 +190,7 @@ I det følgende vil vi prøve at gennemgå, hvorledes man først bruger git-komm
 
 Start med at åbne VS Code og gå ind i terminalen. Du kan starte en ny terminal fra menuen Terminal->New Terminal eller genvejen Ctrl/Command+Shift+æ: 
 
-![Terminal i VS code](../kap18/images/terminalvs.png)
+![Terminal i VS code](../kap17/images/terminalvs.png)
 
 Man bemærker at der står en sti til venstre, som gerne skulle pege på ens workspace. Når man er i terminalen, er der tre gode kommandoer at kende:
 
@@ -253,24 +253,24 @@ Ovenstående var en ganske kort introduktion over nogle af de vigtigste git-komm
 ## Github i praksis
 Github er som nævnt en mere brugervenlig tilgang til git. Reelt er Github en form for brugergrænseflade til git. I det følgende vil vi gennemgå nogle af de vigtigste handlinger som man kan foretage. Figuren nedenfor illustrer hvorledes de enkelte git-kommandoer illustreret i forrige afsnit fungerer i fht Github:
 
-![Github og git - et overblik](../kap18/images/gitcommandillustrated.png)
+![Github og git - et overblik](../kap17/images/gitcommandillustrated.png)
 
 
 Herunder ses et billede af Githubs brugergrænseflade:
-![Github brugergrænseflade](../kap18/images/githuboverblik.png)
+![Github brugergrænseflade](../kap17/images/githuboverblik.png)
 I venstre side har vi listen over repositories og i højre side vises hvorvidt Github har regitreret ændring om der skal handles på det. 
 
 ### Oprette et nyt repository i Github
 For at oprette et nyt repository, så tryk Ctrl/Command+N og vælg "New Repository". Herefter kommer du til følgende menu: 
-![Github Opret ](../kap18/images/githubcreaterepo.png)
+![Github Opret ](../kap17/images/githubcreaterepo.png)
 
 Her udfyldes navnet på dit repository, en kort beskrivelse, stien til den lokale version på din computer, hvorvidt du repo skal initialiseres med readme (introduktionstekst til brugeren), filer git skal ignorere og licens for dit projekt.  
 
 Når du trykker på "Create Repository" oprette et lokalt repository, som du kan publicere på Github. 
-![Publicer repository ](../kap18/images/publishgit.png)
+![Publicer repository ](../kap17/images/publishgit.png)
 
 Hvis du ellers har oprettet en konto og er logget ind bør du få følgende dialogboks eller noget der minder om den:
-![Publicer repository ](../kap18/images/publishgit.png)
+![Publicer repository ](../kap17/images/publishgit.png)
 
 Du kan vælge mellem den gratis udgave (Github.com) eller Github Enterprise, som koster penge. På den gratis udgave kan du stadig godt holde koden privat, men kun med op til tre andre udviklere. I den kommercielle udgave er der ikke den begrænsning.
 Hvis du er en del af en organisation kan du tilføje det. 
@@ -284,7 +284,7 @@ Github og git holder nu øje med biblioteket om der sker ændringer.
 Når du eksempelvis opretter en fil i biblioteket (det kunne passende gøres i VS code), så gør Github dig opmærksom på, at en ny fil er oprettet eller ændret.
 Herunder et eksempel, hvor vi ønsker at opdatere vores repository med ændringer og billedet. Generelt er det en god ide at starte med at hente den nyeste version fra Github ved at trykke på knappen "Fetch origin" i højre hjørne.
 
-![Commit ændringer til repository ](../kap18/images/commitgithub.png)
+![Commit ændringer til repository ](../kap17/images/commitgithub.png)
 
 Bemærk det grønne felt med plus-tegnet ud for filen. Det betyder, at der er tale om en ny fil. Den gule cirkel med plet i marker, at git har registreret ændringer i en eksiterende fil. 
 Som nævnt tidligere er det altid en god ide kort at opsummere ændringerne inden du trykker på den blå knap i venstre side "Commit to main". 
@@ -292,12 +292,12 @@ Som nævnt tidligere er det altid en god ide kort at opsummere ændringerne inde
 Når du trykker på knappen melder Github tilbage med anbefalinger til hvad du så bør gøre. Typisk ønsker du bare at trykke på "Push origin", hvilket betyder at dine ændringer bliver tilføjet til dit repository på github. 
 
 
-![Push til dit repository ](../kap18/images/commitgithub.png).
+![Push til dit repository ](../kap17/images/commitgithub.png).
 
 ### Tjek i historikken
 Det kan være godt at holde lidt øje med udviklingen på ens projekt eller et projekt man er er den af. Det kan man gøre ved at trykke på knappen "History":
 
-![Historien ](../kap18/images/historygithub.png) 
+![Historien ](../kap17/images/historygithub.png) 
 
 Her kan man bl.a. se hvem der har ændret på hvad og hvornår. 
 
@@ -305,7 +305,7 @@ Her kan man bl.a. se hvem der har ændret på hvad og hvornår.
 En typisk situation der opstår ret ofte er når du ikke længere har den nyeste version af en fil i de lokale i repository sammenlignet det repository, der ligger på Github. 
 Når du bruger "Fetch Origin" knappen op i højre hjørne af menuen så henter du en status på om der er nogle nye opdateringer eller forslag til opdateringer på dit lokale repository. Disse opdateringer kaldes også for "Pull requests".  Brugergrænsefladen i Github gør efter en "fetch" automatisk opmærksom på, at du kan hente disse pull requests ved at trykke på "Pull origin": 
 
-![Pull request efter en fetch ](../kap18/images/pullgithub.png) 
+![Pull request efter en fetch ](../kap17/images/pullgithub.png) 
 
 
 ## Øvelser

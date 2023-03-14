@@ -252,7 +252,8 @@ I kapitel 18 gennemgår vi i langt flere detajler installationen og  brugen af V
 
 
 ## Øvelser 
-Herunder følger en række øvelser. Lav som minimum øvelserne 1. til 9. Dele af projektet kan også være sjovt at lave.  
+Herunder følger en række øvelser. Lav som minimum øvelserne 1. til 9. Dele af projektet kan også være sjovt at lave. 
+
 1. Tegn de forskellige geometriske former i forskellige farver 
 2. Gør baggrunden mørkeblå. Tegn to linjer der krydser diagonalt i en hvid farve. 
 3. Tegn OL-logoet i farver
@@ -289,7 +290,6 @@ Pseudokode for eksempelvis det japanske flag kunne lyde i retning af følgende:
 * Konstruer et kanvas med hvid bagrund
 * Tegn en rød cirkel i midten af kanvas
 * Fyld cirklen med en rød farve
-
 
 Hvis du kender andre, som er ved at lære p5 kan det være en fordel at prøve at give din beskrivelse i a. til vedkommende, og se om vedkommende kan visualisere dit flag. 
 
