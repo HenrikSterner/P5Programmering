@@ -17,8 +17,11 @@ Mekanisk, elektronisk eller anden gengivelse af eller kopiering fra denne digita
 dele heraf er uden eksplicit aftale med os ifølge gældende dansk lov om ophavsret ikke tilladt.
 Copyright © Henrik Sterner & Peter Sterner 2022.
 
-# Kapitler
 
+
+- [Forord](https://github.com/HenrikSterner/P5Programmering/blob/main/forord/forord.md)
+
+# Kapitler
 Del I: Introduktion til basal programmering
 - [Kapitel 1: Indledning](https://github.com/HenrikSterner/P5Programmering/blob/main/kap1/kap1.md)
 - [Kapitel 2: Intro til P5 og Javascript](https://github.com/HenrikSterner/P5Programmering/blob/main/kap2/kap2.md)
