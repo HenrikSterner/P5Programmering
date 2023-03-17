@@ -1,3 +1,4 @@
+@echo off
 ECHO Convert forord convert...
 cd forord/
 pandoc forord.md -o forord.docx
@@ -70,11 +71,13 @@ ECHO Convert kap17 convert...
 cd kap17/
 pandoc kap17.md -o kap17.docx
 cd ..
-ECHO Combine word files
 
-
-
-
+@echo off
+ECHO Runs macro in Word and starts it. Check batch file for correct paths if it doesnt work
+set "WordPath=C:\Program Files\Microsoft Office\Office16\WINWORD.EXE"
+set "MacroName=CombineDocuments"
+cd C:\Program Files\Microsoft Office\root\Office16\
+winword.exe "C:\code\P5Programmering\p5docxmain.docm" /m%MacroName%
 
 
 

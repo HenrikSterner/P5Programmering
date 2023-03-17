@@ -17,8 +17,6 @@ Mekanisk, elektronisk eller anden gengivelse af eller kopiering fra denne digita
 dele heraf er uden eksplicit aftale med os ifølge gældende dansk lov om ophavsret ikke tilladt.
 Copyright © Henrik Sterner & Peter Sterner 2022.
 
-
-
 - [Forord](https://github.com/HenrikSterner/P5Programmering/blob/main/forord/forord.md)
 
 # Kapitler
