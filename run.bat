@@ -79,6 +79,8 @@ set "MacroName=CombineDocuments"
 cd C:\Program Files\Microsoft Office\root\Office16\
 winword.exe "C:\code\P5Programmering\p5docxmain.docm" /m%MacroName%
 
+cd C:\code\P5Programmering\
+
 
 
 
