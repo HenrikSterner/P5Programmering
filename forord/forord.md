@@ -28,14 +28,20 @@ Herunder vil vi kort fremhæve en række punkter, hvor vi forsøger at adskille 
 
 Nærværende bog forsøger at give dig en omfattende forståelse af grundlæggende begreber i programmering samt værktøjer og bedste praksis i forhold til at udvikle systemer og løse konkrete virkelighedsnære problemer. Den dækker samtidig kernestof for faget programmering B/C samt programmeringsdelen af informatik b/c i gymnasiet. Ydermere håber vi desuden, at bogen kan tale  til folkeskolens ældste klasser, hvis de vil prøve at tage springet fra "træk og slip"- programmering til at kode. Endelig henvender bogen sig til alle som ønsker at blive klogere på hvad programmering er og hvad det kan bruges til. 
 
-Til hvert kapitel følger en lang række øvelser, som vi anbefaler dig at lave. Træning gør mester, som man siger. Og jo mere du øver dig, jo bedre bliver du. Bogen er dog ikke nødvendigvis tænkt at den skal læses fra enden til anden. Herunder følger en række anbefalinger til rækkefølgen:
+## Læsevejledning
+Generelt anbefales det at følge de første 6 kapitler i den rækkefølge. Her introduceres de grundlæggende strukturer, som er essentielle for at kunne kode. Man kan undervejs dykke ned i kapitlerne 11-16, som langt hen ad vejen kan læses uafhængigt af hinanden. 
+Det kan være en god ide relativt tidligt i sin læringsproces at få en forståelse for dokumentation og testning samt de grundlæggende problemløsningsteknikker og den måde vi tænker og arbejder computationelt.
+
+Ved hvert kapitel er der en række øvelser og projekter. Det anbefales at lave så mange øvelser som muligt og gerne de projekter, som man finder interessante. Projekterne, er generelt noget større og åbne opgaver. Træning gør mester, som man siger. Og jo mere du øver dig, jo bedre bliver du. Bogen er dog ikke nødvendigvis tænkt at den skal læses fra enden til anden. Herunder følger en række mere detaljeret anbefalinger til rækkefølgen:
 
 - Læs som udgangspunkt først del I svarende til kapitel 1 til 6 først og lav så mange øvelser og projekter som muligt. Kapitel 7 om rekursion kan springes over i første omgang, men er relevant for gymnasieelever, der tager programmering. 
 - Kapitel 17 handler om installering af udviklingsmiljø og hvordan versioneringskontrol kan indføres. Det er ikke nødvendigt med nogle af delene for at kode men i længden bliver det nogle rigtige gode værktøjer til at optimere udviklingsprocessen. Dette kapitel kan læses når som helst. Men måske en god ide at vente til man har kodet en smule i de første par kapitler. 
 - Læs kapitlerne i del II om objektorienteret programmering i den rækkefølge de står. 
 - Når først de seks første kapitler og kapitel 8 er læst kan man selv vælge hvilke dele af kapitlerne i del III, som man finder interessant. Kapitel 16 om computationel tækning kan være en god ide at læse relativt tidligt, da det beskriver en måde at tænke problemløsning på. 
 
+## Online udgave
 Bogen er tilgængelig online på hvor den nyeste version ligger: 
 [henriksterner.github.io/P5Programmering/](henriksterner.github.io/P5Programmering/)
 
+## Tak
 Afslutningsvis og inden vi begynder denne spændende rejse, vil vi rette en stor tak til de mange gymnasieelever og kolleger, som har givet feedback undervejs i udarbejdelsen af denne bog. Ingen nævnt. Ingen glemt. Tak. 

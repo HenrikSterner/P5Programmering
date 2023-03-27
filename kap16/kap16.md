@@ -212,7 +212,7 @@ class NormalTriangle extends Triangle {
 //...
 ```
 
-Mønsteret er relevante at bruge, når vi har en forældreklasse med flere børn, og baseret på input skal vi returnere en af børneklasserne. Ved at bruge mønsteret fratages ansvaret for instansieringen af ​​en klasse og tildeles i stedet fabriksklassen. Herved centraliseres koden og gør det nemmere at ændre og justere hvis eksempelvis man udvider med flere børneklasser senere. 
+Mønsteret er relevant at bruge, når vi har en forældreklasse med flere børn, og vi ønsker at returnere en af børneklasserne. Ved at bruge mønsteret fratages ansvaret for instansieringen af ​​en klasse og tildeles i stedet fabriksklassen. Herved centraliseres koden og gør det nemmere at ændre og justere hvis eksempelvis man udvider med flere børneklasser senere. 
 
 
 #### Byggemønsteret ("Builder pattern")
@@ -459,7 +459,7 @@ function mouseClicked() {
 ```
 
 #### Kommandomønsteret
-Command-mønsteret er et designmønster, der adskiller en anmodning om at udføre en handling fra selve handlingen. Det giver en fleksibel måde at håndtere handlinger eller kommandoer i et system. I p5.js kan Command-mønsteret bruges til at håndtere input eller interaktioner fra brugeren.
+Command-mønsteret er et designmønster, der adskiller en anmodning om at udføre en handling fra selve handlingen. Det giver en fleksibel måde at håndtere handlinger eller kommandoer i et system. I p5.js kan kommandomønsteret bruges til at håndtere input eller interaktioner fra brugeren.
 
 For eksempel, hvis man ønsker at opbygge en interaktiv scene med flere forskellige interaktionsmuligheder, kan man oprette et Command-objekt for hver handling, der skal udføres.
 
@@ -524,5 +524,23 @@ function changeBackground() {
   }
 ```
 8. Udvid forrige opgave ved brug af byggemønsteret så den kan konstruere en RGB-farve. 
+9. Brug Kompositmønsteret til at konstruere tegninger af forskellige typer huse ved brug af forskellige geometriske former.
+10. Overvej styrker ved ansvarskædemønsteret og hvorledes det kan bruges i en selvvalgt opgave. 
 
+## Projekt: Designmønstre i udviklingen af et spil
+I det følgende skal man bruge design patterns til at designe og konstruere et læringsspil indenfor et selvvalgt fag, niveau og alderstrin. Det kunne eksempelvis være at lære folkeskoleelever om addition og subtraktion eller om en større begivenhed i historie. 
+Fokus i opgaven er på hvorledes design patterns kan bruges til at implementere løsningen i praksis. 
+En fremgangsmåde kunne være følgende:
 
+1. Definer projektets formål og målgruppe: Hvem henvender spillet sig til. Hvilken målgruppe? Hvilken faglig problemstilling forsøger det at 
+2. Identificer de nødvendige design mønstre: For eksempel kan der anvendes Factory Pattern til at oprette forskellige typer af spilobjekter, singletonmønster til at sikre, at der kun er én instans af et objekt, eller observationsmønster til at lade objekter lytte efter justeringer i andre objekter.
+3. Programmer de valgte designmønstre. Formentlig kan det være en god ide at starte med de mest grundlæggende mønstre og inkrementelt udvide dem. 
+4. Konstruer spillets grafik og mekanik herunder  tegne spilobjekter og baggrund, implementere interaktion mellem spiller og spilobjekter, og definere spillets regler og mål.
+5. Teste og tilpasse spillet: Når spillet er færdigt, skal det testes og justeres for at sikre, at det fungerer som det skal. Måske er det nødvendigt at finjustere spillets balance, grafik eller lydeffekter for at skabe den ønskede spiloplevelse.
+
+Afslutningsvis er det en god ide at reflektere over brugen af designmønstere. 
+
+## Projekt: Computationel tænkning i udviklingen af interaktiv data visualisering 
+
+I følgende projekt skal udvikles en applikation ved brug af computationel tænkning, der giver mulighed for interaktivt at udforske og visualisere et datasæt indenfor et bestemt emne. Eksempelvis kunne være at kigge på klimadata hvor målet er visualisere klimaforandringer over tid. En anden mulighed kunne være at kigge på data over uligheden blandt rige og fattige i verdenen og hvorledes den er vokset over tid.  
+Man vælger selv et emne som er interessant. Herefter bør det overvejes hvorledes de fire kerneprincipper (abstraktion, dekompositoin, mønstergenkendelse og algoritmedesign) hver især kan inddrages i udviklingen af applikationen.  
