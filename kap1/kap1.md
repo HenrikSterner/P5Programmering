@@ -117,11 +117,7 @@ Herefter tager vi hul på brug af Visual Studio Code, som det såkaldte udviklin
 
 Vi giver en grundig indføring i installationen og brugen af både online editoren samt Visual Studio Code og de nødvendige plugins i kapitel 17.
 
-## Læsevejledning
-Generelt anbefales det at følge de første ni kapitler i den rækkefølge. Her introduceres de grundlæggende strukturer, som er essentielle for at kunne kode. Man kan undervejs dykke ned i kapitlerne 11-16, som langt hen ad vejen kan læses uafhængigt af hinanden. 
-Det kan være en god ide relativt tidligt i sin læringsproces at få en forståelse for dokumentation og testning samt de grundlæggende problemløsningsteknikker og den måde vi tænker og arbejder computationelt.
 
-Ved hvert kapitel er der en række øvelser og større projekter. Det anbefales at lave så mange øvelser som muligt og gerne de projekter, som man finder interessante. Projekterne, er generelt noget større og åbne opgaver.
 
 ## Øvelser
 Herunder følger en række øvelser. Lav som minimum øvelserne 1. til 7.  
