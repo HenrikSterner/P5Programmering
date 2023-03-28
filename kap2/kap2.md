@@ -1,15 +1,15 @@
-# 2. Intro til P5 og Javascript
+# 2. Dine første programmer i P5 og Javascript
 
 Et program består af en række instruktioner, som en maskine (computer, telefon, bil, køleskab etc)  forstår. Programmering betegner den proces hvor man ud fra nogle formelle regler konstruerer programmet.
 
-Vi kan tænke på det at programmere som at lave en tegning, hvor den endelige tegning udgør programmet. I det følgende skal vi arbejde med at konstruere simple geometriske former som kan blive til en form for automatiseret tegninger. Dvs. programmer.
+Vi kan tænke på det at programmere som at lave en tegning, hvor den endelige tegning udgør programmet. I det følgende skal vi arbejde med at konstruere simple geometriske former som kan blive til en form for automatiseret tegninger eller animationer. Dvs. disse tegninger eller animationer udgør vores programmer.
 
-Det bemærkes, at til at starte med er det dog nok bare at trykke "Editor" på p5js.org, men hvis man eksempelvis ønsker at gemme sine programmer, så er det nødvendigt at logge ind/oprette en konto. Det er grundigt forklaret i kapitel 18 hvor man bl.a. får en udførlig vejledning i brug af editoren (hvor koden skrives) på p5js.org i kapitel 18. 
-
+Det bemærkes, at til at starte med skriver vi vores kode på p5js.org. Her er det  nok bare at trykke "Editor" på p5js.org, men hvis man eksempelvis ønsker at gemme sine programmer, så er det nødvendigt at logge ind/oprette en konto. Alt sammen er grundigt forklaret i kapitel 17 hvor man bl.a. får en udførlig vejledning i brug af editoren (hvor koden skrives) på p5js.org i kapitel 17. 
+ 
 
 ## Koordinatsystemer og geometriske former i P5.JS
 
-På figuren nedenfor ses til venstre et koordinatsystem,som vi kender det fra matematikundervisningen. Det indbyggede koordinatsystem i P5 er på figuren vist til højre: 
+På figuren nedenfor ses til venstre et koordinatsystem, som vi kender det fra matematikundervisningen. Det indbyggede koordinatsystem i P5 er på figuren vist til højre: 
 
 ![alt_text](billeder/kap2-koordinatsystem.png "Til højre ses koordinatsystemet i P5")
 
@@ -191,7 +191,7 @@ random(-50,50); //giver et tilfældigt tal mellem -50 og 50
 ```
 
 
-Funktionen viser sig at være ekstremt nyttig i mange sammenhænge, men til at starte med kan den eksempelvis bruges til at tildele en geometrisk form en vilkårlig farv eller placering:
+Funktionen viser sig at være ekstremt nyttig i mange sammenhænge, men til at starte med kan den eksempelvis bruges til at tildele en geometrisk form en vilkårlig farve eller placering:
 
 
 ```javascript
@@ -248,7 +248,7 @@ Når du har installeret disse kan du nøjes med at trykke Ctrl + Shift + p og sk
 
 <span style="text-decoration:underline;">Style.css</span>: Her kan du skrive style sheets der ændrer på hjemmesidens udseende. Undlad at kigge på den nu.
 
-I kapitel 18 gennemgår vi i langt flere detajler installationen og  brugen af Visual Studio Code.
+I kapitel 17 gennemgår vi i langt flere detajler  hvorledes Visual Studio Code installeres og bruges i praksis.
 
 
 ## Øvelser 
@@ -270,12 +270,12 @@ $$grader= \frac{radianer}{pi}*180 $$
     1. Live Server til at afvikle en lokal webserver
     2. P5 Project Creator
     3. P5js Snippets
-Se en udførlig vejledning i kapitel 18.
+Se en udførlig vejledning i kapitel 17.
 
 
 ## Projekt: Algoritmisk flag konstruktion
 
-Du har startet en virksomhed op som producerer flag automatisk og digitalt i P5. Flere lande har allerede efterspurgt om deres flag kan blive konstrueret i P5 og en beskrivelse (dvs. en algoritme), der skridt for skridt fortæller hvordan flaget konstrueres vha computeren. Det drejer sig om følgende lande:
+Du har startet en virksomhed op som producerer flag automatisk og digitalt i P5. Flere lande har allerede efterspurgt om deres flag kan blive konstrueret i P5 og en beskrivelse (dvs. en algoritme), der skridt for skridt fortæller hvordan flaget visualiseres vha computeren. Det drejer sig om følgende lande:
 
 ![alt_text](billeder/kap2-lande.png "")
 
@@ -296,4 +296,4 @@ Hvis du kender andre, som er ved at lære p5 kan det være en fordel at prøve a
 Ofte er den bedste måde at kommunikere kode til andre på ikke nødvendigvis ved at tage udgangspunkt i selve koden men i stedet at kommunikere i pseudokode eller lignende.
 Ydermere er det også en god måde at dokukumentere sin kode på, hvis andre skal læse den eller hvis man selv vender tilbage til koden en dag. Man vil blive overrasket over hvor hurtigt man kan glemmer tankegangen og ideer man havde, da man udviklede et program. 
 
-Det er generelt en vigtigt egenskab for alle programmører at være bevidst om hvorledes man bedst kommunikere sit program ud og at programmer kan repræsenteres ikke kun som den egentlig kode men også almindelig tekst, figurer eller noget helt tredje. 
+Det er generelt en vigtigt egenskab for alle programmører at være bevidst om hvorledes man bedst kommunikerer funktionaliteten og strukturen i sit program, og at programmer ofte kan repræsenteres ikke kun som den egentlig kode men også i almindelig tekst, figurer eller noget helt tredje. 
