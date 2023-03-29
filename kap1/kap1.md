@@ -1,4 +1,6 @@
 # 1. Godt at vide inden vi går i gang
+I det følgende vil vi starte med nogle generelle overvejelser omkring programmering og dets anvendelser, sproget javascript samt nogle god råd til hvordan man bliver en bedre programmør. 
+
 Programmering eller kodning dækker over den process hvor man i et givent programmeringssprog skriver noget kode, som resulterer i et program (eller system). Programmet kan typisk afvikles på en eller flere platforme såsom en computer, en mobiltelefon, en selvkørende bil, en sensor i køleskabet eller noget helt femte. 
 
 Der kan være mange formål med at udvikle programmer. Typisk handler programmering om at automatisere kedelige eller beregningstunge opgaver eller gøre det nemmere for folk at kommunikere, søge information eller træffe bedre og mere kvalificerede beslutninger. Andre gange handler det om at simulere komplekse fænomener eller systemer. Måske i håb om at skabe ny erkendelse eller indsigt. 
@@ -17,7 +19,6 @@ Prøv i det følgende at overveje nogle af nedenstående spørgsmål?
 - Hvordan kan vi være sikre på, at de private beskeder vi sender til hinanden rent faktisk er private?
 - Bør vi kunne stemme digitalt ved næste valg? Hvad kan udfordringerne være?
 - Hvordan identificerer vi fake news?
-
 
 
 Målet med denne bog er ikke nødvendigvis, at gøre alle til professionelle programmører, men håbet er at give læseren en sjov og måske lidt anderledes introduktion til programmering og kode, som tidens helt centrale metodefag, der kan efterhånden bruges som værktøj i stort set alle fag. 
@@ -59,7 +60,7 @@ For at blive en god programmør og få succes med programmering, så vil vi fore
 - Giv ikke op. Men bliv ved med at øve dig.
 - Vær vidende om, at alle dygtige programmører har på et eller andet tidspunkt været der, hvor du er nu. Du er ikke alene.
 
-Ønsker du  på sigt at blive en ekspert indenfor programmering, så se i øjenene, at ægte ekspertise kan tage et helt liv eller som digteren, Samuel Johnson formulerede det: _Ekspertise i enhvert fag kan kun opnås ved et livs arbejde; det kan og skal ikke købes til en lavere pris_._
+Ønsker du  på sigt at blive en ekspert indenfor programmering, så se i øjenene, at ægte ekspertise kan tage et helt liv eller som digteren, Samuel Johnson formulerede det: _Ekspertise i enhvert fag kan kun opnås ved et livs arbejde; det kan og skal ikke købes til en lavere pris_.
 
 ## Valg af sprog
 Når man skal lære at programmere er et af de første store spørgsmål, hvilket sprog man bør tage fat på. Der findes ikke noget entydigt godt sprog at starte på. Nogle sprog er dog stadig nemmere at lære end andre. Der findes i dag flere hundrede forskellige sprog og valget af sprog afhænger i høj grad hvad man ønsker at lave eller bruge det til. Selvom alle sprog er unikke er mange af dem og så meget ens, og forstår man først de grundlæggende principper i et sprog, så har man typisk nemmere ved at overføre det til et andet.
@@ -121,7 +122,6 @@ Herefter tager vi hul på brug af Visual Studio Code, som det såkaldte udviklin
 3) p5js Snippets: Til nemt at indsætte ofte brugte kodestumper ind automatisk
 
 Vi giver en grundig indføring i installationen og brugen af både online editoren samt Visual Studio Code og de nødvendige plugins i kapitel 17.
-
 
 
 ## Øvelser
