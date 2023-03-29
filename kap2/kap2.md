@@ -258,13 +258,14 @@ Herunder følger en række øvelser. Lav som minimum øvelserne 1. til 9. Dele a
 2. Gør baggrunden mørkeblå. Tegn to linjer der krydser diagonalt i en hvid farve. 
 3. Tegn OL-logoet i farver
 4. Tegn et hus. Farvelæg det.
-5. Tegn et dyr eller et rumvæsen. Farvelæg det.
+5. Tegn et dyr ved brug af de geometriske former. Farvelæg det.
 6. Tegn et simpelt potræt af et menneske. Brug rektangler, cirkler og linjer etc. til at tegne øjne, næse og mund.  
 7. Konstruér en stjerne. To gode funktioner at kende er "translate(x,y)", som definerer omdrejningspunktet og "rotate(vinkel i radianer)", der roterer de efterfølgende objekter i radianer med uret. Til orientering kan man konvertere mellem radianer og grader ved følgende formler: $$radianer= \frac{grader}{180}*\pi $$ $$grader= \frac{radianer}{pi}*180 $$
 8. Konstruér en blomst ved brug af cirkler og ellipser.
 9. Konstruer din egen figur ved hjælp af beginShape og endShape.
-10. Du er ved at starte din egen virksomhed og har brug for at kunne autogenerere dit firmas logo. Skriv et program der konstruerer dit logo.
-11. Bestem selv om du vil vente med denne øvelse. Installér Visual Studio Code og følgende plugins:
+10. Prøv ved brug af geometriske primitiver såsom cirkler, firkanter eller linjer at skabe en illusion af en tre-dimensionel figur. Det kunne eksempelvis være en kugle, en kegle eller en kasse. 
+11. Du er ved at starte din egen virksomhed og har brug for at kunne autogenerere dit firmas logo. Skriv et program der konstruerer dit logo.
+12. Bestem selv om du vil vente med denne øvelse. Installér Visual Studio Code og følgende plugins:
     1. Live Server til at afvikle en lokal webserver
     2. P5 Project Creator
     3. P5js Snippets
