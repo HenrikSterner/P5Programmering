@@ -6,6 +6,44 @@ Vi kan tænke på det at programmere som at lave en tegning, hvor den endelige t
 
 Det bemærkes, at til at starte med skriver vi vores kode på p5js.org. Her er det  nok bare at trykke "Editor" på p5js.org, men hvis man eksempelvis ønsker at gemme sine programmer, så er det nødvendigt at logge ind/oprette en konto. Alt sammen er grundigt forklaret i kapitel 17 hvor man bl.a. får en udførlig vejledning i brug af editoren (hvor koden skrives) på p5js.org i kapitel 17. 
  
+## En tegning bliver til
+Herunder følger vores første kodeeksempel, som skaber en illustration af et hus og en sol ud fra simple geometriske former. Du skal være velkommen til at prøve koden af og eksperimentere med koden: 
+
+```javascript
+// lav en setup funktion der tegner et lærred 400x400
+// på lærredet tegnes et simpelt hus
+
+function setup() {
+    // vi tegner et lærred/kanvas der er 400 bredt og 400 højt
+	  createCanvas(400, 400);
+}
+
+function draw() {
+    //baggrundsfarve
+	  background(220);
+	  // tegn huset
+	  // vi starter med væggene
+	  fill(255, 0, 0);
+	  rect(100, 200, 200, 200);
+	  // tegner taget
+	  fill(0, 255, 0);
+	  triangle(100, 200, 200, 100, 300, 200);
+	  // tegner døren
+	  fill(0, 0, 255);
+	  rect(180, 300, 40, 100);
+	  // tegner vinduet
+	  fill(255, 255, 0);
+	  rect(120, 250, 60, 60);
+	  // tegner solen
+	  fill(255, 255, 0);
+	  ellipse(350, 50, 80, 80);
+}
+```
+Ud fra ovenstående eksempel ser vi, at et program i P5, typisk består af to dele også kaldet funktioner. Funktionen `setup()` er her programmet er sat til at starte og linjerne mellem krølparenteserne er de første såkaldte `instruktioner`, som afvikles. Krølparenteserne indikerer en såkaldt `sekvens`, som er en række instruktioner, der udføres i sammenhæng. Til at starte med begynder vi med en kommentar, som er angivet ved to skråstreger. De er primært med for at dokumentere og formidle kodens funktionalitet. Dernæst tegnes lærredet eller kanvas, som kalder en indbygget funktion `createCanvas(400, 400)`. 
+
+Efter `setup()` der kun afvikles en gang i starten af programmet, kaldes automatisk funktionen `draw()`. Særligt for denne funktion er, at den i resten af programmet vil blive kaldt igen og igen. Dvs. programmet gentegner i praksis huset mange gange i sekundet, så hurtigt at det menneskelige øje ikke opdager det.  
+Kaldet til `background` indikerer baggrundsfarven ud fra en sort-hvid skala og denne kommando overmaler lærredet.  
+Du undrer dig måske over tallene angivet mellem parenteserne. Det er reelt bare nogle koordinater og mål for de geometriske former. Det vender vi tilbage til i næste afsnit. 
 
 ## Koordinatsystemer og geometriske former i P5.JS
 
@@ -13,36 +51,41 @@ På figuren nedenfor ses til venstre et koordinatsystem, som vi kender det fra m
 
 ![alt_text](billeder/kap2-koordinatsystem.png "Til højre ses koordinatsystemet i P5")
 
-Vi konstruere punkter, linjer, rektangler, ellipser og cirkler nedenfor:
+Vi bemærker, at koordinatsystemets centrum er placeret øverst i venstre hjørne og at den positive y-akse går modsat vej af hvad vi er vant til. Det er muligt at justere på disse ting, men i praksis viser det sig at være smart, da vi bl.a. undgår at skulle forholde os til negative koordinater. 
+
+Vi konstruere herunder et program, som visualiserer en række punkter, linjer, rektangler, ellipser og cirkler:
 
 ```javascript
 function setup(){
     // størrelsen af vores tegneflade også kaldet kanvas 
-    // (100,100) markerer brede og og længde
-  	createCanvas(100, 100);
+    // (800,800) markerer brede og og længde
+  	createCanvas(800, 800);
 }
 function draw(){
  // point(x, y) hvor x og y refererer til placeringen af punktet: 
- point(40, 50); 
+ point(400, 500); 
  // line(x1, y1, x2, y2) hvor (x1,y1) og (x2,y2) refererer til placering af endepunkter
- line(10, 20, 50, 20); // line(x1, y1, x2, y2) hvor tallene 
+ line(100, 200, 500, 700); // line(x1, y1, x2, y2) hvor tallene 
  // rect(x, y, width, height) hvor (x,y) er punktet i øverste, vesntre hjørne og width og height
  // er bredde hhv højde
- rect(10, 20, 40, 30); 
+ rect(100, 100, 400, 300); 
  // ellipse(x, y, width, height) , hvor (x,y) er centrum af ellipsen 
  // width hhv. height er længden af stor- hhv lille-aksen
- ellipse(30, 30, 40, 60); // ellipse(x, y, width, height)
- ellipse(30, 30, 40, 40); // ellipse(x, y, width, height)
+ ellipse(300, 300, 400, 200); // ellipse(x, y, width, height)
+ // circle(x,y,r), hvor (x,y) er centrum og r er radisus
+ circle(400, 400,400); // ellipse(x, y, width, height)
 }
 ```
-Sidstnævnte bliver til en cirkel. Hvorfor mon?
 
-I `setup ` initialiseres programmet (instruktionerne herinde afvikles en gang og som det allerførste i programmet). I det her tilfælde konstruerer vi blot tegnefladen, som vi fremover også kalder for et kanvas. Det er her vores illustrationer og objekter fremkommer.  
+Som nævnt tidligere så initialiseres i  `setup ` programmet (instruktionerne herinde afvikles en gang og som det allerførste i programmet). I det her tilfælde konstruerer vi igen blot lærredet. 
 
-I `draw`  skrives den kode, som tegner figurerne på kanvas. Bemærk at koden i draw afvikles som standard 30 gange i sekundet.  
-De to skråstreger indikerer at der er tale om kommentarer, som ikke fortolkes af computeren. Den opfatter det som kommentarer. Krølparenteser markerer start og slut på de to såkaldte metoder, `setup` og `draw`. 
+I `draw`  skrives denne gang kode, som tegner figurerne på kanvas forskellige steder på skærmen. Bemærk at koden i draw afvikles som standard 30 gange i sekundet.  
+De to skråstreger indikerer at den efterfølgende tekst er en kommentarer, som ikke fortolkes af computeren. 
 
-Alternativt kan rektangler eksempelvis konstrueres ud fra deres hjørner:
+Et gammelt ordsprog siger, at der er mange veje til Rom. På samme måde forholder det sig til programmering. Vi kan ofte skrive de samme programmer på et utal af måder Det er noget af det, som gør programmering til en kreativ og sjov proces. 
+
+En af grundene til, at vi kan skrive de samme programmer på mange forskellige måder, hænger bl.a. sammen med, at vi ofte kan udtrykke resultatet af de enkelte instruktioner på forskellige vis. Det ser vi eksempelvis med en cirkel, der kan i virkeligheden blot er et specialtilfælde af en ellipse. 
+Et andet eksempel er rektangler konstrueres ud fra deres hjørner:
 
 ```javascript
 function setup(){
@@ -55,6 +98,27 @@ function draw(){
  rect(30, 20, 40, 20); 
 }
 ```
+Herunder et eksempel hvor der tegnes ansigtet af en simpel tøjbamse:
+```javascript
+function setup() {
+	createCanvas(400, 400);
+  rectMode(CENTER);
+}
+
+function draw() {
+	background(220);
+  fill(255, 255, 0);
+  ellipse(200, 200, 300, 300);
+  fill(0);
+  ellipse(150, 150, 50, 50);
+  ellipse(250, 150, 50, 50);
+  fill(255, 0, 0);
+  rect(200, 250, 100, 50);
+  fill(0);
+  triangle(200, 200, 150, 250, 250, 250);
+}
+```
+
 Man kan ændre tykkelsen af streger på følgende måde:
 
 ```javascript
@@ -65,8 +129,19 @@ line(20, 40, 80, 40);
 strokeWeight(10); // Fed
 line(20, 70, 80, 70);
 ```
-Man kan lave en form bestående af mange punkter der forbindes ved brug af linjer ved at bruge shape. Herunder tegnes en pil:
 
+## Polygoner ved brug af punkter
+Man kan lave et polygon bestående af mange punkter der forbindes ved brug af linjer ved at bruge `beginShape()` efterfulgt af punkter og afsluttet med `endShape(CLOSE)`:
+
+```javascript
+beginShape(); 
+  vertex(x1, y1); 
+  vertex(x2, y2);
+  ....
+endShape(CLOSE); 
+```
+
+Herunder tegnes en pil:
 ```javascript
 function setup() { 
  createCanvas(480, 120); 
@@ -82,6 +157,55 @@ function draw() {
   vertex(219, 82); 
   vertex(226, 109); 
  endShape(CLOSE); 
+}
+```
+
+Herunder tegnes det samme hus fra tidligere blot ved brug af polygoner i stedet for:
+
+```javascript
+
+function setup() {
+	  createCanvas(400, 400);
+}
+
+function draw() {
+	  //baggrundsfarve
+	  background(220);
+	  // tegn huset
+	  // vi starter med væggene
+	  fill(255, 0, 0);
+	  beginShape();
+	  vertex(100, 200);
+	  vertex(300, 200);
+	  vertex(300, 400);
+	  vertex(100, 400);
+	  endShape(CLOSE);
+	  // tegner taget
+	  fill(0, 255, 0);
+	  beginShape();
+	  vertex(100, 200);
+	  vertex(200, 100);
+	  vertex(300, 200);
+	  endShape(CLOSE);
+	  // tegner døren
+	  fill(0, 0, 255);
+	  beginShape();
+	  vertex(180, 300);
+	  vertex(220, 300);
+	  vertex(220, 400);
+	  vertex(180, 400);
+	  endShape(CLOSE);
+	  // tegner vinduet
+	  fill(255, 255, 0);
+	  beginShape();
+	  vertex(120, 250);
+	  vertex(180, 250);
+	  vertex(180, 310);
+	  vertex(120, 310);
+	  endShape(CLOSE);
+	  // tegner solen
+	  fill(255, 255, 0);
+	  ellipse(350, 50, 80, 80);
 }
 ```
 
@@ -101,6 +225,7 @@ function draw() {
   */
 }
 ```
+Det er en god ide løbende at dokumentere sine kode og forklare hvad den gør. Vi skal senere vende tilbage til hvorledes det kan gøres systematisk. Men indtilvidere vil vi foreslå, at du løbende skriver en linje eller to om hvad din kode gør. Det gælder både så andre nemmere kan forstå hvad du skriver men også i forhold til, at du selv kan huske hvad du tænkte den dag, hvor du skrev koden. Man bliver ofte overrasket hvor hurtig man glemmer hvad det var man tænkte, da man skrev noget kode. 
 
 ## Farver
 
@@ -169,8 +294,8 @@ function draw() {
 }
 ```
 
-
-Metoden draw opdateres som nævnt 30 gange i sekundet.  Det kaldes også 30 FPS - Frames Per Second. Det betyder, at linjerne mellem krølparenteserne i draw afvikles 30 gange i sekundet. Du sætter antallet af frames i setup ved brug af kommandoen
+## Framerate (billeder pr sekund)
+Metoden draw opdateres som nævnt 30 gange i sekundet.  Det kaldes også 30 FPS - Frames Per Second. Det betyder, at linjerne mellem krølparenteserne i `draw` afvikles 30 gange i sekundet. Du sætter antallet af frames i setup ved brug af kommandoen
 
 
 ```javascript
@@ -198,12 +323,29 @@ Funktionen viser sig at være ekstremt nyttig i mange sammenhænge, men til at s
 fill(random(250),random(250),random(250)); //en tilfældig RGB-farve
 ellipse(random(75),random(75),50,50); //en tilfældig position for en cirkel
 ```
+Herunder tegnes forskellige geometriske objekter med forskellige placering på kanvas:
+```javascript
 
+function setup() {
+	  createCanvas(500, 500);
+}
 
+function draw() {
+	  background(0);
+	  stroke(255);
+	  fill(255);
+	  circle(random(width), random(height), random(100));
+	  rect(random(width), random(height), random(100), random(100));
+	  line(random(width), random(height), random(width), random(height));
+	  triangle(random(width), random(height), random(width), random(height), random(width), random(height));
+	  point(random(width), random(height));
+}
+```
+Vi skal senere se, at tilfældighed kan bruges i rigtig mange forskellige sammenhænge.
 
 ## Skrive til konsollen
 
-Man har mulighed for at skrive til konsolen, som man tilgår via Ctrl+Shift+J i de fleste browsere.
+Man har mulighed for at skrive til konsollen, som man tilgår via Ctrl+Shift+J i de fleste browsere.
 
 
 ```javascript
@@ -221,11 +363,11 @@ function draw() {
 ```
 
 
-Her opretter vi en heltalsvariable (en såkaldt tællevariable), som vi inkrementerer  i metoderne i `draw `og printer i både `draw ` og `setup`. Førstnævnte kaldes 30 gange i sekundet, mens setup kun kører en gang. Bemærk vi kan sagtens skrive kode uden for de to metoder og vi kan sågar lave vores egne metoder. Men det vender vi tilbage til senere.
+Her opretter vi en heltalsvariable (en såkaldt tællevariable), som vi inkrementerer  i metoderne i `draw `og printer i både `draw ` og `setup`. Førstnævnte kaldes 30 gange i sekundet, mens setup kun kører en gang. Bemærk vi kan sagtens skrive kode uden for de to metoder og vi kan sågar lave vores egne metoder. Men det vender vi tilbage til senere ligesom vi også går i dybden med variabler i næste kapitel.
 
 
 ## Afvikling på p5js.org eller egen computer
-Indtil nu har vi afviklet applikationer på vores p5’s hjemmeside via editoren og dette kan man sagtens forsætte med i de næste par kapitler, hvis man synes det er sjovere at kode.  
+Indtil nu har vi afviklet programmer på vores p5’s hjemmeside via editoren og dette kan man sagtens forsætte med i de næste par kapitler, hvis man synes det er sjovere at kode der.  
 
 Men på et tidspunkt vil det måske være rart med en lidt mere avanceret editor eller et decideret udviklingsmiljø.  
 Det er praktisk af mange grunde. Bl.a.  får vi lettere ved at skrive større mængder kode fordelt på flere filer og vi får en række værktøjer til at skrive kode hurtigere og med færre fejl. 
