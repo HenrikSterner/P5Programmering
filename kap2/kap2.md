@@ -1,13 +1,15 @@
 # 2. Dine første programmer i P5 og Javascript
 
-Et program består af en række instruktioner, som en maskine (computer, telefon, bil, køleskab etc)  forstår. Programmering betegner den proces hvor man ud fra nogle formelle regler konstruerer programmet.
+Et program består af en række instruktioner, som en maskine (eksempelvis en computer, telefon, bil, køleskab etc) kan forstå og afvikle, og programmering betegner den proces hvor man ud fra nogle formelle regler skriver disse instruktioner og herigennem konstruerer et program.
 
-Vi kan tænke på det at programmere som at lave en tegning, hvor den endelige tegning udgør programmet. I det følgende skal vi arbejde med at konstruere simple geometriske former som kan blive til en form for automatiseret tegninger eller animationer. Dvs. disse tegninger eller animationer udgør vores programmer.
+Vi kan bruge Javascript og biblioteket P5 til at programmere i. Når vi gør det, kan vi tænke på det at programmere som at lave en tegning i P5, hvor den endelige tegning udgør programmet. 
+
+I det følgende skal vi arbejde med at konstruere simple geometriske former som kan blive til en form for automatiseret tegninger eller animationer. Dvs. disse tegninger eller animationer udgør i første omgang vores programmer. Vi opfordrer læseren til at prøve programmerne af undervejs og gerne eksperimentere med at justere på de enkelte instruktioner. 
 
 Det bemærkes, at til at starte med skriver vi vores kode på p5js.org. Her er det  nok bare at trykke "Editor" på p5js.org, men hvis man eksempelvis ønsker at gemme sine programmer, så er det nødvendigt at logge ind/oprette en konto. Alt sammen er grundigt forklaret i kapitel 17 hvor man bl.a. får en udførlig vejledning i brug af editoren (hvor koden skrives) på p5js.org i kapitel 17. 
  
 ## En tegning bliver til
-Herunder følger vores første kodeeksempel, som skaber en illustration af et hus og en sol ud fra simple geometriske former. Du skal være velkommen til at prøve koden af og eksperimentere med koden: 
+Herunder følger vores første kodeeksempel, som skaber en illustration af et hus og en sol på et lærred/kanvas ud fra simple geometriske former. Du skal være velkommen til at prøve koden af og eksperimentere med koden: 
 
 ```javascript
 // lav en setup funktion der tegner et lærred 400x400
@@ -39,7 +41,17 @@ function draw() {
 	  ellipse(350, 50, 80, 80);
 }
 ```
-Ud fra ovenstående eksempel ser vi, at et program i P5, typisk består af to dele også kaldet funktioner. Funktionen `setup()` er her programmet er sat til at starte og linjerne mellem krølparenteserne er de første såkaldte `instruktioner`, som afvikles. Krølparenteserne indikerer en såkaldt `sekvens`, som er en række instruktioner, der udføres i sammenhæng. Til at starte med begynder vi med en kommentar, som er angivet ved to skråstreger. De er primært med for at dokumentere og formidle kodens funktionalitet. Dernæst tegnes lærredet eller kanvas, som kalder en indbygget funktion `createCanvas(400, 400)`. 
+Taster vi koden ovenfor ind i editoren og trykker på `Play`-knappen skulle vi gerne få en tegning af et hus vist på lærredet/kanvas til højre for kodefeltet: 
+
+
+![alt_text](billeder/firstprogram.png "Vores første program")
+
+
+Ud fra ovenstående eksempel ser vi, at et program i P5, typisk består af to dele også kaldet funktioner. Funktionen `setup()` er her programmet er sat til at starte og linjerne mellem krølparenteserne er de første såkaldte `instruktioner`, som afvikles. 
+
+Krølparenteserne indikerer en såkaldt `sekvens`, som er en række instruktioner, der udføres i sammenhæng. Man siger også, at instruktionerne i en sekvens udføres sekventielt. En instruktion ad gangen fra øverste til nederste linje. 
+Til at starte med begynder vi i vores `setup()` med en kommentar, som er angivet ved to skråstreger. Kommentarer er primært med for at dokumentere og formidle kodens funktionalitet men har ingen betydning for det egentlige program. Dernæst tegnes lærredet eller kanvas, som kalder en indbygget funktion i P5 kaldet `createCanvas(400, 400)`. Den tager to parametre i form af tallene 400 hhv. 400, der indikerer bredden hhv
+højden af lærredet. 
 
 Efter `setup()` der kun afvikles en gang i starten af programmet, kaldes automatisk funktionen `draw()`. Særligt for denne funktion er, at den i resten af programmet vil blive kaldt igen og igen. Dvs. programmet gentegner i praksis huset mange gange i sekundet, så hurtigt at det menneskelige øje ikke opdager det.  
 Kaldet til `background` indikerer baggrundsfarven ud fra en sort-hvid skala og denne kommando overmaler lærredet.  
@@ -130,8 +142,55 @@ strokeWeight(10); // Fed
 line(20, 70, 80, 70);
 ```
 
+## Firkanter
+Indtil nu har vi kun set hvorledes man kan tegne rektangler. Ved brug af `quad` kan vi tegne firkanter, der har forskellige vinkler og sidelængder. 
+```javascript
+// x1, y1 svarer til koordinaterne for det første punkt
+// x2, y2 svarer til koordinaterne for det andet punkt
+// x3, y3 svarer til koordinaterne for det tredje punkt
+// x4, y4 svarer til koordinaterne for det trejde punkt
+quad(x1, y1, x2, y2, x3, y3, x4, y4)
+```
+Herunder et eksempel hvor vi konstruerer et simpelt bjerglandskab vha af et kald til `quad`:
+
+```javascript
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+  
+  // Tegn bjerge
+  fill(120);
+  noStroke();
+  
+  // Første bjerg
+  triangle(0, 400, 200, 100, 400, 400);
+  
+  // Anden bjerg
+  quad(0, 400, 100, 200, 300, 250, 400, 400);
+  
+  // Tredje bjerg
+  triangle(0, 400, 100, 300, 200, 200);
+  
+  // Solen
+  fill(255, 200, 0);
+  noStroke();
+  ellipse(350, 50, 100, 100);
+  
+  // Jorden
+  fill(34, 139, 34);
+  noStroke();
+  rect(0, 350, 400, 50);
+}
+```
+Herunder ses resultatet af koden:
+
+![alt_text](billeder/mountain.png "Et bjerglandskab")
+
 ## Polygoner ved brug af punkter
-Man kan lave et polygon bestående af mange punkter der forbindes ved brug af linjer ved at bruge `beginShape()` efterfulgt af punkter og afsluttet med `endShape(CLOSE)`:
+Vi behøver ikke nøjes med at lave trekanter og firkanter, men kan i stedet lave et polygon bestående af mange punkter der forbindes ved brug af linjer ved at bruge `beginShape()` efterfulgt af punkter og afsluttet med `endShape(CLOSE)`:
 
 ```javascript
 beginShape(); 
@@ -405,9 +464,11 @@ Herunder følger en række øvelser. Lav som minimum øvelserne 1. til 9. Dele a
 7. Konstruér en stjerne. To gode funktioner at kende er "translate(x,y)", som definerer omdrejningspunktet og "rotate(vinkel i radianer)", der roterer de efterfølgende objekter i radianer med uret. Til orientering kan man konvertere mellem radianer og grader ved følgende formler: $$radianer= \frac{grader}{180}*\pi $$ $$grader= \frac{radianer}{pi}*180 $$
 8. Konstruér en blomst ved brug af cirkler og ellipser.
 9. Konstruer din egen figur ved hjælp af beginShape og endShape.
-10. Prøv ved brug af geometriske primitiver såsom cirkler, firkanter eller linjer at skabe en illusion af en tre-dimensionel figur. Det kunne eksempelvis være en kugle, en kegle eller en kasse. 
-11. Du er ved at starte din egen virksomhed og har brug for at kunne autogenerere dit firmas logo. Skriv et program der konstruerer dit logo.
-12. Bestem selv om du vil vente med denne øvelse. Installér Visual Studio Code og følgende plugins:
+10. Brug simple geometriske figurer til at tegne konturerne af et dyr. 
+11. Konstruer en række punkter, der illustrerer konturerne af det samme dyr som i foregående opgave. Overvej hvilken af disse programmer er mest enkle, selvforklarende og læsbar.
+12. Prøv ved brug af geometriske primitiver såsom cirkler, firkanter eller linjer at skabe en illusion af en tre-dimensionel figur. Det kunne eksempelvis være en kugle, en kegle eller en kasse. 
+13. Du er ved at starte din egen virksomhed og har brug for at kunne autogenerere dit firmas logo. Skriv et program der konstruerer dit logo.
+14. Bestem selv om du vil vente med denne øvelse. Installér Visual Studio Code og følgende plugins:
     1. Live Server til at afvikle en lokal webserver
     2. P5 Project Creator
     3. P5js Snippets
