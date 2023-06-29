@@ -1,12 +1,15 @@
 # 3. Variabler, animationer og input
-Variabler udgør de centrale byggesten i ethvert program. Variabler kan tænkes på som navngivne pladser i computerens hukommelse, og de bruges til at opbevare data af forskellige typer. Det skal vi kigge nærmere på nedenfor, hvor vi også vil se på hvorledes man håndterer input fra brugeren i form af taster på tastaturet eller input fra musen. 
+Variabler udgør de centrale byggesten i ethvert program. Variabler kan tænkes på som navngivne pladser i computerens hukommelse, og de bruges til at opbevare data af forskellige typer. Det skal vi kigge nærmere på nedenfor, hvor vi også vil se på hvorledes man håndterer input fra brugeren i form af tryk på tastaturet eller input fra musen. 
 Undervejs ser vi også eksempler på hvorledes man kan lave ikke bare statiske tegninger men også animationer. 
 
 
 ## Variabler og datatyper
 
 Variabler bruges til at opbevare data.  Dataens “form” eller type kaldes også datatypen. Når man erklærer eller konstruerer en variable, så reserverer vi en plads i computerens hukommelse, hvor variablens værdi opbevares. 
-Man erklærer variabler ved at bruge nøgleordet **let **, **var** eller **const** i kombination med tildelingsoperatoren.  Helt overordnet vil en erklæring se således ud:
+
+Tænker vi på computers hukommelse som et lagerhus, så er variablerne de kasser eller pakker, som vi kan placere i lageret. Hver kasse/pakke har et navn, der kan betragtes som variablens navn. Den type genstand, som vi kan proppe ned i kassen/pakken, kan vi tænke på variablens type. Forskellige typer variable har forskellige egenskaber. 
+
+Man erklærer i javascript variabler ved at bruge nøgleordet **let **, **var** eller **const** i kombination med tildelingsoperatoren.  Helt overordnet vil en erklæring se således ud:
 
 <p align="center">
 <b>let</b> <i>variablenavn</i> <b>=</b> <i>værdi</i><br>
@@ -35,12 +38,12 @@ Der findes overordnet syv forskellige typer i javascript:
 I følgende kapitel vil vi primært fokusere på de primitive typer kaldet 
 * "Number": Der består af heltal (integers på engelsk) og kommatal (floats på engelsk).  
 * "String": Der består af strenge af tekst eller karakterer.  
-* "Boolean": Der består af de boolske værdier true og false.  
+* "Boolean": Der består af de boolske værdier true eller false.  
   
 Vi vender senere tilbage til de andre typer.
 
 Javascript er et såkaldt dynamisk typet sprog. Dvs. at du ikke på forhånd behøver at erklære hvilken type variablen skal have, hvilket typisk gøre det nemmere at  bruge sproget.
-Omvendt risikerer man at lave nogle fejl, som kan være svære at finde.
+Omvendt risikerer man at lave nogle fejl, som kan være svære at finde, da man risikerer at "blande pærer og æbler".
 
 Eksempel herunder hvor kommentaren angiver datatypen.
 
