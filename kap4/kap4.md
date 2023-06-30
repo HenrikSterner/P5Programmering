@@ -2,11 +2,11 @@
 Indtil nu har vi primært arbejdet med programmer som en lineær sekvens af instruktioner, der afvikles fra top til bund. 
 Men ofte vil man gerne have mulighed for at afvikle nogle bestemte instruktioner hvis en given betingelse er opfyldt. Det kunne eksempelvis være når man skal undersøge om brugeren har trykket på en bestemt tast eller har trykket højre eller venstre mus. 
 
-I det følgende skal vi med andre ord se på hvorledes man kan evaluere hvorvidt en instruktion rent faktisk skal udføres eller om den skal springes over. Det kaldes også for "betinget udførsel".
+I det følgende skal vi med andre ord se på hvorledes man kan evaluere hvorvidt en instruktion rent faktisk skal udføres eller om den skal springes over. Det kaldes også for "betinget udførsel" eller "forgreninger".
 
 
 ## If-konstruktionen
-Den helt simple if-konstruktion ser således ud:
+Den mest simple betinget udførsels også kendt som "if-konstruktion" ser i grundform således ud:
 
 ```javascript
 if (betingelse){
@@ -24,7 +24,27 @@ Et eksempel kunne være at undersøge om musen ligger over i den venstre side af
   }
 ```
 
-Betingelsen skal ved afviklingen gerne kunne evalueres  til enten at være sand eller falsk. Et sådan udtryk kaldes også et boolsk udtryk og kan i princippet rummes i en boolsk variable. Disse udtrykke kan bestå af mange delbetingelser, som vi kigger nærmere på senere. 
+Betingelsen skal ved afviklingen kunne evalueres til enten at være sand eller falsk. Det skal med andre ord være muligt for programmet at verificere udtrykket som sandt eller falsk. 
+Et sådan udtryk kaldes også et boolsk udtryk og kan i princippet rummes i en boolsk variable. Disse udtrykke kan bestå af mange delbetingelser, som vi kigger nærmere på senere. 
+Herunder en række eksempler på udtryk, der muligvis er boolske. Overvej gerne betydningen af disse og hvilke, som du tror er boolske. Svaret følger herunder. 
+* 6>3 
+* Det regner i dag
+* mouseX===500
+* 10 + 5
+* mouseX*mouseY
+* !(mouseY < height)
+* random(0,10)
+* "Programmering er sjovt"
+
+Herunder følger svarerne:
+* 6>3: Boolsk udtryk. Vi undersøger om 6 er større end 3.
+* mouseX===500: Boolsk udtryk. Vi undersøger om musens x-væri er lig med 500
+* 10 + 5: Ikke et boolsk udtryk. Vi adderer blot 10 og 5. 
+* mouseX*mouseY: Ikke et boolsk udtryk. Vi multiplicerer musens koordinater. 
+* mouseY < height: Boolsk udtryk. Vi undersøger om musens y-koordinat er mindre end højden. 
+* random(0,10): Ikke et boolsk udtryk. Vi modtager blot et tilfældigt tal mellem 0 og 10. 
+* "Programmering er sjovt": Heller ikke et boolsk udtryk, da det i høj grad er en subjektiv oplevelse. 
+
 
 ## If-else konstruktionen
 Man kan udvide if-konstruktion så vi gør noget andet hvis betingelsen er falsk. Det ser grundlæggende således ud:

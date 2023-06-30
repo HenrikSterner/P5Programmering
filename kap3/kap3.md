@@ -626,6 +626,6 @@ På følgende link kan I se en lang række eksempler:
 [http://www.generative-gestaltung.de/2/](http://www.generative-gestaltung.de/2/) 
 
 1. Udvælg et eksempel og kig på koden bag. Prøv at forstå hvad koden gør og sæt kommentarer på.
-2. Lav din egen algoritmiske kunst ved først at formulere kunsten i almindelig prosa, listeform, pseudokode eller lignende. 
+2. Lav din egen algoritmiske kunst ved først at formulere kunsten i almindelig prosa, punktform eller kodenær tekst (også kaldet pseudokode).
 3. Prøv at implementere den i P5. Husk at kommentere koden. 
 4. Overvej om algoritmisk kunst er rigtig kunst. 
