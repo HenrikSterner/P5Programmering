@@ -521,7 +521,7 @@ let musPosY = "Din mus y-koordinat er givet ved "
 2. Udover musens position i den nuværende frame kan du også få musens position i den foregående frame ved brug af `pmouseX` og `pmouseY`. Udvid dit program så du også udskriver `x` og `y` fra den foregående frame. 
 3. Beregn nu hastigheden i x-retningen og i y-retningen ved at udskrive forskellen mellem `x`-værdierne og tilsvarende med `y`-værdierne. 
 4. Beregn et udtryk for farten af din mus ved at bruge formlen: 
-   $$\sqrt{(mouseX-pmouseX)^2 + (mouseX-pmouseX)^2}.$$   
+   $$\sqrt{(mouseX-pmouseX)^2 + (mouseY-pmouseY)^2}.$$   
 5. Definerer to variable x og y og sæt den lig med hhv. 5 og 3. Brug nu javascript til at beregne summen, differencen, multiplikationen og divisionen af de to samt find resten ved divisionen. 
 6. Hvad bliver x og y i slutningen af hver instruktion? Kommenter koden og forklar hvad variablen resultat er efter hver operation. Brug evt console.log til at finde svaret.
 ```javascript
