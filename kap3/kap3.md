@@ -505,7 +505,6 @@ function draw() {
   } else if (keyCode === DOWN_ARROW) {
     fillVal = 0;
   }
-  return false;
 }
 ```
 Hver tast har sin egen keycode, som man kan finde på følgende side: [http://keycode.info/](http://keycode.info/).
@@ -612,7 +611,7 @@ function draw() {
   y+=yspeed; 
 }
 ```
-15. Prøv at udvide 7 så cirklen ikke kan bevæge sig ud af skærmen og bagefter, at man kan klikke et sted på skærmen med musen og så følger cirklen det punkt. 
+15. Prøv at udvide 7 så cirklen ikke kan bevæge sig ud af skærmen og bagefter, at man kan klikke et sted på skærmen og kun når musen holdes nede følger cirklen det givne punkt. 
 16. Lav to cirkler og sæt dem i fart i en given retning. Undersøg om de kolliderer med hinanden.
 17. Konstruer en vandret linje der bevæger sig op og ned af skærmen. Når den når toppen af skærmen bevæger den sig nedad. Og omvendt. 
 18. Konstruer en lodret linje, der bevæger sig til højre og venstre. Når den når højre side bevæger den sig tilbage mod venstre side. Og omvendt.
