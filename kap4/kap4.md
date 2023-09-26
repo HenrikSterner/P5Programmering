@@ -322,7 +322,7 @@ console.log('hello' != 'Hello' || 'hello' !== 'hello' && 'hello' !== 'heLLo');
 console.log(2 === 2 || 2!=3 ); 
 console.log(2 === 2 || 2!='2' && (true || false));
 ```
-4. Forklar hvad følgende kode gør (hvad betyder width og height?):
+4. a) Forklar hvad følgende kode gør (hvad betyder width og height?):
 
 ```javascript
 function setup() { 
@@ -345,7 +345,7 @@ function draw() {
 }
 ```
 
-3. Hvad gør følgende kode:
+4. b) Forklar hvad følgende kode gør:
 
 ```javascript
 let x;
