@@ -450,7 +450,7 @@ function draw() {
 
 
 10.  Lav et program der indsætter en cirkelformet mus et tilfældigt sted på skærmen og som kan bevæges op og ned, til højre og venstre vha piltasterne. 
-11.  Udvid programmet fra forrige opgave så det tilsvarende også rummer en firkantet mus, der kan bevæge sig op og ned, til højre og venstre men ved brug af tasterne `w`,`a`, `s` og `f`. 
+11.  Udvid programmet fra forrige opgave så det tilsvarende også rummer en firkantet mus, der kan bevæge sig op og ned, til højre og venstre men ved brug af tasterne `w`,`a`, `s` og `d`. 
 12.  Udvid de to forrige opgaver ved at indsætte nogle oste i form af prikker vilkårlige steder, som hvis de to mus kolliderer med forsvinder. Hold øje ved brug af to heltalsvariable hvem der har samlet flest oste. For hver ost der spises inkrementeres den respektive variable med 1. 
 13. Lav en cookie-klikker. Dvs. konstruer en cirkel et vilkårligt sted på skærmen. Når der klikkes på den forsvinder den og en ny oprettes et andet sted. 
 
