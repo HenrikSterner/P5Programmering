@@ -182,7 +182,7 @@ Endelig er der negerings-operatoren, der er repræsenteret ved udråbstegn `!`. 
 
 Herunder et eksempel:
 ```javascript
-if !(mouseX > 100 && mouseX < 300){
+if (!(mouseX > 100 && mouseX < 300)){
  background(255,0,0);
 } 
 ```
