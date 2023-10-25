@@ -522,6 +522,18 @@ function preload() {
 5. Hvis to cirkler skærer hinanden, har katten fanget musen. Skriv en funktion, der undersøger dette. 
 6. Gør evt. spillet svære med tiden. Sæt f.eks. hastigheden på kattene op med tiden.
 
+Har du problemer med at få cirklen til at bevæge sig så tilføj følgende kode i draw-funktionen:
+
+```javascript
+function draw() {
+  //...
+  background(220);
+  circle(x,y,d);
+  x=x+a;
+  y=y+b;
+  borderCheck();
+  //...
+}
 
 ## Projekt: Trommer, klaver og guitar
 
