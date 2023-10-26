@@ -534,7 +534,7 @@ function draw() {
   borderCheck();
   //...
 }
-
+```
 ## Projekt: Trommer, klaver og guitar
 
 I det følgende projekt skal du prøve at lave simple digitale prototyper på et trommesæt, et klaver og en guitar eller evt et andet selvvalgt instrument. Tanken er at du for alle tre instrumenter skal tegne dem først og evt farvelægge dem. Projeket forudsætter at du kan afspille lyd og dermed køre din egen webserver (se sidste øvelse i modul 1). Følgende instrumenter kunne man lave:
