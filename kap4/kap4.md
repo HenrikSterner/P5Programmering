@@ -535,6 +535,115 @@ function draw() {
   //...
 }
 ```
+
+Har du problemer med at få ovenstående til at virke, så kan du prøve at forstå nedenstående kode, hvor der også er implementeret en kat, der jager musen:
+
+```javascript
+let x = 200
+let y = 200
+let d = 50
+let speed = 5
+let a = speed
+let b = 0
+
+//create an enemy circle
+
+let xe = 300
+let ye = 300
+let de = 50
+let speede = 5
+let ae = speede
+let be = 0
+
+let angle = 0
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+     //...
+    background(220);
+    fill(120)
+    circle(x,y,d);
+    x=x+a;
+    y=y+b;
+    borderCheck();
+    //...
+    //let the enemy circle move towards the player circle
+    moveEnemy()
+    
+}
+
+function borderCheck() {
+  if (x + d / 2 >= width) {
+    a = -speed;
+    b = 0;
+  }
+  if (x - d / 2 <= 0) {
+    a = speed;
+    b = 0;
+  }
+  if (y + d / 2 >= height) {
+    a = 0;
+    b = -speed;
+  }
+  if (y - d / 2 < 0) {
+    a = 0;
+    b = speed;
+  }
+ }
+
+ function keyPressed() {
+  if (keyCode === DOWN_ARROW) {
+    b = speed;
+    a = 0;
+  }
+  if (keyCode === UP_ARROW) {
+    b = -speed;
+    a = 0;
+  }
+  if (keyCode === LEFT_ARROW) {
+    b = 0;
+    a = -speed;
+  }
+  if (keyCode === RIGHT_ARROW) {
+    b = 0;
+    a = speed;
+  }
+ }
+
+ // compute distance between two circles
+ function distance(x1,y1,x2,y2){
+   return sqrt((x1-x2)**2+(y1-y2)**2)
+ }
+
+ // move enemy circle towards player circle
+  function moveEnemy(){
+    //direction vectors
+    let dx = xe-x
+    let dy = ye-y
+
+    //normalize direction vectors
+    let d = sqrt(dx**2+dy**2)
+    dx = dx/d
+    dy = dy/d
+    
+    //move enemy circle towards player circle by a fixed amount
+    xe = xe - dx*speede*0.2
+    ye = ye - dy*speede*0.2
+    fill(255,0,0)
+    circle(xe,ye,de)
+    //check if enemy circle has reached player circle
+    if (distance(xe,ye,x,y) <= de/2+d/2){
+      //collision detected - do something
+      text("collision detected",200,200)
+    }
+  }
+ 
+```
+Prøv evt. at udvid denne kode så der er flere fjender eller andre typer af fjender.
+
 ## Projekt: Trommer, klaver og guitar
 
 I det følgende projekt skal du prøve at lave simple digitale prototyper på et trommesæt, et klaver og en guitar eller evt et andet selvvalgt instrument. Tanken er at du for alle tre instrumenter skal tegne dem først og evt farvelægge dem. Projeket forudsætter at du kan afspille lyd og dermed køre din egen webserver (se sidste øvelse i modul 1). Følgende instrumenter kunne man lave:
