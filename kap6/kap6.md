@@ -37,15 +37,19 @@ Herunder et lidt mere avanceret eksempel:
 
 ```javascript
 function fib(){
-    N = 10
+    let N = 10
     numbers = []
     let a = 0
     let b = 1
+    let temp
+    numbers.push(a)
+    numbers.push(b)
     while(numbers.length < N)
     {
-        a = b
-        b = a + b
-        numbers.push(a)
+        temp = a+b
+        numbers.push(temp)
+        a=b
+        b=temp
     }
     console.log("Fibonacci tal" , numbers)
 }
@@ -86,11 +90,15 @@ function fib(N){
     numbers = []
     let a = 0
     let b = 1
+    let temp
+    numbers.push(a)
+    numbers.push(b)
     while(numbers.length < N)
     {
-        a = b
-        b = a + b
-        numbers.push(a)
+        temp = a+b
+        numbers.push(temp)
+        a=b
+        b=temp
     }
     console.log("Fibonacci tal" , numbers)
 }
@@ -105,10 +113,16 @@ Fremfor at definere a og b inde i funktion kan vi give funktionen nogle standard
 ```javascript
 function fib(N,a=0,b=1){
     numbers = []
-    while numbers.length < N:
-        a = b
-        b = a + b
-        numbers.push(a)
+    let temp
+    numbers.push(a)
+    numbers.push(b)
+    while(numbers.length < N)
+    {
+        temp = a+b
+        numbers.push(temp)
+        a=b
+        b=temp
+    }
     console.log("Fibonacci tal" , numbers)
 }
 //kald til fib
@@ -149,12 +163,17 @@ Vi kan også udvide vores fibonacci-funktion, så den i stedet returnerer en lis
 ```javascript
 function fib(N,a=0,b=1){
     numbers = []
-    while (numbers.length < N){
-        a = b
-        b = a + b
-        numbers.push(a)
+    let temp
+    numbers.push(a)
+    numbers.push(b)
+    while(numbers.length < N)
+    {
+        temp = a+b
+        numbers.push(temp)
+        a=b
+        b=temp
     }
-    return numbers
+    console.log("Fibonacci tal" , numbers)
 }
 //kald til fib
 L= fib(10) // opsamler de 10 første tal i listen L
