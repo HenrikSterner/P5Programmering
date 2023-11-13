@@ -174,6 +174,7 @@ function fib(N,a=0,b=1){
         b=temp
     }
     console.log("Fibonacci tal" , numbers)
+    return numbers
 }
 //kald til fib
 L= fib(10) // opsamler de 10 første tal i listen L
