@@ -38,7 +38,7 @@ Herunder et lidt mere avanceret eksempel:
 ```javascript
 function fib(){
     let N = 10
-    numbers = []
+    let numbers = []
     let a = 0
     let b = 1
     let temp
@@ -87,7 +87,7 @@ Herunder en ny variant af vores fibonacci-funktion, som giver mulighed for at va
 
 ```javascript
 function fib(N){
-    numbers = []
+    let numbers = []
     let a = 0
     let b = 1
     let temp
@@ -112,7 +112,7 @@ Fremfor at definere a og b inde i funktion kan vi give funktionen nogle standard
 
 ```javascript
 function fib(N,a=0,b=1){
-    numbers = []
+    let numbers = []
     let temp
     numbers.push(a)
     numbers.push(b)

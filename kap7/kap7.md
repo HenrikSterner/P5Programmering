@@ -208,7 +208,7 @@ function sum(n) {
     return n + sum(n ‐ 1);
 }
 ```
-2. Skriv en rekursiv funktion, der beregner eksponenten af et ta.
+2. Skriv en rekursiv funktion, der beregner eksponenten af et tal.
 3. Skriv en funktion der rekursivt skifter mellem at addere og subtrahere tal i en liste. Hvis listen eksempelvis er [5,3,1,2,4] så skal funktionen udregne: 5-3+1-2+4=5.
 4. Skriv en rekursiv funktion, der tegner et kvadrat inde i et kvadrat inde i kvadrat indtil den når en vis dybde.
 5. Skriv en rekursiv funktion der undersøger om et tal er lige eller ulige
