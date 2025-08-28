@@ -1,4 +1,5 @@
 # Forord
+
 Programmering er problemløsning igennem kode. Alle kan lære at programmere, hvis de vil.  Det kræver tid samt en ret unik kombination af kreativitet, logisk tænkning, problemløsning tilsat stædighed, tålmodighed og flid. Ikke før man begynder gå i dybden med faget og begynder at udvikle og skabe sine egne små eller større programmer, finder man ud af, at programmering er et dybt fascinerende og dynamisk felt. Programmering er et essentiel værktøj i vores stadig mere digitaliseret samfund og på mange måder det centrale metodefag i den digitale transformation, som vores samfund til stadighed gennemgår i disse år og som forstærkes af, at bl.a. kunstig intelligens og anvendelser heraf indføres mange steder. Vi ser anvendelser af programmering i mange forskellige domæner, fra sundhedsvæsen til finanssektoren, fra underholdningsbranchen til uddannelse. I alle sektorer har vi muligheden for at ændre verden omkring os gennem programmering. 
 
 Programmering giver dig mulighed for at udfolde din kreativitet og bygge noget unikt fra bunden. Lidt ligesom en eller flere håndværkere, der bygger et hus eller lignende. Programmering kan på mange måder betragtes som et digitalt håndværk. Det kræver flid og hårdt arbejde, men med tiden, øvelserne og erfaringen følger resultaterne. 
@@ -47,8 +48,10 @@ Ved hvert kapitel er der en række øvelser og projekter. Det anbefales at lave 
 - Når først de seks første kapitler og kapitel 8 er læst kan man selv vælge hvilke dele af kapitlerne i del III, som man finder interessant. Kapitel 16 om computationel tækning kan være en god ide at læse relativt tidligt, da det beskriver en måde at tænke problemløsning på. 
 
 ## Online udgave
+
 Bogen er tilgængelig online på hvor den nyeste version ligger: 
 [henriksterner.github.io/P5Programmering/](henriksterner.github.io/P5Programmering/)
 
 ## Tak
+
 Afslutningsvis og inden vi begynder denne spændende rejse, vil vi rette en stor tak til de mange gymnasieelever og kolleger, som har givet feedback undervejs i udarbejdelsen af denne bog. Ingen nævnt. Ingen glemt. Tak. 
