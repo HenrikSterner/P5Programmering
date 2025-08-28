@@ -26,16 +26,18 @@ let n = 1; // variablen n peger nu på tallet 1
 var m = 2; // variablen n peger nu på tallet 2 
 const p = 3 // variablen p peger nu på tallet 3 og kan ikke ændres/erklæres på ny
 let s = "Hej"; // variablen s peger nu på teksten "Hej"
-var t = "med dig"; // variablen t peger nu på teksten "Hej"
+var t = "med dig"; // variablen t peger nu på teksten "med dig"
 const r = "Halløj"; // variablen r peger nu på teksten "Halløj" og kan ikke ændres/erklæres på ny
 ```
-Disse eksempler illustrerer brugen af de tre nøgleord til at erklære og dermed konstruere nogle forskellige variable med forskellige værdier. Når vi nu bruger variablenavnene i en kontekst udgør de en pladsholder for den konkrete værdi, som vi har     
+
+Disse eksempler illustrerer brugen af de tre nøgleord til at erklære og dermed konstruere nogle forskellige variable med forskellige værdier. Når vi nu bruger variablenavnene i en kontekst udgør de en pladsholder for den konkrete værdi, som vi har defineret herover.
 
 Der findes overordnet syv forskellige typer i javascript:
 
 ![alt_text](images/data-types-in-python.png "Overblik over de forskellige datatyper i Javascript")
 
-I følgende kapitel vil vi primært fokusere på de primitive typer kaldet 
+I følgende kapitel vil vi primært fokusere på de primitive typer kaldet:
+
 * "Number": Der består af heltal (integers på engelsk) og kommatal (floats på engelsk).  
 * "String": Der består af strenge af tekst eller karakterer.  
 * "Boolean": Der består af de boolske værdier true eller false.  
@@ -53,7 +55,9 @@ let s = "Hej"; // String - tekst
 let b = true; // Boolean - boolsk
 let f = 10.2; // Number - kommatal/float
 ```
+
 Er du i tvivl om en variables type kan du bruge kommandoen "typeof()":
+
 ```javascript
 console.log(typeof(n)) // Number - heltal/integer 
 ```
@@ -63,6 +67,7 @@ console.log(typeof(n)) // Number - heltal/integer
 Generelt kan vi sige om de primitive datatyper, at de er datatyper, som kun opbevarer en enkelt værdi. De er desuden "ikke muterbare". I praksis betyder, at vi kan ikke ændre variablernes værdi.
 
 Lad os se et eksempel på det ved at betragte en streng variable:
+
 ```javascript
 let navn = "Hemrik"
 ```

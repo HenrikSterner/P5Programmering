@@ -26,7 +26,7 @@ Henrik Sterner & Peter Sterner 2022.
 
 # Kapitler
 
-Del I: Introduktion til basal programmering - [Kapitel 1:
+Del I: Introduktion til basal programmering - [Kapitel 1:https://github.com/HenrikSterner/P5Book/blob/main/kap1/kap1.md
 Indledning](https://github.com/HenrikSterner/P5Programmering/blob/main/kap1/kap1.md)
 - [Kapitel 2: Intro til P5 og
 Javascript](https://github.com/HenrikSterner/P5Programmering/blob/main/kap2/kap2.md)
