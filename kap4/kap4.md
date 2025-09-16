@@ -459,7 +459,7 @@ function draw() {
 
 1. Få en cirkel til at bevæge sig i vandret eller lodret retning på lærred.
     1. Start med at oprette følgende globale variabler: x, y, a, b, d og speed.
-    2. Lad (x,y) være cirklens centrum og lad d være diameter af cirklen.. Sæt f.eks. x = random(0, windowWidth), y=random(0, windowHeight) og d = 20.
+    2. Lad (x,y) være cirklens centrum og lad d være diameter af cirklen.. Sæt f.eks. x = random(0, width), y=random(0, height) og d = 20.
     3. Variablen speed angiver hvor mange pixels at cirklen skal bevæge sig i enten vandret eller lodret retning. Lad f.eks. speed = 10.
     4. Lad (a,b) være retningsvektor for cirklen. Sæt f.eks. a = speed og b = 0. Dvs. når spillet starter, så bevæger cirklen sig x-aksens retning.
     5. Skriv en funktion, der tjekker for, om cirklen er på vej uden for skærmen. Brug evt. følgende:
