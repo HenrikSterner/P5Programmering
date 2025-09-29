@@ -22,25 +22,6 @@ Copyright © Henrik Sterner & Peter Sterner 2022.
 Du kan nu købe bogen på engelsk under titlen *Programming in P5* på Amazon for $9.95.
 Hvis du er lærer eller skoleadministrator, kan du få et gratis eksemplar ved at skrive til os. Læs mere på <a href="https://henriksterner.github.io/p5">bogens engelske hjemmeside</a>.
 
-<p style="text-align:left; max-width:600px; margin:20px auto;">Bring your imagination, pack your sense of humour, and step into the wonderfully weird crossroads where art and technology collide… with plenty of sparks.</p>  <div class="images">
-    <div>
-      <a href="#modal-frontpage"><img src="frontpage.png" alt="Frontpage" /></a>
-      <div class="desc">Frontpage</div>
-    </div>
-    <div>
-      <a href="#modal-backcover"><img src="backcover.png" alt="Backcover" /></a>
-      <div class="desc">Backcover</div>
-    </div>
-  </div>
-
-  <div id="modal-frontpage" class="modal" onclick="location.hash='';">
-    <img src="frontpage.png" alt="Frontpage" />
-  </div>
-  <div id="modal-backcover" class="modal" onclick="location.hash='';">
-    <img src="backcover.png" alt="Backcover" />
-  </div>
-
-
 ## Indholdsfortegnelse
 
 - [Forord](https://github.com/HenrikSterner/P5Programmering/blob/main/forord/forord.md)
