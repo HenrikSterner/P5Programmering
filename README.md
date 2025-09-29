@@ -22,12 +22,11 @@ Copyright © Henrik Sterner & Peter Sterner 2022.
 Du kan nu købe bogen på engelsk under titlen *Programming in P5* på Amazon for $9.95.
 Hvis du er lærer eller skoleadministrator, kan du få et gratis eksemplar ved at skrive til os. Læs mere på <a href="https://henriksterner.github.io/p5">bogens engelske hjemmeside</a>.
 
-## Indholdsfortegnelse
+# Indholdsfortegnelse
 
 - [Forord](https://github.com/HenrikSterner/P5Programmering/blob/main/forord/forord.md)
 
-# Kapitler
-Del I: Introduktion til basal programmering
+## Del I: Introduktion til basal programmering
 - [Kapitel 1: Indledning](https://github.com/HenrikSterner/P5Programmering/blob/main/kap1/kap1.md)
 - [Kapitel 2: Intro til P5 og Javascript](https://github.com/HenrikSterner/P5Programmering/blob/main/kap2/kap2.md)
 - [Kapitel 3: Variabler, animationer og input](https://github.com/HenrikSterner/P5Programmering/blob/main/kap3/kap3.md)
@@ -36,13 +35,13 @@ Del I: Introduktion til basal programmering
 - [Kapitel 6: Funktioner](https://github.com/HenrikSterner/P5Programmering/blob/main/kap6/kap6.md)
 - [Kapitel 7: Rekursion](https://github.com/HenrikSterner/P5Programmering/blob/main/kap7/kap7.md)
 
-Del II: Objektorienteret programmering
+## Del II: Objektorienteret programmering
 - [Kapitel 8: Objekter](https://github.com/HenrikSterner/P5Programmering/blob/main/kap8/kap8.md)
 - [Kapitel 9: Strengobjekter](https://github.com/HenrikSterner/P5Programmering/blob/main/kap9/kap9.md)
 - [Kapitel 10: Objektorienteret principper](https://github.com/HenrikSterner/P5Programmering/blob/main/kap10/kap10.md)
 - [Kapitel 11: Et vektorbibliotek - objektorienteret principper i praksis](https://github.com/HenrikSterner/P5Programmering/blob/main/kap11/kap11.md)
 
-Del III: Softwareudvikling
+## Del III: Softwareudvikling
 
 - [Kapitel 12: Dokumentation og kravspecikation](https://github.com/HenrikSterner/P5Programmering/blob/main/kap12/kap12.md)
 - [Kapitel 13: Softwarearkitektur](https://github.com/HenrikSterner/P5Programmering/blob/main/kap13/kap13.md)
