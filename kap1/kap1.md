@@ -1,4 +1,5 @@
 # 1. Godt at vide inden vi går i gang
+
 I det følgende vil vi starte med nogle generelle overvejelser omkring programmering og dets anvendelser, sproget javascript samt nogle god råd til hvordan man bliver en bedre programmør. 
 
 Programmering eller kodning dækker over den process hvor man i et givent programmeringssprog skriver noget kode, som resulterer i et program (eller system). Programmet kan typisk afvikles på en eller flere platforme såsom en computer, en mobiltelefon, en selvkørende bil, en sensor i køleskabet eller noget helt femte. 
